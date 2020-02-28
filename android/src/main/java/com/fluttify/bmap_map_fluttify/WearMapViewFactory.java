@@ -7,6 +7,7 @@ package com.fluttify.bmap_map_fluttify;
 import android.content.Context;
 import android.view.View;
 import android.util.Log;
+import android.app.Activity;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,10 +28,11 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableL
 @SuppressWarnings("ALL")
 class WearMapViewFactory extends PlatformViewFactory {
 
-    WearMapViewFactory(BinaryMessenger messenger) {
+    WearMapViewFactory(BinaryMessenger messenger, Activity activity) {
         super(StandardMessageCodec.INSTANCE);
 
         this.messenger = messenger;
+        this.activity = activity;
 
         new MethodChannel(messenger, "com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView").setMethodCallHandler((methodCall, methodResult) -> {
                     Map<String, Object> args = (Map<String, Object>) methodCall.arguments;
@@ -49,6 +51,7 @@ class WearMapViewFactory extends PlatformViewFactory {
     }
 
     private BinaryMessenger messenger;
+    private Activity activity;
 
     private final Map<String, BmapMapFluttifyPlugin.Handler> handlerMap = new HashMap<String, BmapMapFluttifyPlugin.Handler>() {{
         // method
@@ -938,7 +941,7 @@ class WearMapViewFactory extends PlatformViewFactory {
         // ref arg
         com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
 
-        com.baidu.mapapi.map.WearMapView view = new com.baidu.mapapi.map.WearMapView(context, var2);
+        com.baidu.mapapi.map.WearMapView view = new com.baidu.mapapi.map.WearMapView(activity, var2);
         getHEAP().put(id, view);
         return new PlatformView() {
 

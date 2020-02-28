@@ -4,32 +4,37 @@
 
 package com.fluttify.bmap_map_fluttify;
 
-import android.os.Bundle;
-import android.util.Log;
+import android.app.Activity;
+
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler0;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler1;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler10;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler11;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler2;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler3;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler4;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler5;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler6;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler7;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler8;
+import com.fluttify.bmap_map_fluttify.sub_handler.SubHandler9;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 
-import com.fluttify.bmap_map_fluttify.sub_handler.*;
-
-import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
-import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
-
 @SuppressWarnings("ALL")
-public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.MethodCallHandler {
-
-    private BinaryMessenger messenger;
+public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
 
     private static final List<Map<String, Handler>> handlerMapList = new ArrayList<>();
 
@@ -38,8 +43,13 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "com.fluttify/bmap_map_fluttify");
 
         BmapMapFluttifyPlugin plugin = new BmapMapFluttifyPlugin();
+
         BinaryMessenger messenger = registrar.messenger();
+        PlatformViewRegistry platformViewRegistry = registrar.platformViewRegistry();
+        Activity activity = registrar.activity();
+
         plugin.messenger = messenger;
+        plugin.platformViewRegistry = platformViewRegistry;
 
         handlerMapList.add(SubHandler0.getSubHandler(messenger));
         handlerMapList.add(SubHandler1.getSubHandler(messenger));
@@ -57,11 +67,13 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         channel.setMethodCallHandler(plugin);
 
         // register platform view
-        PlatformViewRegistry platformViewRegistry = registrar.platformViewRegistry();
-        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.TextureMapView", new TextureMapViewFactory(messenger));
-        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.WearMapView", new WearMapViewFactory(messenger));
-        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.MapView", new MapViewFactory(messenger));
+        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.TextureMapView", new TextureMapViewFactory(messenger, activity));
+        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.WearMapView", new WearMapViewFactory(messenger, activity));
+        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.MapView", new MapViewFactory(messenger, activity));
     }
+
+    private BinaryMessenger messenger;
+    private PlatformViewRegistry platformViewRegistry;
 
     // v2 android embedding
     @Override
@@ -69,6 +81,7 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), "com.fluttify/bmap_map_fluttify");
 
         messenger = binding.getBinaryMessenger();
+        platformViewRegistry = binding.getPlatformViewRegistry();
 
         handlerMapList.add(SubHandler0.getSubHandler(messenger));
         handlerMapList.add(SubHandler1.getSubHandler(messenger));
@@ -84,18 +97,31 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         handlerMapList.add(SubHandler11.getSubHandler(messenger));
 
         channel.setMethodCallHandler(this);
-
-        // register platform view
-        PlatformViewRegistry platformViewRegistry = binding.getPlatformViewRegistry();
-        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.TextureMapView", new TextureMapViewFactory(messenger));
-        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.WearMapView", new WearMapViewFactory(messenger));
-        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.MapView", new MapViewFactory(messenger));
     }
 
     @Override
     public void onDetachedFromEngine(FlutterPluginBinding binding) {
 
     }
+
+    @Override
+    public void onAttachedToActivity(ActivityPluginBinding binding) {
+        Activity activity = binding.getActivity();
+
+        // register platform view
+        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.TextureMapView", new TextureMapViewFactory(messenger, activity));
+        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.WearMapView", new WearMapViewFactory(messenger, activity));
+        platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.MapView", new MapViewFactory(messenger, activity));
+    }
+
+    @Override
+    public void onDetachedFromActivityForConfigChanges() { }
+
+    @Override
+    public void onReattachedToActivityForConfigChanges(ActivityPluginBinding binding) { }
+
+    @Override
+    public void onDetachedFromActivity() { }
 
     @Override
     public void onMethodCall(@NonNull MethodCall methodCall, @NonNull MethodChannel.Result methodResult) {
