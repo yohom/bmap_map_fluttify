@@ -35,19 +35,19 @@ class MapViewFactory extends PlatformViewFactory {
         this.activity = activity;
 
         new MethodChannel(messenger, "com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView").setMethodCallHandler((methodCall, methodResult) -> {
-                    Map<String, Object> args = (Map<String, Object>) methodCall.arguments;
-                    BmapMapFluttifyPlugin.Handler handler = handlerMap.get(methodCall.method);
-                    if (handler != null) {
-                        try {
-                            handler.call(args, methodResult);
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            methodResult.error(e.getMessage(), null, null);
-                        }
-                    } else {
-                        methodResult.notImplemented();
+                Map<String, Object> args = (Map<String, Object>) methodCall.arguments;
+                BmapMapFluttifyPlugin.Handler handler = handlerMap.get(methodCall.method);
+                if (handler != null) {
+                    try {
+                        handler.call(args, methodResult);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        methodResult.error(e.getMessage(), null, null);
                     }
-                });
+                } else {
+                    methodResult.notImplemented();
+                }
+            });
     }
 
     private BinaryMessenger messenger;
@@ -1171,7 +1171,7 @@ class MapViewFactory extends PlatformViewFactory {
     }};
 
     @Override
-    public PlatformView create(Context context, int id, Object params) {
+    public PlatformView create(Context __, int id, Object params) {
         Map<String, Object> args = (Map<String, Object>) params;
         // ref arg
         com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));

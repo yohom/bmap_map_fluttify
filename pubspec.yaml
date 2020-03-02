@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   bmap_core_fluttify: ^0.0.6+d0a1b9b
-  foundation_fluttify: ^0.4.9
+  foundation_fluttify: ^0.4.10+1
 
 dev_dependencies:
   flutter_test:
