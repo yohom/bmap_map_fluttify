@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final manager = await BMKMapManager.create__();
-  await manager.startGeneralDelegate('KryNE2jVLpf3tCYxpxnnc5wEjGyztvEf', null);
+  await BmapService.init(
+    iosKey: 'KryNE2jVLpf3tCYxpxnnc5wEjGyztvEf',
+    androidKey: null,
+  );
   runApp(MyApp());
 }
 
@@ -21,7 +23,7 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('Plugin example app'),
         ),
-        body: BMKMapView_iOS(),
+        body: BmapView(),
       ),
     );
   }

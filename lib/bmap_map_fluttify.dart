@@ -1,2 +1,4 @@
-export 'src/android/android.export.g.dart';
-export 'src/ios/ios.export.g.dart';
+export 'src/dart/bmap_service.dart';
+export 'src/dart/bmap_view.widget.dart';
+export 'src/dart/enums.dart';
+export 'src/dart/models.dart';

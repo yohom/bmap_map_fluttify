@@ -9,6 +9,9 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="bmap_map_fluttify_example"
         android:icon="@mipmap/ic_launcher">
+        <meta-data
+                android:name="com.baidu.lbsapi.API_KEY"
+                android:value="3gEtajoBuKVN7BCj2h7OIT8YbKg1UXiI" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
