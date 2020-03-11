@@ -7,11 +7,8 @@ import 'package:foundation_fluttify/foundation_fluttify.dart';
 class BmapService {
   BmapService._();
 
-  /// 设置ios和android的app key
-  static Future<void> init({
-    @required String iosKey,
-    @required String androidKey,
-  }) async {
+  /// 设置ios的app key
+  static Future<void> init({@required String iosKey}) async {
     await platform(
       android: (pool) async {
         final context = await android_app_Application.get();
