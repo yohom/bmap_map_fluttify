@@ -3343,7 +3343,60 @@ extern BOOL enableLog;
   NSLog(@"暂不支持有返回值的回调方法");
   
   ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
-  
+  UIImage* icon = (UIImage *) objc_getAssociatedObject(annotation, (const void *) 1);
+  NSNumber* draggable = objc_getAssociatedObject(annotation, (const void *) 2);
+  NSNumber* rotateAngle = objc_getAssociatedObject(annotation, (const void *) 3);
+  NSNumber* infoWindowEnabled = objc_getAssociatedObject(annotation, (const void *) 4);
+  NSNumber* anchorU = objc_getAssociatedObject(annotation, (const void *) 5);
+  NSNumber* anchorV = objc_getAssociatedObject(annotation, (const void *) 6);
+  // 7上绑的是自定义数据, 这里不需要
+  NSNumber* width = objc_getAssociatedObject(annotation, (const void *) 8);
+  NSNumber* height = objc_getAssociatedObject(annotation, (const void *) 9);
+  NSNumber* visible = objc_getAssociatedObject(annotation, (const void *) 10);
+
+  //用户当前位置大头针
+  if ([annotation isKindOfClass:[BMKUserLocation class]]) {
+    return nil;
+  }
+    
+  if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+      BMKAnnotationView* annotationView;
+      // 如果没有指定icon就使用m自带的annotation
+      if (icon == nil) {
+          annotationView = (BMKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinAnnotationReuseIndentifier"];
+          if (annotationView == nil) {
+              annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinAnnotationReuseIndentifier"];
+          }
+      } else {
+          annotationView = (BMKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"customAnnotationReuseIndentifier"];
+          if (annotationView == nil) {
+              annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"customAnnotationReuseIndentifier"];
+          }
+      }
+      if (icon != nil && (NSNull*) icon != [NSNull null]) annotationView.image = icon;
+      if (draggable != nil) annotationView.draggable = [draggable boolValue];
+      if (infoWindowEnabled != nil) annotationView.canShowCallout = [infoWindowEnabled boolValue];
+      // 旋转角度
+      if (rotateAngle != nil) {
+          annotationView.transform = CGAffineTransformRotate(CGAffineTransformIdentity, -[rotateAngle doubleValue] / 180.0 * M_PI);
+      }
+      // 设置图片大小
+      if (annotationView.image != nil
+          && width != nil && height != nil
+          && (NSNull*) width != [NSNull null] && (NSNull*) height != [NSNull null]) {
+          annotationView.frame = CGRectMake(annotationView.frame.origin.x, annotationView.frame.origin.x, [width doubleValue], [height doubleValue]);
+      }
+      // 锚点
+      if (anchorU != nil && anchorV != nil
+          && (NSNull*) anchorU != [NSNull null] && (NSNull*) anchorV != [NSNull null]) {
+          annotationView.layer.anchorPoint = CGPointMake([anchorU doubleValue], [anchorV doubleValue]);
+      }
+      // 是否可见
+      if (visible != nil && (NSNull*) visible != [NSNull null]) {
+          annotationView.hidden = ![visible boolValue];
+      }
+      return annotationView;
+  }
   ////////////////////////////////////////////////////////////////////////////////
   
   return nil;

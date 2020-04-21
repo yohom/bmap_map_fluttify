@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 
+import 'models.dart';
+
 part 'bmap_controller.dart';
 
 typedef Future<void> _OnMapCreated(BmapController controller);
@@ -70,7 +72,7 @@ class _BmapViewState extends State<BmapView> {
 
   @override
   void dispose() {
-    final isCurrentPlugin = (it) => it.tag == 'bmap_map_fluttify';
+    final isCurrentPlugin = (Ref it) => it.tag__ == 'bmap_map_fluttify';
     kNativeObjectPool
         .where(isCurrentPlugin)
         .release_batch()

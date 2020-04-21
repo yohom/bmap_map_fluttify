@@ -5,6 +5,8 @@ import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:flutter/material.dart';
 
 import 'create_map/create_map.screen.dart';
+import 'draw_on_map/draw_point.screen.dart';
+import 'interact_with_map/code_interaction.screen.dart';
 
 class MapDemo extends StatelessWidget {
   @override
@@ -42,8 +44,8 @@ class MapDemo extends StatelessWidget {
             ),
             FunctionItem(
               label: '调用方法交互',
-              sublabel: 'CodeInteractionScreen(TODO)',
-              target: TODOScreen(),
+              sublabel: 'CodeInteractionScreen',
+              target: CodeInteractionScreen(),
             ),
             FunctionItem(
               label: '截图',
@@ -58,8 +60,8 @@ class MapDemo extends StatelessWidget {
           children: <Widget>[
             FunctionItem(
               label: '绘制点标记',
-              sublabel: 'DrawPointScreen(TODO)',
-              target: TODOScreen(),
+              sublabel: 'DrawPointScreen',
+              target: DrawPointScreen(),
             ),
             FunctionItem(
               label: '绘制线',

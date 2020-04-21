@@ -2,10 +2,7 @@ import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 Future<bool> requestPermission() async {
-  final permissions =
-      await PermissionHandler().requestPermissions([PermissionGroup.location]);
-
-  if (permissions[PermissionGroup.location] == PermissionStatus.granted) {
+  if ((await Permission.location.request()).isGranted) {
     return true;
   } else {
     toast('需要定位权限!');

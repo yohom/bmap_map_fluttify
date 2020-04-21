@@ -64,6 +64,100 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 批量添加marker
+  ///
+  /// 根据[options]批量创建Marker
+  Future<List<Marker>> addMarkers(List<MarkerOption> options) async {
+    assert(options != null);
+
+    if (options.isEmpty) return Future.value([]);
+
+    final latBatch = options.map((it) => it.latLng.latitude).toList();
+    final lngBatch = options.map((it) => it.latLng.longitude).toList();
+    final titleBatch = options.map((it) => it.title).toList();
+    final iconDataBatch = <Uint8List>[
+      for (final option in options)
+        if (option.iconUri != null && option.imageConfig != null)
+          await _uri2ImageData(option.imageConfig, option.iconUri)
+    ];
+    final widthBatch = options.map((it) => it.width).toList();
+    final heightBatch = options.map((it) => it.height).toList();
+
+    return platform(
+      android: (pool) async {
+        // 获取地图
+        final map = await androidController.getMap();
+        final latLngBatch = await com_baidu_mapapi_model_LatLng
+            .create_batch__double__double(latBatch, lngBatch);
+        // marker配置
+        final markerOptionBatch = await com_baidu_mapapi_map_MarkerOptions
+            .create_batch__(options.length);
+        // 添加经纬度
+        await markerOptionBatch.position_batch(latLngBatch);
+        // 添加标题
+        await markerOptionBatch.title_batch(titleBatch);
+        // 图片
+        if (iconDataBatch.isNotEmpty) {
+          final bitmapBatch =
+              await android_graphics_Bitmap.create_batch(iconDataBatch);
+          final iconBatch =
+              await com_baidu_mapapi_map_BitmapDescriptorFactory_Batch
+                  .fromBitmap_batch(bitmapBatch);
+          await markerOptionBatch.icon_batch(iconBatch);
+          pool..addAll(bitmapBatch)..addAll(iconBatch);
+        }
+
+        // 添加marker
+        final markers = await map.addOverlays(markerOptionBatch);
+
+        // marker不释放, 还有用
+        pool
+          ..add(map)
+          ..addAll(latLngBatch)
+          ..addAll(markerOptionBatch);
+        return markers.map((it) => Marker.android(it)).toList();
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(
+          _iosMapDelegate.._iosController = iosController,
+        );
+
+        // 创建marker
+        final annotationBatch =
+            await BMKPointAnnotation.create_batch__(options.length);
+        // 经纬度列表
+        final coordinateBatch =
+            await CLLocationCoordinate2D.create_batch(latBatch, lngBatch);
+        // 设置经纬度
+        await annotationBatch.set_coordinate_batch(coordinateBatch);
+        // 设置标题
+        await annotationBatch.set_title_batch(titleBatch);
+        // 设置图片
+        if (iconDataBatch.isNotEmpty) {
+          final iconBatch = await UIImage.create_batch(iconDataBatch);
+          await annotationBatch.addProperty_batch(1, iconBatch);
+          pool.addAll(iconBatch);
+        }
+        // 宽
+        await annotationBatch.addJsonableProperty_batch(8, widthBatch);
+        // 高
+        await annotationBatch.addJsonableProperty_batch(9, heightBatch);
+
+        // 添加marker
+        await iosController.addAnnotations(annotationBatch);
+
+        pool.addAll(coordinateBatch);
+        return [
+          for (int i = 0; i < options.length; i++)
+            Marker.ios(
+              annotationBatch[i] /*, annotationViewList[i]*/,
+              iosController,
+            )
+        ];
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
@@ -92,7 +186,9 @@ class BmapController with WidgetsBindingObserver, _Private {
   }
 }
 
-class _IOSMapDelegate extends NSObject {}
+class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
+  BMKMapView _iosController;
+}
 
 class _AndroidMapDelegate extends java_lang_Object {}
 
