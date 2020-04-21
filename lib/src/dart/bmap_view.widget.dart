@@ -3,8 +3,10 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 
+import 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
+import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

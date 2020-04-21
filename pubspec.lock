@@ -28,7 +28,7 @@ packages:
       name: bmap_core_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.7-dev.1"
+    version: "0.0.7-dev.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "2.1.1"
   core_location_fluttify:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: core_location_fluttify
       url: "https://pub.dartlang.org"

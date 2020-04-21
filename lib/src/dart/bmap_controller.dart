@@ -21,6 +21,49 @@ class BmapController with WidgetsBindingObserver, _Private {
   final _iosMapDelegate = _IOSMapDelegate();
   final _androidMapDelegate = _AndroidMapDelegate();
 
+  /// 设置地图中心点
+  ///
+  /// [coordinate] 经纬度
+  /// [animated] 是否动画
+  Future<void> setCenterCoordinate(
+    LatLng coordinate, {
+    bool animated = true,
+  }) async {
+//    assert(
+//      zoomLevel == null || (zoomLevel >= 3 && zoomLevel <= 19),
+//      '缩放范围为3-19',
+//    );
+    final lat = coordinate.latitude;
+    final lng = coordinate.longitude;
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        final latLng = await com_baidu_mapapi_model_LatLng
+            .create__double__double(lat, lng);
+
+        final mapStatus =
+            await com_baidu_mapapi_map_MapStatusUpdateFactory.newLatLng(latLng);
+
+        if (animated) {
+          await map.animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate(
+              mapStatus);
+        } else {
+          await map.setMapStatus(mapStatus);
+        }
+
+        pool..add(map)..add(latLng)..add(mapStatus);
+      },
+      ios: (pool) async {
+        final latLng = await CLLocationCoordinate2D.create(lat, lng);
+
+        await iosController.setCenterCoordinate_animated(latLng, animated);
+
+        pool..add(latLng);
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
