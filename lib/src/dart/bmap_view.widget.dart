@@ -47,7 +47,7 @@ class _BmapViewState extends State<BmapView> {
           if (widget.onMapCreated != null) {
             await widget.onMapCreated(_controller);
           }
-          await bundle.release();
+          await bundle.release__();
         },
       );
     } else if (Platform.isIOS) {

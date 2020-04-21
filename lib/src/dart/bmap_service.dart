@@ -17,7 +17,7 @@ class BmapService {
       },
       ios: (pool) async {
         final manager = await BMKMapManager.create__();
-        await manager.startGeneralDelegate(iosKey, null);
+        await manager.start_generalDelegate(iosKey, null);
       },
     );
   }

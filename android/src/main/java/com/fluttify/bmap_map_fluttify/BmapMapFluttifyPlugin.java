@@ -32,7 +32,7 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 @SuppressWarnings("ALL")
 public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
 
-    private static final List<Map<String, Handler>> handlerMapList = new ArrayList<>();
+    private static List<Map<String, Handler>> handlerMapList;
 
     // v1 android embedding for compatible
     public static void registerWith(Registrar registrar) {
@@ -47,6 +47,7 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         plugin.messenger = messenger;
         plugin.platformViewRegistry = platformViewRegistry;
 
+        handlerMapList = new ArrayList<>();
         handlerMapList.add(SubHandler0.getSubHandler(messenger));
         handlerMapList.add(SubHandler1.getSubHandler(messenger));
         handlerMapList.add(SubHandler2.getSubHandler(messenger));
@@ -59,6 +60,7 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         handlerMapList.add(SubHandler9.getSubHandler(messenger));
         handlerMapList.add(SubHandler10.getSubHandler(messenger));
         handlerMapList.add(SubHandler11.getSubHandler(messenger));
+        handlerMapList.add(SubHandlerCustom.getSubHandler(messenger));
 
         channel.setMethodCallHandler(plugin);
 
@@ -74,11 +76,16 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
     // v2 android embedding
     @Override
     public void onAttachedToEngine(FlutterPluginBinding binding) {
+        if (getEnableLog()) {
+            Log.d("fluttify-java", "BmapMapFluttifyPlugin::onAttachedToEngine@" + binding);
+        }
+
         final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), "com.fluttify/bmap_map_fluttify");
 
         messenger = binding.getBinaryMessenger();
         platformViewRegistry = binding.getPlatformViewRegistry();
 
+        handlerMapList = new ArrayList<>();
         handlerMapList.add(SubHandler0.getSubHandler(messenger));
         handlerMapList.add(SubHandler1.getSubHandler(messenger));
         handlerMapList.add(SubHandler2.getSubHandler(messenger));
@@ -91,17 +98,23 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         handlerMapList.add(SubHandler9.getSubHandler(messenger));
         handlerMapList.add(SubHandler10.getSubHandler(messenger));
         handlerMapList.add(SubHandler11.getSubHandler(messenger));
+        handlerMapList.add(SubHandlerCustom.getSubHandler(messenger));
 
         channel.setMethodCallHandler(this);
     }
 
     @Override
     public void onDetachedFromEngine(FlutterPluginBinding binding) {
-
+        if (getEnableLog()) {
+            Log.d("fluttify-java", "BmapMapFluttifyPlugin::onDetachedFromEngine@" + binding);
+        }
     }
 
     @Override
     public void onAttachedToActivity(ActivityPluginBinding binding) {
+        if (getEnableLog()) {
+            Log.d("fluttify-java", "BmapMapFluttifyPlugin::onAttachedToActivity@" + binding);
+        }
         Activity activity = binding.getActivity();
 
         // register platform view
@@ -111,13 +124,25 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
     }
 
     @Override
-    public void onDetachedFromActivityForConfigChanges() { }
+    public void onDetachedFromActivity() {
+        if (getEnableLog()) {
+            Log.d("fluttify-java", "BmapMapFluttifyPlugin::onDetachedFromActivity");
+        }
+    }
 
     @Override
-    public void onReattachedToActivityForConfigChanges(ActivityPluginBinding binding) { }
+    public void onReattachedToActivityForConfigChanges(ActivityPluginBinding binding) {
+        if (getEnableLog()) {
+            Log.d("fluttify-java", "BmapMapFluttifyPlugin::onReattachedToActivityForConfigChanges@" + binding);
+        }
+    }
 
     @Override
-    public void onDetachedFromActivity() { }
+    public void onDetachedFromActivityForConfigChanges() {
+        if (getEnableLog()) {
+            Log.d("fluttify-java", "BmapMapFluttifyPlugin::onDetachedFromActivityForConfigChanges");
+        }
+    }
 
     @Override
     public void onMethodCall(@NonNull MethodCall methodCall, @NonNull MethodChannel.Result methodResult) {

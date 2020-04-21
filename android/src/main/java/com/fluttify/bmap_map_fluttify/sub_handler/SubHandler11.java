@@ -31,64 +31,1393 @@ public class SubHandler11 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // factory
-            put("ObjectFactory::create_batchcom_baidu_mapapi_animation_AnimationSet__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("ObjectFactory::createcom_baidu_mapapi_map_WinRound__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WinRound__");
+                }
             
-                int length = 0;
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.WinRound __obj__ = new com.baidu.mapapi.map.WinRound();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_Gradient__intArray__floatArray", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_Gradient__intArray__floatArray");
+                }
+            
+                // args
+                // jsonable arg
+                int[] var1 = (int[]) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                float[] var2 = (float[]) ((Map<String, Object>) args).get("var2");
+            
+                // create target object
+                com.baidu.mapapi.map.Gradient __obj__ = new com.baidu.mapapi.map.Gradient(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_GroundOverlayOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_GroundOverlayOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.GroundOverlayOptions __obj__ = new com.baidu.mapapi.map.GroundOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_MarkerOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MarkerOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.MarkerOptions __obj__ = new com.baidu.mapapi.map.MarkerOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_MapCustomStyleOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapCustomStyleOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.MapCustomStyleOptions __obj__ = new com.baidu.mapapi.map.MapCustomStyleOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_Stroke__int__int", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_Stroke__int__int");
+                }
+            
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                int var2 = (int) ((Map<String, Object>) args).get("var2");
+            
+                // create target object
+                com.baidu.mapapi.map.Stroke __obj__ = new com.baidu.mapapi.map.Stroke(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_PolygonOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_PolygonOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.PolygonOptions __obj__ = new com.baidu.mapapi.map.PolygonOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double");
+                }
+            
+                // args
+                // ref arg
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // jsonable arg
+                double var2 = (double) ((Map<String, Object>) args).get("var2");
+            
+                // create target object
+                com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng");
+                }
+            
+                // args
+                // ref arg
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+            
+                // create target object
+                com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View");
+                }
+            
+                // args
+                // ref arg
+                android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                android.view.View var2 = (android.view.View) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+            
+                // create target object
+                com.baidu.mapapi.map.SwipeDismissView __obj__ = new com.baidu.mapapi.map.SwipeDismissView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_ArcOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_ArcOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.ArcOptions __obj__ = new com.baidu.mapapi.map.ArcOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int");
+                }
+            
+                // args
+                // ref arg
+                android.view.View var1 = (android.view.View) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                com.baidu.mapapi.model.LatLng var2 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+                // jsonable arg
+                int var3 = (int) ((Map<String, Object>) args).get("var3");
+            
+                // create target object
+                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int__boolean__int", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int__boolean__int");
+                }
+            
+                // args
+                // ref arg
+                android.view.View var1 = (android.view.View) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                com.baidu.mapapi.model.LatLng var2 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+                // jsonable arg
+                int var3 = (int) ((Map<String, Object>) args).get("var3");
+                // jsonable arg
+                boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
+                // jsonable arg
+                int var5 = (int) ((Map<String, Object>) args).get("var5");
+            
+                // create target object
+                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3, var4, var5);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_CircleOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_CircleOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.CircleOptions __obj__ = new com.baidu.mapapi.map.CircleOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_ItemizedOverlay__android_graphics_drawable_Drawable__com_baidu_mapapi_map_MapView", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_ItemizedOverlay__android_graphics_drawable_Drawable__com_baidu_mapapi_map_MapView");
+                }
+            
+                // args
+                // ref arg
+                android.graphics.drawable.Drawable var1 = (android.graphics.drawable.Drawable) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                com.baidu.mapapi.map.MapView var2 = (com.baidu.mapapi.map.MapView) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+            
+                // create target object
+                com.baidu.mapapi.map.ItemizedOverlay __obj__ = new com.baidu.mapapi.map.ItemizedOverlay(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TextureMapView__android_content_Context");
+                }
+            
+                // args
+                // ref arg
+                android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+            
+                // create target object
+                com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions");
+                }
+            
+                // args
+                // ref arg
+                android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+            
+                // create target object
+                com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_HoleOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_HoleOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.HoleOptions __obj__ = new com.baidu.mapapi.map.HoleOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_TileOverlayOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TileOverlayOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.TileOverlayOptions __obj__ = new com.baidu.mapapi.map.TileOverlayOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_BaiduMapOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_BaiduMapOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.BaiduMapOptions __obj__ = new com.baidu.mapapi.map.BaiduMapOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WearMapView__android_content_Context");
+                }
+            
+                // args
+                // ref arg
+                android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+            
+                // create target object
+                com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions");
+                }
+            
+                // args
+                // ref arg
+                android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+            
+                // create target object
+                com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_TextOptions__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TextOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.TextOptions __obj__ = new com.baidu.mapapi.map.TextOptions();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLUpdateElement__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_MKOLUpdateElement__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.offline.MKOLUpdateElement __obj__ = new com.baidu.mapapi.map.offline.MKOLUpdateElement();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_offline_OfflineMapUtil__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_OfflineMapUtil__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.offline.OfflineMapUtil __obj__ = new com.baidu.mapapi.map.offline.OfflineMapUtil();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLSearchRecord__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_MKOLSearchRecord__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.offline.MKOLSearchRecord __obj__ = new com.baidu.mapapi.map.offline.MKOLSearchRecord();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOfflineMap__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_MKOfflineMap__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.offline.MKOfflineMap __obj__ = new com.baidu.mapapi.map.offline.MKOfflineMap();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_MapView__android_content_Context", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapView__android_content_Context");
+                }
+            
+                // args
+                // ref arg
+                android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+            
+                // create target object
+                com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_MapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions");
+                }
+            
+                // args
+                // ref arg
+                android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                // ref arg
+                com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
+            
+                // create target object
+                com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_http_AsyncHttpClient__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_http_AsyncHttpClient__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.http.AsyncHttpClient __obj__ = new com.baidu.mapapi.http.AsyncHttpClient();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_UIMsg_NetDetectedType__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_UIMsg_NetDetectedType__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.UIMsg.NetDetectedType __obj__ = new com.baidu.mapapi.UIMsg.NetDetectedType();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_LatLngBounds_Builder__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_LatLngBounds_Builder__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.LatLngBounds.Builder __obj__ = new com.baidu.mapapi.model.LatLngBounds.Builder();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_Point__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_Point__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_Point__int__int", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_Point__int__int");
+                }
+            
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                int var2 = (int) ((Map<String, Object>) args).get("var2");
+            
+                // create target object
+                com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point(var1, var2);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_MapBound__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_MapBound__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.inner.MapBound __obj__ = new com.baidu.mapapi.model.inner.MapBound();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_GeoPoint__double__double", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_GeoPoint__double__double");
+                }
+            
+                // args
+                // jsonable arg
+                double var1 = (double) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                double var3 = (double) ((Map<String, Object>) args).get("var3");
+            
+                // create target object
+                com.baidu.mapapi.model.inner.GeoPoint __obj__ = new com.baidu.mapapi.model.inner.GeoPoint(var1, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_LatLng__double__double", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_LatLng__double__double");
+                }
+            
+                // args
+                // jsonable arg
+                double var1 = (double) ((Map<String, Object>) args).get("var1");
+                // jsonable arg
+                double var3 = (double) ((Map<String, Object>) args).get("var3");
+            
+                // create target object
+                com.baidu.mapapi.model.LatLng __obj__ = new com.baidu.mapapi.model.LatLng(var1, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_CoordUtil__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_CoordUtil__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.CoordUtil __obj__ = new com.baidu.mapapi.model.CoordUtil();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_ParcelItem__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_ParcelItem__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.ParcelItem __obj__ = new com.baidu.mapapi.model.ParcelItem();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_VersionInfo__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_VersionInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.VersionInfo __obj__ = new com.baidu.mapapi.VersionInfo();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_JNIInitializer__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_JNIInitializer__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.JNIInitializer __obj__ = new com.baidu.mapapi.JNIInitializer();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkvi_VDeviceAPI__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkvi_VDeviceAPI__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkvi.VDeviceAPI __obj__ = new com.baidu.mapsdkvi.VDeviceAPI();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkvi_VMsg__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkvi_VMsg__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkvi.VMsg __obj__ = new com.baidu.mapsdkvi.VMsg();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_android_bbalbs_common_util_CommonParam__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_android_bbalbs_common_util_CommonParam__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.android.bbalbs.common.util.CommonParam __obj__ = new com.baidu.android.bbalbs.common.util.CommonParam();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_tools_ParcelItem__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_tools_ParcelItem__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.tools.ParcelItem __obj__ = new com.baidu.mapsdkplatform.comjni.tools.ParcelItem();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_tools_BundleKeySet__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_tools_BundleKeySet__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.tools.BundleKeySet __obj__ = new com.baidu.mapsdkplatform.comjni.tools.BundleKeySet();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_util_AppMD5__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_util_AppMD5__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.util.AppMD5 __obj__ = new com.baidu.mapsdkplatform.comjni.util.AppMD5();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback __obj__ = new com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap __obj__ = new com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache __obj__ = new com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite __obj__ = new com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comjni_engine_AppEngine__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comjni_engine_AppEngine__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comjni.engine.AppEngine __obj__ = new com.baidu.mapsdkplatform.comjni.engine.AppEngine();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_util_CoordTrans__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_util_CoordTrans__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.util.CoordTrans __obj__ = new com.baidu.mapsdkplatform.comapi.util.CoordTrans();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_util_SyncSysInfo__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_util_SyncSysInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.util.SyncSysInfo __obj__ = new com.baidu.mapsdkplatform.comapi.util.SyncSysInfo();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_util_PermissionCheck__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_util_PermissionCheck__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.util.PermissionCheck __obj__ = new com.baidu.mapsdkplatform.comapi.util.PermissionCheck();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.favrite.FavSyncPoi __obj__ = new com.baidu.mapsdkplatform.comapi.favrite.FavSyncPoi();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_location_CoordinateType__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_location_CoordinateType__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.location.CoordinateType __obj__ = new com.baidu.mapsdkplatform.comapi.location.CoordinateType();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_map_MessageCenter__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_map_MessageCenter__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.map.MessageCenter __obj__ = new com.baidu.mapsdkplatform.comapi.map.MessageCenter();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_map_VersionInfo__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_map_VersionInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.map.VersionInfo __obj__ = new com.baidu.mapsdkplatform.comapi.map.VersionInfo();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil__", (args, methodResult) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapsdkplatform.comapi.commonutils.SysUpdateUtil __obj__ = new com.baidu.mapsdkplatform.comapi.commonutils.SysUpdateUtil();
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                methodResult.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_baidu_mapapi_UIMsg__", (argsBatch, methodResult) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.animation.AnimationSet obj = new com.baidu.mapapi.animation.AnimationSet();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.UIMsg __obj__ = new com.baidu.mapapi.UIMsg();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
-            put("ObjectFactory::create_batchcom_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("ObjectFactory::create_batchcom_baidu_mapapi_NetworkUtil__", (argsBatch, methodResult) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.baidu.mapapi.NetworkUtil __obj__ = new com.baidu.mapapi.NetworkUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(System.identityHashCode(__obj__));
+                }
+            
+                methodResult.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_baidu_mapapi_animation_AnimationSet__", (argsBatch, methodResult) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (argsBatch instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                }
+                // or directly put the arg batch
+                else if (argsBatch instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> args = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (argsBatch instanceof List) {
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                    }
+            
+                    // args
+            
+            
+                    // create target object
+                    com.baidu.mapapi.animation.AnimationSet __obj__ = new com.baidu.mapapi.animation.AnimationSet();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                    // print current HEAP
+                    if (getEnableLog()) {
+                        Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                    }
+            
+                    __resultList__.add(System.identityHashCode(__obj__));
+                }
+            
+                methodResult.success(__resultList__);
+            });
+            // factory
+            put("ObjectFactory::create_batchcom_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng", (argsBatch, methodResult) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                int __length__ = 0;
+                // when batch size is 0, dart side will put a map with key 'length' to indicate the length
+                // of this batch
+                if (argsBatch instanceof Map) {
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                }
+                // or directly put the arg batch
+                else if (argsBatch instanceof List) {
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
+                }
+            
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
+                    Map<String, Object> args = new HashMap<>();
+                    // only when arg batch is not empty, java side needs to parse args;
+                    if (argsBatch instanceof List) {
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -96,39 +1425,39 @@ public class SubHandler11 {
                     com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.baidu.mapapi.animation.Transformation obj = new com.baidu.mapapi.animation.Transformation(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_animation_Transformation__android_graphics_Point", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -136,39 +1465,39 @@ public class SubHandler11 {
                     android.graphics.Point var1 = (android.graphics.Point) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.baidu.mapapi.animation.Transformation obj = new com.baidu.mapapi.animation.Transformation(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_animation_RotateAnimation__float__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -178,39 +1507,39 @@ public class SubHandler11 {
                     Double var2 = (Double) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.baidu.mapapi.animation.RotateAnimation obj = new com.baidu.mapapi.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.animation.RotateAnimation __obj__ = new com.baidu.mapapi.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_animation_AlphaAnimation__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -218,39 +1547,39 @@ public class SubHandler11 {
                     Double var1 = (Double) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.baidu.mapapi.animation.AlphaAnimation obj = new com.baidu.mapapi.animation.AlphaAnimation(new Double(var1).floatValue());
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.animation.AlphaAnimation __obj__ = new com.baidu.mapapi.animation.AlphaAnimation(new Double(var1).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_animation_ScaleAnimation__float", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -258,78 +1587,78 @@ public class SubHandler11 {
                     Double var1 = (Double) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.baidu.mapapi.animation.ScaleAnimation obj = new com.baidu.mapapi.animation.ScaleAnimation(new Double(var1).floatValue());
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.animation.ScaleAnimation __obj__ = new com.baidu.mapapi.animation.ScaleAnimation(new Double(var1).floatValue());
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException obj = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException __obj__ = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -337,156 +1666,156 @@ public class SubHandler11 {
                     String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException obj = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException __obj__ = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_navi_NaviParaOption__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.navi.NaviParaOption obj = new com.baidu.mapapi.navi.NaviParaOption();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.navi.NaviParaOption __obj__ = new com.baidu.mapapi.navi.NaviParaOption();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_navi_BaiduMapNavigation__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.navi.BaiduMapNavigation obj = new com.baidu.mapapi.navi.BaiduMapNavigation();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.navi.BaiduMapNavigation __obj__ = new com.baidu.mapapi.navi.BaiduMapNavigation();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_navi_IllegalNaviArgumentException__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.navi.IllegalNaviArgumentException obj = new com.baidu.mapapi.navi.IllegalNaviArgumentException();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.navi.IllegalNaviArgumentException __obj__ = new com.baidu.mapapi.navi.IllegalNaviArgumentException();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_navi_IllegalNaviArgumentException__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -494,156 +1823,156 @@ public class SubHandler11 {
                     String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.baidu.mapapi.navi.IllegalNaviArgumentException obj = new com.baidu.mapapi.navi.IllegalNaviArgumentException(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.navi.IllegalNaviArgumentException __obj__ = new com.baidu.mapapi.navi.IllegalNaviArgumentException(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_favorite_FavoritePoiInfo__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.favorite.FavoritePoiInfo obj = new com.baidu.mapapi.favorite.FavoritePoiInfo();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.favorite.FavoritePoiInfo __obj__ = new com.baidu.mapapi.favorite.FavoritePoiInfo();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_route_BaiduMapRoutePlan__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.route.BaiduMapRoutePlan obj = new com.baidu.mapapi.utils.route.BaiduMapRoutePlan();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.route.BaiduMapRoutePlan __obj__ = new com.baidu.mapapi.utils.route.BaiduMapRoutePlan();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException obj = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException __obj__ = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -651,312 +1980,312 @@ public class SubHandler11 {
                     String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException obj = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException __obj__ = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_route_RouteParaOption__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.route.RouteParaOption obj = new com.baidu.mapapi.utils.route.RouteParaOption();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.route.RouteParaOption __obj__ = new com.baidu.mapapi.utils.route.RouteParaOption();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_DistanceUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.DistanceUtil obj = new com.baidu.mapapi.utils.DistanceUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.DistanceUtil __obj__ = new com.baidu.mapapi.utils.DistanceUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_SpatialRelationUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.SpatialRelationUtil obj = new com.baidu.mapapi.utils.SpatialRelationUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.SpatialRelationUtil __obj__ = new com.baidu.mapapi.utils.SpatialRelationUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_CoordinateConverter__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.CoordinateConverter obj = new com.baidu.mapapi.utils.CoordinateConverter();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.CoordinateConverter __obj__ = new com.baidu.mapapi.utils.CoordinateConverter();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_poi_PoiParaOption__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.poi.PoiParaOption obj = new com.baidu.mapapi.utils.poi.PoiParaOption();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.poi.PoiParaOption __obj__ = new com.baidu.mapapi.utils.poi.PoiParaOption();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_poi_DispathcPoiData__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.poi.DispathcPoiData obj = new com.baidu.mapapi.utils.poi.DispathcPoiData();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.poi.DispathcPoiData __obj__ = new com.baidu.mapapi.utils.poi.DispathcPoiData();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException obj = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException __obj__ = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -964,390 +2293,390 @@ public class SubHandler11 {
                     String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException obj = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException __obj__ = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.poi.BaiduMapPoiSearch obj = new com.baidu.mapapi.utils.poi.BaiduMapPoiSearch();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.poi.BaiduMapPoiSearch __obj__ = new com.baidu.mapapi.utils.poi.BaiduMapPoiSearch();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_OpenClientUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.OpenClientUtil obj = new com.baidu.mapapi.utils.OpenClientUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.OpenClientUtil __obj__ = new com.baidu.mapapi.utils.OpenClientUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_utils_AreaUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.utils.AreaUtil obj = new com.baidu.mapapi.utils.AreaUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.utils.AreaUtil __obj__ = new com.baidu.mapapi.utils.AreaUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_UIMsg_WalkNaviMsg__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.UIMsg.WalkNaviMsg obj = new com.baidu.mapapi.UIMsg.WalkNaviMsg();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.UIMsg.WalkNaviMsg __obj__ = new com.baidu.mapapi.UIMsg.WalkNaviMsg();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_BMapManager__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.BMapManager obj = new com.baidu.mapapi.BMapManager();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.BMapManager __obj__ = new com.baidu.mapapi.BMapManager();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_OpenLogUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.OpenLogUtil obj = new com.baidu.mapapi.OpenLogUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.OpenLogUtil __obj__ = new com.baidu.mapapi.OpenLogUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_common_SysOSUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.common.SysOSUtil obj = new com.baidu.mapapi.common.SysOSUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.common.SysOSUtil __obj__ = new com.baidu.mapapi.common.SysOSUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_common_Logger__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.common.Logger obj = new com.baidu.mapapi.common.Logger();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.common.Logger __obj__ = new com.baidu.mapapi.common.Logger();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_common_BaiduMapSDKException__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.common.BaiduMapSDKException obj = new com.baidu.mapapi.common.BaiduMapSDKException();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.common.BaiduMapSDKException __obj__ = new com.baidu.mapapi.common.BaiduMapSDKException();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_common_BaiduMapSDKException__String", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -1355,468 +2684,468 @@ public class SubHandler11 {
                     String var1 = (String) ((Map<String, Object>) args).get("var1");
             
                     // create target object
-                    com.baidu.mapapi.common.BaiduMapSDKException obj = new com.baidu.mapapi.common.BaiduMapSDKException(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.common.BaiduMapSDKException __obj__ = new com.baidu.mapapi.common.BaiduMapSDKException(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_common_EnvironmentUtilities__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.common.EnvironmentUtilities obj = new com.baidu.mapapi.common.EnvironmentUtilities();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.common.EnvironmentUtilities __obj__ = new com.baidu.mapapi.common.EnvironmentUtilities();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_common_AppTools__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.common.AppTools obj = new com.baidu.mapapi.common.AppTools();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.common.AppTools __obj__ = new com.baidu.mapapi.common.AppTools();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_HeatMap_Builder__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.HeatMap.Builder obj = new com.baidu.mapapi.map.HeatMap.Builder();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.HeatMap.Builder __obj__ = new com.baidu.mapapi.map.HeatMap.Builder();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_PolygonHoleOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.PolygonHoleOptions obj = new com.baidu.mapapi.map.PolygonHoleOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.PolygonHoleOptions __obj__ = new com.baidu.mapapi.map.PolygonHoleOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_CircleHoleOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.CircleHoleOptions obj = new com.baidu.mapapi.map.CircleHoleOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.CircleHoleOptions __obj__ = new com.baidu.mapapi.map.CircleHoleOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_MapPoi__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.MapPoi obj = new com.baidu.mapapi.map.MapPoi();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.MapPoi __obj__ = new com.baidu.mapapi.map.MapPoi();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_BitmapDescriptorFactory__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.BitmapDescriptorFactory obj = new com.baidu.mapapi.map.BitmapDescriptorFactory();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.BitmapDescriptorFactory __obj__ = new com.baidu.mapapi.map.BitmapDescriptorFactory();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_MapViewLayoutParams_Builder__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.MapViewLayoutParams.Builder obj = new com.baidu.mapapi.map.MapViewLayoutParams.Builder();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.MapViewLayoutParams.Builder __obj__ = new com.baidu.mapapi.map.MapViewLayoutParams.Builder();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_DotOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.DotOptions obj = new com.baidu.mapapi.map.DotOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.DotOptions __obj__ = new com.baidu.mapapi.map.DotOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_MyLocationData_Builder__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.MyLocationData.Builder obj = new com.baidu.mapapi.map.MyLocationData.Builder();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.MyLocationData.Builder __obj__ = new com.baidu.mapapi.map.MyLocationData.Builder();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_PolylineOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.PolylineOptions obj = new com.baidu.mapapi.map.PolylineOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.PolylineOptions __obj__ = new com.baidu.mapapi.map.PolylineOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_Tile__int__int__byteArray", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -1828,78 +3157,78 @@ public class SubHandler11 {
                     byte[] var3 = (byte[]) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.baidu.mapapi.map.Tile obj = new com.baidu.mapapi.map.Tile(var1, var2, var3);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.Tile __obj__ = new com.baidu.mapapi.map.Tile(var1, var2, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_WinRound__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.WinRound obj = new com.baidu.mapapi.map.WinRound();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.WinRound __obj__ = new com.baidu.mapapi.map.WinRound();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_Gradient__intArray__floatArray", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -1909,156 +3238,156 @@ public class SubHandler11 {
                     float[] var2 = (float[]) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.baidu.mapapi.map.Gradient obj = new com.baidu.mapapi.map.Gradient(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.Gradient __obj__ = new com.baidu.mapapi.map.Gradient(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_GroundOverlayOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.GroundOverlayOptions obj = new com.baidu.mapapi.map.GroundOverlayOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.GroundOverlayOptions __obj__ = new com.baidu.mapapi.map.GroundOverlayOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_MarkerOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.MarkerOptions obj = new com.baidu.mapapi.map.MarkerOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.MarkerOptions __obj__ = new com.baidu.mapapi.map.MarkerOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_MapCustomStyleOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.MapCustomStyleOptions obj = new com.baidu.mapapi.map.MapCustomStyleOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.MapCustomStyleOptions __obj__ = new com.baidu.mapapi.map.MapCustomStyleOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_Stroke__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2068,78 +3397,78 @@ public class SubHandler11 {
                     int var2 = (int) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.baidu.mapapi.map.Stroke obj = new com.baidu.mapapi.map.Stroke(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.Stroke __obj__ = new com.baidu.mapapi.map.Stroke(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_PolygonOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.PolygonOptions obj = new com.baidu.mapapi.map.PolygonOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.PolygonOptions __obj__ = new com.baidu.mapapi.map.PolygonOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2149,39 +3478,39 @@ public class SubHandler11 {
                     double var2 = (double) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.baidu.mapapi.map.WeightedLatLng obj = new com.baidu.mapapi.map.WeightedLatLng(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2189,39 +3518,39 @@ public class SubHandler11 {
                     com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.baidu.mapapi.map.WeightedLatLng obj = new com.baidu.mapapi.map.WeightedLatLng(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2231,78 +3560,78 @@ public class SubHandler11 {
                     android.view.View var2 = (android.view.View) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                     // create target object
-                    com.baidu.mapapi.map.SwipeDismissView obj = new com.baidu.mapapi.map.SwipeDismissView(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.SwipeDismissView __obj__ = new com.baidu.mapapi.map.SwipeDismissView(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_ArcOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.ArcOptions obj = new com.baidu.mapapi.map.ArcOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.ArcOptions __obj__ = new com.baidu.mapapi.map.ArcOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2314,39 +3643,39 @@ public class SubHandler11 {
                     int var3 = (int) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.baidu.mapapi.map.InfoWindow obj = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int__boolean__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2362,78 +3691,78 @@ public class SubHandler11 {
                     int var5 = (int) ((Map<String, Object>) args).get("var5");
             
                     // create target object
-                    com.baidu.mapapi.map.InfoWindow obj = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3, var4, var5);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3, var4, var5);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_CircleOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.CircleOptions obj = new com.baidu.mapapi.map.CircleOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.CircleOptions __obj__ = new com.baidu.mapapi.map.CircleOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_ItemizedOverlay__android_graphics_drawable_Drawable__com_baidu_mapapi_map_MapView", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2443,39 +3772,39 @@ public class SubHandler11 {
                     com.baidu.mapapi.map.MapView var2 = (com.baidu.mapapi.map.MapView) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                     // create target object
-                    com.baidu.mapapi.map.ItemizedOverlay obj = new com.baidu.mapapi.map.ItemizedOverlay(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.ItemizedOverlay __obj__ = new com.baidu.mapapi.map.ItemizedOverlay(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_TextureMapView__android_content_Context", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2483,39 +3812,39 @@ public class SubHandler11 {
                     android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.baidu.mapapi.map.TextureMapView obj = new com.baidu.mapapi.map.TextureMapView(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2525,156 +3854,156 @@ public class SubHandler11 {
                     com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                     // create target object
-                    com.baidu.mapapi.map.TextureMapView obj = new com.baidu.mapapi.map.TextureMapView(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_HoleOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.HoleOptions obj = new com.baidu.mapapi.map.HoleOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.HoleOptions __obj__ = new com.baidu.mapapi.map.HoleOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_TileOverlayOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.TileOverlayOptions obj = new com.baidu.mapapi.map.TileOverlayOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.TileOverlayOptions __obj__ = new com.baidu.mapapi.map.TileOverlayOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_BaiduMapOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.BaiduMapOptions obj = new com.baidu.mapapi.map.BaiduMapOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.BaiduMapOptions __obj__ = new com.baidu.mapapi.map.BaiduMapOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_WearMapView__android_content_Context", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2682,39 +4011,39 @@ public class SubHandler11 {
                     android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.baidu.mapapi.map.WearMapView obj = new com.baidu.mapapi.map.WearMapView(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2724,234 +4053,234 @@ public class SubHandler11 {
                     com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                     // create target object
-                    com.baidu.mapapi.map.WearMapView obj = new com.baidu.mapapi.map.WearMapView(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_TextOptions__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.TextOptions obj = new com.baidu.mapapi.map.TextOptions();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.TextOptions __obj__ = new com.baidu.mapapi.map.TextOptions();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_offline_MKOLUpdateElement__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.offline.MKOLUpdateElement obj = new com.baidu.mapapi.map.offline.MKOLUpdateElement();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.offline.MKOLUpdateElement __obj__ = new com.baidu.mapapi.map.offline.MKOLUpdateElement();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_offline_OfflineMapUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.offline.OfflineMapUtil obj = new com.baidu.mapapi.map.offline.OfflineMapUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.offline.OfflineMapUtil __obj__ = new com.baidu.mapapi.map.offline.OfflineMapUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_offline_MKOLSearchRecord__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.offline.MKOLSearchRecord obj = new com.baidu.mapapi.map.offline.MKOLSearchRecord();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.offline.MKOLSearchRecord __obj__ = new com.baidu.mapapi.map.offline.MKOLSearchRecord();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_offline_MKOfflineMap__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.map.offline.MKOfflineMap obj = new com.baidu.mapapi.map.offline.MKOfflineMap();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.offline.MKOfflineMap __obj__ = new com.baidu.mapapi.map.offline.MKOfflineMap();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_MapView__android_content_Context", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -2959,39 +4288,39 @@ public class SubHandler11 {
                     android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
             
                     // create target object
-                    com.baidu.mapapi.map.MapView obj = new com.baidu.mapapi.map.MapView(var1);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_map_MapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -3001,195 +4330,195 @@ public class SubHandler11 {
                     com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
             
                     // create target object
-                    com.baidu.mapapi.map.MapView obj = new com.baidu.mapapi.map.MapView(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_http_AsyncHttpClient__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.http.AsyncHttpClient obj = new com.baidu.mapapi.http.AsyncHttpClient();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.http.AsyncHttpClient __obj__ = new com.baidu.mapapi.http.AsyncHttpClient();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_UIMsg_NetDetectedType__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.UIMsg.NetDetectedType obj = new com.baidu.mapapi.UIMsg.NetDetectedType();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.UIMsg.NetDetectedType __obj__ = new com.baidu.mapapi.UIMsg.NetDetectedType();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_LatLngBounds_Builder__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.model.LatLngBounds.Builder obj = new com.baidu.mapapi.model.LatLngBounds.Builder();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.LatLngBounds.Builder __obj__ = new com.baidu.mapapi.model.LatLngBounds.Builder();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_inner_Point__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.model.inner.Point obj = new com.baidu.mapapi.model.inner.Point();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_inner_Point__int__int", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -3199,78 +4528,78 @@ public class SubHandler11 {
                     int var2 = (int) ((Map<String, Object>) args).get("var2");
             
                     // create target object
-                    com.baidu.mapapi.model.inner.Point obj = new com.baidu.mapapi.model.inner.Point(var1, var2);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point(var1, var2);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_inner_MapBound__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.model.inner.MapBound obj = new com.baidu.mapapi.model.inner.MapBound();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.inner.MapBound __obj__ = new com.baidu.mapapi.model.inner.MapBound();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_inner_GeoPoint__double__double", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -3280,39 +4609,39 @@ public class SubHandler11 {
                     double var3 = (double) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.baidu.mapapi.model.inner.GeoPoint obj = new com.baidu.mapapi.model.inner.GeoPoint(var1, var3);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.inner.GeoPoint __obj__ = new com.baidu.mapapi.model.inner.GeoPoint(var1, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_LatLng__double__double", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
@@ -3322,915 +4651,915 @@ public class SubHandler11 {
                     double var3 = (double) ((Map<String, Object>) args).get("var3");
             
                     // create target object
-                    com.baidu.mapapi.model.LatLng obj = new com.baidu.mapapi.model.LatLng(var1, var3);
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.LatLng __obj__ = new com.baidu.mapapi.model.LatLng(var1, var3);
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_CoordUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.model.CoordUtil obj = new com.baidu.mapapi.model.CoordUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.CoordUtil __obj__ = new com.baidu.mapapi.model.CoordUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_model_ParcelItem__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.model.ParcelItem obj = new com.baidu.mapapi.model.ParcelItem();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.model.ParcelItem __obj__ = new com.baidu.mapapi.model.ParcelItem();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_VersionInfo__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.VersionInfo obj = new com.baidu.mapapi.VersionInfo();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.VersionInfo __obj__ = new com.baidu.mapapi.VersionInfo();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapapi_JNIInitializer__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapapi.JNIInitializer obj = new com.baidu.mapapi.JNIInitializer();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapapi.JNIInitializer __obj__ = new com.baidu.mapapi.JNIInitializer();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkvi_VDeviceAPI__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkvi.VDeviceAPI obj = new com.baidu.mapsdkvi.VDeviceAPI();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkvi.VDeviceAPI __obj__ = new com.baidu.mapsdkvi.VDeviceAPI();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkvi_VMsg__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkvi.VMsg obj = new com.baidu.mapsdkvi.VMsg();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkvi.VMsg __obj__ = new com.baidu.mapsdkvi.VMsg();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_android_bbalbs_common_util_CommonParam__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.android.bbalbs.common.util.CommonParam obj = new com.baidu.android.bbalbs.common.util.CommonParam();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.android.bbalbs.common.util.CommonParam __obj__ = new com.baidu.android.bbalbs.common.util.CommonParam();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_tools_ParcelItem__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.tools.ParcelItem obj = new com.baidu.mapsdkplatform.comjni.tools.ParcelItem();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.tools.ParcelItem __obj__ = new com.baidu.mapsdkplatform.comjni.tools.ParcelItem();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_tools_BundleKeySet__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.tools.BundleKeySet obj = new com.baidu.mapsdkplatform.comjni.tools.BundleKeySet();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.tools.BundleKeySet __obj__ = new com.baidu.mapsdkplatform.comjni.tools.BundleKeySet();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_util_AppMD5__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.util.AppMD5 obj = new com.baidu.mapsdkplatform.comjni.util.AppMD5();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.util.AppMD5 __obj__ = new com.baidu.mapsdkplatform.comjni.util.AppMD5();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback obj = new com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback __obj__ = new com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap obj = new com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap __obj__ = new com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache obj = new com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache __obj__ = new com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite obj = new com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite __obj__ = new com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comjni_engine_AppEngine__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comjni.engine.AppEngine obj = new com.baidu.mapsdkplatform.comjni.engine.AppEngine();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comjni.engine.AppEngine __obj__ = new com.baidu.mapsdkplatform.comjni.engine.AppEngine();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_util_CoordTrans__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.util.CoordTrans obj = new com.baidu.mapsdkplatform.comapi.util.CoordTrans();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.util.CoordTrans __obj__ = new com.baidu.mapsdkplatform.comapi.util.CoordTrans();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_util_SyncSysInfo__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.util.SyncSysInfo obj = new com.baidu.mapsdkplatform.comapi.util.SyncSysInfo();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.util.SyncSysInfo __obj__ = new com.baidu.mapsdkplatform.comapi.util.SyncSysInfo();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_util_PermissionCheck__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.util.PermissionCheck obj = new com.baidu.mapsdkplatform.comapi.util.PermissionCheck();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.util.PermissionCheck __obj__ = new com.baidu.mapsdkplatform.comapi.util.PermissionCheck();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.favrite.FavSyncPoi obj = new com.baidu.mapsdkplatform.comapi.favrite.FavSyncPoi();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.favrite.FavSyncPoi __obj__ = new com.baidu.mapsdkplatform.comapi.favrite.FavSyncPoi();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_location_CoordinateType__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.location.CoordinateType obj = new com.baidu.mapsdkplatform.comapi.location.CoordinateType();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.location.CoordinateType __obj__ = new com.baidu.mapsdkplatform.comapi.location.CoordinateType();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_map_MessageCenter__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.map.MessageCenter obj = new com.baidu.mapsdkplatform.comapi.map.MessageCenter();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.map.MessageCenter __obj__ = new com.baidu.mapsdkplatform.comapi.map.MessageCenter();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_map_VersionInfo__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.map.VersionInfo obj = new com.baidu.mapsdkplatform.comapi.map.VersionInfo();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.map.VersionInfo __obj__ = new com.baidu.mapsdkplatform.comapi.map.VersionInfo();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
             // factory
             put("ObjectFactory::create_batchcom_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil__", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                int length = 0;
+                int __length__ = 0;
                 // when batch size is 0, dart side will put a map with key 'length' to indicate the length
                 // of this batch
                 if (argsBatch instanceof Map) {
-                    length = (Integer) ((Map<String, Object>) argsBatch).get("length");
+                    __length__ = (Integer) ((Map<String, Object>) argsBatch).get("length");
                 }
                 // or directly put the arg batch
                 else if (argsBatch instanceof List) {
-                    length = ((List<Map<String, Object>>) argsBatch).size();
+                    __length__ = ((List<Map<String, Object>>) argsBatch).size();
                 }
             
-                for (int i = 0; i < length; i++) {
+                for (int __i__ = 0; __i__ < __length__; __i__++) {
                     Map<String, Object> args = new HashMap<>();
                     // only when arg batch is not empty, java side needs to parse args;
                     if (argsBatch instanceof List) {
-                        args = ((List<Map<String, Object>>) argsBatch).get(i);
+                        args = ((List<Map<String, Object>>) argsBatch).get(__i__);
                     }
             
                     // args
             
             
                     // create target object
-                    com.baidu.mapsdkplatform.comapi.commonutils.SysUpdateUtil obj = new com.baidu.mapsdkplatform.comapi.commonutils.SysUpdateUtil();
-                    getHEAP().put(obj.hashCode(), obj);
+                    com.baidu.mapsdkplatform.comapi.commonutils.SysUpdateUtil __obj__ = new com.baidu.mapsdkplatform.comapi.commonutils.SysUpdateUtil();
+                    getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                     // print current HEAP
                     if (getEnableLog()) {
                         Log.d("ObjectFactory", "HEAP: " + getHEAP());
                     }
             
-                    resultList.add(obj.hashCode());
+                    __resultList__.add(System.identityHashCode(__obj__));
                 }
             
-                methodResult.success(resultList);
+                methodResult.success(__resultList__);
             });
         }};
     }

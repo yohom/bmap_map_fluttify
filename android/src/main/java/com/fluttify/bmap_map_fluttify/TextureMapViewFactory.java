@@ -55,6 +55,130 @@ class TextureMapViewFactory extends PlatformViewFactory {
 
     private final Map<String, BmapMapFluttifyPlugin.Handler> handlerMap = new HashMap<String, BmapMapFluttifyPlugin.Handler>() {{
         // method
+        put("com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            String var0 = (String) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.TextureMapView.setCustomMapStylePath(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
+        put("com.baidu.mapapi.map.TextureMapView::setIconCustom", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            int var0 = (int) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView::setIconCustom(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.TextureMapView.setIconCustom(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
+        put("com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            int var0 = (int) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.TextureMapView.setLoadCustomMapStyleFileMode(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
+        put("com.baidu.mapapi.map.TextureMapView::setMapCustomEnable", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            boolean var0 = (boolean) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView::setMapCustomEnable(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.TextureMapView.setMapCustomEnable(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
         put("com.baidu.mapapi.map.TextureMapView::setCustomStyleFilePathAndMode", (args, methodResult) -> {
             // args
             // jsonable arg
@@ -335,7 +459,7 @@ class TextureMapViewFactory extends PlatformViewFactory {
             // convert result to jsonable result
             Integer jsonableResult = null;
             if (result != null) {
-                jsonableResult = result.hashCode();
+                jsonableResult = System.identityHashCode(result);
                 getHEAP().put(jsonableResult, result);
             }
         
@@ -434,7 +558,7 @@ class TextureMapViewFactory extends PlatformViewFactory {
             // convert result to jsonable result
             Integer jsonableResult = null;
             if (result != null) {
-                jsonableResult = result.hashCode();
+                jsonableResult = System.identityHashCode(result);
                 getHEAP().put(jsonableResult, result);
             }
         
@@ -801,7 +925,7 @@ class TextureMapViewFactory extends PlatformViewFactory {
         com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
 
         com.baidu.mapapi.map.TextureMapView view = new com.baidu.mapapi.map.TextureMapView(activity, var2);
-        getHEAP().put(id, view);
+        getHEAP().put(Integer.MAX_VALUE - id, view);
         return new PlatformView() {
 
             // add to HEAP

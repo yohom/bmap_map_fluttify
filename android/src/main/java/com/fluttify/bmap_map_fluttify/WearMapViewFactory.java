@@ -167,6 +167,130 @@ class WearMapViewFactory extends PlatformViewFactory {
             methodResult.success(jsonableResult);
         });
         // method
+        put("com.baidu.mapapi.map.WearMapView::setCustomMapStylePath", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            String var0 = (String) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView::setCustomMapStylePath(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.WearMapView.setCustomMapStylePath(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
+        put("com.baidu.mapapi.map.WearMapView::setIconCustom", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            int var0 = (int) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView::setIconCustom(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.WearMapView.setIconCustom(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
+        put("com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            int var0 = (int) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.WearMapView.setLoadCustomMapStyleFileMode(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
+        put("com.baidu.mapapi.map.WearMapView::setMapCustomEnable", (args, methodResult) -> {
+            // args
+            // jsonable arg
+            boolean var0 = (boolean) ((Map<String, Object>) args).get("var0");
+        
+            // ref
+        
+        
+            // print log
+            if (getEnableLog()) {
+                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView::setMapCustomEnable(" + var0 + ")");
+            }
+        
+            // invoke native method
+            try {
+                com.baidu.mapapi.map.WearMapView.setMapCustomEnable(var0);
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
+                if (getEnableLog()) {
+                    Log.d("Current HEAP: ", getHEAP().toString());
+                }
+                methodResult.error(throwable.getMessage(), null, null);
+                return;
+            }
+        
+            // convert result to jsonable result
+            String jsonableResult = "success";
+        
+            methodResult.success(jsonableResult);
+        });
+        // method
         put("com.baidu.mapapi.map.WearMapView::setCustomStyleFilePathAndMode", (args, methodResult) -> {
             // args
             // jsonable arg
@@ -474,7 +598,7 @@ class WearMapViewFactory extends PlatformViewFactory {
             // convert result to jsonable result
             Integer jsonableResult = null;
             if (result != null) {
-                jsonableResult = result.hashCode();
+                jsonableResult = System.identityHashCode(result);
                 getHEAP().put(jsonableResult, result);
             }
         
@@ -942,7 +1066,7 @@ class WearMapViewFactory extends PlatformViewFactory {
         com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) args).get("var2"));
 
         com.baidu.mapapi.map.WearMapView view = new com.baidu.mapapi.map.WearMapView(activity, var2);
-        getHEAP().put(id, view);
+        getHEAP().put(Integer.MAX_VALUE - id, view);
         return new PlatformView() {
 
             // add to HEAP
