@@ -61,6 +61,29 @@ class Marker {
   BMKPointAnnotation iosModel;
   BMKMapView iosController;
 
+  Future<String> get title {
+    return platform(
+      android: (_) => androidModel.getTitle(),
+      ios: (_) => iosModel.get_title(),
+    );
+  }
+
+  Future<LatLng> get location {
+    return platform(
+      android: (_) async {
+        final _location = await androidModel.getPosition();
+        return LatLng(
+          await _location.get_latitude(),
+          await _location.get_longitude(),
+        );
+      },
+      ios: (_) async {
+        final location = await iosModel.get_coordinate();
+        return LatLng(await location.latitude, await location.longitude);
+      },
+    );
+  }
+
   Future<void> remove() async {
     return platform(
       android: (_) => androidModel.remove(),

@@ -1,6 +1,9 @@
 // ignore_for_file: non_constant_identifier_names
 part of 'bmap_view.widget.dart';
 
+/// marker点击事件回调签名 输入[Marker]对象, 返回`是否已消耗事件`, 如果true则不再弹窗, 如果false则继续弹窗
+typedef Future<bool> OnMarkerClicked(Marker marker);
+
 /// 地图控制类
 class BmapController with WidgetsBindingObserver, _Private {
   /// Android构造器
@@ -158,6 +161,24 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 设置marker点击监听事件
+  Future<void> setMarkerClickedListener(OnMarkerClicked onMarkerClicked) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setOnMarkerClickListener(
+            _androidMapDelegate.._onMarkerClicked = onMarkerClicked);
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController
+            .set_delegate(_iosMapDelegate.._onMarkerClicked = onMarkerClicked);
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
@@ -187,10 +208,39 @@ class BmapController with WidgetsBindingObserver, _Private {
 }
 
 class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
+  OnMarkerClicked _onMarkerClicked;
+
   BMKMapView _iosController;
+
+  @override
+  Future<void> mapView_clickAnnotationView(
+      BMKMapView mapView, BMKAnnotationView view) async {
+    super.mapView_clickAnnotationView(mapView, view);
+    if (_onMarkerClicked != null) {
+      await _onMarkerClicked(
+        Marker.ios(
+          BMKPointAnnotation()
+            ..refId = (await view.get_annotation(viewChannel: false)).refId,
+          _iosController,
+        ),
+      );
+    }
+  }
 }
 
-class _AndroidMapDelegate extends java_lang_Object {}
+class _AndroidMapDelegate extends java_lang_Object
+    with com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener {
+  OnMarkerClicked _onMarkerClicked;
+
+  @override
+  Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
+    super.onMarkerClick(var1);
+    if (_onMarkerClicked != null) {
+      await _onMarkerClicked(Marker.android(var1));
+    }
+    return true;
+  }
+}
 
 mixin _Private {
   Map<String, Uint8List> _cache = {};

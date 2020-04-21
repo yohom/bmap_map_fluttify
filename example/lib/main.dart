@@ -1,13 +1,12 @@
 import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 import 'package:flutter/material.dart';
-import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:oktoast/oktoast.dart';
 
 import 'map/map.screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await enableFluttifyLog(false);
+//  await enableFluttifyLog(!kReleaseMode);
   await BmapService.init(
     iosKey: 'KryNE2jVLpf3tCYxpxnnc5wEjGyztvEf',
   );

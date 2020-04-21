@@ -75,6 +75,16 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     )?.then(_markers.addAll);
                   },
                 ),
+                ListTile(
+                  title: Center(child: Text('Marker添加点击事件')),
+                  onTap: () {
+                    _controller
+                        ?.setMarkerClickedListener((Marker marker) async {
+                      toast('${await marker.title}, ${await marker.location}');
+                      return false;
+                    });
+                  },
+                )
               ],
             ),
           ),
