@@ -45,6 +45,7 @@ class BmapView extends StatefulWidget {
 
 class _BmapViewState extends State<BmapView> {
   BmapController _controller;
+  Widget _mask = Container();
   Widget _widgetLayer = Container();
   final _markerKey = GlobalKey();
 
@@ -75,13 +76,25 @@ class _BmapViewState extends State<BmapView> {
       return Stack(
         children: <Widget>[
           RepaintBoundary(key: _markerKey, child: _widgetLayer),
-          BMKMapView_iOS(
-            onDispose: _onPlatformViewDispose,
-            onViewCreated: (controller) async {
-              _controller = BmapController.ios(controller, this);
+          // 经测试如果不延迟加载会有1/2左右的概率奔溃 看日志是metal的奔溃
+          FutureBuilder<bool>(
+            initialData: false,
+            future: Future.delayed(Duration(seconds: 1), () => true),
+            builder: (context, snapshot) {
+              if (snapshot.data) {
+                return BMKMapView_iOS(
+                  onDispose: _onPlatformViewDispose,
+                  onViewCreated: (controller) async {
+                    _controller = BmapController.ios(controller, this);
+                    await controller.viewWillAppear();
 
-              if (widget.onMapCreated != null) {
-                await widget.onMapCreated(_controller);
+                    if (widget.onMapCreated != null) {
+                      await widget.onMapCreated(_controller);
+                    }
+                  },
+                );
+              } else {
+                return Center(child: CupertinoActivityIndicator());
               }
             },
           ),

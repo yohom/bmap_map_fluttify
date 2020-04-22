@@ -174,6 +174,7 @@ class BmapController with WidgetsBindingObserver, _Private {
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
+    await iosController?.viewWillDisappear();
 
     WidgetsBinding.instance.removeObserver(this);
   }
@@ -186,11 +187,13 @@ class BmapController with WidgetsBindingObserver, _Private {
     switch (state) {
       case AppLifecycleState.resumed:
         androidController?.onResume();
+        iosController?.viewWillAppear();
         break;
       case AppLifecycleState.inactive:
         break;
       case AppLifecycleState.paused:
         androidController?.onPause();
+        iosController?.viewWillDisappear();
         break;
       case AppLifecycleState.detached:
         androidController?.onDestroy();
