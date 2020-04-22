@@ -33,6 +33,15 @@ class MarkerOption {
   /// 图片高度 iOS only
   final double height;
 
+  /// 是否允许弹窗
+  final bool infoWindowEnabled;
+
+  /// Widget形式的Marker
+  ///
+  /// 不能和[iconUri]一起用.
+  /// 注意控制Widget的大小, 比如Column默认是max, 会使用地图的高度, 那么此时需要设置成min.
+  final Widget widget;
+
   MarkerOption({
     @required this.latLng,
     this.title,
@@ -40,14 +49,17 @@ class MarkerOption {
     this.imageConfig,
     this.width,
     this.height,
-  }) : assert(
+    this.infoWindowEnabled = true,
+    this.widget,
+  })  : assert(
           (iconUri != null && imageConfig != null) || iconUri == null,
           'iconUri和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
-        );
+        ),
+        assert(!(widget != null && iconUri != null), 'widget和iconUri不能同时设置! ');
 
   @override
   String toString() {
-    return 'MarkerOption{latLng: $latLng, title: $title, iconUri: $iconUri, imageConfig: $imageConfig, width: $width, height: $height}';
+    return 'MarkerOption{latLng: $latLng, title: $title, iconUri: $iconUri, imageConfig: $imageConfig, width: $width, height: $height, infoWindowEnabled: $infoWindowEnabled, widget: $widget}';
   }
 }
 

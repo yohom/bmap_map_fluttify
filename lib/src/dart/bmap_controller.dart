@@ -82,6 +82,8 @@ class BmapController with WidgetsBindingObserver, _Private {
       for (final option in options)
         if (option.iconUri != null && option.imageConfig != null)
           await _uri2ImageData(option.imageConfig, option.iconUri)
+        else if (option.widget != null)
+          await _state.widgetToImageData(option.widget)
     ];
     final widthBatch = options.map((it) => it.width).toList();
     final heightBatch = options.map((it) => it.height).toList();
@@ -111,7 +113,11 @@ class BmapController with WidgetsBindingObserver, _Private {
         }
 
         // 添加marker
-        final markers = await map.addOverlays(markerOptionBatch);
+        final overlays = await map.addOverlays(markerOptionBatch);
+        // 由于返回类型被重置为Polygon(因为是第一个子类的关系), 这里转换一下
+        final markers = overlays
+            .map((it) => com_baidu_mapapi_map_Marker()..refId = it.refId)
+            .toList();
 
         // marker不释放, 还有用
         pool
@@ -152,10 +158,7 @@ class BmapController with WidgetsBindingObserver, _Private {
         pool.addAll(coordinateBatch);
         return [
           for (int i = 0; i < options.length; i++)
-            Marker.ios(
-              annotationBatch[i] /*, annotationViewList[i]*/,
-              iosController,
-            )
+            Marker.ios(annotationBatch[i], iosController)
         ];
       },
     );

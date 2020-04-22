@@ -40,24 +40,6 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
               divider: kDividerTiny,
               children: <Widget>[
                 ListTile(
-                  title: Center(child: Text('调用方法开启弹窗')),
-                  onTap: () async {
-                    if (_markers.isNotEmpty) {
-                      final marker = _markers[0];
-                      marker.showInfoWindow();
-                    }
-                  },
-                ),
-                ListTile(
-                  title: Center(child: Text('调用方法关闭弹窗')),
-                  onTap: () async {
-                    if (_markers.isNotEmpty) {
-                      final marker = _markers[0];
-                      marker.hideInfoWindow();
-                    }
-                  },
-                ),
-                ListTile(
                   title: Center(child: Text('批量添加Marker')),
                   onTap: () {
                     _controller?.addMarkers(
@@ -66,8 +48,15 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                           MarkerOption(
                             latLng: getNextLatLng(),
                             title: '北京$i',
-                            iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
-                            imageConfig: createLocalImageConfiguration(context),
+//                            iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
+//                            imageConfig: createLocalImageConfiguration(context),
+                            widget: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Image.asset('images/test_icon.png'),
+                                Text('test'),
+                              ],
+                            ),
                             width: 40,
                             height: 40,
                           ),

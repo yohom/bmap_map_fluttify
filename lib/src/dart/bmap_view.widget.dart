@@ -24,10 +24,20 @@ class BmapView extends StatefulWidget {
   const BmapView({
     Key key,
     this.onMapCreated,
+    this.zoomLevel,
+    this.centerCoordinate,
   }) : super(key: key);
 
   /// 地图创建完成回调
   final _OnMapCreated onMapCreated;
+
+  /// 缩放级别
+  ///
+  /// 地图的缩放级别一共分为 17 级，从 3 到 19. 数字越大，展示的图面信息越精细
+  final double zoomLevel;
+
+  /// 中心点坐标
+  final LatLng centerCoordinate;
 
   @override
   _BmapViewState createState() => _BmapViewState();
@@ -35,39 +45,72 @@ class BmapView extends StatefulWidget {
 
 class _BmapViewState extends State<BmapView> {
   BmapController _controller;
+  Widget _widgetLayer = Container();
+  final _markerKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
-      return com_baidu_mapapi_map_MapView_Android(
-        onDispose: _onPlatformViewDispose,
-        onViewCreated: (controller) async {
-          _controller = BmapController.android(controller, this);
+      return Stack(
+        children: <Widget>[
+          RepaintBoundary(key: _markerKey, child: _widgetLayer),
+          com_baidu_mapapi_map_MapView_Android(
+            onDispose: _onPlatformViewDispose,
+            onViewCreated: (controller) async {
+              _controller = BmapController.android(controller, this);
 
-          final bundle = await android_os_Bundle.create();
-          final context = await android_app_Activity.get();
-          await controller.onCreate(context, bundle);
+              final bundle = await android_os_Bundle.create();
+              final context = await android_app_Activity.get();
+              await controller.onCreate(context, bundle);
 
-          if (widget.onMapCreated != null) {
-            await widget.onMapCreated(_controller);
-          }
-          await bundle.release__();
-        },
+              if (widget.onMapCreated != null) {
+                await widget.onMapCreated(_controller);
+              }
+              await bundle.release__();
+            },
+          ),
+        ],
       );
     } else if (Platform.isIOS) {
-      return BMKMapView_iOS(
-        onDispose: _onPlatformViewDispose,
-        onViewCreated: (controller) async {
-          _controller = BmapController.ios(controller, this);
+      return Stack(
+        children: <Widget>[
+          RepaintBoundary(key: _markerKey, child: _widgetLayer),
+          BMKMapView_iOS(
+            onDispose: _onPlatformViewDispose,
+            onViewCreated: (controller) async {
+              _controller = BmapController.ios(controller, this);
 
-          if (widget.onMapCreated != null) {
-            await widget.onMapCreated(_controller);
-          }
-        },
+              if (widget.onMapCreated != null) {
+                await widget.onMapCreated(_controller);
+              }
+            },
+          ),
+        ],
       );
     } else {
       return Center(child: Text('未实现的平台'));
     }
+  }
+
+  Future<Uint8List> widgetToImageData(Widget marker) {
+    final completer = Completer<Uint8List>();
+    setState(() {
+      _widgetLayer = marker;
+    });
+
+    // 等待一帧结束再获取图片数据
+    WidgetsBinding.instance.addPostFrameCallback((duration) {
+      RenderRepaintBoundary boundary =
+          _markerKey.currentContext.findRenderObject();
+
+      boundary
+          .toImage(pixelRatio: MediaQuery.of(context).devicePixelRatio)
+          .then((image) => image.toByteData(format: ImageByteFormat.png))
+          .then((byteData) => byteData.buffer.asUint8List())
+          .then((data) => completer.complete(data));
+    });
+
+    return completer.future;
   }
 
   @override
