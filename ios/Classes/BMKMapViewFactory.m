@@ -3350,8 +3350,6 @@ extern BOOL enableLog;
   NSNumber* anchorU = objc_getAssociatedObject(annotation, (const void *) 5);
   NSNumber* anchorV = objc_getAssociatedObject(annotation, (const void *) 6);
   // 7上绑的是自定义数据, 这里不需要
-  NSNumber* width = objc_getAssociatedObject(annotation, (const void *) 8);
-  NSNumber* height = objc_getAssociatedObject(annotation, (const void *) 9);
   NSNumber* visible = objc_getAssociatedObject(annotation, (const void *) 10);
 
   //用户当前位置大头针
@@ -3379,12 +3377,6 @@ extern BOOL enableLog;
       // 旋转角度
       if (rotateAngle != nil) {
           annotationView.transform = CGAffineTransformRotate(CGAffineTransformIdentity, -[rotateAngle doubleValue] / 180.0 * M_PI);
-      }
-      // 设置图片大小
-      if (annotationView.image != nil
-          && width != nil && height != nil
-          && (NSNull*) width != [NSNull null] && (NSNull*) height != [NSNull null]) {
-          annotationView.frame = CGRectMake(annotationView.frame.origin.x, annotationView.frame.origin.x, [width doubleValue], [height doubleValue]);
       }
       // 锚点
       if (anchorU != nil && anchorV != nil

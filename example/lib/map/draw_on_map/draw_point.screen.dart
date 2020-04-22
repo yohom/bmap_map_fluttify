@@ -44,21 +44,18 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   onTap: () {
                     _controller?.addMarkers(
                       [
-                        for (int i = 0; i < 100; i++)
+                        for (int i = 0; i < 20; i++)
                           MarkerOption(
                             latLng: getNextLatLng(),
-                            title: '北京$i',
 //                            iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
 //                            imageConfig: createLocalImageConfiguration(context),
                             widget: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
                                 Image.asset('images/test_icon.png'),
-                                Text('test'),
+                                Text('testhahahahahahahhahahahaah'),
                               ],
                             ),
-                            width: 40,
-                            height: 40,
                           ),
                       ],
                     )?.then(_markers.addAll);
@@ -69,7 +66,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   onTap: () {
                     _controller
                         ?.setMarkerClickedListener((Marker marker) async {
-                      toast('${await marker.title}, ${await marker.location}');
+                      toast('${await marker.location}');
                       return false;
                     });
                   },

@@ -10,9 +10,6 @@ class MarkerOption {
   /// 经纬度
   final LatLng latLng;
 
-  /// 标题
-  final String title;
-
   /// 图片uri 可以是url, asset路径或者文件路径
   ///
   /// 如果设置了[iconUri], 那么必须同时设置[imageConfig], 否则图片大小会不一致, 这是flutter
@@ -27,15 +24,6 @@ class MarkerOption {
   /// 这个bug彻底解决之后才能保证marker是完美的.
   final ImageConfiguration imageConfig;
 
-  /// 图片宽度 iOS only
-  final double width;
-
-  /// 图片高度 iOS only
-  final double height;
-
-  /// 是否允许弹窗
-  final bool infoWindowEnabled;
-
   /// Widget形式的Marker
   ///
   /// 不能和[iconUri]一起用.
@@ -44,12 +32,8 @@ class MarkerOption {
 
   MarkerOption({
     @required this.latLng,
-    this.title,
     this.iconUri,
     this.imageConfig,
-    this.width,
-    this.height,
-    this.infoWindowEnabled = true,
     this.widget,
   })  : assert(
           (iconUri != null && imageConfig != null) || iconUri == null,
@@ -59,7 +43,7 @@ class MarkerOption {
 
   @override
   String toString() {
-    return 'MarkerOption{latLng: $latLng, title: $title, iconUri: $iconUri, imageConfig: $imageConfig, width: $width, height: $height, infoWindowEnabled: $infoWindowEnabled, widget: $widget}';
+    return 'MarkerOption{latLng: $latLng, iconUri: $iconUri, imageConfig: $imageConfig, widget: $widget}';
   }
 }
 
@@ -72,13 +56,6 @@ class Marker {
 
   BMKPointAnnotation iosModel;
   BMKMapView iosController;
-
-  Future<String> get title {
-    return platform(
-      android: (_) => androidModel.getTitle(),
-      ios: (_) => iosModel.get_title(),
-    );
-  }
 
   Future<LatLng> get location {
     return platform(

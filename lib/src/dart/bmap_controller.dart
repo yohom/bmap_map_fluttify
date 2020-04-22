@@ -77,7 +77,6 @@ class BmapController with WidgetsBindingObserver, _Private {
 
     final latBatch = options.map((it) => it.latLng.latitude).toList();
     final lngBatch = options.map((it) => it.latLng.longitude).toList();
-    final titleBatch = options.map((it) => it.title).toList();
     final iconDataBatch = <Uint8List>[
       for (final option in options)
         if (option.iconUri != null && option.imageConfig != null)
@@ -85,8 +84,6 @@ class BmapController with WidgetsBindingObserver, _Private {
         else if (option.widget != null)
           await _state.widgetToImageData(option.widget)
     ];
-    final widthBatch = options.map((it) => it.width).toList();
-    final heightBatch = options.map((it) => it.height).toList();
 
     return platform(
       android: (pool) async {
@@ -99,8 +96,6 @@ class BmapController with WidgetsBindingObserver, _Private {
             .create_batch__(options.length);
         // 添加经纬度
         await markerOptionBatch.position_batch(latLngBatch);
-        // 添加标题
-        await markerOptionBatch.title_batch(titleBatch);
         // 图片
         if (iconDataBatch.isNotEmpty) {
           final bitmapBatch =
@@ -139,18 +134,12 @@ class BmapController with WidgetsBindingObserver, _Private {
             await CLLocationCoordinate2D.create_batch(latBatch, lngBatch);
         // 设置经纬度
         await annotationBatch.set_coordinate_batch(coordinateBatch);
-        // 设置标题
-        await annotationBatch.set_title_batch(titleBatch);
         // 设置图片
         if (iconDataBatch.isNotEmpty) {
           final iconBatch = await UIImage.create_batch(iconDataBatch);
           await annotationBatch.addProperty_batch(1, iconBatch);
           pool.addAll(iconBatch);
         }
-        // 宽
-        await annotationBatch.addJsonableProperty_batch(8, widthBatch);
-        // 高
-        await annotationBatch.addJsonableProperty_batch(9, heightBatch);
 
         // 添加marker
         await iosController.addAnnotations(annotationBatch);
