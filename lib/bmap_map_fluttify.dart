@@ -1,13 +1,6 @@
-import 'dart:async';
+export 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
 
-import 'package:flutter/services.dart';
-
-class BmapMapFluttify {
-  static const MethodChannel _channel =
-      const MethodChannel('bmap_map_fluttify');
-
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-}
+export 'src/facade/bmap_service.dart';
+export 'src/facade/bmap_view.widget.dart';
+export 'src/facade/enums.dart';
+export 'src/facade/models.dart';

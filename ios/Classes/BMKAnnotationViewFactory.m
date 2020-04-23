@@ -13,10 +13,7 @@ extern NSMutableDictionary<NSNumber*, NSObject*>* HEAP;
 // 日志打印开关
 extern BOOL enableLog;
 
-typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSString *, NSObject *> *, FlutterResult);
-
 @implementation BMKAnnotationViewFactory {
-  NSObject <FlutterPluginRegistrar> *_registrar;
 }
 
 - (instancetype)initWithRegistrar:(NSObject <FlutterPluginRegistrar> *)registrar {
@@ -29,35 +26,36 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 }
 
 - (NSObject <FlutterPlatformView> *)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id _Nullable)args {
-  return [[BMKAnnotationViewPlatformView alloc] initWithViewId:viewId registrar:_registrar];
+  return [[BMKAnnotationViewPlatformView alloc] initWithViewId:viewId frame: frame registrar:_registrar];
 }
 
 @end
 
 @implementation BMKAnnotationViewPlatformView {
-  NSObject <FlutterPluginRegistrar> *_registrar;
-  NSInteger _viewId;
+  int64_t _viewId;
+  CGRect _frame;
   NSDictionary<NSString *, Handler> *_handlerMap;
 }
 
-- (instancetype)initWithViewId:(NSInteger)viewId registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
+- (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
   self = [super init];
   if (self) {
     _viewId = viewId;
     _registrar = registrar;
+    _frame = frame;
   }
 
   return self;
 }
 
 - (UIView *)view {
-  BMKAnnotationView *view = [[BMKAnnotationView alloc] init];
-  // 这里viewId加1是为了防止往HEAP里放了nil的key, 把HEAP内原先viewId为0的覆盖掉了, 因为nil实际上就是0
-  HEAP[@(_viewId + 1)] = view;
+  BMKAnnotationView *view = [[BMKAnnotationView alloc] initWithFrame:_frame];
+  // 这里用一个magic number调整一下id
+  HEAP[@(2147483647 - _viewId)] = view;
 
   //region handlers
   _handlerMap = @{
-      @"BMKAnnotationView::initWithAnnotationReuseIdentifier": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+      @"BMKAnnotationView::initWithAnnotation_reuseIdentifier": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
           id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
@@ -69,7 +67,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
       
           // print log
           if (enableLog) {
-              NSLog(@"fluttify-objc: BMKAnnotationView@%@::initWithAnnotation(暂未实现参数打印)", args[@"refId"]);
+              NSLog(@"fluttify-objc: BMKAnnotationView@%@::initWithAnnotation(%@, %@)", args[@"refId"], args[@"annotation"], args[@"reuseIdentifier"]);
           }
       
           // invoke native method
@@ -91,7 +89,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
       
           // print log
           if (enableLog) {
-              NSLog(@"fluttify-objc: BMKAnnotationView@%@::prepareForReuse(暂未实现参数打印)", args[@"refId"]);
+              NSLog(@"fluttify-objc: BMKAnnotationView@%@::prepareForReuse()", args[@"refId"]);
           }
       
           // invoke native method
@@ -103,7 +101,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
       
           methodResult(jsonableResult);
       },
-      @"BMKAnnotationView::setSelectedAnimated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+      @"BMKAnnotationView::setSelected_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // jsonable arg
           BOOL selected = [args[@"selected"] boolValue];
@@ -115,7 +113,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
       
           // print log
           if (enableLog) {
-              NSLog(@"fluttify-objc: BMKAnnotationView@%@::setSelected(暂未实现参数打印)", args[@"refId"]);
+              NSLog(@"fluttify-objc: BMKAnnotationView@%@::setSelected(%@, %@)", args[@"refId"], args[@"selected"], args[@"animated"]);
           }
       
           // invoke native method
@@ -136,6 +134,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           NSString* result = ref.reuseIdentifier;
       
           // 返回值: jsonable
@@ -153,6 +152,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BMKActionPaopaoView* result = ref.paopaoView;
       
           // return a ref
@@ -171,6 +171,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           id<BMKAnnotation> result = ref.annotation;
       
           // return a ref
@@ -189,6 +190,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           UIImage* result = ref.image;
       
           // return a ref
@@ -207,6 +209,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           CGPoint result = ref.centerOffset;
       
           // 返回值: 结构体
@@ -226,6 +229,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           CGPoint result = ref.calloutOffset;
       
           // 返回值: 结构体
@@ -245,6 +249,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.enabled3D;
       
           // 返回值: Value
@@ -262,6 +267,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.enabled;
       
           // 返回值: Value
@@ -279,6 +285,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.selected;
       
           // 返回值: Value
@@ -296,6 +303,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.canShowCallout;
       
           // 返回值: Value
@@ -313,6 +321,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           UIView* result = ref.leftCalloutAccessoryView;
       
           // return a ref
@@ -331,6 +340,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           UIView* result = ref.rightCalloutAccessoryView;
       
           // return a ref
@@ -349,6 +359,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.draggable;
       
           // 返回值: Value
@@ -366,7 +377,8 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
-          BMKAnnotationViewDragState result = ref.dragState;
+          // invoke native method
+          NSUInteger result = ref.dragState;
       
           // 返回值: Value
           id jsonableResult = @(result);
@@ -383,6 +395,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.hidePaopaoWhenSingleTapOnMap;
       
           // 返回值: Value
@@ -400,6 +413,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.hidePaopaoWhenDoubleTapOnMap;
       
           // 返回值: Value
@@ -417,6 +431,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.hidePaopaoWhenTwoFingersTapOnMap;
       
           // 返回值: Value
@@ -434,6 +449,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.hidePaopaoWhenSelectOthers;
       
           // 返回值: Value
@@ -451,6 +467,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.hidePaopaoWhenDrag;
       
           // 返回值: Value
@@ -468,6 +485,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
+          // invoke native method
           BOOL result = ref.hidePaopaoWhenDragOthers;
       
           // 返回值: Value
@@ -485,7 +503,8 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
           // ref object
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
-          BMKFeatureDisplayPriority result = ref.displayPriority;
+          // invoke native method
+          float result = ref.displayPriority;
       
           // 返回值: Value
           id jsonableResult = @(result);
@@ -709,7 +728,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
       
           // args
           // jsonable arg
-          BMKAnnotationViewDragState dragState = [args[@"dragState"] unsignedIntegerValue];
+          NSUInteger dragState = [args[@"dragState"] unsignedIntegerValue];
       
           // ref
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -828,7 +847,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
       
           // args
           // jsonable arg
-          BMKFeatureDisplayPriority displayPriority = [args[@"displayPriority"] floatValue];
+          float displayPriority = [args[@"displayPriority"] floatValue];
       
           // ref
           BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -864,7 +883,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 - (void)mapViewDidFinishLoading : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
@@ -883,11 +902,11 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 - (void)mapViewDidRenderValidData : (BMKMapView*)mapView withError: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewDidRenderValidDataWithError");
+    NSLog(@"BMKMapViewDelegate::mapViewDidRenderValidData_withError");
   }
 
   // convert to jsonable arg
@@ -898,14 +917,14 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argerror = @(error.hash);
   HEAP[argerror] = error;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidDataWithError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
   
 }
 
 - (void)mapViewDidFinishRendering : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
@@ -924,11 +943,11 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 - (void)mapView : (BMKMapView*)mapView onDrawMapFrame: (BMKMapStatus*)status
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewOnDrawMapFrame");
+    NSLog(@"BMKMapViewDelegate::mapView_onDrawMapFrame");
   }
 
   // convert to jsonable arg
@@ -939,18 +958,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argstatus = @(status.hash);
   HEAP[argstatus] = status;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewOnDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionWillChangeAnimated: (BOOL)animated
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewRegionWillChangeAnimated");
+    NSLog(@"BMKMapViewDelegate::mapView_regionWillChangeAnimated");
   }
 
   // convert to jsonable arg
@@ -960,18 +979,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewRegionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionWillChangeAnimated: (BOOL)animated reason: (BMKRegionChangeReason)reason
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewRegionWillChangeAnimatedreason");
+    NSLog(@"BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason");
   }
 
   // convert to jsonable arg
@@ -983,18 +1002,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewRegionWillChangeAnimatedreason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionDidChangeAnimated: (BOOL)animated
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewRegionDidChangeAnimated");
+    NSLog(@"BMKMapViewDelegate::mapView_regionDidChangeAnimated");
   }
 
   // convert to jsonable arg
@@ -1004,18 +1023,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewRegionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionDidChangeAnimated: (BOOL)animated reason: (BMKRegionChangeReason)reason
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewRegionDidChangeAnimatedreason");
+    NSLog(@"BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason");
   }
 
   // convert to jsonable arg
@@ -1027,18 +1046,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewRegionDidChangeAnimatedreason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
   
 }
 
 - (BMKAnnotationView*)mapView : (BMKMapView*)mapView viewForAnnotation: (id<BMKAnnotation>)annotation
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewViewForAnnotation");
+    NSLog(@"BMKMapViewDelegate::mapView_viewForAnnotation");
   }
 
   // convert to jsonable arg
@@ -1049,7 +1068,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argannotation = @(annotation.hash);
   HEAP[argannotation] = annotation;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewViewForAnnotation"
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
               arguments:@{}
                  result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
   
@@ -1067,11 +1086,11 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 - (void)mapView : (BMKMapView*)mapView didAddAnnotationViews: (NSArray*)views
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewDidAddAnnotationViews");
+    NSLog(@"BMKMapViewDelegate::mapView_didAddAnnotationViews");
   }
 
   // convert to jsonable arg
@@ -1080,26 +1099,26 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   HEAP[argmapView] = mapView;
   // list callback arg
   NSMutableArray<NSNumber*>* argviews = [NSMutableArray arrayWithCapacity:views.count];
-  for (int i = 0; i < views.count; i++) {
-      NSObject* item = ((NSObject*) [views objectAtIndex:i]);
+  for (int __i__ = 0; __i__ < views.count; __i__++) {
+      NSObject* item = ((NSObject*) [views objectAtIndex:__i__]);
       // return to dart side data
-      argviews[i] = @(item.hash);
+      argviews[__i__] = @(item.hash);
       // add to HEAP
       HEAP[@(item.hash)] = item;
   }
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView clickAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewClickAnnotationView");
+    NSLog(@"BMKMapViewDelegate::mapView_clickAnnotationView");
   }
 
   // convert to jsonable arg
@@ -1110,18 +1129,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argview = @(view.hash);
   HEAP[argview] = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewClickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView didSelectAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewDidSelectAnnotationView");
+    NSLog(@"BMKMapViewDelegate::mapView_didSelectAnnotationView");
   }
 
   // convert to jsonable arg
@@ -1132,18 +1151,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argview = @(view.hash);
   HEAP[argview] = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView didDeselectAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewDidDeselectAnnotationView");
+    NSLog(@"BMKMapViewDelegate::mapView_didDeselectAnnotationView");
   }
 
   // convert to jsonable arg
@@ -1154,18 +1173,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argview = @(view.hash);
   HEAP[argview] = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
 }
 
-- (void)mapView : (BMKMapView*)mapView annotationView: (BMKAnnotationView*)view didChangeDragState: (BMKAnnotationViewDragState)newState fromOldState: (BMKAnnotationViewDragState)oldState
+- (void)mapView : (BMKMapView*)mapView annotationView: (BMKAnnotationView*)view didChangeDragState: (NSUInteger)newState fromOldState: (NSUInteger)oldState
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewAnnotationViewdidChangeDragStatefromOldState");
+    NSLog(@"BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState");
   }
 
   // convert to jsonable arg
@@ -1180,18 +1199,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   // primitive callback arg
   NSNumber* argoldState = @(oldState);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewAnnotationViewdidChangeDragStatefromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView annotationViewForBubble: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewAnnotationViewForBubble");
+    NSLog(@"BMKMapViewDelegate::mapView_annotationViewForBubble");
   }
 
   // convert to jsonable arg
@@ -1202,18 +1221,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argview = @(view.hash);
   HEAP[argview] = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewAnnotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
   
 }
 
 - (BMKOverlayView*)mapView : (BMKMapView*)mapView viewForOverlay: (id<BMKOverlay>)overlay
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewViewForOverlay");
+    NSLog(@"BMKMapViewDelegate::mapView_viewForOverlay");
   }
 
   // convert to jsonable arg
@@ -1224,7 +1243,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argoverlay = @(overlay.hash);
   HEAP[argoverlay] = overlay;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewViewForOverlay"
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
               arguments:@{}
                  result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
   
@@ -1242,11 +1261,11 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 - (void)mapView : (BMKMapView*)mapView didAddOverlayViews: (NSArray*)overlayViews
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewDidAddOverlayViews");
+    NSLog(@"BMKMapViewDelegate::mapView_didAddOverlayViews");
   }
 
   // convert to jsonable arg
@@ -1255,26 +1274,26 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   HEAP[argmapView] = mapView;
   // list callback arg
   NSMutableArray<NSNumber*>* argoverlayViews = [NSMutableArray arrayWithCapacity:overlayViews.count];
-  for (int i = 0; i < overlayViews.count; i++) {
-      NSObject* item = ((NSObject*) [overlayViews objectAtIndex:i]);
+  for (int __i__ = 0; __i__ < overlayViews.count; __i__++) {
+      NSObject* item = ((NSObject*) [overlayViews objectAtIndex:__i__]);
       // return to dart side data
-      argoverlayViews[i] = @(item.hash);
+      argoverlayViews[__i__] = @(item.hash);
       // add to HEAP
       HEAP[@(item.hash)] = item;
   }
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView onClickedBMKOverlayView: (BMKOverlayView*)overlayView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewOnClickedBMKOverlayView");
+    NSLog(@"BMKMapViewDelegate::mapView_onClickedBMKOverlayView");
   }
 
   // convert to jsonable arg
@@ -1285,18 +1304,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argoverlayView = @(overlayView.hash);
   HEAP[argoverlayView] = overlayView;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewOnClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView onClickedMapPoi: (BMKMapPoi*)mapPoi
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewOnClickedMapPoi");
+    NSLog(@"BMKMapViewDelegate::mapView_onClickedMapPoi");
   }
 
   // convert to jsonable arg
@@ -1307,18 +1326,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* argmapPoi = @(mapPoi.hash);
   HEAP[argmapPoi] = mapPoi;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewOnClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
   
 }
 
 - (void)mapView : (BMKMapView*)mapView onClickedMapBlank: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapViewOnClickedMapBlank");
+    NSLog(@"BMKMapViewDelegate::mapView_onClickedMapBlank");
   }
 
   // convert to jsonable arg
@@ -1331,18 +1350,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewOnClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
   
 }
 
 - (void)mapview : (BMKMapView*)mapView onDoubleClick: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapviewOnDoubleClick");
+    NSLog(@"BMKMapViewDelegate::mapview_onDoubleClick");
   }
 
   // convert to jsonable arg
@@ -1355,18 +1374,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapviewOnDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
   
 }
 
 - (void)mapview : (BMKMapView*)mapView onLongClick: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapviewOnLongClick");
+    NSLog(@"BMKMapViewDelegate::mapview_onLongClick");
   }
 
   // convert to jsonable arg
@@ -1379,18 +1398,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapviewOnLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
   
 }
 
 - (void)mapview : (BMKMapView*)mapView onForceTouch: (CLLocationCoordinate2D)coordinate force: (CGFloat)force maximumPossibleForce: (CGFloat)maximumPossibleForce
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapviewOnForceTouchforcemaximumPossibleForce");
+    NSLog(@"BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce");
   }
 
   // convert to jsonable arg
@@ -1407,14 +1426,14 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   // primitive callback arg
   NSNumber* argmaximumPossibleForce = @(maximumPossibleForce);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapviewOnForceTouchforcemaximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
   
 }
 
 - (void)mapStatusDidChanged : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
@@ -1433,11 +1452,11 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
 - (void)mapview : (BMKMapView*)mapView baseIndoorMapWithIn: (BOOL)flag baseIndoorMapInfo: (BMKBaseIndoorMapInfo*)info
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKMapViewDelegate::mapviewBaseIndoorMapWithInbaseIndoorMapInfo");
+    NSLog(@"BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo");
   }
 
   // convert to jsonable arg
@@ -1450,18 +1469,18 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   NSNumber* arginfo = @(info.hash);
   HEAP[arginfo] = info;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapviewBaseIndoorMapWithInbaseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
+  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
   
 }
 
 - (void)onGetOfflineMapState : (int)type withState: (int)state
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKOfflineMapDelegate::Callback"
+      methodChannelWithName:[NSString stringWithFormat:@"BMKOfflineMapDelegate::Callback@%@", @(2147483647 - _viewId)]
             binaryMessenger:[_registrar messenger]];
   // print log
   if (enableLog) {
-    NSLog(@"BMKOfflineMapDelegate::onGetOfflineMapStateWithState");
+    NSLog(@"BMKOfflineMapDelegate::onGetOfflineMapState_withState");
   }
 
   // convert to jsonable arg
@@ -1470,7 +1489,7 @@ typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, NSDictionary<NSStri
   // primitive callback arg
   NSNumber* argstate = @(state);
 
-  [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapStateWithState" arguments:@{@"type": argtype, @"state": argstate}];
+  [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
   
 }
 

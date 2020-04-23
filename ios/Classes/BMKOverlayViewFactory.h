@@ -41,9 +41,17 @@
 #import <BaiduMapAPI_Map/BMKOfflineMap.h>
 
 @interface BMKOverlayViewFactory : NSObject <FlutterPlatformViewFactory>
+
 - (instancetype)initWithRegistrar:(NSObject <FlutterPluginRegistrar> *)registrar;
+
+@property(nonatomic) NSObject<FlutterPluginRegistrar>* registrar;
+
 @end
 
 @interface BMKOverlayViewPlatformView : NSObject <BMKMapViewDelegate, BMKOfflineMapDelegate, FlutterPlatformView>
-- (instancetype)initWithViewId:(NSInteger)viewId registrar:(NSObject <FlutterPluginRegistrar> *)registrar;
+
+- (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar;
+
+@property(nonatomic) NSObject<FlutterPluginRegistrar>* registrar;
+
 @end

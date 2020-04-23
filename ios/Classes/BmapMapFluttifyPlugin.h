@@ -39,12 +39,25 @@
 #import <BaiduMapAPI_Map/BMKCustomMapStyleOption.h>
 #import <BaiduMapAPI_Map/BMKOfflineMap.h>
 #import "BMKActionPaopaoViewFactory.h"
+#import "BMKTileLayerViewFactory.h"
+#import "BMKOverlayPathViewFactory.h"
+#import "BMKCircleViewFactory.h"
+#import "BMKPolylineViewFactory.h"
+#import "BMKPinAnnotationViewFactory.h"
 #import "BMKMapViewFactory.h"
+#import "BMKArclineViewFactory.h"
+#import "BMKPolygonViewFactory.h"
 #import "BMKOverlayViewFactory.h"
+#import "BMKGroundOverlayViewFactory.h"
 #import "BMKAnnotationViewFactory.h"
+#import "BMKOverlayGLBasicViewFactory.h"
+
+typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, id, FlutterResult);
 
 @interface BmapMapFluttifyPlugin : NSObject<BMKMapViewDelegate, BMKOfflineMapDelegate, FlutterPlugin>
 
 - (instancetype) initWithFlutterPluginRegistrar: (NSObject <FlutterPluginRegistrar> *) registrar;
+
+@property(nonatomic) NSObject<FlutterPluginRegistrar>* registrar;
 
 @end

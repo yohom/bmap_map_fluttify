@@ -1,4 +1,5 @@
 export 'type_op.g.dart';
+export 'constants.g.dart';
 export 'platformview/TextureMapView.g.dart';
 export 'platformview/WearMapView.g.dart';
 export 'platformview/MapView.g.dart';
@@ -114,6 +115,7 @@ export 'com/baidu/mapapi/map/TextOptions.g.dart';
 export 'com/baidu/mapapi/map/BaiduMapOptions.g.dart';
 export 'com/baidu/mapapi/map/OverlayOptions.g.dart';
 export 'com/baidu/mapapi/map/TileProvider.g.dart';
+export 'com/baidu/mapapi/map/SwipeDismissTouchListener.g.dart';
 export 'com/baidu/mapapi/map/MyLocationConfiguration/LocationMode.g.dart';
 export 'com/baidu/mapapi/map/MapView/CustomMapStyleCallBack.g.dart';
 export 'com/baidu/mapapi/map/MapStatusUpdate.g.dart';
