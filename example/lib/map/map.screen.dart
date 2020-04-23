@@ -21,11 +21,6 @@ class MapDemo extends StatelessWidget {
               sublabel: 'CreateMapScreen',
               target: CreateMapScreen(),
             ),
-            FunctionItem(
-              label: '显示多地图',
-              sublabel: 'MultiMapScreen(TODO)',
-              target: TODOScreen(),
-            ),
           ],
         ),
         SPACE_BIG,
@@ -33,24 +28,9 @@ class MapDemo extends StatelessWidget {
           headLabel: '与地图交互',
           children: <Widget>[
             FunctionItem(
-              label: '控件交互',
-              sublabel: 'ControlInteractionScreen(TODO)',
-              target: TODOScreen(),
-            ),
-            FunctionItem(
-              label: '手势交互',
-              sublabel: 'GestureInteractionScreen(TODO)',
-              target: TODOScreen(),
-            ),
-            FunctionItem(
               label: '调用方法交互',
               sublabel: 'CodeInteractionScreen',
               target: CodeInteractionScreen(),
-            ),
-            FunctionItem(
-              label: '截图',
-              sublabel: 'ScreenShotScreen(TODO)',
-              target: TODOScreen(),
             ),
           ],
         ),
@@ -63,47 +43,12 @@ class MapDemo extends StatelessWidget {
               sublabel: 'DrawPointScreen',
               target: DrawPointScreen(),
             ),
-            FunctionItem(
-              label: '绘制线',
-              sublabel: 'DrawPolylineScreen(TODO)',
-              target: TODOScreen(),
-            ),
-            FunctionItem(
-              label: '绘制圆',
-              sublabel: 'DrawCircleScreen(TODO)',
-              target: TODOScreen(),
-            ),
-            FunctionItem(
-              label: '绘制多边形',
-              sublabel: 'DrawPolygonScreen(TODO)',
-              target: TODOScreen(),
-            ),
           ],
         ),
         SPACE_BIG,
         FunctionGroup(
           headLabel: "工具",
           children: <Widget>[
-            FunctionItem(
-              label: "坐标转换",
-              sublabel: "CoordinateTransformationScreen(TODO)",
-              target: TODOScreen(),
-            ),
-            FunctionItem(
-              label: "两点间距离计算",
-              sublabel: "CalculateDistanceScreen(TODO)",
-              target: TODOScreen(),
-            ),
-            FunctionItem(
-              label: "调用百度地图",
-              sublabel: "LaunchBmapScreen(TODO)",
-              target: TODOScreen(),
-            ),
-            FunctionItem(
-              label: "轨迹纠偏",
-              sublabel: "ProcessedTraceScreen(TODO)",
-              target: TODOScreen(),
-            ),
           ],
         ),
       ],
