@@ -40,10 +40,10 @@ await BmapService.init(iosKey: '7a***********************f4');
 /// 如果你觉得引擎的日志太多, 可以关闭Fluttify引擎的日志
 await enableFluttifyLog(false); // 关闭log
 
-class BmapView extends StatelessWidget {
+class BmapWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return AmapView(
+    return BmapView(
       // 缩放级别 (可选)
       zoomLevel: 10, 
       // 中心点坐标 (可选)
