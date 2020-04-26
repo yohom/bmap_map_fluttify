@@ -36,14 +36,14 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 /// !注意: 只要是返回Future的方法, 一律使用`await`修饰, 确保当前方法执行完成后再执行下一行, 在不能使用`await`修饰的环境下, 在`then`方法中执行下一步.
 /// 
 /// android端的appkey需要在AndroidManifest.xml中配置, 详见 http://lbsyun.baidu.com/index.php?title=androidsdk/guide/create-map/showmap
-await AmapService.init(iosKey: '7a***********************f4');
+await BmapService.init(iosKey: '7a***********************f4');
 /// 如果你觉得引擎的日志太多, 可以关闭Fluttify引擎的日志
 await enableFluttifyLog(false); // 关闭log
 
-class BmapView extends StatelessWidget {
+class BmapWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return AmapView(
+    return BmapView(
       // 缩放级别 (可选)
       zoomLevel: 10, 
       // 中心点坐标 (可选)
@@ -91,8 +91,8 @@ iOS `Info.plist`配置:
 ```
 
 5. 说明
-- ios端添加marker时会出现`暂不支持有返回值的回调方法`, 这个可以忽略, 因为已经通过手写代码处理了.
-- 插件中所有的方法都集中在`BmapController`和`BmapService`中, `BmapController`在`BmapWidget`创建完成时返回, 用来操作地图. `BmapService`中全都是静态方法, 不直接涉及地图组件的方法都放在这个类中, 比如初始化, 其他的各种计算等.
+- ios端添加marker时会出现日志`暂不支持有返回值的回调方法`, 这个可以忽略, 因为已经通过手写代码处理了.
+- 插件中所有的方法都集中在[BmapController](https://pub.dev/documentation/bmap_map_fluttify/latest/bmap_map_fluttify/BmapController-class.html)和[BmapService](https://pub.dev/documentation/bmap_map_fluttify/latest/bmap_map_fluttify/BmapService-class.html)中, `BmapController`在`BmapWidget`创建完成时返回, 用来操作地图. `BmapService`中全都是静态方法, 不直接涉及地图组件的方法都放在这个类中, 比如初始化, 其他的各种计算等.
 
 | 微信支持 | 支付宝支持 |
 | :----------: | :----------: |

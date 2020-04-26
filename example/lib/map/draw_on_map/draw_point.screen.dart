@@ -47,6 +47,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                         for (int i = 0; i < 20; i++)
                           MarkerOption(
                             latLng: getNextLatLng(),
+                            object: '自定义数据:$i',
 //                            iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
 //                            imageConfig: createLocalImageConfiguration(context),
                             widget: Column(
@@ -66,7 +67,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   onTap: () {
                     _controller
                         ?.setMarkerClickedListener((Marker marker) async {
-                      toast('${await marker.location}');
+                      toast(
+                          '经纬度: ${await marker.location}, 自定义数据: ${await marker.object}');
                       return false;
                     });
                   },

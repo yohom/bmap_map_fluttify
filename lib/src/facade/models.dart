@@ -7,6 +7,18 @@ import 'package:foundation_fluttify/foundation_fluttify.dart';
 /// Marker创建参数
 @immutable
 class MarkerOption {
+  MarkerOption({
+    @required this.latLng,
+    this.iconUri,
+    this.imageConfig,
+    this.widget,
+    this.object,
+  })  : assert(
+          (iconUri != null && imageConfig != null) || iconUri == null,
+          'iconUri和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
+        ),
+        assert(!(widget != null && iconUri != null), 'widget和iconUri不能同时设置! ');
+
   /// 经纬度
   final LatLng latLng;
 
@@ -30,20 +42,12 @@ class MarkerOption {
   /// 注意控制Widget的大小, 比如Column默认是max, 会使用地图的高度, 那么此时需要设置成min.
   final Widget widget;
 
-  MarkerOption({
-    @required this.latLng,
-    this.iconUri,
-    this.imageConfig,
-    this.widget,
-  })  : assert(
-          (iconUri != null && imageConfig != null) || iconUri == null,
-          'iconUri和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
-        ),
-        assert(!(widget != null && iconUri != null), 'widget和iconUri不能同时设置! ');
+  /// 自定义数据
+  final String object;
 
   @override
   String toString() {
-    return 'MarkerOption{latLng: $latLng, iconUri: $iconUri, imageConfig: $imageConfig, widget: $widget}';
+    return 'MarkerOption{latLng: $latLng, iconUri: $iconUri, imageConfig: $imageConfig, widget: $widget, object: $object}';
   }
 }
 
@@ -69,6 +73,16 @@ class Marker {
       ios: (_) async {
         final location = await iosModel.get_coordinate();
         return LatLng(await location.latitude, await location.longitude);
+      },
+    );
+  }
+
+  Future<String> get object {
+    return platform(
+      android: (_) => androidModel.getTitle(),
+      ios: (_) async {
+        final result = await iosModel.getJsonableProperty__(7);
+        return result as String;
       },
     );
   }
