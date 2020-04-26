@@ -84,6 +84,7 @@ class BmapController with WidgetsBindingObserver, _Private {
         else if (option.widget != null)
           await _state.widgetToImageData(option.widget)
     ];
+    final objectBatch = options.map((it) => it.object).toList();
 
     return platform(
       android: (pool) async {
@@ -106,6 +107,8 @@ class BmapController with WidgetsBindingObserver, _Private {
           await markerOptionBatch.icon_batch(iconBatch);
           pool..addAll(bitmapBatch)..addAll(iconBatch);
         }
+        // 设置自定义数据
+        await markerOptionBatch.title_batch(objectBatch);
 
         // 添加marker
         final overlays = await map.addOverlays(markerOptionBatch);
@@ -140,6 +143,8 @@ class BmapController with WidgetsBindingObserver, _Private {
           await annotationBatch.addProperty_batch(1, iconBatch);
           pool.addAll(iconBatch);
         }
+        // 添加自定义数据
+        annotationBatch.addJsonableProperty_batch(7, objectBatch);
 
         // 添加marker
         await iosController.addAnnotations(annotationBatch);
