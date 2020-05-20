@@ -37,7 +37,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
   Future<void> setReadTimeOut(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient@$refId::setReadTimeOut([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient@$refId::setReadTimeOut([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
   Future<void> setMaxTimeOut(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient@$refId::setMaxTimeOut([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient@$refId::setMaxTimeOut([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
   static Future<String> getPhoneInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient::getPhoneInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient::getPhoneInfo([])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +109,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
   static Future<String> getAuthToken() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient::getAuthToken([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient::getAuthToken([])');
     }
   
     // invoke native method
@@ -120,8 +123,9 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

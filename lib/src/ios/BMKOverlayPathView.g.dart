@@ -125,7 +125,7 @@ class BMKOverlayPathView extends BMKOverlayView  {
   Future<void> createPath({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayPathView@$refId::createPath([])');
+      debugPrint('fluttify-dart: BMKOverlayPathView@$refId::createPath([])');
     }
   
     // invoke native method
@@ -139,8 +139,9 @@ class BMKOverlayPathView extends BMKOverlayView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -148,7 +149,7 @@ class BMKOverlayPathView extends BMKOverlayView  {
   Future<void> invalidatePath({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayPathView@$refId::invalidatePath([])');
+      debugPrint('fluttify-dart: BMKOverlayPathView@$refId::invalidatePath([])');
     }
   
     // invoke native method
@@ -162,8 +163,9 @@ class BMKOverlayPathView extends BMKOverlayView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

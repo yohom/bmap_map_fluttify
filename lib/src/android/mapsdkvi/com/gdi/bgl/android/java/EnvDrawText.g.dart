@@ -55,7 +55,7 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
   static Future<Int32List> drawText(String var0, int var1, int var2, Int32List var3, int var4, int var5, int var6, int var7, int var8) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::drawText([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8])');
+      debugPrint('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::drawText([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Int32List;
     
-      return __result__ as Int32List;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
   static Future<android_graphics_Bitmap> drawTextExt(String var0, int var1, int var2, Int32List var3, int var4, int var5, int var6, int var7, int var8) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::drawTextExt([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8])');
+      debugPrint('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::drawTextExt([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
   static Future<Float64List> getTextSizeExt(String var0, int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::getTextSizeExt([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::getTextSizeExt([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Float64List;
     
-      return __result__ as Float64List;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
   static Future<android_graphics_Bitmap> drawTextAlpha(String var0, int var1, int var2, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::drawTextAlpha([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::drawTextAlpha([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
   static Future<void> removeFontCache(int var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::removeFontCache([\'var0\':$var0])');
+      debugPrint('fluttify-dart: mapsdkvi.com.gdi.bgl.android.java.EnvDrawText::removeFontCache([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class mapsdkvi_com_gdi_bgl_android_java_EnvDrawText extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

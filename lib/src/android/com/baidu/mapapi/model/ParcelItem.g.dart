@@ -55,7 +55,7 @@ class com_baidu_mapapi_model_ParcelItem extends java_lang_Object with android_os
   Future<void> setBundle(android_os_Bundle var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.ParcelItem@$refId::setBundle([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.ParcelItem@$refId::setBundle([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_model_ParcelItem extends java_lang_Object with android_os
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_model_ParcelItem extends java_lang_Object with android_os
   Future<android_os_Bundle> getBundle() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.ParcelItem@$refId::getBundle([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.ParcelItem@$refId::getBundle([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_model_ParcelItem extends java_lang_Object with android_os
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

@@ -60,7 +60,7 @@ class BMKPolygonView extends BMKOverlayGLBasicView  {
   Future<dynamic> initWithPolygon(BMKPolygon polygon, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolygonView@$refId::initWithPolygon([])');
+      debugPrint('fluttify-dart: BMKPolygonView@$refId::initWithPolygon([])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class BMKPolygonView extends BMKOverlayGLBasicView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

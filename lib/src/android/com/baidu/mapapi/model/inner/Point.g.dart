@@ -96,7 +96,7 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
   Future<int> getmPtx() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::getmPtx([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::getmPtx([])');
     }
   
     // invoke native method
@@ -110,8 +110,9 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -119,7 +120,7 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
   Future<void> setmPtx(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::setmPtx([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::setmPtx([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -133,8 +134,9 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -142,7 +144,7 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
   Future<int> getmPty() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::getmPty([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::getmPty([])');
     }
   
     // invoke native method
@@ -156,8 +158,9 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -165,7 +168,7 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
   Future<void> setmPty(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::setmPty([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.Point@$refId::setmPty([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -179,8 +182,9 @@ class com_baidu_mapapi_model_inner_Point extends java_lang_Object with java_io_S
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

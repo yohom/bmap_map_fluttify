@@ -101,7 +101,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKGroundOverlay> groundOverlayWithPosition_zoomLevel_anchor_icon(CLLocationCoordinate2D position, double zoomLevel, CGPoint anchor, UIImage icon) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKGroundOverlay::groundOverlayWithPosition([\'zoomLevel\':$zoomLevel])');
+      debugPrint('fluttify-dart: BMKGroundOverlay::groundOverlayWithPosition([\'zoomLevel\':$zoomLevel])');
     }
   
     // invoke native method
@@ -115,8 +115,9 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -124,7 +125,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKGroundOverlay> groundOverlayWithBounds_icon(BMKCoordinateBounds bounds, UIImage icon) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKGroundOverlay::groundOverlayWithBounds([])');
+      debugPrint('fluttify-dart: BMKGroundOverlay::groundOverlayWithBounds([])');
     }
   
     // invoke native method
@@ -138,8 +139,9 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

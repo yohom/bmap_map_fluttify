@@ -77,7 +77,7 @@ class com_baidu_mapapi_map_TileOverlayOptions extends java_lang_Object  {
   Future<com_baidu_mapapi_map_TileOverlayOptions> setMaxTileTmp(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.TileOverlayOptions@$refId::setMaxTileTmp([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.TileOverlayOptions@$refId::setMaxTileTmp([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -91,8 +91,9 @@ class com_baidu_mapapi_map_TileOverlayOptions extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -100,7 +101,7 @@ class com_baidu_mapapi_map_TileOverlayOptions extends java_lang_Object  {
   Future<com_baidu_mapapi_map_TileOverlayOptions> tileProvider(com_baidu_mapapi_map_TileProvider var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.TileOverlayOptions@$refId::tileProvider([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.TileOverlayOptions@$refId::tileProvider([])');
     }
   
     // invoke native method
@@ -114,8 +115,9 @@ class com_baidu_mapapi_map_TileOverlayOptions extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -123,7 +125,7 @@ class com_baidu_mapapi_map_TileOverlayOptions extends java_lang_Object  {
   Future<com_baidu_mapapi_map_TileOverlayOptions> setPositionFromBounds(com_baidu_mapapi_model_LatLngBounds var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.TileOverlayOptions@$refId::setPositionFromBounds([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.TileOverlayOptions@$refId::setPositionFromBounds([])');
     }
   
     // invoke native method
@@ -137,8 +139,9 @@ class com_baidu_mapapi_map_TileOverlayOptions extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_TileOverlayOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

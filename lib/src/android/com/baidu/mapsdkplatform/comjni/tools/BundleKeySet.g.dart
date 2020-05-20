@@ -55,7 +55,7 @@ class com_baidu_mapsdkplatform_comjni_tools_BundleKeySet extends java_lang_Objec
   Future<List<String>> getBundleKeys(android_os_Bundle var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.BundleKeySet@$refId::getBundleKeys([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.BundleKeySet@$refId::getBundleKeys([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapsdkplatform_comjni_tools_BundleKeySet extends java_lang_Objec
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = (__result__ as List).cast<String>();
     
-      return (__result__ as List).cast<String>();
+      return __return__;
     }
   }
   

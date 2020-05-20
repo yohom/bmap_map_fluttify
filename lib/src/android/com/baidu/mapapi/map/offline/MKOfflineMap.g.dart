@@ -58,7 +58,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<bool> init(com_baidu_mapapi_map_offline_MKOfflineMapListener var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::init([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::init([])');
     }
   
     // invoke native method
@@ -76,7 +76,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.map.offline.MKOfflineMapListener::onGetOfflineMapState':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onGetOfflineMapState([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetOfflineMapState([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -91,8 +91,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -100,7 +101,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<bool> start(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::start([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::start([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -114,8 +115,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -123,7 +125,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<bool> update(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::update([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::update([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -137,8 +139,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -146,7 +149,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<bool> pause(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::pause([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::pause([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -160,8 +163,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -169,7 +173,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<void> destroy() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::destroy([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::destroy([])');
     }
   
     // invoke native method
@@ -183,8 +187,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -192,7 +197,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<bool> remove(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::remove([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::remove([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -206,8 +211,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -215,7 +221,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>> getHotCityList() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getHotCityList([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getHotCityList([])');
     }
   
     // invoke native method
@@ -229,8 +235,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -238,7 +245,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>> getOfflineCityList() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getOfflineCityList([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getOfflineCityList([])');
     }
   
     // invoke native method
@@ -252,8 +259,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -261,7 +269,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>> searchCity(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::searchCity([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::searchCity([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -275,8 +283,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -284,7 +293,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<List<com_baidu_mapapi_map_offline_MKOLUpdateElement>> getAllUpdateInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getAllUpdateInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getAllUpdateInfo([])');
     }
   
     // invoke native method
@@ -298,8 +307,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -307,7 +317,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<com_baidu_mapapi_map_offline_MKOLUpdateElement> getUpdateInfo(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getUpdateInfo([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::getUpdateInfo([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -321,8 +331,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -330,7 +341,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<int> importOfflineData() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::importOfflineData([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::importOfflineData([])');
     }
   
     // invoke native method
@@ -344,8 +355,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -353,7 +365,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   Future<int> importOfflineData__bool(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::importOfflineData([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.offline.MKOfflineMap@$refId::importOfflineData([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -367,8 +379,9 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

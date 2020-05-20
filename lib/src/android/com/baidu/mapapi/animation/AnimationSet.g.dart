@@ -55,7 +55,7 @@ class com_baidu_mapapi_animation_AnimationSet extends com_baidu_mapapi_animation
   Future<void> addAnimation(com_baidu_mapapi_animation_Animation var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.animation.AnimationSet@$refId::addAnimation([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.animation.AnimationSet@$refId::addAnimation([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_animation_AnimationSet extends com_baidu_mapapi_animation
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_animation_AnimationSet extends com_baidu_mapapi_animation
   Future<void> setAnimatorSetMode(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.animation.AnimationSet@$refId::setAnimatorSetMode([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.animation.AnimationSet@$refId::setAnimatorSetMode([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_animation_AnimationSet extends com_baidu_mapapi_animation
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

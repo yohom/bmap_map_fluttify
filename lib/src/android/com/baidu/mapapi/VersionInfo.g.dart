@@ -57,7 +57,7 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   static Future<String> getApiVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.VersionInfo::getApiVersion([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.VersionInfo::getApiVersion([])');
     }
   
     // invoke native method
@@ -71,8 +71,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -80,7 +81,7 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   static Future<String> getVersionDesc() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.VersionInfo::getVersionDesc([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.VersionInfo::getVersionDesc([])');
     }
   
     // invoke native method
@@ -94,8 +95,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -103,7 +105,7 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   static Future<String> getKitName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.VersionInfo::getKitName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.VersionInfo::getKitName([])');
     }
   
     // invoke native method
@@ -117,8 +119,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

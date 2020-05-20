@@ -56,7 +56,7 @@ class com_baidu_mapsdkplatform_comapi_map_VersionInfo extends java_lang_Object  
   static Future<String> getApiVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.map.VersionInfo::getApiVersion([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.map.VersionInfo::getApiVersion([])');
     }
   
     // invoke native method
@@ -70,8 +70,9 @@ class com_baidu_mapsdkplatform_comapi_map_VersionInfo extends java_lang_Object  
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -79,7 +80,7 @@ class com_baidu_mapsdkplatform_comapi_map_VersionInfo extends java_lang_Object  
   static Future<String> getVersionDesc() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.map.VersionInfo::getVersionDesc([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.map.VersionInfo::getVersionDesc([])');
     }
   
     // invoke native method
@@ -93,8 +94,9 @@ class com_baidu_mapsdkplatform_comapi_map_VersionInfo extends java_lang_Object  
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -102,7 +104,7 @@ class com_baidu_mapsdkplatform_comapi_map_VersionInfo extends java_lang_Object  
   static Future<String> getKitName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.map.VersionInfo::getKitName([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.map.VersionInfo::getKitName([])');
     }
   
     // invoke native method
@@ -116,8 +118,9 @@ class com_baidu_mapsdkplatform_comapi_map_VersionInfo extends java_lang_Object  
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

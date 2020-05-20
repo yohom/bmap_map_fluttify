@@ -37,7 +37,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<bool> TransGeoStr2Pt(Object var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2Pt([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2Pt([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<void> TransNodeStr2Pt(Object var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::TransNodeStr2Pt([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::TransNodeStr2Pt([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<bool> TransGeoStr2ComplexPt(Object var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2ComplexPt([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2ComplexPt([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +109,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<void> GetDistanceByMC(Object var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::GetDistanceByMC([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::GetDistanceByMC([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -120,8 +123,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -129,7 +133,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<bool> CoordinateEncryptEx(double var0, double var1, String var2, Object var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptEx([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptEx([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -143,8 +147,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,7 +157,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<bool> CoordinateEncryptMc(double var0, double var1, Object var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptMc([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptMc([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -166,8 +171,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -175,7 +181,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<String> GetToken() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::GetToken([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::GetToken([])');
     }
   
     // invoke native method
@@ -189,8 +195,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -198,7 +205,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<void> openLogEnable(bool var0, int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::openLogEnable([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::openLogEnable([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -212,8 +219,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -221,7 +229,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<int> initClass(Object var0, int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::initClass([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::initClass([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -235,8 +243,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -244,7 +253,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<Float64List> baiduToGcj(double var0, double var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::baiduToGcj([\'var0\':$var0, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::baiduToGcj([\'var0\':$var0, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -258,8 +267,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Float64List;
     
-      return __result__ as Float64List;
+      return __return__;
     }
   }
   
@@ -267,7 +277,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<Float64List> gcjToBaidu(double var0, double var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::gcjToBaidu([\'var0\':$var0, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::gcjToBaidu([\'var0\':$var0, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -281,8 +291,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Float64List;
     
-      return __result__ as Float64List;
+      return __return__;
     }
   }
   
@@ -290,7 +301,7 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
   static Future<Float64List> wgsToBaidu(double var0, double var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::wgsToBaidu([\'var0\':$var0, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.JNITools::wgsToBaidu([\'var0\':$var0, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -304,8 +315,9 @@ class com_baidu_mapsdkplatform_comjni_tools_JNITools extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Float64List;
     
-      return __result__ as Float64List;
+      return __return__;
     }
   }
   

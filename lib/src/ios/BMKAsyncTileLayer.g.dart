@@ -55,7 +55,7 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   Future<void> loadTileForX_y_zoom_result(int x, int y, int zoom, void result(UIImage tileImage, NSError error)) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAsyncTileLayer@$refId::loadTileForX([\'x\':$x, \'y\':$y, \'zoom\':$zoom])');
+      debugPrint('fluttify-dart: BMKAsyncTileLayer@$refId::loadTileForX([\'x\':$x, \'y\':$y, \'zoom\':$zoom])');
     }
   
     // invoke native method
@@ -88,8 +88,9 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

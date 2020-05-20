@@ -37,7 +37,7 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
   Future<String> getID() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getID([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getID([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
   Future<String> getCurFloor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getCurFloor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getCurFloor([])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
   Future<List<String>> getFloors() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getFloors([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getFloors([])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = (__result__ as List).cast<String>();
     
-      return (__result__ as List).cast<String>();
+      return __return__;
     }
   }
   

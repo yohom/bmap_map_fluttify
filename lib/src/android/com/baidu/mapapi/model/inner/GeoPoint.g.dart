@@ -55,7 +55,7 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
   Future<double> getLatitudeE6() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::getLatitudeE6([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::getLatitudeE6([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
   Future<double> getLongitudeE6() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::getLongitudeE6([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::getLongitudeE6([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
   Future<void> setLatitudeE6(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::setLatitudeE6([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::setLatitudeE6([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
   Future<void> setLongitudeE6(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::setLongitudeE6([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.GeoPoint@$refId::setLongitudeE6([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapapi_model_inner_GeoPoint extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

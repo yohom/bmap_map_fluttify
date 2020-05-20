@@ -55,7 +55,7 @@ class com_baidu_mapsdkplatform_comapi_util_CoordTrans extends java_lang_Object  
   static Future<com_baidu_mapapi_model_LatLng> baiduToGcj(com_baidu_mapapi_model_LatLng var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.CoordTrans::baiduToGcj([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.CoordTrans::baiduToGcj([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapsdkplatform_comapi_util_CoordTrans extends java_lang_Object  
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapsdkplatform_comapi_util_CoordTrans extends java_lang_Object  
   static Future<com_baidu_mapapi_model_LatLng> gcjToBaidu(com_baidu_mapapi_model_LatLng var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.CoordTrans::gcjToBaidu([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.CoordTrans::gcjToBaidu([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapsdkplatform_comapi_util_CoordTrans extends java_lang_Object  
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapsdkplatform_comapi_util_CoordTrans extends java_lang_Object  
   static Future<com_baidu_mapapi_model_LatLng> wgsToBaidu(com_baidu_mapapi_model_LatLng var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.CoordTrans::wgsToBaidu([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.CoordTrans::wgsToBaidu([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapsdkplatform_comapi_util_CoordTrans extends java_lang_Object  
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

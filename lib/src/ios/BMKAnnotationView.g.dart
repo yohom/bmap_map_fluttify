@@ -299,7 +299,7 @@ class BMKAnnotationView extends UIView  {
   Future<dynamic> initWithAnnotation_reuseIdentifier(BMKAnnotation annotation, String reuseIdentifier, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotationView@$refId::initWithAnnotation([\'reuseIdentifier\':$reuseIdentifier])');
+      debugPrint('fluttify-dart: BMKAnnotationView@$refId::initWithAnnotation([\'reuseIdentifier\':$reuseIdentifier])');
     }
   
     // invoke native method
@@ -313,8 +313,9 @@ class BMKAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -322,7 +323,7 @@ class BMKAnnotationView extends UIView  {
   Future<void> prepareForReuse({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotationView@$refId::prepareForReuse([])');
+      debugPrint('fluttify-dart: BMKAnnotationView@$refId::prepareForReuse([])');
     }
   
     // invoke native method
@@ -336,8 +337,9 @@ class BMKAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -345,7 +347,7 @@ class BMKAnnotationView extends UIView  {
   Future<void> setSelected_animated(bool selected, bool animated, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotationView@$refId::setSelected([\'selected\':$selected, \'animated\':$animated])');
+      debugPrint('fluttify-dart: BMKAnnotationView@$refId::setSelected([\'selected\':$selected, \'animated\':$animated])');
     }
   
     // invoke native method
@@ -359,8 +361,9 @@ class BMKAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

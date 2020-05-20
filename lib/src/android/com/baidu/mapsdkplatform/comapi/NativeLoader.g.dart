@@ -37,7 +37,7 @@ class com_baidu_mapsdkplatform_comapi_NativeLoader extends java_lang_Object  {
   static Future<com_baidu_mapsdkplatform_comapi_NativeLoader> getInstance() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.NativeLoader::getInstance([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.NativeLoader::getInstance([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapsdkplatform_comapi_NativeLoader extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapsdkplatform_comapi_NativeLoader()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapsdkplatform_comapi_NativeLoader()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapsdkplatform_comapi_NativeLoader()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapsdkplatform_comapi_NativeLoader extends java_lang_Object  {
   static Future<void> setContext(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.NativeLoader::setContext([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.NativeLoader::setContext([])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapsdkplatform_comapi_NativeLoader extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapsdkplatform_comapi_NativeLoader extends java_lang_Object  {
   Future<bool> loadLibrary(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.NativeLoader@$refId::loadLibrary([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.NativeLoader@$refId::loadLibrary([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapsdkplatform_comapi_NativeLoader extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

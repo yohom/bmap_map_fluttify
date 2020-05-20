@@ -37,7 +37,7 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
   Future<void> onSuccess(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onSuccess([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onSuccess([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
   Future<void> onFailed(com_baidu_mapapi_http_HttpClient_HttpStateError var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onFailed([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onFailed([])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

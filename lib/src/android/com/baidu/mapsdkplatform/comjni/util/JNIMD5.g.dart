@@ -37,7 +37,7 @@ class com_baidu_mapsdkplatform_comjni_util_JNIMD5 extends java_lang_Object  {
   static Future<String> getSignMD5String(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIMD5::getSignMD5String([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIMD5::getSignMD5String([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapsdkplatform_comjni_util_JNIMD5 extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapsdkplatform_comjni_util_JNIMD5 extends java_lang_Object  {
   static Future<String> encodeUrlParamsValue(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIMD5::encodeUrlParamsValue([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIMD5::encodeUrlParamsValue([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapsdkplatform_comjni_util_JNIMD5 extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapsdkplatform_comjni_util_JNIMD5 extends java_lang_Object  {
   static Future<String> getUrlNeedInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIMD5::getUrlNeedInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIMD5::getUrlNeedInfo([])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapsdkplatform_comjni_util_JNIMD5 extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

@@ -77,7 +77,7 @@ class BMKGradient extends NSObject  {
   Future<dynamic> initWithColors_startPoints(List<NSObject> colors, List<NSObject> startPoints) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKGradient@$refId::initWithColors([])');
+      debugPrint('fluttify-dart: BMKGradient@$refId::initWithColors([])');
     }
   
     // invoke native method
@@ -91,8 +91,9 @@ class BMKGradient extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

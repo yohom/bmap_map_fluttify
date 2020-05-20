@@ -24,7 +24,7 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
   Future<int> getMaxDisLevel() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMaxDisLevel([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMaxDisLevel([])');
     }
   
     // invoke native method
@@ -38,8 +38,9 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -47,7 +48,7 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
   Future<int> getMinDisLevel() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMinDisLevel([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMinDisLevel([])');
     }
   
     // invoke native method
@@ -61,8 +62,9 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

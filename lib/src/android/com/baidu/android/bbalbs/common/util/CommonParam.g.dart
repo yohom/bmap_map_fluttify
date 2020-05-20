@@ -55,7 +55,7 @@ class com_baidu_android_bbalbs_common_util_CommonParam extends java_lang_Object 
   static Future<String> getCUID(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.android.bbalbs.common.util.CommonParam::getCUID([])');
+      debugPrint('fluttify-dart: com.baidu.android.bbalbs.common.util.CommonParam::getCUID([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_android_bbalbs_common_util_CommonParam extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

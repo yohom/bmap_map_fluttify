@@ -55,7 +55,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<int> getColor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getColor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getColor([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_model_LatLng> getStartPoint() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getStartPoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getStartPoint([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_model_LatLng> getMiddlePoint() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getMiddlePoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getMiddlePoint([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_model_LatLng> getEndPoint() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getEndPoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getEndPoint([])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<int> getWidth() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getWidth([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getWidth([])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +175,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_map_ArcOptions> color(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::color([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::color([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -184,8 +189,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -193,7 +199,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_map_ArcOptions> points(com_baidu_mapapi_model_LatLng var1, com_baidu_mapapi_model_LatLng var2, com_baidu_mapapi_model_LatLng var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::points([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::points([])');
     }
   
     // invoke native method
@@ -207,8 +213,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -216,7 +223,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_map_ArcOptions> width(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::width([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::width([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -230,8 +237,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -239,7 +247,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_map_ArcOptions> visible(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::visible([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::visible([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -253,8 +261,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -262,7 +271,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<bool> isVisible() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::isVisible([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::isVisible([])');
     }
   
     // invoke native method
@@ -276,8 +285,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -285,7 +295,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_map_ArcOptions> zIndex(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::zIndex([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::zIndex([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -299,8 +309,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -308,7 +319,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<int> getZIndex() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getZIndex([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getZIndex([])');
     }
   
     // invoke native method
@@ -322,8 +333,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -331,7 +343,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<com_baidu_mapapi_map_ArcOptions> extraInfo(android_os_Bundle var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::extraInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::extraInfo([])');
     }
   
     // invoke native method
@@ -345,8 +357,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_ArcOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -354,7 +367,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
   Future<android_os_Bundle> getExtraInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getExtraInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ArcOptions@$refId::getExtraInfo([])');
     }
   
     // invoke native method
@@ -368,8 +381,9 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

@@ -65,7 +65,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKPolyline> polylineWithPoints_count(List<BMKMapPoint> points, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline::polylineWithPoints([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolyline::polylineWithPoints([\'count\':$count])');
     }
   
     // invoke native method
@@ -79,8 +79,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -88,7 +89,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKPolyline> polylineWithCoordinates_count(List<CLLocationCoordinate2D> coords, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline::polylineWithCoordinates([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolyline::polylineWithCoordinates([\'count\':$count])');
     }
   
     // invoke native method
@@ -102,8 +103,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -111,7 +113,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setPolylineWithPoints_count(List<BMKMapPoint> points, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline@$refId::setPolylineWithPoints([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolyline@$refId::setPolylineWithPoints([\'count\':$count])');
     }
   
     // invoke native method
@@ -125,8 +127,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -134,7 +137,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setPolylineWithCoordinates_count(List<CLLocationCoordinate2D> coords, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline@$refId::setPolylineWithCoordinates([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolyline@$refId::setPolylineWithCoordinates([\'count\':$count])');
     }
   
     // invoke native method
@@ -148,8 +151,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -157,7 +161,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKPolyline> polylineWithPoints_count_textureIndex(List<BMKMapPoint> points, int count, List<num> textureIndex) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline::polylineWithPoints([\'count\':$count, \'textureIndex\':$textureIndex])');
+      debugPrint('fluttify-dart: BMKPolyline::polylineWithPoints([\'count\':$count, \'textureIndex\':$textureIndex])');
     }
   
     // invoke native method
@@ -171,8 +175,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -180,7 +185,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKPolyline> polylineWithCoordinates_count_textureIndex(List<CLLocationCoordinate2D> coords, int count, List<num> textureIndex) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline::polylineWithCoordinates([\'count\':$count, \'textureIndex\':$textureIndex])');
+      debugPrint('fluttify-dart: BMKPolyline::polylineWithCoordinates([\'count\':$count, \'textureIndex\':$textureIndex])');
     }
   
     // invoke native method
@@ -194,8 +199,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -203,7 +209,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setPolylineWithPoints_count_textureIndex(List<BMKMapPoint> points, int count, List<num> textureIndex) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline@$refId::setPolylineWithPoints([\'count\':$count, \'textureIndex\':$textureIndex])');
+      debugPrint('fluttify-dart: BMKPolyline@$refId::setPolylineWithPoints([\'count\':$count, \'textureIndex\':$textureIndex])');
     }
   
     // invoke native method
@@ -217,8 +223,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -226,7 +233,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setPolylineWithCoordinates_count_textureIndex(List<CLLocationCoordinate2D> coords, int count, List<num> textureIndex) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolyline@$refId::setPolylineWithCoordinates([\'count\':$count, \'textureIndex\':$textureIndex])');
+      debugPrint('fluttify-dart: BMKPolyline@$refId::setPolylineWithCoordinates([\'count\':$count, \'textureIndex\':$textureIndex])');
     }
   
     // invoke native method
@@ -240,8 +247,9 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

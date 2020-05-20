@@ -55,7 +55,7 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
   static Future<int> getDensityDpi() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getDensityDpi([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getDensityDpi([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
   static Future<double> getDensity() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getDensity([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getDensity([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
   static Future<String> getModuleFileName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getModuleFileName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getModuleFileName([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
   static Future<String> getDeviceID() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getDeviceID([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getDeviceID([])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
   static Future<int> getScreenSizeX() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getScreenSizeX([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getScreenSizeX([])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +175,7 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
   static Future<int> getScreenSizeY() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getScreenSizeY([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getScreenSizeY([])');
     }
   
     // invoke native method
@@ -184,8 +189,9 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -193,7 +199,7 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
   static Future<String> getPhoneType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getPhoneType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.SysOSUtil::getPhoneType([])');
     }
   
     // invoke native method
@@ -207,8 +213,9 @@ class com_baidu_mapapi_common_SysOSUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

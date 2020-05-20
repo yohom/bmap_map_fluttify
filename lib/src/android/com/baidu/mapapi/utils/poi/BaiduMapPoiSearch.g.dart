@@ -55,7 +55,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
   static Future<void> setSupportWebPoi(bool var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::setSupportWebPoi([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::setSupportWebPoi([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
   static Future<bool> openBaiduMapPoiDetialsPage(com_baidu_mapapi_utils_poi_PoiParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiDetialsPage([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiDetialsPage([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
   static Future<bool> openBaiduMapPoiNearbySearch(com_baidu_mapapi_utils_poi_PoiParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiNearbySearch([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiNearbySearch([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
   static Future<void> openBaiduMapPanoShow(String var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPanoShow([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPanoShow([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
   static Future<bool> dispatchPoiToBaiduMap(List<com_baidu_mapapi_utils_poi_DispathcPoiData> var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::dispatchPoiToBaiduMap([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::dispatchPoiToBaiduMap([])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +175,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
   static Future<void> finish(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::finish([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::finish([])');
     }
   
     // invoke native method
@@ -184,8 +189,9 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

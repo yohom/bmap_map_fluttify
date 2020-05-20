@@ -55,7 +55,7 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
   static Future<android_content_Context> getCachedContext() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.JNIInitializer::getCachedContext([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.JNIInitializer::getCachedContext([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
   static Future<void> setContext(android_app_Application var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.JNIInitializer::setContext([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.JNIInitializer::setContext([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

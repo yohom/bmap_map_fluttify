@@ -55,7 +55,7 @@ class BMKSyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   Future<UIImage> tileForX_y_zoom(int x, int y, int zoom) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKSyncTileLayer@$refId::tileForX([\'x\':$x, \'y\':$y, \'zoom\':$zoom])');
+      debugPrint('fluttify-dart: BMKSyncTileLayer@$refId::tileForX([\'x\':$x, \'y\':$y, \'zoom\':$zoom])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class BMKSyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

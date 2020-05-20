@@ -37,7 +37,7 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLng> fromScreenLocation(android_graphics_Point var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::fromScreenLocation([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::fromScreenLocation([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
   Future<android_graphics_Point> toScreenLocation(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::toScreenLocation([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::toScreenLocation([])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_graphics_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_graphics_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_graphics_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
   Future<android_graphics_PointF> toOpenGLLocation(com_baidu_mapapi_model_LatLng var1, com_baidu_mapapi_map_MapStatus var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::toOpenGLLocation([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::toOpenGLLocation([])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_graphics_PointF()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_graphics_PointF()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_graphics_PointF()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -106,7 +109,7 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
   Future<android_graphics_PointF> toOpenGLNormalization(com_baidu_mapapi_model_LatLng var1, com_baidu_mapapi_map_MapStatus var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::toOpenGLNormalization([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::toOpenGLNormalization([])');
     }
   
     // invoke native method
@@ -120,8 +123,9 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_graphics_PointF()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_graphics_PointF()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_graphics_PointF()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -129,7 +133,7 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
   Future<double> metersToEquatorPixels(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::metersToEquatorPixels([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Projection@$refId::metersToEquatorPixels([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -143,8 +147,9 @@ class com_baidu_mapapi_map_Projection extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

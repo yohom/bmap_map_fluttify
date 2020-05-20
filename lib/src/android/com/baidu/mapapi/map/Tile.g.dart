@@ -72,7 +72,7 @@ class com_baidu_mapapi_map_Tile extends java_lang_Object  {
   Future<android_os_Bundle> toBundle() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Tile@$refId::toBundle([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Tile@$refId::toBundle([])');
     }
   
     // invoke native method
@@ -86,8 +86,9 @@ class com_baidu_mapapi_map_Tile extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

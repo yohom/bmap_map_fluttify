@@ -55,7 +55,7 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
   static Future<double> calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng(com_baidu_mapapi_model_LatLng var0, com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
   static Future<double> calculateArea__List_com_baidu_mapapi_model_LatLng_(List<com_baidu_mapapi_model_LatLng> var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

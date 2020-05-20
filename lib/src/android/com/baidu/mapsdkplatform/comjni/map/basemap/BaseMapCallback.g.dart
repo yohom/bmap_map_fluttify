@@ -55,7 +55,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback extends java_l
   static Future<void> removeLayerDataInterface(int var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::removeLayerDataInterface([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::removeLayerDataInterface([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback extends java_l
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback extends java_l
   static Future<int> ReqLayerData(android_os_Bundle var0, int var1, int var3, android_os_Bundle var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::ReqLayerData([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::ReqLayerData([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback extends java_l
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

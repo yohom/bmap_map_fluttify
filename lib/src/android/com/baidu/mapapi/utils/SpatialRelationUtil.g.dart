@@ -55,7 +55,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
   static Future<bool> isPolygonContainsPoint(List<com_baidu_mapapi_model_LatLng> var0, com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.SpatialRelationUtil::isPolygonContainsPoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.SpatialRelationUtil::isPolygonContainsPoint([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
   static Future<bool> isCircleContainsPoint(com_baidu_mapapi_model_LatLng var0, int var1, com_baidu_mapapi_model_LatLng var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.SpatialRelationUtil::isCircleContainsPoint([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.SpatialRelationUtil::isCircleContainsPoint([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
   static Future<com_baidu_mapapi_model_LatLng> getNearestPointFromLine(List<com_baidu_mapapi_model_LatLng> var0, com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.SpatialRelationUtil::getNearestPointFromLine([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.SpatialRelationUtil::getNearestPointFromLine([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

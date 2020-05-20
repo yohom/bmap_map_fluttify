@@ -77,7 +77,7 @@ class BMKOverlayView extends UIView  {
   Future<void> setOverlayGeometryDelegate(dynamic delegate, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::setOverlayGeometryDelegate([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::setOverlayGeometryDelegate([])');
     }
   
     // invoke native method
@@ -91,8 +91,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -100,7 +101,7 @@ class BMKOverlayView extends UIView  {
   Future<dynamic> initWithOverlay(BMKOverlay overlay, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::initWithOverlay([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::initWithOverlay([])');
     }
   
     // invoke native method
@@ -114,8 +115,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -123,7 +125,7 @@ class BMKOverlayView extends UIView  {
   Future<CGPoint> pointForMapPoint(BMKMapPoint mapPoint, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::pointForMapPoint([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::pointForMapPoint([])');
     }
   
     // invoke native method
@@ -137,8 +139,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -146,7 +149,7 @@ class BMKOverlayView extends UIView  {
   Future<BMKMapPoint> mapPointForPoint(CGPoint point, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::mapPointForPoint([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::mapPointForPoint([])');
     }
   
     // invoke native method
@@ -160,8 +163,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKMapPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKMapPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKMapPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -169,7 +173,7 @@ class BMKOverlayView extends UIView  {
   Future<CGRect> rectForMapRect(BMKMapRect mapRect, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::rectForMapRect([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::rectForMapRect([])');
     }
   
     // invoke native method
@@ -183,8 +187,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -192,7 +197,7 @@ class BMKOverlayView extends UIView  {
   Future<BMKMapRect> mapRectForRect(CGRect rect, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::mapRectForRect([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::mapRectForRect([])');
     }
   
     // invoke native method
@@ -206,8 +211,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -215,7 +221,7 @@ class BMKOverlayView extends UIView  {
   Future<bool> canDrawMapRect_zoomScale(BMKMapRect mapRect, double zoomScale, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::canDrawMapRect([\'zoomScale\':$zoomScale])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::canDrawMapRect([\'zoomScale\':$zoomScale])');
     }
   
     // invoke native method
@@ -229,8 +235,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -238,7 +245,7 @@ class BMKOverlayView extends UIView  {
   Future<void> setNeedsDisplayInMapRect(BMKMapRect mapRect, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::setNeedsDisplayInMapRect([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::setNeedsDisplayInMapRect([])');
     }
   
     // invoke native method
@@ -252,8 +259,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -261,7 +269,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped(List<BMKMapPoint> points, int pointCount, UIColor strokeColor, double lineWidth, bool looped, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'looped\':$looped])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'looped\':$looped])');
     }
   
     // invoke native method
@@ -275,8 +283,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -284,7 +293,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_looped(List<BMKMapPoint> points, int pointCount, double lineWidth, int textureID, bool looped, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'textureID\':$textureID, \'looped\':$looped])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'textureID\':$textureID, \'looped\':$looped])');
     }
   
     // invoke native method
@@ -298,8 +307,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -307,7 +317,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDashType(List<BMKMapPoint> points, int pointCount, UIColor strokeColor, double lineWidth, bool looped, BMKLineDashType lineDashType, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'looped\':$looped])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'looped\':$looped])');
     }
   
     // invoke native method
@@ -321,8 +331,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -330,7 +341,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDash(List<BMKMapPoint> points, int pointCount, UIColor strokeColor, double lineWidth, bool looped, bool lineDash, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'looped\':$looped, \'lineDash\':$lineDash])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'looped\':$looped, \'lineDash\':$lineDash])');
     }
   
     // invoke native method
@@ -344,8 +355,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -353,7 +365,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus(List<NSObject> partPt, double lineWidth, List<NSObject> textureIndexs, bool isFoucs, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPartPoints([\'lineWidth\':$lineWidth, \'isFoucs\':$isFoucs])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPartPoints([\'lineWidth\':$lineWidth, \'isFoucs\':$isFoucs])');
     }
   
     // invoke native method
@@ -367,8 +379,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -376,7 +389,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale(List<NSObject> partPt, double lineWidth, List<NSObject> textureIndexs, bool isFoucs, bool tileTexture, bool keepscale, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPartPoints([\'lineWidth\':$lineWidth, \'isFoucs\':$isFoucs, \'tileTexture\':$tileTexture, \'keepscale\':$keepscale])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPartPoints([\'lineWidth\':$lineWidth, \'isFoucs\':$isFoucs, \'tileTexture\':$tileTexture, \'keepscale\':$keepscale])');
     }
   
     // invoke native method
@@ -390,8 +403,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -399,7 +413,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_strokeColor_looped_tileTexture_keepScale(List<BMKMapPoint> points, int pointCount, double lineWidth, int textureID, UIColor strokeColor, bool looped, bool tileTexture, bool keepScale, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'textureID\':$textureID, \'looped\':$looped, \'tileTexture\':$tileTexture, \'keepScale\':$keepScale])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth, \'textureID\':$textureID, \'looped\':$looped, \'tileTexture\':$tileTexture, \'keepScale\':$keepScale])');
     }
   
     // invoke native method
@@ -413,8 +427,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -422,7 +437,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType(List<NSObject> partPt, double lineWidth, List<num> textureIndexs, bool isFoucs, bool keepScale, BMKLineJoinType lineJoinType, BMKLineCapType lineCapType, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderMultiTexturedPolyLineWithPartPoints([\'lineWidth\':$lineWidth, \'textureIndexs\':$textureIndexs, \'isFoucs\':$isFoucs, \'keepScale\':$keepScale])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderMultiTexturedPolyLineWithPartPoints([\'lineWidth\':$lineWidth, \'textureIndexs\':$textureIndexs, \'isFoucs\':$isFoucs, \'keepScale\':$keepScale])');
     }
   
     // invoke native method
@@ -436,8 +451,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -445,7 +461,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType(List<NSObject> partPt, double lineWidth, List<num> textureIndexs, BMKLineDashType lineDashType, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderMultiDashPolyLineWithPartPoints([\'lineWidth\':$lineWidth, \'textureIndexs\':$textureIndexs])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderMultiDashPolyLineWithPartPoints([\'lineWidth\':$lineWidth, \'textureIndexs\':$textureIndexs])');
     }
   
     // invoke native method
@@ -459,8 +475,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -468,7 +485,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderRegionWithPoints_pointCount_fillColor_usingTriangleFan(List<BMKMapPoint> points, int pointCount, UIColor fillColor, bool usingTriangleFan, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderRegionWithPoints([\'pointCount\':$pointCount, \'usingTriangleFan\':$usingTriangleFan])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderRegionWithPoints([\'pointCount\':$pointCount, \'usingTriangleFan\':$usingTriangleFan])');
     }
   
     // invoke native method
@@ -482,8 +499,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -491,7 +509,7 @@ class BMKOverlayView extends UIView  {
   Future<void> renderATRegionWithPoint_pointCount_fillColor_usingTriangleFan(List<BMKMapPoint> points, int pointCount, UIColor fillColor, bool usingTriangleFan, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::renderATRegionWithPoint([\'pointCount\':$pointCount, \'usingTriangleFan\':$usingTriangleFan])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::renderATRegionWithPoint([\'pointCount\':$pointCount, \'usingTriangleFan\':$usingTriangleFan])');
     }
   
     // invoke native method
@@ -505,8 +523,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -514,7 +533,7 @@ class BMKOverlayView extends UIView  {
   Future<void> rendeCircleWithPoints_pointCount_lineWidth_fillColor_strokeColor(List<BMKMapPoint> points, int pointCount, double lineWidth, UIColor fillColor, UIColor strokeColor, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::rendeCircleWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::rendeCircleWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth])');
     }
   
     // invoke native method
@@ -528,8 +547,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -537,7 +557,7 @@ class BMKOverlayView extends UIView  {
   Future<void> rendePolygonWithPoints_pointCount_lineWidth_fillColor_strokeColor(List<BMKMapPoint> points, int pointCount, double lineWidth, UIColor fillColor, UIColor strokeColor, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::rendePolygonWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::rendePolygonWithPoints([\'pointCount\':$pointCount, \'lineWidth\':$lineWidth])');
     }
   
     // invoke native method
@@ -551,8 +571,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -560,7 +581,7 @@ class BMKOverlayView extends UIView  {
   Future<void> glRender({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::glRender([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::glRender([])');
     }
   
     // invoke native method
@@ -574,8 +595,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -583,7 +605,7 @@ class BMKOverlayView extends UIView  {
   Future<int> loadStrokeTextureImage(UIImage textureImage, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::loadStrokeTextureImage([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::loadStrokeTextureImage([])');
     }
   
     // invoke native method
@@ -597,8 +619,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -606,7 +629,7 @@ class BMKOverlayView extends UIView  {
   Future<bool> loadStrokeTextureImages(List<UIImage> textureImages, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlayView@$refId::loadStrokeTextureImages([])');
+      debugPrint('fluttify-dart: BMKOverlayView@$refId::loadStrokeTextureImages([])');
     }
   
     // invoke native method
@@ -620,8 +643,9 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

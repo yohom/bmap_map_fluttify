@@ -74,7 +74,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setOnDismissCallbackListener(com_baidu_mapapi_map_WearMapView_OnDismissCallback var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setOnDismissCallbackListener([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setOnDismissCallbackListener([])');
     }
   
     // invoke native method
@@ -92,7 +92,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
             case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onDismiss([])');
+                debugPrint('fluttify-dart-callback: onDismiss([])');
               }
         
               // handle the native call
@@ -101,7 +101,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
             case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onNotify([])');
+                debugPrint('fluttify-dart-callback: onNotify([])');
               }
         
               // handle the native call
@@ -116,8 +116,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -125,7 +126,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setShape(com_baidu_mapapi_map_WearMapView_ScreenShape var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setShape([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setShape([])');
     }
   
     // invoke native method
@@ -139,8 +140,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -148,7 +150,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   static Future<void> setCustomMapStylePath(String var0, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView::setCustomMapStylePath([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView::setCustomMapStylePath([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -162,8 +164,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -171,7 +174,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   static Future<void> setIconCustom(int var0, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView::setIconCustom([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView::setIconCustom([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -185,8 +188,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -194,7 +198,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   static Future<void> setLoadCustomMapStyleFileMode(int var0, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -208,8 +212,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -217,7 +222,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   static Future<void> setMapCustomEnable(bool var0, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView::setMapCustomEnable([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView::setMapCustomEnable([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -231,8 +236,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -240,7 +246,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setCustomStyleFilePathAndMode(String var1, int var2, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setCustomStyleFilePathAndMode([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setCustomStyleFilePathAndMode([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -254,8 +260,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -263,7 +270,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setMapCustomStylePath(String var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setMapCustomStylePath([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setMapCustomStylePath([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -277,8 +284,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -286,7 +294,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setMapCustomStyle(com_baidu_mapapi_map_MapCustomStyleOptions var1, com_baidu_mapapi_map_MapView_CustomMapStyleCallBack var2, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setMapCustomStyle([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setMapCustomStyle([])');
     }
   
     // invoke native method
@@ -304,7 +312,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
             case 'Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onPreLoadLastCustomMapStyle([\'var1\':${args['var1']}])');
+                debugPrint('fluttify-dart-callback: onPreLoadLastCustomMapStyle([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -313,7 +321,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
             case 'Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onCustomMapStyleLoadSuccess([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onCustomMapStyleLoadSuccess([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -322,7 +330,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
             case 'Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadFailed':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onCustomMapStyleLoadFailed([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
+                debugPrint('fluttify-dart-callback: onCustomMapStyleLoadFailed([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
               }
         
               // handle the native call
@@ -337,8 +345,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -346,7 +355,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setMapCustomStyleEnable(bool var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setMapCustomStyleEnable([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setMapCustomStyleEnable([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -360,8 +369,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -369,7 +379,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<bool> onInterceptTouchEvent(android_view_MotionEvent var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onInterceptTouchEvent([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onInterceptTouchEvent([])');
     }
   
     // invoke native method
@@ -383,8 +393,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -392,7 +403,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setViewAnimitionEnable(bool var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setViewAnimitionEnable([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setViewAnimitionEnable([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -406,8 +417,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -415,7 +427,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<com_baidu_mapapi_map_BaiduMap> getMap({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getMap([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getMap([])');
     }
   
     // invoke native method
@@ -429,8 +441,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -438,7 +451,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> onDestroy({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onDestroy([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onDestroy([])');
     }
   
     // invoke native method
@@ -452,8 +465,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -461,7 +475,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> onDismiss({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onDismiss([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onDismiss([])');
     }
   
     // invoke native method
@@ -475,8 +489,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -484,7 +499,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> onEnterAmbient(android_os_Bundle var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onEnterAmbient([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onEnterAmbient([])');
     }
   
     // invoke native method
@@ -498,8 +513,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -507,7 +523,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> onExitAmbient({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onExitAmbient([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onExitAmbient([])');
     }
   
     // invoke native method
@@ -521,8 +537,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -530,7 +547,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<int> getMapLevel({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getMapLevel([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getMapLevel([])');
     }
   
     // invoke native method
@@ -544,8 +561,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -553,7 +571,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setPadding(int var1, int var2, int var3, int var4, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setPadding([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setPadding([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -567,8 +585,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -576,7 +595,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> showZoomControls(bool var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::showZoomControls([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::showZoomControls([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -590,8 +609,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -599,7 +619,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setZoomControlsPosition(android_graphics_Point var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setZoomControlsPosition([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setZoomControlsPosition([])');
     }
   
     // invoke native method
@@ -613,8 +633,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -622,7 +643,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> showScaleControl(bool var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::showScaleControl([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::showScaleControl([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -636,8 +657,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -645,7 +667,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<int> getScaleControlViewWidth({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getScaleControlViewWidth([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getScaleControlViewWidth([])');
     }
   
     // invoke native method
@@ -659,8 +681,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -668,7 +691,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<int> getScaleControlViewHeight({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getScaleControlViewHeight([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::getScaleControlViewHeight([])');
     }
   
     // invoke native method
@@ -682,8 +705,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -691,7 +715,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> setScaleControlPosition(android_graphics_Point var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setScaleControlPosition([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::setScaleControlPosition([])');
     }
   
     // invoke native method
@@ -705,8 +729,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -714,7 +739,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> onSaveInstanceState(android_os_Bundle var1, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onSaveInstanceState([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onSaveInstanceState([])');
     }
   
     // invoke native method
@@ -728,8 +753,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -737,7 +763,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   Future<void> onCreate(android_content_Context var1, android_os_Bundle var2, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onCreate([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.WearMapView@$refId::onCreate([])');
     }
   
     // invoke native method
@@ -751,8 +777,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

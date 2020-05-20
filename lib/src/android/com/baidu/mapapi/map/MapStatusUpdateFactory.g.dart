@@ -37,7 +37,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> newMapStatus(com_baidu_mapapi_map_MapStatus var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newMapStatus([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newMapStatus([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> newLatLng(com_baidu_mapapi_model_LatLng var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLng([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLng([])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> newLatLngBounds__com_baidu_mapapi_model_LatLngBounds(com_baidu_mapapi_model_LatLngBounds var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds([])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -106,7 +109,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int(com_baidu_mapapi_model_LatLngBounds var0, int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -120,8 +123,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -129,7 +133,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> newLatLngZoom__com_baidu_mapapi_model_LatLng__double(com_baidu_mapapi_model_LatLng var0, double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -143,8 +147,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -152,7 +157,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> scrollBy(int var0, int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::scrollBy([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::scrollBy([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -166,8 +171,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -175,7 +181,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> zoomBy__double(double var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomBy([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomBy([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -189,8 +195,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -198,7 +205,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> zoomBy__double__android_graphics_Point(double var0, android_graphics_Point var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomBy([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomBy([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -212,8 +219,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -221,7 +229,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> zoomIn() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomIn([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomIn([])');
     }
   
     // invoke native method
@@ -235,8 +243,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -244,7 +253,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> zoomOut() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomOut([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomOut([])');
     }
   
     // invoke native method
@@ -258,8 +267,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -267,7 +277,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> zoomTo(double var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomTo([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::zoomTo([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -281,8 +291,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -290,7 +301,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int__int__int(com_baidu_mapapi_model_LatLngBounds var0, int var1, int var2, int var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -304,8 +315,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -313,7 +325,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
   static Future<com_baidu_mapapi_map_MapStatusUpdate> newLatLngZoom__com_baidu_mapapi_model_LatLngBounds__int__int__int__int(com_baidu_mapapi_model_LatLngBounds var0, int var1, int var2, int var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -327,8 +339,9 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MapStatusUpdate()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

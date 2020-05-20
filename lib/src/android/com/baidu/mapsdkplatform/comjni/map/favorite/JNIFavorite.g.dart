@@ -55,7 +55,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<int> Create() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Create([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Create([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<int> Release(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Release([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Release([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> Load(int var1, String var3, String var4, String var5, int var6, int var7, int var8) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Load([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Load([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> SetType(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::SetType([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::SetType([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> Add(int var1, String var3, String var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Add([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Add([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +175,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> Update(int var1, String var3, String var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Update([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Update([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -184,8 +189,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -193,7 +199,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> Remove(int var1, String var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Remove([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Remove([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -207,8 +213,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -216,7 +223,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> Clear(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Clear([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::Clear([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -230,8 +237,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -239,7 +247,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<String> GetValue(int var1, String var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::GetValue([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::GetValue([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -253,8 +261,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -262,7 +271,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<int> GetAll(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::GetAll([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::GetAll([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -276,8 +285,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -285,7 +295,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> IsExist(int var1, String var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::IsExist([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::IsExist([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -299,8 +309,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -308,7 +319,7 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
   Future<bool> SaveCache(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::SaveCache([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite@$refId::SaveCache([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -322,8 +333,9 @@ class com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

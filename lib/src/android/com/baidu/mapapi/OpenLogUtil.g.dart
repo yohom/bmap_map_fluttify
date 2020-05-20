@@ -55,7 +55,7 @@ class com_baidu_mapapi_OpenLogUtil extends java_lang_Object  {
   static Future<void> setModuleLogEnable(com_baidu_mapapi_ModuleName var0, bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.OpenLogUtil::setModuleLogEnable([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.OpenLogUtil::setModuleLogEnable([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_OpenLogUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

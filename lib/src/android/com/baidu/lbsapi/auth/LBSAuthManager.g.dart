@@ -44,7 +44,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
   static Future<com_baidu_lbsapi_auth_LBSAuthManager> getInstance(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager::getInstance([])');
+      debugPrint('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager::getInstance([])');
     }
   
     // invoke native method
@@ -58,8 +58,9 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_lbsapi_auth_LBSAuthManager()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_lbsapi_auth_LBSAuthManager()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_lbsapi_auth_LBSAuthManager()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -67,7 +68,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
   Future<String> getKey() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getKey([])');
+      debugPrint('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getKey([])');
     }
   
     // invoke native method
@@ -81,8 +82,9 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -90,7 +92,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
   Future<String> getMCode() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getMCode([])');
+      debugPrint('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getMCode([])');
     }
   
     // invoke native method
@@ -104,8 +106,9 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -113,7 +116,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
   Future<String> getPublicKey(android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getPublicKey([])');
+      debugPrint('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getPublicKey([])');
     }
   
     // invoke native method
@@ -127,8 +130,9 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -136,7 +140,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
   Future<String> getCUID() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getCUID([])');
+      debugPrint('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManager@$refId::getCUID([])');
     }
   
     // invoke native method
@@ -150,8 +154,9 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

@@ -55,7 +55,7 @@ class com_baidu_mapapi_http_AsyncHttpClient extends java_lang_Object  {
   Future<void> get(String var1, com_baidu_mapapi_http_HttpClient_ProtoResultCallback var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.AsyncHttpClient@$refId::get([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.AsyncHttpClient@$refId::get([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_http_AsyncHttpClient extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

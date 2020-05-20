@@ -34,7 +34,8 @@ extern BOOL enableLog;
 @implementation BMKAnnotationViewPlatformView {
   int64_t _viewId;
   CGRect _frame;
-  NSDictionary<NSString *, Handler> *_handlerMap;
+  NSDictionary<NSString *, Handler>* _handlerMap;
+  BMKAnnotationView* _view;
 }
 
 - (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
@@ -49,9 +50,11 @@ extern BOOL enableLog;
 }
 
 - (UIView *)view {
-  BMKAnnotationView *view = [[BMKAnnotationView alloc] initWithFrame:_frame];
-  // 这里用一个magic number调整一下id
-  HEAP[@(2147483647 - _viewId)] = view;
+  if (_view == nil) {
+    _view = [[BMKAnnotationView alloc] initWithFrame:_frame];
+    // 这里用一个magic number调整一下id
+    HEAP[@(2147483647 - _viewId)] = _view;
+  }
 
   //region handlers
   _handlerMap = @{
@@ -876,7 +879,7 @@ extern BOOL enableLog;
     }
   }];
   //endregion
-  return view;
+  return _view;
 }
 
 //region delegate

@@ -37,7 +37,7 @@ class com_baidu_mapapi_map_FileTileProvider extends java_lang_Object with com_ba
   Future<com_baidu_mapapi_map_Tile> getTile(int var1, int var2, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.FileTileProvider@$refId::getTile([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.FileTileProvider@$refId::getTile([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_map_FileTileProvider extends java_lang_Object with com_ba
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_Tile()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_Tile()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_Tile()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

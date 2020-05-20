@@ -31,226 +31,226 @@ public class SubHandler10 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.baidu.lbsapi.auth.LBSAuthManager::getKey_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.lbsapi.auth.LBSAuthManager::getKey_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
-                    com.baidu.lbsapi.auth.LBSAuthManager ref = (com.baidu.lbsapi.auth.LBSAuthManager) getHEAP().get(refId);
-            
-                    // invoke native method
-                    String result;
-                    try {
-                        result = ref.getKey();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        methodResult.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    // convert result to jsonable result
-                    String jsonableResult = result;
-            
-                    resultList.add(jsonableResult);
-                }
-            
-                methodResult.success(resultList);
-            });
-            // method
-            put("com.baidu.lbsapi.auth.LBSAuthManager::getMCode_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.lbsapi.auth.LBSAuthManager ref = (com.baidu.lbsapi.auth.LBSAuthManager) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.getMCode();
+                        __result__ = ref.getKey();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.lbsapi.auth.LBSAuthManager::getPublicKey_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.lbsapi.auth.LBSAuthManager::getMCode_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.baidu.lbsapi.auth.LBSAuthManager ref = (com.baidu.lbsapi.auth.LBSAuthManager) getHEAP().get(refId);
+            
+                    // invoke native method
+                    String __result__;
+                    try {
+                        __result__ = ref.getMCode();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    // convert result to jsonable result
+                    String jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.lbsapi.auth.LBSAuthManager::getPublicKey_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.lbsapi.auth.LBSAuthManager ref = (com.baidu.lbsapi.auth.LBSAuthManager) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.getPublicKey(var1);
+                        __result__ = ref.getPublicKey(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.lbsapi.auth.LBSAuthManager::getCUID_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.lbsapi.auth.LBSAuthManager::getCUID_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.lbsapi.auth.LBSAuthManager ref = (com.baidu.lbsapi.auth.LBSAuthManager) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.getCUID();
+                        __result__ = ref.getCUID();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.android.bbalbs.common.util.CommonParam::getCUID_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.android.bbalbs.common.util.CommonParam::getCUID_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.android.bbalbs.common.util.CommonParam.getCUID(var0);
+                        __result__ = com.baidu.android.bbalbs.common.util.CommonParam.getCUID(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2Pt_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2Pt_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Object var0 = (Object) ((Map<String, Object>) args).get("var0");
+                    Object var0 = (Object) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.TransGeoStr2Pt(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.TransGeoStr2Pt(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::TransNodeStr2Pt_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::TransNodeStr2Pt_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Object var0 = (Object) ((Map<String, Object>) args).get("var0");
+                    Object var0 = (Object) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
@@ -263,63 +263,63 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2ComplexPt_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::TransGeoStr2ComplexPt_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Object var0 = (Object) ((Map<String, Object>) args).get("var0");
+                    Object var0 = (Object) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.TransGeoStr2ComplexPt(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.TransGeoStr2ComplexPt(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::GetDistanceByMC_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::GetDistanceByMC_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Object var0 = (Object) ((Map<String, Object>) args).get("var0");
+                    Object var0 = (Object) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
@@ -332,104 +332,104 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptEx_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptEx_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Double var0 = (Double) ((Map<String, Object>) args).get("var0");
+                    Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    Double var1 = (Double) ((Map<String, Object>) args).get("var1");
+                    Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var2 = (String) ((Map<String, Object>) args).get("var2");
+                    String var2 = (String) ((Map<String, Object>) __args__).get("var2");
                     // jsonable arg
-                    Object var3 = (Object) ((Map<String, Object>) args).get("var3");
+                    Object var3 = (Object) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.CoordinateEncryptEx(new Double(var0).floatValue(), new Double(var1).floatValue(), var2, var3);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.CoordinateEncryptEx(new Double(var0).floatValue(), new Double(var1).floatValue(), var2, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptMc_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::CoordinateEncryptMc_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Double var0 = (Double) ((Map<String, Object>) args).get("var0");
+                    Double var0 = (Double) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    Double var1 = (Double) ((Map<String, Object>) args).get("var1");
+                    Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    Object var2 = (Object) ((Map<String, Object>) args).get("var2");
+                    Object var2 = (Object) ((Map<String, Object>) __args__).get("var2");
             
                     // ref
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.CoordinateEncryptMc(new Double(var0).floatValue(), new Double(var1).floatValue(), var2);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.CoordinateEncryptMc(new Double(var0).floatValue(), new Double(var1).floatValue(), var2);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::GetToken_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::GetToken_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -438,38 +438,38 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.GetToken();
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.GetToken();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::openLogEnable_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::openLogEnable_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    boolean var0 = (boolean) ((Map<String, Object>) args).get("var0");
+                    boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    int var1 = (int) ((Map<String, Object>) args).get("var1");
+                    int var1 = (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
             
@@ -482,179 +482,179 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::initClass_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::initClass_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Object var0 = (Object) ((Map<String, Object>) args).get("var0");
+                    Object var0 = (Object) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    int var1 = (int) ((Map<String, Object>) args).get("var1");
+                    int var1 = (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
             
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.initClass(var0, var1);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.initClass(var0, var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::baiduToGcj_batch", (argsBatch, methodResult) -> {
-                List<double[]> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::baiduToGcj_batch", (__argsBatch__, __methodResult__) -> {
+                List<double[]> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    double var0 = (double) ((Map<String, Object>) args).get("var0");
+                    double var0 = (double) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    double var2 = (double) ((Map<String, Object>) args).get("var2");
+                    double var2 = (double) ((Map<String, Object>) __args__).get("var2");
             
                     // ref
             
             
                     // invoke native method
-                    double[] result;
+                    double[] __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.baiduToGcj(var0, var2);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.baiduToGcj(var0, var2);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    double[] jsonableResult = result;
+                    double[] jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::gcjToBaidu_batch", (argsBatch, methodResult) -> {
-                List<double[]> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::gcjToBaidu_batch", (__argsBatch__, __methodResult__) -> {
+                List<double[]> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    double var0 = (double) ((Map<String, Object>) args).get("var0");
+                    double var0 = (double) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    double var2 = (double) ((Map<String, Object>) args).get("var2");
+                    double var2 = (double) ((Map<String, Object>) __args__).get("var2");
             
                     // ref
             
             
                     // invoke native method
-                    double[] result;
+                    double[] __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.gcjToBaidu(var0, var2);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.gcjToBaidu(var0, var2);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    double[] jsonableResult = result;
+                    double[] jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::wgsToBaidu_batch", (argsBatch, methodResult) -> {
-                List<double[]> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.JNITools::wgsToBaidu_batch", (__argsBatch__, __methodResult__) -> {
+                List<double[]> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    double var0 = (double) ((Map<String, Object>) args).get("var0");
+                    double var0 = (double) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    double var2 = (double) ((Map<String, Object>) args).get("var2");
+                    double var2 = (double) ((Map<String, Object>) __args__).get("var2");
             
                     // ref
             
             
                     // invoke native method
-                    double[] result;
+                    double[] __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.tools.JNITools.wgsToBaidu(var0, var2);
+                        __result__ = com.baidu.mapsdkplatform.comjni.tools.JNITools.wgsToBaidu(var0, var2);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    double[] jsonableResult = result;
+                    double[] jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.ParcelItem::setBundle_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.ParcelItem::setBundle_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.tools.ParcelItem ref = (com.baidu.mapsdkplatform.comjni.tools.ParcelItem) getHEAP().get(refId);
             
                     // invoke native method
@@ -665,103 +665,103 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.ParcelItem::getBundle_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.ParcelItem::getBundle_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.tools.ParcelItem ref = (com.baidu.mapsdkplatform.comjni.tools.ParcelItem) getHEAP().get(refId);
             
                     // invoke native method
-                    android.os.Bundle result;
+                    android.os.Bundle __result__;
                     try {
-                        result = ref.getBundle();
+                        __result__ = ref.getBundle();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.tools.BundleKeySet::getBundleKeys_batch", (argsBatch, methodResult) -> {
-                List<List<String>> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.tools.BundleKeySet::getBundleKeys_batch", (__argsBatch__, __methodResult__) -> {
+                List<List<String>> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.tools.BundleKeySet ref = (com.baidu.mapsdkplatform.comjni.tools.BundleKeySet) getHEAP().get(refId);
             
                     // invoke native method
-                    String[] result;
+                    String[] __result__;
                     try {
-                        result = ref.getBundleKeys(var1);
+                        __result__ = ref.getBundleKeys(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    List<String> jsonableResult = new ArrayList<String>(java.util.Arrays.asList(result));
+                    List<String> jsonableResult = new ArrayList<String>(java.util.Arrays.asList(__result__));
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.JNIHandler::registerNativeHandler_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.JNIHandler::registerNativeHandler_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
@@ -774,94 +774,94 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.JNIMD5::getSignMD5String_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.JNIMD5::getSignMD5String_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.util.JNIMD5.getSignMD5String(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.util.JNIMD5.getSignMD5String(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.JNIMD5::encodeUrlParamsValue_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.JNIMD5::encodeUrlParamsValue_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.util.JNIMD5.encodeUrlParamsValue(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.util.JNIMD5.encodeUrlParamsValue(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.JNIMD5::getUrlNeedInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.JNIMD5::getUrlNeedInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -870,32 +870,32 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.util.JNIMD5.getUrlNeedInfo();
+                        __result__ = com.baidu.mapsdkplatform.comjni.util.JNIMD5.getUrlNeedInfo();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::create_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::create_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -911,28 +911,28 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::init_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::init_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Object var0 = (Object) ((Map<String, Object>) args).get("var0");
+                    Object var0 = (Object) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
@@ -945,24 +945,24 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::unInit_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::unInit_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -978,94 +978,94 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.AppMD5::getSignMD5String_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.AppMD5::getSignMD5String_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.util.AppMD5.getSignMD5String(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.util.AppMD5.getSignMD5String(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.AppMD5::encodeUrlParamsValue_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.AppMD5::encodeUrlParamsValue_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.util.AppMD5.encodeUrlParamsValue(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.util.AppMD5.encodeUrlParamsValue(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.util.AppMD5::getUrlNeedInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.util.AppMD5::getUrlNeedInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -1074,36 +1074,36 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.util.AppMD5.getUrlNeedInfo();
+                        __result__ = com.baidu.mapsdkplatform.comjni.util.AppMD5.getUrlNeedInfo();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::removeLayerDataInterface_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::removeLayerDataInterface_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var0 = (long) (int) ((Map<String, Object>) args).get("var0");
+                    long var0 = (long) (int) ((Map<String, Object>) __args__).get("var0");
             
                     // ref
             
@@ -1116,249 +1116,249 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::ReqLayerData_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback::ReqLayerData_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.os.Bundle var0 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    android.os.Bundle var0 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // ref arg
-                    android.os.Bundle var4 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var4"));
+                    android.os.Bundle var4 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var4"));
             
                     // ref
             
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback.ReqLayerData(var0, var1, var3, var4);
+                        __result__ = com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback.ReqLayerData(var0, var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::Create_batch", (argsBatch, methodResult) -> {
-                List<Long> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::Create_batch", (__argsBatch__, __methodResult__) -> {
+                List<Long> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    long result;
+                    long __result__;
                     try {
-                        result = ref.Create();
+                        __result__ = ref.Create();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    long jsonableResult = result;
+                    long jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetCallback_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetCallback_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback var3 = (com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback var3 = (com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = ref.SetCallback(var1, var3);
+                        __result__ = ref.SetCallback(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::Release_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::Release_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = ref.Release(var1);
+                        __result__ = ref.Release(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::Init_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::Init_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    String var4 = (String) ((Map<String, Object>) args).get("var4");
+                    String var4 = (String) ((Map<String, Object>) __args__).get("var4");
                     // jsonable arg
-                    String var5 = (String) ((Map<String, Object>) args).get("var5");
+                    String var5 = (String) ((Map<String, Object>) __args__).get("var5");
                     // jsonable arg
-                    String var6 = (String) ((Map<String, Object>) args).get("var6");
+                    String var6 = (String) ((Map<String, Object>) __args__).get("var6");
                     // jsonable arg
-                    String var7 = (String) ((Map<String, Object>) args).get("var7");
+                    String var7 = (String) ((Map<String, Object>) __args__).get("var7");
                     // jsonable arg
-                    String var8 = (String) ((Map<String, Object>) args).get("var8");
+                    String var8 = (String) ((Map<String, Object>) __args__).get("var8");
                     // jsonable arg
-                    String var9 = (String) ((Map<String, Object>) args).get("var9");
+                    String var9 = (String) ((Map<String, Object>) __args__).get("var9");
                     // jsonable arg
-                    int var10 = (int) ((Map<String, Object>) args).get("var10");
+                    int var10 = (int) ((Map<String, Object>) __args__).get("var10");
                     // jsonable arg
-                    String var11 = (String) ((Map<String, Object>) args).get("var11");
+                    String var11 = (String) ((Map<String, Object>) __args__).get("var11");
                     // jsonable arg
-                    int var12 = (int) ((Map<String, Object>) args).get("var12");
+                    int var12 = (int) ((Map<String, Object>) __args__).get("var12");
                     // jsonable arg
-                    int var13 = (int) ((Map<String, Object>) args).get("var13");
+                    int var13 = (int) ((Map<String, Object>) __args__).get("var13");
                     // jsonable arg
-                    int var14 = (int) ((Map<String, Object>) args).get("var14");
+                    int var14 = (int) ((Map<String, Object>) __args__).get("var14");
                     // jsonable arg
-                    int var15 = (int) ((Map<String, Object>) args).get("var15");
+                    int var15 = (int) ((Map<String, Object>) __args__).get("var15");
                     // jsonable arg
-                    int var16 = (int) ((Map<String, Object>) args).get("var16");
+                    int var16 = (int) ((Map<String, Object>) __args__).get("var16");
                     // jsonable arg
-                    int var17 = (int) ((Map<String, Object>) args).get("var17");
+                    int var17 = (int) ((Map<String, Object>) __args__).get("var17");
                     // jsonable arg
-                    int var18 = (int) ((Map<String, Object>) args).get("var18");
+                    int var18 = (int) ((Map<String, Object>) __args__).get("var18");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.Init(var1, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18);
+                        __result__ = ref.Init(var1, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16, var17, var18);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnPause_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnPause_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1369,31 +1369,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnResume_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnResume_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1404,31 +1404,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnBackground_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnBackground_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1439,31 +1439,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnForeground_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnForeground_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1474,31 +1474,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ResetImageRes_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ResetImageRes_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1509,35 +1509,35 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapStatus_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapStatus_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
                     // jsonable arg
-                    boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
+                    boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1548,151 +1548,151 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapControlMode_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapControlMode_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = ref.SetMapControlMode(var1, var3);
+                        __result__ = ref.SetMapControlMode(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetMapStatus_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetMapStatus_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    android.os.Bundle result;
+                    android.os.Bundle __result__;
                     try {
-                        result = ref.GetMapStatus(var1);
+                        __result__ = ref.GetMapStatus(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    // convert result to jsonable result
-                    Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
-                    }
-            
-                    resultList.add(jsonableResult);
-                }
-            
-                methodResult.success(resultList);
-            });
-            // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getMapStatusLimits_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
-            
-                    // args
-                    // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
-            
-                    // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
-                    com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
-            
-                    // invoke native method
-                    android.os.Bundle result;
-                    try {
-                        result = ref.getMapStatusLimits(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapStatusLimits_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getMapStatusLimits_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
+            
+                    // invoke native method
+                    android.os.Bundle __result__;
+                    try {
+                        __result__ = ref.getMapStatusLimits(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    // convert result to jsonable result
+                    Integer jsonableResult = null;
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
+                    }
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapStatusLimits_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // jsonable arg
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1703,111 +1703,111 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getDrawingMapStatus_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getDrawingMapStatus_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    android.os.Bundle result;
+                    android.os.Bundle __result__;
                     try {
-                        result = ref.getDrawingMapStatus(var1);
+                        __result__ = ref.getDrawingMapStatus(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetZoomToBound_batch", (argsBatch, methodResult) -> {
-                List<Float> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetZoomToBound_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    float result;
+                    float __result__;
                     try {
-                        result = ref.GetZoomToBound(var1, var3);
+                        __result__ = ref.GetZoomToBound(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    float jsonableResult = result;
+                    float jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowSatelliteMap_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowSatelliteMap_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    boolean var3 = (boolean) ((Map<String, Object>) args).get("var3");
+                    boolean var3 = (boolean) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1818,33 +1818,33 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowTrafficMap_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowTrafficMap_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    boolean var3 = (boolean) ((Map<String, Object>) args).get("var3");
+                    boolean var3 = (boolean) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1855,33 +1855,33 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowHotMap_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowHotMap_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    boolean var3 = (boolean) ((Map<String, Object>) args).get("var3");
+                    boolean var3 = (boolean) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1892,71 +1892,71 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetBaiduHotMapCityInfo_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetBaiduHotMapCityInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.GetBaiduHotMapCityInfo(var1);
+                        __result__ = ref.GetBaiduHotMapCityInfo(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowLayers_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowLayers_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    boolean var5 = (boolean) ((Map<String, Object>) args).get("var5");
+                    boolean var5 = (boolean) ((Map<String, Object>) __args__).get("var5");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -1967,73 +1967,73 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::LayersIsShow_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::LayersIsShow_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.LayersIsShow(var1, var3);
+                        __result__ = ref.LayersIsShow(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetLayersClickable_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetLayersClickable_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    boolean var5 = (boolean) ((Map<String, Object>) args).get("var5");
+                    boolean var5 = (boolean) ((Map<String, Object>) __args__).get("var5");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -2044,33 +2044,33 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::UpdateLayers_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::UpdateLayers_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -2081,115 +2081,115 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::AddLayer_batch", (argsBatch, methodResult) -> {
-                List<Long> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::AddLayer_batch", (__argsBatch__, __methodResult__) -> {
+                List<Long> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
                     // jsonable arg
-                    String var5 = (String) ((Map<String, Object>) args).get("var5");
+                    String var5 = (String) ((Map<String, Object>) __args__).get("var5");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    long result;
+                    long __result__;
                     try {
-                        result = ref.AddLayer(var1, var3, var4, var5);
+                        __result__ = ref.AddLayer(var1, var3, var4, var5);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    long jsonableResult = result;
+                    long jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SwitchLayer_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SwitchLayer_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    long var5 = (long) (int) ((Map<String, Object>) args).get("var5");
+                    long var5 = (long) (int) ((Map<String, Object>) __args__).get("var5");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.SwitchLayer(var1, var3, var5);
+                        __result__ = ref.SwitchLayer(var1, var3, var5);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ClearLayer_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ClearLayer_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -2200,159 +2200,159 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetNearlyObjID_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetNearlyObjID_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var5 = (int) ((Map<String, Object>) args).get("var5");
+                    int var5 = (int) ((Map<String, Object>) __args__).get("var5");
                     // jsonable arg
-                    int var6 = (int) ((Map<String, Object>) args).get("var6");
+                    int var6 = (int) ((Map<String, Object>) __args__).get("var6");
                     // jsonable arg
-                    int var7 = (int) ((Map<String, Object>) args).get("var7");
+                    int var7 = (int) ((Map<String, Object>) __args__).get("var7");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.GetNearlyObjID(var1, var3, var5, var6, var7);
+                        __result__ = ref.GetNearlyObjID(var1, var3, var5, var6, var7);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ScrPtToGeoPoint_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ScrPtToGeoPoint_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.ScrPtToGeoPoint(var1, var3, var4);
+                        __result__ = ref.ScrPtToGeoPoint(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GeoPtToScrPoint_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GeoPtToScrPoint_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.GeoPtToScrPoint(var1, var3, var4);
+                        __result__ = ref.GeoPtToScrPoint(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SaveScreenToLocal_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SaveScreenToLocal_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // ref arg
-                    android.os.Bundle var4 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var4"));
+                    android.os.Bundle var4 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var4"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -2363,461 +2363,461 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordAdd_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordAdd_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.OnRecordAdd(var1, var3);
+                        __result__ = ref.OnRecordAdd(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordStart_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordStart_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
+                    boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
                     // jsonable arg
-                    int var5 = (int) ((Map<String, Object>) args).get("var5");
+                    int var5 = (int) ((Map<String, Object>) __args__).get("var5");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.OnRecordStart(var1, var3, var4, var5);
+                        __result__ = ref.OnRecordStart(var1, var3, var4, var5);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordSuspend_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordSuspend_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
+                    boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
                     // jsonable arg
-                    int var5 = (int) ((Map<String, Object>) args).get("var5");
+                    int var5 = (int) ((Map<String, Object>) __args__).get("var5");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.OnRecordSuspend(var1, var3, var4, var5);
+                        __result__ = ref.OnRecordSuspend(var1, var3, var4, var5);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordReload_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordReload_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
+                    boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.OnRecordReload(var1, var3, var4);
+                        __result__ = ref.OnRecordReload(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordRemove_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordRemove_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
+                    boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.OnRecordRemove(var1, var3, var4);
+                        __result__ = ref.OnRecordRemove(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordGetAll_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordGetAll_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.OnRecordGetAll(var1);
+                        __result__ = ref.OnRecordGetAll(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordGetAt_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordGetAt_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.OnRecordGetAt(var1, var3);
+                        __result__ = ref.OnRecordGetAt(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordImport_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnRecordImport_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    boolean var3 = (boolean) ((Map<String, Object>) args).get("var3");
+                    boolean var3 = (boolean) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    boolean var4 = (boolean) ((Map<String, Object>) args).get("var4");
+                    boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.OnRecordImport(var1, var3, var4);
+                        __result__ = ref.OnRecordImport(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnHotcityGet_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnHotcityGet_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.OnHotcityGet(var1);
+                        __result__ = ref.OnHotcityGet(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnSchcityGet_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::OnSchcityGet_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.OnSchcityGet(var1, var3);
+                        __result__ = ref.OnSchcityGet(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::CleanCache_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::CleanCache_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.CleanCache(var1, var3);
+                        __result__ = ref.CleanCache(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addOneOverlayItem_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addOneOverlayItem_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -2828,71 +2828,71 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addtileOverlay_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addtileOverlay_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.addtileOverlay(var1, var3);
+                        __result__ = ref.addtileOverlay(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateOneOverlayItem_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateOneOverlayItem_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -2903,109 +2903,109 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateSDKTile_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateSDKTile_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.updateSDKTile(var1, var3);
+                        __result__ = ref.updateSDKTile(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::cleanSDKTileDataCache_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::cleanSDKTileDataCache_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.cleanSDKTileDataCache(var1, var3);
+                        __result__ = ref.cleanSDKTileDataCache(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::removeOneOverlayItem_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::removeOneOverlayItem_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3016,31 +3016,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::PostStatInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::PostStatInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3051,152 +3051,152 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::MapProc_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::MapProc_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var0 = (long) (int) ((Map<String, Object>) args).get("var0");
+                    long var0 = (long) (int) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    int var2 = (int) ((Map<String, Object>) args).get("var2");
+                    int var2 = (int) ((Map<String, Object>) __args__).get("var2");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
             
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap.MapProc(var0, var2, var3, var4);
+                        __result__ = com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap.MapProc(var0, var2, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::CreateDuplicate_batch", (argsBatch, methodResult) -> {
-                List<Long> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::CreateDuplicate_batch", (__argsBatch__, __methodResult__) -> {
+                List<Long> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    long result;
+                    long __result__;
                     try {
-                        result = ref.CreateDuplicate(var1);
+                        __result__ = ref.CreateDuplicate(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    long jsonableResult = result;
+                    long jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetScreenBuf_batch", (argsBatch, methodResult) -> {
-                List<int[]> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetScreenBuf_batch", (__argsBatch__, __methodResult__) -> {
+                List<int[]> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int[] var3 = (int[]) ((Map<String, Object>) args).get("var3");
+                    int[] var3 = (int[]) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
                     // jsonable arg
-                    int var5 = (int) ((Map<String, Object>) args).get("var5");
+                    int var5 = (int) ((Map<String, Object>) __args__).get("var5");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    int[] result;
+                    int[] __result__;
                     try {
-                        result = ref.GetScreenBuf(var1, var3, var4, var5);
+                        __result__ = ref.GetScreenBuf(var1, var3, var4, var5);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int[] jsonableResult = result;
+                    int[] jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::enableDrawHouseHeight_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::enableDrawHouseHeight_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    boolean var3 = (boolean) ((Map<String, Object>) args).get("var3");
+                    boolean var3 = (boolean) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3207,67 +3207,67 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::isDrawHouseHeightEnable_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::isDrawHouseHeightEnable_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.isDrawHouseHeightEnable(var1);
+                        __result__ = ref.isDrawHouseHeightEnable(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::clearHeatMapLayerCache_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::clearHeatMapLayerCache_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3278,147 +3278,147 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getCompassPosition_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getCompassPosition_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.getCompassPosition(var1, var3);
+                        __result__ = ref.getCompassPosition(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getfocusedBaseIndoorMapInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getfocusedBaseIndoorMapInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.getfocusedBaseIndoorMapInfo(var1);
+                        __result__ = ref.getfocusedBaseIndoorMapInfo(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SwitchBaseIndoorMapFloor_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SwitchBaseIndoorMapFloor_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    String var4 = (String) ((Map<String, Object>) args).get("var4");
+                    String var4 = (String) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.SwitchBaseIndoorMapFloor(var1, var3, var4);
+                        __result__ = ref.SwitchBaseIndoorMapFloor(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowBaseIndoorMap_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::ShowBaseIndoorMap_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    boolean var3 = (boolean) ((Map<String, Object>) args).get("var3");
+                    boolean var3 = (boolean) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3429,71 +3429,71 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::IsBaseIndoorMapMode_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::IsBaseIndoorMapMode_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.IsBaseIndoorMapMode(var1);
+                        __result__ = ref.IsBaseIndoorMapMode(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setCustomMapStyleParam_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setCustomMapStyleParam_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3504,30 +3504,30 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapCustomEnable_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapCustomEnable_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var0 = (long) (int) ((Map<String, Object>) args).get("var0");
+                    long var0 = (long) (int) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    boolean var2 = (boolean) ((Map<String, Object>) args).get("var2");
+                    boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
             
                     // ref
             
@@ -3540,31 +3540,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setBackgroundTransparent_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setBackgroundTransparent_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3575,31 +3575,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::resetBackgroundTransparent_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::resetBackgroundTransparent_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3610,41 +3610,41 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setCustomTrafficColor_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setCustomTrafficColor_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    long var5 = (long) (int) ((Map<String, Object>) args).get("var5");
+                    long var5 = (long) (int) ((Map<String, Object>) __args__).get("var5");
                     // jsonable arg
-                    long var7 = (long) (int) ((Map<String, Object>) args).get("var7");
+                    long var7 = (long) (int) ((Map<String, Object>) __args__).get("var7");
                     // jsonable arg
-                    long var9 = (long) (int) ((Map<String, Object>) args).get("var9");
+                    long var9 = (long) (int) ((Map<String, Object>) __args__).get("var9");
                     // jsonable arg
-                    boolean var11 = (boolean) ((Map<String, Object>) args).get("var11");
+                    boolean var11 = (boolean) ((Map<String, Object>) __args__).get("var11");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3655,35 +3655,35 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getProjectionMatrix_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getProjectionMatrix_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    float[] var3 = (float[]) ((Map<String, Object>) args).get("var3");
+                    float[] var3 = (float[]) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3694,35 +3694,35 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getViewMatrix_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::getViewMatrix_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    float[] var3 = (float[]) ((Map<String, Object>) args).get("var3");
+                    float[] var3 = (float[]) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    int var4 = (int) ((Map<String, Object>) args).get("var4");
+                    int var4 = (int) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3733,33 +3733,33 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapCustomEnableDynamic_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapCustomEnableDynamic_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    boolean var3 = (boolean) ((Map<String, Object>) args).get("var3");
+                    boolean var3 = (boolean) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap ref = (com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap) getHEAP().get(refId);
             
                     // invoke native method
@@ -3770,66 +3770,66 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache::Create_batch", (argsBatch, methodResult) -> {
-                List<Long> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache::Create_batch", (__argsBatch__, __methodResult__) -> {
+                List<Long> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache ref = (com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache) getHEAP().get(refId);
             
                     // invoke native method
-                    long result;
+                    long __result__;
                     try {
-                        result = ref.Create();
+                        __result__ = ref.Create();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    long jsonableResult = result;
+                    long jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache::Init_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache::Init_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache ref = (com.baidu.mapsdkplatform.comjni.map.commonmemcache.JNICommonMemCache) getHEAP().get(refId);
             
                     // invoke native method
@@ -3840,557 +3840,557 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Create_batch", (argsBatch, methodResult) -> {
-                List<Long> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Create_batch", (__argsBatch__, __methodResult__) -> {
+                List<Long> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    long result;
+                    long __result__;
                     try {
-                        result = ref.Create();
+                        __result__ = ref.Create();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    long jsonableResult = result;
+                    long jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Release_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Release_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = ref.Release(var1);
+                        __result__ = ref.Release(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Load_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Load_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    String var4 = (String) ((Map<String, Object>) args).get("var4");
+                    String var4 = (String) ((Map<String, Object>) __args__).get("var4");
                     // jsonable arg
-                    String var5 = (String) ((Map<String, Object>) args).get("var5");
+                    String var5 = (String) ((Map<String, Object>) __args__).get("var5");
                     // jsonable arg
-                    int var6 = (int) ((Map<String, Object>) args).get("var6");
+                    int var6 = (int) ((Map<String, Object>) __args__).get("var6");
                     // jsonable arg
-                    int var7 = (int) ((Map<String, Object>) args).get("var7");
+                    int var7 = (int) ((Map<String, Object>) __args__).get("var7");
                     // jsonable arg
-                    int var8 = (int) ((Map<String, Object>) args).get("var8");
+                    int var8 = (int) ((Map<String, Object>) __args__).get("var8");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.Load(var1, var3, var4, var5, var6, var7, var8);
+                        __result__ = ref.Load(var1, var3, var4, var5, var6, var7, var8);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::SetType_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::SetType_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var3 = (int) ((Map<String, Object>) args).get("var3");
+                    int var3 = (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.SetType(var1, var3);
+                        __result__ = ref.SetType(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Add_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Add_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    String var4 = (String) ((Map<String, Object>) args).get("var4");
+                    String var4 = (String) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.Add(var1, var3, var4);
+                        __result__ = ref.Add(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Update_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Update_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // jsonable arg
-                    String var4 = (String) ((Map<String, Object>) args).get("var4");
+                    String var4 = (String) ((Map<String, Object>) __args__).get("var4");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.Update(var1, var3, var4);
+                        __result__ = ref.Update(var1, var3, var4);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Remove_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Remove_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.Remove(var1, var3);
+                        __result__ = ref.Remove(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Clear_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::Clear_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.Clear(var1);
+                        __result__ = ref.Clear(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::GetValue_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::GetValue_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = ref.GetValue(var1, var3);
+                        __result__ = ref.GetValue(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::GetAll_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::GetAll_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) args).get("var3"));
+                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = ref.GetAll(var1, var3);
+                        __result__ = ref.GetAll(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::IsExist_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::IsExist_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    String var3 = (String) ((Map<String, Object>) args).get("var3");
+                    String var3 = (String) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.IsExist(var1, var3);
+                        __result__ = ref.IsExist(var1, var3);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::SaveCache_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite::SaveCache_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    long var1 = (long) (int) ((Map<String, Object>) args).get("var1");
+                    long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite ref = (com.baidu.mapsdkplatform.comjni.map.favorite.JNIFavorite) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.SaveCache(var1);
+                        __result__ = ref.SaveCache(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::initClass_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::initClass_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    Object var0 = (Object) ((Map<String, Object>) args).get("var0");
+                    Object var0 = (Object) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    int var1 = (int) ((Map<String, Object>) args).get("var1");
+                    int var1 = (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
             
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.initClass(var0, var1);
+                        __result__ = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.initClass(var0, var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::InitEngine_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::InitEngine_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.InitEngine(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.InitEngine(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::UnInitEngine_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::UnInitEngine_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -4399,38 +4399,38 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.UnInitEngine();
+                        __result__ = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.UnInitEngine();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::SetProxyInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::SetProxyInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    int var1 = (int) ((Map<String, Object>) args).get("var1");
+                    int var1 = (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
             
@@ -4443,24 +4443,24 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::StartSocketProc_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.JNIEngine::StartSocketProc_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -4469,42 +4469,42 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.StartSocketProc();
+                        __result__ = com.baidu.mapsdkplatform.comjni.engine.JNIEngine.StartSocketProc();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::despatchMessage_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::despatchMessage_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    int var0 = (int) ((Map<String, Object>) args).get("var0");
+                    int var0 = (int) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    int var1 = (int) ((Map<String, Object>) args).get("var1");
+                    int var1 = (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    int var2 = (int) ((Map<String, Object>) args).get("var2");
+                    int var2 = (int) ((Map<String, Object>) __args__).get("var2");
                     // jsonable arg
-                    long var3 = (long) (int) ((Map<String, Object>) args).get("var3");
+                    long var3 = (long) (int) ((Map<String, Object>) __args__).get("var3");
             
                     // ref
             
@@ -4517,24 +4517,24 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitClass_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitClass_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -4550,59 +4550,59 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitEngine_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitEngine_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.engine.AppEngine.InitEngine(var0);
+                        __result__ = com.baidu.mapsdkplatform.comjni.engine.AppEngine.InitEngine(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::UnInitEngine_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::UnInitEngine_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -4611,38 +4611,38 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.engine.AppEngine.UnInitEngine();
+                        __result__ = com.baidu.mapsdkplatform.comjni.engine.AppEngine.UnInitEngine();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::SetProxyInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::SetProxyInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    int var1 = (int) ((Map<String, Object>) args).get("var1");
+                    int var1 = (int) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
             
@@ -4655,24 +4655,24 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::StartSocketProc_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comjni.engine.AppEngine::StartSocketProc_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -4681,32 +4681,32 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comjni.engine.AppEngine.StartSocketProc();
+                        __result__ = com.baidu.mapsdkplatform.comjni.engine.AppEngine.StartSocketProc();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.NativeLoader::getInstance_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.NativeLoader::getInstance_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -4715,40 +4715,40 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    com.baidu.mapsdkplatform.comapi.NativeLoader result;
+                    com.baidu.mapsdkplatform.comapi.NativeLoader __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.NativeLoader.getInstance();
+                        __result__ = com.baidu.mapsdkplatform.comapi.NativeLoader.getInstance();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.NativeLoader::setContext_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.NativeLoader::setContext_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
@@ -4761,60 +4761,60 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.NativeLoader::loadLibrary_batch", (argsBatch, methodResult) -> {
-                List<Boolean> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.NativeLoader::loadLibrary_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var1 = (String) ((Map<String, Object>) args).get("var1");
+                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.NativeLoader ref = (com.baidu.mapsdkplatform.comapi.NativeLoader) getHEAP().get(refId);
             
                     // invoke native method
-                    boolean result;
+                    boolean __result__;
                     try {
-                        result = ref.loadLibrary(var1);
+                        __result__ = ref.loadLibrary(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    boolean jsonableResult = result;
+                    boolean jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::getInstance_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::getInstance_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -4823,43 +4823,43 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable result;
+                    com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable.getInstance();
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable.getInstance();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::addObserver_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::addObserver_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver var1 = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver var1 = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable) getHEAP().get(refId);
             
                     // invoke native method
@@ -4870,30 +4870,30 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::init_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::init_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable) getHEAP().get(refId);
             
                     // invoke native method
@@ -4904,30 +4904,30 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updatePhoneInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updatePhoneInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable) getHEAP().get(refId);
             
                     // invoke native method
@@ -4938,31 +4938,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable) getHEAP().get(refId);
             
                     // invoke native method
@@ -4973,31 +4973,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkProxy_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkProxy_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable) getHEAP().get(refId);
             
                     // invoke native method
@@ -5008,219 +5008,219 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::setUrlNeedInfo_batch", (argsBatch, methodResult) -> {
-                List<byte[]> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::setUrlNeedInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<byte[]> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    String var1 = (String) ((Map<String, Object>) args).get("var1");
+                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    byte[] var2 = (byte[]) ((Map<String, Object>) args).get("var2");
+                    byte[] var2 = (byte[]) ((Map<String, Object>) __args__).get("var2");
             
                     // ref
             
             
                     // invoke native method
-                    byte[] result;
+                    byte[] __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil.setUrlNeedInfo(var0, var1, var2);
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil.setUrlNeedInfo(var0, var1, var2);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    byte[] jsonableResult = result;
+                    byte[] jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::getUrlNeedInfo_batch", (argsBatch, methodResult) -> {
-                List<byte[]> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::getUrlNeedInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<byte[]> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // jsonable arg
-                    String var0 = (String) ((Map<String, Object>) args).get("var0");
+                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
                     // jsonable arg
-                    String var1 = (String) ((Map<String, Object>) args).get("var1");
+                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
-                    byte[] var2 = (byte[]) ((Map<String, Object>) args).get("var2");
+                    byte[] var2 = (byte[]) ((Map<String, Object>) __args__).get("var2");
             
                     // ref
             
             
                     // invoke native method
-                    byte[] result;
+                    byte[] __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil.getUrlNeedInfo(var0, var1, var2);
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil.getUrlNeedInfo(var0, var1, var2);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    byte[] jsonableResult = result;
+                    byte[] jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.CoordTrans::baiduToGcj_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.CoordTrans::baiduToGcj_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
             
                     // invoke native method
-                    com.baidu.mapapi.model.LatLng result;
+                    com.baidu.mapapi.model.LatLng __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.CoordTrans.baiduToGcj(var0);
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.CoordTrans.baiduToGcj(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.CoordTrans::gcjToBaidu_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.CoordTrans::gcjToBaidu_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
             
                     // invoke native method
-                    com.baidu.mapapi.model.LatLng result;
+                    com.baidu.mapapi.model.LatLng __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.CoordTrans.gcjToBaidu(var0);
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.CoordTrans.gcjToBaidu(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.CoordTrans::wgsToBaidu_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.CoordTrans::wgsToBaidu_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
             
                     // invoke native method
-                    com.baidu.mapapi.model.LatLng result;
+                    com.baidu.mapapi.model.LatLng __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.CoordTrans.wgsToBaidu(var0);
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.CoordTrans.wgsToBaidu(var0);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     Integer jsonableResult = null;
-                    if (result != null) {
-                        jsonableResult = System.identityHashCode(result);
-                        getHEAP().put(jsonableResult, result);
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
                     }
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getAuthToken_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getAuthToken_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5229,32 +5229,32 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.SyncSysInfo.getAuthToken();
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.SyncSysInfo.getAuthToken();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getPhoneInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getPhoneInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5263,36 +5263,36 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.SyncSysInfo.getPhoneInfo();
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.SyncSysInfo.getPhoneInfo();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::init_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::init_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var0"));
+                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
             
                     // ref
             
@@ -5305,24 +5305,24 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::permissionCheck_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::permissionCheck_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5331,32 +5331,32 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.PermissionCheck.permissionCheck();
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.PermissionCheck.permissionCheck();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::destory_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::destory_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5372,24 +5372,24 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::getPermissionResult_batch", (argsBatch, methodResult) -> {
-                List<Integer> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.PermissionCheck::getPermissionResult_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5398,38 +5398,38 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    int result;
+                    int __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.util.PermissionCheck.getPermissionResult();
+                        __result__ = com.baidu.mapsdkplatform.comapi.util.PermissionCheck.getPermissionResult();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    int jsonableResult = result;
+                    int jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::init_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::init_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get(refId);
             
                     // invoke native method
@@ -5440,30 +5440,30 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updatePhoneInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updatePhoneInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get(refId);
             
                     // invoke native method
@@ -5474,31 +5474,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkInfo_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get(refId);
             
                     // invoke native method
@@ -5509,31 +5509,31 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkProxy_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkProxy_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                     // ref
-                    int refId = (int) ((Map<String, Object>) args).get("refId");
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
                     com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver ref = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get(refId);
             
                     // invoke native method
@@ -5544,24 +5544,24 @@ public class SubHandler10 {
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
                     String jsonableResult = "success";
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.map.VersionInfo::getApiVersion_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.map.VersionInfo::getApiVersion_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5570,32 +5570,32 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.map.VersionInfo.getApiVersion();
+                        __result__ = com.baidu.mapsdkplatform.comapi.map.VersionInfo.getApiVersion();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.map.VersionInfo::getVersionDesc_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.map.VersionInfo::getVersionDesc_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5604,32 +5604,32 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.map.VersionInfo.getVersionDesc();
+                        __result__ = com.baidu.mapsdkplatform.comapi.map.VersionInfo.getVersionDesc();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapsdkplatform.comapi.map.VersionInfo::getKitName_batch", (argsBatch, methodResult) -> {
-                List<String> resultList = new ArrayList<>();
+            put("com.baidu.mapsdkplatform.comapi.map.VersionInfo::getKitName_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
             
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) argsBatch).size(); __i__++) {
-                    Map<String, Object> args = ((List<Map<String, Object>>) argsBatch).get(__i__);
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // args
             
@@ -5638,28 +5638,28 @@ public class SubHandler10 {
             
             
                     // invoke native method
-                    String result;
+                    String __result__;
                     try {
-                        result = com.baidu.mapsdkplatform.comapi.map.VersionInfo.getKitName();
+                        __result__ = com.baidu.mapsdkplatform.comapi.map.VersionInfo.getKitName();
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {
                             Log.d("Current HEAP: ", getHEAP().toString());
                         }
-                        methodResult.error(throwable.getMessage(), null, null);
+                        __methodResult__.error(throwable.getMessage(), null, null);
                         return;
                     }
             
                     // convert result to jsonable result
-                    String jsonableResult = result;
+                    String jsonableResult = __result__;
             
-                    resultList.add(jsonableResult);
+                    __resultList__.add(jsonableResult);
                 }
             
-                methodResult.success(resultList);
+                __methodResult__.success(__resultList__);
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_UIMsg__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_UIMsg__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_UIMsg__");
                 }
@@ -5676,10 +5676,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_NetworkUtil__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_NetworkUtil__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_NetworkUtil__");
                 }
@@ -5696,10 +5696,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_AnimationSet__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_animation_AnimationSet__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_AnimationSet__");
                 }
@@ -5716,17 +5716,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng");
                 }
             
                 // args
                 // ref arg
-                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                 // create target object
                 com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
@@ -5737,17 +5737,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__android_graphics_Point", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__android_graphics_Point", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_Transformation__android_graphics_Point");
                 }
             
                 // args
                 // ref arg
-                android.graphics.Point var1 = (android.graphics.Point) getHEAP().get((int) ((Map<String, Object>) args).get("var1"));
+                android.graphics.Point var1 = (android.graphics.Point) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
             
                 // create target object
                 com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
@@ -5758,19 +5758,19 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_RotateAnimation__float__float", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_animation_RotateAnimation__float__float", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_RotateAnimation__float__float");
                 }
             
                 // args
                 // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) args).get("var1");
+                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
                 // jsonable arg
-                Double var2 = (Double) ((Map<String, Object>) args).get("var2");
+                Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.animation.RotateAnimation __obj__ = new com.baidu.mapapi.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
@@ -5781,17 +5781,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_AlphaAnimation__float", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_animation_AlphaAnimation__float", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_AlphaAnimation__float");
                 }
             
                 // args
                 // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) args).get("var1");
+                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.animation.AlphaAnimation __obj__ = new com.baidu.mapapi.animation.AlphaAnimation(new Double(var1).floatValue());
@@ -5802,17 +5802,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_ScaleAnimation__float", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_animation_ScaleAnimation__float", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_ScaleAnimation__float");
                 }
             
                 // args
                 // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) args).get("var1");
+                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.animation.ScaleAnimation __obj__ = new com.baidu.mapapi.animation.ScaleAnimation(new Double(var1).floatValue());
@@ -5823,10 +5823,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__");
                 }
@@ -5843,17 +5843,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String");
                 }
             
                 // args
                 // jsonable arg
-                String var1 = (String) ((Map<String, Object>) args).get("var1");
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException __obj__ = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException(var1);
@@ -5864,10 +5864,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_NaviParaOption__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_navi_NaviParaOption__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_NaviParaOption__");
                 }
@@ -5884,10 +5884,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapNavigation__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapNavigation__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_BaiduMapNavigation__");
                 }
@@ -5904,10 +5904,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_IllegalNaviArgumentException__");
                 }
@@ -5924,17 +5924,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__String", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__String", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_IllegalNaviArgumentException__String");
                 }
             
                 // args
                 // jsonable arg
-                String var1 = (String) ((Map<String, Object>) args).get("var1");
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.navi.IllegalNaviArgumentException __obj__ = new com.baidu.mapapi.navi.IllegalNaviArgumentException(var1);
@@ -5945,10 +5945,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_favorite_FavoritePoiInfo__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_favorite_FavoritePoiInfo__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_favorite_FavoritePoiInfo__");
                 }
@@ -5965,10 +5965,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_BaiduMapRoutePlan__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_route_BaiduMapRoutePlan__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_BaiduMapRoutePlan__");
                 }
@@ -5985,10 +5985,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__");
                 }
@@ -6005,17 +6005,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String");
                 }
             
                 // args
                 // jsonable arg
-                String var1 = (String) ((Map<String, Object>) args).get("var1");
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException __obj__ = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException(var1);
@@ -6026,10 +6026,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_RouteParaOption__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_route_RouteParaOption__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_RouteParaOption__");
                 }
@@ -6046,10 +6046,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_DistanceUtil__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_DistanceUtil__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_DistanceUtil__");
                 }
@@ -6066,10 +6066,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_SpatialRelationUtil__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_SpatialRelationUtil__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_SpatialRelationUtil__");
                 }
@@ -6086,10 +6086,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_CoordinateConverter__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_CoordinateConverter__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_CoordinateConverter__");
                 }
@@ -6106,10 +6106,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_PoiParaOption__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_PoiParaOption__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_PoiParaOption__");
                 }
@@ -6126,10 +6126,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_DispathcPoiData__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_DispathcPoiData__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_DispathcPoiData__");
                 }
@@ -6146,10 +6146,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__");
                 }
@@ -6166,17 +6166,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__String", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__String", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__String");
                 }
             
                 // args
                 // jsonable arg
-                String var1 = (String) ((Map<String, Object>) args).get("var1");
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException __obj__ = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException(var1);
@@ -6187,10 +6187,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_BaiduMapPoiSearch__");
                 }
@@ -6207,10 +6207,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_OpenClientUtil__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_OpenClientUtil__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_OpenClientUtil__");
                 }
@@ -6227,10 +6227,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_AreaUtil__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_utils_AreaUtil__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_AreaUtil__");
                 }
@@ -6247,10 +6247,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_UIMsg_WalkNaviMsg__");
                 }
@@ -6267,10 +6267,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_BMapManager__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_BMapManager__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_BMapManager__");
                 }
@@ -6287,10 +6287,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_OpenLogUtil__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_OpenLogUtil__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_OpenLogUtil__");
                 }
@@ -6307,10 +6307,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_SysOSUtil__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_common_SysOSUtil__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_SysOSUtil__");
                 }
@@ -6327,10 +6327,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_Logger__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_common_Logger__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_Logger__");
                 }
@@ -6347,10 +6347,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_BaiduMapSDKException__");
                 }
@@ -6367,17 +6367,17 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__String", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__String", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_BaiduMapSDKException__String");
                 }
             
                 // args
                 // jsonable arg
-                String var1 = (String) ((Map<String, Object>) args).get("var1");
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.common.BaiduMapSDKException __obj__ = new com.baidu.mapapi.common.BaiduMapSDKException(var1);
@@ -6388,10 +6388,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_EnvironmentUtilities__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_common_EnvironmentUtilities__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_EnvironmentUtilities__");
                 }
@@ -6408,10 +6408,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_AppTools__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_common_AppTools__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_AppTools__");
                 }
@@ -6428,10 +6428,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_HeatMap_Builder__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_HeatMap_Builder__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_HeatMap_Builder__");
                 }
@@ -6448,10 +6448,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_PolygonHoleOptions__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_PolygonHoleOptions__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_PolygonHoleOptions__");
                 }
@@ -6468,10 +6468,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_CircleHoleOptions__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_CircleHoleOptions__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_CircleHoleOptions__");
                 }
@@ -6488,10 +6488,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapPoi__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_MapPoi__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapPoi__");
                 }
@@ -6508,10 +6508,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_BitmapDescriptorFactory__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_BitmapDescriptorFactory__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_BitmapDescriptorFactory__");
                 }
@@ -6528,10 +6528,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapViewLayoutParams_Builder__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_MapViewLayoutParams_Builder__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapViewLayoutParams_Builder__");
                 }
@@ -6548,10 +6548,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_DotOptions__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_DotOptions__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_DotOptions__");
                 }
@@ -6568,10 +6568,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationData_Builder__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationData_Builder__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MyLocationData_Builder__");
                 }
@@ -6588,10 +6588,10 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_PolylineOptions__", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_PolylineOptions__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_PolylineOptions__");
                 }
@@ -6608,21 +6608,21 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_Tile__int__int__byteArray", (args, methodResult) -> {
+            put("ObjectFactory::createcom_baidu_mapapi_map_Tile__int__int__byteArray", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_Tile__int__int__byteArray");
                 }
             
                 // args
                 // jsonable arg
-                int var1 = (int) ((Map<String, Object>) args).get("var1");
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
                 // jsonable arg
-                int var2 = (int) ((Map<String, Object>) args).get("var2");
+                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
                 // jsonable arg
-                byte[] var3 = (byte[]) ((Map<String, Object>) args).get("var3");
+                byte[] var3 = (byte[]) ((Map<String, Object>) __args__).get("var3");
             
                 // create target object
                 com.baidu.mapapi.map.Tile __obj__ = new com.baidu.mapapi.map.Tile(var1, var2, var3);
@@ -6633,7 +6633,7 @@ public class SubHandler10 {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                methodResult.success(System.identityHashCode(__obj__));
+                __methodResult__.success(System.identityHashCode(__obj__));
             });
         }};
     }

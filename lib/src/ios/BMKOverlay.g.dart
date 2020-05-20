@@ -35,7 +35,7 @@ mixin BMKOverlay on BMKAnnotation {
   Future<bool> intersectsMapRect(BMKMapRect mapRect) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlay@$refId::intersectsMapRect([])');
+      debugPrint('fluttify-dart: BMKOverlay@$refId::intersectsMapRect([])');
     }
   
     // invoke native method
@@ -49,8 +49,9 @@ mixin BMKOverlay on BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

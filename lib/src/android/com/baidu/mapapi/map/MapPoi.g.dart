@@ -55,7 +55,7 @@ class com_baidu_mapapi_map_MapPoi extends java_lang_Object  {
   Future<String> getUid() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapPoi@$refId::getUid([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapPoi@$refId::getUid([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_map_MapPoi extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_map_MapPoi extends java_lang_Object  {
   Future<String> getName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapPoi@$refId::getName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapPoi@$refId::getName([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_map_MapPoi extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_map_MapPoi extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLng> getPosition() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapPoi@$refId::getPosition([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapPoi@$refId::getPosition([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_map_MapPoi extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

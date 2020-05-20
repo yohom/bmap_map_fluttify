@@ -60,7 +60,7 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   Future<dynamic> initWithURLTemplate(String URLTemplate) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKURLTileLayer@$refId::initWithURLTemplate([\'URLTemplate\':$URLTemplate])');
+      debugPrint('fluttify-dart: BMKURLTileLayer@$refId::initWithURLTemplate([\'URLTemplate\':$URLTemplate])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -83,7 +84,7 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   Future<bool> cleanTileDataCache() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKURLTileLayer@$refId::cleanTileDataCache([])');
+      debugPrint('fluttify-dart: BMKURLTileLayer@$refId::cleanTileDataCache([])');
     }
   
     // invoke native method
@@ -97,8 +98,9 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

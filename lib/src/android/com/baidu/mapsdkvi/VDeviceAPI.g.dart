@@ -55,7 +55,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getTotalSpace() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getTotalSpace([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getTotalSpace([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getFreeSpace() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getFreeSpace([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getFreeSpace([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getSdcardTotalSpace() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSdcardTotalSpace([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSdcardTotalSpace([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getSdcardFreeSpace() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSdcardFreeSpace([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSdcardFreeSpace([])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getTotalMemory() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getTotalMemory([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getTotalMemory([])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +175,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getAvailableMemory() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getAvailableMemory([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getAvailableMemory([])');
     }
   
     // invoke native method
@@ -184,8 +189,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -193,7 +199,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<String> getOsVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getOsVersion([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getOsVersion([])');
     }
   
     // invoke native method
@@ -207,8 +213,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -216,7 +223,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> setupSoftware(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::setupSoftware([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::setupSoftware([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -230,8 +237,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -239,7 +247,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<String> getModuleFileName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getModuleFileName([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getModuleFileName([])');
     }
   
     // invoke native method
@@ -253,8 +261,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -262,7 +271,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<String> getSdcardPath() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSdcardPath([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSdcardPath([])');
     }
   
     // invoke native method
@@ -276,8 +285,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -285,7 +295,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<String> getCachePath() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getCachePath([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getCachePath([])');
     }
   
     // invoke native method
@@ -299,8 +309,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -308,7 +319,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<String> getAppVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getAppVersion([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getAppVersion([])');
     }
   
     // invoke native method
@@ -322,8 +333,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -331,7 +343,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getCurrentNetworkType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getCurrentNetworkType([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getCurrentNetworkType([])');
     }
   
     // invoke native method
@@ -345,8 +357,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -354,7 +367,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<bool> isWifiConnected() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::isWifiConnected([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::isWifiConnected([])');
     }
   
     // invoke native method
@@ -368,8 +381,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -377,7 +391,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> setNetworkChangedCallback() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::setNetworkChangedCallback([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::setNetworkChangedCallback([])');
     }
   
     // invoke native method
@@ -391,8 +405,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -400,7 +415,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> unsetNetworkChangedCallback() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::unsetNetworkChangedCallback([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::unsetNetworkChangedCallback([])');
     }
   
     // invoke native method
@@ -414,8 +429,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -423,7 +439,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> onNetworkStateChanged() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::onNetworkStateChanged([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::onNetworkStateChanged([])');
     }
   
     // invoke native method
@@ -437,8 +453,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -446,7 +463,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<double> getSystemMetricsX() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSystemMetricsX([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSystemMetricsX([])');
     }
   
     // invoke native method
@@ -460,8 +477,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -469,7 +487,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<double> getSystemMetricsY() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSystemMetricsY([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getSystemMetricsY([])');
     }
   
     // invoke native method
@@ -483,8 +501,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -492,7 +511,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<double> getScreenDensity() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getScreenDensity([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getScreenDensity([])');
     }
   
     // invoke native method
@@ -506,8 +525,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -515,7 +535,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getScreenDensityDpi() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getScreenDensityDpi([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getScreenDensityDpi([])');
     }
   
     // invoke native method
@@ -529,8 +549,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -538,7 +559,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> setScreenAlwaysOn(bool var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::setScreenAlwaysOn([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::setScreenAlwaysOn([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -552,8 +573,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -561,7 +583,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> getScreenBrightness() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getScreenBrightness([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::getScreenBrightness([])');
     }
   
     // invoke native method
@@ -575,8 +597,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -584,7 +607,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> makeCall(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::makeCall([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::makeCall([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -598,8 +621,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -607,7 +631,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> sendSMS(String var0, String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::sendSMS([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::sendSMS([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -621,8 +645,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -630,7 +655,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<int> sendMMS(String var0, String var1, String var2, String var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::sendMMS([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::sendMMS([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -644,8 +669,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -653,7 +679,7 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
   static Future<void> openUrl(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::openUrl([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VDeviceAPI::openUrl([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -667,8 +693,9 @@ class com_baidu_mapsdkvi_VDeviceAPI extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

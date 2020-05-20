@@ -37,7 +37,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
   static Future<com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable> getInstance() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::getInstance([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::getInstance([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
   Future<void> addObserver(com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::addObserver([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::addObserver([])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
   Future<void> init() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::init([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::init([])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +109,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
   Future<void> updatePhoneInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::updatePhoneInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::updatePhoneInfo([])');
     }
   
     // invoke native method
@@ -120,8 +123,9 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -129,7 +133,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
   Future<void> updateNetworkInfo(android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::updateNetworkInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::updateNetworkInfo([])');
     }
   
     // invoke native method
@@ -143,8 +147,9 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,7 +157,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
   Future<void> updateNetworkProxy(android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::updateNetworkProxy([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable@$refId::updateNetworkProxy([])');
     }
   
     // invoke native method
@@ -166,8 +171,9 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

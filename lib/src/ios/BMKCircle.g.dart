@@ -83,7 +83,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKCircle> circleWithCenterCoordinate_radius(CLLocationCoordinate2D coord, double radius) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKCircle::circleWithCenterCoordinate([\'radius\':$radius])');
+      debugPrint('fluttify-dart: BMKCircle::circleWithCenterCoordinate([\'radius\':$radius])');
     }
   
     // invoke native method
@@ -97,8 +97,9 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -106,7 +107,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKCircle> circleWithMapRect(BMKMapRect mapRect) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKCircle::circleWithMapRect([])');
+      debugPrint('fluttify-dart: BMKCircle::circleWithMapRect([])');
     }
   
     // invoke native method
@@ -120,8 +121,9 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -129,7 +131,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setCircleWithCenterCoordinate_radius(CLLocationCoordinate2D coord, double radius) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKCircle@$refId::setCircleWithCenterCoordinate([\'radius\':$radius])');
+      debugPrint('fluttify-dart: BMKCircle@$refId::setCircleWithCenterCoordinate([\'radius\':$radius])');
     }
   
     // invoke native method
@@ -143,8 +145,9 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,7 +155,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setCircleWithMapRect(BMKMapRect mapRect) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKCircle@$refId::setCircleWithMapRect([])');
+      debugPrint('fluttify-dart: BMKCircle@$refId::setCircleWithMapRect([])');
     }
   
     // invoke native method
@@ -166,8 +169,9 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

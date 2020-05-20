@@ -60,7 +60,7 @@ class BMKGroundOverlayView extends BMKOverlayView  {
   Future<dynamic> initWithGroundOverlay(BMKGroundOverlay groundOverlay, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKGroundOverlayView@$refId::initWithGroundOverlay([])');
+      debugPrint('fluttify-dart: BMKGroundOverlayView@$refId::initWithGroundOverlay([])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class BMKGroundOverlayView extends BMKOverlayView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

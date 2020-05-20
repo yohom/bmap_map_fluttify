@@ -37,7 +37,7 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
   Future<com_baidu_mapapi_model_LatLng> getCenter() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::getCenter([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::getCenter([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -60,7 +61,7 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
   Future<int> getColor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::getColor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::getColor([])');
     }
   
     // invoke native method
@@ -74,8 +75,9 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +85,7 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
   Future<int> getRadius() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::getRadius([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::getRadius([])');
     }
   
     // invoke native method
@@ -97,8 +99,9 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +109,7 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
   Future<void> setCenter(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::setCenter([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::setCenter([])');
     }
   
     // invoke native method
@@ -120,8 +123,9 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -129,7 +133,7 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
   Future<void> setColor(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::setColor([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::setColor([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -143,8 +147,9 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,7 +157,7 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
   Future<void> setRadius(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::setRadius([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Dot@$refId::setRadius([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -166,8 +171,9 @@ class com_baidu_mapapi_map_Dot extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

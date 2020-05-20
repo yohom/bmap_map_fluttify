@@ -55,7 +55,7 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationData_Builder> latitude(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::latitude([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::latitude([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationData_Builder> longitude(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::longitude([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::longitude([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationData_Builder> speed(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::speed([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::speed([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationData_Builder> direction(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::direction([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::direction([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationData_Builder> accuracy(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::accuracy([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::accuracy([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -170,7 +175,7 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationData_Builder> satellitesNum(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::satellitesNum([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::satellitesNum([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -184,8 +189,9 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MyLocationData_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -193,7 +199,7 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationData> build() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::build([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MyLocationData.Builder@$refId::build([])');
     }
   
     // invoke native method
@@ -207,8 +213,9 @@ class com_baidu_mapapi_map_MyLocationData_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_MyLocationData()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_MyLocationData()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_MyLocationData()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

@@ -55,7 +55,7 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKArcline> arclineWithPoints(List<BMKMapPoint> points) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKArcline::arclineWithPoints([])');
+      debugPrint('fluttify-dart: BMKArcline::arclineWithPoints([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKArcline> arclineWithCoordinates(List<CLLocationCoordinate2D> coords) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKArcline::arclineWithCoordinates([])');
+      debugPrint('fluttify-dart: BMKArcline::arclineWithCoordinates([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setArclineWithPoints(List<BMKMapPoint> points) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKArcline@$refId::setArclineWithPoints([])');
+      debugPrint('fluttify-dart: BMKArcline@$refId::setArclineWithPoints([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setArclineWithCoordinates(List<CLLocationCoordinate2D> coords) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKArcline@$refId::setArclineWithCoordinates([])');
+      debugPrint('fluttify-dart: BMKArcline@$refId::setArclineWithCoordinates([])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

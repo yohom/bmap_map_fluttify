@@ -55,7 +55,7 @@ class com_baidu_mapapi_utils_DistanceUtil extends java_lang_Object  {
   static Future<double> getDistance(com_baidu_mapapi_model_LatLng var0, com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.DistanceUtil::getDistance([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.DistanceUtil::getDistance([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_utils_DistanceUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

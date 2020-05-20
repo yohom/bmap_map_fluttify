@@ -37,7 +37,7 @@ class com_baidu_mapapi_map_SwipeDismissTouchListener extends java_lang_Object wi
   Future<bool> onTouch(android_view_View var1, android_view_MotionEvent var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.SwipeDismissTouchListener@$refId::onTouch([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.SwipeDismissTouchListener@$refId::onTouch([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_map_SwipeDismissTouchListener extends java_lang_Object wi
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

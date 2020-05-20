@@ -55,7 +55,7 @@ class BMKActionPaopaoView extends UIView  {
   Future<dynamic> initWithCustomView(UIView customView, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKActionPaopaoView@$refId::initWithCustomView([])');
+      debugPrint('fluttify-dart: BMKActionPaopaoView@$refId::initWithCustomView([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class BMKActionPaopaoView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   

@@ -38,7 +38,7 @@ class com_baidu_mapapi_map_HeatMap extends java_lang_Object  {
   Future<void> removeHeatMap() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.HeatMap@$refId::removeHeatMap([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.HeatMap@$refId::removeHeatMap([])');
     }
   
     // invoke native method
@@ -52,8 +52,9 @@ class com_baidu_mapapi_map_HeatMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

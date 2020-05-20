@@ -55,7 +55,7 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
   static Future<void> setSupportWebNavi(bool var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::setSupportWebNavi([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::setSupportWebNavi([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
   static Future<bool> openBaiduMapNavi(com_baidu_mapapi_navi_NaviParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapNavi([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapNavi([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
   static Future<bool> openBaiduMapWalkNavi(com_baidu_mapapi_navi_NaviParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapWalkNavi([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapWalkNavi([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
   static Future<bool> openBaiduMapWalkNaviAR(com_baidu_mapapi_navi_NaviParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapWalkNaviAR([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapWalkNaviAR([])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +151,7 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
   static Future<bool> openBaiduMapBikeNavi(com_baidu_mapapi_navi_NaviParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapBikeNavi([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openBaiduMapBikeNavi([])');
     }
   
     // invoke native method
@@ -161,8 +165,9 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +175,7 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
   static Future<void> openWebBaiduMapNavi(com_baidu_mapapi_navi_NaviParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openWebBaiduMapNavi([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::openWebBaiduMapNavi([])');
     }
   
     // invoke native method
@@ -184,8 +189,9 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -193,7 +199,7 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
   static Future<void> finish(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::finish([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.navi.BaiduMapNavigation::finish([])');
     }
   
     // invoke native method
@@ -207,8 +213,9 @@ class com_baidu_mapapi_navi_BaiduMapNavigation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

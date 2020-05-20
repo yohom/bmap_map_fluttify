@@ -55,7 +55,7 @@ class com_baidu_mapapi_animation_AlphaAnimation extends com_baidu_mapapi_animati
   Future<void> setRepeatMode(com_baidu_mapapi_animation_Animation_RepeatMode var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.animation.AlphaAnimation@$refId::setRepeatMode([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.animation.AlphaAnimation@$refId::setRepeatMode([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapapi_animation_AlphaAnimation extends com_baidu_mapapi_animati
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapapi_animation_AlphaAnimation extends com_baidu_mapapi_animati
   Future<void> setRepeatCount(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.animation.AlphaAnimation@$refId::setRepeatCount([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.animation.AlphaAnimation@$refId::setRepeatCount([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapapi_animation_AlphaAnimation extends com_baidu_mapapi_animati
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

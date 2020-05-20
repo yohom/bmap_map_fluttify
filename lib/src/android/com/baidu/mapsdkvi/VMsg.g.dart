@@ -55,7 +55,7 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
   static Future<com_baidu_mapsdkvi_VMsg> getInstance() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VMsg::getInstance([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VMsg::getInstance([])');
     }
   
     // invoke native method
@@ -69,8 +69,9 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapsdkvi_VMsg()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapsdkvi_VMsg()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapsdkvi_VMsg()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      kNativeObjectPool.add(__return__);
+      return __return__;
     }
   }
   
@@ -78,7 +79,7 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
   static Future<void> init() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VMsg::init([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VMsg::init([])');
     }
   
     // invoke native method
@@ -92,8 +93,9 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +103,7 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
   static Future<void> destroy() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VMsg::destroy([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VMsg::destroy([])');
     }
   
     // invoke native method
@@ -115,8 +117,9 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +127,7 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
   static Future<void> InitClass(Object var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkvi.VMsg::InitClass([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkvi.VMsg::InitClass([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -138,8 +141,9 @@ class com_baidu_mapsdkvi_VMsg extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

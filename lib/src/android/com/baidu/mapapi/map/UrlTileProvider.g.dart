@@ -37,7 +37,7 @@ class com_baidu_mapapi_map_UrlTileProvider extends java_lang_Object with com_bai
   Future<String> getTileUrl() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UrlTileProvider@$refId::getTileUrl([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UrlTileProvider@$refId::getTileUrl([])');
     }
   
     // invoke native method
@@ -51,8 +51,9 @@ class com_baidu_mapapi_map_UrlTileProvider extends java_lang_Object with com_bai
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

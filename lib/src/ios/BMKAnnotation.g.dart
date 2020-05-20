@@ -29,7 +29,7 @@ mixin BMKAnnotation on NSObject {
   Future<String> title() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotation@$refId::title([])');
+      debugPrint('fluttify-dart: BMKAnnotation@$refId::title([])');
     }
   
     // invoke native method
@@ -43,8 +43,9 @@ mixin BMKAnnotation on NSObject {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -52,7 +53,7 @@ mixin BMKAnnotation on NSObject {
   Future<String> subtitle() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotation@$refId::subtitle([])');
+      debugPrint('fluttify-dart: BMKAnnotation@$refId::subtitle([])');
     }
   
     // invoke native method
@@ -66,8 +67,9 @@ mixin BMKAnnotation on NSObject {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -75,7 +77,7 @@ mixin BMKAnnotation on NSObject {
   Future<void> setCoordinate(CLLocationCoordinate2D newCoordinate) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotation@$refId::setCoordinate([])');
+      debugPrint('fluttify-dart: BMKAnnotation@$refId::setCoordinate([])');
     }
   
     // invoke native method
@@ -89,8 +91,9 @@ mixin BMKAnnotation on NSObject {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
