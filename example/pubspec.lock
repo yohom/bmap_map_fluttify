@@ -45,6 +45,15 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  bmap_utils_fluttify:
+    dependency: transitive
+    description:
+      path: "."
+      ref: "0.1.0"
+      resolved-ref: c27cb405dad391b8ef4a0538ce6855cf9826d143
+      url: "https://github.com/fluttify-project/bmap_utils_fluttify.git"
+    source: git
+    version: "0.1.0"
   boolean_selector:
     dependency: transitive
     description:

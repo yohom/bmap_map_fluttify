@@ -1,5 +1,8 @@
 import 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
+import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
+import 'package:bmap_utils_fluttify/bmap_utils_fluttify.dart';
+import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 
@@ -18,6 +21,48 @@ class BmapService {
       ios: (pool) async {
         final manager = await BMKMapManager.create__();
         await manager.start_generalDelegate(iosKey, null);
+      },
+    );
+  }
+
+  /// 判断坐标[current]是否在以[target]为圆心[radius]为半径的圆内, [radius]单位为米
+  static Future<bool> circleContainsCoordinate(
+    LatLng current,
+    LatLng target,
+    int radius,
+  ) async {
+    return platform(
+      android: (pool) async {
+        final _current =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          current.latitude,
+          current.longitude,
+        );
+        final _target =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          target.latitude,
+          target.longitude,
+        );
+        return com_baidu_mapapi_utils_SpatialRelationUtil.isCircleContainsPoint(
+          _current,
+          radius,
+          _target,
+        );
+      },
+      ios: (pool) async {
+        final _current = await CLLocationCoordinate2D.create(
+          current.latitude,
+          current.longitude,
+        );
+        final _target = await CLLocationCoordinate2D.create(
+          target.latitude,
+          target.longitude,
+        );
+        return BMKCircleContainsCoordinate(
+          _current,
+          _target,
+          radius.toDouble(),
+        );
       },
     );
   }
