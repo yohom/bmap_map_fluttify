@@ -13,7 +13,7 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-class com_baidu_mapapi_map_UrlTileProvider extends java_lang_Object with com_baidu_mapapi_map_TileProvider {
+/* abstract */ class com_baidu_mapapi_map_UrlTileProvider extends java_lang_Object with com_baidu_mapapi_map_TileProvider {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.UrlTileProvider';
 

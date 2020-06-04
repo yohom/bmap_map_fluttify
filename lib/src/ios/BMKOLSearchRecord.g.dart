@@ -49,6 +49,12 @@ class BMKOLSearchRecord extends NSObject  {
     return __result__;
   }
   
+  Future<int> get_size() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLSearchRecord::get_size", {'refId': refId});
+  
+    return __result__;
+  }
+  
   Future<int> get_cityID() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLSearchRecord::get_cityID", {'refId': refId});
   
@@ -63,8 +69,8 @@ class BMKOLSearchRecord extends NSObject  {
   
   Future<List<NSObject>> get_childCities() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLSearchRecord::get_childCities", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
   }
   
   //endregion
@@ -72,6 +78,12 @@ class BMKOLSearchRecord extends NSObject  {
   //region setters
   Future<void> set_cityName(String cityName) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLSearchRecord::set_cityName', {'refId': refId, "cityName": cityName});
+  
+  
+  }
+  
+  Future<void> set_size(int size) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLSearchRecord::set_size', {'refId': refId, "size": size});
   
   
   }
@@ -110,6 +122,13 @@ extension BMKOLSearchRecord_Batch on List<BMKOLSearchRecord> {
     return typedResult;
   }
   
+  Future<List<int>> get_size_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLSearchRecord::get_size_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+  
+    return typedResult;
+  }
+  
   Future<List<int>> get_cityID_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLSearchRecord::get_cityID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
     final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
@@ -126,7 +145,7 @@ extension BMKOLSearchRecord_Batch on List<BMKOLSearchRecord> {
   
   Future<List<List<NSObject>>> get_childCities_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLSearchRecord::get_childCities_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     kNativeObjectPool.addAll(typedResult.expand((e) => e));
     return typedResult;
   }
@@ -136,6 +155,12 @@ extension BMKOLSearchRecord_Batch on List<BMKOLSearchRecord> {
   //region setters
   Future<void> set_cityName_batch(List<String> cityName) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLSearchRecord::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityName": cityName[__i__]}]);
+  
+  
+  }
+  
+  Future<void> set_size_batch(List<int> size) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLSearchRecord::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "size": size[__i__]}]);
   
   
   }

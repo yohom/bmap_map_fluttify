@@ -14,6 +14,168 @@ extern BOOL enableLog;
 @implementation BmapMapFluttifyPlugin (SubHandler4)
 - (NSDictionary<NSString*, Handler>*) getSubHandler4 {
     return @{
+        @"BMKLocationViewDisplayParam::set_accuracyCircleStrokeColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIColor* accuracyCircleStrokeColor = (UIColor*) HEAP[@([args[@"accuracyCircleStrokeColor"] integerValue])];
+        
+                // ref
+                BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.accuracyCircleStrokeColor = accuracyCircleStrokeColor;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationViewDisplayParam::set_isRotateAngleValid_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL isRotateAngleValid = [args[@"isRotateAngleValid"] boolValue];
+        
+                // ref
+                BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.isRotateAngleValid = isRotateAngleValid;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationViewDisplayParam::set_locationViewImgName_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* locationViewImgName = (NSString*) args[@"locationViewImgName"];
+        
+                // ref
+                BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.locationViewImgName = locationViewImgName;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationViewDisplayParam::set_locationViewImage_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIImage* locationViewImage = (UIImage*) HEAP[@([args[@"locationViewImage"] integerValue])];
+        
+                // ref
+                BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.locationViewImage = locationViewImage;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationViewDisplayParam::set_canShowCallOut_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL canShowCallOut = [args[@"canShowCallOut"] boolValue];
+        
+                // ref
+                BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.canShowCallOut = canShowCallOut;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationViewDisplayParam::set_locationViewHierarchy_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // enum arg
+                LocationViewHierarchy locationViewHierarchy = (LocationViewHierarchy) [args[@"locationViewHierarchy"] integerValue];
+        
+                // ref
+                BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.locationViewHierarchy = locationViewHierarchy;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKMapStatus::set_fLevel_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                float fLevel = [args[@"fLevel"] floatValue];
+        
+                // ref
+                BMKMapStatus* ref = (BMKMapStatus*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.fLevel = fLevel;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKMapStatus::set_fRotation_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                float fRotation = [args[@"fRotation"] floatValue];
+        
+                // ref
+                BMKMapStatus* ref = (BMKMapStatus*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.fRotation = fRotation;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKMapStatus::set_fOverlooking_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                float fOverlooking = [args[@"fOverlooking"] floatValue];
+        
+                // ref
+                BMKMapStatus* ref = (BMKMapStatus*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.fOverlooking = fOverlooking;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
         @"BMKMapStatus::set_targetScreenPt_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
@@ -772,6 +934,24 @@ extern BOOL enableLog;
             methodResult(@"success");
         },
         
+        @"BMKOLSearchRecord::set_size_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int64_t size = [args[@"size"] longLongValue];
+        
+                // ref
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.size = size;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
         @"BMKOLSearchRecord::set_cityID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
@@ -861,6 +1041,42 @@ extern BOOL enableLog;
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
                 ref.cityID = cityID;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_size_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int64_t size = [args[@"size"] longLongValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.size = size;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_serversize_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int64_t serversize = [args[@"serversize"] longLongValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                ref.serversize = serversize;
                 methodResult(@"success");
             }
         
@@ -2683,126 +2899,6 @@ extern BOOL enableLog;
         
             for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
                 BMKOverlayView* ref = [[BMKOverlayView alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKGroundOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKGroundOverlayView* ref = [[BMKGroundOverlayView alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKAnnotationView* ref = [[BMKAnnotationView alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKOverlayGLBasicView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKOverlayGLBasicView* ref = [[BMKOverlayGLBasicView alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKShape* ref = [[BMKShape alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKOLSearchRecord": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKOLSearchRecord* ref = [[BMKOLSearchRecord alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKOLUpdateElement": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKOLUpdateElement* ref = [[BMKOLUpdateElement alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKCustomMapStyleOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKCustomMapStyleOption* ref = [[BMKCustomMapStyleOption alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
-            }
-        
-            methodResult(resultList);
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::create_batchBMKOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKOfflineMap* ref = [[BMKOfflineMap alloc] init];
                 HEAP[@(ref.hash)] = ref;
         
                 [resultList addObject:@(ref.hash)];

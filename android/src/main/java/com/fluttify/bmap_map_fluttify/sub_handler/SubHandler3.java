@@ -31,6 +31,188 @@ public class SubHandler3 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.map.Circle::getHoleOption", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.mapapi.map.Circle ref = (com.baidu.mapapi.map.Circle) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Circle@" + refId + "::getHoleOption(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.HoleOptions __result__;
+                try {
+                    __result__ = ref.getHoleOption();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                Integer jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = System.identityHashCode(__result__);
+                    getHEAP().put(jsonableResult, __result__);
+                }
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
+            put("com.baidu.mapapi.map.Circle::setHoleOptions", (__args__, __methodResult__) -> {
+                // args
+                // list arg
+                List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) __args__).get("var1");
+                java.util.List<com.baidu.mapapi.map.HoleOptions> var1 = new ArrayList<>();
+                for (int refId : var1RefIdList) {
+                    ((ArrayList<com.baidu.mapapi.map.HoleOptions>) var1).add((com.baidu.mapapi.map.HoleOptions) getHEAP().get(refId));
+                }
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.mapapi.map.Circle ref = (com.baidu.mapapi.map.Circle) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Circle@" + refId + "::setHoleOptions(" + var1 + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.setHoleOptions((ArrayList) var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
+            put("com.baidu.mapapi.map.Circle::getHoleOptions", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.mapapi.map.Circle ref = (com.baidu.mapapi.map.Circle) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Circle@" + refId + "::getHoleOptions(" + "" + ")");
+                }
+            
+                // invoke native method
+                java.util.List<com.baidu.mapapi.map.HoleOptions> __result__;
+                try {
+                    __result__ = ref.getHoleOptions();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                List<Integer> jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = new ArrayList<>();
+                    for (com.baidu.mapapi.map.HoleOptions item : __result__) {
+                        getHEAP().put(System.identityHashCode(item), item);
+                        jsonableResult.add(System.identityHashCode(item));
+                    }
+                }
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
+            put("com.baidu.mapapi.map.PolygonOptions::getFillColor", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.mapapi.map.PolygonOptions ref = (com.baidu.mapapi.map.PolygonOptions) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.PolygonOptions@" + refId + "::getFillColor(" + "" + ")");
+                }
+            
+                // invoke native method
+                int __result__;
+                try {
+                    __result__ = ref.getFillColor();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                int jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
+            put("com.baidu.mapapi.map.PolygonOptions::getPoints", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.mapapi.map.PolygonOptions ref = (com.baidu.mapapi.map.PolygonOptions) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.PolygonOptions@" + refId + "::getPoints(" + "" + ")");
+                }
+            
+                // invoke native method
+                java.util.List<com.baidu.mapapi.model.LatLng> __result__;
+                try {
+                    __result__ = ref.getPoints();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                List<Integer> jsonableResult = null;
+                if (__result__ != null) {
+                    jsonableResult = new ArrayList<>();
+                    for (com.baidu.mapapi.model.LatLng item : __result__) {
+                        getHEAP().put(System.identityHashCode(item), item);
+                        jsonableResult.add(System.identityHashCode(item));
+                    }
+                }
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
             put("com.baidu.mapapi.map.PolygonOptions::getStroke", (__args__, __methodResult__) -> {
                 // args
             
@@ -487,53 +669,64 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setCallback(new com.baidu.mapapi.map.WearMapView.OnDismissCallback() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.SwipeDismissView::setCallback::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onDismiss() {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onDismiss(" + "" + ")");
-                        }
-            
-                        // convert to jsonable data
-            
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.SwipeDismissView::setCallback::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss",
-                                new HashMap<String, Object>() {{
-                
-                                }}
-                        );
+                        @Override
+                        public void onDismiss() {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onDismiss(" + "" + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
             
-                    }
             
-                    @Override
-                    public void onNotify() {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onNotify(" + "" + ")");
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss",
+                                        new HashMap<String, Object>() {{
+                    
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
                         }
             
-                        // convert to jsonable data
+                        @Override
+                        public void onNotify() {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onNotify(" + "" + ")");
+                            }
+            
+                            // convert to jsonable data
             
             
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify",
-                                new HashMap<String, Object>() {{
-                
-                                }}
-                        );
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify",
+                                        new HashMap<String, Object>() {{
+                    
+                                        }}
+                                    );
+                                }
+                            });
             
-                        // method result
+                            // method result
             
-                    }
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -4081,38 +4274,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.snapshot(new com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::snapshot::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onSnapshotReady(android.graphics.Bitmap var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onSnapshotReady(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::snapshot::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback::onSnapshotReady",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onSnapshotReady(android.graphics.Bitmap var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onSnapshotReady(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback::onSnapshotReady",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -4382,128 +4581,149 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapStatusChangeListener(new com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapStatusChangeStart(com.baidu.mapapi.map.MapStatus var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeStart(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMapStatusChangeStart(com.baidu.mapapi.map.MapStatus var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeStart(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    @Override
-                    public void onMapStatusChangeStart(com.baidu.mapapi.map.MapStatus var1, int var2) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeStart(" + var1 + var2 + ")");
+                            // method result
+            
                         }
             
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
-                        // jsonable arg
-                        int argvar2 = var2;
+                        @Override
+                        public void onMapStatusChangeStart(com.baidu.mapapi.map.MapStatus var1, int var2) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeStart(" + var1 + var2 + ")");
+                            }
             
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                    put("var2", argvar2);
-                                }}
-                        );
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+                            // jsonable arg
+                            int argvar2 = var2;
             
-                        // method result
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                            put("var2", argvar2);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    }
+                            // method result
             
-                    @Override
-                    public void onMapStatusChange(com.baidu.mapapi.map.MapStatus var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapStatusChange(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
                         }
             
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChange",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMapStatusChange(com.baidu.mapapi.map.MapStatus var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChange(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChange",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    @Override
-                    public void onMapStatusChangeFinish(com.baidu.mapapi.map.MapStatus var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeFinish(" + var1 + ")");
+                            // method result
+            
                         }
             
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
+                        @Override
+                        public void onMapStatusChangeFinish(com.baidu.mapapi.map.MapStatus var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeFinish(" + var1 + ")");
+                            }
+            
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeFinish",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
                         }
-            
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeFinish",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
-            
-                        // method result
-            
-                    }
             
                 });
                 } catch (Throwable throwable) {
@@ -4537,38 +4757,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapTouchListener(new com.baidu.mapapi.map.BaiduMap.OnMapTouchListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onTouch(android.view.MotionEvent var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onTouch(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::onTouch",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onTouch(android.view.MotionEvent var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onTouch(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::onTouch",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -4602,67 +4828,78 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapClickListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapClick(com.baidu.mapapi.model.LatLng var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapClick(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapClick",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMapClick(com.baidu.mapapi.model.LatLng var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapClick(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapClick",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    @Override
-                    public void onMapPoiClick(com.baidu.mapapi.map.MapPoi var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapPoiClick(" + var1 + ")");
+                            // method result
+            
                         }
             
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
+                        @Override
+                        public void onMapPoiClick(com.baidu.mapapi.map.MapPoi var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapPoiClick(" + var1 + ")");
+                            }
+            
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapPoiClick",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
                         }
-            
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapPoiClick",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
-            
-                        // method result
-            
-                    }
             
                 });
                 } catch (Throwable throwable) {
@@ -4696,31 +4933,37 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapLoadedCallback(new com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapLoaded() {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapLoaded(" + "" + ")");
-                        }
-            
-                        // convert to jsonable data
-            
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::onMapLoaded",
-                                new HashMap<String, Object>() {{
-                
-                                }}
-                        );
+                        @Override
+                        public void onMapLoaded() {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapLoaded(" + "" + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
             
-                    }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::onMapLoaded",
+                                        new HashMap<String, Object>() {{
+                    
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -4754,31 +4997,37 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapRenderCallbadk(new com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapRenderFinished() {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapRenderFinished(" + "" + ")");
-                        }
-            
-                        // convert to jsonable data
-            
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::onMapRenderFinished",
-                                new HashMap<String, Object>() {{
-                
-                                }}
-                        );
+                        @Override
+                        public void onMapRenderFinished() {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapRenderFinished(" + "" + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
             
-                    }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::onMapRenderFinished",
+                                        new HashMap<String, Object>() {{
+                    
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -4812,38 +5061,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapDoubleClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapDoubleClick(com.baidu.mapapi.model.LatLng var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapDoubleClick(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::onMapDoubleClick",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMapDoubleClick(com.baidu.mapapi.model.LatLng var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapDoubleClick(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::onMapDoubleClick",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -4877,38 +5132,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapLongClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapLongClick(com.baidu.mapapi.model.LatLng var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapLongClick(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::onMapLongClick",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMapLongClick(com.baidu.mapapi.model.LatLng var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapLongClick(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::onMapLongClick",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -4942,38 +5203,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnPolylineClickListener(new com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public boolean onPolylineClick(com.baidu.mapapi.map.Polyline var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onPolylineClick(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::onPolylineClick",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public boolean onPolylineClick(com.baidu.mapapi.map.Polyline var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onPolylineClick(" + var1 + ")");
+                            }
             
-                        // method result
-                        return true;
-                    }
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::onPolylineClick",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -5007,38 +5274,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMarkerClickListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public boolean onMarkerClick(com.baidu.mapapi.map.Marker var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMarkerClick(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public boolean onMarkerClick(com.baidu.mapapi.map.Marker var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMarkerClick(" + var1 + ")");
+                            }
             
-                        // method result
-                        return true;
-                    }
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -5072,96 +5345,112 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMarkerDragListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMarkerDrag(com.baidu.mapapi.map.Marker var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMarkerDrag(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDrag",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMarkerDrag(com.baidu.mapapi.map.Marker var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMarkerDrag(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDrag",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    @Override
-                    public void onMarkerDragEnd(com.baidu.mapapi.map.Marker var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMarkerDragEnd(" + var1 + ")");
+                            // method result
+            
                         }
             
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
+                        @Override
+                        public void onMarkerDragEnd(com.baidu.mapapi.map.Marker var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMarkerDragEnd(" + var1 + ")");
+                            }
+            
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragEnd",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
                         }
             
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragEnd",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMarkerDragStart(com.baidu.mapapi.map.Marker var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMarkerDragStart(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragStart",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    @Override
-                    public void onMarkerDragStart(com.baidu.mapapi.map.Marker var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMarkerDragStart(" + var1 + ")");
+                            // method result
+            
                         }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
-            
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragStart",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
-            
-                        // method result
-            
-                    }
             
                 });
                 } catch (Throwable throwable) {
@@ -5195,31 +5484,37 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMyLocationClickListener(new com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public boolean onMyLocationClick() {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMyLocationClick(" + "" + ")");
-                        }
-            
-                        // convert to jsonable data
-            
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::onMyLocationClick",
-                                new HashMap<String, Object>() {{
-                
-                                }}
-                        );
+                        @Override
+                        public boolean onMyLocationClick() {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMyLocationClick(" + "" + ")");
+                            }
             
-                        // method result
-                        return true;
-                    }
+                            // convert to jsonable data
+            
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::onMyLocationClick",
+                                        new HashMap<String, Object>() {{
+                    
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -5253,76 +5548,87 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapDrawFrameCallback(new com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapDrawFrame(javax.microedition.khronos.opengles.GL10 var1, com.baidu.mapapi.map.MapStatus var2) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapDrawFrame(" + var1 + var2 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
-                        // ref arg
-                        final Integer argvar2;
-                        if (var2 != null) {
-                            argvar2 = System.identityHashCode(var2);
-                            getHEAP().put(argvar2, var2);
-                        } else {
-                            argvar2 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__javax_microedition_khronos_opengles_GL10__com_baidu_mapapi_map_MapStatus",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                    put("var2", argvar2);
-                                }}
-                        );
+                        @Override
+                        public void onMapDrawFrame(javax.microedition.khronos.opengles.GL10 var1, com.baidu.mapapi.map.MapStatus var2) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapDrawFrame(" + var1 + var2 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+                            // ref arg
+                            final Integer argvar2;
+                            if (var2 != null) {
+                                argvar2 = System.identityHashCode(var2);
+                                getHEAP().put(argvar2, var2);
+                            } else {
+                                argvar2 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__javax_microedition_khronos_opengles_GL10__com_baidu_mapapi_map_MapStatus",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                            put("var2", argvar2);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    @Override
-                    public void onMapDrawFrame(com.baidu.mapapi.map.MapStatus var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapDrawFrame(" + var1 + ")");
+                            // method result
+            
                         }
             
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
+                        @Override
+                        public void onMapDrawFrame(com.baidu.mapapi.map.MapStatus var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapDrawFrame(" + var1 + ")");
+                            }
+            
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__com_baidu_mapapi_map_MapStatus",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
                         }
-            
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__com_baidu_mapapi_map_MapStatus",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
-            
-                        // method result
-            
-                    }
             
                 });
                 } catch (Throwable throwable) {
@@ -5356,41 +5662,47 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnBaseIndoorMapListener(new com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onBaseIndoorMapMode(boolean var1, com.baidu.mapapi.map.MapBaseIndoorMapInfo var2) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onBaseIndoorMapMode(" + var1 + var2 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // jsonable arg
-                        boolean argvar1 = var1;
-                        // ref arg
-                        final Integer argvar2;
-                        if (var2 != null) {
-                            argvar2 = System.identityHashCode(var2);
-                            getHEAP().put(argvar2, var2);
-                        } else {
-                            argvar2 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::onBaseIndoorMapMode",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                    put("var2", argvar2);
-                                }}
-                        );
+                        @Override
+                        public void onBaseIndoorMapMode(boolean var1, com.baidu.mapapi.map.MapBaseIndoorMapInfo var2) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onBaseIndoorMapMode(" + var1 + var2 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // jsonable arg
+                            boolean argvar1 = var1;
+                            // ref arg
+                            final Integer argvar2;
+                            if (var2 != null) {
+                                argvar2 = System.identityHashCode(var2);
+                                getHEAP().put(argvar2, var2);
+                            } else {
+                                argvar2 = null;
+                            }
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::onBaseIndoorMapMode",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                            put("var2", argvar2);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -5424,38 +5736,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnMapRenderValidDataListener(new com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapRenderValidData(boolean var1, int var2, String var3) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapRenderValidData(" + var1 + var2 + var3 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // jsonable arg
-                        boolean argvar1 = var1;
-                        // jsonable arg
-                        int argvar2 = var2;
-                        // jsonable arg
-                        String argvar3 = var3;
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::onMapRenderValidData",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                    put("var2", argvar2);
-                                    put("var3", argvar3);
-                                }}
-                        );
+                        @Override
+                        public void onMapRenderValidData(boolean var1, int var2, String var3) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapRenderValidData(" + var1 + var2 + var3 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // jsonable arg
+                            boolean argvar1 = var1;
+                            // jsonable arg
+                            int argvar2 = var2;
+                            // jsonable arg
+                            String argvar3 = var3;
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::onMapRenderValidData",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                            put("var2", argvar2);
+                                            put("var3", argvar3);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -5489,32 +5807,38 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setOnSynchronizationListener(new com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public void onMapStatusChangeReason(int var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeReason(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // jsonable arg
-                        int argvar1 = var1;
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::onMapStatusChangeReason",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public void onMapStatusChangeReason(int var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeReason(" + var1 + ")");
+                            }
             
-                        // method result
+                            // convert to jsonable data
+                            // jsonable arg
+                            int argvar1 = var1;
             
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::onMapStatusChangeReason",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+            
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -5655,38 +5979,44 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.removeMarkerClickListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback");
-            
-                    // call dart method
-                    @Override
-                    public boolean onMarkerClick(com.baidu.mapapi.map.Marker var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onMarkerClick(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // ref arg
-                        final Integer argvar1;
-                        if (var1 != null) {
-                            argvar1 = System.identityHashCode(var1);
-                            getHEAP().put(argvar1, var1);
-                        } else {
-                            argvar1 = null;
-                        }
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public boolean onMarkerClick(com.baidu.mapapi.map.Marker var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onMarkerClick(" + var1 + ")");
+                            }
             
-                        // method result
-                        return true;
-                    }
+                            // convert to jsonable data
+                            // ref arg
+                            final Integer argvar1;
+                            if (var1 != null) {
+                                argvar1 = System.identityHashCode(var1);
+                                getHEAP().put(argvar1, var1);
+                            } else {
+                                argvar1 = null;
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -6270,87 +6600,103 @@ public class SubHandler3 {
                 // invoke native method
                 try {
                     ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.MapView.CustomMapStyleCallBack() {
-                    // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback");
-            
-                    // call dart method
-                    @Override
-                    public boolean onPreLoadLastCustomMapStyle(String var1) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onPreLoadLastCustomMapStyle(" + var1 + ")");
-                        }
-            
-                        // convert to jsonable data
-                        // jsonable arg
-                        String argvar1 = var1;
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback");
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                }}
-                        );
+                        @Override
+                        public boolean onPreLoadLastCustomMapStyle(String var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onPreLoadLastCustomMapStyle(" + var1 + ")");
+                            }
             
-                        // method result
-                        return true;
-                    }
+                            // convert to jsonable data
+                            // jsonable arg
+                            String argvar1 = var1;
             
-                    @Override
-                    public boolean onCustomMapStyleLoadSuccess(boolean var1, String var2) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadSuccess(" + var1 + var2 + ")");
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
                         }
             
-                        // convert to jsonable data
-                        // jsonable arg
-                        boolean argvar1 = var1;
-                        // jsonable arg
-                        String argvar2 = var2;
+                        @Override
+                        public boolean onCustomMapStyleLoadSuccess(boolean var1, String var2) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadSuccess(" + var1 + var2 + ")");
+                            }
             
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                    put("var2", argvar2);
-                                }}
-                        );
+                            // convert to jsonable data
+                            // jsonable arg
+                            boolean argvar1 = var1;
+                            // jsonable arg
+                            String argvar2 = var2;
             
-                        // method result
-                        return true;
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                            put("var2", argvar2);
+                                        }}
+                                    );
+                                }
+                            });
             
-                    @Override
-                    public boolean onCustomMapStyleLoadFailed(int var1, String var2, String var3) {
-                        // print log
-                        if (getEnableLog()) {
-                            Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadFailed(" + var1 + var2 + var3 + ")");
+                            // method result
+                            return true;
                         }
             
-                        // convert to jsonable data
-                        // jsonable arg
-                        int argvar1 = var1;
-                        // jsonable arg
-                        String argvar2 = var2;
-                        // jsonable arg
-                        String argvar3 = var3;
+                        @Override
+                        public boolean onCustomMapStyleLoadFailed(int var1, String var2, String var3) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadFailed(" + var1 + var2 + var3 + ")");
+                            }
             
-                        // call dart method
-                        callbackChannel.invokeMethod(
-                                "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
-                                new HashMap<String, Object>() {{
-                                    put("var1", argvar1);
-                                    put("var2", argvar2);
-                                    put("var3", argvar3);
-                                }}
-                        );
+                            // convert to jsonable data
+                            // jsonable arg
+                            int argvar1 = var1;
+                            // jsonable arg
+                            String argvar2 = var2;
+                            // jsonable arg
+                            String argvar3 = var3;
             
-                        // method result
-                        return true;
-                    }
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", argvar1);
+                                            put("var2", argvar2);
+                                            put("var3", argvar3);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
             
                 });
                 } catch (Throwable throwable) {
@@ -7514,169 +7860,6 @@ public class SubHandler3 {
             
                 // convert result to jsonable result
                 float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.Marker::getPeriod", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getPeriod(" + "" + ")");
-                }
-            
-                // invoke native method
-                int __result__;
-                try {
-                    __result__ = ref.getPeriod();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.Marker::setToTop", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setToTop(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setToTop();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.Marker::setPosition", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setPosition(" + var1 + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setPosition(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.Marker::setPositionWithInfoWindow", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setPositionWithInfoWindow(" + var1 + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setPositionWithInfoWindow(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.Marker::getPosition", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getPosition(" + "" + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.model.LatLng __result__;
-                try {
-                    __result__ = ref.getPosition();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
             
                 __methodResult__.success(jsonableResult);
             });

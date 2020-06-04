@@ -45,14 +45,14 @@ class BMKGradient extends NSObject  {
   //region getters
   Future<List<NSObject>> get_mColors() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGradient::get_mColors", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
   }
   
   Future<List<NSObject>> get_mStartPoints() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGradient::get_mStartPoints", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
   }
   
   //endregion
@@ -104,14 +104,14 @@ extension BMKGradient_Batch on List<BMKGradient> {
   //region getters
   Future<List<List<NSObject>>> get_mColors_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGradient::get_mColors_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     kNativeObjectPool.addAll(typedResult.expand((e) => e));
     return typedResult;
   }
   
   Future<List<List<NSObject>>> get_mStartPoints_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGradient::get_mStartPoints_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     kNativeObjectPool.addAll(typedResult.expand((e) => e));
     return typedResult;
   }

@@ -262,87 +262,103 @@ class MapViewFactory extends PlatformViewFactory {
             // invoke native method
             try {
                 ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.MapView.CustomMapStyleCallBack() {
-                // method channel
-                MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.MapView::setMapCustomStyle::Callback");
-        
-                // call dart method
-                @Override
-                public boolean onPreLoadLastCustomMapStyle(String var1) {
-                    // print log
-                    if (getEnableLog()) {
-                        Log.d("java-callback", "fluttify-java-callback: onPreLoadLastCustomMapStyle(" + var1 + ")");
-                    }
-        
-                    // convert to jsonable data
-                    // jsonable arg
-                    String argvar1 = var1;
+                    // method channel
+                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.MapView::setMapCustomStyle::Callback");
+                    android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
         
                     // call dart method
-                    callbackChannel.invokeMethod(
-                            "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
-                            new HashMap<String, Object>() {{
-                                put("var1", argvar1);
-                            }}
-                    );
+                    @Override
+                    public boolean onPreLoadLastCustomMapStyle(String var1) {
+                        // print log
+                        if (getEnableLog()) {
+                            Log.d("java-callback", "fluttify-java-callback: onPreLoadLastCustomMapStyle(" + var1 + ")");
+                        }
         
-                    // method result
-                    return true;
-                }
+                        // convert to jsonable data
+                        // jsonable arg
+                        String argvar1 = var1;
         
-                @Override
-                public boolean onCustomMapStyleLoadSuccess(boolean var1, String var2) {
-                    // print log
-                    if (getEnableLog()) {
-                        Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadSuccess(" + var1 + var2 + ")");
+                        // call dart method
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                callbackChannel.invokeMethod(
+                                    "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
+                                    new HashMap<String, Object>() {{
+                                        put("var1", argvar1);
+                                    }}
+                                );
+                            }
+                        });
+        
+                        // method result
+                        return true;
                     }
         
-                    // convert to jsonable data
-                    // jsonable arg
-                    boolean argvar1 = var1;
-                    // jsonable arg
-                    String argvar2 = var2;
+                    @Override
+                    public boolean onCustomMapStyleLoadSuccess(boolean var1, String var2) {
+                        // print log
+                        if (getEnableLog()) {
+                            Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadSuccess(" + var1 + var2 + ")");
+                        }
         
-                    // call dart method
-                    callbackChannel.invokeMethod(
-                            "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
-                            new HashMap<String, Object>() {{
-                                put("var1", argvar1);
-                                put("var2", argvar2);
-                            }}
-                    );
+                        // convert to jsonable data
+                        // jsonable arg
+                        boolean argvar1 = var1;
+                        // jsonable arg
+                        String argvar2 = var2;
         
-                    // method result
-                    return true;
-                }
+                        // call dart method
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                callbackChannel.invokeMethod(
+                                    "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
+                                    new HashMap<String, Object>() {{
+                                        put("var1", argvar1);
+                                        put("var2", argvar2);
+                                    }}
+                                );
+                            }
+                        });
         
-                @Override
-                public boolean onCustomMapStyleLoadFailed(int var1, String var2, String var3) {
-                    // print log
-                    if (getEnableLog()) {
-                        Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadFailed(" + var1 + var2 + var3 + ")");
+                        // method result
+                        return true;
                     }
         
-                    // convert to jsonable data
-                    // jsonable arg
-                    int argvar1 = var1;
-                    // jsonable arg
-                    String argvar2 = var2;
-                    // jsonable arg
-                    String argvar3 = var3;
+                    @Override
+                    public boolean onCustomMapStyleLoadFailed(int var1, String var2, String var3) {
+                        // print log
+                        if (getEnableLog()) {
+                            Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadFailed(" + var1 + var2 + var3 + ")");
+                        }
         
-                    // call dart method
-                    callbackChannel.invokeMethod(
-                            "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
-                            new HashMap<String, Object>() {{
-                                put("var1", argvar1);
-                                put("var2", argvar2);
-                                put("var3", argvar3);
-                            }}
-                    );
+                        // convert to jsonable data
+                        // jsonable arg
+                        int argvar1 = var1;
+                        // jsonable arg
+                        String argvar2 = var2;
+                        // jsonable arg
+                        String argvar3 = var3;
         
-                    // method result
-                    return true;
-                }
+                        // call dart method
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                callbackChannel.invokeMethod(
+                                    "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
+                                    new HashMap<String, Object>() {{
+                                        put("var1", argvar1);
+                                        put("var2", argvar2);
+                                        put("var3", argvar3);
+                                    }}
+                                );
+                            }
+                        });
+        
+                        // method result
+                        return true;
+                    }
         
             });
             } catch (Throwable throwable) {

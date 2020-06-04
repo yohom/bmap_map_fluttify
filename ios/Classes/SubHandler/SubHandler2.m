@@ -468,6 +468,24 @@ extern BOOL enableLog;
             methodResult(jsonableResult);
         },
         
+        @"BMKOLSearchRecord::get_size": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"BMKOLSearchRecord::get_size");
+            }
+        
+            // ref object
+            BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // invoke native method
+            int64_t result = ref.size;
+        
+            // 返回值: Value
+            id jsonableResult = @(result);
+        
+            methodResult(jsonableResult);
+        },
+        
         @"BMKOLSearchRecord::get_cityID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -556,6 +574,42 @@ extern BOOL enableLog;
         
             // invoke native method
             int result = ref.cityID;
+        
+            // 返回值: Value
+            id jsonableResult = @(result);
+        
+            methodResult(jsonableResult);
+        },
+        
+        @"BMKOLUpdateElement::get_size": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"BMKOLUpdateElement::get_size");
+            }
+        
+            // ref object
+            BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // invoke native method
+            int64_t result = ref.size;
+        
+            // 返回值: Value
+            id jsonableResult = @(result);
+        
+            methodResult(jsonableResult);
+        },
+        
+        @"BMKOLUpdateElement::get_serversize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"BMKOLUpdateElement::get_serversize");
+            }
+        
+            // ref object
+            BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // invoke native method
+            int64_t result = ref.serversize;
         
             // 返回值: Value
             id jsonableResult = @(result);
@@ -3606,6 +3660,26 @@ extern BOOL enableLog;
             methodResult(resultList);
         },
         
+        @"BMKOLSearchRecord::get_size_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                int64_t result = ref.size;
+        
+                // 返回值: Value
+                id jsonableResult = @(result);
+        
+                [resultList addObject:jsonableResult];
+            }
+        
+            methodResult(resultList);
+        },
+        
         @"BMKOLSearchRecord::get_cityID_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
         
@@ -3701,6 +3775,46 @@ extern BOOL enableLog;
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
                 int result = ref.cityID;
+        
+                // 返回值: Value
+                id jsonableResult = @(result);
+        
+                [resultList addObject:jsonableResult];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"BMKOLUpdateElement::get_size_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                int64_t result = ref.size;
+        
+                // 返回值: Value
+                id jsonableResult = @(result);
+        
+                [resultList addObject:jsonableResult];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"BMKOLUpdateElement::get_serversize_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                int64_t result = ref.serversize;
         
                 // 返回值: Value
                 id jsonableResult = @(result);
@@ -3942,119 +4056,6 @@ extern BOOL enableLog;
             BMKOverlayPathView* ref = (BMKOverlayPathView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
             ref.miterLimit = miterLimit;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayPathView::set_lineDashPhase": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayPathView::set_lineDashPhase");
-            }
-        
-            // args
-            // jsonable arg
-            CGFloat lineDashPhase = [args[@"lineDashPhase"] floatValue];
-        
-            // ref
-            BMKOverlayPathView* ref = (BMKOverlayPathView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-            ref.lineDashPhase = lineDashPhase;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayPathView::set_lineDashPattern": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayPathView::set_lineDashPattern");
-            }
-        
-            // args
-            // list arg
-            NSArray<NSNumber*>* lineDashPatternRefArray = (NSArray<NSNumber*> *) args[@"lineDashPattern"];
-            NSMutableArray<NSArray*>* lineDashPattern = [NSMutableArray arrayWithCapacity:lineDashPatternRefArray.count];
-            for (int __i__ = 0; __i__ < lineDashPatternRefArray.count; __i__++) {
-                NSArray* item = (NSArray*) HEAP[[lineDashPatternRefArray objectAtIndex:__i__]];
-                [lineDashPattern addObject:item];
-            }
-        
-            // ref
-            BMKOverlayPathView* ref = (BMKOverlayPathView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-            ref.lineDashPattern = lineDashPattern;
-            methodResult(@"success");
-        },
-        
-        @"BMKGroundOverlay::set_pt": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKGroundOverlay::set_pt");
-            }
-        
-            // args
-            // struct arg
-            NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
-            CLLocationCoordinate2D pt;
-            [ptValue getValue:&pt];
-        
-            // ref
-            BMKGroundOverlay* ref = (BMKGroundOverlay*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-            ref.pt = pt;
-            methodResult(@"success");
-        },
-        
-        @"BMKGroundOverlay::set_anchor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKGroundOverlay::set_anchor");
-            }
-        
-            // args
-            // struct arg
-            NSValue* anchorValue = (NSValue*) HEAP[@([args[@"anchor"] integerValue])];
-            CGPoint anchor;
-            [anchorValue getValue:&anchor];
-        
-            // ref
-            BMKGroundOverlay* ref = (BMKGroundOverlay*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-            ref.anchor = anchor;
-            methodResult(@"success");
-        },
-        
-        @"BMKGroundOverlay::set_bound": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKGroundOverlay::set_bound");
-            }
-        
-            // args
-            // struct arg
-            NSValue* boundValue = (NSValue*) HEAP[@([args[@"bound"] integerValue])];
-            BMKCoordinateBounds bound;
-            [boundValue getValue:&bound];
-        
-            // ref
-            BMKGroundOverlay* ref = (BMKGroundOverlay*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-            ref.bound = bound;
-            methodResult(@"success");
-        },
-        
-        @"BMKGroundOverlay::set_icon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKGroundOverlay::set_icon");
-            }
-        
-            // args
-            // ref arg
-            UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
-        
-            // ref
-            BMKGroundOverlay* ref = (BMKGroundOverlay*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-            ref.icon = icon;
             methodResult(@"success");
         },
         

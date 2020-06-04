@@ -13,7 +13,7 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Object  {
+/* abstract */ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.http.HttpClient.ProtoResultCallback';
 

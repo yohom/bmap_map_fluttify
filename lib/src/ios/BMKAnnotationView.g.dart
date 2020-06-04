@@ -57,8 +57,8 @@ class BMKAnnotationView extends UIView  {
   
   Future<BMKAnnotation> get_annotation({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_annotation", {'refId': refId});
-    kNativeObjectPool.add(BMKShape()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKShape()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    kNativeObjectPool.add(BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    return BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
   }
   
   Future<UIImage> get_image({bool viewChannel = true}) async {
@@ -388,7 +388,7 @@ extension BMKAnnotationView_Batch on List<BMKAnnotationView> {
   
   Future<List<BMKAnnotation>> get_annotation_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_annotation_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKShape()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
