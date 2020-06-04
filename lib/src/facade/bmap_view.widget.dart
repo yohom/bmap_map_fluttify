@@ -55,7 +55,7 @@ class _BmapViewState extends State<BmapView> {
       return Stack(
         children: <Widget>[
           RepaintBoundary(key: _markerKey, child: _widgetLayer),
-          com_baidu_mapapi_map_MapView_Android(
+          com_baidu_mapapi_map_TextureMapView_Android(
             onDispose: _onPlatformViewDispose,
             onViewCreated: (controller) async {
               _controller = BmapController.android(controller, this);

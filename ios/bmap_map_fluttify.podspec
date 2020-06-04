@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 A new flutter plugin project.
                        DESC
-  s.homepage         = 'https://github.com/fluttify-project/baidu_map_fluttify'
+  s.homepage         = 'https://github.com/fluttify-project'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'yohom' => 'yohombao@qq.com' }
   s.source           = { :path => '.' }

@@ -1152,6 +1152,606 @@ extern BOOL enableLog;
       
           methodResult(jsonableResult);
       },
+      @"BMKMapView::switchBaseIndoorMapFloor_withID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // jsonable arg
+          NSString* strFloor = (NSString*) args[@"strFloor"];
+          // jsonable arg
+          NSString* strID = (NSString*) args[@"strID"];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::switchBaseIndoorMapFloor(%@, %@)", args[@"refId"], args[@"strFloor"], args[@"strID"]);
+          }
+      
+          // invoke native method
+          BMKSwitchIndoorFloorError result = [ref switchBaseIndoorMapFloor: strFloor withID: strID];
+      
+          // result
+          // 返回值: Value
+          id jsonableResult = @(result);
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::getFocusedBaseIndoorMapInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+      
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::getFocusedBaseIndoorMapInfo()", args[@"refId"]);
+          }
+      
+          // invoke native method
+          BMKBaseIndoorMapInfo* result = [ref getFocusedBaseIndoorMapInfo];
+      
+          // result
+          // return a ref
+          HEAP[@((result).hash)] = result;
+          NSNumber* jsonableResult = @((result).hash);
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::updateLocationViewWithParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          BMKLocationViewDisplayParam* locationViewDisplayParam = (BMKLocationViewDisplayParam*) HEAP[@([args[@"locationViewDisplayParam"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::updateLocationViewWithParam(%@)", args[@"refId"], args[@"locationViewDisplayParam"]);
+          }
+      
+          // invoke native method
+          [ref updateLocationViewWithParam : locationViewDisplayParam];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::updateLocationData": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          BMKUserLocation* userLocation = (BMKUserLocation*) HEAP[@([args[@"userLocation"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::updateLocationData(%@)", args[@"refId"], args[@"userLocation"]);
+          }
+      
+          // invoke native method
+          [ref updateLocationData : userLocation];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::addAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::addAnnotation(%@)", args[@"refId"], args[@"annotation"]);
+          }
+      
+          // invoke native method
+          [ref addAnnotation : annotation];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::addAnnotations": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // list arg
+          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
+          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
+              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+              [annotations addObject:item];
+          }
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::addAnnotations(%@)", args[@"refId"], args[@"annotations"]);
+          }
+      
+          // invoke native method
+          [ref addAnnotations : annotations];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::removeAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::removeAnnotation(%@)", args[@"refId"], args[@"annotation"]);
+          }
+      
+          // invoke native method
+          [ref removeAnnotation : annotation];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::removeAnnotations": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // list arg
+          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
+          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
+              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+              [annotations addObject:item];
+          }
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::removeAnnotations(%@)", args[@"refId"], args[@"annotations"]);
+          }
+      
+          // invoke native method
+          [ref removeAnnotations : annotations];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::viewForAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::viewForAnnotation(%@)", args[@"refId"], args[@"annotation"]);
+          }
+      
+          // invoke native method
+          BMKAnnotationView* result = [ref viewForAnnotation: annotation];
+      
+          // result
+          // return a ref
+          HEAP[@((result).hash)] = result;
+          NSNumber* jsonableResult = @((result).hash);
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::dequeueReusableAnnotationViewWithIdentifier": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // jsonable arg
+          NSString* identifier = (NSString*) args[@"identifier"];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::dequeueReusableAnnotationViewWithIdentifier(%@)", args[@"refId"], args[@"identifier"]);
+          }
+      
+          // invoke native method
+          BMKAnnotationView* result = [ref dequeueReusableAnnotationViewWithIdentifier: identifier];
+      
+          // result
+          // return a ref
+          HEAP[@((result).hash)] = result;
+          NSNumber* jsonableResult = @((result).hash);
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::selectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          // jsonable arg
+          BOOL animated = [args[@"animated"] boolValue];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::selectAnnotation(%@, %@)", args[@"refId"], args[@"annotation"], args[@"animated"]);
+          }
+      
+          // invoke native method
+          [ref selectAnnotation : annotation animated: animated];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::deselectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          // jsonable arg
+          BOOL animated = [args[@"animated"] boolValue];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::deselectAnnotation(%@, %@)", args[@"refId"], args[@"annotation"], args[@"animated"]);
+          }
+      
+          // invoke native method
+          [ref deselectAnnotation : annotation animated: animated];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::showAnnotations_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // list arg
+          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
+          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
+              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+              [annotations addObject:item];
+          }
+          // jsonable arg
+          BOOL animated = [args[@"animated"] boolValue];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::showAnnotations(%@, %@)", args[@"refId"], args[@"annotations"], args[@"animated"]);
+          }
+      
+          // invoke native method
+          [ref showAnnotations : annotations animated: animated];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::annotationsInCoordinateBounds": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // struct arg
+          NSValue* boundsValue = (NSValue*) HEAP[@([args[@"bounds"] integerValue])];
+          BMKCoordinateBounds bounds;
+          [boundsValue getValue:&bounds];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::annotationsInCoordinateBounds(%@)", args[@"refId"], args[@"bounds"]);
+          }
+      
+          // invoke native method
+          NSArray* result = [ref annotationsInCoordinateBounds: bounds];
+      
+          // result
+          // 返回值: 列表
+          NSMutableArray* jsonableResult = [NSMutableArray array];
+          for (int __i__ = 0; __i__ < result.count; __i__++) {
+              NSObject* object = [result objectAtIndex:__i__];
+              [jsonableResult addObject: @(object.hash)];
+              HEAP[@([object hash])] = object;
+          }
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::addOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::addOverlay(%@)", args[@"refId"], args[@"overlay"]);
+          }
+      
+          // invoke native method
+          [ref addOverlay : overlay];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::addOverlays": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // list arg
+          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
+          NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
+          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
+              NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
+              [overlays addObject:item];
+          }
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::addOverlays(%@)", args[@"refId"], args[@"overlays"]);
+          }
+      
+          // invoke native method
+          [ref addOverlays : overlays];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::removeOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::removeOverlay(%@)", args[@"refId"], args[@"overlay"]);
+          }
+      
+          // invoke native method
+          [ref removeOverlay : overlay];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::removeOverlays": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // list arg
+          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
+          NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
+          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
+              NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
+              [overlays addObject:item];
+          }
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::removeOverlays(%@)", args[@"refId"], args[@"overlays"]);
+          }
+      
+          // invoke native method
+          [ref removeOverlays : overlays];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::insertOverlay_atIndex": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          // jsonable arg
+          NSUInteger index = [args[@"index"] unsignedIntegerValue];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::insertOverlay(%@, %@)", args[@"refId"], args[@"overlay"], args[@"index"]);
+          }
+      
+          // invoke native method
+          [ref insertOverlay : overlay atIndex: index];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::exchangeOverlayAtIndex_withOverlayAtIndex": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // jsonable arg
+          NSUInteger index1 = [args[@"index1"] unsignedIntegerValue];
+          // jsonable arg
+          NSUInteger index2 = [args[@"index2"] unsignedIntegerValue];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::exchangeOverlayAtIndex(%@, %@)", args[@"refId"], args[@"index1"], args[@"index2"]);
+          }
+      
+          // invoke native method
+          [ref exchangeOverlayAtIndex : index1 withOverlayAtIndex: index2];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::insertOverlay_aboveOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          // ref arg
+          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::insertOverlay(%@, %@)", args[@"refId"], args[@"overlay"], args[@"sibling"]);
+          }
+      
+          // invoke native method
+          [ref insertOverlay : overlay aboveOverlay: sibling];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::insertOverlay_belowOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          // ref arg
+          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::insertOverlay(%@, %@)", args[@"refId"], args[@"overlay"], args[@"sibling"]);
+          }
+      
+          // invoke native method
+          [ref insertOverlay : overlay belowOverlay: sibling];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::viewForOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::viewForOverlay(%@)", args[@"refId"], args[@"overlay"]);
+          }
+      
+          // invoke native method
+          BMKOverlayView* result = [ref viewForOverlay: overlay];
+      
+          // result
+          // return a ref
+          HEAP[@((result).hash)] = result;
+          NSNumber* jsonableResult = @((result).hash);
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::addHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+          // ref arg
+          BMKHeatMap* heatMap = (BMKHeatMap*) HEAP[@([args[@"heatMap"] integerValue])];
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::addHeatMap(%@)", args[@"refId"], args[@"heatMap"]);
+          }
+      
+          // invoke native method
+          [ref addHeatMap : heatMap];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
+      @"BMKMapView::removeHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          // args
+      
+      
+          // ref
+          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+      
+          // print log
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView@%@::removeHeatMap()", args[@"refId"]);
+          }
+      
+          // invoke native method
+          [ref removeHeatMap ];
+      
+          // result
+          // 无返回值
+          NSString* jsonableResult = @"success";
+      
+          methodResult(jsonableResult);
+      },
       @"BMKMapView::get_mapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // print log
           if (enableLog) {

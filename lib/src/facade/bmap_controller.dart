@@ -16,7 +16,7 @@ class BmapController with WidgetsBindingObserver, _Private {
     WidgetsBinding.instance.addObserver(this);
   }
 
-  com_baidu_mapapi_map_MapView androidController;
+  com_baidu_mapapi_map_TextureMapView androidController;
   BMKMapView iosController;
 
   _BmapViewState _state;
