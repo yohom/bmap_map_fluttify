@@ -43,6 +43,8 @@ class BmapService {
           target.latitude,
           target.longitude,
         );
+
+        pool..add(_current)..add(_target);
         return com_baidu_mapapi_utils_SpatialRelationUtil.isCircleContainsPoint(
           _current,
           radius,
@@ -58,6 +60,8 @@ class BmapService {
           target.latitude,
           target.longitude,
         );
+
+        pool..add(_current)..add(_target);
         return BMKCircleContainsCoordinate(
           _current,
           _target,
