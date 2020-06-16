@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////
 
 enum BMKLineDashType {
-  kBMKLineDashTypeNone,
-  kBMKLineDashTypeSquare,
-  kBMKLineDashTypeDot
+  kBMKLineDashTypeNone /* 0 */,
+  kBMKLineDashTypeSquare /* 0 */,
+  kBMKLineDashTypeDot /* 0 */
 }

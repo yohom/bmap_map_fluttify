@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -105,7 +104,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position.refId, "zoomLevel": zoomLevel, "anchor": anchor.refId, "icon": icon.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position?.refId, "zoomLevel": zoomLevel, "anchor": anchor?.refId, "icon": icon?.refId});
   
   
     // handle native call
@@ -116,7 +115,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -129,7 +128,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds.refId, "icon": icon.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds?.refId, "icon": icon?.refId});
   
   
     // handle native call
@@ -140,7 +139,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }

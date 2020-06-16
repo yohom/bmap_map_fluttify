@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -66,9 +65,6 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
     MethodChannel('com.baidu.mapapi.map.SwipeDismissView::setCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss':
               // print log

@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -53,9 +52,6 @@ class BMKOfflineMap extends NSObject  {
     MethodChannel('BMKOfflineMapDelegate::Callback')
       .setMethodCallHandler((methodCall) async {
         final args = methodCall.arguments as Map;
-        // final refId = args['callerRefId'] as int;
-        // if (refId != this.refId) return;
-  
         switch (methodCall.method) {
           case 'Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState':
             // print log
@@ -310,7 +306,7 @@ class BMKOfflineMap extends NSObject  {
       return null;
     } else {
       final __return__ = BMKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }

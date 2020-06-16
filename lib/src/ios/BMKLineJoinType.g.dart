@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////
 
 enum BMKLineJoinType {
-  kBMKLineJoinBevel,
-  kBMKLineJoinMiter,
-  kBMKLineJoinRound
+  kBMKLineJoinBevel /* 0 */,
+  kBMKLineJoinMiter /* 0 */,
+  kBMKLineJoinRound /* 0 */
 }

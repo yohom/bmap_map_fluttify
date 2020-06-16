@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -267,8 +266,8 @@ class BMKMapView extends UIView  {
   
   Future<List<NSObject>> get_annotations({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_annotations", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
   }
   
   Future<bool> get_isSelectedAnnotationViewFront({bool viewChannel = true}) async {
@@ -279,8 +278,8 @@ class BMKMapView extends UIView  {
   
   Future<List<NSObject>> get_overlays({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_overlays", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
   }
   
   //endregion
@@ -292,9 +291,6 @@ class BMKMapView extends UIView  {
     MethodChannel('BMKMapViewDelegate::Callback@$refId')
       .setMethodCallHandler((methodCall) async {
         final args = methodCall.arguments as Map;
-        // final refId = args['callerRefId'] as int;
-        // if (refId != this.refId) return;
-  
         switch (methodCall.method) {
           case 'Callback::BMKMapViewDelegate::mapViewDidFinishLoading':
             // print log
@@ -303,7 +299,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapViewDidFinishLoading((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapViewDidFinishLoading(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError':
             // print log
@@ -312,7 +308,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapViewDidRenderValidData_withError((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (NSError()..refId = (args['error'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapViewDidRenderValidData_withError(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
             break;
           case 'Callback::BMKMapViewDelegate::mapViewDidFinishRendering':
             // print log
@@ -321,7 +317,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapViewDidFinishRendering((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapViewDidFinishRendering(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_onDrawMapFrame':
             // print log
@@ -330,7 +326,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_onDrawMapFrame((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKMapStatus()..refId = (args['status'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_onDrawMapFrame(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['status'] as Object))?.as__<BMKMapStatus>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated':
             // print log
@@ -339,7 +335,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_regionWillChangeAnimated((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), args['animated']);
+            delegate?.mapView_regionWillChangeAnimated(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated']);
             break;
           case 'Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason':
             // print log
@@ -348,7 +344,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_regionWillChangeAnimated_reason((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), args['animated'], BMKRegionChangeReason.values[(args['reason'])]);
+            delegate?.mapView_regionWillChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[(args['reason'])]);
             break;
           case 'Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated':
             // print log
@@ -357,7 +353,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_regionDidChangeAnimated((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), args['animated']);
+            delegate?.mapView_regionDidChangeAnimated(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated']);
             break;
           case 'Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason':
             // print log
@@ -366,7 +362,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_regionDidChangeAnimated_reason((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), args['animated'], BMKRegionChangeReason.values[(args['reason'])]);
+            delegate?.mapView_regionDidChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[(args['reason'])]);
             break;
           case 'Callback::BMKMapViewDelegate::mapView_viewForAnnotation':
             // print log
@@ -375,7 +371,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_viewForAnnotation((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKGroundOverlay()..refId = (args['annotation'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_viewForAnnotation(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['annotation'] as Object))?.as__<BMKAnnotation>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews':
             // print log
@@ -384,7 +380,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_didAddAnnotationViews((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (args['views'] as List).cast<int>().map((it) => NSObject()..refId = it..tag__ = 'bmap_map_fluttify').toList());
+            delegate?.mapView_didAddAnnotationViews(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), (args['views'] as List).cast<int>().map((__it__) => TypeOpBmapMapFluttifyIOS(__it__).as__<NSObject>()).toList());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_clickAnnotationView':
             // print log
@@ -393,7 +389,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_clickAnnotationView((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKPinAnnotationView()..refId = (args['view'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_clickAnnotationView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView':
             // print log
@@ -402,7 +398,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_didSelectAnnotationView((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKPinAnnotationView()..refId = (args['view'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_didSelectAnnotationView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView':
             // print log
@@ -411,7 +407,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_didDeselectAnnotationView((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKPinAnnotationView()..refId = (args['view'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_didDeselectAnnotationView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState':
             // print log
@@ -420,7 +416,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_annotationView_didChangeDragState_fromOldState((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKPinAnnotationView()..refId = (args['view'])..tag__ = 'bmap_map_fluttify'), args['newState'], args['oldState']);
+            delegate?.mapView_annotationView_didChangeDragState_fromOldState(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>(), args['newState'], args['oldState']);
             break;
           case 'Callback::BMKMapViewDelegate::mapView_annotationViewForBubble':
             // print log
@@ -429,7 +425,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_annotationViewForBubble((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKPinAnnotationView()..refId = (args['view'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_annotationViewForBubble(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_viewForOverlay':
             // print log
@@ -438,7 +434,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_viewForOverlay((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKGroundOverlay()..refId = (args['overlay'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_viewForOverlay(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['overlay'] as Object))?.as__<BMKOverlay>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_didAddOverlayViews':
             // print log
@@ -447,7 +443,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_didAddOverlayViews((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (args['overlayViews'] as List).cast<int>().map((it) => NSObject()..refId = it..tag__ = 'bmap_map_fluttify').toList());
+            delegate?.mapView_didAddOverlayViews(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), (args['overlayViews'] as List).cast<int>().map((__it__) => TypeOpBmapMapFluttifyIOS(__it__).as__<NSObject>()).toList());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView':
             // print log
@@ -456,7 +452,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_onClickedBMKOverlayView((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKTileLayerView()..refId = (args['overlayView'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_onClickedBMKOverlayView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['overlayView'] as Object))?.as__<BMKOverlayView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_onClickedMapPoi':
             // print log
@@ -465,7 +461,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_onClickedMapPoi((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (BMKMapPoi()..refId = (args['mapPoi'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_onClickedMapPoi(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['mapPoi'] as Object))?.as__<BMKMapPoi>());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_onClickedMapBlank':
             // print log
@@ -474,7 +470,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_onClickedMapBlank((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (CLLocationCoordinate2D()..refId = (args['coordinate'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapView_onClickedMapBlank(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>());
             break;
           case 'Callback::BMKMapViewDelegate::mapview_onDoubleClick':
             // print log
@@ -483,7 +479,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapview_onDoubleClick((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (CLLocationCoordinate2D()..refId = (args['coordinate'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapview_onDoubleClick(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>());
             break;
           case 'Callback::BMKMapViewDelegate::mapview_onLongClick':
             // print log
@@ -492,7 +488,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapview_onLongClick((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (CLLocationCoordinate2D()..refId = (args['coordinate'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapview_onLongClick(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>());
             break;
           case 'Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce':
             // print log
@@ -501,7 +497,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapview_onForceTouch_force_maximumPossibleForce((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), (CLLocationCoordinate2D()..refId = (args['coordinate'])..tag__ = 'bmap_map_fluttify'), args['force'], args['maximumPossibleForce']);
+            delegate?.mapview_onForceTouch_force_maximumPossibleForce(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>(), args['force'], args['maximumPossibleForce']);
             break;
           case 'Callback::BMKMapViewDelegate::mapStatusDidChanged':
             // print log
@@ -510,7 +506,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapStatusDidChanged((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapStatusDidChanged(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>());
             break;
           case 'Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo':
             // print log
@@ -519,7 +515,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapview_baseIndoorMapWithIn_baseIndoorMapInfo((BMKMapView()..refId = (args['mapView'])..tag__ = 'bmap_map_fluttify'), args['flag'], (BMKBaseIndoorMapInfo()..refId = (args['info'])..tag__ = 'bmap_map_fluttify'));
+            delegate?.mapview_baseIndoorMapWithIn_baseIndoorMapInfo(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['flag'], TypeOpBmapMapFluttifyIOS((args['info'] as Object))?.as__<BMKBaseIndoorMapInfo>());
             break;
           default:
             break;
@@ -868,16 +864,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure', {"option": option.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure', {"option": option?.refId, "refId": refId});
   
   
     // handle native call
     MethodChannel('BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
           switch (methodCall.method) {
             case 'Callback::void|NSString*#path::void|NSString*#path':
               // print log
@@ -904,7 +897,7 @@ class BMKMapView extends UIView  {
               }
         
               // handle the native call
-              failure((NSError()..refId = (args['error'])..tag__ = 'bmap_map_fluttify'), args['path']);
+              failure(TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>(), args['path']);
               break;
             default:
               break;
@@ -929,7 +922,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion', {"smooth": smooth.refId, "slow": slow.refId, "congestion": congestion.refId, "severeCongestion": severeCongestion.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion', {"smooth": smooth?.refId, "slow": slow?.refId, "congestion": congestion?.refId, "severeCongestion": severeCongestion?.refId, "refId": refId});
   
   
     // handle native call
@@ -1121,7 +1114,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::regionThatFits', {"region": region.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::regionThatFits', {"region": region?.refId, "refId": refId});
   
   
     // handle native call
@@ -1132,7 +1125,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1145,7 +1138,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setRegion_animated', {"region": region.refId, "animated": animated, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setRegion_animated', {"region": region?.refId, "animated": animated, "refId": refId});
   
   
     // handle native call
@@ -1169,7 +1162,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCenterCoordinate_animated', {"coordinate": coordinate.refId, "animated": animated, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCenterCoordinate_animated', {"coordinate": coordinate?.refId, "animated": animated, "refId": refId});
   
   
     // handle native call
@@ -1204,7 +1197,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1217,7 +1210,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::takeSnapshot__CGRect', {"rect": rect.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::takeSnapshot__CGRect', {"rect": rect?.refId, "refId": refId});
   
   
     // handle native call
@@ -1228,7 +1221,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1241,7 +1234,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCompassImage', {"image": image.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setCompassImage', {"image": image?.refId, "refId": refId});
   
   
     // handle native call
@@ -1265,7 +1258,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setVisibleMapRect_animated', {"mapRect": mapRect.refId, "animate": animate, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setVisibleMapRect_animated', {"mapRect": mapRect?.refId, "animate": animate, "refId": refId});
   
   
     // handle native call
@@ -1289,7 +1282,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::mapRectThatFits', {"mapRect": mapRect.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::mapRectThatFits', {"mapRect": mapRect?.refId, "refId": refId});
   
   
     // handle native call
@@ -1300,7 +1293,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1313,7 +1306,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setVisibleMapRect_edgePadding_animated', {"mapRect": mapRect.refId, "insets": insets.refId, "animate": animate, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setVisibleMapRect_edgePadding_animated', {"mapRect": mapRect?.refId, "insets": insets?.refId, "animate": animate, "refId": refId});
   
   
     // handle native call
@@ -1337,7 +1330,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::fitVisibleMapRect_edgePadding_withAnimated', {"mapRect": mapRect.refId, "insets": insets.refId, "animate": animate, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::fitVisibleMapRect_edgePadding_withAnimated', {"mapRect": mapRect?.refId, "insets": insets?.refId, "animate": animate, "refId": refId});
   
   
     // handle native call
@@ -1361,7 +1354,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::mapRectThatFits_edgePadding', {"mapRect": mapRect.refId, "insets": insets.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::mapRectThatFits_edgePadding', {"mapRect": mapRect?.refId, "insets": insets?.refId, "refId": refId});
   
   
     // handle native call
@@ -1372,7 +1365,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1385,7 +1378,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertCoordinate_toPointToView', {"coordinate": coordinate.refId, "view": view.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertCoordinate_toPointToView', {"coordinate": coordinate?.refId, "view": view?.refId, "refId": refId});
   
   
     // handle native call
@@ -1396,7 +1389,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1409,7 +1402,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertPoint_toCoordinateFromView', {"point": point.refId, "view": view.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertPoint_toCoordinateFromView', {"point": point?.refId, "view": view?.refId, "refId": refId});
   
   
     // handle native call
@@ -1420,7 +1413,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1433,7 +1426,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertRegion_toRectToView', {"region": region.refId, "view": view.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertRegion_toRectToView', {"region": region?.refId, "view": view?.refId, "refId": refId});
   
   
     // handle native call
@@ -1444,7 +1437,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1457,7 +1450,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertRect_toRegionFromView', {"rect": rect.refId, "view": view.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertRect_toRegionFromView', {"rect": rect?.refId, "view": view?.refId, "refId": refId});
   
   
     // handle native call
@@ -1468,7 +1461,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1481,7 +1474,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertMapRect_toRectToView', {"mapRect": mapRect.refId, "view": view.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertMapRect_toRectToView', {"mapRect": mapRect?.refId, "view": view?.refId, "refId": refId});
   
   
     // handle native call
@@ -1492,7 +1485,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1505,7 +1498,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertRect_toMapRectFromView', {"rect": rect.refId, "view": view.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::convertRect_toMapRectFromView', {"rect": rect?.refId, "view": view?.refId, "refId": refId});
   
   
     // handle native call
@@ -1516,7 +1509,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1529,7 +1522,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::glPointForMapPoint', {"mapPoint": mapPoint.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::glPointForMapPoint', {"mapPoint": mapPoint?.refId, "refId": refId});
   
   
     // handle native call
@@ -1540,7 +1533,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1553,7 +1546,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::glPointsForMapPoints_count', {"mapPoints": mapPoints.map((__it__) => __it__.refId).toList(), "count": count, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::glPointsForMapPoints_count', {"mapPoints": mapPoints.map((__it__) => __it__?.refId).toList(), "count": count, "refId": refId});
   
   
     // handle native call
@@ -1577,7 +1570,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapCenterToScreenPt', {"ptInScreen": ptInScreen.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapCenterToScreenPt', {"ptInScreen": ptInScreen?.refId, "refId": refId});
   
   
     // handle native call
@@ -1601,7 +1594,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::getMapStatusFromCoordinateRegion_edgePadding', {"region": region.refId, "insets": insets.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::getMapStatusFromCoordinateRegion_edgePadding', {"region": region?.refId, "insets": insets?.refId, "refId": refId});
   
   
     // handle native call
@@ -1612,7 +1605,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1636,7 +1629,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1649,7 +1642,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapStatus', {"mapStatus": mapStatus.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapStatus', {"mapStatus": mapStatus?.refId, "refId": refId});
   
   
     // handle native call
@@ -1673,7 +1666,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapStatus_withAnimation', {"mapStatus": mapStatus.refId, "bAnimation": bAnimation, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapStatus_withAnimation', {"mapStatus": mapStatus?.refId, "bAnimation": bAnimation, "refId": refId});
   
   
     // handle native call
@@ -1697,7 +1690,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapStatus_withAnimation_withAnimationTime', {"mapStatus": mapStatus.refId, "bAnimation": bAnimation, "ulDuration": ulDuration, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::setMapStatus_withAnimation_withAnimationTime', {"mapStatus": mapStatus?.refId, "bAnimation": bAnimation, "ulDuration": ulDuration, "refId": refId});
   
   
     // handle native call
@@ -1756,7 +1749,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1780,7 +1773,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1828,7 +1821,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKBaseIndoorMapInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1841,7 +1834,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::updateLocationViewWithParam', {"locationViewDisplayParam": locationViewDisplayParam.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::updateLocationViewWithParam', {"locationViewDisplayParam": locationViewDisplayParam?.refId, "refId": refId});
   
   
     // handle native call
@@ -1865,7 +1858,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::updateLocationData', {"userLocation": userLocation.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::updateLocationData', {"userLocation": userLocation?.refId, "refId": refId});
   
   
     // handle native call
@@ -1889,7 +1882,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addAnnotation', {"annotation": annotation.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addAnnotation', {"annotation": annotation?.refId, "refId": refId});
   
   
     // handle native call
@@ -1913,7 +1906,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addAnnotations', {"annotations": annotations.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addAnnotations', {"annotations": annotations.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -1937,7 +1930,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeAnnotation', {"annotation": annotation.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeAnnotation', {"annotation": annotation?.refId, "refId": refId});
   
   
     // handle native call
@@ -1961,7 +1954,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeAnnotations', {"annotations": annotations.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeAnnotations', {"annotations": annotations.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -1985,7 +1978,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::viewForAnnotation', {"annotation": annotation.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::viewForAnnotation', {"annotation": annotation?.refId, "refId": refId});
   
   
     // handle native call
@@ -1995,8 +1988,8 @@ class BMKMapView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = BMKPinAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      final __return__ = BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -2019,8 +2012,8 @@ class BMKMapView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = BMKPinAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      final __return__ = BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -2033,7 +2026,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::selectAnnotation_animated', {"annotation": annotation.refId, "animated": animated, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::selectAnnotation_animated', {"annotation": annotation?.refId, "animated": animated, "refId": refId});
   
   
     // handle native call
@@ -2057,7 +2050,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::deselectAnnotation_animated', {"annotation": annotation.refId, "animated": animated, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::deselectAnnotation_animated', {"annotation": annotation?.refId, "animated": animated, "refId": refId});
   
   
     // handle native call
@@ -2081,7 +2074,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::showAnnotations_animated', {"annotations": annotations.map((__it__) => __it__.refId).toList(), "animated": animated, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::showAnnotations_animated', {"annotations": annotations.map((__it__) => __it__?.refId).toList(), "animated": animated, "refId": refId});
   
   
     // handle native call
@@ -2105,7 +2098,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::annotationsInCoordinateBounds', {"bounds": bounds.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::annotationsInCoordinateBounds', {"bounds": bounds?.refId, "refId": refId});
   
   
     // handle native call
@@ -2129,7 +2122,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addOverlay', {"overlay": overlay.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addOverlay', {"overlay": overlay?.refId, "refId": refId});
   
   
     // handle native call
@@ -2153,7 +2146,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addOverlays', {"overlays": overlays.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addOverlays', {"overlays": overlays.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -2177,7 +2170,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeOverlay', {"overlay": overlay.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeOverlay', {"overlay": overlay?.refId, "refId": refId});
   
   
     // handle native call
@@ -2201,7 +2194,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeOverlays', {"overlays": overlays.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::removeOverlays', {"overlays": overlays.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -2225,7 +2218,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::insertOverlay_atIndex', {"overlay": overlay.refId, "index": index, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::insertOverlay_atIndex', {"overlay": overlay?.refId, "index": index, "refId": refId});
   
   
     // handle native call
@@ -2273,7 +2266,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::insertOverlay_aboveOverlay', {"overlay": overlay.refId, "sibling": sibling.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::insertOverlay_aboveOverlay', {"overlay": overlay?.refId, "sibling": sibling?.refId, "refId": refId});
   
   
     // handle native call
@@ -2297,7 +2290,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::insertOverlay_belowOverlay', {"overlay": overlay.refId, "sibling": sibling.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::insertOverlay_belowOverlay', {"overlay": overlay?.refId, "sibling": sibling?.refId, "refId": refId});
   
   
     // handle native call
@@ -2321,7 +2314,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::viewForOverlay', {"overlay": overlay.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::viewForOverlay', {"overlay": overlay?.refId, "refId": refId});
   
   
     // handle native call
@@ -2331,8 +2324,8 @@ class BMKMapView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = BMKTileLayerView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      final __return__ = BMKOverlayView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -2345,7 +2338,7 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addHeatMap', {"heatMap": heatMap.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::addHeatMap', {"heatMap": heatMap?.refId, "refId": refId});
   
   
     // handle native call
@@ -2651,7 +2644,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   
   Future<List<List<NSObject>>> get_annotations_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_annotations_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     kNativeObjectPool.addAll(typedResult.expand((e) => e));
     return typedResult;
   }
@@ -2665,7 +2658,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   
   Future<List<List<NSObject>>> get_overlays_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_overlays_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGroundOverlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     kNativeObjectPool.addAll(typedResult.expand((e) => e));
     return typedResult;
   }
@@ -3880,7 +3873,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKPinAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       kNativeObjectPool.addAll(typedResult);
       return typedResult;
     }
@@ -3900,7 +3893,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKPinAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       kNativeObjectPool.addAll(typedResult);
       return typedResult;
     }
@@ -4160,7 +4153,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKTileLayerView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKOverlayView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       kNativeObjectPool.addAll(typedResult);
       return typedResult;
     }

@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -69,7 +68,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithPoints_count', {"points": points.map((__it__) => __it__.refId).toList(), "count": count});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithPoints_count', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count});
   
   
     // handle native call
@@ -80,7 +79,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -93,7 +92,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithCoordinates_count', {"coords": coords.map((__it__) => __it__.refId).toList(), "count": count});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithCoordinates_count', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count});
   
   
     // handle native call
@@ -104,7 +103,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -117,7 +116,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithPoints_count', {"points": points.map((__it__) => __it__.refId).toList(), "count": count, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithPoints_count', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count, "refId": refId});
   
   
     // handle native call
@@ -141,7 +140,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithCoordinates_count', {"coords": coords.map((__it__) => __it__.refId).toList(), "count": count, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithCoordinates_count', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count, "refId": refId});
   
   
     // handle native call
@@ -165,7 +164,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithPoints_count_textureIndex', {"points": points.map((__it__) => __it__.refId).toList(), "count": count, "textureIndex": textureIndex});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithPoints_count_textureIndex', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count, "textureIndex": textureIndex});
   
   
     // handle native call
@@ -176,7 +175,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -189,7 +188,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithCoordinates_count_textureIndex', {"coords": coords.map((__it__) => __it__.refId).toList(), "count": count, "textureIndex": textureIndex});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::polylineWithCoordinates_count_textureIndex', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count, "textureIndex": textureIndex});
   
   
     // handle native call
@@ -200,7 +199,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKPolyline()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -213,7 +212,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithPoints_count_textureIndex', {"points": points.map((__it__) => __it__.refId).toList(), "count": count, "textureIndex": textureIndex, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithPoints_count_textureIndex', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count, "textureIndex": textureIndex, "refId": refId});
   
   
     // handle native call
@@ -237,7 +236,7 @@ class BMKPolyline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithCoordinates_count_textureIndex', {"coords": coords.map((__it__) => __it__.refId).toList(), "count": count, "textureIndex": textureIndex, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolyline::setPolylineWithCoordinates_count_textureIndex', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count, "textureIndex": textureIndex, "refId": refId});
   
   
     // handle native call

@@ -4,9 +4,9 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError {
-  SWITCH_OK,
-  FLOOR_INFO_ERROR,
-  FLOOR_OVERLFLOW,
-  FOCUSED_ID_ERROR,
-  SWITCH_ERROR
+  SWITCH_OK /* 0 */,
+  FLOOR_INFO_ERROR /* 0 */,
+  FLOOR_OVERLFLOW /* 0 */,
+  FOCUSED_ID_ERROR /* 0 */,
+  SWITCH_ERROR /* 0 */
 }

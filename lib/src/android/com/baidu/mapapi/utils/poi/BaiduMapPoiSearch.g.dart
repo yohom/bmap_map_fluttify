@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -83,7 +82,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiDetialsPage', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiDetialsPage', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -107,7 +106,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiNearbySearch', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPoiNearbySearch', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -131,7 +130,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPanoShow', {"var0": var0, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::openBaiduMapPanoShow', {"var0": var0, "var1": var1?.refId});
   
   
     // handle native call
@@ -155,7 +154,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::dispatchPoiToBaiduMap', {"var0": var0.map((__it__) => __it__.refId).toList(), "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::dispatchPoiToBaiduMap', {"var0": var0.map((__it__) => __it__?.refId).toList(), "var1": var1?.refId});
   
   
     // handle native call
@@ -179,7 +178,7 @@ class com_baidu_mapapi_utils_poi_BaiduMapPoiSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::finish', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.BaiduMapPoiSearch::finish', {"var0": var0?.refId});
   
   
     // handle native call

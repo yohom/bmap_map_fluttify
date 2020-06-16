@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -69,9 +68,6 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
     MethodChannel('com.baidu.mapapi.map.offline.MKOfflineMap::init::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.offline.MKOfflineMapListener::onGetOfflineMapState':
               // print log
@@ -332,7 +328,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }

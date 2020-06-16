@@ -4,8 +4,8 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MapLayer {
-  MAP_LAYER_OVERLAY,
-  MAP_LAYER_LOCATION,
-  MAP_LAYER_POI_MARKER,
-  MAP_LAYER_INDOOR_POI
+  MAP_LAYER_OVERLAY /* 0 */,
+  MAP_LAYER_LOCATION /* 0 */,
+  MAP_LAYER_POI_MARKER /* 0 */,
+  MAP_LAYER_INDOOR_POI /* 0 */
 }

@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -41,7 +40,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setIcon', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setIcon', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -100,7 +99,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_BitmapDescriptor()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -113,7 +112,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setIcons', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setIcons', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -281,7 +280,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setPosition', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setPosition', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -305,7 +304,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setPositionWithInfoWindow', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setPositionWithInfoWindow', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -340,7 +339,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -737,7 +736,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setAnimation', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setAnimation', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -977,7 +976,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setFixedScreenPosition', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::setFixedScreenPosition', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -1012,7 +1011,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
       return null;
     } else {
       final __return__ = android_graphics_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1084,7 +1083,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_InfoWindow()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -1097,7 +1096,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::showInfoWindow', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::showInfoWindow', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -1121,7 +1120,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::showSmoothMoveInfoWindow', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::showSmoothMoveInfoWindow', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -1193,7 +1192,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::updateInfoWindowView', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::updateInfoWindowView', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -1217,7 +1216,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::updateInfoWindowBitmapDescriptor', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::updateInfoWindowBitmapDescriptor', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -1241,7 +1240,7 @@ class com_baidu_mapapi_map_Marker extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::updateInfoWindowPosition', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Marker::updateInfoWindowPosition', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call

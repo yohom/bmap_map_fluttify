@@ -4,8 +4,8 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MarkerOptions_MarkerAnimateType {
-  none,
-  drop,
-  grow,
-  jump
+  none /* 0 */,
+  drop /* 0 */,
+  grow /* 0 */,
+  jump /* 0 */
 }

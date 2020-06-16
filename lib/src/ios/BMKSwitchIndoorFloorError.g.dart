@@ -4,8 +4,8 @@
 //////////////////////////////////////////////////////////
 
 enum BMKSwitchIndoorFloorError {
-  BMKSwitchIndoorFloorSuccess,
-  BMKSwitchIndoorFloorFailed,
-  BMKSwitchIndoorFloorNotFocused,
-  BMKSwitchIndoorFloorNotExist
+  BMKSwitchIndoorFloorSuccess /* 0 */,
+  BMKSwitchIndoorFloorFailed /* 0 */,
+  BMKSwitchIndoorFloorNotFocused /* 0 */,
+  BMKSwitchIndoorFloorNotExist /* 0 */
 }

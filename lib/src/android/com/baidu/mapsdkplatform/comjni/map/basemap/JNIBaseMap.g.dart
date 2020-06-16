@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -93,7 +92,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetCallback', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetCallback', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -285,7 +284,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapStatus', {"var1": var1, "var3": var3.refId, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapStatus', {"var1": var1, "var3": var3?.refId, "var4": var4, "refId": refId});
   
   
     // handle native call
@@ -344,7 +343,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
       return null;
     } else {
       final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -368,7 +367,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
       return null;
     } else {
       final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -381,7 +380,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapStatusLimits', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapStatusLimits', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -416,7 +415,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
       return null;
     } else {
       final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -429,7 +428,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetZoomToBound', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetZoomToBound', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -789,7 +788,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SaveScreenToLocal', {"var1": var1, "var3": var3, "var4": var4.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SaveScreenToLocal', {"var1": var1, "var3": var3, "var4": var4?.refId, "refId": refId});
   
   
     // handle native call
@@ -1077,7 +1076,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addOneOverlayItem', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addOneOverlayItem', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1101,7 +1100,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addtileOverlay', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addtileOverlay', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1125,7 +1124,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateOneOverlayItem', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateOneOverlayItem', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1149,7 +1148,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateSDKTile', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateSDKTile', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1197,7 +1196,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::removeOneOverlayItem', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::removeOneOverlayItem', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call

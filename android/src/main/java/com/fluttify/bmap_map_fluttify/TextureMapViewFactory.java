@@ -248,7 +248,8 @@ class TextureMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.TextureMapView::setMapCustomStyle", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            com.baidu.mapapi.map.MapCustomStyleOptions var1 = (com.baidu.mapapi.map.MapCustomStyleOptions) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            com.baidu.mapapi.map.MapCustomStyleOptions var1 = __var1__ != null ? (com.baidu.mapapi.map.MapCustomStyleOptions) getHEAP().get(__var1__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -678,7 +679,8 @@ class TextureMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.TextureMapView::setZoomControlsPosition", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            android.graphics.Point var1 = (android.graphics.Point) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -742,7 +744,8 @@ class TextureMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.TextureMapView::setScaleControlPosition", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            android.graphics.Point var1 = (android.graphics.Point) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -870,7 +873,8 @@ class TextureMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.TextureMapView::onSaveInstanceState", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -902,9 +906,11 @@ class TextureMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.TextureMapView::onCreate", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
             // ref arg
-            android.os.Bundle var2 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var2"));
+            Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+            android.os.Bundle var2 = __var2__ != null ? (android.os.Bundle) getHEAP().get(__var2__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -938,7 +944,8 @@ class TextureMapViewFactory extends PlatformViewFactory {
     public PlatformView create(Context __, int id, Object params) {
         Map<String, Object> __args__ = (Map<String, Object>) params;
         // ref arg
-        com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get((int) ((Map<String, Object>) __args__).get("var2"));
+        Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+        com.baidu.mapapi.map.BaiduMapOptions var2 = __var2__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2__) : null;
 
         com.baidu.mapapi.map.TextureMapView view = new com.baidu.mapapi.map.TextureMapView(activity, var2);
         getHEAP().put(Integer.MAX_VALUE - id, view);

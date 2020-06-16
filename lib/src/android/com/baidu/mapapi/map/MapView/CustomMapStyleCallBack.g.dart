@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,7 +12,11 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
+
+
 mixin com_baidu_mapapi_map_MapView_CustomMapStyleCallBack on java_lang_Object {
+  
+
   
 
   
@@ -48,3 +51,4 @@ mixin com_baidu_mapapi_map_MapView_CustomMapStyleCallBack on java_lang_Object {
   }
   
 }
+

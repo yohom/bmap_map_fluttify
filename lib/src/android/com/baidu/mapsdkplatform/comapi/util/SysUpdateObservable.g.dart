@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -52,7 +51,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -65,7 +64,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::addObserver', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::addObserver', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -137,7 +136,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkInfo', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkInfo', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -161,7 +160,7 @@ class com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkProxy', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObservable::updateNetworkProxy', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call

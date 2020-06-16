@@ -4,6 +4,6 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType {
-  SCALE_X,
-  SCALE_Y
+  SCALE_X /* 0 */,
+  SCALE_Y /* 0 */
 }

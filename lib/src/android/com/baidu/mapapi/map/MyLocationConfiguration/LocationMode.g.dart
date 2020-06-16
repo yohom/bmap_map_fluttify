@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MyLocationConfiguration_LocationMode {
-  NORMAL,
-  FOLLOWING,
-  COMPASS
+  NORMAL /* 0 */,
+  FOLLOWING /* 0 */,
+  COMPASS /* 0 */
 }

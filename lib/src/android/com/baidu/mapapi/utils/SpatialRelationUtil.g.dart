@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -59,7 +58,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isPolygonContainsPoint', {"var0": var0.map((__it__) => __it__.refId).toList(), "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isPolygonContainsPoint', {"var0": var0.map((__it__) => __it__?.refId).toList(), "var1": var1?.refId});
   
   
     // handle native call
@@ -83,7 +82,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isCircleContainsPoint', {"var0": var0.refId, "var1": var1, "var2": var2.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isCircleContainsPoint', {"var0": var0?.refId, "var1": var1, "var2": var2?.refId});
   
   
     // handle native call
@@ -107,7 +106,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::getNearestPointFromLine', {"var0": var0.map((__it__) => __it__.refId).toList(), "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::getNearestPointFromLine', {"var0": var0.map((__it__) => __it__?.refId).toList(), "var1": var1?.refId});
   
   
     // handle native call
@@ -118,7 +117,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      kNativeObjectPool.add(__return__);
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }

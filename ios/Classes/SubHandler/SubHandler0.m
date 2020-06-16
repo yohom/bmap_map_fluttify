@@ -778,11 +778,19 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // ref callback arg
-                NSNumber* argtileImage = @(tileImage.hash);
-                HEAP[argtileImage] = tileImage;
+                NSNumber* argtileImage = [NSNull null];
+                if (tileImage != nil) {
+                    argtileImage = @(tileImage.hash);
+                    HEAP[argtileImage] = tileImage;
+                }
+        
                 // ref callback arg
-                NSNumber* argerror = @(error.hash);
-                HEAP[argerror] = error;
+                NSNumber* argerror = [NSNull null];
+                if (error != nil) {
+                    argerror = @(error.hash);
+                    HEAP[argerror] = error;
+                }
+        
         
                 [channel invokeMethod:@"Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error" arguments:@{@"tileImage": argtileImage, @"error": argerror}];
         
@@ -1092,8 +1100,12 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // ref callback arg
-                NSNumber* argerror = @(error.hash);
-                HEAP[argerror] = error;
+                NSNumber* argerror = [NSNull null];
+                if (error != nil) {
+                    argerror = @(error.hash);
+                    HEAP[argerror] = error;
+                }
+        
                 // jsonable callback arg
                 NSString* argpath = path;
         

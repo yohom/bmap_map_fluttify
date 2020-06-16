@@ -4,9 +4,9 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType {
-  bus_time_first,
-  bus_transfer_little,
-  bus_walk_little,
-  bus_no_subway,
-  bus_recommend_way
+  bus_time_first /* 0 */,
+  bus_transfer_little /* 0 */,
+  bus_walk_little /* 0 */,
+  bus_no_subway /* 0 */,
+  bus_recommend_way /* 0 */
 }

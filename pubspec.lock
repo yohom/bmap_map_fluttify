@@ -26,20 +26,20 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "0.1.1"
-      resolved-ref: "122a53f1e37c7351321413c73ea30dcee1a01cf7"
-      url: "https://github.com/fluttify-project/bmap_core_fluttify.git"
+      ref: develop
+      resolved-ref: b78bf9f7f1225a93e8c46bca30f7595190973168
+      url: "git@github.com:fluttify-project/bmap_core_fluttify.git"
     source: git
     version: "0.1.1"
   bmap_utils_fluttify:
     dependency: "direct main"
     description:
       path: "."
-      ref: "0.1.0"
-      resolved-ref: c27cb405dad391b8ef4a0538ce6855cf9826d143
-      url: "https://github.com/fluttify-project/bmap_utils_fluttify.git"
+      ref: develop
+      resolved-ref: ca3a769eef15397eefb4a71627e944ae4baec24a
+      url: "git@github.com:fluttify-project/bmap_utils_fluttify.git"
     source: git
-    version: "0.1.0"
+    version: "0.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -98,7 +98,7 @@ packages:
       name: foundation_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.2"
+    version: "0.8.5+1"
   image:
     dependency: transitive
     description:

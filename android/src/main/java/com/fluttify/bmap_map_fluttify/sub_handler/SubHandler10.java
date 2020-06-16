@@ -356,7 +356,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -465,7 +466,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -536,7 +538,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -1007,7 +1010,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1081,7 +1085,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.os.Bundle var1 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1493,13 +1498,15 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.os.Bundle var0 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.os.Bundle var0 = __var0__ != null ? (android.os.Bundle) getHEAP().get(__var0__) : null;
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // jsonable arg
                     int var3 = (int) ((Map<String, Object>) __args__).get("var3");
                     // ref arg
-                    android.os.Bundle var4 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var4"));
+                    Integer __var4__ = (Integer) ((Map<String, Object>) __args__).get("var4");
+                    android.os.Bundle var4 = __var4__ != null ? (android.os.Bundle) getHEAP().get(__var4__) : null;
             
                     // ref
             
@@ -1571,7 +1578,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback var3 = (com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback var3 = __var3__ != null ? (com.baidu.mapsdkplatform.comjni.map.basemap.BaseMapCallback) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1888,7 +1896,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
                     // jsonable arg
                     boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
             
@@ -2045,7 +2054,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2122,7 +2132,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2705,7 +2716,8 @@ public class SubHandler10 {
                     // jsonable arg
                     String var3 = (String) ((Map<String, Object>) __args__).get("var3");
                     // ref arg
-                    android.os.Bundle var4 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var4"));
+                    Integer __var4__ = (Integer) ((Map<String, Object>) __args__).get("var4");
+                    android.os.Bundle var4 = __var4__ != null ? (android.os.Bundle) getHEAP().get(__var4__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3170,7 +3182,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3207,7 +3220,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3245,7 +3259,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3282,7 +3297,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3358,7 +3374,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -4568,7 +4585,8 @@ public class SubHandler10 {
                     // jsonable arg
                     long var1 = (long) (int) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    android.os.Bundle var3 = (android.os.Bundle) getHEAP().get((int) ((Map<String, Object>) __args__).get("var3"));
+                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    android.os.Bundle var3 = __var3__ != null ? (android.os.Bundle) getHEAP().get(__var3__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -4715,7 +4733,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -4927,7 +4946,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -5104,7 +5124,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -5212,7 +5233,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver var1 = (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver var1 = __var1__ != null ? (com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5315,7 +5337,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5350,7 +5373,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5463,7 +5487,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.LatLng var0 = __var0__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -5502,7 +5527,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.LatLng var0 = __var0__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -5541,7 +5567,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    com.baidu.mapapi.model.LatLng var0 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.LatLng var0 = __var0__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -5648,7 +5675,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var0 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var0"));
+                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
             
                     // ref
             
@@ -5851,7 +5879,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5886,7 +5915,8 @@ public class SubHandler10 {
             
                     // args
                     // ref arg
-                    android.content.Context var1 = (android.content.Context) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -6102,7 +6132,8 @@ public class SubHandler10 {
             
                 // args
                 // ref arg
-                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
             
                 // create target object
                 com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
@@ -6123,7 +6154,8 @@ public class SubHandler10 {
             
                 // args
                 // ref arg
-                android.graphics.Point var1 = (android.graphics.Point) getHEAP().get((int) ((Map<String, Object>) __args__).get("var1"));
+                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
             
                 // create target object
                 com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);

@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////
 
 enum BMKRegionChangeReason {
-  BMKRegionChangeReasonGesture,
-  BMKRegionChangeReasonEvent,
-  BMKRegionChangeReasonAPIs
+  BMKRegionChangeReasonGesture /* 0 */,
+  BMKRegionChangeReasonEvent /* 0 */,
+  BMKRegionChangeReasonAPIs /* 0 */
 }

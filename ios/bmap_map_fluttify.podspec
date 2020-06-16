@@ -13,7 +13,7 @@ A new flutter plugin project.
   s.author           = { 'yohom' => 'yohombao@qq.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-  s.public_header_files = ['Classes/**/*.h', 'Vendors/**/*.h']
+  s.public_header_files = ['Classes/**/*.h']
   s.dependency 'Flutter'
   s.dependency 'foundation_fluttify'
   # flutter plugin dependency
@@ -36,7 +36,7 @@ A new flutter plugin project.
         "c++", "sqlite3.0", "z"
   ]
   # resources
-  s.resources = 'Vendors/*.framework/*.bundle'
+  s.resources = 'Vendors/**/*.bundle'
   # s.resource_bundles = {
   #   'bmap_map_fluttify' => ['Vendors/*.framework/*.bundle']
   # }

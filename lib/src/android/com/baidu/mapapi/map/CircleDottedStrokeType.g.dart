@@ -4,6 +4,6 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_CircleDottedStrokeType {
-  DOTTED_LINE_SQUARE,
-  DOTTED_LINE_CIRCLE
+  DOTTED_LINE_SQUARE /* 0 */,
+  DOTTED_LINE_CIRCLE /* 0 */
 }

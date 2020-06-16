@@ -4,8 +4,8 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_utils_CoordinateConverter_CoordType {
-  GPS,
-  COMMON,
-  BD09LL,
-  BD09MC
+  GPS /* 0 */,
+  COMMON /* 0 */,
+  BD09LL /* 0 */,
+  BD09MC /* 0 */
 }

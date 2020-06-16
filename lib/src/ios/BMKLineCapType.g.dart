@@ -4,6 +4,6 @@
 //////////////////////////////////////////////////////////
 
 enum BMKLineCapType {
-  kBMKLineCapButt,
-  kBMKLineCapRound
+  kBMKLineCapButt /* 0 */,
+  kBMKLineCapRound /* 0 */
 }

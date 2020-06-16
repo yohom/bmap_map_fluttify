@@ -4,6 +4,6 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode {
-  mapMode,
-  absoluteMode
+  mapMode /* 0 */,
+  absoluteMode /* 0 */
 }

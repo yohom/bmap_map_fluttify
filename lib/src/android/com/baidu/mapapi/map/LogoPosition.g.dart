@@ -4,10 +4,10 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_LogoPosition {
-  logoPostionleftBottom,
-  logoPostionleftTop,
-  logoPostionCenterBottom,
-  logoPostionCenterTop,
-  logoPostionRightBottom,
-  logoPostionRightTop
+  logoPostionleftBottom /* 0 */,
+  logoPostionleftTop /* 0 */,
+  logoPostionCenterBottom /* 0 */,
+  logoPostionCenterTop /* 0 */,
+  logoPostionRightBottom /* 0 */,
+  logoPostionRightTop /* 0 */
 }

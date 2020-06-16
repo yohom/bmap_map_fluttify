@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -66,9 +65,6 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     MethodChannel('BMKAsyncTileLayer::loadTileForX_y_zoom_result::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
           switch (methodCall.method) {
             case 'Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error':
               // print log
@@ -77,7 +73,7 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
               }
         
               // handle the native call
-              result((UIImage()..refId = (args['tileImage'])..tag__ = 'bmap_map_fluttify'), (NSError()..refId = (args['error'])..tag__ = 'bmap_map_fluttify'));
+              result(TypeOpBmapMapFluttifyIOS((args['tileImage'] as Object))?.as__<UIImage>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
               break;
             default:
               break;
