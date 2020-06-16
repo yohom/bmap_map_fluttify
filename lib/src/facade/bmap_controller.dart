@@ -686,6 +686,22 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 获取当前缩放大小
+  Future<double> getZoomLevel() async {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final camera = await map.getMapStatus();
+
+        pool..add(map)..add(camera);
+        return camera.get_zoom();
+      },
+      ios: (pool) async {
+        return iosController.get_zoomLevel();
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
