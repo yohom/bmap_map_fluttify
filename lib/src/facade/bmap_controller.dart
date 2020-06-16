@@ -497,6 +497,46 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 放大一个等级
+  Future<void> zoomIn() async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final cameraUpdate =
+            await com_baidu_mapapi_map_MapStatusUpdateFactory.zoomIn();
+        await map.animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate(
+          cameraUpdate,
+        );
+
+        pool..add(map)..add(cameraUpdate);
+      },
+      ios: (pool) async {
+        final currentLevel = await iosController.get_zoomLevel();
+        await iosController.set_zoomLevel(currentLevel + 1);
+      },
+    );
+  }
+
+  /// 放大一个等级
+  Future<void> zoomOut({bool animated = true}) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final cameraUpdate =
+            await com_baidu_mapapi_map_MapStatusUpdateFactory.zoomOut();
+        await map.animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate(
+          cameraUpdate,
+        );
+
+        pool..add(map)..add(cameraUpdate);
+      },
+      ios: (pool) async {
+        final currentLevel = await iosController.get_zoomLevel();
+        await iosController.set_zoomLevel(currentLevel - 1);
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
