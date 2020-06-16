@@ -176,6 +176,40 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 把marker列表从地图上移除
+  Future<void> clearMarkers(List<Marker> markers) async {
+    await platform(
+      android: (pool) async {
+        final markerBatch = markers.map((it) => it.androidModel).toList();
+        await markerBatch.remove_batch();
+      },
+      ios: (pool) async {
+        final markerBatch = markers.map((it) => it.iosModel).toList();
+        await iosController.removeAnnotations(markerBatch);
+      },
+    );
+  }
+
+  /// 清除地图上所有覆盖物
+  Future<void> clear() async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        await map.clear();
+
+        pool.add(map);
+      },
+      ios: (pool) async {
+        final markers = await iosController.get_annotations();
+        final overlays = await iosController.get_overlays();
+        await iosController.removeAnnotations(markers);
+        await iosController.removeOverlays(overlays);
+
+        pool..addAll(markers.cast<Ref>())..addAll(overlays.cast<Ref>());
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
