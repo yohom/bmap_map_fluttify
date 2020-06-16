@@ -537,6 +537,134 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 选择显示图层
+  Future<void> setMapType(MapType mapType) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        switch (mapType) {
+          case MapType.Standard:
+            await map.setMapType(com_baidu_mapapi_map_BaiduMap.MAP_TYPE_NORMAL);
+            break;
+          case MapType.Satellite:
+            await map
+                .setMapType(com_baidu_mapapi_map_BaiduMap.MAP_TYPE_SATELLITE);
+            break;
+        }
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        switch (mapType) {
+          case MapType.Standard:
+            await iosController.set_mapType(BMKMapType.BMKMapTypeStandard);
+            break;
+          case MapType.Satellite:
+            await iosController.set_mapType(BMKMapType.BMKMapTypeSatellite);
+            break;
+        }
+      },
+    );
+  }
+
+  /// 显示路况信息
+  Future<void> showTraffic(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        await map.setTrafficEnabled(enable);
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_trafficEnabled(enable);
+      },
+    );
+  }
+
+  /// 缩放手势使能
+  Future<void> setZoomGesturesEnabled(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSetting = await map.getUiSettings();
+        await uiSetting.setZoomGesturesEnabled(enable);
+
+        pool..add(map)..add(uiSetting);
+      },
+      ios: (pool) async {
+        await iosController.set_zoomEnabled(enable);
+      },
+    );
+  }
+
+  /// 滑动手势使能
+  Future<void> setScrollGesturesEnabled(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSetting = await map.getUiSettings();
+        await uiSetting.setScrollGesturesEnabled(enable);
+
+        pool..add(map)..add(uiSetting);
+      },
+      ios: (pool) async {
+        await iosController.set_scrollEnabled(enable);
+      },
+    );
+  }
+
+  /// 旋转手势使能
+  Future<void> setRotateGesturesEnabled(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSetting = await map.getUiSettings();
+        await uiSetting.setRotateGesturesEnabled(enable);
+
+        pool..add(map)..add(uiSetting);
+      },
+      ios: (pool) async {
+        await iosController.set_rotateEnabled(enable);
+      },
+    );
+  }
+
+  /// 旋转手势使能
+  Future<void> setOverlookingGesturesEnabled(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSetting = await map.getUiSettings();
+        await uiSetting.setOverlookingGesturesEnabled(enable);
+
+        pool..add(map)..add(uiSetting);
+      },
+      ios: (pool) async {
+        await iosController.set_overlookEnabled(enable);
+      },
+    );
+  }
+
+  /// 所有手势使能
+  Future<void> setAllGesturesEnabled(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSetting = await map.getUiSettings();
+        await uiSetting.setAllGesturesEnabled(enable);
+
+        pool..add(map)..add(uiSetting);
+      },
+      ios: (pool) async {
+        await iosController.set_zoomEnabled(enable);
+        await iosController.set_scrollEnabled(enable);
+        await iosController.set_rotateEnabled(enable);
+        await iosController.set_overlookEnabled(enable);
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
