@@ -702,6 +702,24 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 设置缩放是否以中心点为锚点
+  Future<void> setZoomByCenter(bool byCenter) async {
+    assert(byCenter != null);
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSetting = await map.getUiSettings();
+        await uiSetting.setEnlargeCenterWithDoubleClickEnable(byCenter);
+
+        pool..add(map)..add(uiSetting);
+      },
+      ios: (pool) async {
+        await iosController
+            .set_ChangeCenterWithDoubleTouchPointEnabled(byCenter);
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
