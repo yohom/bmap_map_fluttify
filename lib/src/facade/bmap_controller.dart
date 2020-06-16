@@ -210,6 +210,284 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 添加折线
+  ///
+  /// 可配置参数详见[PolylineOption]
+  Future<Polyline> addPolyline(PolylineOption option) {
+    assert(option != null);
+
+    final latitudeBatch = option.latLngList.map((e) => e.latitude).toList();
+    final longitudeBatch = option.latLngList.map((e) => e.longitude).toList();
+
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // 构造折线点
+        List<com_baidu_mapapi_model_LatLng> latLngList =
+            await com_baidu_mapapi_model_LatLng.create_batch__double__double(
+          latitudeBatch,
+          longitudeBatch,
+        );
+
+        // 构造折线参数
+        final polylineOptions =
+            await com_baidu_mapapi_map_PolylineOptions.create__();
+
+        // 添加经纬度列表
+        await polylineOptions.points(latLngList);
+        if (option.width != null) {
+          await polylineOptions.width(option.width.toInt());
+        }
+        // 颜色
+        if (option.strokeColor != null) {
+          await polylineOptions
+              .color(Int32List.fromList([option.strokeColor.value])[0]);
+        }
+        // 自定义贴图
+        if (option.customTexture != null && option.imageConfig != null) {
+          Uint8List iconData =
+              await uri2ImageData(option.imageConfig, option.customTexture);
+          final bitmap = await android_graphics_Bitmap.create(iconData);
+          final texture = await com_baidu_mapapi_map_BitmapDescriptorFactory
+              .fromBitmap(bitmap);
+          await polylineOptions.customTexture(texture);
+
+          pool..add(bitmap)..add(texture);
+        }
+        // 是否虚线
+        if (option.dashType != null) {
+          await polylineOptions.dottedLine(true);
+          switch (option.dashType) {
+            case DashType.Square:
+              await polylineOptions.dottedLineType(
+                  com_baidu_mapapi_map_PolylineDottedLineType
+                      .DOTTED_LINE_SQUARE);
+              break;
+            case DashType.Circle:
+              await polylineOptions.dottedLineType(
+                com_baidu_mapapi_map_PolylineDottedLineType.DOTTED_LINE_CIRCLE,
+              );
+              break;
+          }
+        }
+        // 设置参数
+        final polyline = await map.addOverlay(polylineOptions);
+
+        pool
+          ..add(map)
+          ..add(polylineOptions)
+          ..addAll(latLngList);
+
+        return Polyline.android(polyline);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(_iosMapDelegate);
+
+        // 构造折线点
+        List<CLLocationCoordinate2D> latLngList =
+            await CLLocationCoordinate2D.create_batch(
+                latitudeBatch, longitudeBatch);
+
+        // 构造折线参数
+        final polyline = await BMKPolyline.polylineWithCoordinates_count(
+            latLngList, latLngList.length);
+
+        // 宽度和颜色需要设置到STACK里去
+        if (option.width != null) {
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          polyline.addJsonableProperty__(1, option.width / pixelRatio);
+        }
+        // 颜色
+        if (option.strokeColor != null) {
+          polyline.addJsonableProperty__(2, option.strokeColor.value);
+        }
+        // 设置图片
+        if (option.customTexture != null && option.imageConfig != null) {
+          Uint8List textureData =
+              await uri2ImageData(option.imageConfig, option.customTexture);
+
+          final texture = await UIImage.create(textureData);
+
+          polyline.addProperty__(3, texture);
+
+          pool..add(texture);
+        }
+        // 是否虚线
+        if (option.dashType != null) {
+          polyline.addJsonableProperty__(6, option.dashType.index + 1);
+        }
+
+        // 设置参数
+        await iosController.addOverlay(polyline);
+
+        pool..addAll(latLngList);
+
+        return Polyline.ios(polyline, iosController);
+      },
+    );
+  }
+
+  /// 添加多边形
+  ///
+  /// 在点[points]的位置添加线, 可以设置宽度[width]和颜色[strokeColor]
+  Future<Polygon> addPolygon(PolygonOption option) {
+    assert(option != null, 'option不能为null');
+
+    final latitudeBatch = option.latLngList.map((e) => e.latitude).toList();
+    final longitudeBatch = option.latLngList.map((e) => e.longitude).toList();
+
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // 构造折线点
+        List<com_baidu_mapapi_model_LatLng> latLngList =
+            await com_baidu_mapapi_model_LatLng.create_batch__double__double(
+          latitudeBatch,
+          longitudeBatch,
+        );
+
+        // 构造参数
+        final polygonOptions =
+            await com_baidu_mapapi_map_PolygonOptions.create__();
+
+        // 添加参数
+        await polygonOptions.points(latLngList);
+        // 宽度
+        if (option.width != null || option.strokeColor != null) {
+          final stroke = await com_baidu_mapapi_map_Stroke.create__int__int(
+            option.width.toInt(),
+            Int32List.fromList([option.strokeColor.value])[0],
+          );
+          await polygonOptions.stroke(stroke);
+        }
+        // 填充颜色
+        if (option.fillColor != null) {
+          await polygonOptions
+              .fillColor(Int32List.fromList([option.fillColor.value])[0]);
+        }
+
+        // 设置参数
+        final polygon = await map.addOverlay(polygonOptions);
+
+        pool
+          ..add(map)
+          ..add(polygonOptions)
+          ..addAll(latLngList);
+
+        return Polygon.android(polygon);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(_iosMapDelegate);
+
+        // 构造折线点
+        List<CLLocationCoordinate2D> latLngList =
+            await CLLocationCoordinate2D.create_batch(
+                latitudeBatch, longitudeBatch);
+
+        // 构造折线参数
+        final polygon = await BMKPolygon.polygonWithCoordinates_count(
+            latLngList, latLngList.length);
+
+        if (option.width != null) {
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          polygon.addJsonableProperty__(1, option.width / pixelRatio);
+        }
+        if (option.strokeColor != null) {
+          polygon.addJsonableProperty__(2, option.strokeColor.value);
+        }
+        if (option.fillColor != null) {
+          polygon.addJsonableProperty__(3, option.fillColor.value);
+        }
+
+        // 设置参数
+        await iosController.addOverlay(polygon);
+
+        pool.addAll(latLngList);
+
+        return Polygon.ios(polygon, iosController);
+      },
+    );
+  }
+
+  /// 添加圆
+  ///
+  /// 在点[points]的位置添加线, 可以设置宽度[width]和颜色[strokeColor]
+  Future<Circle> addCircle(CircleOption option) {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // 构造点
+        final latLng =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          option.center.latitude,
+          option.center.longitude,
+        );
+
+        // 构造参数
+        final circleOptions =
+            await com_baidu_mapapi_map_CircleOptions.create__();
+
+        // 中心点
+        await circleOptions.center(latLng);
+        // 半径
+        await circleOptions.radius(option.radius.toInt());
+        // 边框
+        if (option.width != null) {
+          final stroke = await com_baidu_mapapi_map_Stroke.create__int__int(
+            option.width.toInt(),
+            Int32List.fromList([option.strokeColor.value])[0],
+          );
+          await circleOptions.stroke(stroke);
+        }
+        // 填充颜色
+        if (option.fillColor != null) {
+          await circleOptions
+              .fillColor(Int32List.fromList([option.fillColor.value])[0]);
+        }
+
+        // 设置参数
+        final circle = await map.addOverlay(circleOptions);
+
+        pool..add(map)..add(circleOptions)..add(latLng);
+
+        return Circle.android(circle);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(_iosMapDelegate);
+
+        final latLng = await CLLocationCoordinate2D.create(
+          option.center.latitude,
+          option.center.longitude,
+        );
+
+        // 参数
+        final circle = await BMKCircle.circleWithCenterCoordinate_radius(
+          latLng,
+          option.radius,
+        );
+
+        if (option.width != null) {
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          circle.addJsonableProperty__(1, option.width / pixelRatio);
+        }
+        if (option.strokeColor != null) {
+          circle.addJsonableProperty__(2, option.strokeColor.value);
+        }
+        if (option.fillColor != null) {
+          circle.addJsonableProperty__(3, option.fillColor.value);
+        }
+
+        // 设置参数
+        await iosController.addOverlay(circle);
+
+        return Circle.ios(circle, iosController);
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();

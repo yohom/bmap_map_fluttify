@@ -5,7 +5,10 @@ import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:flutter/material.dart';
 
 import 'create_map/create_map.screen.dart';
+import 'draw_on_map/draw_circle.screen.dart';
 import 'draw_on_map/draw_point.screen.dart';
+import 'draw_on_map/draw_polygon.screen.dart';
+import 'draw_on_map/draw_polyline.screen.dart';
 import 'interact_with_map/code_interaction.screen.dart';
 
 class MapDemo extends StatelessWidget {
@@ -42,6 +45,21 @@ class MapDemo extends StatelessWidget {
               label: '绘制点标记',
               sublabel: 'DrawPointScreen',
               target: DrawPointScreen(),
+            ),
+            FunctionItem(
+              label: '绘制线',
+              sublabel: 'DrawPolylineScreen',
+              target: DrawPolylineScreen(),
+            ),
+            FunctionItem(
+              label: '绘制圆',
+              sublabel: 'DrawCircleScreen',
+              target: DrawCircleScreen(),
+            ),
+            FunctionItem(
+              label: '绘制多边形',
+              sublabel: 'DrawPolygonScreen',
+              target: DrawPolygonScreen(),
             ),
           ],
         ),

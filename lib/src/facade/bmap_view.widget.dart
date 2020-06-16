@@ -12,8 +12,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
-import 'package:latlng/latlng.dart';
 
+import 'enums.dart';
 import 'models.dart';
 
 part 'bmap_controller.dart';

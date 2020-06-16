@@ -1,5 +1,6 @@
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
+import 'package:bmap_utils_fluttify/bmap_utils_fluttify.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -202,6 +203,7 @@ class CircleOption {
   }
 }
 
+/// 地图标记
 class Marker {
   Marker.android(this.androidModel);
 
@@ -260,6 +262,78 @@ class Marker {
     return platform(
       android: (_) => androidModel.hideInfoWindow(),
       ios: (_) => iosController?.deselectAnnotation_animated(iosModel, true),
+    );
+  }
+}
+
+/// 折线
+class Polyline {
+  Polyline.android(this._androidModel);
+
+  Polyline.ios(this._iosModel, this._iosController);
+
+  com_baidu_mapapi_map_Polyline _androidModel;
+  BMKPolyline _iosModel;
+  BMKMapView _iosController;
+
+  Future<void> remove() {
+    return platform(
+      android: (_) => _androidModel.remove(),
+      ios: (_) => _iosController?.removeOverlay(_iosModel),
+    );
+  }
+}
+
+/// 多边形
+class Polygon {
+  Polygon.android(this._androidModel);
+
+  Polygon.ios(this._iosModel, this._iosController);
+
+  com_baidu_mapapi_map_Polygon _androidModel;
+  BMKPolygon _iosModel;
+  BMKMapView _iosController;
+
+  Future<void> remove() {
+    return platform(
+      android: (_) => _androidModel.remove(),
+      ios: (_) => _iosController?.removeOverlay(_iosModel),
+    );
+  }
+
+  Future<bool> contains(LatLng target) {
+    return platform(
+      android: (_) async {
+        final latLng = await com_baidu_mapapi_model_LatLng
+            .create__double__double(target.latitude, target.longitude);
+//        return _androidModel.(latLng);
+        return false; // TODO
+      },
+      ios: (_) async {
+        final latLng = await CLLocationCoordinate2D.create(
+            target.latitude, target.longitude);
+        final point = await BMKMapPointForCoordinate(latLng);
+        final bounds = await _iosModel.get_points();
+        return BMKPolygonContainsPoint(point, bounds, bounds.length);
+      },
+    );
+  }
+}
+
+/// 圆形
+class Circle {
+  Circle.android(this._androidModel);
+
+  Circle.ios(this._iosModel, this._iosController);
+
+  com_baidu_mapapi_map_Circle _androidModel;
+  BMKCircle _iosModel;
+  BMKMapView _iosController;
+
+  Future<void> remove() {
+    return platform(
+      android: (_) => _androidModel.remove(),
+      ios: (_) => _iosController?.removeOverlay(_iosModel),
     );
   }
 }
