@@ -720,6 +720,31 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 获取地图中心点
+  Future<LatLng> getCenterCoordinate() {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        final position = await map.getMapStatus();
+        final target = await position.get_target();
+
+        // target不能马上释放, 因为跟返回对象有联系
+        pool..add(map)..add(position);
+
+        return LatLng(
+          await target.get_latitude(),
+          await target.get_longitude(),
+        );
+      },
+      ios: (pool) async {
+        final target = await iosController.get_centerCoordinate();
+        // target不能马上释放, 因为跟返回对象有联系
+        return LatLng(await target.latitude, await target.longitude);
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
