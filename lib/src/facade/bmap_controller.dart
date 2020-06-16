@@ -279,7 +279,10 @@ class BmapController with WidgetsBindingObserver, _Private {
           ..add(polylineOptions)
           ..addAll(latLngList);
 
-        return Polyline.android(polyline);
+        return Polyline.android(
+          TypeOpBmapMapFluttifyAndroid(polyline)
+              .as__<com_baidu_mapapi_map_Polyline>(),
+        );
       },
       ios: (pool) async {
         await iosController.set_delegate(_iosMapDelegate);
@@ -376,7 +379,10 @@ class BmapController with WidgetsBindingObserver, _Private {
           ..add(polygonOptions)
           ..addAll(latLngList);
 
-        return Polygon.android(polygon);
+        return Polygon.android(
+          TypeOpBmapMapFluttifyAndroid(polygon)
+              .as__<com_baidu_mapapi_map_Polygon>(),
+        );
       },
       ios: (pool) async {
         await iosController.set_delegate(_iosMapDelegate);
@@ -453,7 +459,10 @@ class BmapController with WidgetsBindingObserver, _Private {
 
         pool..add(map)..add(circleOptions)..add(latLng);
 
-        return Circle.android(circle);
+        return Circle.android(
+          TypeOpBmapMapFluttifyAndroid(circle)
+              .as__<com_baidu_mapapi_map_Circle>(),
+        );
       },
       ios: (pool) async {
         await iosController.set_delegate(_iosMapDelegate);
