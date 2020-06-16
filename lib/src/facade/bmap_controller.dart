@@ -4,8 +4,11 @@ part of 'bmap_view.widget.dart';
 /// marker点击事件回调签名 输入[Marker]对象, 返回`是否已消耗事件`, 如果true则不再弹窗, 如果false则继续弹窗
 typedef Future<bool> OnMarkerClicked(Marker marker);
 
+/// Marker拖动回调签名
+typedef Future<void> OnMarkerDrag(Marker marker);
+
 /// 地图控制类
-class BmapController with WidgetsBindingObserver, _Private {
+class BmapController with WidgetsBindingObserver {
   /// Android构造器
   BmapController.android(this.androidController, this._state) {
     WidgetsBinding.instance.addObserver(this);
@@ -80,7 +83,7 @@ class BmapController with WidgetsBindingObserver, _Private {
     final iconDataBatch = <Uint8List>[
       for (final option in options)
         if (option.iconUri != null && option.imageConfig != null)
-          await _uri2ImageData(option.imageConfig, option.iconUri)
+          await uri2ImageData(option.imageConfig, option.iconUri)
         else if (option.widget != null)
           await _state.widgetToImageData(option.widget)
     ];
@@ -745,6 +748,36 @@ class BmapController with WidgetsBindingObserver, _Private {
     );
   }
 
+  /// 设置marker拖动监听事件
+  Future<void> setMarkerDragListener({
+    OnMarkerDrag onMarkerDragStart,
+    OnMarkerDrag onMarkerDragging,
+    OnMarkerDrag onMarkerDragEnd,
+  }) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setOnMarkerDragListener(
+          _androidMapDelegate
+            .._onMarkerDragStart = onMarkerDragStart
+            .._onMarkerDragging = onMarkerDragging
+            .._onMarkerDragEnd = onMarkerDragEnd,
+        );
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(
+          _iosMapDelegate
+            .._onMarkerDragStart = onMarkerDragStart
+            .._onMarkerDragging = onMarkerDragging
+            .._onMarkerDragEnd = onMarkerDragEnd,
+        );
+      },
+    );
+  }
+
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
@@ -778,18 +811,68 @@ class BmapController with WidgetsBindingObserver, _Private {
 
 class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
   OnMarkerClicked _onMarkerClicked;
+  OnMarkerDrag _onMarkerDragStart;
+  OnMarkerDrag _onMarkerDragging;
+  OnMarkerDrag _onMarkerDragEnd;
 
   BMKMapView _iosController;
 
   @override
   Future<void> mapView_clickAnnotationView(
-      BMKMapView mapView, BMKAnnotationView view) async {
+    BMKMapView mapView,
+    BMKAnnotationView view,
+  ) async {
     super.mapView_clickAnnotationView(mapView, view);
     if (_onMarkerClicked != null) {
       await _onMarkerClicked(
         Marker.ios(
           BMKPointAnnotation()
             ..refId = (await view.get_annotation(viewChannel: false)).refId,
+//          view,
+          _iosController,
+        ),
+      );
+    }
+  }
+
+  @override
+  Future<void> mapView_annotationView_didChangeDragState_fromOldState(
+    BMKMapView mapView,
+    BMKAnnotationView view,
+    int newState,
+    int oldState,
+  ) async {
+    super.mapView_annotationView_didChangeDragState_fromOldState(
+      mapView,
+      view,
+      newState,
+      oldState,
+    );
+    if (_onMarkerDragStart != null && newState == 0) {
+      await _onMarkerDragStart(
+        Marker.ios(
+          await view.get_annotation(viewChannel: false),
+//          view,
+          _iosController,
+        ),
+      );
+    }
+
+    if (_onMarkerDragging != null && newState == 1) {
+      await _onMarkerDragging(
+        Marker.ios(
+          await view.get_annotation(viewChannel: false),
+//          view,
+          _iosController,
+        ),
+      );
+    }
+
+    if (_onMarkerDragEnd != null && newState == 2) {
+      await _onMarkerDragEnd(
+        Marker.ios(
+          await view.get_annotation(viewChannel: false),
+//          view,
           _iosController,
         ),
       );
@@ -798,8 +881,13 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
 }
 
 class _AndroidMapDelegate extends java_lang_Object
-    with com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener {
+    with
+        com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener,
+        com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener {
   OnMarkerClicked _onMarkerClicked;
+  OnMarkerDrag _onMarkerDragStart;
+  OnMarkerDrag _onMarkerDragging;
+  OnMarkerDrag _onMarkerDragEnd;
 
   @override
   Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
@@ -809,55 +897,28 @@ class _AndroidMapDelegate extends java_lang_Object
     }
     return true;
   }
-}
 
-mixin _Private {
-  Map<String, Uint8List> _cache = {};
-
-  Future<Uint8List> _uri2ImageData(
-    ImageConfiguration config,
-    Uri iconUri,
-  ) async {
-    final imageData = Completer<Uint8List>();
-    if (_cache.containsKey(iconUri.toString())) {
-      debugPrint('命中缓存');
-      imageData.complete(_cache[iconUri.toString()]);
-    } else {
-      switch (iconUri.scheme) {
-        // 网络图片
-        case 'https':
-        case 'http':
-          HttpClient httpClient = HttpClient();
-          var request = await httpClient.getUrl(iconUri);
-          var response = await request.close();
-          final result = await consolidateHttpClientResponseBytes(response);
-
-          _cache[iconUri.toString()] = result;
-          imageData.complete(result);
-          break;
-        // 文件图片
-        case 'file':
-          final imageFile = File.fromUri(iconUri);
-          final result = imageFile.readAsBytesSync();
-
-          _cache[iconUri.toString()] = result;
-          imageData.complete(result);
-          break;
-        // asset图片
-        default:
-          AssetImage(iconUri.path)
-              .resolve(config)
-              .addListener(ImageStreamListener((imageInfo, sync) async {
-            final byteData =
-                await imageInfo.image.toByteData(format: ImageByteFormat.png);
-            final result = byteData.buffer.asUint8List();
-
-            _cache[iconUri.toString()] = result;
-            imageData.complete(result);
-          }));
-          break;
-      }
+  @override
+  Future<void> onMarkerDragStart(com_baidu_mapapi_map_Marker var1) async {
+    super.onMarkerDragStart(var1);
+    if (_onMarkerDragStart != null) {
+      await _onMarkerDragStart(Marker.android(var1));
     }
-    return imageData.future;
+  }
+
+  @override
+  Future<void> onMarkerDrag(com_baidu_mapapi_map_Marker var1) async {
+    super.onMarkerDrag(var1);
+    if (_onMarkerDragging != null) {
+      await _onMarkerDragging(Marker.android(var1));
+    }
+  }
+
+  @override
+  Future<void> onMarkerDragEnd(com_baidu_mapapi_map_Marker var1) async {
+    super.onMarkerDragEnd(var1);
+    if (_onMarkerDragEnd != null) {
+      await _onMarkerDragEnd(Marker.android(var1));
+    }
   }
 }
