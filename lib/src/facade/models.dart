@@ -337,3 +337,62 @@ class Circle {
     );
   }
 }
+
+
+/// 定位结果 model
+class Location {
+  Location({
+    @required this.address,
+    @required this.latLng,
+    @required this.altitude,
+    @required this.country,
+    @required this.province,
+    @required this.city,
+    @required this.cityCode,
+    @required this.adCode,
+    @required this.district,
+    @required this.street,
+    @required this.streetNumber,
+    @required this.iosModel,
+  });
+
+  /// 地址全称
+  String address;
+
+  /// 经纬度
+  LatLng latLng;
+
+  /// 海拔
+  double altitude;
+
+  /// 国家
+  String country;
+
+  /// 省份
+  String province;
+
+  /// 城市
+  String city;
+
+  /// 城市编号
+  String cityCode;
+
+  /// 邮编
+  String adCode;
+
+  /// 区域
+  String district;
+
+  /// 街道
+  String street;
+
+  /// 街道号
+  String streetNumber;
+
+  BMKLocation iosModel;
+
+  @override
+  String toString() {
+    return 'Location{\naddress: $address, \nlatLng: $latLng, \naltitude: $altitude, \ncountry: $country, \nprovince: $province, \ncity: $city, \ncityCode: $cityCode, \nadCode: $adCode, \ndistrict: $district, \nstreet: $street, \nstreetNumber: $streetNumber\n}';
+  }
+}

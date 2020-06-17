@@ -1,5 +1,6 @@
 import 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
+import 'package:bmap_map_fluttify/src/facade/bmap_location.dart';
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_utils_fluttify/bmap_utils_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
@@ -8,10 +9,12 @@ import 'package:foundation_fluttify/foundation_fluttify.dart';
 
 /// 除了地图以外的功能放在这里, 比如说sdk初始化
 class BmapService {
+  static BmapService instance = BmapService._();
+
   BmapService._();
 
   /// 设置ios的app key
-  static Future<void> init({@required String iosKey}) async {
+  Future<void> init({@required String iosKey}) async {
     await platform(
       android: (pool) async {
         final context = await android_app_Application.get();
@@ -21,12 +24,13 @@ class BmapService {
       ios: (pool) async {
         final manager = await BMKMapManager.create__();
         await manager.start_generalDelegate(iosKey, null);
+        await BmapLocation.instance.init(iosKey: iosKey);
       },
     );
   }
 
   /// 判断坐标[current]是否在以[target]为圆心[radius]为半径的圆内, [radius]单位为米
-  static Future<bool> circleContainsCoordinate(
+  Future<bool> circleContainsCoordinate(
     LatLng current,
     LatLng target,
     int radius,
