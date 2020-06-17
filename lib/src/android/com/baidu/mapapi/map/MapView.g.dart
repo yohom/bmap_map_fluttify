@@ -165,7 +165,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   }
   
-  
+  @deprecated
   Future<void> setCustomStyleFilePathAndMode(String var1, int var2, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
@@ -214,7 +214,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
   }
   
   
-  Future<void> setMapCustomStyle(com_baidu_mapapi_map_MapCustomStyleOptions var1, com_baidu_mapapi_map_MapView_CustomMapStyleCallBack var2, {bool viewChannel = true}) async {
+  Future<void> setMapCustomStyle(com_baidu_mapapi_map_MapCustomStyleOptions var1, com_baidu_mapapi_map_CustomMapStyleCallBack var2, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: com.baidu.mapapi.map.MapView@$refId::setMapCustomStyle([])');
@@ -229,7 +229,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle':
+            case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle':
               // print log
               if (fluttifyLogEnabled) {
                 debugPrint('fluttify-dart-callback: onPreLoadLastCustomMapStyle([\'var1\':${args['var1']}])');
@@ -238,7 +238,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
               // handle the native call
               var2?.onPreLoadLastCustomMapStyle(args['var1']);
               break;
-            case 'Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess':
+            case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess':
               // print log
               if (fluttifyLogEnabled) {
                 debugPrint('fluttify-dart-callback: onCustomMapStyleLoadSuccess([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
@@ -247,7 +247,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
               // handle the native call
               var2?.onCustomMapStyleLoadSuccess(args['var1'], args['var2']);
               break;
-            case 'Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadFailed':
+            case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed':
               // print log
               if (fluttifyLogEnabled) {
                 debugPrint('fluttify-dart-callback: onCustomMapStyleLoadFailed([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
@@ -1036,7 +1036,7 @@ extension com_baidu_mapapi_map_MapView_Batch on List<com_baidu_mapapi_map_MapVie
     }
   }
   
-  
+  @deprecated
   Future<List<void>> setCustomStyleFilePathAndMode_batch(List<String> var1, List<int> var2, {bool viewChannel = true}) async {
     if (var1.length != var2.length) {
       return Future.error('all args must have same length!');

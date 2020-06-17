@@ -10,6 +10,7 @@
 #import "SubHandler/SubHandler3.h"
 #import "SubHandler/SubHandler4.h"
 #import "SubHandler/SubHandler5.h"
+#import "SubHandler/SubHandler6.h"
 #import "SubHandler/SubHandlerCustom.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
@@ -36,6 +37,7 @@ extern BOOL enableLog;
     [_handlerMap addEntriesFromDictionary: [self getSubHandler3]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandler4]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandler5]];
+    [_handlerMap addEntriesFromDictionary: [self getSubHandler6]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandlerCustom]];
   }
 
@@ -834,6 +836,352 @@ extern BOOL enableLog;
   NSNumber* argstate = @(state);
 
   [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager doRequestAlwaysAuthorization: (CLLocationManager*)locationManager
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* arglocationManager = [NSNull null];
+  if (locationManager != nil) {
+      arglocationManager = @(locationManager.hash);
+      HEAP[arglocationManager] = locationManager;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didFailWithError: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didFailWithError");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError" arguments:@{@"manager": argmanager, @"error": argerror}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateLocation: (BMKLocation*)location orError: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* arglocation = [NSNull null];
+  if (location != nil) {
+      arglocation = @(location.hash);
+      HEAP[arglocation] = location;
+  }
+  
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError" arguments:@{@"manager": argmanager, @"location": arglocation, @"error": argerror}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didChangeAuthorizationStatus: (CLAuthorizationStatus)status
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // enum callback arg
+  NSNumber* argstatus = @((NSInteger) status);
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus" arguments:@{@"manager": argmanager, @"status": argstatus}];
+  
+}
+
+- (BOOL)BMKLocationManagerShouldDisplayHeadingCalibration : (BMKLocationManager*)manager
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration"
+              arguments:@{}
+                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  
+  // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
+  // 相关issue https://github.com/flutter/flutter/issues/28310
+  NSLog(@"暂不支持有返回值的回调方法");
+  
+  ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
+  
+  ////////////////////////////////////////////////////////////////////////////////
+  
+  return NO;
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateHeading: (CLHeading*)heading
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* argheading = [NSNull null];
+  if (heading != nil) {
+      argheading = @(heading.hash);
+      HEAP[argheading] = heading;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading" arguments:@{@"manager": argmanager, @"heading": argheading}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateNetworkState: (BMKLocationNetworkState)state orError: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // enum callback arg
+  NSNumber* argstate = @((NSInteger) state);
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError" arguments:@{@"manager": argmanager, @"state": argstate, @"error": argerror}];
+  
+}
+
+- (void)onCheckPermissionState : (BMKLocationAuthErrorCode)iError
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationAuthDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationAuthDelegate::onCheckPermissionState");
+  }
+
+  // convert to jsonable arg
+  // enum callback arg
+  NSNumber* argiError = @((NSInteger) iError);
+
+  [channel invokeMethod:@"Callback::BMKLocationAuthDelegate::onCheckPermissionState" arguments:@{@"iError": argiError}];
+  
+}
+
+- (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager doRequestAlwaysAuthorization: (CLLocationManager*)locationManager
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* arglocationManager = [NSNull null];
+  if (locationManager != nil) {
+      arglocationManager = @(locationManager.hash);
+      HEAP[arglocationManager] = locationManager;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  
+}
+
+- (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager didAddRegionForMonitoringFinished: (NSArray<BMKGeoFenceRegion*>*)regions customID: (NSString*)customID error: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // list callback arg
+  NSMutableArray<NSNumber*>* argregions = [NSMutableArray arrayWithCapacity:regions.count];
+  for (int __i__ = 0; __i__ < regions.count; __i__++) {
+      NSObject* item = ((NSObject*) [regions objectAtIndex:__i__]);
+      // return to dart side data
+      argregions[__i__] = @(item.hash);
+      // add to HEAP
+      HEAP[@(item.hash)] = item;
+  }
+  // jsonable callback arg
+  NSString* argcustomID = customID;
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error" arguments:@{@"manager": argmanager, @"regions": argregions, @"customID": argcustomID, @"error": argerror}];
+  
+}
+
+- (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager didGeoFencesStatusChangedForRegion: (BMKGeoFenceRegion*)region customID: (NSString*)customID error: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* argregion = [NSNull null];
+  if (region != nil) {
+      argregion = @(region.hash);
+      HEAP[argregion] = region;
+  }
+  
+  // jsonable callback arg
+  NSString* argcustomID = customID;
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error" arguments:@{@"manager": argmanager, @"region": argregion, @"customID": argcustomID, @"error": argerror}];
   
 }
 

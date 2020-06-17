@@ -16,9 +16,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.VersionInfo';
 
-  static final String VERSION_INFO = "6_2_0";
+  static final String VERSION_INFO = "6_3_0";
   static final String VERSION_DESC = "baidumapapi_base";
-  static final String KIT_NAME = "BaiduMapSDK_base_v6_2_0";
+  static final String KIT_NAME = "BaiduMapSDK_base_v6_3_0";
   //endregion
 
   //region creators

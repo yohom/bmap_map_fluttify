@@ -4,6 +4,7 @@
 
 #import <Flutter/Flutter.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BMKLocationKit/BMKLocationComponent.h>
 #import "BMKActionPaopaoViewFactory.h"
 #import "BMKTileLayerViewFactory.h"
 #import "BMKOverlayPathViewFactory.h"
@@ -20,7 +21,7 @@
 
 typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, id, FlutterResult);
 
-@interface BmapMapFluttifyPlugin : NSObject<BMKMapViewDelegate, BMKOfflineMapDelegate, FlutterPlugin>
+@interface BmapMapFluttifyPlugin : NSObject<BMKMapViewDelegate, BMKOfflineMapDelegate, BMKLocationManagerDelegate, BMKLocationAuthDelegate, BMKGeoFenceManagerDelegate, FlutterPlugin>
 
 - (instancetype) initWithFlutterPluginRegistrar: (NSObject <FlutterPluginRegistrar> *) registrar;
 

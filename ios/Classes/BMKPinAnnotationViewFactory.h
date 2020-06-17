@@ -4,41 +4,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Flutter/Flutter.h>
-#import <BaiduMapAPI_Map/BMKActionPaopaoView.h>
-#import <BaiduMapAPI_Map/BMKAnnotation.h>
-#import <BaiduMapAPI_Map/BMKTileLayerView.h>
-#import <BaiduMapAPI_Map/BMKOverlayPathView.h>
-#import <BaiduMapAPI_Map/BMKGroundOverlay.h>
-#import <BaiduMapAPI_Map/BMKPolyline.h>
-#import <BaiduMapAPI_Map/BMKCircleView.h>
-#import <BaiduMapAPI_Map/BMKPointAnnotation.h>
-#import <BaiduMapAPI_Map/BMKGradient.h>
-#import <BaiduMapAPI_Map/BMKArcline.h>
-#import <BaiduMapAPI_Map/BMKMultiPoint.h>
-#import <BaiduMapAPI_Map/BMKBaseIndoorMapInfo.h>
-#import <BaiduMapAPI_Map/BMKTileLayer.h>
-#import <BaiduMapAPI_Map/BMKPolylineView.h>
-#import <BaiduMapAPI_Map/BMKLineDrawType.h>
-#import <BaiduMapAPI_Map/BMKPinAnnotationView.h>
-#import <BaiduMapAPI_Map/BMKCircle.h>
-#import <BaiduMapAPI_Map/BMKMapView.h>
-#import <BaiduMapAPI_Map/BMKLocationViewDisplayParam.h>
-#import <BaiduMapAPI_Map/BMKMapStatus.h>
-#import <BaiduMapAPI_Map/BMKArclineView.h>
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
-#import <BaiduMapAPI_Map/BMKHeatMap.h>
-#import <BaiduMapAPI_Map/BMKPolygon.h>
-#import <BaiduMapAPI_Map/BMKMapVersion.h>
-#import <BaiduMapAPI_Map/BMKPolygonView.h>
-#import <BaiduMapAPI_Map/BMKOverlayView.h>
-#import <BaiduMapAPI_Map/BMKGroundOverlayView.h>
-#import <BaiduMapAPI_Map/BMKAnnotationView.h>
-#import <BaiduMapAPI_Map/BMKOverlayGLBasicView.h>
-#import <BaiduMapAPI_Map/BMKShape.h>
-#import <BaiduMapAPI_Map/BMKOfflineMapType.h>
-#import <BaiduMapAPI_Map/BMKOverlay.h>
-#import <BaiduMapAPI_Map/BMKCustomMapStyleOption.h>
-#import <BaiduMapAPI_Map/BMKOfflineMap.h>
+#import <BMKLocationKit/BMKLocationComponent.h>
 
 @interface BMKPinAnnotationViewFactory : NSObject <FlutterPlatformViewFactory>
 

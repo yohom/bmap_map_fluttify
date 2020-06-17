@@ -172,6 +172,46 @@ extension TypeOpBmapMapFluttifyIOS on Object {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOfflineMap', {'refId': (this as Ref).refId});
       return result;
     }
+    else if (T == BMKLocationReGeocode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationReGeocode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationAuth) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationAuth', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationPoiRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationPoiRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationPoi) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationPoi', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFenceRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFenceRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFenceCircleRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFenceCircleRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFencePolygonRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFencePolygonRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFenceManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFenceManager', {'refId': (this as Ref).refId});
+      return result;
+    }
     else if (T == CLLocation) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCLLocation', {'refId': (this as Ref).refId});
       return result;
@@ -363,6 +403,36 @@ extension TypeOpBmapMapFluttifyIOS on Object {
     }
     else if (T == BMKOfflineMap) {
       return (BMKOfflineMap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationReGeocode) {
+      return (BMKLocationReGeocode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationManager) {
+      return (BMKLocationManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationAuth) {
+      return (BMKLocationAuth()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationPoiRegion) {
+      return (BMKLocationPoiRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationPoi) {
+      return (BMKLocationPoi()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocation) {
+      return (BMKLocation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFenceRegion) {
+      return (BMKGeoFenceRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFenceCircleRegion) {
+      return (BMKGeoFenceCircleRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFencePolygonRegion) {
+      return (BMKGeoFencePolygonRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFenceManager) {
+      return (BMKGeoFenceManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
     }
     else if (T == CLLocation) {
       return (CLLocation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;

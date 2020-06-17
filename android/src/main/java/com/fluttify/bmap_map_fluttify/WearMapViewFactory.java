@@ -385,7 +385,7 @@ class WearMapViewFactory extends PlatformViewFactory {
         
             // invoke native method
             try {
-                ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.MapView.CustomMapStyleCallBack() {
+                ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                     // method channel
                     MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback");
                     android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
@@ -407,7 +407,7 @@ class WearMapViewFactory extends PlatformViewFactory {
                             @Override
                             public void run() {
                                 callbackChannel.invokeMethod(
-                                    "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
+                                    "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
                                     new HashMap<String, Object>() {{
                                         put("var1", argvar1);
                                     }}
@@ -437,7 +437,7 @@ class WearMapViewFactory extends PlatformViewFactory {
                             @Override
                             public void run() {
                                 callbackChannel.invokeMethod(
-                                    "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
+                                    "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
                                     new HashMap<String, Object>() {{
                                         put("var1", argvar1);
                                         put("var2", argvar2);
@@ -470,7 +470,7 @@ class WearMapViewFactory extends PlatformViewFactory {
                             @Override
                             public void run() {
                                 callbackChannel.invokeMethod(
-                                    "Callback::com.baidu.mapapi.map.MapView.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
+                                    "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
                                     new HashMap<String, Object>() {{
                                         put("var1", argvar1);
                                         put("var2", argvar2);
