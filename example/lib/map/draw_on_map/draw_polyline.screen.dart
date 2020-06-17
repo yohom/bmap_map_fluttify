@@ -34,7 +34,6 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
             child: Stack(
               children: <Widget>[
                 BmapView(
-                  zoomLevel: 7,
                   onMapCreated: (controller) async {
                     _controller = controller;
                   },
