@@ -4,10 +4,10 @@
 //////////////////////////////////////////////////////////
 
 enum BMKLogoPosition {
-  BMKLogoPositionLeftBottom,
-  BMKLogoPositionLeftTop,
-  BMKLogoPositionCenterBottom,
-  BMKLogoPositionCenterTop,
-  BMKLogoPositionRightBottom,
-  BMKLogoPositionRightTop
+  BMKLogoPositionLeftBottom /* 0 */,
+  BMKLogoPositionLeftTop /* 0 */,
+  BMKLogoPositionCenterBottom /* 0 */,
+  BMKLogoPositionCenterTop /* 0 */,
+  BMKLogoPositionRightBottom /* 0 */,
+  BMKLogoPositionRightTop /* 0 */
 }

@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapsdkplatform_comjni_tools_BundleKeySet extends java_lang_Objec
   Future<List<String>> getBundleKeys(android_os_Bundle var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.BundleKeySet@$refId::getBundleKeys([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.tools.BundleKeySet@$refId::getBundleKeys([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.tools.BundleKeySet::getBundleKeys', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.tools.BundleKeySet::getBundleKeys', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapsdkplatform_comjni_tools_BundleKeySet extends java_lang_Objec
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = (__result__ as List).cast<String>();
     
-      return (__result__ as List).cast<String>();
+      return __return__;
     }
   }
   

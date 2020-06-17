@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_map_HoleOptions extends com_baidu_mapapi_map_OverlayOptio
   Future<String> getHoleType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.HoleOptions@$refId::getHoleType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.HoleOptions@$refId::getHoleType([])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapapi_map_HoleOptions extends com_baidu_mapapi_map_OverlayOptio
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

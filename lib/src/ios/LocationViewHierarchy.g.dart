@@ -4,6 +4,6 @@
 //////////////////////////////////////////////////////////
 
 enum LocationViewHierarchy {
-  LOCATION_VIEW_HIERARCHY_TOP,
-  LOCATION_VIEW_HIERARCHY_BOTTOM
+  LOCATION_VIEW_HIERARCHY_TOP /* 0 */,
+  LOCATION_VIEW_HIERARCHY_BOTTOM /* 0 */
 }

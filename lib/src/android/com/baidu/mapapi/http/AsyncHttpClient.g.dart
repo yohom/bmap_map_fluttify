@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_http_AsyncHttpClient extends java_lang_Object  {
   Future<void> get(String var1, com_baidu_mapapi_http_HttpClient_ProtoResultCallback var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.AsyncHttpClient@$refId::get([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.AsyncHttpClient@$refId::get([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.AsyncHttpClient::get', {"var1": var1, "var2": var2.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.AsyncHttpClient::get', {"var1": var1, "var2": var2?.refId, "refId": refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_http_AsyncHttpClient extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

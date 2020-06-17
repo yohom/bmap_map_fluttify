@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -53,14 +52,11 @@ class BMKOfflineMap extends NSObject  {
     MethodChannel('BMKOfflineMapDelegate::Callback')
       .setMethodCallHandler((methodCall) async {
         final args = methodCall.arguments as Map;
-        // final refId = args['callerRefId'] as int;
-        // if (refId != this.refId) return;
-  
         switch (methodCall.method) {
           case 'Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState':
             // print log
             if (fluttifyLogEnabled) {
-              print('fluttify-dart-callback: onGetOfflineMapState_withState([\'type\':${args['type']}, \'state\':${args['state']}])');
+              debugPrint('fluttify-dart-callback: onGetOfflineMapState_withState([\'type\':${args['type']}, \'state\':${args['state']}])');
             }
         
             // handle the native call
@@ -79,7 +75,7 @@ class BMKOfflineMap extends NSObject  {
   Future<bool> scan(bool deleteFailedr) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::scan([\'deleteFailedr\':$deleteFailedr])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::scan([\'deleteFailedr\':$deleteFailedr])');
     }
   
     // invoke native method
@@ -93,8 +89,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -102,7 +99,7 @@ class BMKOfflineMap extends NSObject  {
   Future<bool> start(int cityID) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::start([\'cityID\':$cityID])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::start([\'cityID\':$cityID])');
     }
   
     // invoke native method
@@ -116,8 +113,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -125,7 +123,7 @@ class BMKOfflineMap extends NSObject  {
   Future<bool> update(int cityID) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::update([\'cityID\':$cityID])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::update([\'cityID\':$cityID])');
     }
   
     // invoke native method
@@ -139,8 +137,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -148,7 +147,7 @@ class BMKOfflineMap extends NSObject  {
   Future<bool> pause(int cityID) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::pause([\'cityID\':$cityID])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::pause([\'cityID\':$cityID])');
     }
   
     // invoke native method
@@ -162,8 +161,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -171,7 +171,7 @@ class BMKOfflineMap extends NSObject  {
   Future<bool> remove(int cityID) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::remove([\'cityID\':$cityID])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::remove([\'cityID\':$cityID])');
     }
   
     // invoke native method
@@ -185,8 +185,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -194,7 +195,7 @@ class BMKOfflineMap extends NSObject  {
   Future<List<NSObject>> getHotCityList() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::getHotCityList([])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::getHotCityList([])');
     }
   
     // invoke native method
@@ -208,8 +209,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -217,7 +219,7 @@ class BMKOfflineMap extends NSObject  {
   Future<List<NSObject>> getOfflineCityList() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::getOfflineCityList([])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::getOfflineCityList([])');
     }
   
     // invoke native method
@@ -231,8 +233,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -240,7 +243,7 @@ class BMKOfflineMap extends NSObject  {
   Future<List<NSObject>> searchCity(String cityName) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::searchCity([\'cityName\':$cityName])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::searchCity([\'cityName\':$cityName])');
     }
   
     // invoke native method
@@ -254,8 +257,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -263,7 +267,7 @@ class BMKOfflineMap extends NSObject  {
   Future<List<NSObject>> getAllUpdateInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::getAllUpdateInfo([])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::getAllUpdateInfo([])');
     }
   
     // invoke native method
@@ -277,8 +281,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -286,7 +291,7 @@ class BMKOfflineMap extends NSObject  {
   Future<BMKOLUpdateElement> getUpdateInfo(int cityID) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOfflineMap@$refId::getUpdateInfo([\'cityID\':$cityID])');
+      debugPrint('fluttify-dart: BMKOfflineMap@$refId::getUpdateInfo([\'cityID\':$cityID])');
     }
   
     // invoke native method
@@ -300,8 +305,9 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -432,7 +438,7 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       kNativeObjectPool.addAll(typedResult.expand((e) => e));
       return typedResult;
     }
@@ -452,7 +458,7 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       kNativeObjectPool.addAll(typedResult.expand((e) => e));
       return typedResult;
     }
@@ -472,7 +478,7 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       kNativeObjectPool.addAll(typedResult.expand((e) => e));
       return typedResult;
     }
@@ -492,7 +498,7 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => BMKGradient()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       kNativeObjectPool.addAll(typedResult.expand((e) => e));
       return typedResult;
     }

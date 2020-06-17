@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil extends java_lang_Objec
   static Future<Uint8List> setUrlNeedInfo(String var0, String var1, Uint8List var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::setUrlNeedInfo([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::setUrlNeedInfo([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil extends java_lang_Objec
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Uint8List;
     
-      return __result__ as Uint8List;
+      return __return__;
     }
   }
   
@@ -60,7 +60,7 @@ class com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil extends java_lang_Objec
   static Future<Uint8List> getUrlNeedInfo(String var0, String var1, Uint8List var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::getUrlNeedInfo([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.AlgorithmUtil::getUrlNeedInfo([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil extends java_lang_Objec
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Uint8List;
     
-      return __result__ as Uint8List;
+      return __return__;
     }
   }
   

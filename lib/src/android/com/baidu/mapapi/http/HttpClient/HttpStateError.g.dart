@@ -4,9 +4,9 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_http_HttpClient_HttpStateError {
-  NO_ERROR,
-  NETWORK_ERROR,
-  INNER_ERROR,
-  REQUEST_ERROR,
-  SERVER_ERROR
+  NO_ERROR /* 0 */,
+  NETWORK_ERROR /* 0 */,
+  INNER_ERROR /* 0 */,
+  REQUEST_ERROR /* 0 */,
+  SERVER_ERROR /* 0 */
 }

@@ -6,15 +6,18 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
+class _BMKOverlay_SUB extends NSObject with BMKAnnotation, BMKOverlay {}
+
 mixin BMKOverlay on BMKAnnotation {
   
+
+  static BMKOverlay subInstance() => _BMKOverlay_SUB();
 
   Future<CLLocationCoordinate2D> get_coordinate() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlay::get_coordinate", {'refId': refId});
@@ -35,11 +38,11 @@ mixin BMKOverlay on BMKAnnotation {
   Future<bool> intersectsMapRect(BMKMapRect mapRect) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKOverlay@$refId::intersectsMapRect([])');
+      debugPrint('fluttify-dart: BMKOverlay@$refId::intersectsMapRect([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlay::intersectsMapRect', {"mapRect": mapRect.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlay::intersectsMapRect', {"mapRect": mapRect?.refId, "refId": refId});
   
   
     // handle native call
@@ -49,9 +52,35 @@ mixin BMKOverlay on BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
+}
+
+extension BMKOverlay_Batch on List<BMKOverlay> {
+  //region methods
+  
+  Future<List<bool>> intersectsMapRect_batch(List<BMKMapRect> mapRect) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlay::intersectsMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__].refId, "refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  //endregion
 }

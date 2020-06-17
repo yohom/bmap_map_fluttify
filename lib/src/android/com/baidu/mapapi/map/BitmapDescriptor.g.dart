@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapapi_map_BitmapDescriptor extends java_lang_Object  {
   Future<android_graphics_Bitmap> getBitmap() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.BitmapDescriptor@$refId::getBitmap([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.BitmapDescriptor@$refId::getBitmap([])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapapi_map_BitmapDescriptor extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_graphics_Bitmap()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -60,7 +60,7 @@ class com_baidu_mapapi_map_BitmapDescriptor extends java_lang_Object  {
   Future<void> clearCache() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.BitmapDescriptor@$refId::clearCache([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.BitmapDescriptor@$refId::clearCache([])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class com_baidu_mapapi_map_BitmapDescriptor extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

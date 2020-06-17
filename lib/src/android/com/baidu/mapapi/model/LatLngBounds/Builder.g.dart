@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_model_LatLngBounds_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLngBounds> build() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.LatLngBounds.Builder@$refId::build([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.LatLngBounds.Builder@$refId::build([])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapapi_model_LatLngBounds_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class com_baidu_mapapi_model_LatLngBounds_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLngBounds_Builder> include__com_baidu_mapapi_model_LatLng(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.LatLngBounds.Builder@$refId::include([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.LatLngBounds.Builder@$refId::include([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.LatLngBounds.Builder::include__com_baidu_mapapi_model_LatLng', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.LatLngBounds.Builder::include__com_baidu_mapapi_model_LatLng', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class com_baidu_mapapi_model_LatLngBounds_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLngBounds_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLngBounds_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLngBounds_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -101,11 +102,11 @@ class com_baidu_mapapi_model_LatLngBounds_Builder extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLngBounds_Builder> include__List_com_baidu_mapapi_model_LatLng_(List<com_baidu_mapapi_model_LatLng> var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.LatLngBounds.Builder@$refId::include([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.LatLngBounds.Builder@$refId::include([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.LatLngBounds.Builder::include__List_com_baidu_mapapi_model_LatLng_', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.LatLngBounds.Builder::include__List_com_baidu_mapapi_model_LatLng_', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -115,8 +116,9 @@ class com_baidu_mapapi_model_LatLngBounds_Builder extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLngBounds_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLngBounds_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLngBounds_Builder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   

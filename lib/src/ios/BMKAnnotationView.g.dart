@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -57,8 +56,8 @@ class BMKAnnotationView extends UIView  {
   
   Future<BMKAnnotation> get_annotation({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_annotation", {'refId': refId});
-    kNativeObjectPool.add(BMKShape()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKShape()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    kNativeObjectPool.add(BMKAnnotation.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    return BMKAnnotation.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify';
   }
   
   Future<UIImage> get_image({bool viewChannel = true}) async {
@@ -105,14 +104,14 @@ class BMKAnnotationView extends UIView  {
   
   Future<UIView> get_leftCalloutAccessoryView({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_leftCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    kNativeObjectPool.add(UIView()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    return UIView()..refId = __result__..tag__ = 'bmap_map_fluttify';
   }
   
   Future<UIView> get_rightCalloutAccessoryView({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_rightCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    kNativeObjectPool.add(UIView()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    return UIView()..refId = __result__..tag__ = 'bmap_map_fluttify';
   }
   
   Future<bool> get_draggable({bool viewChannel = true}) async {
@@ -299,11 +298,11 @@ class BMKAnnotationView extends UIView  {
   Future<dynamic> initWithAnnotation_reuseIdentifier(BMKAnnotation annotation, String reuseIdentifier, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotationView@$refId::initWithAnnotation([\'reuseIdentifier\':$reuseIdentifier])');
+      debugPrint('fluttify-dart: BMKAnnotationView@$refId::initWithAnnotation([\'reuseIdentifier\':$reuseIdentifier])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation.refId, "reuseIdentifier": reuseIdentifier, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation?.refId, "reuseIdentifier": reuseIdentifier, "refId": refId});
   
   
     // handle native call
@@ -313,8 +312,9 @@ class BMKAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -322,7 +322,7 @@ class BMKAnnotationView extends UIView  {
   Future<void> prepareForReuse({bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotationView@$refId::prepareForReuse([])');
+      debugPrint('fluttify-dart: BMKAnnotationView@$refId::prepareForReuse([])');
     }
   
     // invoke native method
@@ -336,8 +336,9 @@ class BMKAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -345,7 +346,7 @@ class BMKAnnotationView extends UIView  {
   Future<void> setSelected_animated(bool selected, bool animated, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotationView@$refId::setSelected([\'selected\':$selected, \'animated\':$animated])');
+      debugPrint('fluttify-dart: BMKAnnotationView@$refId::setSelected([\'selected\':$selected, \'animated\':$animated])');
     }
   
     // invoke native method
@@ -359,8 +360,9 @@ class BMKAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -385,7 +387,7 @@ extension BMKAnnotationView_Batch on List<BMKAnnotationView> {
   
   Future<List<BMKAnnotation>> get_annotation_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_annotation_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKShape()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKAnnotation.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
@@ -441,14 +443,14 @@ extension BMKAnnotationView_Batch on List<BMKAnnotationView> {
   
   Future<List<UIView>> get_leftCalloutAccessoryView_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_leftCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
   Future<List<UIView>> get_rightCalloutAccessoryView_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_rightCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }

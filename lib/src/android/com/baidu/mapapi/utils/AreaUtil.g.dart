@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
   static Future<double> calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng(com_baidu_mapapi_model_LatLng var0, com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
   static Future<double> calculateArea__List_com_baidu_mapapi_model_LatLng_(List<com_baidu_mapapi_model_LatLng> var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.AreaUtil::calculateArea([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__List_com_baidu_mapapi_model_LatLng_', {"var0": var0.map((__it__) => __it__.refId).toList()});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__List_com_baidu_mapapi_model_LatLng_', {"var0": var0.map((__it__) => __it__?.refId).toList()});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

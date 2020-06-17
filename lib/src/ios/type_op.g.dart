@@ -7,373 +7,483 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-extension TypeOpBmapMapFluttifyIOS on Ref {
-  Future<bool> isBMKActionPaopaoView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKActionPaopaoView', {'refId': refId});
-    return result;
+extension TypeOpBmapMapFluttifyIOS on Object {
+  // type check
+  Future<bool> is__<T>() async {
+    final typeName = T.toString();
+    if (RegExp('(List<)?(String|int|double)(>)?|(Map<String,(String|int|double)>)').hasMatch(typeName)) {
+      return this is T;
+    }
+    else if (T == BMKActionPaopaoView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKActionPaopaoView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKAnnotation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKAnnotation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKTileLayerView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKTileLayerView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKOverlayPathView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOverlayPathView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGroundOverlay) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGroundOverlay', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKPolyline) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolyline', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKCircleView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKCircleView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKPointAnnotation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPointAnnotation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGradient) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGradient', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKArcline) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKArcline', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKMultiPoint) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMultiPoint', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKBaseIndoorMapInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKBaseIndoorMapInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKTileLayer) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKTileLayer', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKURLTileLayer) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKURLTileLayer', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKSyncTileLayer) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKSyncTileLayer', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKAsyncTileLayer) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKAsyncTileLayer', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKPolylineView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolylineView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKPinAnnotationView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPinAnnotationView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKCircle) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKCircle', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKMapPoi) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMapPoi', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKMapView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMapView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationViewDisplayParam) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationViewDisplayParam', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKMapStatus) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMapStatus', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKArclineView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKArclineView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKHeatMapNode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKHeatMapNode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKHeatMap) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKHeatMap', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKPolygon) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolygon', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKPolygonView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolygonView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKOverlayView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOverlayView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGroundOverlayView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGroundOverlayView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKAnnotationView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKAnnotationView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKOverlayGLBasicView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOverlayGLBasicView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKShape) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKShape', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKOLSearchRecord) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOLSearchRecord', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKOLUpdateElement) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOLUpdateElement', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKOverlay) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOverlay', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKCustomMapStyleOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKCustomMapStyleOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKOfflineMap) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOfflineMap', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationReGeocode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationReGeocode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationAuth) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationAuth', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationPoiRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationPoiRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocationPoi) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationPoi', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKLocation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFenceRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFenceRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFenceCircleRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFenceCircleRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFencePolygonRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFencePolygonRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == BMKGeoFenceManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGeoFenceManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == CLLocation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCLLocation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == CLHeading) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCLHeading', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == CGRect) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCGRect', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == CGPoint) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCGPoint', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == CGSize) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCGSize', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == UIEdgeInsets) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfUIEdgeInsets', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == CLLocationCoordinate2D) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCLLocationCoordinate2D', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == CLLocationManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfCLLocationManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == NSError) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfNSError', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == NSCopying) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfNSCopying', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == UIView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfUIView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == UIViewController) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfUIViewController', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == UIControl) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfUIControl', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == UIImage) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfUIImage', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == UIColor) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfUIColor', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == NSData) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfNSData', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == NSOperation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfNSOperation', {'refId': (this as Ref).refId});
+      return result;
+    }
   }
-  
-  Future<bool> isBMKTileLayerView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKTileLayerView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKOverlayPathView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOverlayPathView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKGroundOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGroundOverlay', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKPolyline() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolyline', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKCircleView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKCircleView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKPointAnnotation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPointAnnotation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKGradient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGradient', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKArcline() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKArcline', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKMultiPoint() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMultiPoint', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKBaseIndoorMapInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKBaseIndoorMapInfo', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKTileLayer', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKURLTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKURLTileLayer', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKSyncTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKSyncTileLayer', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKAsyncTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKAsyncTileLayer', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKPolylineView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolylineView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKPinAnnotationView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPinAnnotationView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKCircle() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKCircle', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKMapPoi() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMapPoi', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKMapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMapView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKLocationViewDisplayParam() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKLocationViewDisplayParam', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKMapStatus() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKMapStatus', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKArclineView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKArclineView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKHeatMapNode() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKHeatMapNode', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKHeatMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKHeatMap', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKPolygon() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolygon', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKPolygonView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKPolygonView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKOverlayView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOverlayView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKGroundOverlayView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKGroundOverlayView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKAnnotationView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKAnnotationView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKOverlayGLBasicView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOverlayGLBasicView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKShape() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKShape', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKOLSearchRecord() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOLSearchRecord', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKOLUpdateElement() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOLUpdateElement', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKCustomMapStyleOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKCustomMapStyleOption', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> isBMKOfflineMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfBMKOfflineMap', {'refId': refId});
-    return result;
-  }
-  
 
-  Future<BMKActionPaopaoView> asBMKActionPaopaoView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKActionPaopaoView', {'refId': refId});
-    return BMKActionPaopaoView()..refId = result;
+  // type cast
+  T as__<T>() {
+    final typeName = T.toString();
+    // jsonable 直接造型 返回
+    if (RegExp('(List<)?(String|int|double)(>)?|(Map<String,(String|int|double)>)').hasMatch(typeName)) {
+      return this as T;
+    }
+    // 如果是Ref类的cast, 那么取其refId, 如果本身是refId, 那么直接使用(int)
+    else if (T == BMKActionPaopaoView) {
+      return (BMKActionPaopaoView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKAnnotation) {
+      return (BMKAnnotation.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKTileLayerView) {
+      return (BMKTileLayerView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOverlayPathView) {
+      return (BMKOverlayPathView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGroundOverlay) {
+      return (BMKGroundOverlay()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKPolyline) {
+      return (BMKPolyline()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKCircleView) {
+      return (BMKCircleView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKPointAnnotation) {
+      return (BMKPointAnnotation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGradient) {
+      return (BMKGradient()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKArcline) {
+      return (BMKArcline()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKMultiPoint) {
+      return (BMKMultiPoint()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKBaseIndoorMapInfo) {
+      return (BMKBaseIndoorMapInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKTileLayer) {
+      return (BMKTileLayer()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKURLTileLayer) {
+      return (BMKURLTileLayer()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKSyncTileLayer) {
+      return (BMKSyncTileLayer()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKAsyncTileLayer) {
+      return (BMKAsyncTileLayer()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKPolylineView) {
+      return (BMKPolylineView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKPinAnnotationView) {
+      return (BMKPinAnnotationView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKCircle) {
+      return (BMKCircle()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKMapPoi) {
+      return (BMKMapPoi()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKMapView) {
+      return (BMKMapView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationViewDisplayParam) {
+      return (BMKLocationViewDisplayParam()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKMapStatus) {
+      return (BMKMapStatus()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKArclineView) {
+      return (BMKArclineView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKHeatMapNode) {
+      return (BMKHeatMapNode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKHeatMap) {
+      return (BMKHeatMap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKPolygon) {
+      return (BMKPolygon()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKPolygonView) {
+      return (BMKPolygonView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOverlayView) {
+      return (BMKOverlayView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGroundOverlayView) {
+      return (BMKGroundOverlayView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKAnnotationView) {
+      return (BMKAnnotationView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOverlayGLBasicView) {
+      return (BMKOverlayGLBasicView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKShape) {
+      return (BMKShape()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOLSearchRecord) {
+      return (BMKOLSearchRecord()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOLUpdateElement) {
+      return (BMKOLUpdateElement()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOverlay) {
+      return (BMKOverlay.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKCustomMapStyleOption) {
+      return (BMKCustomMapStyleOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOfflineMap) {
+      return (BMKOfflineMap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationReGeocode) {
+      return (BMKLocationReGeocode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationManager) {
+      return (BMKLocationManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationAuth) {
+      return (BMKLocationAuth()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationPoiRegion) {
+      return (BMKLocationPoiRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocationPoi) {
+      return (BMKLocationPoi()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKLocation) {
+      return (BMKLocation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFenceRegion) {
+      return (BMKGeoFenceRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFenceCircleRegion) {
+      return (BMKGeoFenceCircleRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFencePolygonRegion) {
+      return (BMKGeoFencePolygonRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKGeoFenceManager) {
+      return (BMKGeoFenceManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == CLLocation) {
+      return (CLLocation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == CLHeading) {
+      return (CLHeading()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == CGRect) {
+      return (CGRect()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == CGPoint) {
+      return (CGPoint()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == CGSize) {
+      return (CGSize()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == UIEdgeInsets) {
+      return (UIEdgeInsets()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == CLLocationCoordinate2D) {
+      return (CLLocationCoordinate2D()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == CLLocationManager) {
+      return (CLLocationManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == NSError) {
+      return (NSError()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == NSCopying) {
+      return (NSCopying.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == UIView) {
+      return (UIView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == UIViewController) {
+      return (UIViewController()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == UIControl) {
+      return (UIControl()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == UIImage) {
+      return (UIImage()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == UIColor) {
+      return (UIColor()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == NSData) {
+      return (NSData()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == NSOperation) {
+      return (NSOperation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
   }
-  
-  Future<BMKTileLayerView> asBMKTileLayerView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKTileLayerView', {'refId': refId});
-    return BMKTileLayerView()..refId = result;
-  }
-  
-  Future<BMKOverlayPathView> asBMKOverlayPathView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKOverlayPathView', {'refId': refId});
-    return BMKOverlayPathView()..refId = result;
-  }
-  
-  Future<BMKGroundOverlay> asBMKGroundOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKGroundOverlay', {'refId': refId});
-    return BMKGroundOverlay()..refId = result;
-  }
-  
-  Future<BMKPolyline> asBMKPolyline() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKPolyline', {'refId': refId});
-    return BMKPolyline()..refId = result;
-  }
-  
-  Future<BMKCircleView> asBMKCircleView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKCircleView', {'refId': refId});
-    return BMKCircleView()..refId = result;
-  }
-  
-  Future<BMKPointAnnotation> asBMKPointAnnotation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKPointAnnotation', {'refId': refId});
-    return BMKPointAnnotation()..refId = result;
-  }
-  
-  Future<BMKGradient> asBMKGradient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKGradient', {'refId': refId});
-    return BMKGradient()..refId = result;
-  }
-  
-  Future<BMKArcline> asBMKArcline() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKArcline', {'refId': refId});
-    return BMKArcline()..refId = result;
-  }
-  
-  Future<BMKMultiPoint> asBMKMultiPoint() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKMultiPoint', {'refId': refId});
-    return BMKMultiPoint()..refId = result;
-  }
-  
-  Future<BMKBaseIndoorMapInfo> asBMKBaseIndoorMapInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKBaseIndoorMapInfo', {'refId': refId});
-    return BMKBaseIndoorMapInfo()..refId = result;
-  }
-  
-  Future<BMKTileLayer> asBMKTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKTileLayer', {'refId': refId});
-    return BMKTileLayer()..refId = result;
-  }
-  
-  Future<BMKURLTileLayer> asBMKURLTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKURLTileLayer', {'refId': refId});
-    return BMKURLTileLayer()..refId = result;
-  }
-  
-  Future<BMKSyncTileLayer> asBMKSyncTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKSyncTileLayer', {'refId': refId});
-    return BMKSyncTileLayer()..refId = result;
-  }
-  
-  Future<BMKAsyncTileLayer> asBMKAsyncTileLayer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKAsyncTileLayer', {'refId': refId});
-    return BMKAsyncTileLayer()..refId = result;
-  }
-  
-  Future<BMKPolylineView> asBMKPolylineView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKPolylineView', {'refId': refId});
-    return BMKPolylineView()..refId = result;
-  }
-  
-  Future<BMKPinAnnotationView> asBMKPinAnnotationView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKPinAnnotationView', {'refId': refId});
-    return BMKPinAnnotationView()..refId = result;
-  }
-  
-  Future<BMKCircle> asBMKCircle() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKCircle', {'refId': refId});
-    return BMKCircle()..refId = result;
-  }
-  
-  Future<BMKMapPoi> asBMKMapPoi() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKMapPoi', {'refId': refId});
-    return BMKMapPoi()..refId = result;
-  }
-  
-  Future<BMKMapView> asBMKMapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKMapView', {'refId': refId});
-    return BMKMapView()..refId = result;
-  }
-  
-  Future<BMKLocationViewDisplayParam> asBMKLocationViewDisplayParam() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKLocationViewDisplayParam', {'refId': refId});
-    return BMKLocationViewDisplayParam()..refId = result;
-  }
-  
-  Future<BMKMapStatus> asBMKMapStatus() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKMapStatus', {'refId': refId});
-    return BMKMapStatus()..refId = result;
-  }
-  
-  Future<BMKArclineView> asBMKArclineView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKArclineView', {'refId': refId});
-    return BMKArclineView()..refId = result;
-  }
-  
-  Future<BMKHeatMapNode> asBMKHeatMapNode() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKHeatMapNode', {'refId': refId});
-    return BMKHeatMapNode()..refId = result;
-  }
-  
-  Future<BMKHeatMap> asBMKHeatMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKHeatMap', {'refId': refId});
-    return BMKHeatMap()..refId = result;
-  }
-  
-  Future<BMKPolygon> asBMKPolygon() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKPolygon', {'refId': refId});
-    return BMKPolygon()..refId = result;
-  }
-  
-  Future<BMKPolygonView> asBMKPolygonView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKPolygonView', {'refId': refId});
-    return BMKPolygonView()..refId = result;
-  }
-  
-  Future<BMKOverlayView> asBMKOverlayView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKOverlayView', {'refId': refId});
-    return BMKOverlayView()..refId = result;
-  }
-  
-  Future<BMKGroundOverlayView> asBMKGroundOverlayView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKGroundOverlayView', {'refId': refId});
-    return BMKGroundOverlayView()..refId = result;
-  }
-  
-  Future<BMKAnnotationView> asBMKAnnotationView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKAnnotationView', {'refId': refId});
-    return BMKAnnotationView()..refId = result;
-  }
-  
-  Future<BMKOverlayGLBasicView> asBMKOverlayGLBasicView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKOverlayGLBasicView', {'refId': refId});
-    return BMKOverlayGLBasicView()..refId = result;
-  }
-  
-  Future<BMKShape> asBMKShape() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKShape', {'refId': refId});
-    return BMKShape()..refId = result;
-  }
-  
-  Future<BMKOLSearchRecord> asBMKOLSearchRecord() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKOLSearchRecord', {'refId': refId});
-    return BMKOLSearchRecord()..refId = result;
-  }
-  
-  Future<BMKOLUpdateElement> asBMKOLUpdateElement() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKOLUpdateElement', {'refId': refId});
-    return BMKOLUpdateElement()..refId = result;
-  }
-  
-  Future<BMKCustomMapStyleOption> asBMKCustomMapStyleOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKCustomMapStyleOption', {'refId': refId});
-    return BMKCustomMapStyleOption()..refId = result;
-  }
-  
-  Future<BMKOfflineMap> asBMKOfflineMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asBMKOfflineMap', {'refId': refId});
-    return BMKOfflineMap()..refId = result;
-  }
-  
 }

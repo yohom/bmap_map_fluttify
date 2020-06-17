@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<com_baidu_mapapi_model_LatLng> mc2ll(com_baidu_mapapi_model_inner_GeoPoint var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::mc2ll([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::mc2ll([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::mc2ll', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::mc2ll', {"var0": var0?.refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<com_baidu_mapapi_model_inner_GeoPoint> ll2mc(com_baidu_mapapi_model_LatLng var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::ll2mc([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::ll2mc([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::ll2mc', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::ll2mc', {"var0": var0?.refId});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_inner_GeoPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_inner_GeoPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_inner_GeoPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -101,11 +102,11 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<com_baidu_mapapi_model_inner_Point> ll2point(com_baidu_mapapi_model_LatLng var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::ll2point([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::ll2point([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::ll2point', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::ll2point', {"var0": var0?.refId});
   
   
     // handle native call
@@ -115,8 +116,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -124,11 +126,11 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<int> getMCDistanceByOneLatLngAndRadius(com_baidu_mapapi_model_LatLng var0, int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::getMCDistanceByOneLatLngAndRadius([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::getMCDistanceByOneLatLngAndRadius([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::getMCDistanceByOneLatLngAndRadius', {"var0": var0.refId, "var1": var1});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::getMCDistanceByOneLatLngAndRadius', {"var0": var0?.refId, "var1": var1});
   
   
     // handle native call
@@ -138,8 +140,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +150,7 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<com_baidu_mapapi_model_LatLng> decodeLocation(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::decodeLocation([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::decodeLocation([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -161,8 +164,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -170,7 +174,7 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<com_baidu_mapapi_model_LatLng> decodeNodeLocation(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::decodeNodeLocation([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::decodeNodeLocation([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -184,8 +188,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -193,7 +198,7 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<List<com_baidu_mapapi_model_LatLng>> decodeLocationList(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::decodeLocationList([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::decodeLocationList([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -207,8 +212,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -216,7 +222,7 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<com_baidu_mapapi_model_LatLng> Coordinate_encryptEx(double var0, double var1, String var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::Coordinate_encryptEx([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::Coordinate_encryptEx([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -230,8 +236,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -239,11 +246,11 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
   static Future<double> getDistance(com_baidu_mapapi_model_inner_Point var0, com_baidu_mapapi_model_inner_Point var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.CoordUtil::getDistance([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.CoordUtil::getDistance([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::getDistance', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.CoordUtil::getDistance', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -253,8 +260,9 @@ class com_baidu_mapapi_model_CoordUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

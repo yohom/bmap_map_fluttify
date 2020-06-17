@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -77,7 +76,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
   Future<com_baidu_mapapi_model_inner_Point> getPtLB() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::getPtLB([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::getPtLB([])');
     }
   
     // invoke native method
@@ -91,8 +90,9 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -100,11 +100,11 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
   Future<void> setPtLB(com_baidu_mapapi_model_inner_Point var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::setPtLB([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::setPtLB([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtLB', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtLB', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -114,8 +114,9 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -123,7 +124,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
   Future<com_baidu_mapapi_model_inner_Point> getPtRT() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::getPtRT([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::getPtRT([])');
     }
   
     // invoke native method
@@ -137,8 +138,9 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -146,11 +148,11 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
   Future<void> setPtRT(com_baidu_mapapi_model_inner_Point var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::setPtRT([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.model.inner.MapBound@$refId::setPtRT([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtRT', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtRT', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -160,8 +162,9 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

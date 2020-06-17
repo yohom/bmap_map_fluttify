@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
   static Future<android_content_Context> getCachedContext() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.JNIInitializer::getCachedContext([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.JNIInitializer::getCachedContext([])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
   static Future<void> setContext(android_app_Application var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.JNIInitializer::setContext([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.JNIInitializer::setContext([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.JNIInitializer::setContext', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.JNIInitializer::setContext', {"var0": var0?.refId});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class com_baidu_mapapi_JNIInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

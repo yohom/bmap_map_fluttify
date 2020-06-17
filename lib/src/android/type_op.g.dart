@@ -8,1492 +8,2141 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
 // ignore_for_file: non_constant_identifier_names, camel_case_types, missing_return, unused_import
-extension TypeOpBmapMapFluttifyAndroid on Ref {
-  Future<bool> ismapsdkvi_com_gdi_bgl_android_java_EnvDrawText() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfmapsdkvi_com_gdi_bgl_android_java_EnvDrawText', {'refId': refId});
-    return result;
+extension TypeOpBmapMapFluttifyAndroid on Object {
+  // type check
+  Future<bool> is__<T>() async {
+    final typeName = T.toString();
+    if (RegExp('(List<)?(String|int|double)(>)?|(Map<String,(String|int|double)>)').hasMatch(typeName)) {
+      return this is T;
+    }
+    else if (T == mapsdkvi_com_gdi_bgl_android_java_EnvDrawText) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfmapsdkvi_com_gdi_bgl_android_java_EnvDrawText', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_Poi) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_Poi', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_Address_Builder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_Address_Builder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_LocationClientOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_LocationClientOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_Address) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_Address', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_BDNotifyListener) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_BDNotifyListener', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_Jni) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_Jni', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_PoiRegion) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_PoiRegion', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_BDAbstractLocationListener) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_BDAbstractLocationListener', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_LLSInterface) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_LLSInterface', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_LocationClient) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_LocationClient', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_indoor_mapversion_IndoorJni) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_indoor_mapversion_IndoorJni', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_location_BDLocation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_BDLocation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_UIHttpType) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIHttpType', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_UIGPSStatus) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIGPSStatus', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_UIOffType) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIOffType', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_SDKInitializer) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_SDKInitializer', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_NetworkUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_NetworkUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_k_event) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_k_event', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_animation_AnimationSet) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_AnimationSet', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_animation_Transformation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_Transformation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_animation_RotateAnimation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_RotateAnimation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_animation_Animation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_Animation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_animation_SingleScaleAnimation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_SingleScaleAnimation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_animation_AlphaAnimation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_AlphaAnimation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_animation_ScaleAnimation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_ScaleAnimation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_navi_NaviParaOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_NaviParaOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_navi_BaiduMapNavigation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapNavigation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_navi_IllegalNaviArgumentException) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_IllegalNaviArgumentException', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_favorite_FavoriteManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_favorite_FavoriteManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_favorite_FavoritePoiInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_favorite_FavoritePoiInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_route_BaiduMapRoutePlan) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_route_BaiduMapRoutePlan', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_route_RouteParaOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_route_RouteParaOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_DistanceUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_DistanceUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_SpatialRelationUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_SpatialRelationUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_CoordinateConverter) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_CoordinateConverter', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_PoiParaOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_PoiParaOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_DispathcPoiData) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_DispathcPoiData', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_BaiduMapPoiSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_OpenClientUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_OpenClientUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_utils_AreaUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_AreaUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_WalkNaviMsg) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_WalkNaviMsg', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_BMapManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_BMapManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionSearchOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionSearchOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineResult_BusStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult_BusStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineSearchOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineSearchOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineResult_BusStation) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult_BusStation', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_PriceInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_PriceInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_TransitBaseInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_TransitBaseInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_TransitResultNode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_TransitResultNode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_RouteLine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_RouteLine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_SearchResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_SearchResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_PoiInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_RouteStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_RouteStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_TaxiInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_TaxiInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiDetailInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_PoiDetailInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_PlaneInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_PlaneInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_TrainInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_TrainInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_RouteNode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_RouteNode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_CityInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_CityInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_BusInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_BusInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiChildrenInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_PoiChildrenInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_VehicleInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_VehicleInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_core_CoachInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_core_CoachInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRoutePlanOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRoutePlanOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRouteLine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteLine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRouteLine_TransitStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteLine_TransitStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRouteResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRouteLine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteLine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteLine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_RoutePlanSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_RoutePlanSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRouteResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_SuggestAddrInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_SuggestAddrInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_PlanNode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_PlanNode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRoutePlanOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRoutePlanOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteLine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRoutePlanOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRoutePlanOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRouteLine_BikingStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteLine_BikingStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRoutePlanOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRoutePlanOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRouteResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRouteResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorPlanNode) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorPlanNode', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRoutePlanOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRoutePlanOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRouteLine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteLine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRoutePlanOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRoutePlanOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRouteLine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteLine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiCitySearchOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiCitySearchOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiAddrInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiAddrInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiIndoorInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiIndoorOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiDetailSearchResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailSearchResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiBoundSearchOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiBoundSearchOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiDetailResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiFilter) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiFilter', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiFilter_Builder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiFilter_Builder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiIndoorResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiDetailSearchOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailSearchOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiNearbySearchOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiNearbySearchOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_district_DistrictSearchOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictSearchOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_district_DistrictSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_district_DistrictResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_GeoCodeResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCodeResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_GeoCoder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCoder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_GeoCodeOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCodeOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_share_LocationShareURLOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_share_LocationShareURLOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_share_ShareUrlSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_share_ShareUrlSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_share_ShareUrlResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_share_ShareUrlResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_share_PoiDetailShareURLOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_share_PoiDetailShareURLOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_search_share_RouteShareURLOption) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_search_share_RouteShareURLOption', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_OpenLogUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_OpenLogUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_m_AppUI) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_m_AppUI', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_common_SysOSUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_SysOSUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_common_Logger) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_Logger', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_common_BaiduMapSDKException) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_BaiduMapSDKException', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_common_EnvironmentUtilities) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_EnvironmentUtilities', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_common_AppTools) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_AppTools', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Polygon) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Polygon', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_BitmapDescriptor) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptor', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_HeatMap_Builder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_HeatMap_Builder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_PolygonHoleOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_PolygonHoleOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_FileTileProvider) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_FileTileProvider', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_CircleHoleOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_CircleHoleOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Text) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Text', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapPoi) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapPoi', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_UiSettings) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_UiSettings', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatusUpdateFactory) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdateFactory', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_SwipeDismissTouchListener) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissTouchListener', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_BitmapDescriptorFactory) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptorFactory', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapViewLayoutParams_Builder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapViewLayoutParams_Builder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_DotOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_DotOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_UrlTileProvider) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_UrlTileProvider', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MyLocationData_Builder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MyLocationData_Builder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_PolylineOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_PolylineOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Tile) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Tile', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_WinRound) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_WinRound', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Gradient) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Gradient', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_TileProvider) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TileProvider', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_GroundOverlayOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlayOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_GroundOverlay) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlay', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MarkerOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MarkerOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapCustomStyleOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapCustomStyleOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Stroke) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Stroke', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Arc) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Arc', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_OverlayOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_OverlayOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Circle) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Circle', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_PolygonOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_PolygonOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_WeightedLatLng) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_WeightedLatLng', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_SwipeDismissView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Dot) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Dot', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_ArcOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_ArcOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_InfoWindow) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_InfoWindow', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Projection) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Projection', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_CircleOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_CircleOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapBaseIndoorMapInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapBaseIndoorMapInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_ItemizedOverlay) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_ItemizedOverlay', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatusUpdate) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdate', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_BaiduMap) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BaiduMap', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_TextureMapView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TextureMapView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Overlay) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Overlay', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatus) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatus', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_HoleOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_HoleOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_HeatMap) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_HeatMap', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatus_Builder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatus_Builder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MyLocationConfiguration) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MyLocationConfiguration', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Marker) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Marker', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_TileOverlayOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TileOverlayOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_BaiduMapOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BaiduMapOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_WearMapView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_WearMapView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_TextOptions) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TextOptions', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_TileOverlay) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TileOverlay', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_offline_MKOLUpdateElement) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOLUpdateElement', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_offline_OfflineMapUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_OfflineMapUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_offline_MKOLSearchRecord) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOLSearchRecord', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_offline_MKOfflineMap) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOfflineMap', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MapView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_Polyline) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Polyline', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_map_MyLocationData) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MyLocationData', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_d_ResultType) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_d_ResultType', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_f_FUN) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_f_FUN', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_http_AsyncHttpClient) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_http_AsyncHttpClient', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_http_HttpClient) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_http_HttpClient', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_http_HttpClient_ProtoResultCallback) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_http_HttpClient_ProtoResultCallback', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_NetDetectedType) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_NetDetectedType', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudEvent) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudEvent', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_BaseCloudSearchInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_BaseCloudSearchInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_LocalSearchInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_LocalSearchInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudPoiInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudPoiInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_BaseSearchResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_BaseSearchResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_BaseSearchInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_BaseSearchInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudEvent_ErrorNo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudEvent_ErrorNo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudSearchResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudSearchResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_PoiInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_AddressCompents', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_DetailSearchResult) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_DetailSearchResult', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_DetailSearchInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_DetailSearchInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_VersionInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_VersionInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_NearbySearchInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_NearbySearchInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_cloud_BoundSearchInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_cloud_BoundSearchInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_LatLngBounds_Builder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds_Builder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_inner_Point) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_inner_Point', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_inner_MapBound) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_inner_MapBound', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_inner_GeoPoint) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_inner_GeoPoint', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_LatLngBounds) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_LatLng) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_LatLng', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_CoordUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_CoordUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_model_ParcelItem) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_ParcelItem', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_VersionInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_VersionInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_JNIInitializer) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_JNIInitializer', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_l_ErrorNo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_l_ErrorNo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapapi_PermissionUtils) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_PermissionUtils', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_platform_comjni_map_cloud_ICloudCenter) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_platform_comjni_map_cloud_ICloudCenter', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_platform_core_busline_IBusLineSearch) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_platform_core_busline_IBusLineSearch', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_platform_domain_HttpsEnable) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_platform_domain_HttpsEnable', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkvi_VDeviceAPI) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkvi_VDeviceAPI', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkvi_VMsg) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkvi_VMsg', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_geofence_GeoFenceClient) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_geofence_GeoFenceClient', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_geofence_model_DistrictItem) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_geofence_model_DistrictItem', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_geofence_model_DPoint) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_geofence_model_DPoint', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_geofence_GeoFence) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_geofence_GeoFence', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_geofence_PoiItem) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_geofence_PoiItem', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_lbsapi_auth_LBSAuthManager) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_lbsapi_auth_LBSAuthManager', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_lbsapi_auth_LBSAuthManagerListener) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_lbsapi_auth_LBSAuthManagerListener', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_tools_JNITools) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_tools_JNITools', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_tools_ParcelItem) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_tools_ParcelItem', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_tools_BundleKeySet) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_tools_BundleKeySet', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_JNIHandler) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_JNIHandler', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_JNIMD5) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_JNIMD5', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_JNISysOSAPI', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_AppMD5) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_AppMD5', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_engine_JNIEngine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_engine_JNIEngine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_engine_AppEngine) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_engine_AppEngine', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_NativeLoader) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_NativeLoader', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_SysUpdateObservable', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_AlgorithmUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_CoordTrans) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_CoordTrans', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_SyncSysInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_SyncSysInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_PermissionCheck) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_PermissionCheck', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_SysUpdateObserver', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_location_CoordinateType) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_location_CoordinateType', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_map_MessageCenter) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_map_MessageCenter', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_map_VersionInfo) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_map_VersionInfo', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_content_Context) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_content_Context', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_content_Intent) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_content_Intent', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_content_ContentProvider) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_content_ContentProvider', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_app_Application) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_app_Application', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_app_Notification) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_app_Notification', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_app_Activity) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_app_Activity', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_app_PendingIntent) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_app_PendingIntent', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_os_Bundle) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_os_Bundle', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_os_Binder) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_os_Binder', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_view_View) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_view_View', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_view_SurfaceView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_view_SurfaceView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_view_View_OnApplyWindowInsetsListener) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_view_View_OnApplyWindowInsetsListener', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_view_ViewGroup) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_view_ViewGroup', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_graphics_Point) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_graphics_Point', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_graphics_PointF) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_graphics_PointF', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_graphics_Bitmap) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_graphics_Bitmap', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_widget_ImageView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_widget_ImageView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == java_io_Serializable) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfjava_io_Serializable', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == java_io_File) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfjava_io_File', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_location_Location) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_location_Location', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_view_MotionEvent) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_view_MotionEvent', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_graphics_drawable_Drawable) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_graphics_drawable_Drawable', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_widget_FrameLayout) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_widget_FrameLayout', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_widget_TextView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_widget_TextView', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_widget_LinearLayout) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_widget_LinearLayout', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_widget_RelativeLayout) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_widget_RelativeLayout', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_os_Parcelable) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_os_Parcelable', {'refId': (this as Ref).refId});
+      return result;
+    }
+    else if (T == android_util_Pair) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_util_Pair', {'refId': (this as Ref).refId});
+      return result;
+    }
   }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_UIHttpType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIHttpType', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_UIGPSStatus() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIGPSStatus', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_UIOffType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIOffType', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_SDKInitializer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_SDKInitializer', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_NetworkUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_NetworkUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_k_event() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_k_event', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_animation_AnimationSet() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_AnimationSet', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_animation_Transformation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_Transformation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_animation_RotateAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_RotateAnimation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_animation_Animation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_Animation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_animation_SingleScaleAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_SingleScaleAnimation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_animation_AlphaAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_AlphaAnimation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_animation_ScaleAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_animation_ScaleAnimation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_navi_NaviParaOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_NaviParaOption', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_navi_BaiduMapNavigation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapNavigation', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_navi_IllegalNaviArgumentException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_navi_IllegalNaviArgumentException', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_favorite_FavoriteManager() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_favorite_FavoriteManager', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_favorite_FavoritePoiInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_favorite_FavoritePoiInfo', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_route_BaiduMapRoutePlan() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_route_BaiduMapRoutePlan', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_route_RouteParaOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_route_RouteParaOption', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_DistanceUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_DistanceUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_SpatialRelationUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_SpatialRelationUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_CoordinateConverter() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_CoordinateConverter', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_poi_PoiParaOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_PoiParaOption', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_poi_DispathcPoiData() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_DispathcPoiData', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_poi_BaiduMapPoiSearch() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_OpenClientUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_OpenClientUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_utils_AreaUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_utils_AreaUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_WalkNaviMsg() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_WalkNaviMsg', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_BMapManager() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_BMapManager', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_OpenLogUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_OpenLogUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_m_AppUI() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_m_AppUI', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_common_SysOSUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_SysOSUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_common_Logger() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_Logger', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_common_BaiduMapSDKException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_BaiduMapSDKException', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_common_EnvironmentUtilities() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_EnvironmentUtilities', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_common_AppTools() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_common_AppTools', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Polygon() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Polygon', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_BitmapDescriptor() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptor', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_HeatMap_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_HeatMap_Builder', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_PolygonHoleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_PolygonHoleOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_FileTileProvider() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_FileTileProvider', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_CircleHoleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_CircleHoleOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Text() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Text', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapPoi() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapPoi', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_UiSettings() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_UiSettings', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapStatusUpdateFactory() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdateFactory', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_SwipeDismissTouchListener() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissTouchListener', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_BitmapDescriptorFactory() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptorFactory', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapViewLayoutParams_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapViewLayoutParams_Builder', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_DotOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_DotOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_UrlTileProvider() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_UrlTileProvider', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MyLocationData_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MyLocationData_Builder', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_PolylineOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_PolylineOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Tile() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Tile', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_WinRound() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_WinRound', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Gradient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Gradient', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_GroundOverlayOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlayOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_GroundOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlay', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MarkerOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MarkerOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapCustomStyleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapCustomStyleOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Stroke() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Stroke', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Arc() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Arc', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_OverlayOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_OverlayOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Circle() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Circle', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_PolygonOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_PolygonOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_WeightedLatLng() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_WeightedLatLng', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_SwipeDismissView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Dot() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Dot', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_ArcOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_ArcOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_InfoWindow() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_InfoWindow', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Projection() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Projection', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_CircleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_CircleOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapBaseIndoorMapInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapBaseIndoorMapInfo', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_ItemizedOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_ItemizedOverlay', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapStatusUpdate() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdate', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_BaiduMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BaiduMap', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_TextureMapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TextureMapView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Overlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Overlay', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapStatus() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatus', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_HoleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_HoleOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_HeatMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_HeatMap', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapStatus_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapStatus_Builder', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MyLocationConfiguration() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MyLocationConfiguration', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Marker() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Marker', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_TileOverlayOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TileOverlayOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_BaiduMapOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_BaiduMapOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_WearMapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_WearMapView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_TextOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TextOptions', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_TileOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_TileOverlay', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_offline_MKOLUpdateElement() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOLUpdateElement', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_offline_OfflineMapUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_OfflineMapUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_offline_MKOLSearchRecord() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOLSearchRecord', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_offline_MKOfflineMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOfflineMap', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MapView', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_Polyline() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_Polyline', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_map_MyLocationData() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_map_MyLocationData', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_d_ResultType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_d_ResultType', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_f_FUN() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_f_FUN', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_http_AsyncHttpClient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_http_AsyncHttpClient', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_http_HttpClient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_http_HttpClient', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_http_HttpClient_ProtoResultCallback() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_http_HttpClient_ProtoResultCallback', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_NetDetectedType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_NetDetectedType', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_LatLngBounds_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds_Builder', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_inner_Point() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_inner_Point', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_inner_MapBound() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_inner_MapBound', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_inner_GeoPoint() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_inner_GeoPoint', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_LatLngBounds() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_LatLng() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_LatLng', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_CoordUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_CoordUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_model_ParcelItem() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_model_ParcelItem', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_VersionInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_VersionInfo', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_JNIInitializer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_JNIInitializer', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_UIMsg_l_ErrorNo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_UIMsg_l_ErrorNo', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapapi_PermissionUtils() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapapi_PermissionUtils', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkvi_VDeviceAPI() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkvi_VDeviceAPI', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkvi_VMsg() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkvi_VMsg', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_lbsapi_auth_LBSAuthManager() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_lbsapi_auth_LBSAuthManager', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_android_bbalbs_common_util_CommonParam() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_android_bbalbs_common_util_CommonParam', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_tools_JNITools() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_tools_JNITools', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_tools_ParcelItem() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_tools_ParcelItem', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_tools_BundleKeySet() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_tools_BundleKeySet', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_util_JNIHandler() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_JNIHandler', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_util_JNIMD5() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_JNIMD5', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_util_JNISysOSAPI() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_JNISysOSAPI', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_util_AppMD5() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_util_AppMD5', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_engine_JNIEngine() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_engine_JNIEngine', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comjni_engine_AppEngine() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comjni_engine_AppEngine', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_NativeLoader() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_NativeLoader', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_util_SysUpdateObservable() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_SysUpdateObservable', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_util_AlgorithmUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_AlgorithmUtil', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_util_CoordTrans() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_CoordTrans', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_util_SyncSysInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_SyncSysInfo', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_util_PermissionCheck() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_util_PermissionCheck', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_location_CoordinateType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_location_CoordinateType', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_map_MessageCenter() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_map_MessageCenter', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_map_VersionInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_map_VersionInfo', {'refId': refId});
-    return result;
-  }
-  
-  Future<bool> iscom_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil', {'refId': refId});
-    return result;
-  }
-  
 
-  Future<mapsdkvi_com_gdi_bgl_android_java_EnvDrawText> asmapsdkvi_com_gdi_bgl_android_java_EnvDrawText() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::asmapsdkvi_com_gdi_bgl_android_java_EnvDrawText', {'refId': refId});
-    return mapsdkvi_com_gdi_bgl_android_java_EnvDrawText()..refId = result;
+  // type cast
+  T as__<T>() {
+    final typeName = T.toString();
+    // jsonable 直接造型 返回
+    if (RegExp('(List<)?(String|int|double)(>)?|(Map<String,(String|int|double)>)').hasMatch(typeName)) {
+      return this as T;
+    }
+    // 如果是Ref类的cast, 那么取其refId, 如果本身是refId, 那么直接使用(int)
+    else if (T == mapsdkvi_com_gdi_bgl_android_java_EnvDrawText) {
+      return (mapsdkvi_com_gdi_bgl_android_java_EnvDrawText()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_Poi) {
+      return (com_baidu_location_Poi()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_Address_Builder) {
+      return (com_baidu_location_Address_Builder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_LocationClientOption) {
+      return (com_baidu_location_LocationClientOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_Address) {
+      return (com_baidu_location_Address()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_BDNotifyListener) {
+      return (com_baidu_location_BDNotifyListener()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_Jni) {
+      return (com_baidu_location_Jni()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_PoiRegion) {
+      return (com_baidu_location_PoiRegion()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_BDAbstractLocationListener) {
+      return (com_baidu_location_BDAbstractLocationListener()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_LLSInterface) {
+      return (com_baidu_location_LLSInterface.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_LocationClient) {
+      return (com_baidu_location_LocationClient()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_indoor_mapversion_IndoorJni) {
+      return (com_baidu_location_indoor_mapversion_IndoorJni()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_location_BDLocation) {
+      return (com_baidu_location_BDLocation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_UIHttpType) {
+      return (com_baidu_mapapi_UIMsg_UIHttpType()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_UIGPSStatus) {
+      return (com_baidu_mapapi_UIMsg_UIGPSStatus()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_UIOffType) {
+      return (com_baidu_mapapi_UIMsg_UIOffType()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg) {
+      return (com_baidu_mapapi_UIMsg()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_SDKInitializer) {
+      return (com_baidu_mapapi_SDKInitializer()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_NetworkUtil) {
+      return (com_baidu_mapapi_NetworkUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_k_event) {
+      return (com_baidu_mapapi_UIMsg_k_event()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_animation_AnimationSet) {
+      return (com_baidu_mapapi_animation_AnimationSet()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_animation_Transformation) {
+      return (com_baidu_mapapi_animation_Transformation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_animation_RotateAnimation) {
+      return (com_baidu_mapapi_animation_RotateAnimation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_animation_Animation) {
+      return (com_baidu_mapapi_animation_Animation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_animation_SingleScaleAnimation) {
+      return (com_baidu_mapapi_animation_SingleScaleAnimation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_animation_AlphaAnimation) {
+      return (com_baidu_mapapi_animation_AlphaAnimation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_animation_ScaleAnimation) {
+      return (com_baidu_mapapi_animation_ScaleAnimation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException) {
+      return (com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_navi_NaviParaOption) {
+      return (com_baidu_mapapi_navi_NaviParaOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_navi_BaiduMapNavigation) {
+      return (com_baidu_mapapi_navi_BaiduMapNavigation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_navi_IllegalNaviArgumentException) {
+      return (com_baidu_mapapi_navi_IllegalNaviArgumentException()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_favorite_FavoriteManager) {
+      return (com_baidu_mapapi_favorite_FavoriteManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_favorite_FavoritePoiInfo) {
+      return (com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_route_BaiduMapRoutePlan) {
+      return (com_baidu_mapapi_utils_route_BaiduMapRoutePlan()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException) {
+      return (com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_route_RouteParaOption) {
+      return (com_baidu_mapapi_utils_route_RouteParaOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_DistanceUtil) {
+      return (com_baidu_mapapi_utils_DistanceUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_SpatialRelationUtil) {
+      return (com_baidu_mapapi_utils_SpatialRelationUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_CoordinateConverter) {
+      return (com_baidu_mapapi_utils_CoordinateConverter()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_PoiParaOption) {
+      return (com_baidu_mapapi_utils_poi_PoiParaOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_DispathcPoiData) {
+      return (com_baidu_mapapi_utils_poi_DispathcPoiData()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException) {
+      return (com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_poi_BaiduMapPoiSearch) {
+      return (com_baidu_mapapi_utils_poi_BaiduMapPoiSearch()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_OpenClientUtil) {
+      return (com_baidu_mapapi_utils_OpenClientUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_utils_AreaUtil) {
+      return (com_baidu_mapapi_utils_AreaUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_WalkNaviMsg) {
+      return (com_baidu_mapapi_UIMsg_WalkNaviMsg()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_BMapManager) {
+      return (com_baidu_mapapi_BMapManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionSearch) {
+      return (com_baidu_mapapi_search_sug_SuggestionSearch()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionResult) {
+      return (com_baidu_mapapi_search_sug_SuggestionResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo) {
+      return (com_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_sug_SuggestionSearchOption) {
+      return (com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineResult_BusStep) {
+      return (com_baidu_mapapi_search_busline_BusLineResult_BusStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineSearchOption) {
+      return (com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineResult_BusStation) {
+      return (com_baidu_mapapi_search_busline_BusLineResult_BusStation()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineSearch) {
+      return (com_baidu_mapapi_search_busline_BusLineSearch()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_busline_BusLineResult) {
+      return (com_baidu_mapapi_search_busline_BusLineResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_PriceInfo) {
+      return (com_baidu_mapapi_search_core_PriceInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_TransitBaseInfo) {
+      return (com_baidu_mapapi_search_core_TransitBaseInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_TransitResultNode) {
+      return (com_baidu_mapapi_search_core_TransitResultNode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_RouteLine) {
+      return (com_baidu_mapapi_search_core_RouteLine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo) {
+      return (com_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_SearchResult) {
+      return (com_baidu_mapapi_search_core_SearchResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiInfo) {
+      return (com_baidu_mapapi_search_core_PoiInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_RouteStep) {
+      return (com_baidu_mapapi_search_core_RouteStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_TaxiInfo) {
+      return (com_baidu_mapapi_search_core_TaxiInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiDetailInfo) {
+      return (com_baidu_mapapi_search_core_PoiDetailInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_PlaneInfo) {
+      return (com_baidu_mapapi_search_core_PlaneInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_TrainInfo) {
+      return (com_baidu_mapapi_search_core_TrainInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_RouteNode) {
+      return (com_baidu_mapapi_search_core_RouteNode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_CityInfo) {
+      return (com_baidu_mapapi_search_core_CityInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_BusInfo) {
+      return (com_baidu_mapapi_search_core_BusInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_PoiChildrenInfo) {
+      return (com_baidu_mapapi_search_core_PoiChildrenInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_VehicleInfo) {
+      return (com_baidu_mapapi_search_core_VehicleInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_core_CoachInfo) {
+      return (com_baidu_mapapi_search_core_CoachInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode) {
+      return (com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRoutePlanOption) {
+      return (com_baidu_mapapi_search_route_BikingRoutePlanOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition) {
+      return (com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRouteLine) {
+      return (com_baidu_mapapi_search_route_TransitRouteLine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRouteLine_TransitStep) {
+      return (com_baidu_mapapi_search_route_TransitRouteLine_TransitStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRouteResult) {
+      return (com_baidu_mapapi_search_route_TransitRouteResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteResult) {
+      return (com_baidu_mapapi_search_route_MassTransitRouteResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep) {
+      return (com_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRouteLine) {
+      return (com_baidu_mapapi_search_route_BikingRouteLine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteLine) {
+      return (com_baidu_mapapi_search_route_IndoorRouteLine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_RoutePlanSearch) {
+      return (com_baidu_mapapi_search_route_RoutePlanSearch()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRouteResult) {
+      return (com_baidu_mapapi_search_route_BikingRouteResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_SuggestAddrInfo) {
+      return (com_baidu_mapapi_search_route_SuggestAddrInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_PlanNode) {
+      return (com_baidu_mapapi_search_route_PlanNode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRoutePlanOption) {
+      return (com_baidu_mapapi_search_route_WalkingRoutePlanOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteLine) {
+      return (com_baidu_mapapi_search_route_MassTransitRouteLine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRoutePlanOption) {
+      return (com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_BikingRouteLine_BikingStep) {
+      return (com_baidu_mapapi_search_route_BikingRouteLine_BikingStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRoutePlanOption) {
+      return (com_baidu_mapapi_search_route_IndoorRoutePlanOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep) {
+      return (com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRouteResult) {
+      return (com_baidu_mapapi_search_route_WalkingRouteResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep) {
+      return (com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRouteResult) {
+      return (com_baidu_mapapi_search_route_DrivingRouteResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorRouteResult) {
+      return (com_baidu_mapapi_search_route_IndoorRouteResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_IndoorPlanNode) {
+      return (com_baidu_mapapi_search_route_IndoorPlanNode()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep) {
+      return (com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_TransitRoutePlanOption) {
+      return (com_baidu_mapapi_search_route_TransitRoutePlanOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_WalkingRouteLine) {
+      return (com_baidu_mapapi_search_route_WalkingRouteLine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRoutePlanOption) {
+      return (com_baidu_mapapi_search_route_DrivingRoutePlanOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_route_DrivingRouteLine) {
+      return (com_baidu_mapapi_search_route_DrivingRouteLine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiCitySearchOption) {
+      return (com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiAddrInfo) {
+      return (com_baidu_mapapi_search_poi_PoiAddrInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiIndoorInfo) {
+      return (com_baidu_mapapi_search_poi_PoiIndoorInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiIndoorOption) {
+      return (com_baidu_mapapi_search_poi_PoiIndoorOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiDetailSearchResult) {
+      return (com_baidu_mapapi_search_poi_PoiDetailSearchResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiBoundSearchOption) {
+      return (com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiDetailResult) {
+      return (com_baidu_mapapi_search_poi_PoiDetailResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiFilter) {
+      return (com_baidu_mapapi_search_poi_PoiFilter()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiFilter_Builder) {
+      return (com_baidu_mapapi_search_poi_PoiFilter_Builder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiResult) {
+      return (com_baidu_mapapi_search_poi_PoiResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiSearch) {
+      return (com_baidu_mapapi_search_poi_PoiSearch()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiIndoorResult) {
+      return (com_baidu_mapapi_search_poi_PoiIndoorResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiDetailSearchOption) {
+      return (com_baidu_mapapi_search_poi_PoiDetailSearchOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_poi_PoiNearbySearchOption) {
+      return (com_baidu_mapapi_search_poi_PoiNearbySearchOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_district_DistrictSearchOption) {
+      return (com_baidu_mapapi_search_district_DistrictSearchOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_district_DistrictSearch) {
+      return (com_baidu_mapapi_search_district_DistrictSearch()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_district_DistrictResult) {
+      return (com_baidu_mapapi_search_district_DistrictResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeOption) {
+      return (com_baidu_mapapi_search_geocode_ReverseGeoCodeOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_GeoCodeResult) {
+      return (com_baidu_mapapi_search_geocode_GeoCodeResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_GeoCoder) {
+      return (com_baidu_mapapi_search_geocode_GeoCoder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent) {
+      return (com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeResult) {
+      return (com_baidu_mapapi_search_geocode_ReverseGeoCodeResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo) {
+      return (com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_geocode_GeoCodeOption) {
+      return (com_baidu_mapapi_search_geocode_GeoCodeOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_share_LocationShareURLOption) {
+      return (com_baidu_mapapi_search_share_LocationShareURLOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_share_ShareUrlSearch) {
+      return (com_baidu_mapapi_search_share_ShareUrlSearch()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_share_ShareUrlResult) {
+      return (com_baidu_mapapi_search_share_ShareUrlResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_share_PoiDetailShareURLOption) {
+      return (com_baidu_mapapi_search_share_PoiDetailShareURLOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_search_share_RouteShareURLOption) {
+      return (com_baidu_mapapi_search_share_RouteShareURLOption()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_OpenLogUtil) {
+      return (com_baidu_mapapi_OpenLogUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_m_AppUI) {
+      return (com_baidu_mapapi_UIMsg_m_AppUI()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_common_SysOSUtil) {
+      return (com_baidu_mapapi_common_SysOSUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_common_Logger) {
+      return (com_baidu_mapapi_common_Logger()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_common_BaiduMapSDKException) {
+      return (com_baidu_mapapi_common_BaiduMapSDKException()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_common_EnvironmentUtilities) {
+      return (com_baidu_mapapi_common_EnvironmentUtilities()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_common_AppTools) {
+      return (com_baidu_mapapi_common_AppTools()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Polygon) {
+      return (com_baidu_mapapi_map_Polygon()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_BitmapDescriptor) {
+      return (com_baidu_mapapi_map_BitmapDescriptor()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_HeatMap_Builder) {
+      return (com_baidu_mapapi_map_HeatMap_Builder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_PolygonHoleOptions) {
+      return (com_baidu_mapapi_map_PolygonHoleOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_FileTileProvider) {
+      return (com_baidu_mapapi_map_FileTileProvider()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_CircleHoleOptions) {
+      return (com_baidu_mapapi_map_CircleHoleOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Text) {
+      return (com_baidu_mapapi_map_Text()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapPoi) {
+      return (com_baidu_mapapi_map_MapPoi()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_UiSettings) {
+      return (com_baidu_mapapi_map_UiSettings()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatusUpdateFactory) {
+      return (com_baidu_mapapi_map_MapStatusUpdateFactory()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_SwipeDismissTouchListener) {
+      return (com_baidu_mapapi_map_SwipeDismissTouchListener()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_BitmapDescriptorFactory) {
+      return (com_baidu_mapapi_map_BitmapDescriptorFactory()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapViewLayoutParams_Builder) {
+      return (com_baidu_mapapi_map_MapViewLayoutParams_Builder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_DotOptions) {
+      return (com_baidu_mapapi_map_DotOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_UrlTileProvider) {
+      return (com_baidu_mapapi_map_UrlTileProvider()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MyLocationData_Builder) {
+      return (com_baidu_mapapi_map_MyLocationData_Builder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_PolylineOptions) {
+      return (com_baidu_mapapi_map_PolylineOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Tile) {
+      return (com_baidu_mapapi_map_Tile()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_WinRound) {
+      return (com_baidu_mapapi_map_WinRound()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Gradient) {
+      return (com_baidu_mapapi_map_Gradient()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_TileProvider) {
+      return (com_baidu_mapapi_map_TileProvider.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_GroundOverlayOptions) {
+      return (com_baidu_mapapi_map_GroundOverlayOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_GroundOverlay) {
+      return (com_baidu_mapapi_map_GroundOverlay()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MarkerOptions) {
+      return (com_baidu_mapapi_map_MarkerOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapCustomStyleOptions) {
+      return (com_baidu_mapapi_map_MapCustomStyleOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Stroke) {
+      return (com_baidu_mapapi_map_Stroke()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Arc) {
+      return (com_baidu_mapapi_map_Arc()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_OverlayOptions) {
+      return (com_baidu_mapapi_map_OverlayOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Circle) {
+      return (com_baidu_mapapi_map_Circle()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_PolygonOptions) {
+      return (com_baidu_mapapi_map_PolygonOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_WeightedLatLng) {
+      return (com_baidu_mapapi_map_WeightedLatLng()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_SwipeDismissView) {
+      return (com_baidu_mapapi_map_SwipeDismissView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Dot) {
+      return (com_baidu_mapapi_map_Dot()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_ArcOptions) {
+      return (com_baidu_mapapi_map_ArcOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_InfoWindow) {
+      return (com_baidu_mapapi_map_InfoWindow()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Projection) {
+      return (com_baidu_mapapi_map_Projection()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_CircleOptions) {
+      return (com_baidu_mapapi_map_CircleOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapBaseIndoorMapInfo) {
+      return (com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_ItemizedOverlay) {
+      return (com_baidu_mapapi_map_ItemizedOverlay()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatusUpdate) {
+      return (com_baidu_mapapi_map_MapStatusUpdate()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_BaiduMap) {
+      return (com_baidu_mapapi_map_BaiduMap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_TextureMapView) {
+      return (com_baidu_mapapi_map_TextureMapView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Overlay) {
+      return (com_baidu_mapapi_map_Overlay()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatus) {
+      return (com_baidu_mapapi_map_MapStatus()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_HoleOptions) {
+      return (com_baidu_mapapi_map_HoleOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_HeatMap) {
+      return (com_baidu_mapapi_map_HeatMap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapStatus_Builder) {
+      return (com_baidu_mapapi_map_MapStatus_Builder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MyLocationConfiguration) {
+      return (com_baidu_mapapi_map_MyLocationConfiguration()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Marker) {
+      return (com_baidu_mapapi_map_Marker()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_TileOverlayOptions) {
+      return (com_baidu_mapapi_map_TileOverlayOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_BaiduMapOptions) {
+      return (com_baidu_mapapi_map_BaiduMapOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_WearMapView) {
+      return (com_baidu_mapapi_map_WearMapView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_TextOptions) {
+      return (com_baidu_mapapi_map_TextOptions()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_TileOverlay) {
+      return (com_baidu_mapapi_map_TileOverlay()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_offline_MKOLUpdateElement) {
+      return (com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_offline_OfflineMapUtil) {
+      return (com_baidu_mapapi_map_offline_OfflineMapUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_offline_MKOLSearchRecord) {
+      return (com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_offline_MKOfflineMap) {
+      return (com_baidu_mapapi_map_offline_MKOfflineMap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MapView) {
+      return (com_baidu_mapapi_map_MapView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_Polyline) {
+      return (com_baidu_mapapi_map_Polyline()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_map_MyLocationData) {
+      return (com_baidu_mapapi_map_MyLocationData()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_d_ResultType) {
+      return (com_baidu_mapapi_UIMsg_d_ResultType()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_f_FUN) {
+      return (com_baidu_mapapi_UIMsg_f_FUN()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_http_AsyncHttpClient) {
+      return (com_baidu_mapapi_http_AsyncHttpClient()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_http_HttpClient) {
+      return (com_baidu_mapapi_http_HttpClient()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_http_HttpClient_ProtoResultCallback) {
+      return (com_baidu_mapapi_http_HttpClient_ProtoResultCallback()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_NetDetectedType) {
+      return (com_baidu_mapapi_UIMsg_NetDetectedType()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudEvent) {
+      return (com_baidu_mapapi_cloud_CloudEvent()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudManager) {
+      return (com_baidu_mapapi_cloud_CloudManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_BaseCloudSearchInfo) {
+      return (com_baidu_mapapi_cloud_BaseCloudSearchInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_LocalSearchInfo) {
+      return (com_baidu_mapapi_cloud_LocalSearchInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudPoiInfo) {
+      return (com_baidu_mapapi_cloud_CloudPoiInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_BaseSearchResult) {
+      return (com_baidu_mapapi_cloud_BaseSearchResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_BaseSearchInfo) {
+      return (com_baidu_mapapi_cloud_BaseSearchInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudEvent_ErrorNo) {
+      return (com_baidu_mapapi_cloud_CloudEvent_ErrorNo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudSearchResult) {
+      return (com_baidu_mapapi_cloud_CloudSearchResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo) {
+      return (com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents) {
+      return (com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcResult) {
+      return (com_baidu_mapapi_cloud_CloudRgcResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_DetailSearchResult) {
+      return (com_baidu_mapapi_cloud_DetailSearchResult()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_DetailSearchInfo) {
+      return (com_baidu_mapapi_cloud_DetailSearchInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_VersionInfo) {
+      return (com_baidu_mapapi_cloud_VersionInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_CloudRgcInfo) {
+      return (com_baidu_mapapi_cloud_CloudRgcInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_NearbySearchInfo) {
+      return (com_baidu_mapapi_cloud_NearbySearchInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_cloud_BoundSearchInfo) {
+      return (com_baidu_mapapi_cloud_BoundSearchInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_LatLngBounds_Builder) {
+      return (com_baidu_mapapi_model_LatLngBounds_Builder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_inner_Point) {
+      return (com_baidu_mapapi_model_inner_Point()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_inner_MapBound) {
+      return (com_baidu_mapapi_model_inner_MapBound()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_inner_GeoPoint) {
+      return (com_baidu_mapapi_model_inner_GeoPoint()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_LatLngBounds) {
+      return (com_baidu_mapapi_model_LatLngBounds()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_LatLng) {
+      return (com_baidu_mapapi_model_LatLng()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_CoordUtil) {
+      return (com_baidu_mapapi_model_CoordUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_model_ParcelItem) {
+      return (com_baidu_mapapi_model_ParcelItem()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_VersionInfo) {
+      return (com_baidu_mapapi_VersionInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_JNIInitializer) {
+      return (com_baidu_mapapi_JNIInitializer()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_UIMsg_l_ErrorNo) {
+      return (com_baidu_mapapi_UIMsg_l_ErrorNo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapapi_PermissionUtils) {
+      return (com_baidu_mapapi_PermissionUtils()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_platform_comjni_map_cloud_ICloudCenter) {
+      return (com_baidu_platform_comjni_map_cloud_ICloudCenter.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_platform_core_busline_IBusLineSearch) {
+      return (com_baidu_platform_core_busline_IBusLineSearch.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_platform_domain_HttpsEnable) {
+      return (com_baidu_platform_domain_HttpsEnable()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkvi_VDeviceAPI) {
+      return (com_baidu_mapsdkvi_VDeviceAPI()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkvi_VMsg) {
+      return (com_baidu_mapsdkvi_VMsg()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_geofence_GeoFenceClient) {
+      return (com_baidu_geofence_GeoFenceClient()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_geofence_model_DistrictItem) {
+      return (com_baidu_geofence_model_DistrictItem()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_geofence_model_DPoint) {
+      return (com_baidu_geofence_model_DPoint()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_geofence_GeoFence) {
+      return (com_baidu_geofence_GeoFence()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_geofence_PoiItem) {
+      return (com_baidu_geofence_PoiItem()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_lbsapi_auth_LBSAuthManager) {
+      return (com_baidu_lbsapi_auth_LBSAuthManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_lbsapi_auth_LBSAuthManagerListener) {
+      return (com_baidu_lbsapi_auth_LBSAuthManagerListener.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_tools_JNITools) {
+      return (com_baidu_mapsdkplatform_comjni_tools_JNITools()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_tools_ParcelItem) {
+      return (com_baidu_mapsdkplatform_comjni_tools_ParcelItem()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_tools_BundleKeySet) {
+      return (com_baidu_mapsdkplatform_comjni_tools_BundleKeySet()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_JNIHandler) {
+      return (com_baidu_mapsdkplatform_comjni_util_JNIHandler()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_JNIMD5) {
+      return (com_baidu_mapsdkplatform_comjni_util_JNIMD5()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI) {
+      return (com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_util_AppMD5) {
+      return (com_baidu_mapsdkplatform_comjni_util_AppMD5()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback) {
+      return (com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap) {
+      return (com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache) {
+      return (com_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite) {
+      return (com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_engine_JNIEngine) {
+      return (com_baidu_mapsdkplatform_comjni_engine_JNIEngine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comjni_engine_AppEngine) {
+      return (com_baidu_mapsdkplatform_comjni_engine_AppEngine()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_NativeLoader) {
+      return (com_baidu_mapsdkplatform_comapi_NativeLoader()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable) {
+      return (com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil) {
+      return (com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_CoordTrans) {
+      return (com_baidu_mapsdkplatform_comapi_util_CoordTrans()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_SyncSysInfo) {
+      return (com_baidu_mapsdkplatform_comapi_util_SyncSysInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_PermissionCheck) {
+      return (com_baidu_mapsdkplatform_comapi_util_PermissionCheck()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver) {
+      return (com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi) {
+      return (com_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_location_CoordinateType) {
+      return (com_baidu_mapsdkplatform_comapi_location_CoordinateType()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_map_MessageCenter) {
+      return (com_baidu_mapsdkplatform_comapi_map_MessageCenter()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_map_VersionInfo) {
+      return (com_baidu_mapsdkplatform_comapi_map_VersionInfo()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == com_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil) {
+      return (com_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_content_Context) {
+      return (android_content_Context()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_content_Intent) {
+      return (android_content_Intent()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_content_ContentProvider) {
+      return (android_content_ContentProvider()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_app_Application) {
+      return (android_app_Application()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_app_Notification) {
+      return (android_app_Notification()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_app_Activity) {
+      return (android_app_Activity()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_app_PendingIntent) {
+      return (android_app_PendingIntent()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_os_Bundle) {
+      return (android_os_Bundle()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_os_Binder) {
+      return (android_os_Binder()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_view_View) {
+      return (android_view_View()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_view_SurfaceView) {
+      return (android_view_SurfaceView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_view_View_OnApplyWindowInsetsListener) {
+      return (android_view_View_OnApplyWindowInsetsListener.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_view_ViewGroup) {
+      return (android_view_ViewGroup()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_graphics_Point) {
+      return (android_graphics_Point()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_graphics_PointF) {
+      return (android_graphics_PointF()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_graphics_Bitmap) {
+      return (android_graphics_Bitmap()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_widget_ImageView) {
+      return (android_widget_ImageView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == java_io_Serializable) {
+      return (java_io_Serializable.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == java_io_File) {
+      return (java_io_File()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_location_Location) {
+      return (android_location_Location()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_view_MotionEvent) {
+      return (android_view_MotionEvent()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_graphics_drawable_Drawable) {
+      return (android_graphics_drawable_Drawable()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_widget_FrameLayout) {
+      return (android_widget_FrameLayout()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_widget_TextView) {
+      return (android_widget_TextView()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_widget_LinearLayout) {
+      return (android_widget_LinearLayout()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_widget_RelativeLayout) {
+      return (android_widget_RelativeLayout()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_os_Parcelable) {
+      return (android_os_Parcelable.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == android_util_Pair) {
+      return (android_util_Pair()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
+    }
   }
-  
-  Future<com_baidu_mapapi_UIMsg_UIHttpType> ascom_baidu_mapapi_UIMsg_UIHttpType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_UIHttpType', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_UIHttpType()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_UIGPSStatus> ascom_baidu_mapapi_UIMsg_UIGPSStatus() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_UIGPSStatus', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_UIGPSStatus()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_UIOffType> ascom_baidu_mapapi_UIMsg_UIOffType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_UIOffType', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_UIOffType()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg> ascom_baidu_mapapi_UIMsg() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg', {'refId': refId});
-    return com_baidu_mapapi_UIMsg()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_SDKInitializer> ascom_baidu_mapapi_SDKInitializer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_SDKInitializer', {'refId': refId});
-    return com_baidu_mapapi_SDKInitializer()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_NetworkUtil> ascom_baidu_mapapi_NetworkUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_NetworkUtil', {'refId': refId});
-    return com_baidu_mapapi_NetworkUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_k_event> ascom_baidu_mapapi_UIMsg_k_event() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_k_event', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_k_event()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_animation_AnimationSet> ascom_baidu_mapapi_animation_AnimationSet() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_animation_AnimationSet', {'refId': refId});
-    return com_baidu_mapapi_animation_AnimationSet()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_animation_Transformation> ascom_baidu_mapapi_animation_Transformation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_animation_Transformation', {'refId': refId});
-    return com_baidu_mapapi_animation_Transformation()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_animation_RotateAnimation> ascom_baidu_mapapi_animation_RotateAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_animation_RotateAnimation', {'refId': refId});
-    return com_baidu_mapapi_animation_RotateAnimation()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_animation_Animation> ascom_baidu_mapapi_animation_Animation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_animation_Animation', {'refId': refId});
-    return com_baidu_mapapi_animation_Animation()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_animation_SingleScaleAnimation> ascom_baidu_mapapi_animation_SingleScaleAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_animation_SingleScaleAnimation', {'refId': refId});
-    return com_baidu_mapapi_animation_SingleScaleAnimation()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_animation_AlphaAnimation> ascom_baidu_mapapi_animation_AlphaAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_animation_AlphaAnimation', {'refId': refId});
-    return com_baidu_mapapi_animation_AlphaAnimation()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_animation_ScaleAnimation> ascom_baidu_mapapi_animation_ScaleAnimation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_animation_ScaleAnimation', {'refId': refId});
-    return com_baidu_mapapi_animation_ScaleAnimation()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException> ascom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException', {'refId': refId});
-    return com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_navi_NaviParaOption> ascom_baidu_mapapi_navi_NaviParaOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_navi_NaviParaOption', {'refId': refId});
-    return com_baidu_mapapi_navi_NaviParaOption()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_navi_BaiduMapNavigation> ascom_baidu_mapapi_navi_BaiduMapNavigation() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_navi_BaiduMapNavigation', {'refId': refId});
-    return com_baidu_mapapi_navi_BaiduMapNavigation()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_navi_IllegalNaviArgumentException> ascom_baidu_mapapi_navi_IllegalNaviArgumentException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_navi_IllegalNaviArgumentException', {'refId': refId});
-    return com_baidu_mapapi_navi_IllegalNaviArgumentException()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_favorite_FavoriteManager> ascom_baidu_mapapi_favorite_FavoriteManager() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_favorite_FavoriteManager', {'refId': refId});
-    return com_baidu_mapapi_favorite_FavoriteManager()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_favorite_FavoritePoiInfo> ascom_baidu_mapapi_favorite_FavoritePoiInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_favorite_FavoritePoiInfo', {'refId': refId});
-    return com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_route_BaiduMapRoutePlan> ascom_baidu_mapapi_utils_route_BaiduMapRoutePlan() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_route_BaiduMapRoutePlan', {'refId': refId});
-    return com_baidu_mapapi_utils_route_BaiduMapRoutePlan()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException> ascom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException', {'refId': refId});
-    return com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_route_RouteParaOption> ascom_baidu_mapapi_utils_route_RouteParaOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_route_RouteParaOption', {'refId': refId});
-    return com_baidu_mapapi_utils_route_RouteParaOption()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_DistanceUtil> ascom_baidu_mapapi_utils_DistanceUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_DistanceUtil', {'refId': refId});
-    return com_baidu_mapapi_utils_DistanceUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_SpatialRelationUtil> ascom_baidu_mapapi_utils_SpatialRelationUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_SpatialRelationUtil', {'refId': refId});
-    return com_baidu_mapapi_utils_SpatialRelationUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_CoordinateConverter> ascom_baidu_mapapi_utils_CoordinateConverter() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_CoordinateConverter', {'refId': refId});
-    return com_baidu_mapapi_utils_CoordinateConverter()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_poi_PoiParaOption> ascom_baidu_mapapi_utils_poi_PoiParaOption() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_poi_PoiParaOption', {'refId': refId});
-    return com_baidu_mapapi_utils_poi_PoiParaOption()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_poi_DispathcPoiData> ascom_baidu_mapapi_utils_poi_DispathcPoiData() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_poi_DispathcPoiData', {'refId': refId});
-    return com_baidu_mapapi_utils_poi_DispathcPoiData()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException> ascom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException', {'refId': refId});
-    return com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_poi_BaiduMapPoiSearch> ascom_baidu_mapapi_utils_poi_BaiduMapPoiSearch() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_poi_BaiduMapPoiSearch', {'refId': refId});
-    return com_baidu_mapapi_utils_poi_BaiduMapPoiSearch()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_OpenClientUtil> ascom_baidu_mapapi_utils_OpenClientUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_OpenClientUtil', {'refId': refId});
-    return com_baidu_mapapi_utils_OpenClientUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_utils_AreaUtil> ascom_baidu_mapapi_utils_AreaUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_utils_AreaUtil', {'refId': refId});
-    return com_baidu_mapapi_utils_AreaUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_WalkNaviMsg> ascom_baidu_mapapi_UIMsg_WalkNaviMsg() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_WalkNaviMsg', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_WalkNaviMsg()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_BMapManager> ascom_baidu_mapapi_BMapManager() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_BMapManager', {'refId': refId});
-    return com_baidu_mapapi_BMapManager()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_OpenLogUtil> ascom_baidu_mapapi_OpenLogUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_OpenLogUtil', {'refId': refId});
-    return com_baidu_mapapi_OpenLogUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_m_AppUI> ascom_baidu_mapapi_UIMsg_m_AppUI() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_m_AppUI', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_m_AppUI()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_common_SysOSUtil> ascom_baidu_mapapi_common_SysOSUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_common_SysOSUtil', {'refId': refId});
-    return com_baidu_mapapi_common_SysOSUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_common_Logger> ascom_baidu_mapapi_common_Logger() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_common_Logger', {'refId': refId});
-    return com_baidu_mapapi_common_Logger()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_common_BaiduMapSDKException> ascom_baidu_mapapi_common_BaiduMapSDKException() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_common_BaiduMapSDKException', {'refId': refId});
-    return com_baidu_mapapi_common_BaiduMapSDKException()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_common_EnvironmentUtilities> ascom_baidu_mapapi_common_EnvironmentUtilities() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_common_EnvironmentUtilities', {'refId': refId});
-    return com_baidu_mapapi_common_EnvironmentUtilities()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_common_AppTools> ascom_baidu_mapapi_common_AppTools() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_common_AppTools', {'refId': refId});
-    return com_baidu_mapapi_common_AppTools()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Polygon> ascom_baidu_mapapi_map_Polygon() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Polygon', {'refId': refId});
-    return com_baidu_mapapi_map_Polygon()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_BitmapDescriptor> ascom_baidu_mapapi_map_BitmapDescriptor() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_BitmapDescriptor', {'refId': refId});
-    return com_baidu_mapapi_map_BitmapDescriptor()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_HeatMap_Builder> ascom_baidu_mapapi_map_HeatMap_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_HeatMap_Builder', {'refId': refId});
-    return com_baidu_mapapi_map_HeatMap_Builder()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_PolygonHoleOptions> ascom_baidu_mapapi_map_PolygonHoleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_PolygonHoleOptions', {'refId': refId});
-    return com_baidu_mapapi_map_PolygonHoleOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_FileTileProvider> ascom_baidu_mapapi_map_FileTileProvider() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_FileTileProvider', {'refId': refId});
-    return com_baidu_mapapi_map_FileTileProvider()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_CircleHoleOptions> ascom_baidu_mapapi_map_CircleHoleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_CircleHoleOptions', {'refId': refId});
-    return com_baidu_mapapi_map_CircleHoleOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Text> ascom_baidu_mapapi_map_Text() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Text', {'refId': refId});
-    return com_baidu_mapapi_map_Text()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapPoi> ascom_baidu_mapapi_map_MapPoi() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapPoi', {'refId': refId});
-    return com_baidu_mapapi_map_MapPoi()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_UiSettings> ascom_baidu_mapapi_map_UiSettings() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_UiSettings', {'refId': refId});
-    return com_baidu_mapapi_map_UiSettings()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapStatusUpdateFactory> ascom_baidu_mapapi_map_MapStatusUpdateFactory() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapStatusUpdateFactory', {'refId': refId});
-    return com_baidu_mapapi_map_MapStatusUpdateFactory()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_SwipeDismissTouchListener> ascom_baidu_mapapi_map_SwipeDismissTouchListener() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_SwipeDismissTouchListener', {'refId': refId});
-    return com_baidu_mapapi_map_SwipeDismissTouchListener()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_BitmapDescriptorFactory> ascom_baidu_mapapi_map_BitmapDescriptorFactory() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_BitmapDescriptorFactory', {'refId': refId});
-    return com_baidu_mapapi_map_BitmapDescriptorFactory()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapViewLayoutParams_Builder> ascom_baidu_mapapi_map_MapViewLayoutParams_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapViewLayoutParams_Builder', {'refId': refId});
-    return com_baidu_mapapi_map_MapViewLayoutParams_Builder()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_DotOptions> ascom_baidu_mapapi_map_DotOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_DotOptions', {'refId': refId});
-    return com_baidu_mapapi_map_DotOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_UrlTileProvider> ascom_baidu_mapapi_map_UrlTileProvider() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_UrlTileProvider', {'refId': refId});
-    return com_baidu_mapapi_map_UrlTileProvider()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MyLocationData_Builder> ascom_baidu_mapapi_map_MyLocationData_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MyLocationData_Builder', {'refId': refId});
-    return com_baidu_mapapi_map_MyLocationData_Builder()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_PolylineOptions> ascom_baidu_mapapi_map_PolylineOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_PolylineOptions', {'refId': refId});
-    return com_baidu_mapapi_map_PolylineOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Tile> ascom_baidu_mapapi_map_Tile() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Tile', {'refId': refId});
-    return com_baidu_mapapi_map_Tile()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_WinRound> ascom_baidu_mapapi_map_WinRound() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_WinRound', {'refId': refId});
-    return com_baidu_mapapi_map_WinRound()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Gradient> ascom_baidu_mapapi_map_Gradient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Gradient', {'refId': refId});
-    return com_baidu_mapapi_map_Gradient()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_GroundOverlayOptions> ascom_baidu_mapapi_map_GroundOverlayOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_GroundOverlayOptions', {'refId': refId});
-    return com_baidu_mapapi_map_GroundOverlayOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_GroundOverlay> ascom_baidu_mapapi_map_GroundOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_GroundOverlay', {'refId': refId});
-    return com_baidu_mapapi_map_GroundOverlay()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MarkerOptions> ascom_baidu_mapapi_map_MarkerOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MarkerOptions', {'refId': refId});
-    return com_baidu_mapapi_map_MarkerOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapCustomStyleOptions> ascom_baidu_mapapi_map_MapCustomStyleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapCustomStyleOptions', {'refId': refId});
-    return com_baidu_mapapi_map_MapCustomStyleOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Stroke> ascom_baidu_mapapi_map_Stroke() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Stroke', {'refId': refId});
-    return com_baidu_mapapi_map_Stroke()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Arc> ascom_baidu_mapapi_map_Arc() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Arc', {'refId': refId});
-    return com_baidu_mapapi_map_Arc()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_OverlayOptions> ascom_baidu_mapapi_map_OverlayOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_OverlayOptions', {'refId': refId});
-    return com_baidu_mapapi_map_OverlayOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Circle> ascom_baidu_mapapi_map_Circle() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Circle', {'refId': refId});
-    return com_baidu_mapapi_map_Circle()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_PolygonOptions> ascom_baidu_mapapi_map_PolygonOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_PolygonOptions', {'refId': refId});
-    return com_baidu_mapapi_map_PolygonOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_WeightedLatLng> ascom_baidu_mapapi_map_WeightedLatLng() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_WeightedLatLng', {'refId': refId});
-    return com_baidu_mapapi_map_WeightedLatLng()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_SwipeDismissView> ascom_baidu_mapapi_map_SwipeDismissView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_SwipeDismissView', {'refId': refId});
-    return com_baidu_mapapi_map_SwipeDismissView()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Dot> ascom_baidu_mapapi_map_Dot() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Dot', {'refId': refId});
-    return com_baidu_mapapi_map_Dot()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_ArcOptions> ascom_baidu_mapapi_map_ArcOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_ArcOptions', {'refId': refId});
-    return com_baidu_mapapi_map_ArcOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_InfoWindow> ascom_baidu_mapapi_map_InfoWindow() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_InfoWindow', {'refId': refId});
-    return com_baidu_mapapi_map_InfoWindow()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Projection> ascom_baidu_mapapi_map_Projection() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Projection', {'refId': refId});
-    return com_baidu_mapapi_map_Projection()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_CircleOptions> ascom_baidu_mapapi_map_CircleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_CircleOptions', {'refId': refId});
-    return com_baidu_mapapi_map_CircleOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapBaseIndoorMapInfo> ascom_baidu_mapapi_map_MapBaseIndoorMapInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapBaseIndoorMapInfo', {'refId': refId});
-    return com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_ItemizedOverlay> ascom_baidu_mapapi_map_ItemizedOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_ItemizedOverlay', {'refId': refId});
-    return com_baidu_mapapi_map_ItemizedOverlay()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapStatusUpdate> ascom_baidu_mapapi_map_MapStatusUpdate() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapStatusUpdate', {'refId': refId});
-    return com_baidu_mapapi_map_MapStatusUpdate()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_BaiduMap> ascom_baidu_mapapi_map_BaiduMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_BaiduMap', {'refId': refId});
-    return com_baidu_mapapi_map_BaiduMap()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_TextureMapView> ascom_baidu_mapapi_map_TextureMapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_TextureMapView', {'refId': refId});
-    return com_baidu_mapapi_map_TextureMapView()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Overlay> ascom_baidu_mapapi_map_Overlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Overlay', {'refId': refId});
-    return com_baidu_mapapi_map_Overlay()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapStatus> ascom_baidu_mapapi_map_MapStatus() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapStatus', {'refId': refId});
-    return com_baidu_mapapi_map_MapStatus()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_HoleOptions> ascom_baidu_mapapi_map_HoleOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_HoleOptions', {'refId': refId});
-    return com_baidu_mapapi_map_HoleOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_HeatMap> ascom_baidu_mapapi_map_HeatMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_HeatMap', {'refId': refId});
-    return com_baidu_mapapi_map_HeatMap()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapStatus_Builder> ascom_baidu_mapapi_map_MapStatus_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapStatus_Builder', {'refId': refId});
-    return com_baidu_mapapi_map_MapStatus_Builder()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MyLocationConfiguration> ascom_baidu_mapapi_map_MyLocationConfiguration() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MyLocationConfiguration', {'refId': refId});
-    return com_baidu_mapapi_map_MyLocationConfiguration()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Marker> ascom_baidu_mapapi_map_Marker() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Marker', {'refId': refId});
-    return com_baidu_mapapi_map_Marker()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_TileOverlayOptions> ascom_baidu_mapapi_map_TileOverlayOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_TileOverlayOptions', {'refId': refId});
-    return com_baidu_mapapi_map_TileOverlayOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_BaiduMapOptions> ascom_baidu_mapapi_map_BaiduMapOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_BaiduMapOptions', {'refId': refId});
-    return com_baidu_mapapi_map_BaiduMapOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_WearMapView> ascom_baidu_mapapi_map_WearMapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_WearMapView', {'refId': refId});
-    return com_baidu_mapapi_map_WearMapView()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_TextOptions> ascom_baidu_mapapi_map_TextOptions() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_TextOptions', {'refId': refId});
-    return com_baidu_mapapi_map_TextOptions()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_TileOverlay> ascom_baidu_mapapi_map_TileOverlay() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_TileOverlay', {'refId': refId});
-    return com_baidu_mapapi_map_TileOverlay()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_offline_MKOLUpdateElement> ascom_baidu_mapapi_map_offline_MKOLUpdateElement() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_offline_MKOLUpdateElement', {'refId': refId});
-    return com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_offline_OfflineMapUtil> ascom_baidu_mapapi_map_offline_OfflineMapUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_offline_OfflineMapUtil', {'refId': refId});
-    return com_baidu_mapapi_map_offline_OfflineMapUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_offline_MKOLSearchRecord> ascom_baidu_mapapi_map_offline_MKOLSearchRecord() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_offline_MKOLSearchRecord', {'refId': refId});
-    return com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_offline_MKOfflineMap> ascom_baidu_mapapi_map_offline_MKOfflineMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_offline_MKOfflineMap', {'refId': refId});
-    return com_baidu_mapapi_map_offline_MKOfflineMap()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MapView> ascom_baidu_mapapi_map_MapView() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MapView', {'refId': refId});
-    return com_baidu_mapapi_map_MapView()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_Polyline> ascom_baidu_mapapi_map_Polyline() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_Polyline', {'refId': refId});
-    return com_baidu_mapapi_map_Polyline()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_map_MyLocationData> ascom_baidu_mapapi_map_MyLocationData() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_map_MyLocationData', {'refId': refId});
-    return com_baidu_mapapi_map_MyLocationData()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_d_ResultType> ascom_baidu_mapapi_UIMsg_d_ResultType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_d_ResultType', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_d_ResultType()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_f_FUN> ascom_baidu_mapapi_UIMsg_f_FUN() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_f_FUN', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_f_FUN()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_http_AsyncHttpClient> ascom_baidu_mapapi_http_AsyncHttpClient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_http_AsyncHttpClient', {'refId': refId});
-    return com_baidu_mapapi_http_AsyncHttpClient()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_http_HttpClient> ascom_baidu_mapapi_http_HttpClient() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_http_HttpClient', {'refId': refId});
-    return com_baidu_mapapi_http_HttpClient()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_http_HttpClient_ProtoResultCallback> ascom_baidu_mapapi_http_HttpClient_ProtoResultCallback() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_http_HttpClient_ProtoResultCallback', {'refId': refId});
-    return com_baidu_mapapi_http_HttpClient_ProtoResultCallback()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_NetDetectedType> ascom_baidu_mapapi_UIMsg_NetDetectedType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_NetDetectedType', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_NetDetectedType()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_LatLngBounds_Builder> ascom_baidu_mapapi_model_LatLngBounds_Builder() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_LatLngBounds_Builder', {'refId': refId});
-    return com_baidu_mapapi_model_LatLngBounds_Builder()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_inner_Point> ascom_baidu_mapapi_model_inner_Point() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_inner_Point', {'refId': refId});
-    return com_baidu_mapapi_model_inner_Point()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_inner_MapBound> ascom_baidu_mapapi_model_inner_MapBound() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_inner_MapBound', {'refId': refId});
-    return com_baidu_mapapi_model_inner_MapBound()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_inner_GeoPoint> ascom_baidu_mapapi_model_inner_GeoPoint() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_inner_GeoPoint', {'refId': refId});
-    return com_baidu_mapapi_model_inner_GeoPoint()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_LatLngBounds> ascom_baidu_mapapi_model_LatLngBounds() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_LatLngBounds', {'refId': refId});
-    return com_baidu_mapapi_model_LatLngBounds()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_LatLng> ascom_baidu_mapapi_model_LatLng() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_LatLng', {'refId': refId});
-    return com_baidu_mapapi_model_LatLng()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_CoordUtil> ascom_baidu_mapapi_model_CoordUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_CoordUtil', {'refId': refId});
-    return com_baidu_mapapi_model_CoordUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_model_ParcelItem> ascom_baidu_mapapi_model_ParcelItem() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_model_ParcelItem', {'refId': refId});
-    return com_baidu_mapapi_model_ParcelItem()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_VersionInfo> ascom_baidu_mapapi_VersionInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_VersionInfo', {'refId': refId});
-    return com_baidu_mapapi_VersionInfo()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_JNIInitializer> ascom_baidu_mapapi_JNIInitializer() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_JNIInitializer', {'refId': refId});
-    return com_baidu_mapapi_JNIInitializer()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_UIMsg_l_ErrorNo> ascom_baidu_mapapi_UIMsg_l_ErrorNo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_UIMsg_l_ErrorNo', {'refId': refId});
-    return com_baidu_mapapi_UIMsg_l_ErrorNo()..refId = result;
-  }
-  
-  Future<com_baidu_mapapi_PermissionUtils> ascom_baidu_mapapi_PermissionUtils() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapapi_PermissionUtils', {'refId': refId});
-    return com_baidu_mapapi_PermissionUtils()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkvi_VDeviceAPI> ascom_baidu_mapsdkvi_VDeviceAPI() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkvi_VDeviceAPI', {'refId': refId});
-    return com_baidu_mapsdkvi_VDeviceAPI()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkvi_VMsg> ascom_baidu_mapsdkvi_VMsg() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkvi_VMsg', {'refId': refId});
-    return com_baidu_mapsdkvi_VMsg()..refId = result;
-  }
-  
-  Future<com_baidu_lbsapi_auth_LBSAuthManager> ascom_baidu_lbsapi_auth_LBSAuthManager() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_lbsapi_auth_LBSAuthManager', {'refId': refId});
-    return com_baidu_lbsapi_auth_LBSAuthManager()..refId = result;
-  }
-  
-  Future<com_baidu_android_bbalbs_common_util_CommonParam> ascom_baidu_android_bbalbs_common_util_CommonParam() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_android_bbalbs_common_util_CommonParam', {'refId': refId});
-    return com_baidu_android_bbalbs_common_util_CommonParam()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_tools_JNITools> ascom_baidu_mapsdkplatform_comjni_tools_JNITools() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_tools_JNITools', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_tools_JNITools()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_tools_ParcelItem> ascom_baidu_mapsdkplatform_comjni_tools_ParcelItem() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_tools_ParcelItem', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_tools_ParcelItem()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_tools_BundleKeySet> ascom_baidu_mapsdkplatform_comjni_tools_BundleKeySet() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_tools_BundleKeySet', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_tools_BundleKeySet()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_util_JNIHandler> ascom_baidu_mapsdkplatform_comjni_util_JNIHandler() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_util_JNIHandler', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_util_JNIHandler()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_util_JNIMD5> ascom_baidu_mapsdkplatform_comjni_util_JNIMD5() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_util_JNIMD5', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_util_JNIMD5()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI> ascom_baidu_mapsdkplatform_comjni_util_JNISysOSAPI() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_util_JNISysOSAPI', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_util_AppMD5> ascom_baidu_mapsdkplatform_comjni_util_AppMD5() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_util_AppMD5', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_util_AppMD5()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback> ascom_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap> ascom_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache> ascom_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_map_commonmemcache_JNICommonMemCache()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite> ascom_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_map_favorite_JNIFavorite()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_engine_JNIEngine> ascom_baidu_mapsdkplatform_comjni_engine_JNIEngine() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_engine_JNIEngine', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_engine_JNIEngine()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comjni_engine_AppEngine> ascom_baidu_mapsdkplatform_comjni_engine_AppEngine() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comjni_engine_AppEngine', {'refId': refId});
-    return com_baidu_mapsdkplatform_comjni_engine_AppEngine()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_NativeLoader> ascom_baidu_mapsdkplatform_comapi_NativeLoader() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_NativeLoader', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_NativeLoader()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable> ascom_baidu_mapsdkplatform_comapi_util_SysUpdateObservable() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_util_SysUpdateObservable', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_util_SysUpdateObservable()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil> ascom_baidu_mapsdkplatform_comapi_util_AlgorithmUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_util_AlgorithmUtil', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_util_AlgorithmUtil()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_util_CoordTrans> ascom_baidu_mapsdkplatform_comapi_util_CoordTrans() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_util_CoordTrans', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_util_CoordTrans()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_util_SyncSysInfo> ascom_baidu_mapsdkplatform_comapi_util_SyncSysInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_util_SyncSysInfo', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_util_SyncSysInfo()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_util_PermissionCheck> ascom_baidu_mapsdkplatform_comapi_util_PermissionCheck() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_util_PermissionCheck', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_util_PermissionCheck()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi> ascom_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_favrite_FavSyncPoi()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_location_CoordinateType> ascom_baidu_mapsdkplatform_comapi_location_CoordinateType() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_location_CoordinateType', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_location_CoordinateType()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_map_MessageCenter> ascom_baidu_mapsdkplatform_comapi_map_MessageCenter() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_map_MessageCenter', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_map_MessageCenter()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_map_VersionInfo> ascom_baidu_mapsdkplatform_comapi_map_VersionInfo() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_map_VersionInfo', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_map_VersionInfo()..refId = result;
-  }
-  
-  Future<com_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil> ascom_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil() async {
-    final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::ascom_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil', {'refId': refId});
-    return com_baidu_mapsdkplatform_comapi_commonutils_SysUpdateUtil()..refId = result;
-  }
-  
 }

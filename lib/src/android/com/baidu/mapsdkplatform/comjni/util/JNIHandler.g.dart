@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapsdkplatform_comjni_util_JNIHandler extends java_lang_Object  
   static Future<void> registerNativeHandler(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIHandler::registerNativeHandler([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNIHandler::registerNativeHandler([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapsdkplatform_comjni_util_JNIHandler extends java_lang_Object  
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

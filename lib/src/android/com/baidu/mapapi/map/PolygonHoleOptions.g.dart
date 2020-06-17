@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_map_PolygonHoleOptions extends com_baidu_mapapi_map_HoleO
   Future<com_baidu_mapapi_map_PolygonHoleOptions> addPoints(List<com_baidu_mapapi_model_LatLng> var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.PolygonHoleOptions@$refId::addPoints([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.PolygonHoleOptions@$refId::addPoints([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.PolygonHoleOptions::addPoints', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.PolygonHoleOptions::addPoints', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_map_PolygonHoleOptions extends com_baidu_mapapi_map_HoleO
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_PolygonHoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_PolygonHoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_PolygonHoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapapi_map_PolygonHoleOptions extends com_baidu_mapapi_map_HoleO
   Future<List<com_baidu_mapapi_model_LatLng>> getHolePoints() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.PolygonHoleOptions@$refId::getHolePoints([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.PolygonHoleOptions@$refId::getHolePoints([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapapi_map_PolygonHoleOptions extends com_baidu_mapapi_map_HoleO
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   

@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,8 +12,12 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
+class _com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver_SUB extends java_lang_Object with com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver {}
+
 mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object {
   
+
+  static com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver subInstance() => _com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver_SUB();
 
   
 
@@ -24,7 +27,7 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
   Future<void> init() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::init([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::init([])');
     }
   
     // invoke native method
@@ -38,8 +41,9 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -47,7 +51,7 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
   Future<void> updatePhoneInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::updatePhoneInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::updatePhoneInfo([])');
     }
   
     // invoke native method
@@ -61,8 +65,9 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -70,11 +75,11 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
   Future<void> updateNetworkInfo(android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::updateNetworkInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::updateNetworkInfo([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkInfo', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkInfo', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -84,8 +89,9 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -93,11 +99,11 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
   Future<void> updateNetworkProxy(android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::updateNetworkProxy([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver@$refId::updateNetworkProxy([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkProxy', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkProxy', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -107,9 +113,95 @@ mixin com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver on java_lang_Object
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
+}
+
+extension com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver_Batch on List<com_baidu_mapsdkplatform_comapi_util_SysUpdateObserver> {
+  //region methods
+  
+  Future<List<void>> init_batch() async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::init_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<void>> updatePhoneInfo_batch() async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updatePhoneInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<void>> updateNetworkInfo_batch(List<android_content_Context> var1) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<void>> updateNetworkProxy_batch(List<android_content_Context> var1) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.SysUpdateObserver::updateNetworkProxy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  //endregion
 }

@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
   static Future<void> despatchMessage(int var0, int var1, int var2, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::despatchMessage([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::despatchMessage([\'var0\':$var0, \'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
   static Future<void> InitClass() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitClass([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitClass([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,11 +102,11 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
   static Future<bool> InitEngine(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitEngine([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitEngine([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitEngine', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.engine.AppEngine::InitEngine', {"var0": var0?.refId});
   
   
     // handle native call
@@ -115,8 +116,9 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +126,7 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
   static Future<bool> UnInitEngine() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::UnInitEngine([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::UnInitEngine([])');
     }
   
     // invoke native method
@@ -138,8 +140,9 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +150,7 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
   static Future<void> SetProxyInfo(String var0, int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::SetProxyInfo([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::SetProxyInfo([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -161,8 +164,9 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +174,7 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
   static Future<bool> StartSocketProc() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::StartSocketProc([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.engine.AppEngine::StartSocketProc([])');
     }
   
     // invoke native method
@@ -184,8 +188,9 @@ class com_baidu_mapsdkplatform_comjni_engine_AppEngine extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

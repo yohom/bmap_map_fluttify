@@ -4,8 +4,8 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_platform_comapi_pano_PanoStateError {
-  a,
-  b,
-  c,
-  d
+  a /* 0 */,
+  b /* 0 */,
+  c /* 0 */,
+  d /* 0 */
 }

@@ -4,5 +4,5 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_ModuleName {
-  TILE_OVERLAY_MODULE
+  TILE_OVERLAY_MODULE /* 0 */
 }

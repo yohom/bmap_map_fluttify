@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
   static Future<bool> debugEnable() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.Logger::debugEnable([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.Logger::debugEnable([])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
   static Future<void> logV(String var0, String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.Logger::logV([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.Logger::logV([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +102,7 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
   static Future<void> logD(String var0, String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.Logger::logD([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.Logger::logD([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -115,8 +116,9 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +126,7 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
   static Future<void> logI(String var0, String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.Logger::logI([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.Logger::logI([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -138,8 +140,9 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +150,7 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
   static Future<void> logW(String var0, String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.Logger::logW([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.Logger::logW([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -161,8 +164,9 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +174,7 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
   static Future<void> logE(String var0, String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.Logger::logE([\'var0\':$var0, \'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.Logger::logE([\'var0\':$var0, \'var1\':$var1])');
     }
   
     // invoke native method
@@ -184,8 +188,9 @@ class com_baidu_mapapi_common_Logger extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

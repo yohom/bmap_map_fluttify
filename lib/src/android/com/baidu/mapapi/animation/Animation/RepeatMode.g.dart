@@ -4,6 +4,6 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_animation_Animation_RepeatMode {
-  RESTART,
-  REVERSE
+  RESTART /* 0 */,
+  REVERSE /* 0 */
 }

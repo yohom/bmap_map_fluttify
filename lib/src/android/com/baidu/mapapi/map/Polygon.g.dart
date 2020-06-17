@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<int> getFillColor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getFillColor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getFillColor([])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +60,7 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<List<com_baidu_mapapi_model_LatLng>> getPoints() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getPoints([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getPoints([])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -83,7 +84,7 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<com_baidu_mapapi_map_Stroke> getStroke() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getStroke([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getStroke([])');
     }
   
     // invoke native method
@@ -97,8 +98,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_Stroke()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_Stroke()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_Stroke()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -106,7 +108,7 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<void> setFillColor(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setFillColor([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setFillColor([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -120,8 +122,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -129,11 +132,11 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<void> setPoints(List<com_baidu_mapapi_model_LatLng> var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setPoints([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setPoints([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setPoints', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setPoints', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -143,8 +146,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,11 +156,11 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<void> setStroke(com_baidu_mapapi_map_Stroke var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setStroke([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setStroke([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setStroke', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setStroke', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -166,8 +170,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -175,11 +180,11 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<void> setHoleOption(com_baidu_mapapi_map_HoleOptions var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setHoleOption([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setHoleOption([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setHoleOption', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setHoleOption', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -189,8 +194,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -198,7 +204,7 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<com_baidu_mapapi_map_HoleOptions> getHoleOption() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getHoleOption([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getHoleOption([])');
     }
   
     // invoke native method
@@ -212,8 +218,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_PolygonHoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_PolygonHoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_HoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -221,11 +228,11 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<void> setHoleOptions(List<com_baidu_mapapi_map_HoleOptions> var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setHoleOptions([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::setHoleOptions([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setHoleOptions', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polygon::setHoleOptions', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -235,8 +242,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -244,7 +252,7 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
   Future<List<com_baidu_mapapi_map_HoleOptions>> getHoleOptions() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getHoleOptions([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polygon@$refId::getHoleOptions([])');
     }
   
     // invoke native method
@@ -258,8 +266,9 @@ class com_baidu_mapapi_map_Polygon extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_PolygonHoleOptions()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_PolygonHoleOptions()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_HoleOptions()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -430,7 +439,7 @@ extension com_baidu_mapapi_map_Polygon_Batch on List<com_baidu_mapapi_map_Polygo
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_PolygonHoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_HoleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       kNativeObjectPool.addAll(typedResult);
       return typedResult;
     }
@@ -470,7 +479,7 @@ extension com_baidu_mapapi_map_Polygon_Batch on List<com_baidu_mapapi_map_Polygo
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_PolygonHoleOptions()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_HoleOptions()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       kNativeObjectPool.addAll(typedResult.expand((e) => e));
       return typedResult;
     }

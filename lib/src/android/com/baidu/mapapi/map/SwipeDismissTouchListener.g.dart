@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,11 +36,11 @@ class com_baidu_mapapi_map_SwipeDismissTouchListener extends java_lang_Object wi
   Future<bool> onTouch(android_view_View var1, android_view_MotionEvent var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.SwipeDismissTouchListener@$refId::onTouch([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.SwipeDismissTouchListener@$refId::onTouch([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.SwipeDismissTouchListener::onTouch', {"var1": var1.refId, "var2": var2.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.SwipeDismissTouchListener::onTouch', {"var1": var1?.refId, "var2": var2?.refId, "refId": refId});
   
   
     // handle native call
@@ -51,8 +50,9 @@ class com_baidu_mapapi_map_SwipeDismissTouchListener extends java_lang_Object wi
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

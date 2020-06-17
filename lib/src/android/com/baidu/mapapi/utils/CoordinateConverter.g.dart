@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_utils_CoordinateConverter extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_CoordinateConverter> coord(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.CoordinateConverter@$refId::coord([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.CoordinateConverter@$refId::coord([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.CoordinateConverter::coord', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.CoordinateConverter::coord', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_utils_CoordinateConverter extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_CoordinateConverter()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_CoordinateConverter()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_CoordinateConverter()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class com_baidu_mapapi_utils_CoordinateConverter extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_CoordinateConverter> from(com_baidu_mapapi_utils_CoordinateConverter_CoordType var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.CoordinateConverter@$refId::from([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.CoordinateConverter@$refId::from([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.CoordinateConverter::from', {"var1": var1.index, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.CoordinateConverter::from', {"var1": var1.index + 0, "refId": refId});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class com_baidu_mapapi_utils_CoordinateConverter extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_CoordinateConverter()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_CoordinateConverter()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_CoordinateConverter()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -101,7 +102,7 @@ class com_baidu_mapapi_utils_CoordinateConverter extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLng> convert() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.CoordinateConverter@$refId::convert([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.CoordinateConverter@$refId::convert([])');
     }
   
     // invoke native method
@@ -115,8 +116,9 @@ class com_baidu_mapapi_utils_CoordinateConverter extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   

@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -101,11 +100,11 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKGroundOverlay> groundOverlayWithPosition_zoomLevel_anchor_icon(CLLocationCoordinate2D position, double zoomLevel, CGPoint anchor, UIImage icon) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKGroundOverlay::groundOverlayWithPosition([\'zoomLevel\':$zoomLevel])');
+      debugPrint('fluttify-dart: BMKGroundOverlay::groundOverlayWithPosition([\'zoomLevel\':$zoomLevel])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position.refId, "zoomLevel": zoomLevel, "anchor": anchor.refId, "icon": icon.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position?.refId, "zoomLevel": zoomLevel, "anchor": anchor?.refId, "icon": icon?.refId});
   
   
     // handle native call
@@ -115,8 +114,9 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -124,11 +124,11 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKGroundOverlay> groundOverlayWithBounds_icon(BMKCoordinateBounds bounds, UIImage icon) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKGroundOverlay::groundOverlayWithBounds([])');
+      debugPrint('fluttify-dart: BMKGroundOverlay::groundOverlayWithBounds([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds.refId, "icon": icon.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds?.refId, "icon": icon?.refId});
   
   
     // handle native call
@@ -138,8 +138,9 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   

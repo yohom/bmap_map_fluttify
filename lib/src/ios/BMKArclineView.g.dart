@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -60,11 +59,11 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
   Future<dynamic> initWithArcline(BMKArcline arcline, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKArclineView@$refId::initWithArcline([])');
+      debugPrint('fluttify-dart: BMKArclineView@$refId::initWithArcline([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKArclineView::initWithArcline', {"arcline": arcline.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKArclineView::initWithArcline', {"arcline": arcline?.refId, "refId": refId});
   
   
     // handle native call
@@ -74,8 +73,9 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   

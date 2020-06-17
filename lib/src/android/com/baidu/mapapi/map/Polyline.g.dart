@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<int> getColor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getColor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getColor([])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +60,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<List<com_baidu_mapapi_model_LatLng>> getPoints() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getPoints([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getPoints([])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-      return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_model_LatLng()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      kNativeObjectPool.addAll(__return__);
+      return __return__;
     }
   }
   
@@ -83,7 +84,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<int> getWidth() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getWidth([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getWidth([])');
     }
   
     // invoke native method
@@ -97,8 +98,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +108,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<com_baidu_mapapi_map_BitmapDescriptor> getTexture() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getTexture([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getTexture([])');
     }
   
     // invoke native method
@@ -120,8 +122,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_map_BitmapDescriptor()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_map_BitmapDescriptor()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_map_BitmapDescriptor()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -129,7 +132,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setColor(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setColor([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setColor([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -143,8 +146,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,7 +156,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setColorList(Int32List var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setColorList([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setColorList([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -166,8 +170,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -175,7 +180,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<Int32List> getColorList() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getColorList([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getColorList([])');
     }
   
     // invoke native method
@@ -189,8 +194,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Int32List;
     
-      return __result__ as Int32List;
+      return __return__;
     }
   }
   
@@ -198,7 +204,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setDottedLine(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setDottedLine([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setDottedLine([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -212,8 +218,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -221,7 +228,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setFocus(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setFocus([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setFocus([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -235,8 +242,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -244,11 +252,11 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setTexture(com_baidu_mapapi_map_BitmapDescriptor var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setTexture([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setTexture([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setTexture', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setTexture', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -258,8 +266,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -267,7 +276,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<bool> isFocus() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isFocus([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isFocus([])');
     }
   
     // invoke native method
@@ -281,8 +290,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -290,7 +300,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<bool> isDottedLine() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isDottedLine([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isDottedLine([])');
     }
   
     // invoke native method
@@ -304,8 +314,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -313,11 +324,11 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setPoints(List<com_baidu_mapapi_model_LatLng> var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setPoints([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setPoints([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setPoints', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setPoints', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -327,8 +338,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -336,7 +348,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setWidth(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setWidth([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setWidth([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -350,8 +362,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -359,11 +372,11 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setTextureList(List<com_baidu_mapapi_map_BitmapDescriptor> var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setTextureList([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setTextureList([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setTextureList', {"var1": var1.map((__it__) => __it__.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setTextureList', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
   
   
     // handle native call
@@ -373,8 +386,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -382,7 +396,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setIndexs(Int32List var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setIndexs([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setIndexs([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -396,8 +410,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -405,7 +420,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<bool> isIsKeepScale() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isIsKeepScale([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isIsKeepScale([])');
     }
   
     // invoke native method
@@ -419,8 +434,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -428,7 +444,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setIsKeepScale(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setIsKeepScale([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setIsKeepScale([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -442,8 +458,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -451,7 +468,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setClickable(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setClickable([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setClickable([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -465,8 +482,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -474,7 +492,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<bool> isClickable() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isClickable([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isClickable([])');
     }
   
     // invoke native method
@@ -488,8 +506,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -497,11 +516,11 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setDottedLineType(com_baidu_mapapi_map_PolylineDottedLineType var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setDottedLineType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setDottedLineType([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setDottedLineType', {"var1": var1.index, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setDottedLineType', {"var1": var1.index + 0, "refId": refId});
   
   
     // handle native call
@@ -511,8 +530,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -520,7 +540,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<int> getDottedLineType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getDottedLineType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::getDottedLineType([])');
     }
   
     // invoke native method
@@ -534,8 +554,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -543,7 +564,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<bool> isThined() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isThined([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::isThined([])');
     }
   
     // invoke native method
@@ -557,8 +578,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -566,7 +588,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
   Future<void> setThined(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setThined([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Polyline@$refId::setThined([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -580,8 +602,9 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

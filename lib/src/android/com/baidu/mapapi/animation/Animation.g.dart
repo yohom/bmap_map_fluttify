@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,7 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
+/* abstract */ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.animation.Animation';
 
@@ -37,7 +36,7 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
   Future<void> setAnimationListener(com_baidu_mapapi_animation_Animation_AnimationListener var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.animation.Animation@$refId::setAnimationListener([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.animation.Animation@$refId::setAnimationListener([])');
     }
   
     // invoke native method
@@ -48,14 +47,11 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
     MethodChannel('com.baidu.mapapi.animation.Animation::setAnimationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.animation.Animation.AnimationListener::onAnimationStart':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onAnimationStart([])');
+                debugPrint('fluttify-dart-callback: onAnimationStart([])');
               }
         
               // handle the native call
@@ -64,7 +60,7 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.animation.Animation.AnimationListener::onAnimationEnd':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onAnimationEnd([])');
+                debugPrint('fluttify-dart-callback: onAnimationEnd([])');
               }
         
               // handle the native call
@@ -73,7 +69,7 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.animation.Animation.AnimationListener::onAnimationCancel':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onAnimationCancel([])');
+                debugPrint('fluttify-dart-callback: onAnimationCancel([])');
               }
         
               // handle the native call
@@ -82,7 +78,7 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.animation.Animation.AnimationListener::onAnimationRepeat':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onAnimationRepeat([])');
+                debugPrint('fluttify-dart-callback: onAnimationRepeat([])');
               }
         
               // handle the native call
@@ -97,8 +93,9 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +103,7 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
   Future<void> setDuration(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.animation.Animation@$refId::setDuration([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.animation.Animation@$refId::setDuration([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -120,8 +117,9 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -129,7 +127,7 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
   Future<void> cancel() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.animation.Animation@$refId::cancel([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.animation.Animation@$refId::cancel([])');
     }
   
     // invoke native method
@@ -143,8 +141,9 @@ class com_baidu_mapapi_animation_Animation extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

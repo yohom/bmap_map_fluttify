@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -21,6 +20,62 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
   //endregion
 
   //region creators
+  static Future<com_baidu_mapapi_map_MapBaseIndoorMapInfo> create__() async {
+    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__');
+    final object = com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
+  
+    kNativeObjectPool.add(object);
+    return object;
+  }
+  
+  static Future<com_baidu_mapapi_map_MapBaseIndoorMapInfo> create__String__String__List_java_util_ArrayList_String__(String var1, String var2, List<String> var3) async {
+    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__String__String__java_util_ArrayList_String_', {"var1": var1, "var2": var2, "var3": var3});
+    final object = com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
+  
+    kNativeObjectPool.add(object);
+    return object;
+  }
+  
+  static Future<com_baidu_mapapi_map_MapBaseIndoorMapInfo> create__com_baidu_mapapi_map_MapBaseIndoorMapInfo(com_baidu_mapapi_map_MapBaseIndoorMapInfo var1) async {
+    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__com_baidu_mapapi_map_MapBaseIndoorMapInfo', {"var1": var1.refId});
+    final object = com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
+  
+    kNativeObjectPool.add(object);
+    return object;
+  }
+  
+  static Future<List<com_baidu_mapapi_map_MapBaseIndoorMapInfo>> create_batch__(int length) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MapBaseIndoorMapInfo__', {'length': length});
+  
+    final List<com_baidu_mapapi_map_MapBaseIndoorMapInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
+  
+  static Future<List<com_baidu_mapapi_map_MapBaseIndoorMapInfo>> create_batch__String__String__List_java_util_ArrayList_String__(List<String> var1, List<String> var2, List<List<String>> var3) async {
+    if (var1.length != var2.length || var2.length != var3.length) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MapBaseIndoorMapInfo__String__String__java_util_ArrayList_String_', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__]}]);
+  
+    final List<com_baidu_mapapi_map_MapBaseIndoorMapInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
+  
+  static Future<List<com_baidu_mapapi_map_MapBaseIndoorMapInfo>> create_batch__com_baidu_mapapi_map_MapBaseIndoorMapInfo(List<com_baidu_mapapi_map_MapBaseIndoorMapInfo> var1) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MapBaseIndoorMapInfo__com_baidu_mapapi_map_MapBaseIndoorMapInfo', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].refId}]);
+  
+    final List<com_baidu_mapapi_map_MapBaseIndoorMapInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
   
   //endregion
 
@@ -37,7 +92,7 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
   Future<String> getID() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getID([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getID([])');
     }
   
     // invoke native method
@@ -51,8 +106,9 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +116,7 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
   Future<String> getCurFloor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getCurFloor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getCurFloor([])');
     }
   
     // invoke native method
@@ -74,8 +130,9 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +140,7 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
   Future<List<String>> getFloors() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getFloors([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapBaseIndoorMapInfo@$refId::getFloors([])');
     }
   
     // invoke native method
@@ -97,8 +154,9 @@ class com_baidu_mapapi_map_MapBaseIndoorMapInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = (__result__ as List).cast<String>();
     
-      return (__result__ as List).cast<String>();
+      return __return__;
     }
   }
   

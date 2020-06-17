@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_utils_DistanceUtil extends java_lang_Object  {
   static Future<double> getDistance(com_baidu_mapapi_model_LatLng var0, com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.DistanceUtil::getDistance([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.DistanceUtil::getDistance([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.DistanceUtil::getDistance', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.DistanceUtil::getDistance', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_utils_DistanceUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

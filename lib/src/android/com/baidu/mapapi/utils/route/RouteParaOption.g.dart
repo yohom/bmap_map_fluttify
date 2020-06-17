@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_route_RouteParaOption> startPoint(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::startPoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::startPoint([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::startPoint', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::startPoint', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLng> getStartPoint() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getStartPoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getStartPoint([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -101,11 +102,11 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_route_RouteParaOption> endPoint(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::endPoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::endPoint([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::endPoint', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::endPoint', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -115,8 +116,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -124,7 +126,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLng> getEndPoint() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getEndPoint([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getEndPoint([])');
     }
   
     // invoke native method
@@ -138,8 +140,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -147,7 +150,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_route_RouteParaOption> startName(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::startName([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::startName([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -161,8 +164,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -170,7 +174,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<String> getStartName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getStartName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getStartName([])');
     }
   
     // invoke native method
@@ -184,8 +188,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -193,7 +198,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_route_RouteParaOption> endName(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::endName([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::endName([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -207,8 +212,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -216,7 +222,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<String> getEndName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getEndName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getEndName([])');
     }
   
     // invoke native method
@@ -230,8 +236,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -239,11 +246,11 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_route_RouteParaOption> busStrategyType(com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::busStrategyType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::busStrategyType([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::busStrategyType', {"var1": var1.index, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::busStrategyType', {"var1": var1.index + 0, "refId": refId});
   
   
     // handle native call
@@ -253,8 +260,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -262,7 +270,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType> getBusStrategyType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getBusStrategyType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getBusStrategyType([])');
     }
   
     // invoke native method
@@ -276,8 +284,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.values[__result__];
     
-      return com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.values[__result__];
+      return __return__;
     }
   }
   
@@ -285,7 +294,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<com_baidu_mapapi_utils_route_RouteParaOption> cityName(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::cityName([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::cityName([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -299,8 +308,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -308,7 +318,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
   Future<String> getCityName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getCityName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.RouteParaOption@$refId::getCityName([])');
     }
   
     // invoke native method
@@ -322,8 +332,9 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

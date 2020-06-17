@@ -9,6 +9,8 @@
 #import "SubHandler/SubHandler2.h"
 #import "SubHandler/SubHandler3.h"
 #import "SubHandler/SubHandler4.h"
+#import "SubHandler/SubHandler5.h"
+#import "SubHandler/SubHandler6.h"
 #import "SubHandler/SubHandlerCustom.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
@@ -34,6 +36,8 @@ extern BOOL enableLog;
     [_handlerMap addEntriesFromDictionary: [self getSubHandler2]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandler3]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandler4]];
+    [_handlerMap addEntriesFromDictionary: [self getSubHandler5]];
+    [_handlerMap addEntriesFromDictionary: [self getSubHandler6]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandlerCustom]];
   }
 
@@ -86,8 +90,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
   
@@ -105,11 +113,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argerror = @(error.hash);
-  HEAP[argerror] = error;
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
   
@@ -127,8 +143,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
   
@@ -146,11 +166,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argstatus = @(status.hash);
-  HEAP[argstatus] = status;
+  NSNumber* argstatus = [NSNull null];
+  if (status != nil) {
+      argstatus = @(status.hash);
+      HEAP[argstatus] = status;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
   
@@ -168,8 +196,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
@@ -189,8 +221,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
   // enum callback arg
@@ -212,8 +248,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
@@ -233,8 +273,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
   // enum callback arg
@@ -256,11 +300,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argannotation = @(annotation.hash);
-  HEAP[argannotation] = annotation;
+  NSNumber* argannotation = [NSNull null];
+  if (annotation != nil) {
+      argannotation = @(annotation.hash);
+      HEAP[argannotation] = annotation;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
               arguments:@{}
@@ -289,8 +341,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // list callback arg
   NSMutableArray<NSNumber*>* argviews = [NSMutableArray arrayWithCapacity:views.count];
   for (int __i__ = 0; __i__ < views.count; __i__++) {
@@ -317,11 +373,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -339,11 +403,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -361,11 +433,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -383,11 +463,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
   // primitive callback arg
   NSNumber* argnewState = @(newState);
   // primitive callback arg
@@ -409,11 +497,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -431,11 +527,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argoverlay = @(overlay.hash);
-  HEAP[argoverlay] = overlay;
+  NSNumber* argoverlay = [NSNull null];
+  if (overlay != nil) {
+      argoverlay = @(overlay.hash);
+      HEAP[argoverlay] = overlay;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
               arguments:@{}
@@ -464,8 +568,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // list callback arg
   NSMutableArray<NSNumber*>* argoverlayViews = [NSMutableArray arrayWithCapacity:overlayViews.count];
   for (int __i__ = 0; __i__ < overlayViews.count; __i__++) {
@@ -492,11 +600,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argoverlayView = @(overlayView.hash);
-  HEAP[argoverlayView] = overlayView;
+  NSNumber* argoverlayView = [NSNull null];
+  if (overlayView != nil) {
+      argoverlayView = @(overlayView.hash);
+      HEAP[argoverlayView] = overlayView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
   
@@ -514,11 +630,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argmapPoi = @(mapPoi.hash);
-  HEAP[argmapPoi] = mapPoi;
+  NSNumber* argmapPoi = [NSNull null];
+  if (mapPoi != nil) {
+      argmapPoi = @(mapPoi.hash);
+      HEAP[argmapPoi] = mapPoi;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
   
@@ -536,8 +660,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -560,8 +688,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -584,8 +716,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -608,8 +744,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -636,8 +776,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
   
@@ -655,13 +799,21 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* argflag = @(flag);
   // ref callback arg
-  NSNumber* arginfo = @(info.hash);
-  HEAP[arginfo] = info;
+  NSNumber* arginfo = [NSNull null];
+  if (info != nil) {
+      arginfo = @(info.hash);
+      HEAP[arginfo] = info;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
   
@@ -684,6 +836,352 @@ extern BOOL enableLog;
   NSNumber* argstate = @(state);
 
   [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager doRequestAlwaysAuthorization: (CLLocationManager*)locationManager
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* arglocationManager = [NSNull null];
+  if (locationManager != nil) {
+      arglocationManager = @(locationManager.hash);
+      HEAP[arglocationManager] = locationManager;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didFailWithError: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didFailWithError");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError" arguments:@{@"manager": argmanager, @"error": argerror}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateLocation: (BMKLocation*)location orError: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* arglocation = [NSNull null];
+  if (location != nil) {
+      arglocation = @(location.hash);
+      HEAP[arglocation] = location;
+  }
+  
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError" arguments:@{@"manager": argmanager, @"location": arglocation, @"error": argerror}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didChangeAuthorizationStatus: (CLAuthorizationStatus)status
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // enum callback arg
+  NSNumber* argstatus = @((NSInteger) status);
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus" arguments:@{@"manager": argmanager, @"status": argstatus}];
+  
+}
+
+- (BOOL)BMKLocationManagerShouldDisplayHeadingCalibration : (BMKLocationManager*)manager
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration"
+              arguments:@{}
+                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  
+  // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
+  // 相关issue https://github.com/flutter/flutter/issues/28310
+  NSLog(@"暂不支持有返回值的回调方法");
+  
+  ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
+  
+  ////////////////////////////////////////////////////////////////////////////////
+  
+  return NO;
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateHeading: (CLHeading*)heading
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* argheading = [NSNull null];
+  if (heading != nil) {
+      argheading = @(heading.hash);
+      HEAP[argheading] = heading;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading" arguments:@{@"manager": argmanager, @"heading": argheading}];
+  
+}
+
+- (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateNetworkState: (BMKLocationNetworkState)state orError: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // enum callback arg
+  NSNumber* argstate = @((NSInteger) state);
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError" arguments:@{@"manager": argmanager, @"state": argstate, @"error": argerror}];
+  
+}
+
+- (void)onCheckPermissionState : (BMKLocationAuthErrorCode)iError
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKLocationAuthDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKLocationAuthDelegate::onCheckPermissionState");
+  }
+
+  // convert to jsonable arg
+  // enum callback arg
+  NSNumber* argiError = @((NSInteger) iError);
+
+  [channel invokeMethod:@"Callback::BMKLocationAuthDelegate::onCheckPermissionState" arguments:@{@"iError": argiError}];
+  
+}
+
+- (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager doRequestAlwaysAuthorization: (CLLocationManager*)locationManager
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* arglocationManager = [NSNull null];
+  if (locationManager != nil) {
+      arglocationManager = @(locationManager.hash);
+      HEAP[arglocationManager] = locationManager;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  
+}
+
+- (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager didAddRegionForMonitoringFinished: (NSArray<BMKGeoFenceRegion*>*)regions customID: (NSString*)customID error: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // list callback arg
+  NSMutableArray<NSNumber*>* argregions = [NSMutableArray arrayWithCapacity:regions.count];
+  for (int __i__ = 0; __i__ < regions.count; __i__++) {
+      NSObject* item = ((NSObject*) [regions objectAtIndex:__i__]);
+      // return to dart side data
+      argregions[__i__] = @(item.hash);
+      // add to HEAP
+      HEAP[@(item.hash)] = item;
+  }
+  // jsonable callback arg
+  NSString* argcustomID = customID;
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error" arguments:@{@"manager": argmanager, @"regions": argregions, @"customID": argcustomID, @"error": argerror}];
+  
+}
+
+- (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager didGeoFencesStatusChangedForRegion: (BMKGeoFenceRegion*)region customID: (NSString*)customID error: (NSError*)error
+{
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+            binaryMessenger:[_registrar messenger]];
+  // print log
+  if (enableLog) {
+    NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error");
+  }
+
+  // convert to jsonable arg
+  // ref callback arg
+  NSNumber* argmanager = [NSNull null];
+  if (manager != nil) {
+      argmanager = @(manager.hash);
+      HEAP[argmanager] = manager;
+  }
+  
+  // ref callback arg
+  NSNumber* argregion = [NSNull null];
+  if (region != nil) {
+      argregion = @(region.hash);
+      HEAP[argregion] = region;
+  }
+  
+  // jsonable callback arg
+  NSString* argcustomID = customID;
+  // ref callback arg
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
+
+  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error" arguments:@{@"manager": argmanager, @"region": argregion, @"customID": argcustomID, @"error": argerror}];
   
 }
 

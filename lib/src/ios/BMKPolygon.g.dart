@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -55,11 +54,11 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKPolygon> polygonWithPoints_count(List<BMKMapPoint> points, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolygon::polygonWithPoints([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolygon::polygonWithPoints([\'count\':$count])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithPoints_count', {"points": points.map((__it__) => __it__.refId).toList(), "count": count});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithPoints_count', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   static Future<BMKPolygon> polygonWithCoordinates_count(List<CLLocationCoordinate2D> coords, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolygon::polygonWithCoordinates([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolygon::polygonWithCoordinates([\'count\':$count])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithCoordinates_count', {"coords": coords.map((__it__) => __it__.refId).toList(), "count": count});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithCoordinates_count', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -101,11 +102,11 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setPolygonWithPoints_count(List<BMKMapPoint> points, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolygon@$refId::setPolygonWithPoints([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolygon@$refId::setPolygonWithPoints([\'count\':$count])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithPoints_count', {"points": points.map((__it__) => __it__.refId).toList(), "count": count, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithPoints_count', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count, "refId": refId});
   
   
     // handle native call
@@ -115,8 +116,9 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,11 +126,11 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   Future<bool> setPolygonWithCoordinates_count(List<CLLocationCoordinate2D> coords, int count) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKPolygon@$refId::setPolygonWithCoordinates([\'count\':$count])');
+      debugPrint('fluttify-dart: BMKPolygon@$refId::setPolygonWithCoordinates([\'count\':$count])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithCoordinates_count', {"coords": coords.map((__it__) => __it__.refId).toList(), "count": count, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithCoordinates_count', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count, "refId": refId});
   
   
     // handle native call
@@ -138,8 +140,9 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

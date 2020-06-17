@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<String> getText() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getText([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getText([])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +60,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<com_baidu_mapapi_model_LatLng> getPosition() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getPosition([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getPosition([])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -83,7 +84,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<int> getBgColor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getBgColor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getBgColor([])');
     }
   
     // invoke native method
@@ -97,8 +98,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +108,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<int> getFontColor() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getFontColor([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getFontColor([])');
     }
   
     // invoke native method
@@ -120,8 +122,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -129,7 +132,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<int> getFontSize() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getFontSize([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getFontSize([])');
     }
   
     // invoke native method
@@ -143,8 +146,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,7 +156,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<double> getAlignX() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getAlignX([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getAlignX([])');
     }
   
     // invoke native method
@@ -166,8 +170,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -175,7 +180,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<double> getAlignY() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getAlignY([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getAlignY([])');
     }
   
     // invoke native method
@@ -189,8 +194,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -198,7 +204,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<double> getRotate() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getRotate([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::getRotate([])');
     }
   
     // invoke native method
@@ -212,8 +218,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -221,7 +228,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<void> setText(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setText([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setText([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -235,8 +242,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -244,11 +252,11 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<void> setPosition(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setPosition([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setPosition([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Text::setPosition', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Text::setPosition', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -258,8 +266,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -267,7 +276,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<void> setBgColor(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setBgColor([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setBgColor([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -281,8 +290,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -290,7 +300,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<void> setFontColor(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setFontColor([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setFontColor([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -304,8 +314,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -313,7 +324,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<void> setFontSize(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setFontSize([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setFontSize([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -327,8 +338,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -336,7 +348,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<void> setAlign(int var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setAlign([\'var1\':$var1, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setAlign([\'var1\':$var1, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -350,8 +362,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -359,7 +372,7 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
   Future<void> setRotate(double var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setRotate([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.Text@$refId::setRotate([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -373,8 +386,9 @@ class com_baidu_mapapi_map_Text extends com_baidu_mapapi_map_Overlay  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
   static Future<void> setSupportWebRoute(bool var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::setSupportWebRoute([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::setSupportWebRoute([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
   static Future<bool> openBaiduMapWalkingRoute(com_baidu_mapapi_utils_route_RouteParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapWalkingRoute([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapWalkingRoute([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapWalkingRoute', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapWalkingRoute', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,11 +102,11 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
   static Future<bool> openBaiduMapTransitRoute(com_baidu_mapapi_utils_route_RouteParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapTransitRoute([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapTransitRoute([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapTransitRoute', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapTransitRoute', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -115,8 +116,9 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,11 +126,11 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
   static Future<void> finish(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::finish([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::finish([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::finish', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::finish', {"var0": var0?.refId});
   
   
     // handle native call
@@ -138,8 +140,9 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,11 +150,11 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
   static Future<bool> openBaiduMapDrivingRoute(com_baidu_mapapi_utils_route_RouteParaOption var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapDrivingRoute([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapDrivingRoute([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapDrivingRoute', {"var0": var0.refId, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.BaiduMapRoutePlan::openBaiduMapDrivingRoute', {"var0": var0?.refId, "var1": var1?.refId});
   
   
     // handle native call
@@ -161,8 +164,9 @@ class com_baidu_mapapi_utils_route_BaiduMapRoutePlan extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

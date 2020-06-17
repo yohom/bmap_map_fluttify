@@ -4,8 +4,8 @@
 //////////////////////////////////////////////////////////
 
 enum BMKUserTrackingMode {
-  BMKUserTrackingModeNone,
-  BMKUserTrackingModeHeading,
-  BMKUserTrackingModeFollow,
-  BMKUserTrackingModeFollowWithHeading
+  BMKUserTrackingModeNone /* 0 */,
+  BMKUserTrackingModeHeading /* 0 */,
+  BMKUserTrackingModeFollow /* 0 */,
+  BMKUserTrackingModeFollowWithHeading /* 0 */
 }

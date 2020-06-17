@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,8 +12,12 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
+class _com_baidu_mapapi_map_TileProvider_SUB extends java_lang_Object with com_baidu_mapapi_map_TileProvider {}
+
 mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
   
+
+  static com_baidu_mapapi_map_TileProvider subInstance() => _com_baidu_mapapi_map_TileProvider_SUB();
 
   
 
@@ -24,7 +27,7 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
   Future<int> getMaxDisLevel() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMaxDisLevel([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMaxDisLevel([])');
     }
   
     // invoke native method
@@ -38,8 +41,9 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -47,7 +51,7 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
   Future<int> getMinDisLevel() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMinDisLevel([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.TileProvider@$refId::getMinDisLevel([])');
     }
   
     // invoke native method
@@ -61,9 +65,55 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
+}
+
+extension com_baidu_mapapi_map_TileProvider_Batch on List<com_baidu_mapapi_map_TileProvider> {
+  //region methods
+  
+  Future<List<int>> getMaxDisLevel_batch() async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.TileProvider::getMaxDisLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<int>> getMinDisLevel_batch() async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.TileProvider::getMinDisLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  //endregion
 }

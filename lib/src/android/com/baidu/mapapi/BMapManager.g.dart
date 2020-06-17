@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_BMapManager extends java_lang_Object  {
   static Future<void> init() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.BMapManager::init([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.BMapManager::init([])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapapi_BMapManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapapi_BMapManager extends java_lang_Object  {
   static Future<void> destroy() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.BMapManager::destroy([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.BMapManager::destroy([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapapi_BMapManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +102,7 @@ class com_baidu_mapapi_BMapManager extends java_lang_Object  {
   static Future<android_content_Context> getContext() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.BMapManager::getContext([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.BMapManager::getContext([])');
     }
   
     // invoke native method
@@ -115,8 +116,9 @@ class com_baidu_mapapi_BMapManager extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_content_Context()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   

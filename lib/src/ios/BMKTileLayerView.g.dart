@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -45,8 +44,8 @@ class BMKTileLayerView extends BMKOverlayView  {
   //region getters
   Future<BMKTileLayer> get_tileLayer({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKTileLayerView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKTileLayerView::get_tileLayer", {'refId': refId});
-    kNativeObjectPool.add(BMKURLTileLayer()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKURLTileLayer()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    kNativeObjectPool.add(BMKTileLayer()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    return BMKTileLayer()..refId = __result__..tag__ = 'bmap_map_fluttify';
   }
   
   //endregion
@@ -60,11 +59,11 @@ class BMKTileLayerView extends BMKOverlayView  {
   Future<dynamic> initWithTileLayer(BMKTileLayer tileLayer, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKTileLayerView@$refId::initWithTileLayer([])');
+      debugPrint('fluttify-dart: BMKTileLayerView@$refId::initWithTileLayer([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKTileLayerView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKTileLayerView::initWithTileLayer', {"tileLayer": tileLayer.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKTileLayerView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKTileLayerView::initWithTileLayer', {"tileLayer": tileLayer?.refId, "refId": refId});
   
   
     // handle native call
@@ -74,8 +73,9 @@ class BMKTileLayerView extends BMKOverlayView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -86,7 +86,7 @@ extension BMKTileLayerView_Batch on List<BMKTileLayerView> {
   //region getters
   Future<List<BMKTileLayer>> get_tileLayer_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKTileLayerView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKTileLayerView::get_tileLayer_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKURLTileLayer()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKTileLayer()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }

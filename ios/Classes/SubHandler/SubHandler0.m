@@ -778,11 +778,19 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // ref callback arg
-                NSNumber* argtileImage = @(tileImage.hash);
-                HEAP[argtileImage] = tileImage;
+                NSNumber* argtileImage = [NSNull null];
+                if (tileImage != nil) {
+                    argtileImage = @(tileImage.hash);
+                    HEAP[argtileImage] = tileImage;
+                }
+        
                 // ref callback arg
-                NSNumber* argerror = @(error.hash);
-                HEAP[argerror] = error;
+                NSNumber* argerror = [NSNull null];
+                if (error != nil) {
+                    argerror = @(error.hash);
+                    HEAP[argerror] = error;
+                }
+        
         
                 [channel invokeMethod:@"Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error" arguments:@{@"tileImage": argtileImage, @"error": argerror}];
         
@@ -1092,8 +1100,12 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // ref callback arg
-                NSNumber* argerror = @(error.hash);
-                HEAP[argerror] = error;
+                NSNumber* argerror = [NSNull null];
+                if (error != nil) {
+                    argerror = @(error.hash);
+                    HEAP[argerror] = error;
+                }
+        
                 // jsonable callback arg
                 NSString* argpath = path;
         
@@ -3924,6 +3936,702 @@ extern BOOL enableLog;
         
             methodResult(jsonableResult);
         },
+        @"BMKLocationReGeocode::initWithReGeocodeString": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // ref arg
+            NSData* reGeocodeString = (NSData*) HEAP[@([args[@"reGeocodeString"] integerValue])];
+        
+            // ref
+            BMKLocationReGeocode* ref = (BMKLocationReGeocode*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationReGeocode@%@::initWithReGeocodeString(%@)", args[@"refId"], args[@"reGeocodeString"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithReGeocodeString: reGeocodeString];
+        
+            // result
+            // return a ref
+            HEAP[@(((NSObject*) result).hash)] = result;
+            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationReGeocode::initWithJsonString_withHighAccuracy": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // ref arg
+            NSData* jsonString = (NSData*) HEAP[@([args[@"jsonString"] integerValue])];
+            // jsonable arg
+            BOOL highAcc = [args[@"highAcc"] boolValue];
+        
+            // ref
+            BMKLocationReGeocode* ref = (BMKLocationReGeocode*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationReGeocode@%@::initWithJsonString(%@, %@)", args[@"refId"], args[@"jsonString"], args[@"highAcc"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithJsonString: jsonString withHighAccuracy: highAcc];
+        
+            // result
+            // return a ref
+            HEAP[@(((NSObject*) result).hash)] = result;
+            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::requestLocationWithReGeocode_withNetworkState_completionBlock": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            BOOL withReGeocode = [args[@"withReGeocode"] boolValue];
+            // jsonable arg
+            BOOL withNetWorkState = [args[@"withNetWorkState"] boolValue];
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::requestLocationWithReGeocode(%@, %@, %@)", args[@"refId"], args[@"withReGeocode"], args[@"withNetWorkState"], args[@"completionBlock"]);
+            }
+        
+            // invoke native method
+            BOOL result = [ref requestLocationWithReGeocode: withReGeocode withNetworkState: withNetWorkState completionBlock: ^(BMKLocation* location, BMKLocationNetworkState state, NSError* error) {
+                FlutterMethodChannel *channel = [FlutterMethodChannel
+                    methodChannelWithName:@"BMKLocationManager::requestLocationWithReGeocode_withNetworkState_completionBlock::Callback"
+                          binaryMessenger:[[self registrar] messenger]];
+        
+                // print log
+                if (enableLog) {
+                    NSLog(@"");
+                }
+        
+                // 构造可以直接传输的参数
+                // ref callback arg
+                NSNumber* arglocation = [NSNull null];
+                if (location != nil) {
+                    arglocation = @(location.hash);
+                    HEAP[arglocation] = location;
+                }
+        
+                // enum callback arg
+                NSNumber* argstate = @((NSInteger) state);
+                // ref callback arg
+                NSNumber* argerror = [NSNull null];
+                if (error != nil) {
+                    argerror = @(error.hash);
+                    HEAP[argerror] = error;
+                }
+        
+        
+                [channel invokeMethod:@"Callback::BMKLocatingCompletionBlock::BMKLocatingCompletionBlock" arguments:@{@"location": arglocation, @"state": argstate, @"error": argerror}];
+        
+            }];
+        
+            // result
+            // 返回值: Value
+            id jsonableResult = @(result);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::startUpdatingLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::startUpdatingLocation()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref startUpdatingLocation ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::stopUpdatingLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::stopUpdatingLocation()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref stopUpdatingLocation ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::requestNetworkState": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::requestNetworkState()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref requestNetworkState ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::headingAvailable": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager::headingAvailable()");
+            }
+        
+            // invoke native method
+            BOOL result = [BMKLocationManager headingAvailable];
+        
+            // result
+            // 返回值: Value
+            id jsonableResult = @(result);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::startUpdatingHeading": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::startUpdatingHeading()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref startUpdatingHeading ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::stopUpdatingHeading": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::stopUpdatingHeading()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref stopUpdatingHeading ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::tryIndoorLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::tryIndoorLocation()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref tryIndoorLocation ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::stopIndoorLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager@%@::stopIndoorLocation()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref stopIndoorLocation ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            CLLocationCoordinate2D coordinate;
+            [coordinateValue getValue:&coordinate];
+            // enum arg
+            BMKLocationCoordinateType srctype = (BMKLocationCoordinateType) [args[@"srctype"] integerValue];
+            // enum arg
+            BMKLocationCoordinateType destype = (BMKLocationCoordinateType) [args[@"destype"] integerValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager::BMKLocationCoordinateConvert(%@, %@, %@)", args[@"coordinate"], args[@"srctype"], args[@"destype"]);
+            }
+        
+            // invoke native method
+            CLLocationCoordinate2D result = [BMKLocationManager BMKLocationCoordinateConvert: coordinate SrcType: srctype DesType: destype];
+        
+            // result
+            // 返回值: 结构体
+            NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
+            HEAP[@(resultValue.hash)] = resultValue;
+            NSNumber* jsonableResult = @(resultValue.hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            CLLocationCoordinate2D coordinate;
+            [coordinateValue getValue:&coordinate];
+            // enum arg
+            BMKLocationCoordinateType coortype = (BMKLocationCoordinateType) [args[@"coortype"] integerValue];
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationManager::BMKLocationDataAvailableForCoordinate(%@, %@)", args[@"coordinate"], args[@"coortype"]);
+            }
+        
+            // invoke native method
+            BOOL result = [BMKLocationManager BMKLocationDataAvailableForCoordinate: coordinate withCoorType: coortype];
+        
+            // result
+            // 返回值: Value
+            id jsonableResult = @(result);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationAuth::sharedInstance": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+        
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationAuth::sharedInstance()");
+            }
+        
+            // invoke native method
+            BMKLocationAuth* result = [BMKLocationAuth sharedInstance];
+        
+            // result
+            // return a ref
+            HEAP[@((result).hash)] = result;
+            NSNumber* jsonableResult = @((result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationAuth::checkPermisionWithKey_authDelegate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSString* key = (NSString*) args[@"key"];
+            // ref arg
+            id<BMKLocationAuthDelegate> delegate = (id<BMKLocationAuthDelegate>) HEAP[@([args[@"delegate"] integerValue])];
+        
+            // ref
+            BMKLocationAuth* ref = (BMKLocationAuth*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationAuth@%@::checkPermisionWithKey(%@, %@)", args[@"refId"], args[@"key"], args[@"delegate"]);
+            }
+        
+            // invoke native method
+            [ref checkPermisionWithKey : key authDelegate: self];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationPoiRegion::initWithDictionary": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSDictionary* dictionary = (NSDictionary*) args[@"dictionary"];
+        
+            // ref
+            BMKLocationPoiRegion* ref = (BMKLocationPoiRegion*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationPoiRegion@%@::initWithDictionary(%@)", args[@"refId"], args[@"dictionary"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithDictionary: dictionary];
+        
+            // result
+            // return a ref
+            HEAP[@(((NSObject*) result).hash)] = result;
+            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationPoi::initWithDictionary": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSDictionary* dictionary = (NSDictionary*) args[@"dictionary"];
+        
+            // ref
+            BMKLocationPoi* ref = (BMKLocationPoi*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationPoi@%@::initWithDictionary(%@)", args[@"refId"], args[@"dictionary"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithDictionary: dictionary];
+        
+            // result
+            // return a ref
+            HEAP[@(((NSObject*) result).hash)] = result;
+            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKLocationPoi::initWithTwoDictionary": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSDictionary* dictionary = (NSDictionary*) args[@"dictionary"];
+        
+            // ref
+            BMKLocationPoi* ref = (BMKLocationPoi*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocationPoi@%@::initWithTwoDictionary(%@)", args[@"refId"], args[@"dictionary"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithTwoDictionary: dictionary];
+        
+            // result
+            // return a ref
+            HEAP[@(((NSObject*) result).hash)] = result;
+            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceRegion::judgeStatusWithCoor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* coorValue = (NSValue*) HEAP[@([args[@"coor"] integerValue])];
+            CLLocationCoordinate2D coor;
+            [coorValue getValue:&coor];
+        
+            // ref
+            BMKGeoFenceRegion* ref = (BMKGeoFenceRegion*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceRegion@%@::judgeStatusWithCoor(%@)", args[@"refId"], args[@"coor"]);
+            }
+        
+            // invoke native method
+            BMKGeoFenceRegionStatus result = [ref judgeStatusWithCoor: coor];
+        
+            // result
+            // 返回值: Value
+            id jsonableResult = @(result);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceCircleRegion::initWithCustomID_identityID_center_radius_coor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSString* customid = (NSString*) args[@"customid"];
+            // jsonable arg
+            NSString* identityid = (NSString*) args[@"identityid"];
+            // struct arg
+            NSValue* centerValue = (NSValue*) HEAP[@([args[@"center"] integerValue])];
+            CLLocationCoordinate2D center;
+            [centerValue getValue:&center];
+            // jsonable arg
+            CLLocationDistance radius = [args[@"radius"] doubleValue];
+            // enum arg
+            BMKLocationCoordinateType type = (BMKLocationCoordinateType) [args[@"type"] integerValue];
+        
+            // ref
+            BMKGeoFenceCircleRegion* ref = (BMKGeoFenceCircleRegion*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceCircleRegion@%@::initWithCustomID(%@, %@, %@, %@, %@)", args[@"refId"], args[@"customid"], args[@"identityid"], args[@"center"], args[@"radius"], args[@"type"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithCustomID: customid identityID: identityid center: center radius: radius coor: type];
+        
+            // result
+            // return a ref
+            HEAP[@(((NSObject*) result).hash)] = result;
+            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSString* customid = (NSString*) args[@"customid"];
+            // jsonable arg
+            NSString* identityid = (NSString*) args[@"identityid"];
+            // list arg struct
+            NSArray* coorRefIdArray = (NSArray*) args[@"coor"];
+            CLLocationCoordinate2D coor[coorRefIdArray.count];
+        
+            for (int __i__ = 0; __i__ < coorRefIdArray.count; __i__++) {
+                NSValue* coorValue = (NSValue*) HEAP[[coorRefIdArray objectAtIndex:__i__]];
+                CLLocationCoordinate2D coorItem;
+                [coorValue getValue:&coorItem];
+                coor[__i__] = coorItem;
+            }
+            // jsonable arg
+            NSInteger count = [args[@"count"] longValue];
+            // enum arg
+            BMKLocationCoordinateType type = (BMKLocationCoordinateType) [args[@"type"] integerValue];
+        
+            // ref
+            BMKGeoFencePolygonRegion* ref = (BMKGeoFencePolygonRegion*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFencePolygonRegion@%@::initWithCustomID(%@, %@, %@, %@, %@)", args[@"refId"], args[@"customid"], args[@"identityid"], args[@"coor"], args[@"count"], args[@"type"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithCustomID: customid identityID: identityid coor: coor count: count coor: type];
+        
+            // result
+            // return a ref
+            HEAP[@(((NSObject*) result).hash)] = result;
+            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // struct arg
+            NSValue* centerValue = (NSValue*) HEAP[@([args[@"center"] integerValue])];
+            CLLocationCoordinate2D center;
+            [centerValue getValue:&center];
+            // jsonable arg
+            CLLocationDistance radius = [args[@"radius"] doubleValue];
+            // enum arg
+            BMKLocationCoordinateType type = (BMKLocationCoordinateType) [args[@"type"] integerValue];
+            // jsonable arg
+            NSString* customID = (NSString*) args[@"customID"];
+        
+            // ref
+            BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceManager@%@::addCircleRegionForMonitoringWithCenter(%@, %@, %@, %@)", args[@"refId"], args[@"center"], args[@"radius"], args[@"type"], args[@"customID"]);
+            }
+        
+            // invoke native method
+            [ref addCircleRegionForMonitoringWithCenter : center radius: radius coorType: type customID: customID];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // list arg struct
+            NSArray* coordinatesRefIdArray = (NSArray*) args[@"coordinates"];
+            CLLocationCoordinate2D coordinates[coordinatesRefIdArray.count];
+        
+            for (int __i__ = 0; __i__ < coordinatesRefIdArray.count; __i__++) {
+                NSValue* coordinatesValue = (NSValue*) HEAP[[coordinatesRefIdArray objectAtIndex:__i__]];
+                CLLocationCoordinate2D coordinatesItem;
+                [coordinatesValue getValue:&coordinatesItem];
+                coordinates[__i__] = coordinatesItem;
+            }
+            // jsonable arg
+            NSInteger count = [args[@"count"] longValue];
+            // enum arg
+            BMKLocationCoordinateType type = (BMKLocationCoordinateType) [args[@"type"] integerValue];
+            // jsonable arg
+            NSString* customID = (NSString*) args[@"customID"];
+        
+            // ref
+            BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceManager@%@::addPolygonRegionForMonitoringWithCoordinates(%@, %@, %@, %@)", args[@"refId"], args[@"coordinates"], args[@"count"], args[@"type"], args[@"customID"]);
+            }
+        
+            // invoke native method
+            [ref addPolygonRegionForMonitoringWithCoordinates : coordinates count: count coorType: type customID: customID];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceManager::geoFenceRegionsWithCustomID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSString* customID = (NSString*) args[@"customID"];
+        
+            // ref
+            BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceManager@%@::geoFenceRegionsWithCustomID(%@)", args[@"refId"], args[@"customID"]);
+            }
+        
+            // invoke native method
+            NSArray* result = [ref geoFenceRegionsWithCustomID: customID];
+        
+            // result
+            // 返回值: 列表
+            NSMutableArray* jsonableResult = [NSMutableArray array];
+            for (int __i__ = 0; __i__ < result.count; __i__++) {
+                NSObject* object = [result objectAtIndex:__i__];
+                [jsonableResult addObject: @(object.hash)];
+                HEAP[@([object hash])] = object;
+            }
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceManager::removeTheGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // ref arg
+            BMKGeoFenceRegion* region = (BMKGeoFenceRegion*) HEAP[@([args[@"region"] integerValue])];
+        
+            // ref
+            BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceManager@%@::removeTheGeoFenceRegion(%@)", args[@"refId"], args[@"region"]);
+            }
+        
+            // invoke native method
+            [ref removeTheGeoFenceRegion : region];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceManager::removeGeoFenceRegionsWithCustomID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // jsonable arg
+            NSString* customID = (NSString*) args[@"customID"];
+        
+            // ref
+            BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceManager@%@::removeGeoFenceRegionsWithCustomID(%@)", args[@"refId"], args[@"customID"]);
+            }
+        
+            // invoke native method
+            [ref removeGeoFenceRegionsWithCustomID : customID];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
+        @"BMKGeoFenceManager::removeAllGeoFenceRegions": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+        
+        
+            // ref
+            BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKGeoFenceManager@%@::removeAllGeoFenceRegions()", args[@"refId"]);
+            }
+        
+            // invoke native method
+            [ref removeAllGeoFenceRegions ];
+        
+            // result
+            // 无返回值
+            NSString* jsonableResult = @"success";
+        
+            methodResult(jsonableResult);
+        },
         @"BMKActionPaopaoView::initWithCustomView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
         
@@ -4813,741 +5521,6 @@ extern BOOL enableLog;
                 // return a ref
                 HEAP[@((result).hash)] = result;
                 NSNumber* jsonableResult = @((result).hash);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKCircle::setCircleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* coordValue = (NSValue*) HEAP[@([args[@"coord"] integerValue])];
-                CLLocationCoordinate2D coord;
-                [coordValue getValue:&coord];
-                // jsonable arg
-                CLLocationDistance radius = [args[@"radius"] doubleValue];
-        
-                // ref
-                BMKCircle* ref = (BMKCircle*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BOOL result = [ref setCircleWithCenterCoordinate: coord radius: radius];
-        
-                // result
-                // 返回值: Value
-                id jsonableResult = @(result);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKCircle::setCircleWithMapRect_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
-                BMKMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-        
-                // ref
-                BMKCircle* ref = (BMKCircle*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BOOL result = [ref setCircleWithMapRect: mapRect];
-        
-                // result
-                // 返回值: Value
-                id jsonableResult = @(result);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::customMapStyle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSString* customMapStyleJsonFilePath = (NSString*) args[@"customMapStyleJsonFilePath"];
-        
-                // ref
-        
-        
-                // invoke native method
-                [BMKMapView customMapStyle: customMapStyleJsonFilePath];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::enableCustomMapStyle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL enable = [args[@"enable"] boolValue];
-        
-                // ref
-        
-        
-                // invoke native method
-                [BMKMapView enableCustomMapStyle: enable];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setCustomMapStylePath_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSString* customMapStyleJsonFilePath = (NSString*) args[@"customMapStyleJsonFilePath"];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setCustomMapStylePath : customMapStyleJsonFilePath];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setCustomMapStylePath_mode_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                NSString* customMapStyleJsonFilePath = (NSString*) args[@"customMapStyleJsonFilePath"];
-                // jsonable arg
-                int mode = [args[@"mode"] intValue];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setCustomMapStylePath : customMapStyleJsonFilePath mode: mode];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setCustomMapStyleEnable_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL enable = [args[@"enable"] boolValue];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setCustomMapStyleEnable : enable];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIColor* smooth = (UIColor*) HEAP[@([args[@"smooth"] integerValue])];
-                // ref arg
-                UIColor* slow = (UIColor*) HEAP[@([args[@"slow"] integerValue])];
-                // ref arg
-                UIColor* congestion = (UIColor*) HEAP[@([args[@"congestion"] integerValue])];
-                // ref arg
-                UIColor* severeCongestion = (UIColor*) HEAP[@([args[@"severeCongestion"] integerValue])];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BOOL result = [ref setCustomTrafficColorForSmooth: smooth slow: slow congestion: congestion severeCongestion: severeCongestion];
-        
-                // result
-                // 返回值: Value
-                id jsonableResult = @(result);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::willBackGround_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-        
-        
-                // invoke native method
-                [BMKMapView willBackGround];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::didForeGround_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-        
-        
-                // invoke native method
-                [BMKMapView didForeGround];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::viewWillAppear_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref viewWillAppear ];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::viewWillDisappear_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref viewWillDisappear ];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::mapForceRefresh_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref mapForceRefresh ];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::zoomIn_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BOOL result = [ref zoomIn];
-        
-                // result
-                // 返回值: Value
-                id jsonableResult = @(result);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::zoomOut_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BOOL result = [ref zoomOut];
-        
-                // result
-                // 返回值: Value
-                id jsonableResult = @(result);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::regionThatFits_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
-                BMKCoordinateRegion region;
-                [regionValue getValue:&region];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BMKCoordinateRegion result = [ref regionThatFits: region];
-        
-                // result
-                // 返回值: 结构体
-                NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setRegion_animated_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
-                BMKCoordinateRegion region;
-                [regionValue getValue:&region];
-                // jsonable arg
-                BOOL animated = [args[@"animated"] boolValue];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setRegion : region animated: animated];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setCenterCoordinate_animated_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
-                CLLocationCoordinate2D coordinate;
-                [coordinateValue getValue:&coordinate];
-                // jsonable arg
-                BOOL animated = [args[@"animated"] boolValue];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setCenterCoordinate : coordinate animated: animated];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::takeSnapshot_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-        
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                UIImage* result = [ref takeSnapshot];
-        
-                // result
-                // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::takeSnapshot__CGRect_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
-                CGRect rect;
-                [rectValue getValue:&rect];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                UIImage* result = [ref takeSnapshot: rect];
-        
-                // result
-                // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setCompassImage_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setCompassImage : image];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setVisibleMapRect_animated_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
-                BMKMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-                // jsonable arg
-                BOOL animate = [args[@"animate"] boolValue];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setVisibleMapRect : mapRect animated: animate];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::mapRectThatFits_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
-                BMKMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BMKMapRect result = [ref mapRectThatFits: mapRect];
-        
-                // result
-                // 返回值: 结构体
-                NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::setVisibleMapRect_edgePadding_animated_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
-                BMKMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-                // struct arg
-                NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
-                UIEdgeInsets insets;
-                [insetsValue getValue:&insets];
-                // jsonable arg
-                BOOL animate = [args[@"animate"] boolValue];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref setVisibleMapRect : mapRect edgePadding: insets animated: animate];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::fitVisibleMapRect_edgePadding_withAnimated_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
-                BMKMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-                // struct arg
-                NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
-                UIEdgeInsets insets;
-                [insetsValue getValue:&insets];
-                // jsonable arg
-                BOOL animate = [args[@"animate"] boolValue];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                [ref fitVisibleMapRect : mapRect edgePadding: insets withAnimated: animate];
-        
-                // result
-                // 无返回值
-                NSString* jsonableResult = @"success";
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::mapRectThatFits_edgePadding_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
-                BMKMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-                // struct arg
-                NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
-                UIEdgeInsets insets;
-                [insetsValue getValue:&insets];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                BMKMapRect result = [ref mapRectThatFits: mapRect edgePadding: insets];
-        
-                // result
-                // 返回值: 结构体
-                NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
-        
-                [resultList addObject:jsonableResult];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKMapView::convertCoordinate_toPointToView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
-                CLLocationCoordinate2D coordinate;
-                [coordinateValue getValue:&coordinate];
-                // ref arg
-                UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
-        
-                // ref
-                BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-                // invoke native method
-                CGPoint result = [ref convertCoordinate: coordinate toPointToView: view];
-        
-                // result
-                // 返回值: 结构体
-                NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
         
                 [resultList addObject:jsonableResult];
             }

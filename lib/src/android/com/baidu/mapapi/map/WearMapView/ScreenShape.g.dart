@@ -4,7 +4,7 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_WearMapView_ScreenShape {
-  ROUND,
-  RECTANGLE,
-  UNDETECTED
+  ROUND /* 0 */,
+  RECTANGLE /* 0 */,
+  UNDETECTED /* 0 */
 }

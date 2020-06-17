@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -65,7 +64,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<int> Create() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::Create([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::Create([])');
     }
   
     // invoke native method
@@ -79,8 +78,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -88,11 +88,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<int> SetCallback(int var1, com_baidu_mapsdkplatform_comjni_map_basemap_BaseMapCallback var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetCallback([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetCallback([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetCallback', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetCallback', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -102,8 +102,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -111,7 +112,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<int> Release(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::Release([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::Release([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -125,8 +126,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -134,7 +136,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> Init(int var1, String var3, String var4, String var5, String var6, String var7, String var8, String var9, int var10, String var11, int var12, int var13, int var14, int var15, int var16, int var17, int var18) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::Init([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8, \'var9\':$var9, \'var10\':$var10, \'var11\':$var11, \'var12\':$var12, \'var13\':$var13, \'var14\':$var14, \'var15\':$var15, \'var16\':$var16, \'var17\':$var17, \'var18\':$var18])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::Init([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7, \'var8\':$var8, \'var9\':$var9, \'var10\':$var10, \'var11\':$var11, \'var12\':$var12, \'var13\':$var13, \'var14\':$var14, \'var15\':$var15, \'var16\':$var16, \'var17\':$var17, \'var18\':$var18])');
     }
   
     // invoke native method
@@ -148,8 +150,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -157,7 +160,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> OnPause(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnPause([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnPause([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -171,8 +174,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -180,7 +184,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> OnResume(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnResume([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnResume([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -194,8 +198,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -203,7 +208,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> OnBackground(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnBackground([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnBackground([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -217,8 +222,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -226,7 +232,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> OnForeground(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnForeground([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnForeground([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -240,8 +246,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -249,7 +256,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> ResetImageRes(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ResetImageRes([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ResetImageRes([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -263,8 +270,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -272,11 +280,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> SetMapStatus(int var1, android_os_Bundle var3, bool var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetMapStatus([\'var1\':$var1, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetMapStatus([\'var1\':$var1, \'var4\':$var4])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapStatus', {"var1": var1, "var3": var3.refId, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapStatus', {"var1": var1, "var3": var3?.refId, "var4": var4, "refId": refId});
   
   
     // handle native call
@@ -286,8 +294,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -295,7 +304,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<int> SetMapControlMode(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetMapControlMode([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetMapControlMode([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -309,8 +318,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -318,7 +328,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<android_os_Bundle> GetMapStatus(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetMapStatus([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetMapStatus([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -332,8 +342,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -341,7 +352,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<android_os_Bundle> getMapStatusLimits(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getMapStatusLimits([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getMapStatusLimits([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -355,8 +366,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -364,11 +376,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> setMapStatusLimits(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setMapStatusLimits([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setMapStatusLimits([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapStatusLimits', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::setMapStatusLimits', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -378,8 +390,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -387,7 +400,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<android_os_Bundle> getDrawingMapStatus(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getDrawingMapStatus([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getDrawingMapStatus([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -401,8 +414,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = android_os_Bundle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -410,11 +424,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<double> GetZoomToBound(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetZoomToBound([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetZoomToBound([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetZoomToBound', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::GetZoomToBound', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -424,8 +438,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -433,7 +448,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> ShowSatelliteMap(int var1, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowSatelliteMap([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowSatelliteMap([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -447,8 +462,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -456,7 +472,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> ShowTrafficMap(int var1, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowTrafficMap([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowTrafficMap([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -470,8 +486,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -479,7 +496,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> ShowHotMap(int var1, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowHotMap([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowHotMap([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -493,8 +510,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -502,7 +520,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> GetBaiduHotMapCityInfo(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetBaiduHotMapCityInfo([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetBaiduHotMapCityInfo([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -516,8 +534,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -525,7 +544,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> ShowLayers(int var1, int var3, bool var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowLayers([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowLayers([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -539,8 +558,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -548,7 +568,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> LayersIsShow(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::LayersIsShow([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::LayersIsShow([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -562,8 +582,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -571,7 +592,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> SetLayersClickable(int var1, int var3, bool var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetLayersClickable([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SetLayersClickable([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -585,8 +606,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -594,7 +616,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> UpdateLayers(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::UpdateLayers([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::UpdateLayers([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -608,8 +630,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -617,7 +640,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<int> AddLayer(int var1, int var3, int var4, String var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::AddLayer([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::AddLayer([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -631,8 +654,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -640,7 +664,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> SwitchLayer(int var1, int var3, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SwitchLayer([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SwitchLayer([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -654,8 +678,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -663,7 +688,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> ClearLayer(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ClearLayer([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ClearLayer([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -677,8 +702,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -686,7 +712,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> GetNearlyObjID(int var1, int var3, int var5, int var6, int var7) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetNearlyObjID([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetNearlyObjID([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5, \'var6\':$var6, \'var7\':$var7])');
     }
   
     // invoke native method
@@ -700,8 +726,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -709,7 +736,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> ScrPtToGeoPoint(int var1, int var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ScrPtToGeoPoint([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ScrPtToGeoPoint([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -723,8 +750,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -732,7 +760,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> GeoPtToScrPoint(int var1, int var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GeoPtToScrPoint([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GeoPtToScrPoint([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -746,8 +774,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -755,11 +784,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> SaveScreenToLocal(int var1, String var3, android_os_Bundle var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SaveScreenToLocal([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SaveScreenToLocal([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SaveScreenToLocal', {"var1": var1, "var3": var3, "var4": var4.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SaveScreenToLocal', {"var1": var1, "var3": var3, "var4": var4?.refId, "refId": refId});
   
   
     // handle native call
@@ -769,8 +798,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -778,7 +808,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> OnRecordAdd(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordAdd([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordAdd([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -792,8 +822,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -801,7 +832,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> OnRecordStart(int var1, int var3, bool var4, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordStart([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordStart([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -815,8 +846,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -824,7 +856,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> OnRecordSuspend(int var1, int var3, bool var4, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordSuspend([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordSuspend([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -838,8 +870,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -847,7 +880,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> OnRecordReload(int var1, int var3, bool var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordReload([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordReload([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -861,8 +894,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -870,7 +904,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> OnRecordRemove(int var1, int var3, bool var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordRemove([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordRemove([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -884,8 +918,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -893,7 +928,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> OnRecordGetAll(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordGetAll([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordGetAll([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -907,8 +942,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -916,7 +952,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> OnRecordGetAt(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordGetAt([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordGetAt([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -930,8 +966,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -939,7 +976,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> OnRecordImport(int var1, bool var3, bool var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordImport([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnRecordImport([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -953,8 +990,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -962,7 +1000,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> OnHotcityGet(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnHotcityGet([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnHotcityGet([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -976,8 +1014,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -985,7 +1024,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> OnSchcityGet(int var1, String var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnSchcityGet([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::OnSchcityGet([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -999,8 +1038,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1008,7 +1048,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> CleanCache(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::CleanCache([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::CleanCache([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1022,8 +1062,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1031,11 +1072,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> addOneOverlayItem(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::addOneOverlayItem([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::addOneOverlayItem([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addOneOverlayItem', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addOneOverlayItem', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1045,8 +1086,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1054,11 +1096,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> addtileOverlay(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::addtileOverlay([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::addtileOverlay([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addtileOverlay', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::addtileOverlay', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1068,8 +1110,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1077,11 +1120,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> updateOneOverlayItem(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::updateOneOverlayItem([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::updateOneOverlayItem([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateOneOverlayItem', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateOneOverlayItem', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1091,8 +1134,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1100,11 +1144,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> updateSDKTile(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::updateSDKTile([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::updateSDKTile([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateSDKTile', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::updateSDKTile', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1114,8 +1158,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1123,7 +1168,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> cleanSDKTileDataCache(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::cleanSDKTileDataCache([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::cleanSDKTileDataCache([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1137,8 +1182,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1146,11 +1192,11 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> removeOneOverlayItem(int var1, android_os_Bundle var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::removeOneOverlayItem([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::removeOneOverlayItem([\'var1\':$var1])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::removeOneOverlayItem', {"var1": var1, "var3": var3.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::removeOneOverlayItem', {"var1": var1, "var3": var3?.refId, "refId": refId});
   
   
     // handle native call
@@ -1160,8 +1206,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1169,7 +1216,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> PostStatInfo(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::PostStatInfo([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::PostStatInfo([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1183,8 +1230,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1192,7 +1240,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   static Future<int> MapProc(int var0, int var2, int var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::MapProc([\'var0\':$var0, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::MapProc([\'var0\':$var0, \'var2\':$var2, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -1206,8 +1254,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1215,7 +1264,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<int> CreateDuplicate(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::CreateDuplicate([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::CreateDuplicate([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1229,8 +1278,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1238,7 +1288,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<Int32List> GetScreenBuf(int var1, Int32List var3, int var4, int var5) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetScreenBuf([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::GetScreenBuf([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4, \'var5\':$var5])');
     }
   
     // invoke native method
@@ -1252,8 +1302,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__ as Int32List;
     
-      return __result__ as Int32List;
+      return __return__;
     }
   }
   
@@ -1261,7 +1312,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> enableDrawHouseHeight(int var1, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::enableDrawHouseHeight([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::enableDrawHouseHeight([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1275,8 +1326,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1284,7 +1336,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> isDrawHouseHeightEnable(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::isDrawHouseHeightEnable([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::isDrawHouseHeightEnable([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1298,8 +1350,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1307,7 +1360,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> clearHeatMapLayerCache(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::clearHeatMapLayerCache([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::clearHeatMapLayerCache([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1321,8 +1374,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1330,7 +1384,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> getCompassPosition(int var1, int var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getCompassPosition([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getCompassPosition([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1344,8 +1398,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1353,7 +1408,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<String> getfocusedBaseIndoorMapInfo(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getfocusedBaseIndoorMapInfo([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getfocusedBaseIndoorMapInfo([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1367,8 +1422,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1376,7 +1432,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> SwitchBaseIndoorMapFloor(int var1, String var3, String var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SwitchBaseIndoorMapFloor([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::SwitchBaseIndoorMapFloor([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -1390,8 +1446,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1399,7 +1456,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> ShowBaseIndoorMap(int var1, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowBaseIndoorMap([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::ShowBaseIndoorMap([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1413,8 +1470,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1422,7 +1480,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<bool> IsBaseIndoorMapMode(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::IsBaseIndoorMapMode([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::IsBaseIndoorMapMode([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1436,8 +1494,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1445,7 +1504,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> setCustomMapStyleParam(int var1, String var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setCustomMapStyleParam([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setCustomMapStyleParam([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -1459,8 +1518,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1468,7 +1528,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   static Future<void> SetMapCustomEnable(int var0, bool var2) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapCustomEnable([\'var0\':$var0, \'var2\':$var2])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap::SetMapCustomEnable([\'var0\':$var0, \'var2\':$var2])');
     }
   
     // invoke native method
@@ -1482,8 +1542,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1491,7 +1552,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> setBackgroundTransparent(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setBackgroundTransparent([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setBackgroundTransparent([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1505,8 +1566,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1514,7 +1576,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> resetBackgroundTransparent(int var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::resetBackgroundTransparent([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::resetBackgroundTransparent([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -1528,8 +1590,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1537,7 +1600,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> setCustomTrafficColor(int var1, int var3, int var5, int var7, int var9, bool var11) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setCustomTrafficColor([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5, \'var7\':$var7, \'var9\':$var9, \'var11\':$var11])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setCustomTrafficColor([\'var1\':$var1, \'var3\':$var3, \'var5\':$var5, \'var7\':$var7, \'var9\':$var9, \'var11\':$var11])');
     }
   
     // invoke native method
@@ -1551,8 +1614,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1560,7 +1624,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> getProjectionMatrix(int var1, Float64List var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getProjectionMatrix([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getProjectionMatrix([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -1574,8 +1638,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1583,7 +1648,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> getViewMatrix(int var1, Float64List var3, int var4) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getViewMatrix([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::getViewMatrix([\'var1\':$var1, \'var3\':$var3, \'var4\':$var4])');
     }
   
     // invoke native method
@@ -1597,8 +1662,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -1606,7 +1672,7 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
   Future<void> setMapCustomEnableDynamic(int var1, bool var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setMapCustomEnableDynamic([\'var1\':$var1, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.map.basemap.JNIBaseMap@$refId::setMapCustomEnableDynamic([\'var1\':$var1, \'var3\':$var3])');
     }
   
     // invoke native method
@@ -1620,8 +1686,9 @@ class com_baidu_mapsdkplatform_comjni_map_basemap_JNIBaseMap extends java_lang_O
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

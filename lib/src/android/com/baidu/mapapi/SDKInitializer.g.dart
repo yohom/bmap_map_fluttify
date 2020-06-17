@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -41,11 +40,11 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
   static Future<void> initialize__android_content_Context(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.SDKInitializer::initialize([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.SDKInitializer::initialize([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::initialize__android_content_Context', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::initialize__android_content_Context', {"var0": var0?.refId});
   
   
     // handle native call
@@ -55,8 +54,9 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -64,11 +64,11 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
   static Future<void> initialize__String__android_content_Context(String var0, android_content_Context var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.SDKInitializer::initialize([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.SDKInitializer::initialize([\'var0\':$var0])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::initialize__String__android_content_Context', {"var0": var0, "var1": var1.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::initialize__String__android_content_Context', {"var0": var0, "var1": var1?.refId});
   
   
     // handle native call
@@ -78,8 +78,9 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -87,11 +88,11 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
   static Future<void> initialize__android_content_Context__bool__String__String(android_content_Context var0, bool var1, String var2, String var3) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.SDKInitializer::initialize([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.SDKInitializer::initialize([\'var1\':$var1, \'var2\':$var2, \'var3\':$var3])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::initialize__android_content_Context__bool__String__String', {"var0": var0.refId, "var1": var1, "var2": var2, "var3": var3});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::initialize__android_content_Context__bool__String__String', {"var0": var0?.refId, "var1": var1, "var2": var2, "var3": var3});
   
   
     // handle native call
@@ -101,8 +102,9 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -110,11 +112,11 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
   static Future<void> setCoordType(com_baidu_mapapi_CoordType var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.SDKInitializer::setCoordType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.SDKInitializer::setCoordType([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::setCoordType', {"var0": var0.index});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::setCoordType', {"var0": var0.index + 0});
   
   
     // handle native call
@@ -124,8 +126,9 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -133,7 +136,7 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
   static Future<com_baidu_mapapi_CoordType> getCoordType() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.SDKInitializer::getCoordType([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.SDKInitializer::getCoordType([])');
     }
   
     // invoke native method
@@ -147,8 +150,9 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = com_baidu_mapapi_CoordType.values[__result__];
     
-      return com_baidu_mapapi_CoordType.values[__result__];
+      return __return__;
     }
   }
   
@@ -156,7 +160,7 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
   static Future<void> setHttpsEnable(bool var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.SDKInitializer::setHttpsEnable([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.SDKInitializer::setHttpsEnable([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -170,8 +174,9 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -179,7 +184,7 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
   static Future<bool> isHttpsEnable() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.SDKInitializer::isHttpsEnable([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.SDKInitializer::isHttpsEnable([])');
     }
   
     // invoke native method
@@ -193,8 +198,9 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

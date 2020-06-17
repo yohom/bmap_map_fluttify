@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapsdkplatform_comapi_util_SyncSysInfo extends java_lang_Object 
   static Future<String> getAuthToken() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getAuthToken([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getAuthToken([])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapsdkplatform_comapi_util_SyncSysInfo extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapsdkplatform_comapi_util_SyncSysInfo extends java_lang_Object 
   static Future<String> getPhoneInfo() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getPhoneInfo([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.SyncSysInfo::getPhoneInfo([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapsdkplatform_comapi_util_SyncSysInfo extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

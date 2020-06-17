@@ -6,15 +6,18 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
+class _BMKAnnotation_SUB extends NSObject with BMKAnnotation {}
+
 mixin BMKAnnotation on NSObject {
   
+
+  static BMKAnnotation subInstance() => _BMKAnnotation_SUB();
 
   Future<CLLocationCoordinate2D> get_coordinate() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotation::get_coordinate", {'refId': refId});
@@ -29,7 +32,7 @@ mixin BMKAnnotation on NSObject {
   Future<String> title() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotation@$refId::title([])');
+      debugPrint('fluttify-dart: BMKAnnotation@$refId::title([])');
     }
   
     // invoke native method
@@ -43,8 +46,9 @@ mixin BMKAnnotation on NSObject {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -52,7 +56,7 @@ mixin BMKAnnotation on NSObject {
   Future<String> subtitle() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotation@$refId::subtitle([])');
+      debugPrint('fluttify-dart: BMKAnnotation@$refId::subtitle([])');
     }
   
     // invoke native method
@@ -66,8 +70,9 @@ mixin BMKAnnotation on NSObject {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -75,11 +80,11 @@ mixin BMKAnnotation on NSObject {
   Future<void> setCoordinate(CLLocationCoordinate2D newCoordinate) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKAnnotation@$refId::setCoordinate([])');
+      debugPrint('fluttify-dart: BMKAnnotation@$refId::setCoordinate([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::setCoordinate', {"newCoordinate": newCoordinate.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::setCoordinate', {"newCoordinate": newCoordinate?.refId, "refId": refId});
   
   
     // handle native call
@@ -89,9 +94,75 @@ mixin BMKAnnotation on NSObject {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
+}
+
+extension BMKAnnotation_Batch on List<BMKAnnotation> {
+  //region methods
+  
+  Future<List<String>> title_batch() async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::title_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<String>> subtitle_batch() async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::subtitle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<void>> setCoordinate_batch(List<CLLocationCoordinate2D> newCoordinate) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::setCoordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"newCoordinate": newCoordinate[__i__].refId, "refId": this[__i__].refId}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    
+      return typedResult;
+    }
+  }
+  
+  //endregion
 }

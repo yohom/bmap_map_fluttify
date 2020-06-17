@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI extends java_lang_Object 
   static Future<void> create() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::create([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::create([])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +60,7 @@ class com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI extends java_lang_Object 
   static Future<void> init(Object var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::init([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::init([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +84,7 @@ class com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI extends java_lang_Object 
   static Future<void> unInit() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::unInit([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comjni.util.JNISysOSAPI::unInit([])');
     }
   
     // invoke native method
@@ -97,8 +98,9 @@ class com_baidu_mapsdkplatform_comjni_util_JNISysOSAPI extends java_lang_Object 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

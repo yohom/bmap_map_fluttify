@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -37,7 +36,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<bool> isCompassEnabled() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isCompassEnabled([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isCompassEnabled([])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,7 +60,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<bool> isRotateGesturesEnabled() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isRotateGesturesEnabled([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isRotateGesturesEnabled([])');
     }
   
     // invoke native method
@@ -74,8 +74,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -83,7 +84,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<bool> isScrollGesturesEnabled() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isScrollGesturesEnabled([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isScrollGesturesEnabled([])');
     }
   
     // invoke native method
@@ -97,8 +98,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -106,7 +108,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<bool> isOverlookingGesturesEnabled() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isOverlookingGesturesEnabled([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isOverlookingGesturesEnabled([])');
     }
   
     // invoke native method
@@ -120,8 +122,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -129,7 +132,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<bool> isZoomGesturesEnabled() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isZoomGesturesEnabled([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::isZoomGesturesEnabled([])');
     }
   
     // invoke native method
@@ -143,8 +146,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -152,7 +156,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<void> setAllGesturesEnabled(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setAllGesturesEnabled([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setAllGesturesEnabled([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -166,8 +170,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -175,7 +180,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<void> setCompassEnabled(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setCompassEnabled([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setCompassEnabled([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -189,8 +194,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -198,7 +204,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<void> setRotateGesturesEnabled(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setRotateGesturesEnabled([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setRotateGesturesEnabled([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -212,8 +218,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -221,7 +228,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<void> setScrollGesturesEnabled(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setScrollGesturesEnabled([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setScrollGesturesEnabled([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -235,8 +242,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -244,7 +252,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<void> setOverlookingGesturesEnabled(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setOverlookingGesturesEnabled([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setOverlookingGesturesEnabled([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -258,8 +266,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -267,7 +276,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<void> setZoomGesturesEnabled(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setZoomGesturesEnabled([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setZoomGesturesEnabled([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -281,8 +290,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -290,7 +300,7 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
   Future<void> setEnlargeCenterWithDoubleClickEnable(bool var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setEnlargeCenterWithDoubleClickEnable([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.UiSettings@$refId::setEnlargeCenterWithDoubleClickEnable([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -304,8 +314,9 @@ class com_baidu_mapapi_map_UiSettings extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

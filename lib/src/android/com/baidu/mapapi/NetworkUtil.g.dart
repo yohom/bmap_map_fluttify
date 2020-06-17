@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
   static Future<void> updateNetworkProxy(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.NetworkUtil::updateNetworkProxy([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.NetworkUtil::updateNetworkProxy([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::updateNetworkProxy', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::updateNetworkProxy', {"var0": var0?.refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
   static Future<bool> initConnectState() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.NetworkUtil::initConnectState([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.NetworkUtil::initConnectState([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,11 +102,11 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
   static Future<String> getCurrentNetMode(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.NetworkUtil::getCurrentNetMode([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.NetworkUtil::getCurrentNetMode([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::getCurrentNetMode', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::getCurrentNetMode', {"var0": var0?.refId});
   
   
     // handle native call
@@ -115,8 +116,9 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,11 +126,11 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
   static Future<bool> isNetworkAvailable(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.NetworkUtil::isNetworkAvailable([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.NetworkUtil::isNetworkAvailable([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::isNetworkAvailable', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::isNetworkAvailable', {"var0": var0?.refId});
   
   
     // handle native call
@@ -138,8 +140,9 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,11 +150,11 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
   static Future<bool> isWifiConnected__android_content_Context(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.NetworkUtil::isWifiConnected([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.NetworkUtil::isWifiConnected([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::isWifiConnected__android_content_Context', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.NetworkUtil::isWifiConnected__android_content_Context', {"var0": var0?.refId});
   
   
     // handle native call
@@ -161,8 +164,9 @@ class com_baidu_mapapi_NetworkUtil extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

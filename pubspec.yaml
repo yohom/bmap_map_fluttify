@@ -1,8 +1,8 @@
 name: bmap_map_fluttify
 description: An `BaiduMap` Map Component, Powered By `Fluttify` Engine, Which Generates Dart Binding For Native SDK.
-version: 0.0.2
+version: 0.0.3
 author: yohom <yohombao@qq.com>
-homepage: https://github.com/fluttify-project/baidu_map_fluttify
+homepage: https://github.com/fluttify-project
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -11,9 +11,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bmap_core_fluttify: ^0.0.7-dev.2
-  foundation_fluttify: ^0.7.1-dev.0
-  core_location_fluttify: ^0.1.0-dev.0
+  bmap_utils_fluttify:
+    git:
+      url: git@github.com:fluttify-project/bmap_utils_fluttify.git
+      ref: develop
+  bmap_core_fluttify:
+    git:
+      url: git@github.com:fluttify-project/bmap_core_fluttify.git
+      ref: develop
+  foundation_fluttify: ^0.8.5+1
+  core_location_fluttify: ^0.2.1
 
 dev_dependencies:
   flutter_test:

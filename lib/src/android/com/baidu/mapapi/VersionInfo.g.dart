@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -17,9 +16,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.VersionInfo';
 
-  static final String VERSION_INFO = "6_2_0";
+  static final String VERSION_INFO = "6_3_0";
   static final String VERSION_DESC = "baidumapapi_base";
-  static final String KIT_NAME = "BaiduMapSDK_base_v6_2_0";
+  static final String KIT_NAME = "BaiduMapSDK_base_v6_3_0";
   //endregion
 
   //region creators
@@ -57,7 +56,7 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   static Future<String> getApiVersion() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.VersionInfo::getApiVersion([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.VersionInfo::getApiVersion([])');
     }
   
     // invoke native method
@@ -71,8 +70,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -80,7 +80,7 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   static Future<String> getVersionDesc() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.VersionInfo::getVersionDesc([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.VersionInfo::getVersionDesc([])');
     }
   
     // invoke native method
@@ -94,8 +94,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -103,7 +104,7 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   static Future<String> getKitName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.VersionInfo::getKitName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.VersionInfo::getKitName([])');
     }
   
     // invoke native method
@@ -117,8 +118,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

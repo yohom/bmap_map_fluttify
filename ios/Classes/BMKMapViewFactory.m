@@ -34,7 +34,8 @@ extern BOOL enableLog;
 @implementation BMKMapViewPlatformView {
   int64_t _viewId;
   CGRect _frame;
-  NSDictionary<NSString *, Handler> *_handlerMap;
+  NSDictionary<NSString *, Handler>* _handlerMap;
+  BMKMapView* _view;
 }
 
 - (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
@@ -49,9 +50,11 @@ extern BOOL enableLog;
 }
 
 - (UIView *)view {
-  BMKMapView *view = [[BMKMapView alloc] initWithFrame:_frame];
-  // 这里用一个magic number调整一下id
-  HEAP[@(2147483647 - _viewId)] = view;
+  if (_view == nil) {
+    _view = [[BMKMapView alloc] initWithFrame:_frame];
+    // 这里用一个magic number调整一下id
+    HEAP[@(2147483647 - _viewId)] = _view;
+  }
 
   //region handlers
   _handlerMap = @{
@@ -228,8 +231,12 @@ extern BOOL enableLog;
       
               // 构造可以直接传输的参数
               // ref callback arg
-              NSNumber* argerror = @(error.hash);
-              HEAP[argerror] = error;
+              NSNumber* argerror = [NSNull null];
+              if (error != nil) {
+                  argerror = @(error.hash);
+                  HEAP[argerror] = error;
+              }
+      
               // jsonable callback arg
               NSString* argpath = path;
       
@@ -3142,7 +3149,7 @@ extern BOOL enableLog;
     }
   }];
   //endregion
-  return view;
+  return _view;
 }
 
 //region delegate
@@ -3158,8 +3165,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
   
@@ -3177,11 +3188,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argerror = @(error.hash);
-  HEAP[argerror] = error;
+  NSNumber* argerror = [NSNull null];
+  if (error != nil) {
+      argerror = @(error.hash);
+      HEAP[argerror] = error;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
   
@@ -3199,8 +3218,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
   
@@ -3218,11 +3241,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argstatus = @(status.hash);
-  HEAP[argstatus] = status;
+  NSNumber* argstatus = [NSNull null];
+  if (status != nil) {
+      argstatus = @(status.hash);
+      HEAP[argstatus] = status;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
   
@@ -3240,8 +3271,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
@@ -3261,8 +3296,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
   // enum callback arg
@@ -3284,8 +3323,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
@@ -3305,8 +3348,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* arganimated = @(animated);
   // enum callback arg
@@ -3328,11 +3375,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argannotation = @(annotation.hash);
-  HEAP[argannotation] = annotation;
+  NSNumber* argannotation = [NSNull null];
+  if (annotation != nil) {
+      argannotation = @(annotation.hash);
+      HEAP[argannotation] = annotation;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
               arguments:@{}
@@ -3356,7 +3411,7 @@ extern BOOL enableLog;
   if ([annotation isKindOfClass:[BMKUserLocation class]]) {
     return nil;
   }
-    
+
   if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
       BMKAnnotationView* annotationView;
       // 如果没有指定icon就使用m自带的annotation
@@ -3406,8 +3461,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // list callback arg
   NSMutableArray<NSNumber*>* argviews = [NSMutableArray arrayWithCapacity:views.count];
   for (int __i__ = 0; __i__ < views.count; __i__++) {
@@ -3434,11 +3493,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -3456,11 +3523,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -3478,11 +3553,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -3500,11 +3583,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
   // primitive callback arg
   NSNumber* argnewState = @(newState);
   // primitive callback arg
@@ -3526,11 +3617,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argview = @(view.hash);
-  HEAP[argview] = view;
+  NSNumber* argview = [NSNull null];
+  if (view != nil) {
+      argview = @(view.hash);
+      HEAP[argview] = view;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
   
@@ -3548,11 +3647,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argoverlay = @(overlay.hash);
-  HEAP[argoverlay] = overlay;
+  NSNumber* argoverlay = [NSNull null];
+  if (overlay != nil) {
+      argoverlay = @(overlay.hash);
+      HEAP[argoverlay] = overlay;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
               arguments:@{}
@@ -3563,7 +3670,133 @@ extern BOOL enableLog;
   NSLog(@"暂不支持有返回值的回调方法");
   
   ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
-  
+  // 线
+  if ([overlay isKindOfClass:[BMKPolyline class]])
+  {
+      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
+      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+      UIImage* texture = (UIImage *) objc_getAssociatedObject(overlay, (const void *) 3);
+      NSNumber* lineCapType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 4);
+      NSNumber* lineJoinType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 5);
+      NSNumber* dashType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 6);
+
+      BMKPolylineView *polylineRenderer = [[BMKPolylineView alloc] initWithPolyline:overlay];
+
+      polylineRenderer.lineWidth = [width doubleValue];
+      // 描边颜色
+      NSUInteger rgba = [strokeColor unsignedIntegerValue];
+      float components[4];
+      for (int i = 3; i >= 0; i--) {
+          components[i] = (rgba & 0xff) / 255.0;
+          rgba >>= 8;
+      }
+      polylineRenderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
+//      if (texture != nil) polylineRenderer.strokeImage = texture;
+//      if (lineCapType != nil) polylineRenderer.lineCapType = (MALineCapType) [lineCapType integerValue];
+//      if (lineJoinType != nil) polylineRenderer.lineJoinType = (MALineJoinType) [lineJoinType integerValue];
+      if (dashType != nil) polylineRenderer.lineDashType = (BMKLineDashType) [dashType integerValue];
+
+      // 这次调用完成后 清空栈
+      [STACK removeAllObjects];
+      return polylineRenderer;
+  }
+
+  // 多边形
+  if ([overlay isKindOfClass:[BMKPolygon class]])
+  {
+      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
+      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+      NSNumber* fillColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
+
+      BMKPolygonView *polygonRenderer = [[BMKPolygonView alloc] initWithPolygon:overlay];
+
+      if (width != nil) polygonRenderer.lineWidth = [width doubleValue];
+      // 描边颜色
+      NSUInteger rgba = [strokeColor unsignedIntegerValue];
+      float components[4];
+      for (int i = 3; i >= 0; i--) {
+          components[i] = (rgba & 0xff) / 255.0;
+          rgba >>= 8;
+      }
+      polygonRenderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
+
+      // 填充颜色
+      rgba = [fillColor unsignedIntegerValue];
+      for (int i = 3; i >= 0; i--) {
+          components[i] = (rgba & 0xff) / 255.0;
+          rgba >>= 8;
+      }
+      polygonRenderer.fillColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
+
+      // 这次调用完成后 清空栈
+      [STACK removeAllObjects];
+      return polygonRenderer;
+  }
+
+  // 圆
+  if ([overlay isKindOfClass:[BMKCircle class]])
+  {
+      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
+      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+      NSNumber* fillColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
+
+      BMKCircleView *circleRenderer = [[BMKCircleView alloc] initWithCircle:overlay];
+
+      // 宽度
+      if (width != nil) circleRenderer.lineWidth = [width doubleValue];
+
+      // 描边颜色
+      NSUInteger rgba = [strokeColor unsignedIntegerValue];
+      float components[4];
+      for (int i = 3; i >= 0; i--) {
+          components[i] = (rgba & 0xff) / 255.0;
+          rgba >>= 8;
+      }
+      circleRenderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
+
+      // 填充颜色
+      rgba = [fillColor unsignedIntegerValue];
+      for (int i = 3; i >= 0; i--) {
+          components[i] = (rgba & 0xff) / 255.0;
+          rgba >>= 8;
+      }
+      circleRenderer.fillColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
+
+      // 这次调用完成后 清空栈
+      [STACK removeAllObjects];
+      return circleRenderer;
+  }
+
+//  // 瓦片图
+//  if ([overlay isKindOfClass:[BMKTileOverlay class]])
+//  {
+//      BMKTileOverlayRenderer *tileOverlayRenderer = [[BMKTileOverlayRenderer alloc] initWithTileOverlay:overlay];
+//      return tileOverlayRenderer;
+//  }
+//
+//  // 海量点
+//  if ([overlay isKindOfClass:[MAMultiPointOverlay class]])
+//  {
+//      UIImage* icon = (UIImage *) objc_getAssociatedObject(overlay, (const void *) 1);
+//      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+//      NSNumber* height = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
+//
+//      MAMultiPointOverlayRenderer *multiPointOverlayRenderer = [[MAMultiPointOverlayRenderer alloc] initWithMultiPointOverlay: overlay];
+//      if (icon != nil) {
+//          multiPointOverlayRenderer.icon = icon;
+//      }
+//      if (width != nil && height != nil) {
+//          multiPointOverlayRenderer.pointSize = CGSizeMake([width doubleValue], [height doubleValue]);
+//      }
+//      return multiPointOverlayRenderer;
+//  }
+
+  // 图片
+  if ([overlay isKindOfClass:[BMKGroundOverlay class]])
+  {
+      BMKGroundOverlayView *groundPverlayRenderer = [[BMKGroundOverlayView alloc] initWithGroundOverlay: overlay];
+      return groundPverlayRenderer;
+  }
   ////////////////////////////////////////////////////////////////////////////////
   
   return nil;
@@ -3581,8 +3814,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // list callback arg
   NSMutableArray<NSNumber*>* argoverlayViews = [NSMutableArray arrayWithCapacity:overlayViews.count];
   for (int __i__ = 0; __i__ < overlayViews.count; __i__++) {
@@ -3609,11 +3846,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argoverlayView = @(overlayView.hash);
-  HEAP[argoverlayView] = overlayView;
+  NSNumber* argoverlayView = [NSNull null];
+  if (overlayView != nil) {
+      argoverlayView = @(overlayView.hash);
+      HEAP[argoverlayView] = overlayView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
   
@@ -3631,11 +3876,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // ref callback arg
-  NSNumber* argmapPoi = @(mapPoi.hash);
-  HEAP[argmapPoi] = mapPoi;
+  NSNumber* argmapPoi = [NSNull null];
+  if (mapPoi != nil) {
+      argmapPoi = @(mapPoi.hash);
+      HEAP[argmapPoi] = mapPoi;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
   
@@ -3653,8 +3906,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -3677,8 +3934,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -3701,8 +3962,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -3725,8 +3990,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   NSNumber* argcoordinate = @(coordinateValue.hash);
@@ -3753,8 +4022,12 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
   
@@ -3772,13 +4045,21 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = @(mapView.hash);
-  HEAP[argmapView] = mapView;
+  NSNumber* argmapView = [NSNull null];
+  if (mapView != nil) {
+      argmapView = @(mapView.hash);
+      HEAP[argmapView] = mapView;
+  }
+  
   // primitive callback arg
   NSNumber* argflag = @(flag);
   // ref callback arg
-  NSNumber* arginfo = @(info.hash);
-  HEAP[arginfo] = info;
+  NSNumber* arginfo = [NSNull null];
+  if (info != nil) {
+      arginfo = @(info.hash);
+      HEAP[arginfo] = info;
+  }
+  
 
   [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
   

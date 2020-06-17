@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -55,11 +54,11 @@ class BMKActionPaopaoView extends UIView  {
   Future<dynamic> initWithCustomView(UIView customView, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: BMKActionPaopaoView@$refId::initWithCustomView([])');
+      debugPrint('fluttify-dart: BMKActionPaopaoView@$refId::initWithCustomView([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView?.refId, "refId": refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class BMKActionPaopaoView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(Ref()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   

@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<com_baidu_mapapi_favorite_FavoritePoiInfo> poiName(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::poiName([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::poiName([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -69,8 +68,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -78,11 +78,11 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<com_baidu_mapapi_favorite_FavoritePoiInfo> pt(com_baidu_mapapi_model_LatLng var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::pt([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::pt([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.favorite.FavoritePoiInfo::pt', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.favorite.FavoritePoiInfo::pt', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -92,8 +92,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -101,7 +102,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<com_baidu_mapapi_favorite_FavoritePoiInfo> addr(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::addr([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::addr([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -115,8 +116,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -124,7 +126,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<com_baidu_mapapi_favorite_FavoritePoiInfo> cityName(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::cityName([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::cityName([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -138,8 +140,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -147,7 +150,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<com_baidu_mapapi_favorite_FavoritePoiInfo> uid(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::uid([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::uid([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -161,8 +164,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_favorite_FavoritePoiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -170,7 +174,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<String> getID() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getID([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getID([])');
     }
   
     // invoke native method
@@ -184,8 +188,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -193,7 +198,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<String> getPoiName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getPoiName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getPoiName([])');
     }
   
     // invoke native method
@@ -207,8 +212,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -216,7 +222,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<com_baidu_mapapi_model_LatLng> getPt() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getPt([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getPt([])');
     }
   
     // invoke native method
@@ -230,8 +236,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-      return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      return __return__;
     }
   }
   
@@ -239,7 +246,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<String> getAddr() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getAddr([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getAddr([])');
     }
   
     // invoke native method
@@ -253,8 +260,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -262,7 +270,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<String> getUid() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getUid([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getUid([])');
     }
   
     // invoke native method
@@ -276,8 +284,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -285,7 +294,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<String> getCityName() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getCityName([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getCityName([])');
     }
   
     // invoke native method
@@ -299,8 +308,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -308,7 +318,7 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
   Future<int> getTimeStamp() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getTimeStamp([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.favorite.FavoritePoiInfo@$refId::getTimeStamp([])');
     }
   
     // invoke native method
@@ -322,8 +332,9 @@ class com_baidu_mapapi_favorite_FavoritePoiInfo extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

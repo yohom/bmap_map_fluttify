@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
   static Future<void> init(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::init([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::init([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.PermissionCheck::init', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapsdkplatform.comapi.util.PermissionCheck::init', {"var0": var0?.refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
   static Future<int> permissionCheck() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::permissionCheck([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::permissionCheck([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +102,7 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
   static Future<void> destory() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::destory([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::destory([])');
     }
   
     // invoke native method
@@ -115,8 +116,9 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +126,7 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
   static Future<int> getPermissionResult() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::getPermissionResult([])');
+      debugPrint('fluttify-dart: com.baidu.mapsdkplatform.comapi.util.PermissionCheck::getPermissionResult([])');
     }
   
     // invoke native method
@@ -138,8 +140,9 @@ class com_baidu_mapsdkplatform_comapi_util_PermissionCheck extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

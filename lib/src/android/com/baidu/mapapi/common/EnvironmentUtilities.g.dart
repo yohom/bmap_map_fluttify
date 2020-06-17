@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<void> initAppDirectory(android_content_Context var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::initAppDirectory([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::initAppDirectory([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.common.EnvironmentUtilities::initAppDirectory', {"var0": var0.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.common.EnvironmentUtilities::initAppDirectory', {"var0": var0?.refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<String> getSDCardPath() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getSDCardPath([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getSDCardPath([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +102,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<void> setSDCardPath(String var0) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::setSDCardPath([\'var0\':$var0])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::setSDCardPath([\'var0\':$var0])');
     }
   
     // invoke native method
@@ -115,8 +116,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -124,7 +126,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<String> getAppSDCardPath() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getAppSDCardPath([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getAppSDCardPath([])');
     }
   
     // invoke native method
@@ -138,8 +140,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -147,7 +150,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<String> getAppCachePath() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getAppCachePath([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getAppCachePath([])');
     }
   
     // invoke native method
@@ -161,8 +164,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -170,7 +174,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<String> getAppSecondCachePath() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getAppSecondCachePath([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getAppSecondCachePath([])');
     }
   
     // invoke native method
@@ -184,8 +188,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -193,7 +198,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<int> getMapTmpStgMax() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getMapTmpStgMax([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getMapTmpStgMax([])');
     }
   
     // invoke native method
@@ -207,8 +212,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -216,7 +222,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<int> getDomTmpStgMax() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getDomTmpStgMax([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getDomTmpStgMax([])');
     }
   
     // invoke native method
@@ -230,8 +236,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -239,7 +246,7 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
   static Future<int> getItsTmpStgMax() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getItsTmpStgMax([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.common.EnvironmentUtilities::getItsTmpStgMax([])');
     }
   
     // invoke native method
@@ -253,8 +260,9 @@ class com_baidu_mapapi_common_EnvironmentUtilities extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

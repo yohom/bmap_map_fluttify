@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,7 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Object  {
+/* abstract */ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.http.HttpClient.ProtoResultCallback';
 
@@ -37,7 +36,7 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
   Future<void> onSuccess(String var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onSuccess([\'var1\':$var1])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onSuccess([\'var1\':$var1])');
     }
   
     // invoke native method
@@ -51,8 +50,9 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -60,11 +60,11 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
   Future<void> onFailed(com_baidu_mapapi_http_HttpClient_HttpStateError var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onFailed([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.http.HttpClient.ProtoResultCallback@$refId::onFailed([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onFailed', {"var1": var1.index, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onFailed', {"var1": var1.index + 0, "refId": refId});
   
   
     // handle native call
@@ -74,8 +74,9 @@ class com_baidu_mapapi_http_HttpClient_ProtoResultCallback extends java_lang_Obj
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

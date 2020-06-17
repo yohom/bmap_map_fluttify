@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,7 +54,7 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
   Future<void> setCallback(com_baidu_mapapi_map_WearMapView_OnDismissCallback var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.SwipeDismissView@$refId::setCallback([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.SwipeDismissView@$refId::setCallback([])');
     }
   
     // invoke native method
@@ -66,14 +65,11 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
     MethodChannel('com.baidu.mapapi.map.SwipeDismissView::setCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
-          // final refId = args['callerRefId'] as int;
-          // if (refId != this.refId) return;
-  
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onDismiss([])');
+                debugPrint('fluttify-dart-callback: onDismiss([])');
               }
         
               // handle the native call
@@ -82,7 +78,7 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
             case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify':
               // print log
               if (fluttifyLogEnabled) {
-                print('fluttify-dart-callback: onNotify([])');
+                debugPrint('fluttify-dart-callback: onNotify([])');
               }
         
               // handle the native call
@@ -97,8 +93,9 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

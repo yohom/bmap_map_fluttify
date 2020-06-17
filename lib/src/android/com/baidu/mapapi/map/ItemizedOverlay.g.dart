@@ -5,7 +5,6 @@
 
 import 'dart:typed_data';
 
-import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -55,11 +54,11 @@ class com_baidu_mapapi_map_ItemizedOverlay extends com_baidu_mapapi_map_Overlay 
   Future<void> addItem(com_baidu_mapapi_map_OverlayOptions var1) async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ItemizedOverlay@$refId::addItem([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ItemizedOverlay@$refId::addItem([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.ItemizedOverlay::addItem', {"var1": var1.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.ItemizedOverlay::addItem', {"var1": var1?.refId, "refId": refId});
   
   
     // handle native call
@@ -69,8 +68,9 @@ class com_baidu_mapapi_map_ItemizedOverlay extends com_baidu_mapapi_map_Overlay 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -78,7 +78,7 @@ class com_baidu_mapapi_map_ItemizedOverlay extends com_baidu_mapapi_map_Overlay 
   Future<void> reAddAll() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ItemizedOverlay@$refId::reAddAll([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ItemizedOverlay@$refId::reAddAll([])');
     }
   
     // invoke native method
@@ -92,8 +92,9 @@ class com_baidu_mapapi_map_ItemizedOverlay extends com_baidu_mapapi_map_Overlay 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   
@@ -101,7 +102,7 @@ class com_baidu_mapapi_map_ItemizedOverlay extends com_baidu_mapapi_map_Overlay 
   Future<void> removeAll() async {
     // print log
     if (fluttifyLogEnabled) {
-      print('fluttify-dart: com.baidu.mapapi.map.ItemizedOverlay@$refId::removeAll([])');
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.ItemizedOverlay@$refId::removeAll([])');
     }
   
     // invoke native method
@@ -115,8 +116,9 @@ class com_baidu_mapapi_map_ItemizedOverlay extends com_baidu_mapapi_map_Overlay 
     if (__result__ == null) {
       return null;
     } else {
+      final __return__ = __result__;
     
-      return __result__;
+      return __return__;
     }
   }
   

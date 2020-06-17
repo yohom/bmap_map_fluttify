@@ -6,7 +6,6 @@
 import 'dart:typed_data';
 
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
-import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
@@ -55,6 +54,18 @@ class BMKOLUpdateElement extends NSObject  {
     return __result__;
   }
   
+  Future<int> get_size() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLUpdateElement::get_size", {'refId': refId});
+  
+    return __result__;
+  }
+  
+  Future<int> get_serversize() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLUpdateElement::get_serversize", {'refId': refId});
+  
+    return __result__;
+  }
+  
   Future<int> get_ratio() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLUpdateElement::get_ratio", {'refId': refId});
   
@@ -90,6 +101,18 @@ class BMKOLUpdateElement extends NSObject  {
   
   Future<void> set_cityID(int cityID) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLUpdateElement::set_cityID', {'refId': refId, "cityID": cityID});
+  
+  
+  }
+  
+  Future<void> set_size(int size) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLUpdateElement::set_size', {'refId': refId, "size": size});
+  
+  
+  }
+  
+  Future<void> set_serversize(int serversize) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLUpdateElement::set_serversize', {'refId': refId, "serversize": serversize});
   
   
   }
@@ -141,6 +164,20 @@ extension BMKOLUpdateElement_Batch on List<BMKOLUpdateElement> {
     return typedResult;
   }
   
+  Future<List<int>> get_size_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLUpdateElement::get_size_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+  
+    return typedResult;
+  }
+  
+  Future<List<int>> get_serversize_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLUpdateElement::get_serversize_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+  
+    return typedResult;
+  }
+  
   Future<List<int>> get_ratio_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKOLUpdateElement::get_ratio_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
     final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
@@ -180,6 +217,18 @@ extension BMKOLUpdateElement_Batch on List<BMKOLUpdateElement> {
   
   Future<void> set_cityID_batch(List<int> cityID) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLUpdateElement::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityID": cityID[__i__]}]);
+  
+  
+  }
+  
+  Future<void> set_size_batch(List<int> size) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLUpdateElement::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "size": size[__i__]}]);
+  
+  
+  }
+  
+  Future<void> set_serversize_batch(List<int> serversize) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOLUpdateElement::set_serversize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "serversize": serversize[__i__]}]);
   
   
   }
