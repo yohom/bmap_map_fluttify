@@ -70,6 +70,39 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+//  /// 设置我的位置数据
+//  Future<void> setMyLocationData(LatLng coordinate) async {
+//    final lat = coordinate.latitude;
+//    final lng = coordinate.longitude;
+//    await platform(
+//      android: (pool) async {
+//        final map = await androidController.getMap();
+//
+//        await map.setMyLocationEnabled(true);
+//
+//        final builder =
+//        await com_baidu_mapapi_map_MyLocationData_Builder.create__();
+//        await builder.latitude(lat);
+//        await builder.longitude(lng);
+//
+//        await map.setMyLocationData(await builder.build());
+//
+//        pool..add(map)..add(builder);
+//      },
+//      ios: (pool) async {
+//        final latLng = await CLLocationCoordinate2D.create(lat, lng);
+//
+//        await iosController.set_showsUserLocation(true);
+//
+//        final data = await BMKUserLocation.create__();
+//        final location = CLLocation
+//        await data.set_location(location);
+//
+//        await iosController.updateLocationData(data);
+//        pool..add(latLng);
+//      },
+//    );
+//  }
   /// 批量添加marker
   ///
   /// 根据[options]批量创建Marker
