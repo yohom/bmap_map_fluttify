@@ -59,12 +59,14 @@ class BmapLocation {
                 altitude: await location.getAltitude(),
                 country: await location.getCountry(),
                 province: await location.getProvince(),
+                direction: await location.getDirection(),
                 city: await location.getCity(),
                 cityCode: await location.getCityCode(),
                 adCode: await location.getAdCode(),
                 district: await location.getDistrict(),
                 street: await location.getStreet(),
                 streetNumber: await location.getStreetNumber(),
+                accuracy: await location.getRadius(),
                 iosModel: null,
               ));
               await _androidClient.stop();
@@ -97,6 +99,7 @@ class BmapLocation {
         }
         await option.setIsNeedAddress(needAddress);
         await option.setIsNeedAltitude(true);
+        await option.setCoorType('BD09ll');
         // 设置定位请求超时时间，默认为30秒。
         if (timeout != null) await option.setTimeOut(timeout.inMilliseconds);
 
@@ -125,11 +128,13 @@ class BmapLocation {
               country: await regeocode.get_country(),
               province: await regeocode.get_province(),
               city: await regeocode.get_city(),
+              direction: await clLocation.course,
               cityCode: await regeocode.get_cityCode(),
               adCode: await regeocode.get_adCode(),
               district: await regeocode.get_district(),
               street: await regeocode.get_street(),
               streetNumber: await regeocode.get_streetNumber(),
+              accuracy: await clLocation.horizontalAccuracy,
               iosModel: location,
             ));
           },
@@ -138,6 +143,8 @@ class BmapLocation {
         if (timeout != null) {
           await _iosClient.set_locationTimeout(timeout.inSeconds);
         }
+        await _iosClient.set_coordinateType(
+            BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09LL);
 
         return completer.future;
       },

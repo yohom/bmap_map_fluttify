@@ -1,4 +1,5 @@
 import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
+import 'package:bmap_map_fluttify_example/utils/misc.dart';
 import 'package:bmap_map_fluttify_example/widgets/setting.widget.dart';
 import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,10 @@ class _CreateMapScreenState extends State<CreateMapScreen> {
               children: <Widget>[
                 BooleanSetting(
                   head: '是否显示定位',
-                  onSelected: (value) async {},
+                  onSelected: (value) async {
+                    if (value && await requestPermission())
+                      _controller.showMyLocation();
+                  },
                 ),
               ],
             ),

@@ -338,13 +338,14 @@ class Circle {
   }
 }
 
-
 /// 定位结果 model
 class Location {
   Location({
     @required this.address,
     @required this.latLng,
     @required this.altitude,
+    @required this.accuracy,
+    @required this.direction,
     @required this.country,
     @required this.province,
     @required this.city,
@@ -364,6 +365,12 @@ class Location {
 
   /// 海拔
   double altitude;
+
+  /// 精度
+  double accuracy;
+
+  /// 方向
+  double direction;
 
   /// 国家
   String country;
@@ -393,6 +400,6 @@ class Location {
 
   @override
   String toString() {
-    return 'Location{\naddress: $address, \nlatLng: $latLng, \naltitude: $altitude, \ncountry: $country, \nprovince: $province, \ncity: $city, \ncityCode: $cityCode, \nadCode: $adCode, \ndistrict: $district, \nstreet: $street, \nstreetNumber: $streetNumber\n}';
+    return 'Location{\naddress: $address, \nlatLng: $latLng, \naltitude: $altitude, \naccuracy: $accuracy, \ndirection: $direction, \ncountry: $country, \nprovince: $province, \ncity: $city, \ncityCode: $cityCode, \nadCode: $adCode, \ndistrict: $district, \nstreet: $street, \nstreetNumber: $streetNumber\n}';
   }
 }

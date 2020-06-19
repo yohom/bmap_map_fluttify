@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 
+import 'bmap_location.dart';
 import 'enums.dart';
 import 'models.dart';
 
