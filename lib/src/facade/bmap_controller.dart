@@ -72,9 +72,7 @@ class BmapController with WidgetsBindingObserver {
 
   /// 设置我的位置数据
   Future<void> showMyLocation() async {
-    // TODO 处理连续定位
-    final location = await BmapLocation.instance.fetchLocation();
-    debugPrint('获取到定位: $location');
+    final locationStream = BmapLocation.instance.listenLocation();
     await platform(
       android: (pool) async {
         final map = await androidController.getMap();
@@ -83,22 +81,23 @@ class BmapController with WidgetsBindingObserver {
 
         final builder =
             await com_baidu_mapapi_map_MyLocationData_Builder.create__();
-        await builder.latitude(location.latLng.latitude);
-        await builder.longitude(location.latLng.longitude);
-        await builder.accuracy(location.accuracy);
+        locationStream.listen((location) async {
+          await builder.latitude(location.latLng.latitude);
+          await builder.longitude(location.latLng.longitude);
+          await builder.accuracy(location.accuracy);
 
-        await map.setMyLocationData(await builder.build());
-
-        pool..add(map)..add(builder);
+          await map.setMyLocationData(await builder.build());
+        });
       },
       ios: (pool) async {
         await iosController.set_showsUserLocation(true);
 
         final data = await BMKUserLocation.create__();
-        await data.set_location(await location.iosModel.get_location());
 
-        await iosController.updateLocationData(data);
-        pool..add(data);
+        locationStream.listen((location) async {
+          await data.set_location(await location.iosModel.get_location());
+          await iosController.updateLocationData(data);
+        });
       },
     );
   }
