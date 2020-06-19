@@ -72,6 +72,7 @@ class BmapController with WidgetsBindingObserver {
 
   /// 设置我的位置数据
   Future<void> showMyLocation() async {
+    // TODO 处理连续定位
     final location = await BmapLocation.instance.fetchLocation();
     debugPrint('获取到定位: $location');
     await platform(
@@ -810,9 +811,13 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 释放资源
   Future<void> dispose() async {
     await androidController?.onPause();
     await androidController?.onDestroy();
+    final map = await androidController?.getMap();
+    await map.setMyLocationEnabled(false);
+
     await iosController?.viewWillDisappear();
 
     WidgetsBinding.instance.removeObserver(this);
