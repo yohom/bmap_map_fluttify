@@ -20,6 +20,43 @@ class com_baidu_mapapi_map_MyLocationConfiguration extends java_lang_Object  {
   //endregion
 
   //region creators
+  static Future<com_baidu_mapapi_map_MyLocationConfiguration> create__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int(com_baidu_mapapi_map_MyLocationConfiguration_LocationMode var1, bool var2, com_baidu_mapapi_map_BitmapDescriptor var3, int var4, int var5) async {
+    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int', {"var1": var1.index, "var2": var2, "var3": var3.refId, "var4": var4, "var5": var5});
+    final object = com_baidu_mapapi_map_MyLocationConfiguration()..refId = refId..tag__ = 'bmap_map_fluttify';
+  
+    kNativeObjectPool.add(object);
+    return object;
+  }
+  
+  static Future<com_baidu_mapapi_map_MyLocationConfiguration> create__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor(com_baidu_mapapi_map_MyLocationConfiguration_LocationMode var1, bool var2, com_baidu_mapapi_map_BitmapDescriptor var3) async {
+    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor', {"var1": var1.index, "var2": var2, "var3": var3.refId});
+    final object = com_baidu_mapapi_map_MyLocationConfiguration()..refId = refId..tag__ = 'bmap_map_fluttify';
+  
+    kNativeObjectPool.add(object);
+    return object;
+  }
+  
+  static Future<List<com_baidu_mapapi_map_MyLocationConfiguration>> create_batch__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int(List<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode> var1, List<bool> var2, List<com_baidu_mapapi_map_BitmapDescriptor> var3, List<int> var4, List<int> var5) async {
+    if (var1.length != var2.length || var2.length != var3.length || var3.length != var4.length || var4.length != var5.length) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].index, "var2": var2[__i__], "var3": var3[__i__].refId, "var4": var4[__i__], "var5": var5[__i__]}]);
+  
+    final List<com_baidu_mapapi_map_MyLocationConfiguration> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
+  
+  static Future<List<com_baidu_mapapi_map_MyLocationConfiguration>> create_batch__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor(List<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode> var1, List<bool> var2, List<com_baidu_mapapi_map_BitmapDescriptor> var3) async {
+    if (var1.length != var2.length || var2.length != var3.length) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].index, "var2": var2[__i__], "var3": var3[__i__].refId}]);
+  
+    final List<com_baidu_mapapi_map_MyLocationConfiguration> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
   
   //endregion
 

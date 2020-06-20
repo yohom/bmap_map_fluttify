@@ -20,6 +20,24 @@ class com_baidu_mapapi_animation_SingleScaleAnimation extends com_baidu_mapapi_a
   //endregion
 
   //region creators
+  static Future<com_baidu_mapapi_animation_SingleScaleAnimation> create__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float(com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType var1, double var2) async {
+    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_animation_SingleScaleAnimation__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float', {"var1": var1.index, "var2": var2});
+    final object = com_baidu_mapapi_animation_SingleScaleAnimation()..refId = refId..tag__ = 'bmap_map_fluttify';
+  
+    kNativeObjectPool.add(object);
+    return object;
+  }
+  
+  static Future<List<com_baidu_mapapi_animation_SingleScaleAnimation>> create_batch__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float(List<com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType> var1, List<double> var2) async {
+    if (var1.length != var2.length) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_animation_SingleScaleAnimation__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].index, "var2": var2[__i__]}]);
+  
+    final List<com_baidu_mapapi_animation_SingleScaleAnimation> typedResult = resultBatch.map((result) => com_baidu_mapapi_animation_SingleScaleAnimation()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
   
   //endregion
 

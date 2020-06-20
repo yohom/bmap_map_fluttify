@@ -91,7 +91,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -139,7 +139,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }

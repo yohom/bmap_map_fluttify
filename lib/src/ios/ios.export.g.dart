@@ -84,3 +84,4 @@ export 'BMKOLUpdateElement.g.dart';
 export 'BMKShape.g.dart';
 export 'BMKPolygonView.g.dart';
 export 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
+export 'package:bmap_utils_fluttify/bmap_utils_fluttify.dart';

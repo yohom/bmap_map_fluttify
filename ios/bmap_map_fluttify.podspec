@@ -18,6 +18,7 @@ A new flutter plugin project.
   s.dependency 'foundation_fluttify'
   # flutter plugin dependency
   s.dependency 'bmap_core_fluttify'
+  s.dependency 'bmap_utils_fluttify'
   # sdk dependency
   
 

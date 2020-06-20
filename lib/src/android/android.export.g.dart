@@ -349,3 +349,4 @@ export 'com/baidu/mapsdkplatform/comapi/map/MessageCenter.g.dart';
 export 'com/baidu/mapsdkplatform/comapi/map/VersionInfo.g.dart';
 export 'com/baidu/mapsdkplatform/comapi/commonutils/SysUpdateUtil.g.dart';
 export 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
+export 'package:bmap_utils_fluttify/bmap_utils_fluttify.dart';

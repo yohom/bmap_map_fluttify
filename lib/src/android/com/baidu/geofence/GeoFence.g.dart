@@ -836,7 +836,7 @@ class com_baidu_geofence_GeoFence extends java_lang_Object with android_os_Parce
       return null;
     } else {
       final __return__ = com_baidu_geofence_PoiItem()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -908,7 +908,7 @@ class com_baidu_geofence_GeoFence extends java_lang_Object with android_os_Parce
       return null;
     } else {
       final __return__ = com_baidu_geofence_model_DPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -980,7 +980,7 @@ class com_baidu_geofence_GeoFence extends java_lang_Object with android_os_Parce
       return null;
     } else {
       final __return__ = com_baidu_location_BDLocation()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }

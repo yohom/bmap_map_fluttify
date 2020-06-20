@@ -28,11 +28,30 @@ class com_baidu_mapapi_search_poi_PoiDetailSearchResult extends com_baidu_mapapi
     return object;
   }
   
+  static Future<com_baidu_mapapi_search_poi_PoiDetailSearchResult> create__com_baidu_mapapi_search_core_SearchResult_ERRORNO(com_baidu_mapapi_search_core_SearchResult_ERRORNO var1) async {
+    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailSearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO', {"var1": var1.index});
+    final object = com_baidu_mapapi_search_poi_PoiDetailSearchResult()..refId = refId..tag__ = 'bmap_map_fluttify';
+  
+    kNativeObjectPool.add(object);
+    return object;
+  }
+  
   static Future<List<com_baidu_mapapi_search_poi_PoiDetailSearchResult>> create_batch__(int length) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
     final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_poi_PoiDetailSearchResult__', {'length': length});
+  
+    final List<com_baidu_mapapi_search_poi_PoiDetailSearchResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_poi_PoiDetailSearchResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
+  
+  static Future<List<com_baidu_mapapi_search_poi_PoiDetailSearchResult>> create_batch__com_baidu_mapapi_search_core_SearchResult_ERRORNO(List<com_baidu_mapapi_search_core_SearchResult_ERRORNO> var1) async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_poi_PoiDetailSearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].index}]);
   
     final List<com_baidu_mapapi_search_poi_PoiDetailSearchResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_poi_PoiDetailSearchResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
     kNativeObjectPool.addAll(typedResult);

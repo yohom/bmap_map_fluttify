@@ -69,7 +69,7 @@ class com_baidu_mapapi_search_route_TransitRouteResult extends com_baidu_mapapi_
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_TaxiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -165,7 +165,7 @@ class com_baidu_mapapi_search_route_TransitRouteResult extends com_baidu_mapapi_
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_SuggestAddrInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }

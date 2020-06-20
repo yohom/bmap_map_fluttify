@@ -1125,7 +1125,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1197,7 +1197,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1221,7 +1221,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1293,7 +1293,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1365,7 +1365,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1389,7 +1389,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1413,7 +1413,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1437,7 +1437,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1461,7 +1461,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1485,7 +1485,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1509,7 +1509,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1533,7 +1533,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1605,7 +1605,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1629,7 +1629,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1749,7 +1749,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1773,7 +1773,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1821,7 +1821,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKBaseIndoorMapInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1989,7 +1989,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -2013,7 +2013,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -2325,7 +2325,7 @@ class BMKMapView extends UIView  {
       return null;
     } else {
       final __return__ = BMKOverlayView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }

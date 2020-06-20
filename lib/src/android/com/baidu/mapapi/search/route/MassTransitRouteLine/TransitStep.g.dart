@@ -117,7 +117,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -165,7 +165,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -213,7 +213,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_TrainInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -261,7 +261,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_PlaneInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -309,7 +309,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_CoachInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -357,7 +357,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_BusInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
+      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
