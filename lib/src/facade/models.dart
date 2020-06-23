@@ -8,6 +8,42 @@ import 'package:foundation_fluttify/foundation_fluttify.dart';
 
 import 'enums.dart';
 
+/// 我的位置选项
+@immutable
+class MyLocationOption {
+  MyLocationOption({
+    this.myLocationType = MyLocationType.Locate,
+    this.interval = Duration.zero,
+    this.iconProvider,
+    this.strokeColor,
+    this.strokeWidth,
+    this.fillColor,
+  });
+
+  /// 定位类型
+  final MyLocationType myLocationType;
+
+  /// 定位间隔
+  final Duration interval;
+
+  /// 我的位置图标
+  final ImageProvider iconProvider;
+
+  /// 边框颜色
+  final Color strokeColor;
+
+  /// 边框宽度
+  final double strokeWidth;
+
+  /// 填充颜色
+  final Color fillColor;
+
+  @override
+  String toString() {
+    return 'MyLocationOption{myLocationType: $myLocationType, interval: $interval, iconProvider: $iconProvider, strokeColor: $strokeColor, strokeWidth: $strokeWidth, fillColor: $fillColor}';
+  }
+}
+
 /// Marker创建参数
 @immutable
 class MarkerOption {
@@ -200,6 +236,21 @@ class CircleOption {
   @override
   String toString() {
     return 'CircleOption{center: $center, radius: $radius, width: $width, strokeColor: $strokeColor, fillColor: $fillColor}';
+  }
+}
+
+/// 地图移动
+@immutable
+class MapMove {
+  final LatLng latLng;
+  final double zoom;
+  final double tilt;
+
+  MapMove({this.latLng, this.zoom, this.tilt});
+
+  @override
+  String toString() {
+    return 'MapDrag{latitude: ${latLng.latitude}, longitude: ${latLng.longitude}, zoom: $zoom, tilt: $tilt}';
   }
 }
 

@@ -15,6 +15,7 @@ import 'package:foundation_fluttify/foundation_fluttify.dart';
 
 import 'bmap_location.dart';
 import 'enums.dart';
+import 'extensions.dart';
 import 'models.dart';
 
 part 'bmap_controller.dart';

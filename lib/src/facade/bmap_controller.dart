@@ -7,6 +7,9 @@ typedef Future<bool> OnMarkerClicked(Marker marker);
 /// Marker拖动回调签名
 typedef Future<void> OnMarkerDrag(Marker marker);
 
+/// 地图移动事件回调签名
+typedef Future<void> OnMapMove(MapMove move);
+
 /// 地图控制类
 class BmapController with WidgetsBindingObserver {
   /// Android构造器
@@ -71,26 +74,49 @@ class BmapController with WidgetsBindingObserver {
   }
 
   /// 设置我的位置数据
-  Future<void> showMyLocation() async {
+  Future<void> showMyLocation(MyLocationOption option) async {
     final locationStream = BmapLocation.instance.listenLocation();
+
+    final iconData = await option.iconProvider
+        ?.toImageData(createLocalImageConfiguration(_state.context));
+
     await platform(
       android: (pool) async {
         final map = await androidController.getMap();
 
         await map.setMyLocationEnabled(true);
 
+        // 我的位置除定位之外的配置信息
+        final bitmap = await android_graphics_Bitmap.create(iconData);
+        final config = await com_baidu_mapapi_map_MyLocationConfiguration
+            .create__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor(
+          option.myLocationType.androidModel(),
+          true,
+          await com_baidu_mapapi_map_BitmapDescriptorFactory.fromBitmap(bitmap),
+        );
+        await map.setMyLocationConfiguration(config);
+
+        // 我的位置信息
         final builder =
             await com_baidu_mapapi_map_MyLocationData_Builder.create__();
+        // 监听定位流, 刷新位置
         locationStream.listen((location) async {
           await builder.latitude(location.latLng.latitude);
           await builder.longitude(location.latLng.longitude);
           await builder.accuracy(location.accuracy);
+          await builder.direction(location.direction);
 
           await map.setMyLocationData(await builder.build());
         });
       },
       ios: (pool) async {
         await iosController.set_showsUserLocation(true);
+        await iosController
+            .set_userTrackingMode(option.myLocationType.iosModel());
+
+        final displayParam = await BMKLocationViewDisplayParam.create__();
+        final image = await UIImage.create(iconData);
+        await displayParam.set_locationViewImage(image);
 
         final data = await BMKUserLocation.create__();
 
@@ -764,8 +790,7 @@ class BmapController with WidgetsBindingObserver {
         final position = await map.getMapStatus();
         final target = await position.get_target();
 
-        // target不能马上释放, 因为跟返回对象有联系
-        pool..add(map)..add(position);
+        pool..add(map)..add(position)..add(target);
 
         return LatLng(
           await target.get_latitude(),
@@ -774,7 +799,7 @@ class BmapController with WidgetsBindingObserver {
       },
       ios: (pool) async {
         final target = await iosController.get_centerCoordinate();
-        // target不能马上释放, 因为跟返回对象有联系
+        pool.add(target);
         return LatLng(await target.latitude, await target.longitude);
       },
     );
@@ -805,6 +830,26 @@ class BmapController with WidgetsBindingObserver {
             .._onMarkerDragStart = onMarkerDragStart
             .._onMarkerDragging = onMarkerDragging
             .._onMarkerDragEnd = onMarkerDragEnd,
+        );
+      },
+    );
+  }
+
+  /// 设置地图移动监听事件
+  Future<void> setMapMoveListener({OnMapMove onMapMoveEnd}) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setOnMapStatusChangeListener(
+          _androidMapDelegate.._onMapMoveEnd = onMapMoveEnd,
+        );
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(
+          _iosMapDelegate.._onMapMoveEnd = onMapMoveEnd,
         );
       },
     );
@@ -850,6 +895,7 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
   OnMarkerDrag _onMarkerDragStart;
   OnMarkerDrag _onMarkerDragging;
   OnMarkerDrag _onMarkerDragEnd;
+  OnMapMove _onMapMoveEnd;
 
   BMKMapView _iosController;
 
@@ -914,16 +960,31 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
       );
     }
   }
+
+  @override
+  Future<void> mapStatusDidChanged(BMKMapView mapView) async {
+    super.mapStatusDidChanged(mapView);
+    if (_onMapMoveEnd != null) {
+      final location = await mapView.get_centerCoordinate();
+      await _onMapMoveEnd(MapMove(
+        latLng: LatLng(await location.latitude, await location.longitude),
+        zoom: await mapView.get_zoomLevel(),
+        tilt: (await mapView.get_overlooking()).toDouble(),
+      ));
+    }
+  }
 }
 
 class _AndroidMapDelegate extends java_lang_Object
     with
         com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener,
-        com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener {
+        com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener,
+        com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener {
   OnMarkerClicked _onMarkerClicked;
   OnMarkerDrag _onMarkerDragStart;
   OnMarkerDrag _onMarkerDragging;
   OnMarkerDrag _onMarkerDragEnd;
+  OnMapMove _onMapMoveEnd;
 
   @override
   Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
@@ -955,6 +1016,24 @@ class _AndroidMapDelegate extends java_lang_Object
     super.onMarkerDragEnd(var1);
     if (_onMarkerDragEnd != null) {
       await _onMarkerDragEnd(Marker.android(var1));
+    }
+  }
+
+  @override
+  Future<void> onMapStatusChangeFinish(
+    com_baidu_mapapi_map_MapStatus var1,
+  ) async {
+    super.onMapStatusChangeFinish(var1);
+    if (_onMapMoveEnd != null) {
+      final location = await var1.get_target();
+      await _onMapMoveEnd(MapMove(
+        latLng: LatLng(
+          await location.get_latitude(),
+          await location.get_longitude(),
+        ),
+        zoom: await var1.get_zoom(),
+        tilt: await var1.get_overlook(),
+      ));
     }
   }
 }

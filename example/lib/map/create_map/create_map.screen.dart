@@ -4,7 +4,7 @@ import 'package:bmap_map_fluttify_example/widgets/setting.widget.dart';
 import 'package:decorated_flutter/decorated_flutter.dart';
 import 'package:flutter/material.dart';
 
-final _assetsIcon = Uri.parse('images/test_icon.png');
+final _assetsIcon = AssetImage('images/test_icon.png');
 
 class CreateMapScreen extends StatefulWidget {
   @override
@@ -37,7 +37,129 @@ class _CreateMapScreenState extends State<CreateMapScreen> {
                   head: '是否显示定位',
                   onSelected: (value) async {
                     if (value && await requestPermission())
-                      _controller.showMyLocation();
+                      _controller.showMyLocation(MyLocationOption(
+                        iconProvider: _assetsIcon,
+                      ));
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('使用自定义定位图标')),
+                  onTap: () async {
+                    await _controller?.showMyLocation(MyLocationOption(
+                      myLocationType: MyLocationType.Rotate,
+                      iconProvider: _assetsIcon,
+                    ));
+                  },
+                ),
+                DiscreteSetting(
+                  head: '切换地图图层',
+                  options: ['正常视图', '卫星视图'],
+                  onSelected: (value) {
+                    switch (value) {
+                      case '正常视图':
+                        _controller?.setMapType(MapType.Standard);
+                        break;
+                      case '卫星视图':
+                        _controller?.setMapType(MapType.Satellite);
+                        break;
+                    }
+                  },
+                ),
+                DiscreteSetting(
+                  head: '精度圈边框颜色',
+                  options: ['红色', '绿色', '蓝色'],
+                  onSelected: (value) {
+                    switch (value) {
+                      case '红色':
+                        _controller?.showMyLocation(MyLocationOption(
+                          strokeColor: Colors.red,
+                          strokeWidth: 2,
+                        ));
+                        break;
+                      case '绿色':
+                        _controller?.showMyLocation(MyLocationOption(
+                          strokeColor: Colors.green,
+                          strokeWidth: 2,
+                        ));
+                        break;
+                      case '蓝色':
+                        _controller?.showMyLocation(MyLocationOption(
+                          strokeColor: Colors.blue,
+                          strokeWidth: 2,
+                        ));
+                        break;
+                    }
+                  },
+                ),
+                DiscreteSetting(
+                  head: '精度圈填充颜色',
+                  options: ['红色', '绿色', '蓝色'],
+                  onSelected: (value) {
+                    switch (value) {
+                      case '红色':
+                        _controller?.showMyLocation(MyLocationOption(
+                          fillColor: Colors.red,
+                          strokeWidth: 2,
+                        ));
+                        break;
+                      case '绿色':
+                        _controller?.showMyLocation(MyLocationOption(
+                          fillColor: Colors.green,
+                          strokeWidth: 2,
+                        ));
+                        break;
+                      case '蓝色':
+                        _controller?.showMyLocation(MyLocationOption(
+                          fillColor: Colors.blue,
+                          strokeWidth: 2,
+                        ));
+                        break;
+                    }
+                  },
+                ),
+                DiscreteSetting(
+                  head: '精度圈边框宽度',
+                  options: ['2', '4', '8'],
+                  onSelected: (value) {
+                    switch (value) {
+                      case '2':
+                        _controller?.showMyLocation(MyLocationOption(
+                          strokeWidth: 2,
+                        ));
+                        break;
+                      case '4':
+                        _controller?.showMyLocation(MyLocationOption(
+                          strokeWidth: 4,
+                        ));
+                        break;
+                      case '8':
+                        _controller?.showMyLocation(MyLocationOption(
+                          strokeWidth: 8,
+                        ));
+                        break;
+                    }
+                  },
+                ),
+                BooleanSetting(
+                  head: '是否显示路况信息',
+                  onSelected: (value) {
+                    _controller?.showTraffic(value);
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('获取地图中心点')),
+                  onTap: () async {
+                    final center = await _controller?.getCenterCoordinate();
+                    toast(
+                        'center: lat: ${center.latitude}, lng: ${center.longitude}');
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('监听地图移动')),
+                  onTap: () {
+                    _controller?.setMapMoveListener(
+                      onMapMoveEnd: (move) async => toast('结束移动: $move'),
+                    );
                   },
                 ),
               ],
