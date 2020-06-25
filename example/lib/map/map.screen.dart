@@ -1,7 +1,6 @@
 import 'package:bmap_map_fluttify_example/map/location/location.screen.dart';
-import 'package:bmap_map_fluttify_example/widgets/function_group.widget.dart';
-import 'package:bmap_map_fluttify_example/widgets/function_item.widget.dart';
 import 'package:decorated_flutter/decorated_flutter.dart';
+import 'package:demo_widgets/demo_widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'create_map/create_map.screen.dart';
@@ -68,6 +67,7 @@ class MapDemo extends StatelessWidget {
           headLabel: "工具",
           children: <Widget>[],
         ),
+        SPACE_BIG,
         FunctionGroup(
           headLabel: "定位",
           children: <Widget>[
