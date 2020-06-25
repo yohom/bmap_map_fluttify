@@ -1178,7 +1178,7 @@ extern BOOL enableLog;
                 // return a (value)*
                 NSValue* resultValue = [NSValue valueWithPointer:result];
                 HEAP[[NSNumber numberWithLong: (resultValue).hash]] = resultValue;
-                NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash)];
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1204,7 +1204,7 @@ extern BOOL enableLog;
                 // return a (value)*
                 NSValue* resultValue = [NSValue valueWithPointer:result];
                 HEAP[[NSNumber numberWithLong: (resultValue).hash]] = resultValue;
-                NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash)];
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash];
         
                 [resultList addObject:jsonableResult];
             }
