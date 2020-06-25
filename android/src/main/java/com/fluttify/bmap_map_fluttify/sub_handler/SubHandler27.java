@@ -596,3837 +596,1293 @@ public class SubHandler27 {
             
                 __methodResult__.success(__resultList__);
             });
-            // factory
-            put("ObjectFactory::createmapsdkvi_com_gdi_bgl_android_java_EnvDrawText__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: mapsdkvi_com_gdi_bgl_android_java_EnvDrawText__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                mapsdkvi.com.gdi.bgl.android.java.EnvDrawText __obj__ = new mapsdkvi.com.gdi.bgl.android.java.EnvDrawText();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfmapsdkvi_com_gdi_bgl_android_java_EnvDrawText", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof mapsdkvi.com.gdi.bgl.android.java.EnvDrawText);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_Poi__String__String__double__String__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_Poi__String__String__double__String__String");
-                }
+            put("RefClass::isKindOfcom_baidu_location_Poi", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
-                double var3 = (double) ((Map<String, Object>) __args__).get("var3");
-                // jsonable arg
-                String var5 = (String) ((Map<String, Object>) __args__).get("var5");
-                // jsonable arg
-                String var6 = (String) ((Map<String, Object>) __args__).get("var6");
-            
-                // create target object
-                com.baidu.location.Poi __obj__ = new com.baidu.location.Poi(var1, var2, var3, var5, var6);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_Address_Builder__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_Address_Builder__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.location.Address.Builder __obj__ = new com.baidu.location.Address.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_LocationClientOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_LocationClientOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.location.LocationClientOption __obj__ = new com.baidu.location.LocationClientOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_LocationClientOption__com_baidu_location_LocationClientOption", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_LocationClientOption__com_baidu_location_LocationClientOption");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.LocationClientOption var1 = __var1__ != null ? (com.baidu.location.LocationClientOption) getHEAP().get(__var1__) : null;
-            
-                // create target object
-                com.baidu.location.LocationClientOption __obj__ = new com.baidu.location.LocationClientOption(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_Jni__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_Jni__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.location.Jni __obj__ = new com.baidu.location.Jni();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_PoiRegion__String__String__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_PoiRegion__String__String__String");
-                }
-            
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
-                String var3 = (String) ((Map<String, Object>) __args__).get("var3");
-            
-                // create target object
-                com.baidu.location.PoiRegion __obj__ = new com.baidu.location.PoiRegion(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_PoiRegion__com_baidu_location_PoiRegion", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_PoiRegion__com_baidu_location_PoiRegion");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.PoiRegion var1 = __var1__ != null ? (com.baidu.location.PoiRegion) getHEAP().get(__var1__) : null;
-            
-                // create target object
-                com.baidu.location.PoiRegion __obj__ = new com.baidu.location.PoiRegion(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_LocationClient__android_content_Context", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_LocationClient__android_content_Context");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
-            
-                // create target object
-                com.baidu.location.LocationClient __obj__ = new com.baidu.location.LocationClient(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_LocationClient__android_content_Context__com_baidu_location_LocationClientOption", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_LocationClient__android_content_Context__com_baidu_location_LocationClientOption");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.location.LocationClientOption var2 = __var2__ != null ? (com.baidu.location.LocationClientOption) getHEAP().get(__var2__) : null;
-            
-                // create target object
-                com.baidu.location.LocationClient __obj__ = new com.baidu.location.LocationClient(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_BDLocation__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_BDLocation__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.location.BDLocation __obj__ = new com.baidu.location.BDLocation();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_BDLocation__com_baidu_location_BDLocation", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_BDLocation__com_baidu_location_BDLocation");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDLocation var1 = __var1__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1__) : null;
-            
-                // create target object
-                com.baidu.location.BDLocation __obj__ = new com.baidu.location.BDLocation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_location_BDLocation__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_location_BDLocation__String");
-                }
-            
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.location.BDLocation __obj__ = new com.baidu.location.BDLocation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_UIMsg__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_UIMsg__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.UIMsg __obj__ = new com.baidu.mapapi.UIMsg();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_NetworkUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_NetworkUtil__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.NetworkUtil __obj__ = new com.baidu.mapapi.NetworkUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_AnimationSet__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_AnimationSet__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.animation.AnimationSet __obj__ = new com.baidu.mapapi.animation.AnimationSet();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
-            
-                // create target object
-                com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__android_graphics_Point", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_Transformation__android_graphics_Point");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
-            
-                // create target object
-                com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_RotateAnimation__float__float", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_RotateAnimation__float__float");
-                }
-            
-                // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
-            
-                // create target object
-                com.baidu.mapapi.animation.RotateAnimation __obj__ = new com.baidu.mapapi.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_SingleScaleAnimation__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_SingleScaleAnimation__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float");
-                }
-            
-                // args
-                // enum arg
-                com.baidu.mapapi.animation.SingleScaleAnimation.ScaleType var1 = com.baidu.mapapi.animation.SingleScaleAnimation.ScaleType.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                // jsonable arg
-                Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
-            
-                // create target object
-                com.baidu.mapapi.animation.SingleScaleAnimation __obj__ = new com.baidu.mapapi.animation.SingleScaleAnimation(var1, new Double(var2).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_AlphaAnimation__float", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_AlphaAnimation__float");
-                }
-            
-                // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.mapapi.animation.AlphaAnimation __obj__ = new com.baidu.mapapi.animation.AlphaAnimation(new Double(var1).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_animation_ScaleAnimation__float", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_animation_ScaleAnimation__float");
-                }
-            
-                // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.mapapi.animation.ScaleAnimation __obj__ = new com.baidu.mapapi.animation.ScaleAnimation(new Double(var1).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException __obj__ = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String");
-                }
-            
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException __obj__ = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_NaviParaOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_NaviParaOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.navi.NaviParaOption __obj__ = new com.baidu.mapapi.navi.NaviParaOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapNavigation__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_BaiduMapNavigation__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.navi.BaiduMapNavigation __obj__ = new com.baidu.mapapi.navi.BaiduMapNavigation();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_IllegalNaviArgumentException__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.navi.IllegalNaviArgumentException __obj__ = new com.baidu.mapapi.navi.IllegalNaviArgumentException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_navi_IllegalNaviArgumentException__String");
-                }
-            
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.mapapi.navi.IllegalNaviArgumentException __obj__ = new com.baidu.mapapi.navi.IllegalNaviArgumentException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_favorite_FavoritePoiInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_favorite_FavoritePoiInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.favorite.FavoritePoiInfo __obj__ = new com.baidu.mapapi.favorite.FavoritePoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_BaiduMapRoutePlan__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_BaiduMapRoutePlan__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.route.BaiduMapRoutePlan __obj__ = new com.baidu.mapapi.utils.route.BaiduMapRoutePlan();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException __obj__ = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String");
-                }
-            
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException __obj__ = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_route_RouteParaOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_route_RouteParaOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.route.RouteParaOption __obj__ = new com.baidu.mapapi.utils.route.RouteParaOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_DistanceUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_DistanceUtil__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.DistanceUtil __obj__ = new com.baidu.mapapi.utils.DistanceUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_SpatialRelationUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_SpatialRelationUtil__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.SpatialRelationUtil __obj__ = new com.baidu.mapapi.utils.SpatialRelationUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_CoordinateConverter__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_CoordinateConverter__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.CoordinateConverter __obj__ = new com.baidu.mapapi.utils.CoordinateConverter();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_PoiParaOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_PoiParaOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.poi.PoiParaOption __obj__ = new com.baidu.mapapi.utils.poi.PoiParaOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_DispathcPoiData__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_DispathcPoiData__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.poi.DispathcPoiData __obj__ = new com.baidu.mapapi.utils.poi.DispathcPoiData();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException __obj__ = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__String");
-                }
-            
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException __obj__ = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_poi_BaiduMapPoiSearch__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.poi.BaiduMapPoiSearch __obj__ = new com.baidu.mapapi.utils.poi.BaiduMapPoiSearch();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_OpenClientUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_OpenClientUtil__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.OpenClientUtil __obj__ = new com.baidu.mapapi.utils.OpenClientUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_utils_AreaUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_utils_AreaUtil__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.utils.AreaUtil __obj__ = new com.baidu.mapapi.utils.AreaUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_UIMsg_WalkNaviMsg__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.UIMsg.WalkNaviMsg __obj__ = new com.baidu.mapapi.UIMsg.WalkNaviMsg();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_BMapManager__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_BMapManager__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.BMapManager __obj__ = new com.baidu.mapapi.BMapManager();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_sug_SuggestionResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.sug.SuggestionResult __obj__ = new com.baidu.mapapi.search.sug.SuggestionResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_sug_SuggestionResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO");
-                }
-            
-                // args
-                // enum arg
-                com.baidu.mapapi.search.core.SearchResult.ERRORNO var1 = com.baidu.mapapi.search.core.SearchResult.ERRORNO.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                // create target object
-                com.baidu.mapapi.search.sug.SuggestionResult __obj__ = new com.baidu.mapapi.search.sug.SuggestionResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.sug.SuggestionResult.SuggestionInfo __obj__ = new com.baidu.mapapi.search.sug.SuggestionResult.SuggestionInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionSearchOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_sug_SuggestionSearchOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.sug.SuggestionSearchOption __obj__ = new com.baidu.mapapi.search.sug.SuggestionSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStep__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_busline_BusLineResult_BusStep__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.busline.BusLineResult.BusStep __obj__ = new com.baidu.mapapi.search.busline.BusLineResult.BusStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineSearchOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_busline_BusLineSearchOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.busline.BusLineSearchOption __obj__ = new com.baidu.mapapi.search.busline.BusLineSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStation__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_busline_BusLineResult_BusStation__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.busline.BusLineResult.BusStation __obj__ = new com.baidu.mapapi.search.busline.BusLineResult.BusStation();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_busline_BusLineResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.busline.BusLineResult __obj__ = new com.baidu.mapapi.search.busline.BusLineResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_PriceInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_PriceInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.PriceInfo __obj__ = new com.baidu.mapapi.search.core.PriceInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_TransitBaseInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_TransitBaseInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.TransitBaseInfo __obj__ = new com.baidu.mapapi.search.core.TransitBaseInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_TransitResultNode__int__String__com_baidu_mapapi_model_LatLng__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_TransitResultNode__int__String__com_baidu_mapapi_model_LatLng__String");
-                }
-            
-                // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-                // ref arg
-                Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
-                com.baidu.mapapi.model.LatLng var3 = __var3__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var3__) : null;
-                // jsonable arg
-                String var4 = (String) ((Map<String, Object>) __args__).get("var4");
-            
-                // create target object
-                com.baidu.mapapi.search.core.TransitResultNode __obj__ = new com.baidu.mapapi.search.core.TransitResultNode(var1, var2, var3, var4);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo __obj__ = new com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_SearchResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.SearchResult __obj__ = new com.baidu.mapapi.search.core.SearchResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_SearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO");
-                }
-            
-                // args
-                // enum arg
-                com.baidu.mapapi.search.core.SearchResult.ERRORNO var1 = com.baidu.mapapi.search.core.SearchResult.ERRORNO.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                // create target object
-                com.baidu.mapapi.search.core.SearchResult __obj__ = new com.baidu.mapapi.search.core.SearchResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_PoiInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.PoiInfo __obj__ = new com.baidu.mapapi.search.core.PoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_TaxiInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_TaxiInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.TaxiInfo __obj__ = new com.baidu.mapapi.search.core.TaxiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiDetailInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_PoiDetailInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.PoiDetailInfo __obj__ = new com.baidu.mapapi.search.core.PoiDetailInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_PlaneInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_PlaneInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.PlaneInfo __obj__ = new com.baidu.mapapi.search.core.PlaneInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_TrainInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_TrainInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.TrainInfo __obj__ = new com.baidu.mapapi.search.core.TrainInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_RouteNode__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_RouteNode__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.RouteNode __obj__ = new com.baidu.mapapi.search.core.RouteNode();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_CityInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_CityInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.CityInfo __obj__ = new com.baidu.mapapi.search.core.CityInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_BusInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_BusInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.BusInfo __obj__ = new com.baidu.mapapi.search.core.BusInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiChildrenInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_PoiChildrenInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.PoiChildrenInfo __obj__ = new com.baidu.mapapi.search.core.PoiChildrenInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_VehicleInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_VehicleInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.VehicleInfo __obj__ = new com.baidu.mapapi.search.core.VehicleInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_core_CoachInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_core_CoachInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.core.CoachInfo __obj__ = new com.baidu.mapapi.search.core.CoachInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode __obj__ = new com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRoutePlanOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_BikingRoutePlanOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.BikingRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.BikingRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteLine__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_TransitRouteLine__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.TransitRouteLine __obj__ = new com.baidu.mapapi.search.route.TransitRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteLine_TransitStep__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_TransitRouteLine_TransitStep__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __obj__ = new com.baidu.mapapi.search.route.TransitRouteLine.TransitStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_TransitRouteResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.TransitRouteResult __obj__ = new com.baidu.mapapi.search.route.TransitRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_MassTransitRouteResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.MassTransitRouteResult __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep __obj__ = new com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteLine__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_BikingRouteLine__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.BikingRouteLine __obj__ = new com.baidu.mapapi.search.route.BikingRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_IndoorRouteLine__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.IndoorRouteLine __obj__ = new com.baidu.mapapi.search.route.IndoorRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_BikingRouteResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.BikingRouteResult __obj__ = new com.baidu.mapapi.search.route.BikingRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_SuggestAddrInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_SuggestAddrInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.SuggestAddrInfo __obj__ = new com.baidu.mapapi.search.route.SuggestAddrInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRoutePlanOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_WalkingRoutePlanOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.WalkingRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.WalkingRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteLine__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_MassTransitRouteLine__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.MassTransitRouteLine __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRoutePlanOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_MassTransitRoutePlanOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.MassTransitRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.MassTransitRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteLine_BikingStep__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_BikingRouteLine_BikingStep__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.BikingRouteLine.BikingStep __obj__ = new com.baidu.mapapi.search.route.BikingRouteLine.BikingStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRoutePlanOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_IndoorRoutePlanOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.IndoorRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.IndoorRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep __obj__ = new com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_WalkingRouteResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.WalkingRouteResult __obj__ = new com.baidu.mapapi.search.route.WalkingRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep __obj__ = new com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRouteResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_DrivingRouteResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.DrivingRouteResult __obj__ = new com.baidu.mapapi.search.route.DrivingRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_IndoorRouteResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.IndoorRouteResult __obj__ = new com.baidu.mapapi.search.route.IndoorRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorPlanNode__com_baidu_mapapi_model_LatLng__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_IndoorPlanNode__com_baidu_mapapi_model_LatLng__String");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
-                // jsonable arg
-                String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-            
-                // create target object
-                com.baidu.mapapi.search.route.IndoorPlanNode __obj__ = new com.baidu.mapapi.search.route.IndoorPlanNode(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRoutePlanOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_TransitRoutePlanOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.TransitRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.TransitRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteLine__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_WalkingRouteLine__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.WalkingRouteLine __obj__ = new com.baidu.mapapi.search.route.WalkingRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRoutePlanOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_DrivingRoutePlanOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.DrivingRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.DrivingRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRouteLine__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_route_DrivingRouteLine__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.route.DrivingRouteLine __obj__ = new com.baidu.mapapi.search.route.DrivingRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiCitySearchOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiCitySearchOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiCitySearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiCitySearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiAddrInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiAddrInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiAddrInfo __obj__ = new com.baidu.mapapi.search.poi.PoiAddrInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiIndoorInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiIndoorInfo __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiIndoorOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiIndoorOption __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailSearchResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiDetailSearchResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiDetailSearchResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailSearchResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailSearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiDetailSearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO");
-                }
-            
-                // args
-                // enum arg
-                com.baidu.mapapi.search.core.SearchResult.ERRORNO var1 = com.baidu.mapapi.search.core.SearchResult.ERRORNO.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiDetailSearchResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailSearchResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiBoundSearchOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiBoundSearchOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiBoundSearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiBoundSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiDetailResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiDetailResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiDetailResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO");
-                }
-            
-                // args
-                // enum arg
-                com.baidu.mapapi.search.core.SearchResult.ERRORNO var1 = com.baidu.mapapi.search.core.SearchResult.ERRORNO.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiDetailResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiFilter_Builder__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiFilter_Builder__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiFilter.Builder __obj__ = new com.baidu.mapapi.search.poi.PoiFilter.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiResult __obj__ = new com.baidu.mapapi.search.poi.PoiResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO");
-                }
-            
-                // args
-                // enum arg
-                com.baidu.mapapi.search.core.SearchResult.ERRORNO var1 = com.baidu.mapapi.search.core.SearchResult.ERRORNO.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiResult __obj__ = new com.baidu.mapapi.search.poi.PoiResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiIndoorResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiIndoorResult __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiIndoorResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO");
-                }
-            
-                // args
-                // enum arg
-                com.baidu.mapapi.search.core.SearchResult.ERRORNO var1 = com.baidu.mapapi.search.core.SearchResult.ERRORNO.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiIndoorResult __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailSearchOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiDetailSearchOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiDetailSearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiDetailSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiNearbySearchOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_poi_PoiNearbySearchOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.poi.PoiNearbySearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiNearbySearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_district_DistrictSearchOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_district_DistrictSearchOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.district.DistrictSearchOption __obj__ = new com.baidu.mapapi.search.district.DistrictSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.Poi);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_district_DistrictResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_district_DistrictResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.district.DistrictResult __obj__ = new com.baidu.mapapi.search.district.DistrictResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_Address_Builder", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.Address.Builder);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_geocode_ReverseGeoCodeOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.geocode.ReverseGeoCodeOption __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_LocationClientOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.LocationClientOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_geocode_GeoCodeResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_geocode_GeoCodeResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.geocode.GeoCodeResult __obj__ = new com.baidu.mapapi.search.geocode.GeoCodeResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_Address", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.Address);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_BDNotifyListener", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.BDNotifyListener);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_geocode_ReverseGeoCodeResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.geocode.ReverseGeoCodeResult __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_Jni", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.Jni);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_PoiRegion", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.PoiRegion);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_geocode_GeoCodeOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_geocode_GeoCodeOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.geocode.GeoCodeOption __obj__ = new com.baidu.mapapi.search.geocode.GeoCodeOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_BDAbstractLocationListener", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.BDAbstractLocationListener);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_share_LocationShareURLOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_share_LocationShareURLOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.share.LocationShareURLOption __obj__ = new com.baidu.mapapi.search.share.LocationShareURLOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_LocationClient", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.LocationClient);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_share_ShareUrlResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_share_ShareUrlResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.share.ShareUrlResult __obj__ = new com.baidu.mapapi.search.share.ShareUrlResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_indoor_mapversion_IndoorJni", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.indoor.mapversion.IndoorJni);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_share_PoiDetailShareURLOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_share_PoiDetailShareURLOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.share.PoiDetailShareURLOption __obj__ = new com.baidu.mapapi.search.share.PoiDetailShareURLOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_location_BDLocation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.location.BDLocation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_search_share_RouteShareURLOption__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_search_share_RouteShareURLOption__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.search.share.RouteShareURLOption __obj__ = new com.baidu.mapapi.search.share.RouteShareURLOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIHttpType", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.UIHttpType);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_OpenLogUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_OpenLogUtil__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.OpenLogUtil __obj__ = new com.baidu.mapapi.OpenLogUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIGPSStatus", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.UIGPSStatus);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_SysOSUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_SysOSUtil__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.common.SysOSUtil __obj__ = new com.baidu.mapapi.common.SysOSUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIOffType", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.UIOffType);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_Logger__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_Logger__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.common.Logger __obj__ = new com.baidu.mapapi.common.Logger();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_BaiduMapSDKException__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.common.BaiduMapSDKException __obj__ = new com.baidu.mapapi.common.BaiduMapSDKException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_mapapi_SDKInitializer", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.SDKInitializer);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__String", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_BaiduMapSDKException__String");
-                }
-            
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // create target object
-                com.baidu.mapapi.common.BaiduMapSDKException __obj__ = new com.baidu.mapapi.common.BaiduMapSDKException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_NetworkUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.NetworkUtil);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_EnvironmentUtilities__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_EnvironmentUtilities__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_k_event", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.common.EnvironmentUtilities __obj__ = new com.baidu.mapapi.common.EnvironmentUtilities();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.k_event);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_common_AppTools__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_common_AppTools__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.common.AppTools __obj__ = new com.baidu.mapapi.common.AppTools();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_AnimationSet", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.AnimationSet);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_HeatMap_Builder__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_HeatMap_Builder__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_Transformation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.HeatMap.Builder __obj__ = new com.baidu.mapapi.map.HeatMap.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.Transformation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_PolygonHoleOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_PolygonHoleOptions__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.PolygonHoleOptions __obj__ = new com.baidu.mapapi.map.PolygonHoleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_RotateAnimation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.RotateAnimation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_CircleHoleOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_CircleHoleOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_Animation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.CircleHoleOptions __obj__ = new com.baidu.mapapi.map.CircleHoleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.Animation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapPoi__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapPoi__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.MapPoi __obj__ = new com.baidu.mapapi.map.MapPoi();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_SingleScaleAnimation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.SingleScaleAnimation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_BitmapDescriptorFactory__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_BitmapDescriptorFactory__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_AlphaAnimation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.BitmapDescriptorFactory __obj__ = new com.baidu.mapapi.map.BitmapDescriptorFactory();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.AlphaAnimation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapViewLayoutParams_Builder__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapViewLayoutParams_Builder__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.MapViewLayoutParams.Builder __obj__ = new com.baidu.mapapi.map.MapViewLayoutParams.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_ScaleAnimation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.ScaleAnimation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_DotOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_DotOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.DotOptions __obj__ = new com.baidu.mapapi.map.DotOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationData_Builder__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MyLocationData_Builder__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.MyLocationData.Builder __obj__ = new com.baidu.mapapi.map.MyLocationData.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_NaviParaOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.NaviParaOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_PolylineOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_PolylineOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapNavigation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.PolylineOptions __obj__ = new com.baidu.mapapi.map.PolylineOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.BaiduMapNavigation);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_Tile__int__int__byteArray", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_Tile__int__int__byteArray");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_IllegalNaviArgumentException", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
-                byte[] var3 = (byte[]) ((Map<String, Object>) __args__).get("var3");
-            
-                // create target object
-                com.baidu.mapapi.map.Tile __obj__ = new com.baidu.mapapi.map.Tile(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.IllegalNaviArgumentException);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_WinRound__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WinRound__");
-                }
-            
-                // args
+            put("RefClass::isKindOfcom_baidu_mapapi_favorite_FavoriteManager", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-            
-                // create target object
-                com.baidu.mapapi.map.WinRound __obj__ = new com.baidu.mapapi.map.WinRound();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.favorite.FavoriteManager);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_Gradient__intArray__floatArray", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_Gradient__intArray__floatArray");
-                }
-            
-                // args
-                // jsonable arg
-                int[] var1 = (int[]) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                float[] var2 = (float[]) ((Map<String, Object>) __args__).get("var2");
+            put("RefClass::isKindOfcom_baidu_mapapi_favorite_FavoritePoiInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.Gradient __obj__ = new com.baidu.mapapi.map.Gradient(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.favorite.FavoritePoiInfo);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_GroundOverlayOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_GroundOverlayOptions__");
-                }
-            
-                // args
-            
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_BaiduMapRoutePlan", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.GroundOverlayOptions __obj__ = new com.baidu.mapapi.map.GroundOverlayOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.route.BaiduMapRoutePlan);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MarkerOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MarkerOptions__");
-                }
-            
-                // args
-            
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MarkerOptions __obj__ = new com.baidu.mapapi.map.MarkerOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapCustomStyleOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapCustomStyleOptions__");
-                }
-            
-                // args
-            
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_RouteParaOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MapCustomStyleOptions __obj__ = new com.baidu.mapapi.map.MapCustomStyleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.route.RouteParaOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_Stroke__int__int", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_Stroke__int__int");
-                }
-            
-                // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
-            
-                // create target object
-                com.baidu.mapapi.map.Stroke __obj__ = new com.baidu.mapapi.map.Stroke(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_DistanceUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.DistanceUtil);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_PolygonOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_PolygonOptions__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.PolygonOptions __obj__ = new com.baidu.mapapi.map.PolygonOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_SpatialRelationUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.SpatialRelationUtil);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
-                // jsonable arg
-                double var2 = (double) ((Map<String, Object>) __args__).get("var2");
-            
-                // create target object
-                com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_CoordinateConverter", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.CoordinateConverter);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_PoiParaOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
-            
-                // create target object
-                com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
-            
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
-            
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.PoiParaOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View");
-                }
-            
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                android.view.View var2 = __var2__ != null ? (android.view.View) getHEAP().get(__var2__) : null;
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_DispathcPoiData", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.SwipeDismissView __obj__ = new com.baidu.mapapi.map.SwipeDismissView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.DispathcPoiData);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.BaiduMapPoiSearch);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_ArcOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_ArcOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_OpenClientUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.OpenClientUtil);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_AreaUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.AreaUtil);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_WalkNaviMsg", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.ArcOptions __obj__ = new com.baidu.mapapi.map.ArcOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.WalkNaviMsg);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_BMapManager", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.BMapManager);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionSearch", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionSearch);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.view.View var1 = __var1__ != null ? (android.view.View) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.model.LatLng var2 = __var2__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var2__) : null;
-                // jsonable arg
-                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionResult.SuggestionInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionSearchOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionSearchOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult_BusStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineResult.BusStep);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int__boolean__int", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int__boolean__int");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineSearchOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.view.View var1 = __var1__ != null ? (android.view.View) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.model.LatLng var2 = __var2__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var2__) : null;
-                // jsonable arg
-                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
-                // jsonable arg
-                boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
-                // jsonable arg
-                int var5 = (int) ((Map<String, Object>) __args__).get("var5");
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineSearchOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult_BusStation", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3, var4, var5);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineResult.BusStation);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineSearch", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineSearch);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineResult);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_CircleOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_CircleOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_PriceInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PriceInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_TransitBaseInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TransitBaseInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_TransitResultNode", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.CircleOptions __obj__ = new com.baidu.mapapi.map.CircleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TransitResultNode);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_RouteLine", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.RouteLine);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapBaseIndoorMapInfo__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_SearchResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.SearchResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_RouteStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo __obj__ = new com.baidu.mapapi.map.MapBaseIndoorMapInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.RouteStep);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_TaxiInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TaxiInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiDetailInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiDetailInfo);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__String__String__java_util_ArrayList_String_", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapBaseIndoorMapInfo__String__String__java_util_ArrayList_String_");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_PlaneInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // jsonable arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
-                java.util.ArrayList<String> var3 = (java.util.ArrayList<String>) ((Map<String, Object>) __args__).get("var3");
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PlaneInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_TrainInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo __obj__ = new com.baidu.mapapi.map.MapBaseIndoorMapInfo(var1, var2, (ArrayList) var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TrainInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_RouteNode", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.RouteNode);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_CityInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.CityInfo);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__com_baidu_mapapi_map_MapBaseIndoorMapInfo", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapBaseIndoorMapInfo__com_baidu_mapapi_map_MapBaseIndoorMapInfo");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_BusInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo var1 = __var1__ != null ? (com.baidu.mapapi.map.MapBaseIndoorMapInfo) getHEAP().get(__var1__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.BusInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiChildrenInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo __obj__ = new com.baidu.mapapi.map.MapBaseIndoorMapInfo(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiChildrenInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_VehicleInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.VehicleInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_core_CoachInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.CoachInfo);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_ItemizedOverlay__android_graphics_drawable_Drawable__com_baidu_mapapi_map_MapView", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_ItemizedOverlay__android_graphics_drawable_Drawable__com_baidu_mapapi_map_MapView");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.drawable.Drawable var1 = __var1__ != null ? (android.graphics.drawable.Drawable) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.MapView var2 = __var2__ != null ? (com.baidu.mapapi.map.MapView) getHEAP().get(__var2__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRoutePlanOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.ItemizedOverlay __obj__ = new com.baidu.mapapi.map.ItemizedOverlay(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRoutePlanOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteLine", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRouteLine);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TextureMapView__android_content_Context");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteLine_TransitStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRouteLine.TransitStep);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRouteResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteLine", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.BaiduMapOptions var2 = __var2__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRouteLine);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteLine);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_RoutePlanSearch", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.RoutePlanSearch);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRouteResult);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_HoleOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_HoleOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_SuggestAddrInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.SuggestAddrInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_PlanNode", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.PlanNode);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRoutePlanOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.HoleOptions __obj__ = new com.baidu.mapapi.map.HoleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRoutePlanOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteLine);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRoutePlanOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRoutePlanOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteLine_BikingStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // enum arg
-                com.baidu.mapapi.map.MyLocationConfiguration.LocationMode var1 = com.baidu.mapapi.map.MyLocationConfiguration.LocationMode.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                // jsonable arg
-                boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
-                // ref arg
-                Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
-                com.baidu.mapapi.map.BitmapDescriptor var3 = __var3__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var3__) : null;
-                // jsonable arg
-                int var4 = (int) ((Map<String, Object>) __args__).get("var4");
-                // jsonable arg
-                int var5 = (int) ((Map<String, Object>) __args__).get("var5");
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRouteLine.BikingStep);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRoutePlanOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MyLocationConfiguration __obj__ = new com.baidu.mapapi.map.MyLocationConfiguration(var1, var2, var3, var4, var5);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRoutePlanOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRouteResult);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // enum arg
-                com.baidu.mapapi.map.MyLocationConfiguration.LocationMode var1 = com.baidu.mapapi.map.MyLocationConfiguration.LocationMode.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                // jsonable arg
-                boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
-                // ref arg
-                Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
-                com.baidu.mapapi.map.BitmapDescriptor var3 = __var3__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var3__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MyLocationConfiguration __obj__ = new com.baidu.mapapi.map.MyLocationConfiguration(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRouteResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorPlanNode", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorPlanNode);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_TileOverlayOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TileOverlayOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRoutePlanOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRoutePlanOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteLine", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.TileOverlayOptions __obj__ = new com.baidu.mapapi.map.TileOverlayOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRouteLine);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRoutePlanOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRoutePlanOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteLine", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRouteLine);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_BaiduMapOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_BaiduMapOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiCitySearchOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiCitySearchOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiAddrInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiAddrInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.BaiduMapOptions __obj__ = new com.baidu.mapapi.map.BaiduMapOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiIndoorInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiIndoorOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailSearchResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiDetailSearchResult);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WearMapView__android_content_Context");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiBoundSearchOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiBoundSearchOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiDetailResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiFilter", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiFilter);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiFilter_Builder", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiFilter.Builder);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.BaiduMapOptions var2 = __var2__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiSearch", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiSearch);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiIndoorResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailSearchOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiDetailSearchOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_TextOptions__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TextOptions__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiNearbySearchOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiNearbySearchOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictSearchOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.district.DistrictSearchOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictSearch", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.TextOptions __obj__ = new com.baidu.mapapi.map.TextOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.district.DistrictSearch);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.district.DistrictResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLUpdateElement__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_MKOLUpdateElement__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCodeResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.GeoCodeResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCoder", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.GeoCoder);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.offline.MKOLUpdateElement __obj__ = new com.baidu.mapapi.map.offline.MKOLUpdateElement();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_offline_OfflineMapUtil__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_OfflineMapUtil__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCodeOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.GeoCodeOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_share_LocationShareURLOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.LocationShareURLOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_share_ShareUrlSearch", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.offline.OfflineMapUtil __obj__ = new com.baidu.mapapi.map.offline.OfflineMapUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.ShareUrlSearch);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_share_ShareUrlResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.ShareUrlResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_search_share_PoiDetailShareURLOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.PoiDetailShareURLOption);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLSearchRecord__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_MKOLSearchRecord__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_search_share_RouteShareURLOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.RouteShareURLOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_OpenLogUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.OpenLogUtil);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_m_AppUI", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.offline.MKOLSearchRecord __obj__ = new com.baidu.mapapi.map.offline.MKOLSearchRecord();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.m_AppUI);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_common_SysOSUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.common.SysOSUtil);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_common_Logger", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.common.Logger);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOfflineMap__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_offline_MKOfflineMap__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_common_BaiduMapSDKException", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.common.BaiduMapSDKException);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_common_EnvironmentUtilities", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.common.EnvironmentUtilities);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_common_AppTools", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.offline.MKOfflineMap __obj__ = new com.baidu.mapapi.map.offline.MKOfflineMap();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.common.AppTools);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Polygon", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Polygon);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptor", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.BitmapDescriptor);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapView__android_content_Context", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapView__android_content_Context");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_HeatMap_Builder", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.HeatMap.Builder);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_PolygonHoleOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.PolygonHoleOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_FileTileProvider", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.FileTileProvider);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_CircleHoleOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.CircleHoleOptions);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_MapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Text", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
-                // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
-                // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.BaiduMapOptions var2 = __var2__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2__) : null;
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Text);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MapPoi", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapPoi);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_UiSettings", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.UiSettings);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdateFactory", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapStatusUpdateFactory);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_http_AsyncHttpClient__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_http_AsyncHttpClient__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissTouchListener", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.SwipeDismissTouchListener);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptorFactory", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.BitmapDescriptorFactory);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MapViewLayoutParams_Builder", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.http.AsyncHttpClient __obj__ = new com.baidu.mapapi.http.AsyncHttpClient();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapViewLayoutParams.Builder);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_DotOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.DotOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_UrlTileProvider", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.UrlTileProvider);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_UIMsg_NetDetectedType__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_UIMsg_NetDetectedType__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MyLocationData_Builder", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MyLocationData.Builder);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_PolylineOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.PolylineOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Tile", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.UIMsg.NetDetectedType __obj__ = new com.baidu.mapapi.UIMsg.NetDetectedType();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Tile);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_WinRound", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.WinRound);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Gradient", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Gradient);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudEvent__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudEvent__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlayOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.GroundOverlayOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlay", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.GroundOverlay);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MarkerOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.cloud.CloudEvent __obj__ = new com.baidu.mapapi.cloud.CloudEvent();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MarkerOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MapCustomStyleOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapCustomStyleOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Stroke", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Stroke);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_LocalSearchInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_LocalSearchInfo__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Arc", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Arc);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_OverlayOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.OverlayOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Circle", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.cloud.LocalSearchInfo __obj__ = new com.baidu.mapapi.cloud.LocalSearchInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Circle);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_PolygonOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.PolygonOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_WeightedLatLng", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.WeightedLatLng);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudPoiInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudPoiInfo__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissView", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.SwipeDismissView);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Dot", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Dot);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_ArcOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.cloud.CloudPoiInfo __obj__ = new com.baidu.mapapi.cloud.CloudPoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.ArcOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_InfoWindow", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.InfoWindow);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Projection", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Projection);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudSearchResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudSearchResult__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_CircleOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.CircleOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MapBaseIndoorMapInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapBaseIndoorMapInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_ItemizedOverlay", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.cloud.CloudSearchResult __obj__ = new com.baidu.mapapi.cloud.CloudSearchResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.ItemizedOverlay);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdate", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapStatusUpdate);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_BaiduMap", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.BaiduMap);
             });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudRgcResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudRgcResult__");
-                }
+            put("RefClass::isKindOfcom_baidu_mapapi_map_TextureMapView", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // args
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.TextureMapView);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_Overlay", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Overlay);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_MapStatus", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // create target object
-                com.baidu.mapapi.cloud.CloudRgcResult __obj__ = new com.baidu.mapapi.cloud.CloudRgcResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapStatus);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_HoleOptions", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                // print current HEAP
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
-                }
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.HoleOptions);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_map_HeatMap", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(ref instanceof com.baidu.mapapi.map.HeatMap);
             });
         }};
     }

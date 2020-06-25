@@ -167,8 +167,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -189,8 +189,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGSize)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -231,8 +231,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -253,8 +253,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(UIEdgeInsets)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -437,8 +437,8 @@ extern BOOL enableLog;
                 NSMutableArray* jsonableResult = [NSMutableArray array];
                 for (int __i__ = 0; __i__ < result.count; __i__++) {
                     NSObject* object = [result objectAtIndex:__i__];
-                    [jsonableResult addObject: @(object.hash)];
-                    HEAP[@([object hash])] = object;
+                    [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                    HEAP[[NSNumber numberWithLong: object.hash]] = object;
                 }
         
                 [resultList addObject:jsonableResult];
@@ -482,8 +482,8 @@ extern BOOL enableLog;
                 NSMutableArray* jsonableResult = [NSMutableArray array];
                 for (int __i__ = 0; __i__ < result.count; __i__++) {
                     NSObject* object = [result objectAtIndex:__i__];
-                    [jsonableResult addObject: @(object.hash)];
-                    HEAP[@([object hash])] = object;
+                    [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                    HEAP[[NSNumber numberWithLong: object.hash]] = object;
                 }
         
                 [resultList addObject:jsonableResult];
@@ -564,8 +564,8 @@ extern BOOL enableLog;
                 UIColor* result = ref.accuracyCircleFillColor;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -585,8 +585,8 @@ extern BOOL enableLog;
                 UIColor* result = ref.accuracyCircleStrokeColor;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -646,8 +646,8 @@ extern BOOL enableLog;
                 UIImage* result = ref.locationViewImage;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -768,8 +768,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -790,8 +790,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -812,8 +812,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -833,8 +833,8 @@ extern BOOL enableLog;
                 BMKArcline* result = ref.arcline;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -875,8 +875,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -916,8 +916,8 @@ extern BOOL enableLog;
                 BMKGradient* result = ref.mGradient;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -960,8 +960,8 @@ extern BOOL enableLog;
                 NSMutableArray* jsonableResult = [NSMutableArray array];
                 for (int __i__ = 0; __i__ < result.count; __i__++) {
                     NSObject* object = [result objectAtIndex:__i__];
-                    [jsonableResult addObject: @(object.hash)];
-                    HEAP[@([object hash])] = object;
+                    [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                    HEAP[[NSNumber numberWithLong: object.hash]] = object;
                 }
         
                 [resultList addObject:jsonableResult];
@@ -982,8 +982,8 @@ extern BOOL enableLog;
                 BMKPolygon* result = ref.polygon;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1003,8 +1003,8 @@ extern BOOL enableLog;
                 id<BMKOverlay> result = ref.overlay;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1047,8 +1047,8 @@ extern BOOL enableLog;
                 NSMutableArray* jsonableResult = [NSMutableArray array];
                 for (int __i__ = 0; __i__ < result.count; __i__++) {
                     NSObject* object = [result objectAtIndex:__i__];
-                    [jsonableResult addObject: @(object.hash)];
-                    HEAP[@([object hash])] = object;
+                    [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                    HEAP[[NSNumber numberWithLong: object.hash]] = object;
                 }
         
                 [resultList addObject:jsonableResult];
@@ -1069,8 +1069,8 @@ extern BOOL enableLog;
                 BMKGroundOverlay* result = ref.groundOverlay;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1110,8 +1110,8 @@ extern BOOL enableLog;
                 BMKActionPaopaoView* result = ref.paopaoView;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1131,8 +1131,8 @@ extern BOOL enableLog;
                 id<BMKAnnotation> result = ref.annotation;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1152,8 +1152,8 @@ extern BOOL enableLog;
                 UIImage* result = ref.image;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1174,8 +1174,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1196,8 +1196,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1297,8 +1297,8 @@ extern BOOL enableLog;
                 UIView* result = ref.leftCalloutAccessoryView;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1318,8 +1318,8 @@ extern BOOL enableLog;
                 UIView* result = ref.rightCalloutAccessoryView;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1519,8 +1519,8 @@ extern BOOL enableLog;
                 UIColor* result = ref.fillColor;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1540,8 +1540,8 @@ extern BOOL enableLog;
                 UIColor* result = ref.strokeColor;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -1824,8 +1824,8 @@ extern BOOL enableLog;
                 NSMutableArray* jsonableResult = [NSMutableArray array];
                 for (int __i__ = 0; __i__ < result.count; __i__++) {
                     NSObject* object = [result objectAtIndex:__i__];
-                    [jsonableResult addObject: @(object.hash)];
-                    HEAP[@([object hash])] = object;
+                    [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                    HEAP[[NSNumber numberWithLong: object.hash]] = object;
                 }
         
                 [resultList addObject:jsonableResult];
@@ -1987,8 +1987,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -2009,8 +2009,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -2031,8 +2031,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -2315,8 +2315,8 @@ extern BOOL enableLog;
                 NSMutableArray* jsonableResult = [NSMutableArray array];
                 for (int __i__ = 0; __i__ < result.count; __i__++) {
                     NSObject* object = [result objectAtIndex:__i__];
-                    [jsonableResult addObject: @(object.hash)];
-                    HEAP[@([object hash])] = object;
+                    [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                    HEAP[[NSNumber numberWithLong: object.hash]] = object;
                 }
         
                 [resultList addObject:jsonableResult];
@@ -2337,8 +2337,8 @@ extern BOOL enableLog;
                 BMKLocationPoiRegion* result = ref.poiRegion;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -2738,8 +2738,8 @@ extern BOOL enableLog;
                 CLLocation* result = ref.location;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -2759,8 +2759,8 @@ extern BOOL enableLog;
                 BMKLocationReGeocode* result = ref.rgcData;
         
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -3001,8 +3001,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -3043,8 +3043,8 @@ extern BOOL enableLog;
         
                 // 返回值: 结构体
                 NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D*)];
-                HEAP[@(resultValue.hash)] = resultValue;
-                NSNumber* jsonableResult = @(resultValue.hash);
+                HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -3140,7 +3140,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
         
             // ref
             BMKOverlayPathView* ref = (BMKOverlayPathView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3157,7 +3157,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
             // ref
             BMKOverlayPathView* ref = (BMKOverlayPathView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3247,7 +3247,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+            NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
             CLLocationCoordinate2D pt;
             [ptValue getValue:&pt];
         
@@ -3266,7 +3266,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* anchorValue = (NSValue*) HEAP[@([args[@"anchor"] integerValue])];
+            NSValue* anchorValue = (NSValue*) HEAP[args[@"anchor"]];
             CGPoint anchor;
             [anchorValue getValue:&anchor];
         
@@ -3285,7 +3285,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* boundValue = (NSValue*) HEAP[@([args[@"bound"] integerValue])];
+            NSValue* boundValue = (NSValue*) HEAP[args[@"bound"]];
             BMKCoordinateBounds bound;
             [boundValue getValue:&bound];
         
@@ -3304,7 +3304,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+            UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
             // ref
             BMKGroundOverlay* ref = (BMKGroundOverlay*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3338,7 +3338,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -3374,7 +3374,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* screenPointToLockValue = (NSValue*) HEAP[@([args[@"screenPointToLock"] integerValue])];
+            NSValue* screenPointToLockValue = (NSValue*) HEAP[args[@"screenPointToLock"]];
             CGPoint screenPointToLock;
             [screenPointToLockValue getValue:&screenPointToLock];
         
@@ -3527,7 +3527,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+            NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
             BMKMapRect visibleMapRect;
             [visibleMapRectValue getValue:&visibleMapRect];
         
@@ -3597,7 +3597,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
         
@@ -3650,7 +3650,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+            NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
             CLLocationCoordinate2D pt;
             [ptValue getValue:&pt];
         
@@ -3719,7 +3719,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
             BMKCoordinateRegion region;
             [regionValue getValue:&region];
         
@@ -3738,7 +3738,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* limitMapRegionValue = (NSValue*) HEAP[@([args[@"limitMapRegion"] integerValue])];
+            NSValue* limitMapRegionValue = (NSValue*) HEAP[args[@"limitMapRegion"]];
             BMKCoordinateRegion limitMapRegion;
             [limitMapRegionValue getValue:&limitMapRegion];
         
@@ -3757,7 +3757,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* compassPositionValue = (NSValue*) HEAP[@([args[@"compassPosition"] integerValue])];
+            NSValue* compassPositionValue = (NSValue*) HEAP[args[@"compassPosition"]];
             CGPoint compassPosition;
             [compassPositionValue getValue:&compassPosition];
         
@@ -3776,7 +3776,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* centerCoordinateValue = (NSValue*) HEAP[@([args[@"centerCoordinate"] integerValue])];
+            NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
             CLLocationCoordinate2D centerCoordinate;
             [centerCoordinateValue getValue:&centerCoordinate];
         

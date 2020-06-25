@@ -81,7 +81,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback@$refId')
+    MethodChannel('com.baidu.mapapi.map.WearMapView.OnDismissCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -298,7 +298,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback@$refId')
+    MethodChannel('com.baidu.mapapi.map.CustomMapStyleCallBack::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

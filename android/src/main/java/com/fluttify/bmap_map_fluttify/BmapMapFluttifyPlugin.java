@@ -79,6 +79,7 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         handlerMapList.add(SubHandler27.getSubHandler(messenger));
         handlerMapList.add(SubHandler28.getSubHandler(messenger));
         handlerMapList.add(SubHandler29.getSubHandler(messenger));
+        handlerMapList.add(SubHandler30.getSubHandler(messenger));
         handlerMapList.add(SubHandlerCustom.getSubHandler(messenger));
 
         channel.setMethodCallHandler(plugin);
@@ -135,6 +136,7 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         handlerMapList.add(SubHandler27.getSubHandler(messenger));
         handlerMapList.add(SubHandler28.getSubHandler(messenger));
         handlerMapList.add(SubHandler29.getSubHandler(messenger));
+        handlerMapList.add(SubHandler30.getSubHandler(messenger));
         handlerMapList.add(SubHandlerCustom.getSubHandler(messenger));
 
         channel.setMethodCallHandler(this);

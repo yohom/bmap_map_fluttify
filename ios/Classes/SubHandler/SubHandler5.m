@@ -74,7 +74,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIView* leftCalloutAccessoryView = (UIView*) HEAP[@([args[@"leftCalloutAccessoryView"] integerValue])];
+                UIView* leftCalloutAccessoryView = (UIView*) HEAP[args[@"leftCalloutAccessoryView"]];
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -92,7 +92,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIView* rightCalloutAccessoryView = (UIView*) HEAP[@([args[@"rightCalloutAccessoryView"] integerValue])];
+                UIView* rightCalloutAccessoryView = (UIView*) HEAP[args[@"rightCalloutAccessoryView"]];
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -272,7 +272,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+                UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -290,7 +290,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+                UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -691,7 +691,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+                NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
                 CLLocationCoordinate2D pt;
                 [ptValue getValue:&pt];
         
@@ -927,7 +927,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) HEAP[@([args[@"rgcData"] integerValue])];
+                BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) HEAP[args[@"rgcData"]];
         
                 // ref
                 BMKLocation* ref = (BMKLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1479,604 +1479,6 @@ extern BOOL enableLog;
             methodResult(@(isTargetType));
         },
         
-        @"RefClass::asBMKActionPaopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKActionPaopaoView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKTileLayerView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKTileLayerView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOverlayPathView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOverlayPathView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGroundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGroundOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolyline *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKCircleView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKCircleView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPointAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPointAnnotation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGradient": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGradient *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKArcline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKArcline *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMultiPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMultiPoint *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKBaseIndoorMapInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKBaseIndoorMapInfo *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKURLTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKURLTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKSyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKSyncTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKAsyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKAsyncTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolylineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolylineView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPinAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPinAnnotationView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKCircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKCircle *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMapPoi *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMapView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMapView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationViewDisplayParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationViewDisplayParam *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMapStatus *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKArclineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKArclineView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKHeatMapNode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKHeatMapNode *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKHeatMap *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolygon *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolygonView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolygonView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOverlayView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGroundOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGroundOverlayView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKAnnotationView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOverlayGLBasicView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOverlayGLBasicView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKShape *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOLSearchRecord": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOLSearchRecord *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOLUpdateElement": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOLUpdateElement *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKCustomMapStyleOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKCustomMapStyleOption *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOfflineMap *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationReGeocode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationReGeocode *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationManager *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationAuth": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationAuth *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationPoiRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationPoiRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationPoi *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFenceRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFenceCircleRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFenceCircleRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFencePolygonRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFencePolygonRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFenceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFenceManager *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
         @"ObjectFactory::createBMKActionPaopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -2084,9 +1486,9 @@ extern BOOL enableLog;
             }
         
             BMKActionPaopaoView* ref = [[BMKActionPaopaoView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2098,9 +1500,9 @@ extern BOOL enableLog;
             }
         
             BMKTileLayerView* ref = [[BMKTileLayerView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2112,9 +1514,9 @@ extern BOOL enableLog;
             }
         
             BMKOverlayPathView* ref = [[BMKOverlayPathView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2126,9 +1528,9 @@ extern BOOL enableLog;
             }
         
             BMKGroundOverlay* ref = [[BMKGroundOverlay alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2140,9 +1542,9 @@ extern BOOL enableLog;
             }
         
             BMKPolyline* ref = [[BMKPolyline alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2154,9 +1556,9 @@ extern BOOL enableLog;
             }
         
             BMKCircleView* ref = [[BMKCircleView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2168,9 +1570,9 @@ extern BOOL enableLog;
             }
         
             BMKPointAnnotation* ref = [[BMKPointAnnotation alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2182,9 +1584,9 @@ extern BOOL enableLog;
             }
         
             BMKGradient* ref = [[BMKGradient alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2196,9 +1598,9 @@ extern BOOL enableLog;
             }
         
             BMKArcline* ref = [[BMKArcline alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2210,9 +1612,9 @@ extern BOOL enableLog;
             }
         
             BMKMultiPoint* ref = [[BMKMultiPoint alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2224,9 +1626,9 @@ extern BOOL enableLog;
             }
         
             BMKBaseIndoorMapInfo* ref = [[BMKBaseIndoorMapInfo alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2238,9 +1640,9 @@ extern BOOL enableLog;
             }
         
             BMKTileLayer* ref = [[BMKTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2252,9 +1654,9 @@ extern BOOL enableLog;
             }
         
             BMKURLTileLayer* ref = [[BMKURLTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2266,9 +1668,9 @@ extern BOOL enableLog;
             }
         
             BMKSyncTileLayer* ref = [[BMKSyncTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2280,9 +1682,9 @@ extern BOOL enableLog;
             }
         
             BMKAsyncTileLayer* ref = [[BMKAsyncTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2294,51 +1696,9 @@ extern BOOL enableLog;
             }
         
             BMKPolylineView* ref = [[BMKPolylineView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKLineJoinType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLineJoinType");
-            }
-        
-            BMKLineJoinType* ref = [[BMKLineJoinType alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKLineCapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLineCapType");
-            }
-        
-            BMKLineCapType* ref = [[BMKLineCapType alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKLineDashType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLineDashType");
-            }
-        
-            BMKLineDashType* ref = [[BMKLineDashType alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2350,9 +1710,9 @@ extern BOOL enableLog;
             }
         
             BMKPinAnnotationView* ref = [[BMKPinAnnotationView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2364,9 +1724,9 @@ extern BOOL enableLog;
             }
         
             BMKCircle* ref = [[BMKCircle alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2378,65 +1738,9 @@ extern BOOL enableLog;
             }
         
             BMKMapPoi* ref = [[BMKMapPoi alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKUserTrackingMode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKUserTrackingMode");
-            }
-        
-            BMKUserTrackingMode* ref = [[BMKUserTrackingMode alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKLogoPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLogoPosition");
-            }
-        
-            BMKLogoPosition* ref = [[BMKLogoPosition alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKSwitchIndoorFloorError": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKSwitchIndoorFloorError");
-            }
-        
-            BMKSwitchIndoorFloorError* ref = [[BMKSwitchIndoorFloorError alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKRegionChangeReason": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKRegionChangeReason");
-            }
-        
-            BMKRegionChangeReason* ref = [[BMKRegionChangeReason alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2448,23 +1752,9 @@ extern BOOL enableLog;
             }
         
             BMKMapView* ref = [[BMKMapView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createLocationViewHierarchy": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createLocationViewHierarchy");
-            }
-        
-            LocationViewHierarchy* ref = [[LocationViewHierarchy alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2476,9 +1766,9 @@ extern BOOL enableLog;
             }
         
             BMKLocationViewDisplayParam* ref = [[BMKLocationViewDisplayParam alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2490,9 +1780,9 @@ extern BOOL enableLog;
             }
         
             BMKMapStatus* ref = [[BMKMapStatus alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2504,9 +1794,9 @@ extern BOOL enableLog;
             }
         
             BMKArclineView* ref = [[BMKArclineView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2518,9 +1808,9 @@ extern BOOL enableLog;
             }
         
             BMKHeatMapNode* ref = [[BMKHeatMapNode alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2532,9 +1822,9 @@ extern BOOL enableLog;
             }
         
             BMKHeatMap* ref = [[BMKHeatMap alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2546,9 +1836,9 @@ extern BOOL enableLog;
             }
         
             BMKPolygon* ref = [[BMKPolygon alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2560,9 +1850,9 @@ extern BOOL enableLog;
             }
         
             BMKPolygonView* ref = [[BMKPolygonView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2574,9 +1864,9 @@ extern BOOL enableLog;
             }
         
             BMKOverlayView* ref = [[BMKOverlayView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2588,9 +1878,9 @@ extern BOOL enableLog;
             }
         
             BMKGroundOverlayView* ref = [[BMKGroundOverlayView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2602,9 +1892,9 @@ extern BOOL enableLog;
             }
         
             BMKAnnotationView* ref = [[BMKAnnotationView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2616,9 +1906,9 @@ extern BOOL enableLog;
             }
         
             BMKOverlayGLBasicView* ref = [[BMKOverlayGLBasicView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2630,9 +1920,9 @@ extern BOOL enableLog;
             }
         
             BMKShape* ref = [[BMKShape alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2644,9 +1934,9 @@ extern BOOL enableLog;
             }
         
             BMKOLSearchRecord* ref = [[BMKOLSearchRecord alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2658,9 +1948,9 @@ extern BOOL enableLog;
             }
         
             BMKOLUpdateElement* ref = [[BMKOLUpdateElement alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2672,9 +1962,9 @@ extern BOOL enableLog;
             }
         
             BMKCustomMapStyleOption* ref = [[BMKCustomMapStyleOption alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2686,9 +1976,9 @@ extern BOOL enableLog;
             }
         
             BMKOfflineMap* ref = [[BMKOfflineMap alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2700,51 +1990,9 @@ extern BOOL enableLog;
             }
         
             BMKLocationReGeocode* ref = [[BMKLocationReGeocode alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKLocationCoordinateType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLocationCoordinateType");
-            }
-        
-            BMKLocationCoordinateType* ref = [[BMKLocationCoordinateType alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKLocationNetworkState": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLocationNetworkState");
-            }
-        
-            BMKLocationNetworkState* ref = [[BMKLocationNetworkState alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
-        
-            if (enableLog) NSLog(@"HEAP: %@", HEAP);
-        },
-        
-        @"ObjectFactory::createBMKLocationErrorCode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLocationErrorCode");
-            }
-        
-            BMKLocationErrorCode* ref = [[BMKLocationErrorCode alloc] init];
-            HEAP[@(ref.hash)] = ref;
-        
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2756,23 +2004,811 @@ extern BOOL enableLog;
             }
         
             BMKLocationManager* ref = [[BMKLocationManager alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
         
-        @"ObjectFactory::createBMKLocationAuthErrorCode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+        @"ObjectFactory::createBMKLocationAuth": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
-                NSLog(@"ObjectFactory::createBMKLocationAuthErrorCode");
+                NSLog(@"ObjectFactory::createBMKLocationAuth");
             }
         
-            BMKLocationAuthErrorCode* ref = [[BMKLocationAuthErrorCode alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocationAuth* ref = [[BMKLocationAuth alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
         
-            methodResult(@(ref.hash));
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createBMKLocationPoiRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createBMKLocationPoiRegion");
+            }
+        
+            BMKLocationPoiRegion* ref = [[BMKLocationPoiRegion alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createBMKLocationPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createBMKLocationPoi");
+            }
+        
+            BMKLocationPoi* ref = [[BMKLocationPoi alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createBMKLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createBMKLocation");
+            }
+        
+            BMKLocation* ref = [[BMKLocation alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createBMKGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createBMKGeoFenceRegion");
+            }
+        
+            BMKGeoFenceRegion* ref = [[BMKGeoFenceRegion alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createBMKGeoFenceCircleRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createBMKGeoFenceCircleRegion");
+            }
+        
+            BMKGeoFenceCircleRegion* ref = [[BMKGeoFenceCircleRegion alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createBMKGeoFencePolygonRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createBMKGeoFencePolygonRegion");
+            }
+        
+            BMKGeoFencePolygonRegion* ref = [[BMKGeoFencePolygonRegion alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::createBMKGeoFenceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"ObjectFactory::createBMKGeoFenceManager");
+            }
+        
+            BMKGeoFenceManager* ref = [[BMKGeoFenceManager alloc] init];
+            HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+            methodResult([NSNumber numberWithLong: ref.hash]);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKActionPaopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKActionPaopaoView* ref = [[BMKActionPaopaoView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKTileLayerView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKTileLayerView* ref = [[BMKTileLayerView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOverlayPathView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKOverlayPathView* ref = [[BMKOverlayPathView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGroundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKGroundOverlay* ref = [[BMKGroundOverlay alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKPolyline* ref = [[BMKPolyline alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKCircleView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKCircleView* ref = [[BMKCircleView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPointAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKPointAnnotation* ref = [[BMKPointAnnotation alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGradient": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKGradient* ref = [[BMKGradient alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKArcline": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKArcline* ref = [[BMKArcline alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMultiPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKMultiPoint* ref = [[BMKMultiPoint alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKBaseIndoorMapInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKBaseIndoorMapInfo* ref = [[BMKBaseIndoorMapInfo alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKTileLayer* ref = [[BMKTileLayer alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKURLTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKURLTileLayer* ref = [[BMKURLTileLayer alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKSyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKSyncTileLayer* ref = [[BMKSyncTileLayer alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKAsyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKAsyncTileLayer* ref = [[BMKAsyncTileLayer alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolylineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKPolylineView* ref = [[BMKPolylineView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPinAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKPinAnnotationView* ref = [[BMKPinAnnotationView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKCircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKCircle* ref = [[BMKCircle alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKMapPoi* ref = [[BMKMapPoi alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMapView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKMapView* ref = [[BMKMapView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationViewDisplayParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKLocationViewDisplayParam* ref = [[BMKLocationViewDisplayParam alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKMapStatus* ref = [[BMKMapStatus alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKArclineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKArclineView* ref = [[BMKArclineView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKHeatMapNode": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKHeatMapNode* ref = [[BMKHeatMapNode alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKHeatMap* ref = [[BMKHeatMap alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKPolygon* ref = [[BMKPolygon alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolygonView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKPolygonView* ref = [[BMKPolygonView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKOverlayView* ref = [[BMKOverlayView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGroundOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKGroundOverlayView* ref = [[BMKGroundOverlayView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKAnnotationView* ref = [[BMKAnnotationView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOverlayGLBasicView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKOverlayGLBasicView* ref = [[BMKOverlayGLBasicView alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKShape* ref = [[BMKShape alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOLSearchRecord": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKOLSearchRecord* ref = [[BMKOLSearchRecord alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOLUpdateElement": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKOLUpdateElement* ref = [[BMKOLUpdateElement alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKCustomMapStyleOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKCustomMapStyleOption* ref = [[BMKCustomMapStyleOption alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKOfflineMap* ref = [[BMKOfflineMap alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationReGeocode": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKLocationReGeocode* ref = [[BMKLocationReGeocode alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKLocationManager* ref = [[BMKLocationManager alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationAuth": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKLocationAuth* ref = [[BMKLocationAuth alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationPoiRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKLocationPoiRegion* ref = [[BMKLocationPoiRegion alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKLocationPoi* ref = [[BMKLocationPoi alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKLocation* ref = [[BMKLocation alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKGeoFenceRegion* ref = [[BMKGeoFenceRegion alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFenceCircleRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKGeoFenceCircleRegion* ref = [[BMKGeoFenceCircleRegion alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFencePolygonRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKGeoFencePolygonRegion* ref = [[BMKGeoFencePolygonRegion alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFenceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
+                BMKGeoFenceManager* ref = [[BMKGeoFenceManager alloc] init];
+                HEAP[[NSNumber numberWithLong: ref.hash]] = ref;
+        
+                [resultList addObject:[NSNumber numberWithLong: ref.hash]];
+            }
+        
+            methodResult(resultList);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },

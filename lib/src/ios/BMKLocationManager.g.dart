@@ -115,7 +115,7 @@ class BMKLocationManager extends NSObject  {
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKLocationManager_doRequestAlwaysAuthorization([])');
+              debugPrint('fluttify-dart-callback: BMKLocationManager_doRequestAlwaysAuthorization([\'manager\':${args['manager']}, \'locationManager\':${args['locationManager']}])');
             }
         
             // handle the native call
@@ -124,7 +124,7 @@ class BMKLocationManager extends NSObject  {
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKLocationManager_didFailWithError([])');
+              debugPrint('fluttify-dart-callback: BMKLocationManager_didFailWithError([\'manager\':${args['manager']}, \'error\':${args['error']}])');
             }
         
             // handle the native call
@@ -133,7 +133,7 @@ class BMKLocationManager extends NSObject  {
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKLocationManager_didUpdateLocation_orError([])');
+              debugPrint('fluttify-dart-callback: BMKLocationManager_didUpdateLocation_orError([\'manager\':${args['manager']}, \'location\':${args['location']}, \'error\':${args['error']}])');
             }
         
             // handle the native call
@@ -142,16 +142,16 @@ class BMKLocationManager extends NSObject  {
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKLocationManager_didChangeAuthorizationStatus([])');
+              debugPrint('fluttify-dart-callback: BMKLocationManager_didChangeAuthorizationStatus([\'manager\':${args['manager']}, \'status\':${args['status']}])');
             }
         
             // handle the native call
-            delegate?.BMKLocationManager_didChangeAuthorizationStatus(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), CLAuthorizationStatus.values[(args['status'])]);
+            delegate?.BMKLocationManager_didChangeAuthorizationStatus(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), CLAuthorizationStatus.values[args['status'] - 0]);
             break;
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKLocationManagerShouldDisplayHeadingCalibration([])');
+              debugPrint('fluttify-dart-callback: BMKLocationManagerShouldDisplayHeadingCalibration([\'manager\':${args['manager']}])');
             }
         
             // handle the native call
@@ -160,7 +160,7 @@ class BMKLocationManager extends NSObject  {
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKLocationManager_didUpdateHeading([])');
+              debugPrint('fluttify-dart-callback: BMKLocationManager_didUpdateHeading([\'manager\':${args['manager']}, \'heading\':${args['heading']}])');
             }
         
             // handle the native call
@@ -169,11 +169,11 @@ class BMKLocationManager extends NSObject  {
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKLocationManager_didUpdateNetworkState_orError([])');
+              debugPrint('fluttify-dart-callback: BMKLocationManager_didUpdateNetworkState_orError([\'manager\':${args['manager']}, \'state\':${args['state']}, \'error\':${args['error']}])');
             }
         
             // handle the native call
-            delegate?.BMKLocationManager_didUpdateNetworkState_orError(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), BMKLocationNetworkState.values[(args['state'])], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+            delegate?.BMKLocationManager_didUpdateNetworkState_orError(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), BMKLocationNetworkState.values[args['state'] - 0], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
             break;
           default:
             break;
@@ -256,7 +256,7 @@ class BMKLocationManager extends NSObject  {
   
   
     // handle native call
-    MethodChannel('BMKLocationManager::requestLocationWithReGeocode_withNetworkState_completionBlock::Callback')
+    MethodChannel('BMKLocatingCompletionBlock::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -267,7 +267,7 @@ class BMKLocationManager extends NSObject  {
               }
         
               // handle the native call
-              completionBlock(TypeOpBmapMapFluttifyIOS((args['location'] as Object))?.as__<BMKLocation>(), BMKLocationNetworkState.values[(args['state'])], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              completionBlock(TypeOpBmapMapFluttifyIOS((args['location'] as Object))?.as__<BMKLocation>(), BMKLocationNetworkState.values[args['state'] - 0], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
               break;
             default:
               break;

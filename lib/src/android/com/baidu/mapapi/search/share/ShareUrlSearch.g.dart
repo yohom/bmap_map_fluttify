@@ -140,14 +140,14 @@ class com_baidu_mapapi_search_share_ShareUrlSearch extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.share.ShareUrlSearch::setOnGetShareUrlResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.share.OnGetShareUrlResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.search.share.OnGetShareUrlResultListener::onGetPoiDetailShareUrlResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetPoiDetailShareUrlResult([])');
+                debugPrint('fluttify-dart-callback: onGetPoiDetailShareUrlResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -156,7 +156,7 @@ class com_baidu_mapapi_search_share_ShareUrlSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.share.OnGetShareUrlResultListener::onGetLocationShareUrlResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetLocationShareUrlResult([])');
+                debugPrint('fluttify-dart-callback: onGetLocationShareUrlResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -165,7 +165,7 @@ class com_baidu_mapapi_search_share_ShareUrlSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.share.OnGetShareUrlResultListener::onGetRouteShareUrlResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetRouteShareUrlResult([])');
+                debugPrint('fluttify-dart-callback: onGetRouteShareUrlResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call

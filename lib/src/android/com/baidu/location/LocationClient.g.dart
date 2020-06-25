@@ -500,14 +500,14 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.location.LocationClient::registerNotifyLocationListener::Callback')
+    MethodChannel('com.baidu.location.BDLocationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.location.BDLocationListener::onReceiveLocation':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onReceiveLocation([])');
+                debugPrint('fluttify-dart-callback: onReceiveLocation([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -540,14 +540,14 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.location.LocationClient::registerLocationListener__com_baidu_location_BDLocationListener::Callback')
+    MethodChannel('com.baidu.location.BDLocationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.location.BDLocationListener::onReceiveLocation':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onReceiveLocation([])');
+                debugPrint('fluttify-dart-callback: onReceiveLocation([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -580,14 +580,14 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.location.LocationClient::unRegisterLocationListener__com_baidu_location_BDLocationListener::Callback')
+    MethodChannel('com.baidu.location.BDLocationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.location.BDLocationListener::onReceiveLocation':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onReceiveLocation([])');
+                debugPrint('fluttify-dart-callback: onReceiveLocation([\'var1\':${args['var1']}])');
               }
         
               // handle the native call

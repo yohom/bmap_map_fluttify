@@ -1995,8 +1995,7 @@ public class SubHandler7 {
                 // convert result to jsonable result
                 Integer jsonableResult = null;
                 if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
+                    jsonableResult = __result__.ordinal();
                 }
             
                 __methodResult__.success(jsonableResult);
@@ -3890,7 +3889,7 @@ public class SubHandler7 {
                 try {
                     ref.registerNotifyLocationListener(new com.baidu.location.BDLocationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.LocationClient::registerNotifyLocationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.BDLocationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -3961,7 +3960,7 @@ public class SubHandler7 {
                 try {
                     ref.registerLocationListener(new com.baidu.location.BDLocationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.LocationClient::registerLocationListener__com_baidu_location_BDLocationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.BDLocationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -4032,7 +4031,7 @@ public class SubHandler7 {
                 try {
                     ref.unRegisterLocationListener(new com.baidu.location.BDLocationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.LocationClient::unRegisterLocationListener__com_baidu_location_BDLocationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.BDLocationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

@@ -173,7 +173,7 @@ extern BOOL enableLog;
       @"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          BMKCustomMapStyleOption* option = (BMKCustomMapStyleOption*) HEAP[@([args[@"option"] integerValue])];
+          BMKCustomMapStyleOption* option = (BMKCustomMapStyleOption*) HEAP[args[@"option"]];
       
       
       
@@ -189,7 +189,7 @@ extern BOOL enableLog;
           // invoke native method
           [ref setCustomMapStyleWithOption : option preLoad: ^(NSString* path) {
               FlutterMethodChannel *channel = [FlutterMethodChannel
-                  methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
+                  methodChannelWithName:@"void|NSString*#path::Callback"
                         binaryMessenger:[[self registrar] messenger]];
       
               // print log
@@ -201,11 +201,13 @@ extern BOOL enableLog;
               // jsonable callback arg
               NSString* argpath = path;
       
-              [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+              dispatch_async(dispatch_get_main_queue(), ^{
+                  [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+              });
       
           } success: ^(NSString* path) {
               FlutterMethodChannel *channel = [FlutterMethodChannel
-                  methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
+                  methodChannelWithName:@"void|NSString*#path::Callback"
                         binaryMessenger:[[self registrar] messenger]];
       
               // print log
@@ -217,11 +219,13 @@ extern BOOL enableLog;
               // jsonable callback arg
               NSString* argpath = path;
       
-              [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+              dispatch_async(dispatch_get_main_queue(), ^{
+                  [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+              });
       
           } failure: ^(NSError* error, NSString* path) {
               FlutterMethodChannel *channel = [FlutterMethodChannel
-                  methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
+                  methodChannelWithName:@"void|NSError*#error,NSString*#path::Callback"
                         binaryMessenger:[[self registrar] messenger]];
       
               // print log
@@ -233,14 +237,16 @@ extern BOOL enableLog;
               // ref callback arg
               NSNumber* argerror = [NSNull null];
               if (error != nil) {
-                  argerror = @(error.hash);
+                  argerror = [NSNumber numberWithLong: error.hash];
                   HEAP[argerror] = error;
               }
       
               // jsonable callback arg
               NSString* argpath = path;
       
-              [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror, @"path": argpath}];
+              dispatch_async(dispatch_get_main_queue(), ^{
+                  [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror, @"path": argpath}];
+              });
       
           }];
       
@@ -253,13 +259,13 @@ extern BOOL enableLog;
       @"BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          UIColor* smooth = (UIColor*) HEAP[@([args[@"smooth"] integerValue])];
+          UIColor* smooth = (UIColor*) HEAP[args[@"smooth"]];
           // ref arg
-          UIColor* slow = (UIColor*) HEAP[@([args[@"slow"] integerValue])];
+          UIColor* slow = (UIColor*) HEAP[args[@"slow"]];
           // ref arg
-          UIColor* congestion = (UIColor*) HEAP[@([args[@"congestion"] integerValue])];
+          UIColor* congestion = (UIColor*) HEAP[args[@"congestion"]];
           // ref arg
-          UIColor* severeCongestion = (UIColor*) HEAP[@([args[@"severeCongestion"] integerValue])];
+          UIColor* severeCongestion = (UIColor*) HEAP[args[@"severeCongestion"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -428,7 +434,7 @@ extern BOOL enableLog;
       @"BMKMapView::regionThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
           BMKCoordinateRegion region;
           [regionValue getValue:&region];
       
@@ -446,15 +452,15 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::setRegion_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
           BMKCoordinateRegion region;
           [regionValue getValue:&region];
           // jsonable arg
@@ -480,7 +486,7 @@ extern BOOL enableLog;
       @"BMKMapView::setCenterCoordinate_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+          NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
           CLLocationCoordinate2D coordinate;
           [coordinateValue getValue:&coordinate];
           // jsonable arg
@@ -520,15 +526,15 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::takeSnapshot__CGRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+          NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
           CGRect rect;
           [rectValue getValue:&rect];
       
@@ -545,15 +551,15 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::setCompassImage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+          UIImage* image = (UIImage*) HEAP[args[@"image"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -575,7 +581,7 @@ extern BOOL enableLog;
       @"BMKMapView::setVisibleMapRect_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
           BMKMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // jsonable arg
@@ -601,7 +607,7 @@ extern BOOL enableLog;
       @"BMKMapView::mapRectThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
           BMKMapRect mapRect;
           [mapRectValue getValue:&mapRect];
       
@@ -619,19 +625,19 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::setVisibleMapRect_edgePadding_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
           BMKMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
           // jsonable arg
@@ -657,11 +663,11 @@ extern BOOL enableLog;
       @"BMKMapView::fitVisibleMapRect_edgePadding_withAnimated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
           BMKMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
           // jsonable arg
@@ -687,11 +693,11 @@ extern BOOL enableLog;
       @"BMKMapView::mapRectThatFits_edgePadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
           BMKMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
       
@@ -709,19 +715,19 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::convertCoordinate_toPointToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+          NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
           CLLocationCoordinate2D coordinate;
           [coordinateValue getValue:&coordinate];
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) HEAP[args[@"view"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -737,19 +743,19 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::convertPoint_toCoordinateFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* pointValue = (NSValue*) HEAP[@([args[@"point"] integerValue])];
+          NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
           CGPoint point;
           [pointValue getValue:&point];
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) HEAP[args[@"view"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -765,19 +771,19 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::convertRegion_toRectToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
           BMKCoordinateRegion region;
           [regionValue getValue:&region];
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) HEAP[args[@"view"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -793,19 +799,19 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::convertRect_toRegionFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+          NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
           CGRect rect;
           [rectValue getValue:&rect];
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) HEAP[args[@"view"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -821,19 +827,19 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::convertMapRect_toRectToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
           BMKMapRect mapRect;
           [mapRectValue getValue:&mapRect];
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) HEAP[args[@"view"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -849,19 +855,19 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::convertRect_toMapRectFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+          NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
           CGRect rect;
           [rectValue getValue:&rect];
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) HEAP[args[@"view"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -877,15 +883,15 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::glPointForMapPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* mapPointValue = (NSValue*) HEAP[@([args[@"mapPoint"] integerValue])];
+          NSValue* mapPointValue = (NSValue*) HEAP[args[@"mapPoint"]];
           BMKMapPoint mapPoint;
           [mapPointValue getValue:&mapPoint];
       
@@ -903,8 +909,8 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -937,15 +943,15 @@ extern BOOL enableLog;
           // result
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint*)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::setMapCenterToScreenPt": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* ptInScreenValue = (NSValue*) HEAP[@([args[@"ptInScreen"] integerValue])];
+          NSValue* ptInScreenValue = (NSValue*) HEAP[args[@"ptInScreen"]];
           CGPoint ptInScreen;
           [ptInScreenValue getValue:&ptInScreen];
       
@@ -969,11 +975,11 @@ extern BOOL enableLog;
       @"BMKMapView::getMapStatusFromCoordinateRegion_edgePadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
           BMKCoordinateRegion region;
           [regionValue getValue:&region];
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
           UIEdgeInsets insets;
           [insetsValue getValue:&insets];
       
@@ -990,8 +996,8 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
@@ -1012,15 +1018,15 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::setMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[args[@"mapStatus"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1042,7 +1048,7 @@ extern BOOL enableLog;
       @"BMKMapView::setMapStatus_withAnimation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[args[@"mapStatus"]];
           // jsonable arg
           BOOL bAnimation = [args[@"bAnimation"] boolValue];
       
@@ -1066,7 +1072,7 @@ extern BOOL enableLog;
       @"BMKMapView::setMapStatus_withAnimation_withAnimationTime": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[args[@"mapStatus"]];
           // jsonable arg
           BOOL bAnimation = [args[@"bAnimation"] boolValue];
           // jsonable arg
@@ -1128,8 +1134,8 @@ extern BOOL enableLog;
           // result
           // return a (value)*
           NSValue* resultValue = [NSValue valueWithPointer:result];
-          HEAP[@((resultValue).hash)] = resultValue;
-          NSNumber* jsonableResult = @((resultValue).hash);
+          HEAP[[NSNumber numberWithLong: (resultValue).hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash)];
       
           methodResult(jsonableResult);
       },
@@ -1151,8 +1157,8 @@ extern BOOL enableLog;
           // result
           // return a (value)*
           NSValue* resultValue = [NSValue valueWithPointer:result];
-          HEAP[@((resultValue).hash)] = resultValue;
-          NSNumber* jsonableResult = @((resultValue).hash);
+          HEAP[[NSNumber numberWithLong: (resultValue).hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash)];
       
           methodResult(jsonableResult);
       },
@@ -1197,15 +1203,15 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::updateLocationViewWithParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          BMKLocationViewDisplayParam* locationViewDisplayParam = (BMKLocationViewDisplayParam*) HEAP[@([args[@"locationViewDisplayParam"] integerValue])];
+          BMKLocationViewDisplayParam* locationViewDisplayParam = (BMKLocationViewDisplayParam*) HEAP[args[@"locationViewDisplayParam"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1227,7 +1233,7 @@ extern BOOL enableLog;
       @"BMKMapView::updateLocationData": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          BMKUserLocation* userLocation = (BMKUserLocation*) HEAP[@([args[@"userLocation"] integerValue])];
+          BMKUserLocation* userLocation = (BMKUserLocation*) HEAP[args[@"userLocation"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1249,7 +1255,7 @@ extern BOOL enableLog;
       @"BMKMapView::addAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1298,7 +1304,7 @@ extern BOOL enableLog;
       @"BMKMapView::removeAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1347,7 +1353,7 @@ extern BOOL enableLog;
       @"BMKMapView::viewForAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1362,8 +1368,8 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
@@ -1385,15 +1391,15 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::selectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
@@ -1417,7 +1423,7 @@ extern BOOL enableLog;
       @"BMKMapView::deselectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
@@ -1470,7 +1476,7 @@ extern BOOL enableLog;
       @"BMKMapView::annotationsInCoordinateBounds": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // struct arg
-          NSValue* boundsValue = (NSValue*) HEAP[@([args[@"bounds"] integerValue])];
+          NSValue* boundsValue = (NSValue*) HEAP[args[@"bounds"]];
           BMKCoordinateBounds bounds;
           [boundsValue getValue:&bounds];
       
@@ -1490,8 +1496,8 @@ extern BOOL enableLog;
           NSMutableArray* jsonableResult = [NSMutableArray array];
           for (int __i__ = 0; __i__ < result.count; __i__++) {
               NSObject* object = [result objectAtIndex:__i__];
-              [jsonableResult addObject: @(object.hash)];
-              HEAP[@([object hash])] = object;
+              [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+              HEAP[[NSNumber numberWithLong: object.hash]] = object;
           }
       
           methodResult(jsonableResult);
@@ -1499,7 +1505,7 @@ extern BOOL enableLog;
       @"BMKMapView::addOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1548,7 +1554,7 @@ extern BOOL enableLog;
       @"BMKMapView::removeOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1597,7 +1603,7 @@ extern BOOL enableLog;
       @"BMKMapView::insertOverlay_atIndex": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
           // jsonable arg
           NSUInteger index = [args[@"index"] unsignedIntegerValue];
       
@@ -1645,9 +1651,9 @@ extern BOOL enableLog;
       @"BMKMapView::insertOverlay_aboveOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
           // ref arg
-          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[args[@"sibling"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1669,9 +1675,9 @@ extern BOOL enableLog;
       @"BMKMapView::insertOverlay_belowOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
           // ref arg
-          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[args[@"sibling"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1693,7 +1699,7 @@ extern BOOL enableLog;
       @"BMKMapView::viewForOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1708,15 +1714,15 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
       
           methodResult(jsonableResult);
       },
       @"BMKMapView::addHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // args
           // ref arg
-          BMKHeatMap* heatMap = (BMKHeatMap*) HEAP[@([args[@"heatMap"] integerValue])];
+          BMKHeatMap* heatMap = (BMKHeatMap*) HEAP[args[@"heatMap"]];
       
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1788,8 +1794,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -1808,8 +1814,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -1828,8 +1834,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -1848,8 +1854,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGSize)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -1868,8 +1874,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -2212,8 +2218,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -2232,8 +2238,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGSize)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -2270,8 +2276,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -2290,8 +2296,8 @@ extern BOOL enableLog;
       
           // 返回值: 结构体
           NSValue* resultValue = [NSValue value:&result withObjCType:@encode(UIEdgeInsets)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+          NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
       
           methodResult(jsonableResult);
       },
@@ -2456,8 +2462,8 @@ extern BOOL enableLog;
           NSMutableArray* jsonableResult = [NSMutableArray array];
           for (int __i__ = 0; __i__ < result.count; __i__++) {
               NSObject* object = [result objectAtIndex:__i__];
-              [jsonableResult addObject: @(object.hash)];
-              HEAP[@([object hash])] = object;
+              [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+              HEAP[[NSNumber numberWithLong: object.hash]] = object;
           }
       
           methodResult(jsonableResult);
@@ -2497,8 +2503,8 @@ extern BOOL enableLog;
           NSMutableArray* jsonableResult = [NSMutableArray array];
           for (int __i__ = 0; __i__ < result.count; __i__++) {
               NSObject* object = [result objectAtIndex:__i__];
-              [jsonableResult addObject: @(object.hash)];
-              HEAP[@([object hash])] = object;
+              [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+              HEAP[[NSNumber numberWithLong: object.hash]] = object;
           }
       
           methodResult(jsonableResult);
@@ -2545,7 +2551,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
           BMKCoordinateRegion region;
           [regionValue getValue:&region];
       
@@ -2564,7 +2570,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* limitMapRegionValue = (NSValue*) HEAP[@([args[@"limitMapRegion"] integerValue])];
+          NSValue* limitMapRegionValue = (NSValue*) HEAP[args[@"limitMapRegion"]];
           BMKCoordinateRegion limitMapRegion;
           [limitMapRegionValue getValue:&limitMapRegion];
       
@@ -2583,7 +2589,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* compassPositionValue = (NSValue*) HEAP[@([args[@"compassPosition"] integerValue])];
+          NSValue* compassPositionValue = (NSValue*) HEAP[args[@"compassPosition"]];
           CGPoint compassPosition;
           [compassPositionValue getValue:&compassPosition];
       
@@ -2602,7 +2608,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* centerCoordinateValue = (NSValue*) HEAP[@([args[@"centerCoordinate"] integerValue])];
+          NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
           CLLocationCoordinate2D centerCoordinate;
           [centerCoordinateValue getValue:&centerCoordinate];
       
@@ -2927,7 +2933,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* mapScaleBarPositionValue = (NSValue*) HEAP[@([args[@"mapScaleBarPosition"] integerValue])];
+          NSValue* mapScaleBarPositionValue = (NSValue*) HEAP[args[@"mapScaleBarPosition"]];
           CGPoint mapScaleBarPosition;
           [mapScaleBarPositionValue getValue:&mapScaleBarPosition];
       
@@ -2963,7 +2969,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+          NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
           BMKMapRect visibleMapRect;
           [visibleMapRectValue getValue:&visibleMapRect];
       
@@ -2982,7 +2988,7 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* mapPaddingValue = (NSValue*) HEAP[@([args[@"mapPadding"] integerValue])];
+          NSValue* mapPaddingValue = (NSValue*) HEAP[args[@"mapPadding"]];
           UIEdgeInsets mapPadding;
           [mapPaddingValue getValue:&mapPadding];
       
@@ -3167,12 +3173,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
+  });
   
 }
 
@@ -3190,19 +3198,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argerror = [NSNull null];
   if (error != nil) {
-      argerror = @(error.hash);
+      argerror = [NSNumber numberWithLong: error.hash];
       HEAP[argerror] = error;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+  });
   
 }
 
@@ -3220,12 +3230,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
+  });
   
 }
 
@@ -3243,19 +3255,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argstatus = [NSNull null];
   if (status != nil) {
-      argstatus = @(status.hash);
+      argstatus = [NSNumber numberWithLong: status.hash];
       HEAP[argstatus] = status;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
+  });
   
 }
 
@@ -3273,14 +3287,16 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  });
   
 }
 
@@ -3298,7 +3314,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -3307,7 +3323,9 @@ extern BOOL enableLog;
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  });
   
 }
 
@@ -3325,14 +3343,16 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  });
   
 }
 
@@ -3350,7 +3370,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -3359,7 +3379,9 @@ extern BOOL enableLog;
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  });
   
 }
 
@@ -3377,21 +3399,23 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argannotation = [NSNull null];
   if (annotation != nil) {
-      argannotation = @(annotation.hash);
+      argannotation = [NSNumber numberWithLong: annotation.hash];
       HEAP[argannotation] = annotation;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
-              arguments:@{}
-                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
+                  arguments:@{}
+                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
   // 相关issue https://github.com/flutter/flutter/issues/28310
@@ -3418,7 +3442,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -3427,12 +3451,14 @@ extern BOOL enableLog;
   for (int __i__ = 0; __i__ < views.count; __i__++) {
       NSObject* item = ((NSObject*) [views objectAtIndex:__i__]);
       // return to dart side data
-      argviews[__i__] = @(item.hash);
+      argviews[__i__] = [NSNumber numberWithLong: item.hash];
       // add to HEAP
-      HEAP[@(item.hash)] = item;
+      HEAP[[NSNumber numberWithLong: item.hash]] = item;
   }
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+  });
   
 }
 
@@ -3450,19 +3476,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -3480,19 +3508,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -3510,19 +3540,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -3540,14 +3572,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
@@ -3556,7 +3588,9 @@ extern BOOL enableLog;
   // primitive callback arg
   NSNumber* argoldState = @(oldState);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+  });
   
 }
 
@@ -3574,19 +3608,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -3604,21 +3640,23 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argoverlay = [NSNull null];
   if (overlay != nil) {
-      argoverlay = @(overlay.hash);
+      argoverlay = [NSNumber numberWithLong: overlay.hash];
       HEAP[argoverlay] = overlay;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
-              arguments:@{}
-                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
+                  arguments:@{}
+                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
   // 相关issue https://github.com/flutter/flutter/issues/28310
@@ -3645,7 +3683,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -3654,12 +3692,14 @@ extern BOOL enableLog;
   for (int __i__ = 0; __i__ < overlayViews.count; __i__++) {
       NSObject* item = ((NSObject*) [overlayViews objectAtIndex:__i__]);
       // return to dart side data
-      argoverlayViews[__i__] = @(item.hash);
+      argoverlayViews[__i__] = [NSNumber numberWithLong: item.hash];
       // add to HEAP
-      HEAP[@(item.hash)] = item;
+      HEAP[[NSNumber numberWithLong: item.hash]] = item;
   }
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
+  });
   
 }
 
@@ -3677,19 +3717,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argoverlayView = [NSNull null];
   if (overlayView != nil) {
-      argoverlayView = @(overlayView.hash);
+      argoverlayView = [NSNumber numberWithLong: overlayView.hash];
       HEAP[argoverlayView] = overlayView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
+  });
   
 }
 
@@ -3707,19 +3749,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argmapPoi = [NSNull null];
   if (mapPoi != nil) {
-      argmapPoi = @(mapPoi.hash);
+      argmapPoi = [NSNumber numberWithLong: mapPoi.hash];
       HEAP[argmapPoi] = mapPoi;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
+  });
   
 }
 
@@ -3737,17 +3781,19 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  });
   
 }
 
@@ -3765,17 +3811,19 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  });
   
 }
 
@@ -3793,17 +3841,19 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  });
   
 }
 
@@ -3821,13 +3871,13 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
   // primitive callback arg
@@ -3835,7 +3885,9 @@ extern BOOL enableLog;
   // primitive callback arg
   NSNumber* argmaximumPossibleForce = @(maximumPossibleForce);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
+  });
   
 }
 
@@ -3853,12 +3905,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
+  });
   
 }
 
@@ -3876,7 +3930,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -3885,12 +3939,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* arginfo = [NSNull null];
   if (info != nil) {
-      arginfo = @(info.hash);
+      arginfo = [NSNumber numberWithLong: info.hash];
       HEAP[arginfo] = info;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
+  });
   
 }
 
@@ -3910,7 +3966,9 @@ extern BOOL enableLog;
   // primitive callback arg
   NSNumber* argstate = @(state);
 
-  [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+  });
   
 }
 

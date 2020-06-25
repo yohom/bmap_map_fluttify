@@ -1078,14 +1078,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::snapshot::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback::onSnapshotReady':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onSnapshotReady([])');
+                debugPrint('fluttify-dart-callback: onSnapshotReady([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1286,14 +1286,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus([])');
+                debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1302,7 +1302,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -1311,7 +1311,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChange':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChange([])');
+                debugPrint('fluttify-dart-callback: onMapStatusChange([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1320,7 +1320,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeFinish':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChangeFinish([])');
+                debugPrint('fluttify-dart-callback: onMapStatusChangeFinish([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1353,14 +1353,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::onTouch':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onTouch([])');
+                debugPrint('fluttify-dart-callback: onTouch([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1393,14 +1393,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapClick':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapClick([])');
+                debugPrint('fluttify-dart-callback: onMapClick([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1409,7 +1409,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapPoiClick':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapPoiClick([])');
+                debugPrint('fluttify-dart-callback: onMapPoiClick([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1442,7 +1442,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1482,7 +1482,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1522,14 +1522,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::onMapDoubleClick':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapDoubleClick([])');
+                debugPrint('fluttify-dart-callback: onMapDoubleClick([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1562,14 +1562,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::onMapLongClick':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapLongClick([])');
+                debugPrint('fluttify-dart-callback: onMapLongClick([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1602,14 +1602,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::onPolylineClick':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onPolylineClick([])');
+                debugPrint('fluttify-dart-callback: onPolylineClick([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1642,14 +1642,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerClick([])');
+                debugPrint('fluttify-dart-callback: onMarkerClick([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1682,14 +1682,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDrag':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerDrag([])');
+                debugPrint('fluttify-dart-callback: onMarkerDrag([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1698,7 +1698,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragEnd':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerDragEnd([])');
+                debugPrint('fluttify-dart-callback: onMarkerDragEnd([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1707,7 +1707,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragStart':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerDragStart([])');
+                debugPrint('fluttify-dart-callback: onMarkerDragStart([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1740,7 +1740,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1780,14 +1780,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__com_baidu_mapapi_map_MapStatus':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapDrawFrame__com_baidu_mapapi_map_MapStatus([])');
+                debugPrint('fluttify-dart-callback: onMapDrawFrame__com_baidu_mapapi_map_MapStatus([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -1820,14 +1820,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::onBaseIndoorMapMode':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onBaseIndoorMapMode([\'var1\':${args['var1']}])');
+                debugPrint('fluttify-dart-callback: onBaseIndoorMapMode([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -1860,7 +1860,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1900,7 +1900,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -2012,14 +2012,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerClick([])');
+                debugPrint('fluttify-dart-callback: onMarkerClick([\'var1\':${args['var1']}])');
               }
         
               // handle the native call

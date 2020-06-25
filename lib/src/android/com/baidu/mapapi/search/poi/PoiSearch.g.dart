@@ -68,14 +68,14 @@ class com_baidu_mapapi_search_poi_PoiSearch extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.poi.PoiSearch::setOnGetPoiSearchResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener::onGetPoiResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetPoiResult([])');
+                debugPrint('fluttify-dart-callback: onGetPoiResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -84,7 +84,7 @@ class com_baidu_mapapi_search_poi_PoiSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener::onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailResult([])');
+                debugPrint('fluttify-dart-callback: onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -93,7 +93,7 @@ class com_baidu_mapapi_search_poi_PoiSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener::onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailSearchResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailSearchResult([])');
+                debugPrint('fluttify-dart-callback: onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailSearchResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -102,7 +102,7 @@ class com_baidu_mapapi_search_poi_PoiSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener::onGetPoiIndoorResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetPoiIndoorResult([])');
+                debugPrint('fluttify-dart-callback: onGetPoiIndoorResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call

@@ -110,7 +110,7 @@ class com_baidu_mapapi_search_poi_PoiFilter_Builder extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.poi.PoiFilter.Builder::sortName::Callback')
+    MethodChannel('com.baidu.mapapi.search.poi.PoiFilter.SortName::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

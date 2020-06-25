@@ -225,7 +225,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.MapView::setMapCustomStyle::Callback@$refId')
+    MethodChannel('com.baidu.mapapi.map.CustomMapStyleCallBack::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

@@ -295,7 +295,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapViewDidFinishLoading':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapViewDidFinishLoading([])');
+              debugPrint('fluttify-dart-callback: mapViewDidFinishLoading([\'mapView\':${args['mapView']}])');
             }
         
             // handle the native call
@@ -304,7 +304,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapViewDidRenderValidData_withError([])');
+              debugPrint('fluttify-dart-callback: mapViewDidRenderValidData_withError([\'mapView\':${args['mapView']}, \'error\':${args['error']}])');
             }
         
             // handle the native call
@@ -313,7 +313,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapViewDidFinishRendering':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapViewDidFinishRendering([])');
+              debugPrint('fluttify-dart-callback: mapViewDidFinishRendering([\'mapView\':${args['mapView']}])');
             }
         
             // handle the native call
@@ -322,7 +322,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_onDrawMapFrame':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_onDrawMapFrame([])');
+              debugPrint('fluttify-dart-callback: mapView_onDrawMapFrame([\'mapView\':${args['mapView']}, \'status\':${args['status']}])');
             }
         
             // handle the native call
@@ -331,7 +331,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_regionWillChangeAnimated([\'animated\':${args['animated']}])');
+              debugPrint('fluttify-dart-callback: mapView_regionWillChangeAnimated([\'mapView\':${args['mapView']}, \'animated\':${args['animated']}])');
             }
         
             // handle the native call
@@ -340,16 +340,16 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_regionWillChangeAnimated_reason([\'animated\':${args['animated']}])');
+              debugPrint('fluttify-dart-callback: mapView_regionWillChangeAnimated_reason([\'mapView\':${args['mapView']}, \'animated\':${args['animated']}, \'reason\':${args['reason']}])');
             }
         
             // handle the native call
-            delegate?.mapView_regionWillChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[(args['reason'])]);
+            delegate?.mapView_regionWillChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[args['reason'] - 0]);
             break;
           case 'Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_regionDidChangeAnimated([\'animated\':${args['animated']}])');
+              debugPrint('fluttify-dart-callback: mapView_regionDidChangeAnimated([\'mapView\':${args['mapView']}, \'animated\':${args['animated']}])');
             }
         
             // handle the native call
@@ -358,16 +358,16 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_regionDidChangeAnimated_reason([\'animated\':${args['animated']}])');
+              debugPrint('fluttify-dart-callback: mapView_regionDidChangeAnimated_reason([\'mapView\':${args['mapView']}, \'animated\':${args['animated']}, \'reason\':${args['reason']}])');
             }
         
             // handle the native call
-            delegate?.mapView_regionDidChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[(args['reason'])]);
+            delegate?.mapView_regionDidChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[args['reason'] - 0]);
             break;
           case 'Callback::BMKMapViewDelegate::mapView_viewForAnnotation':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_viewForAnnotation([])');
+              debugPrint('fluttify-dart-callback: mapView_viewForAnnotation([\'mapView\':${args['mapView']}, \'annotation\':${args['annotation']}])');
             }
         
             // handle the native call
@@ -376,7 +376,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_didAddAnnotationViews([])');
+              debugPrint('fluttify-dart-callback: mapView_didAddAnnotationViews([\'mapView\':${args['mapView']}, \'views\':${args['views']}])');
             }
         
             // handle the native call
@@ -385,7 +385,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_clickAnnotationView':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_clickAnnotationView([])');
+              debugPrint('fluttify-dart-callback: mapView_clickAnnotationView([\'mapView\':${args['mapView']}, \'view\':${args['view']}])');
             }
         
             // handle the native call
@@ -394,7 +394,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_didSelectAnnotationView([])');
+              debugPrint('fluttify-dart-callback: mapView_didSelectAnnotationView([\'mapView\':${args['mapView']}, \'view\':${args['view']}])');
             }
         
             // handle the native call
@@ -403,7 +403,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_didDeselectAnnotationView([])');
+              debugPrint('fluttify-dart-callback: mapView_didDeselectAnnotationView([\'mapView\':${args['mapView']}, \'view\':${args['view']}])');
             }
         
             // handle the native call
@@ -412,7 +412,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_annotationView_didChangeDragState_fromOldState([\'newState\':${args['newState']}, \'oldState\':${args['oldState']}])');
+              debugPrint('fluttify-dart-callback: mapView_annotationView_didChangeDragState_fromOldState([\'mapView\':${args['mapView']}, \'view\':${args['view']}, \'newState\':${args['newState']}, \'oldState\':${args['oldState']}])');
             }
         
             // handle the native call
@@ -421,7 +421,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_annotationViewForBubble':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_annotationViewForBubble([])');
+              debugPrint('fluttify-dart-callback: mapView_annotationViewForBubble([\'mapView\':${args['mapView']}, \'view\':${args['view']}])');
             }
         
             // handle the native call
@@ -430,7 +430,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_viewForOverlay':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_viewForOverlay([])');
+              debugPrint('fluttify-dart-callback: mapView_viewForOverlay([\'mapView\':${args['mapView']}, \'overlay\':${args['overlay']}])');
             }
         
             // handle the native call
@@ -439,7 +439,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_didAddOverlayViews':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_didAddOverlayViews([])');
+              debugPrint('fluttify-dart-callback: mapView_didAddOverlayViews([\'mapView\':${args['mapView']}, \'overlayViews\':${args['overlayViews']}])');
             }
         
             // handle the native call
@@ -448,7 +448,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_onClickedBMKOverlayView([])');
+              debugPrint('fluttify-dart-callback: mapView_onClickedBMKOverlayView([\'mapView\':${args['mapView']}, \'overlayView\':${args['overlayView']}])');
             }
         
             // handle the native call
@@ -457,7 +457,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_onClickedMapPoi':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_onClickedMapPoi([])');
+              debugPrint('fluttify-dart-callback: mapView_onClickedMapPoi([\'mapView\':${args['mapView']}, \'mapPoi\':${args['mapPoi']}])');
             }
         
             // handle the native call
@@ -466,7 +466,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapView_onClickedMapBlank':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapView_onClickedMapBlank([])');
+              debugPrint('fluttify-dart-callback: mapView_onClickedMapBlank([\'mapView\':${args['mapView']}, \'coordinate\':${args['coordinate']}])');
             }
         
             // handle the native call
@@ -475,7 +475,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapview_onDoubleClick':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapview_onDoubleClick([])');
+              debugPrint('fluttify-dart-callback: mapview_onDoubleClick([\'mapView\':${args['mapView']}, \'coordinate\':${args['coordinate']}])');
             }
         
             // handle the native call
@@ -484,7 +484,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapview_onLongClick':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapview_onLongClick([])');
+              debugPrint('fluttify-dart-callback: mapview_onLongClick([\'mapView\':${args['mapView']}, \'coordinate\':${args['coordinate']}])');
             }
         
             // handle the native call
@@ -493,7 +493,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapview_onForceTouch_force_maximumPossibleForce([\'force\':${args['force']}, \'maximumPossibleForce\':${args['maximumPossibleForce']}])');
+              debugPrint('fluttify-dart-callback: mapview_onForceTouch_force_maximumPossibleForce([\'mapView\':${args['mapView']}, \'coordinate\':${args['coordinate']}, \'force\':${args['force']}, \'maximumPossibleForce\':${args['maximumPossibleForce']}])');
             }
         
             // handle the native call
@@ -502,7 +502,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapStatusDidChanged':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapStatusDidChanged([])');
+              debugPrint('fluttify-dart-callback: mapStatusDidChanged([\'mapView\':${args['mapView']}])');
             }
         
             // handle the native call
@@ -511,7 +511,7 @@ class BMKMapView extends UIView  {
           case 'Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: mapview_baseIndoorMapWithIn_baseIndoorMapInfo([\'flag\':${args['flag']}])');
+              debugPrint('fluttify-dart-callback: mapview_baseIndoorMapWithIn_baseIndoorMapInfo([\'mapView\':${args['mapView']}, \'flag\':${args['flag']}, \'info\':${args['info']}])');
             }
         
             // handle the native call
@@ -868,7 +868,7 @@ class BMKMapView extends UIView  {
   
   
     // handle native call
-    MethodChannel('BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback')
+    MethodChannel('void|NSString*#path::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -881,6 +881,14 @@ class BMKMapView extends UIView  {
               // handle the native call
               preLoad(args['path']);
               break;
+            default:
+              break;
+          }
+        });
+    MethodChannel('void|NSString*#path::Callback')
+        .setMethodCallHandler((methodCall) async {
+          final args = methodCall.arguments as Map;
+          switch (methodCall.method) {
             case 'Callback::void|NSString*#path::void|NSString*#path':
               // print log
               if (fluttifyLogEnabled) {
@@ -890,6 +898,14 @@ class BMKMapView extends UIView  {
               // handle the native call
               success(args['path']);
               break;
+            default:
+              break;
+          }
+        });
+    MethodChannel('void|NSError*#error,NSString*#path::Callback')
+        .setMethodCallHandler((methodCall) async {
+          final args = methodCall.arguments as Map;
+          switch (methodCall.method) {
             case 'Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path':
               // print log
               if (fluttifyLogEnabled) {

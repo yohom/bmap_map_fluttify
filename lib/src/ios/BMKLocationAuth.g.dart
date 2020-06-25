@@ -91,18 +91,18 @@ class BMKLocationAuth extends NSObject  {
   
   
     // handle native call
-    MethodChannel('BMKLocationAuth::checkPermisionWithKey_authDelegate::Callback')
+    MethodChannel('BMKLocationAuthDelegate::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::BMKLocationAuthDelegate::onCheckPermissionState':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onCheckPermissionState([])');
+                debugPrint('fluttify-dart-callback: onCheckPermissionState([\'iError\':${args['iError']}])');
               }
         
               // handle the native call
-              delegate?.onCheckPermissionState(BMKLocationAuthErrorCode.values[(args['iError'])]);
+              delegate?.onCheckPermissionState(BMKLocationAuthErrorCode.values[args['iError'] - -1]);
               break;
             default:
               break;

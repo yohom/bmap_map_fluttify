@@ -294,7 +294,7 @@ public class SubHandler16 {
                 try {
                     ref.setGeoFenceListener(new com.baidu.geofence.GeoFenceListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.geofence.GeoFenceClient::setGeoFenceListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.geofence.GeoFenceListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

@@ -116,14 +116,14 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::onGetGeoCodeResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetGeoCodeResult([])');
+                debugPrint('fluttify-dart-callback: onGetGeoCodeResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -132,7 +132,7 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::onGetReverseGeoCodeResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetReverseGeoCodeResult([])');
+                debugPrint('fluttify-dart-callback: onGetReverseGeoCodeResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call

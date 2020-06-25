@@ -73,7 +73,7 @@ class BMKGeoFenceManager extends NSObject  {
           case 'Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKGeoFenceManager_doRequestAlwaysAuthorization([])');
+              debugPrint('fluttify-dart-callback: BMKGeoFenceManager_doRequestAlwaysAuthorization([\'manager\':${args['manager']}, \'locationManager\':${args['locationManager']}])');
             }
         
             // handle the native call
@@ -82,7 +82,7 @@ class BMKGeoFenceManager extends NSObject  {
           case 'Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error([\'customID\':${args['customID']}])');
+              debugPrint('fluttify-dart-callback: BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error([\'manager\':${args['manager']}, \'regions\':${args['regions']}, \'customID\':${args['customID']}, \'error\':${args['error']}])');
             }
         
             // handle the native call
@@ -91,7 +91,7 @@ class BMKGeoFenceManager extends NSObject  {
           case 'Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error':
             // print log
             if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error([\'customID\':${args['customID']}])');
+              debugPrint('fluttify-dart-callback: BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error([\'manager\':${args['manager']}, \'region\':${args['region']}, \'customID\':${args['customID']}, \'error\':${args['error']}])');
             }
         
             // handle the native call

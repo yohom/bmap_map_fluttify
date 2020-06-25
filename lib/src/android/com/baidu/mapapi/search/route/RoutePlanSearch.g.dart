@@ -68,14 +68,14 @@ class com_baidu_mapapi_search_route_RoutePlanSearch extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.route.RoutePlanSearch::setOnGetRoutePlanResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::onGetWalkingRouteResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetWalkingRouteResult([])');
+                debugPrint('fluttify-dart-callback: onGetWalkingRouteResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -84,7 +84,7 @@ class com_baidu_mapapi_search_route_RoutePlanSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::onGetTransitRouteResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetTransitRouteResult([])');
+                debugPrint('fluttify-dart-callback: onGetTransitRouteResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -93,7 +93,7 @@ class com_baidu_mapapi_search_route_RoutePlanSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::onGetMassTransitRouteResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetMassTransitRouteResult([])');
+                debugPrint('fluttify-dart-callback: onGetMassTransitRouteResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -102,7 +102,7 @@ class com_baidu_mapapi_search_route_RoutePlanSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::onGetDrivingRouteResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetDrivingRouteResult([])');
+                debugPrint('fluttify-dart-callback: onGetDrivingRouteResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -111,7 +111,7 @@ class com_baidu_mapapi_search_route_RoutePlanSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::onGetIndoorRouteResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetIndoorRouteResult([])');
+                debugPrint('fluttify-dart-callback: onGetIndoorRouteResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call
@@ -120,7 +120,7 @@ class com_baidu_mapapi_search_route_RoutePlanSearch extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::onGetBikingRouteResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetBikingRouteResult([])');
+                debugPrint('fluttify-dart-callback: onGetBikingRouteResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call

@@ -68,14 +68,14 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.cloud.CloudManager::init__com_baidu_mapapi_cloud_CloudListener::Callback')
+    MethodChannel('com.baidu.mapapi.cloud.CloudListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetSearchResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -84,7 +84,7 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetDetailSearchResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -93,7 +93,7 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetCloudRgcResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -150,14 +150,14 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.cloud.CloudManager::registerListener::Callback')
+    MethodChannel('com.baidu.mapapi.cloud.CloudListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetSearchResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -166,7 +166,7 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetDetailSearchResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -175,7 +175,7 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetCloudRgcResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call

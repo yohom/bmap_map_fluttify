@@ -92,14 +92,14 @@ class com_baidu_mapapi_search_busline_BusLineSearch extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.busline.BusLineSearch::setOnGetBusLineSearchResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.busline.OnGetBusLineSearchResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.search.busline.OnGetBusLineSearchResultListener::onGetBusLineResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetBusLineResult([])');
+                debugPrint('fluttify-dart-callback: onGetBusLineResult([\'var1\':${args['var1']}])');
               }
         
               // handle the native call

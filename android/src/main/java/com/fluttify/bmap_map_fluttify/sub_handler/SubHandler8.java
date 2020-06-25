@@ -1946,8 +1946,7 @@ public class SubHandler8 {
                 // convert result to jsonable result
                 Integer jsonableResult = null;
                 if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
+                    jsonableResult = __result__.ordinal();
                 }
             
                 __methodResult__.success(jsonableResult);
@@ -2387,7 +2386,7 @@ public class SubHandler8 {
                 try {
                     ref.setAnimationListener(new com.baidu.mapapi.animation.Animation.AnimationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.animation.Animation::setAnimationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.animation.Animation.AnimationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -4543,8 +4542,7 @@ public class SubHandler8 {
                 // convert result to jsonable result
                 Integer jsonableResult = null;
                 if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
+                    jsonableResult = __result__.ordinal();
                 }
             
                 __methodResult__.success(jsonableResult);
@@ -5693,7 +5691,7 @@ public class SubHandler8 {
                 try {
                     ref.setOnGetSuggestionResultListener(new com.baidu.mapapi.search.sug.OnGetSuggestionResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.sug.SuggestionSearch::setOnGetSuggestionResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.sug.OnGetSuggestionResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -6690,7 +6688,7 @@ public class SubHandler8 {
                 try {
                     ref.setOnGetBusLineSearchResultListener(new com.baidu.mapapi.search.busline.OnGetBusLineSearchResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.busline.BusLineSearch::setOnGetBusLineSearchResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.busline.OnGetBusLineSearchResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

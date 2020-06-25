@@ -279,7 +279,7 @@ public class SubHandler12 {
                 try {
                     ref.setOnGetGeoCodeResultListener(new com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -1794,7 +1794,7 @@ public class SubHandler12 {
                 try {
                     ref.setOnGetShareUrlResultListener(new com.baidu.mapapi.search.share.OnGetShareUrlResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.share.ShareUrlSearch::setOnGetShareUrlResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.share.OnGetShareUrlResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -2109,8 +2109,7 @@ public class SubHandler12 {
                 // convert result to jsonable result
                 Integer jsonableResult = null;
                 if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
+                    jsonableResult = __result__.ordinal();
                 }
             
                 __methodResult__.success(jsonableResult);

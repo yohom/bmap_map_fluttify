@@ -62,7 +62,7 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.SwipeDismissView::setCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.WearMapView.OnDismissCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

@@ -10,7 +10,6 @@
 #import "SubHandler/SubHandler3.h"
 #import "SubHandler/SubHandler4.h"
 #import "SubHandler/SubHandler5.h"
-#import "SubHandler/SubHandler6.h"
 #import "SubHandler/Custom/SubHandlerCustom.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
@@ -37,7 +36,6 @@ extern BOOL enableLog;
     [_handlerMap addEntriesFromDictionary: [self getSubHandler3]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandler4]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandler5]];
-    [_handlerMap addEntriesFromDictionary: [self getSubHandler6]];
     [_handlerMap addEntriesFromDictionary: [self getSubHandlerCustom]];
   }
 
@@ -92,12 +90,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
+  });
   
 }
 
@@ -115,19 +115,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argerror = [NSNull null];
   if (error != nil) {
-      argerror = @(error.hash);
+      argerror = [NSNumber numberWithLong: error.hash];
       HEAP[argerror] = error;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+  });
   
 }
 
@@ -145,12 +147,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
+  });
   
 }
 
@@ -168,19 +172,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argstatus = [NSNull null];
   if (status != nil) {
-      argstatus = @(status.hash);
+      argstatus = [NSNumber numberWithLong: status.hash];
       HEAP[argstatus] = status;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
+  });
   
 }
 
@@ -198,14 +204,16 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  });
   
 }
 
@@ -223,7 +231,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -232,7 +240,9 @@ extern BOOL enableLog;
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  });
   
 }
 
@@ -250,14 +260,16 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  });
   
 }
 
@@ -275,7 +287,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -284,7 +296,9 @@ extern BOOL enableLog;
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  });
   
 }
 
@@ -302,21 +316,23 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argannotation = [NSNull null];
   if (annotation != nil) {
-      argannotation = @(annotation.hash);
+      argannotation = [NSNumber numberWithLong: annotation.hash];
       HEAP[argannotation] = annotation;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
-              arguments:@{}
-                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
+                  arguments:@{}
+                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
   // 相关issue https://github.com/flutter/flutter/issues/28310
@@ -343,7 +359,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -352,12 +368,14 @@ extern BOOL enableLog;
   for (int __i__ = 0; __i__ < views.count; __i__++) {
       NSObject* item = ((NSObject*) [views objectAtIndex:__i__]);
       // return to dart side data
-      argviews[__i__] = @(item.hash);
+      argviews[__i__] = [NSNumber numberWithLong: item.hash];
       // add to HEAP
-      HEAP[@(item.hash)] = item;
+      HEAP[[NSNumber numberWithLong: item.hash]] = item;
   }
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+  });
   
 }
 
@@ -375,19 +393,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -405,19 +425,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -435,19 +457,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -465,14 +489,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
@@ -481,7 +505,9 @@ extern BOOL enableLog;
   // primitive callback arg
   NSNumber* argoldState = @(oldState);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+  });
   
 }
 
@@ -499,19 +525,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argview = [NSNull null];
   if (view != nil) {
-      argview = @(view.hash);
+      argview = [NSNumber numberWithLong: view.hash];
       HEAP[argview] = view;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
+  });
   
 }
 
@@ -529,21 +557,23 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argoverlay = [NSNull null];
   if (overlay != nil) {
-      argoverlay = @(overlay.hash);
+      argoverlay = [NSNumber numberWithLong: overlay.hash];
       HEAP[argoverlay] = overlay;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
-              arguments:@{}
-                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
+                  arguments:@{}
+                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
   // 相关issue https://github.com/flutter/flutter/issues/28310
@@ -570,7 +600,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -579,12 +609,14 @@ extern BOOL enableLog;
   for (int __i__ = 0; __i__ < overlayViews.count; __i__++) {
       NSObject* item = ((NSObject*) [overlayViews objectAtIndex:__i__]);
       // return to dart side data
-      argoverlayViews[__i__] = @(item.hash);
+      argoverlayViews[__i__] = [NSNumber numberWithLong: item.hash];
       // add to HEAP
-      HEAP[@(item.hash)] = item;
+      HEAP[[NSNumber numberWithLong: item.hash]] = item;
   }
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
+  });
   
 }
 
@@ -602,19 +634,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argoverlayView = [NSNull null];
   if (overlayView != nil) {
-      argoverlayView = @(overlayView.hash);
+      argoverlayView = [NSNumber numberWithLong: overlayView.hash];
       HEAP[argoverlayView] = overlayView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
+  });
   
 }
 
@@ -632,19 +666,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // ref callback arg
   NSNumber* argmapPoi = [NSNull null];
   if (mapPoi != nil) {
-      argmapPoi = @(mapPoi.hash);
+      argmapPoi = [NSNumber numberWithLong: mapPoi.hash];
       HEAP[argmapPoi] = mapPoi;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
+  });
   
 }
 
@@ -662,17 +698,19 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  });
   
 }
 
@@ -690,17 +728,19 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  });
   
 }
 
@@ -718,17 +758,19 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  });
   
 }
 
@@ -746,13 +788,13 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
   // struct callback arg
   NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
+  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
   HEAP[argcoordinate] = coordinateValue;
   
   // primitive callback arg
@@ -760,7 +802,9 @@ extern BOOL enableLog;
   // primitive callback arg
   NSNumber* argmaximumPossibleForce = @(maximumPossibleForce);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
+  });
   
 }
 
@@ -778,12 +822,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
+  });
   
 }
 
@@ -801,7 +847,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmapView = [NSNull null];
   if (mapView != nil) {
-      argmapView = @(mapView.hash);
+      argmapView = [NSNumber numberWithLong: mapView.hash];
       HEAP[argmapView] = mapView;
   }
   
@@ -810,12 +856,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* arginfo = [NSNull null];
   if (info != nil) {
-      arginfo = @(info.hash);
+      arginfo = [NSNumber numberWithLong: info.hash];
       HEAP[arginfo] = info;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
+  });
   
 }
 
@@ -835,7 +883,9 @@ extern BOOL enableLog;
   // primitive callback arg
   NSNumber* argstate = @(state);
 
-  [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+  });
   
 }
 
@@ -853,19 +903,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
   // ref callback arg
   NSNumber* arglocationManager = [NSNull null];
   if (locationManager != nil) {
-      arglocationManager = @(locationManager.hash);
+      arglocationManager = [NSNumber numberWithLong: locationManager.hash];
       HEAP[arglocationManager] = locationManager;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  });
   
 }
 
@@ -883,19 +935,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
   // ref callback arg
   NSNumber* argerror = [NSNull null];
   if (error != nil) {
-      argerror = @(error.hash);
+      argerror = [NSNumber numberWithLong: error.hash];
       HEAP[argerror] = error;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError" arguments:@{@"manager": argmanager, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError" arguments:@{@"manager": argmanager, @"error": argerror}];
+  });
   
 }
 
@@ -913,26 +967,28 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
   // ref callback arg
   NSNumber* arglocation = [NSNull null];
   if (location != nil) {
-      arglocation = @(location.hash);
+      arglocation = [NSNumber numberWithLong: location.hash];
       HEAP[arglocation] = location;
   }
   
   // ref callback arg
   NSNumber* argerror = [NSNull null];
   if (error != nil) {
-      argerror = @(error.hash);
+      argerror = [NSNumber numberWithLong: error.hash];
       HEAP[argerror] = error;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError" arguments:@{@"manager": argmanager, @"location": arglocation, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError" arguments:@{@"manager": argmanager, @"location": arglocation, @"error": argerror}];
+  });
   
 }
 
@@ -950,14 +1006,16 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
   // enum callback arg
   NSNumber* argstatus = @((NSInteger) status);
 
-  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus" arguments:@{@"manager": argmanager, @"status": argstatus}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus" arguments:@{@"manager": argmanager, @"status": argstatus}];
+  });
   
 }
 
@@ -975,14 +1033,16 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration"
-              arguments:@{}
-                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration"
+                  arguments:@{}
+                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
   // 相关issue https://github.com/flutter/flutter/issues/28310
@@ -1009,19 +1069,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
   // ref callback arg
   NSNumber* argheading = [NSNull null];
   if (heading != nil) {
-      argheading = @(heading.hash);
+      argheading = [NSNumber numberWithLong: heading.hash];
       HEAP[argheading] = heading;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading" arguments:@{@"manager": argmanager, @"heading": argheading}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading" arguments:@{@"manager": argmanager, @"heading": argheading}];
+  });
   
 }
 
@@ -1039,7 +1101,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
@@ -1048,12 +1110,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argerror = [NSNull null];
   if (error != nil) {
-      argerror = @(error.hash);
+      argerror = [NSNumber numberWithLong: error.hash];
       HEAP[argerror] = error;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError" arguments:@{@"manager": argmanager, @"state": argstate, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError" arguments:@{@"manager": argmanager, @"state": argstate, @"error": argerror}];
+  });
   
 }
 
@@ -1071,7 +1135,9 @@ extern BOOL enableLog;
   // enum callback arg
   NSNumber* argiError = @((NSInteger) iError);
 
-  [channel invokeMethod:@"Callback::BMKLocationAuthDelegate::onCheckPermissionState" arguments:@{@"iError": argiError}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKLocationAuthDelegate::onCheckPermissionState" arguments:@{@"iError": argiError}];
+  });
   
 }
 
@@ -1089,19 +1155,21 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
   // ref callback arg
   NSNumber* arglocationManager = [NSNull null];
   if (locationManager != nil) {
-      arglocationManager = @(locationManager.hash);
+      arglocationManager = [NSNumber numberWithLong: locationManager.hash];
       HEAP[arglocationManager] = locationManager;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+  });
   
 }
 
@@ -1119,7 +1187,7 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
@@ -1128,21 +1196,23 @@ extern BOOL enableLog;
   for (int __i__ = 0; __i__ < regions.count; __i__++) {
       NSObject* item = ((NSObject*) [regions objectAtIndex:__i__]);
       // return to dart side data
-      argregions[__i__] = @(item.hash);
+      argregions[__i__] = [NSNumber numberWithLong: item.hash];
       // add to HEAP
-      HEAP[@(item.hash)] = item;
+      HEAP[[NSNumber numberWithLong: item.hash]] = item;
   }
   // jsonable callback arg
   NSString* argcustomID = customID;
   // ref callback arg
   NSNumber* argerror = [NSNull null];
   if (error != nil) {
-      argerror = @(error.hash);
+      argerror = [NSNumber numberWithLong: error.hash];
       HEAP[argerror] = error;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error" arguments:@{@"manager": argmanager, @"regions": argregions, @"customID": argcustomID, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error" arguments:@{@"manager": argmanager, @"regions": argregions, @"customID": argcustomID, @"error": argerror}];
+  });
   
 }
 
@@ -1160,14 +1230,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argmanager = [NSNull null];
   if (manager != nil) {
-      argmanager = @(manager.hash);
+      argmanager = [NSNumber numberWithLong: manager.hash];
       HEAP[argmanager] = manager;
   }
   
   // ref callback arg
   NSNumber* argregion = [NSNull null];
   if (region != nil) {
-      argregion = @(region.hash);
+      argregion = [NSNumber numberWithLong: region.hash];
       HEAP[argregion] = region;
   }
   
@@ -1176,12 +1246,14 @@ extern BOOL enableLog;
   // ref callback arg
   NSNumber* argerror = [NSNull null];
   if (error != nil) {
-      argerror = @(error.hash);
+      argerror = [NSNumber numberWithLong: error.hash];
       HEAP[argerror] = error;
   }
   
 
-  [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error" arguments:@{@"manager": argmanager, @"region": argregion, @"customID": argcustomID, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+      [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error" arguments:@{@"manager": argmanager, @"region": argregion, @"customID": argcustomID, @"error": argerror}];
+  });
   
 }
 

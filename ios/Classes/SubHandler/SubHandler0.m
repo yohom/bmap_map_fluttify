@@ -17,7 +17,7 @@ extern BOOL enableLog;
         @"BMKActionPaopaoView::initWithCustomView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            UIView* customView = (UIView*) HEAP[@([args[@"customView"] integerValue])];
+            UIView* customView = (UIView*) HEAP[args[@"customView"]];
         
             // ref
             BMKActionPaopaoView* ref = (BMKActionPaopaoView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -32,8 +32,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -82,7 +82,7 @@ extern BOOL enableLog;
         @"BMKAnnotation::setCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* newCoordinateValue = (NSValue*) HEAP[@([args[@"newCoordinate"] integerValue])];
+            NSValue* newCoordinateValue = (NSValue*) HEAP[args[@"newCoordinate"]];
             CLLocationCoordinate2D newCoordinate;
             [newCoordinateValue getValue:&newCoordinate];
         
@@ -106,7 +106,7 @@ extern BOOL enableLog;
         @"BMKTileLayerView::initWithTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKTileLayer* tileLayer = (BMKTileLayer*) HEAP[@([args[@"tileLayer"] integerValue])];
+            BMKTileLayer* tileLayer = (BMKTileLayer*) HEAP[args[@"tileLayer"]];
         
             // ref
             BMKTileLayerView* ref = (BMKTileLayerView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -121,8 +121,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -171,17 +171,17 @@ extern BOOL enableLog;
         @"BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* positionValue = (NSValue*) HEAP[@([args[@"position"] integerValue])];
+            NSValue* positionValue = (NSValue*) HEAP[args[@"position"]];
             CLLocationCoordinate2D position;
             [positionValue getValue:&position];
             // jsonable arg
             CGFloat zoomLevel = [args[@"zoomLevel"] floatValue];
             // struct arg
-            NSValue* anchorValue = (NSValue*) HEAP[@([args[@"anchor"] integerValue])];
+            NSValue* anchorValue = (NSValue*) HEAP[args[@"anchor"]];
             CGPoint anchor;
             [anchorValue getValue:&anchor];
             // ref arg
-            UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+            UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
             // ref
         
@@ -196,19 +196,19 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKGroundOverlay::groundOverlayWithBounds_icon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* boundsValue = (NSValue*) HEAP[@([args[@"bounds"] integerValue])];
+            NSValue* boundsValue = (NSValue*) HEAP[args[@"bounds"]];
             BMKCoordinateBounds bounds;
             [boundsValue getValue:&bounds];
             // ref arg
-            UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+            UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
             // ref
         
@@ -223,8 +223,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -256,8 +256,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -289,8 +289,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -388,8 +388,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -423,8 +423,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -499,7 +499,7 @@ extern BOOL enableLog;
         @"BMKCircleView::initWithCircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKCircle* circle = (BMKCircle*) HEAP[@([args[@"circle"] integerValue])];
+            BMKCircle* circle = (BMKCircle*) HEAP[args[@"circle"]];
         
             // ref
             BMKCircleView* ref = (BMKCircleView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -514,8 +514,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -549,8 +549,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -580,8 +580,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -611,8 +611,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -694,8 +694,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -742,8 +742,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -768,7 +768,7 @@ extern BOOL enableLog;
             // invoke native method
             [ref loadTileForX : x y: y zoom: zoom result: ^(UIImage* tileImage, NSError* error) {
                 FlutterMethodChannel *channel = [FlutterMethodChannel
-                    methodChannelWithName:@"BMKAsyncTileLayer::loadTileForX_y_zoom_result::Callback"
+                    methodChannelWithName:@"void|UIImage*#tileImage,NSError*#error::Callback"
                           binaryMessenger:[[self registrar] messenger]];
         
                 // print log
@@ -780,19 +780,21 @@ extern BOOL enableLog;
                 // ref callback arg
                 NSNumber* argtileImage = [NSNull null];
                 if (tileImage != nil) {
-                    argtileImage = @(tileImage.hash);
+                    argtileImage = [NSNumber numberWithLong: tileImage.hash];
                     HEAP[argtileImage] = tileImage;
                 }
         
                 // ref callback arg
                 NSNumber* argerror = [NSNull null];
                 if (error != nil) {
-                    argerror = @(error.hash);
+                    argerror = [NSNumber numberWithLong: error.hash];
                     HEAP[argerror] = error;
                 }
         
         
-                [channel invokeMethod:@"Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error" arguments:@{@"tileImage": argtileImage, @"error": argerror}];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [channel invokeMethod:@"Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error" arguments:@{@"tileImage": argtileImage, @"error": argerror}];
+                });
         
             }];
         
@@ -805,7 +807,7 @@ extern BOOL enableLog;
         @"BMKPolylineView::initWithPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKPolyline* polyline = (BMKPolyline*) HEAP[@([args[@"polyline"] integerValue])];
+            BMKPolyline* polyline = (BMKPolyline*) HEAP[args[@"polyline"]];
         
             // ref
             BMKPolylineView* ref = (BMKPolylineView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -820,15 +822,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKCircle::circleWithCenterCoordinate_radius": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coordValue = (NSValue*) HEAP[@([args[@"coord"] integerValue])];
+            NSValue* coordValue = (NSValue*) HEAP[args[@"coord"]];
             CLLocationCoordinate2D coord;
             [coordValue getValue:&coord];
             // jsonable arg
@@ -847,15 +849,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKCircle::circleWithMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
         
@@ -872,15 +874,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKCircle::setCircleWithCenterCoordinate_radius": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coordValue = (NSValue*) HEAP[@([args[@"coord"] integerValue])];
+            NSValue* coordValue = (NSValue*) HEAP[args[@"coord"]];
             CLLocationCoordinate2D coord;
             [coordValue getValue:&coord];
             // jsonable arg
@@ -906,7 +908,7 @@ extern BOOL enableLog;
         @"BMKCircle::setCircleWithMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
         
@@ -1042,7 +1044,7 @@ extern BOOL enableLog;
         @"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKCustomMapStyleOption* option = (BMKCustomMapStyleOption*) HEAP[@([args[@"option"] integerValue])];
+            BMKCustomMapStyleOption* option = (BMKCustomMapStyleOption*) HEAP[args[@"option"]];
         
         
         
@@ -1058,7 +1060,7 @@ extern BOOL enableLog;
             // invoke native method
             [ref setCustomMapStyleWithOption : option preLoad: ^(NSString* path) {
                 FlutterMethodChannel *channel = [FlutterMethodChannel
-                    methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
+                    methodChannelWithName:@"void|NSString*#path::Callback"
                           binaryMessenger:[[self registrar] messenger]];
         
                 // print log
@@ -1070,11 +1072,13 @@ extern BOOL enableLog;
                 // jsonable callback arg
                 NSString* argpath = path;
         
-                [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+                });
         
             } success: ^(NSString* path) {
                 FlutterMethodChannel *channel = [FlutterMethodChannel
-                    methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
+                    methodChannelWithName:@"void|NSString*#path::Callback"
                           binaryMessenger:[[self registrar] messenger]];
         
                 // print log
@@ -1086,11 +1090,13 @@ extern BOOL enableLog;
                 // jsonable callback arg
                 NSString* argpath = path;
         
-                [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
+                });
         
             } failure: ^(NSError* error, NSString* path) {
                 FlutterMethodChannel *channel = [FlutterMethodChannel
-                    methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
+                    methodChannelWithName:@"void|NSError*#error,NSString*#path::Callback"
                           binaryMessenger:[[self registrar] messenger]];
         
                 // print log
@@ -1102,14 +1108,16 @@ extern BOOL enableLog;
                 // ref callback arg
                 NSNumber* argerror = [NSNull null];
                 if (error != nil) {
-                    argerror = @(error.hash);
+                    argerror = [NSNumber numberWithLong: error.hash];
                     HEAP[argerror] = error;
                 }
         
                 // jsonable callback arg
                 NSString* argpath = path;
         
-                [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror, @"path": argpath}];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror, @"path": argpath}];
+                });
         
             }];
         
@@ -1122,13 +1130,13 @@ extern BOOL enableLog;
         @"BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            UIColor* smooth = (UIColor*) HEAP[@([args[@"smooth"] integerValue])];
+            UIColor* smooth = (UIColor*) HEAP[args[@"smooth"]];
             // ref arg
-            UIColor* slow = (UIColor*) HEAP[@([args[@"slow"] integerValue])];
+            UIColor* slow = (UIColor*) HEAP[args[@"slow"]];
             // ref arg
-            UIColor* congestion = (UIColor*) HEAP[@([args[@"congestion"] integerValue])];
+            UIColor* congestion = (UIColor*) HEAP[args[@"congestion"]];
             // ref arg
-            UIColor* severeCongestion = (UIColor*) HEAP[@([args[@"severeCongestion"] integerValue])];
+            UIColor* severeCongestion = (UIColor*) HEAP[args[@"severeCongestion"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1297,7 +1305,7 @@ extern BOOL enableLog;
         @"BMKMapView::regionThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
             BMKCoordinateRegion region;
             [regionValue getValue:&region];
         
@@ -1315,15 +1323,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::setRegion_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
             BMKCoordinateRegion region;
             [regionValue getValue:&region];
             // jsonable arg
@@ -1349,7 +1357,7 @@ extern BOOL enableLog;
         @"BMKMapView::setCenterCoordinate_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
             // jsonable arg
@@ -1389,15 +1397,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::takeSnapshot__CGRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
             CGRect rect;
             [rectValue getValue:&rect];
         
@@ -1414,15 +1422,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::setCompassImage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+            UIImage* image = (UIImage*) HEAP[args[@"image"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1444,7 +1452,7 @@ extern BOOL enableLog;
         @"BMKMapView::setVisibleMapRect_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
             // jsonable arg
@@ -1470,7 +1478,7 @@ extern BOOL enableLog;
         @"BMKMapView::mapRectThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
         
@@ -1488,19 +1496,19 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::setVisibleMapRect_edgePadding_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
             // struct arg
-            NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+            NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
             UIEdgeInsets insets;
             [insetsValue getValue:&insets];
             // jsonable arg
@@ -1526,11 +1534,11 @@ extern BOOL enableLog;
         @"BMKMapView::fitVisibleMapRect_edgePadding_withAnimated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
             // struct arg
-            NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+            NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
             UIEdgeInsets insets;
             [insetsValue getValue:&insets];
             // jsonable arg
@@ -1556,11 +1564,11 @@ extern BOOL enableLog;
         @"BMKMapView::mapRectThatFits_edgePadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
             // struct arg
-            NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+            NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
             UIEdgeInsets insets;
             [insetsValue getValue:&insets];
         
@@ -1578,19 +1586,19 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::convertCoordinate_toPointToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
             // ref arg
-            UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+            UIView* view = (UIView*) HEAP[args[@"view"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1606,19 +1614,19 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::convertPoint_toCoordinateFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[@([args[@"point"] integerValue])];
+            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
             CGPoint point;
             [pointValue getValue:&point];
             // ref arg
-            UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+            UIView* view = (UIView*) HEAP[args[@"view"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1634,19 +1642,19 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::convertRegion_toRectToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
             BMKCoordinateRegion region;
             [regionValue getValue:&region];
             // ref arg
-            UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+            UIView* view = (UIView*) HEAP[args[@"view"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1662,19 +1670,19 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGRect)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::convertRect_toRegionFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
             CGRect rect;
             [rectValue getValue:&rect];
             // ref arg
-            UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+            UIView* view = (UIView*) HEAP[args[@"view"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1690,19 +1698,19 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::convertMapRect_toRectToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
             // ref arg
-            UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+            UIView* view = (UIView*) HEAP[args[@"view"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1718,19 +1726,19 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGRect)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::convertRect_toMapRectFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
             CGRect rect;
             [rectValue getValue:&rect];
             // ref arg
-            UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+            UIView* view = (UIView*) HEAP[args[@"view"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1746,15 +1754,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::glPointForMapPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapPointValue = (NSValue*) HEAP[@([args[@"mapPoint"] integerValue])];
+            NSValue* mapPointValue = (NSValue*) HEAP[args[@"mapPoint"]];
             BMKMapPoint mapPoint;
             [mapPointValue getValue:&mapPoint];
         
@@ -1772,8 +1780,8 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
@@ -1806,15 +1814,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint*)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::setMapCenterToScreenPt": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* ptInScreenValue = (NSValue*) HEAP[@([args[@"ptInScreen"] integerValue])];
+            NSValue* ptInScreenValue = (NSValue*) HEAP[args[@"ptInScreen"]];
             CGPoint ptInScreen;
             [ptInScreenValue getValue:&ptInScreen];
         
@@ -1838,11 +1846,11 @@ extern BOOL enableLog;
         @"BMKMapView::getMapStatusFromCoordinateRegion_edgePadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+            NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
             BMKCoordinateRegion region;
             [regionValue getValue:&region];
             // struct arg
-            NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+            NSValue* insetsValue = (NSValue*) HEAP[args[@"insets"]];
             UIEdgeInsets insets;
             [insetsValue getValue:&insets];
         
@@ -1859,8 +1867,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -1881,15 +1889,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::setMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+            BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[args[@"mapStatus"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1911,7 +1919,7 @@ extern BOOL enableLog;
         @"BMKMapView::setMapStatus_withAnimation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+            BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[args[@"mapStatus"]];
             // jsonable arg
             BOOL bAnimation = [args[@"bAnimation"] boolValue];
         
@@ -1935,7 +1943,7 @@ extern BOOL enableLog;
         @"BMKMapView::setMapStatus_withAnimation_withAnimationTime": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+            BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[args[@"mapStatus"]];
             // jsonable arg
             BOOL bAnimation = [args[@"bAnimation"] boolValue];
             // jsonable arg
@@ -1997,8 +2005,8 @@ extern BOOL enableLog;
             // result
             // return a (value)*
             NSValue* resultValue = [NSValue valueWithPointer:result];
-            HEAP[@((resultValue).hash)] = resultValue;
-            NSNumber* jsonableResult = @((resultValue).hash);
+            HEAP[[NSNumber numberWithLong: (resultValue).hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash)];
         
             methodResult(jsonableResult);
         },
@@ -2020,8 +2028,8 @@ extern BOOL enableLog;
             // result
             // return a (value)*
             NSValue* resultValue = [NSValue valueWithPointer:result];
-            HEAP[@((resultValue).hash)] = resultValue;
-            NSNumber* jsonableResult = @((resultValue).hash);
+            HEAP[[NSNumber numberWithLong: (resultValue).hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (resultValue).hash)];
         
             methodResult(jsonableResult);
         },
@@ -2066,15 +2074,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::updateLocationViewWithParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKLocationViewDisplayParam* locationViewDisplayParam = (BMKLocationViewDisplayParam*) HEAP[@([args[@"locationViewDisplayParam"] integerValue])];
+            BMKLocationViewDisplayParam* locationViewDisplayParam = (BMKLocationViewDisplayParam*) HEAP[args[@"locationViewDisplayParam"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2096,7 +2104,7 @@ extern BOOL enableLog;
         @"BMKMapView::updateLocationData": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKUserLocation* userLocation = (BMKUserLocation*) HEAP[@([args[@"userLocation"] integerValue])];
+            BMKUserLocation* userLocation = (BMKUserLocation*) HEAP[args[@"userLocation"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2118,7 +2126,7 @@ extern BOOL enableLog;
         @"BMKMapView::addAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2167,7 +2175,7 @@ extern BOOL enableLog;
         @"BMKMapView::removeAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2216,7 +2224,7 @@ extern BOOL enableLog;
         @"BMKMapView::viewForAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2231,8 +2239,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -2254,15 +2262,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::selectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
             // jsonable arg
             BOOL animated = [args[@"animated"] boolValue];
         
@@ -2286,7 +2294,7 @@ extern BOOL enableLog;
         @"BMKMapView::deselectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
             // jsonable arg
             BOOL animated = [args[@"animated"] boolValue];
         
@@ -2339,7 +2347,7 @@ extern BOOL enableLog;
         @"BMKMapView::annotationsInCoordinateBounds": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* boundsValue = (NSValue*) HEAP[@([args[@"bounds"] integerValue])];
+            NSValue* boundsValue = (NSValue*) HEAP[args[@"bounds"]];
             BMKCoordinateBounds bounds;
             [boundsValue getValue:&bounds];
         
@@ -2359,8 +2367,8 @@ extern BOOL enableLog;
             NSMutableArray* jsonableResult = [NSMutableArray array];
             for (int __i__ = 0; __i__ < result.count; __i__++) {
                 NSObject* object = [result objectAtIndex:__i__];
-                [jsonableResult addObject: @(object.hash)];
-                HEAP[@([object hash])] = object;
+                [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                HEAP[[NSNumber numberWithLong: object.hash]] = object;
             }
         
             methodResult(jsonableResult);
@@ -2368,7 +2376,7 @@ extern BOOL enableLog;
         @"BMKMapView::addOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2417,7 +2425,7 @@ extern BOOL enableLog;
         @"BMKMapView::removeOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2466,7 +2474,7 @@ extern BOOL enableLog;
         @"BMKMapView::insertOverlay_atIndex": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
             // jsonable arg
             NSUInteger index = [args[@"index"] unsignedIntegerValue];
         
@@ -2514,9 +2522,9 @@ extern BOOL enableLog;
         @"BMKMapView::insertOverlay_aboveOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
             // ref arg
-            id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+            id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[args[@"sibling"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2538,9 +2546,9 @@ extern BOOL enableLog;
         @"BMKMapView::insertOverlay_belowOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
             // ref arg
-            id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+            id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[args[@"sibling"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2562,7 +2570,7 @@ extern BOOL enableLog;
         @"BMKMapView::viewForOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2577,15 +2585,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKMapView::addHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKHeatMap* heatMap = (BMKHeatMap*) HEAP[@([args[@"heatMap"] integerValue])];
+            BMKHeatMap* heatMap = (BMKHeatMap*) HEAP[args[@"heatMap"]];
         
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2628,7 +2636,7 @@ extern BOOL enableLog;
         @"BMKArclineView::initWithArcline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKArcline* arcline = (BMKArcline*) HEAP[@([args[@"arcline"] integerValue])];
+            BMKArcline* arcline = (BMKArcline*) HEAP[args[@"arcline"]];
         
             // ref
             BMKArclineView* ref = (BMKArclineView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2643,8 +2651,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -2676,8 +2684,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -2709,8 +2717,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -2781,7 +2789,7 @@ extern BOOL enableLog;
         @"BMKPolygonView::initWithPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKPolygon* polygon = (BMKPolygon*) HEAP[@([args[@"polygon"] integerValue])];
+            BMKPolygon* polygon = (BMKPolygon*) HEAP[args[@"polygon"]];
         
             // ref
             BMKPolygonView* ref = (BMKPolygonView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2796,8 +2804,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -2837,7 +2845,7 @@ extern BOOL enableLog;
         @"BMKOverlayView::initWithOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+            id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[args[@"overlay"]];
         
             // ref
             BMKOverlayView* ref = (BMKOverlayView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2852,15 +2860,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKOverlayView::pointForMapPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapPointValue = (NSValue*) HEAP[@([args[@"mapPoint"] integerValue])];
+            NSValue* mapPointValue = (NSValue*) HEAP[args[@"mapPoint"]];
             BMKMapPoint mapPoint;
             [mapPointValue getValue:&mapPoint];
         
@@ -2878,15 +2886,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKOverlayView::mapPointForPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* pointValue = (NSValue*) HEAP[@([args[@"point"] integerValue])];
+            NSValue* pointValue = (NSValue*) HEAP[args[@"point"]];
             CGPoint point;
             [pointValue getValue:&point];
         
@@ -2904,15 +2912,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapPoint)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKOverlayView::rectForMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
         
@@ -2930,15 +2938,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGRect)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKOverlayView::mapRectForRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+            NSValue* rectValue = (NSValue*) HEAP[args[@"rect"]];
             CGRect rect;
             [rectValue getValue:&rect];
         
@@ -2956,15 +2964,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKOverlayView::canDrawMapRect_zoomScale": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
             // jsonable arg
@@ -2990,7 +2998,7 @@ extern BOOL enableLog;
         @"BMKOverlayView::setNeedsDisplayInMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
         
@@ -3026,7 +3034,7 @@ extern BOOL enableLog;
             // jsonable arg
             NSUInteger pointCount = [args[@"pointCount"] unsignedIntegerValue];
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
             // jsonable arg
             CGFloat lineWidth = [args[@"lineWidth"] floatValue];
             // jsonable arg
@@ -3102,7 +3110,7 @@ extern BOOL enableLog;
             // jsonable arg
             NSUInteger pointCount = [args[@"pointCount"] unsignedIntegerValue];
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
             // jsonable arg
             CGFloat lineWidth = [args[@"lineWidth"] floatValue];
             // jsonable arg
@@ -3142,7 +3150,7 @@ extern BOOL enableLog;
             // jsonable arg
             NSUInteger pointCount = [args[@"pointCount"] unsignedIntegerValue];
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
             // jsonable arg
             CGFloat lineWidth = [args[@"lineWidth"] floatValue];
             // jsonable arg
@@ -3266,7 +3274,7 @@ extern BOOL enableLog;
             // jsonable arg
             GLuint textureID = [args[@"textureID"] unsignedIntegerValue];
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
             // jsonable arg
             BOOL looped = [args[@"looped"] boolValue];
             // jsonable arg
@@ -3378,7 +3386,7 @@ extern BOOL enableLog;
             // jsonable arg
             NSUInteger pointCount = [args[@"pointCount"] unsignedIntegerValue];
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
             // jsonable arg
             BOOL usingTriangleFan = [args[@"usingTriangleFan"] boolValue];
         
@@ -3414,7 +3422,7 @@ extern BOOL enableLog;
             // jsonable arg
             NSUInteger pointCount = [args[@"pointCount"] unsignedIntegerValue];
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
             // jsonable arg
             BOOL usingTriangleFan = [args[@"usingTriangleFan"] boolValue];
         
@@ -3452,9 +3460,9 @@ extern BOOL enableLog;
             // jsonable arg
             CGFloat lineWidth = [args[@"lineWidth"] floatValue];
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
             // ref
             BMKOverlayView* ref = (BMKOverlayView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3490,9 +3498,9 @@ extern BOOL enableLog;
             // jsonable arg
             CGFloat lineWidth = [args[@"lineWidth"] floatValue];
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
             // ref
             BMKOverlayView* ref = (BMKOverlayView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3535,7 +3543,7 @@ extern BOOL enableLog;
         @"BMKOverlayView::loadStrokeTextureImage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            UIImage* textureImage = (UIImage*) HEAP[@([args[@"textureImage"] integerValue])];
+            UIImage* textureImage = (UIImage*) HEAP[args[@"textureImage"]];
         
             // ref
             BMKOverlayView* ref = (BMKOverlayView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3584,7 +3592,7 @@ extern BOOL enableLog;
         @"BMKGroundOverlayView::initWithGroundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKGroundOverlay* groundOverlay = (BMKGroundOverlay*) HEAP[@([args[@"groundOverlay"] integerValue])];
+            BMKGroundOverlay* groundOverlay = (BMKGroundOverlay*) HEAP[args[@"groundOverlay"]];
         
             // ref
             BMKGroundOverlayView* ref = (BMKGroundOverlayView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3599,15 +3607,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKAnnotationView::initWithAnnotation_reuseIdentifier": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
             // jsonable arg
             NSString* reuseIdentifier = (NSString*) args[@"reuseIdentifier"];
         
@@ -3624,8 +3632,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -3677,7 +3685,7 @@ extern BOOL enableLog;
         @"BMKOverlay::intersectsMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+            NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
             BMKMapRect mapRect;
             [mapRectValue getValue:&mapRect];
         
@@ -3828,8 +3836,8 @@ extern BOOL enableLog;
             NSMutableArray* jsonableResult = [NSMutableArray array];
             for (int __i__ = 0; __i__ < result.count; __i__++) {
                 NSObject* object = [result objectAtIndex:__i__];
-                [jsonableResult addObject: @(object.hash)];
-                HEAP[@([object hash])] = object;
+                [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                HEAP[[NSNumber numberWithLong: object.hash]] = object;
             }
         
             methodResult(jsonableResult);
@@ -3854,8 +3862,8 @@ extern BOOL enableLog;
             NSMutableArray* jsonableResult = [NSMutableArray array];
             for (int __i__ = 0; __i__ < result.count; __i__++) {
                 NSObject* object = [result objectAtIndex:__i__];
-                [jsonableResult addObject: @(object.hash)];
-                HEAP[@([object hash])] = object;
+                [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                HEAP[[NSNumber numberWithLong: object.hash]] = object;
             }
         
             methodResult(jsonableResult);
@@ -3881,8 +3889,8 @@ extern BOOL enableLog;
             NSMutableArray* jsonableResult = [NSMutableArray array];
             for (int __i__ = 0; __i__ < result.count; __i__++) {
                 NSObject* object = [result objectAtIndex:__i__];
-                [jsonableResult addObject: @(object.hash)];
-                HEAP[@([object hash])] = object;
+                [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                HEAP[[NSNumber numberWithLong: object.hash]] = object;
             }
         
             methodResult(jsonableResult);
@@ -3907,8 +3915,8 @@ extern BOOL enableLog;
             NSMutableArray* jsonableResult = [NSMutableArray array];
             for (int __i__ = 0; __i__ < result.count; __i__++) {
                 NSObject* object = [result objectAtIndex:__i__];
-                [jsonableResult addObject: @(object.hash)];
-                HEAP[@([object hash])] = object;
+                [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                HEAP[[NSNumber numberWithLong: object.hash]] = object;
             }
         
             methodResult(jsonableResult);
@@ -3931,15 +3939,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKLocationReGeocode::initWithReGeocodeString": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            NSData* reGeocodeString = (NSData*) HEAP[@([args[@"reGeocodeString"] integerValue])];
+            NSData* reGeocodeString = (NSData*) HEAP[args[@"reGeocodeString"]];
         
             // ref
             BMKLocationReGeocode* ref = (BMKLocationReGeocode*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3954,15 +3962,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKLocationReGeocode::initWithJsonString_withHighAccuracy": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            NSData* jsonString = (NSData*) HEAP[@([args[@"jsonString"] integerValue])];
+            NSData* jsonString = (NSData*) HEAP[args[@"jsonString"]];
             // jsonable arg
             BOOL highAcc = [args[@"highAcc"] boolValue];
         
@@ -3979,8 +3987,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -4003,7 +4011,7 @@ extern BOOL enableLog;
             // invoke native method
             BOOL result = [ref requestLocationWithReGeocode: withReGeocode withNetworkState: withNetWorkState completionBlock: ^(BMKLocation* location, BMKLocationNetworkState state, NSError* error) {
                 FlutterMethodChannel *channel = [FlutterMethodChannel
-                    methodChannelWithName:@"BMKLocationManager::requestLocationWithReGeocode_withNetworkState_completionBlock::Callback"
+                    methodChannelWithName:@"BMKLocatingCompletionBlock::Callback"
                           binaryMessenger:[[self registrar] messenger]];
         
                 // print log
@@ -4015,7 +4023,7 @@ extern BOOL enableLog;
                 // ref callback arg
                 NSNumber* arglocation = [NSNull null];
                 if (location != nil) {
-                    arglocation = @(location.hash);
+                    arglocation = [NSNumber numberWithLong: location.hash];
                     HEAP[arglocation] = location;
                 }
         
@@ -4024,12 +4032,14 @@ extern BOOL enableLog;
                 // ref callback arg
                 NSNumber* argerror = [NSNull null];
                 if (error != nil) {
-                    argerror = @(error.hash);
+                    argerror = [NSNumber numberWithLong: error.hash];
                     HEAP[argerror] = error;
                 }
         
         
-                [channel invokeMethod:@"Callback::BMKLocatingCompletionBlock::BMKLocatingCompletionBlock" arguments:@{@"location": arglocation, @"state": argstate, @"error": argerror}];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [channel invokeMethod:@"Callback::BMKLocatingCompletionBlock::BMKLocatingCompletionBlock" arguments:@{@"location": arglocation, @"state": argstate, @"error": argerror}];
+                });
         
             }];
         
@@ -4210,7 +4220,7 @@ extern BOOL enableLog;
         @"BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
             // enum arg
@@ -4232,15 +4242,15 @@ extern BOOL enableLog;
             // result
             // 返回值: 结构体
             NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-            HEAP[@(resultValue.hash)] = resultValue;
-            NSNumber* jsonableResult = @(resultValue.hash);
+            HEAP[[NSNumber numberWithLong: resultValue.hash]] = resultValue;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: resultValue.hash];
         
             methodResult(jsonableResult);
         },
         @"BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+            NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
             CLLocationCoordinate2D coordinate;
             [coordinateValue getValue:&coordinate];
             // enum arg
@@ -4280,8 +4290,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@((result).hash)] = result;
-            NSNumber* jsonableResult = @((result).hash);
+            HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
             methodResult(jsonableResult);
         },
@@ -4290,7 +4300,7 @@ extern BOOL enableLog;
             // jsonable arg
             NSString* key = (NSString*) args[@"key"];
             // ref arg
-            id<BMKLocationAuthDelegate> delegate = (id<BMKLocationAuthDelegate>) HEAP[@([args[@"delegate"] integerValue])];
+            id<BMKLocationAuthDelegate> delegate = (id<BMKLocationAuthDelegate>) HEAP[args[@"delegate"]];
         
             // ref
             BMKLocationAuth* ref = (BMKLocationAuth*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -4327,8 +4337,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -4350,8 +4360,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -4373,15 +4383,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKGeoFenceRegion::judgeStatusWithCoor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* coorValue = (NSValue*) HEAP[@([args[@"coor"] integerValue])];
+            NSValue* coorValue = (NSValue*) HEAP[args[@"coor"]];
             CLLocationCoordinate2D coor;
             [coorValue getValue:&coor];
         
@@ -4409,7 +4419,7 @@ extern BOOL enableLog;
             // jsonable arg
             NSString* identityid = (NSString*) args[@"identityid"];
             // struct arg
-            NSValue* centerValue = (NSValue*) HEAP[@([args[@"center"] integerValue])];
+            NSValue* centerValue = (NSValue*) HEAP[args[@"center"]];
             CLLocationCoordinate2D center;
             [centerValue getValue:&center];
             // jsonable arg
@@ -4430,8 +4440,8 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
@@ -4469,15 +4479,15 @@ extern BOOL enableLog;
         
             // result
             // return a ref
-            HEAP[@(((NSObject*) result).hash)] = result;
-            NSNumber* jsonableResult = @(((NSObject*) result).hash);
+            HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+            NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
             methodResult(jsonableResult);
         },
         @"BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // struct arg
-            NSValue* centerValue = (NSValue*) HEAP[@([args[@"center"] integerValue])];
+            NSValue* centerValue = (NSValue*) HEAP[args[@"center"]];
             CLLocationCoordinate2D center;
             [centerValue getValue:&center];
             // jsonable arg
@@ -4561,8 +4571,8 @@ extern BOOL enableLog;
             NSMutableArray* jsonableResult = [NSMutableArray array];
             for (int __i__ = 0; __i__ < result.count; __i__++) {
                 NSObject* object = [result objectAtIndex:__i__];
-                [jsonableResult addObject: @(object.hash)];
-                HEAP[@([object hash])] = object;
+                [jsonableResult addObject: [NSNumber numberWithLong: object.hash]];
+                HEAP[[NSNumber numberWithLong: object.hash]] = object;
             }
         
             methodResult(jsonableResult);
@@ -4570,7 +4580,7 @@ extern BOOL enableLog;
         @"BMKGeoFenceManager::removeTheGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // ref arg
-            BMKGeoFenceRegion* region = (BMKGeoFenceRegion*) HEAP[@([args[@"region"] integerValue])];
+            BMKGeoFenceRegion* region = (BMKGeoFenceRegion*) HEAP[args[@"region"]];
         
             // ref
             BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -4640,7 +4650,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIView* customView = (UIView*) HEAP[@([args[@"customView"] integerValue])];
+                UIView* customView = (UIView*) HEAP[args[@"customView"]];
         
                 // ref
                 BMKActionPaopaoView* ref = (BMKActionPaopaoView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -4650,8 +4660,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@(((NSObject*) result).hash)] = result;
-                NSNumber* jsonableResult = @(((NSObject*) result).hash);
+                HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -4714,7 +4724,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* newCoordinateValue = (NSValue*) HEAP[@([args[@"newCoordinate"] integerValue])];
+                NSValue* newCoordinateValue = (NSValue*) HEAP[args[@"newCoordinate"]];
                 CLLocationCoordinate2D newCoordinate;
                 [newCoordinateValue getValue:&newCoordinate];
         
@@ -4741,7 +4751,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                BMKTileLayer* tileLayer = (BMKTileLayer*) HEAP[@([args[@"tileLayer"] integerValue])];
+                BMKTileLayer* tileLayer = (BMKTileLayer*) HEAP[args[@"tileLayer"]];
         
                 // ref
                 BMKTileLayerView* ref = (BMKTileLayerView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -4751,8 +4761,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@(((NSObject*) result).hash)] = result;
-                NSNumber* jsonableResult = @(((NSObject*) result).hash);
+                HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -4815,17 +4825,17 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* positionValue = (NSValue*) HEAP[@([args[@"position"] integerValue])];
+                NSValue* positionValue = (NSValue*) HEAP[args[@"position"]];
                 CLLocationCoordinate2D position;
                 [positionValue getValue:&position];
                 // jsonable arg
                 CGFloat zoomLevel = [args[@"zoomLevel"] floatValue];
                 // struct arg
-                NSValue* anchorValue = (NSValue*) HEAP[@([args[@"anchor"] integerValue])];
+                NSValue* anchorValue = (NSValue*) HEAP[args[@"anchor"]];
                 CGPoint anchor;
                 [anchorValue getValue:&anchor];
                 // ref arg
-                UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+                UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
                 // ref
         
@@ -4835,8 +4845,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -4851,11 +4861,11 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* boundsValue = (NSValue*) HEAP[@([args[@"bounds"] integerValue])];
+                NSValue* boundsValue = (NSValue*) HEAP[args[@"bounds"]];
                 BMKCoordinateBounds bounds;
                 [boundsValue getValue:&bounds];
                 // ref arg
-                UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+                UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
                 // ref
         
@@ -4865,8 +4875,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -4901,8 +4911,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -4937,8 +4947,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5045,8 +5055,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5083,8 +5093,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5173,7 +5183,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                BMKCircle* circle = (BMKCircle*) HEAP[@([args[@"circle"] integerValue])];
+                BMKCircle* circle = (BMKCircle*) HEAP[args[@"circle"]];
         
                 // ref
                 BMKCircleView* ref = (BMKCircleView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -5183,8 +5193,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@(((NSObject*) result).hash)] = result;
-                NSNumber* jsonableResult = @(((NSObject*) result).hash);
+                HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5221,8 +5231,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@(((NSObject*) result).hash)] = result;
-                NSNumber* jsonableResult = @(((NSObject*) result).hash);
+                HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5255,8 +5265,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5289,8 +5299,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5381,8 +5391,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@(((NSObject*) result).hash)] = result;
-                NSNumber* jsonableResult = @(((NSObject*) result).hash);
+                HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5435,8 +5445,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5451,7 +5461,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                BMKPolyline* polyline = (BMKPolyline*) HEAP[@([args[@"polyline"] integerValue])];
+                BMKPolyline* polyline = (BMKPolyline*) HEAP[args[@"polyline"]];
         
                 // ref
                 BMKPolylineView* ref = (BMKPolylineView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -5461,8 +5471,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@(((NSObject*) result).hash)] = result;
-                NSNumber* jsonableResult = @(((NSObject*) result).hash);
+                HEAP[[NSNumber numberWithLong: ((NSObject*) result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: ((NSObject*) result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5477,7 +5487,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordValue = (NSValue*) HEAP[@([args[@"coord"] integerValue])];
+                NSValue* coordValue = (NSValue*) HEAP[args[@"coord"]];
                 CLLocationCoordinate2D coord;
                 [coordValue getValue:&coord];
                 // jsonable arg
@@ -5491,8 +5501,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }
@@ -5507,7 +5517,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+                NSValue* mapRectValue = (NSValue*) HEAP[args[@"mapRect"]];
                 BMKMapRect mapRect;
                 [mapRectValue getValue:&mapRect];
         
@@ -5519,8 +5529,8 @@ extern BOOL enableLog;
         
                 // result
                 // return a ref
-                HEAP[@((result).hash)] = result;
-                NSNumber* jsonableResult = @((result).hash);
+                HEAP[[NSNumber numberWithLong: (result).hash]] = result;
+                NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
         
                 [resultList addObject:jsonableResult];
             }

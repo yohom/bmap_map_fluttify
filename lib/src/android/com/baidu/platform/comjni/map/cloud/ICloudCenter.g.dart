@@ -107,14 +107,14 @@ mixin com_baidu_platform_comjni_map_cloud_ICloudCenter on java_lang_Object {
   
   
     // handle native call
-    MethodChannel('com.baidu.platform.comjni.map.cloud.ICloudCenter::a__com_baidu_mapapi_cloud_CloudListener::Callback')
+    MethodChannel('com.baidu.mapapi.cloud.CloudListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetSearchResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -123,7 +123,7 @@ mixin com_baidu_platform_comjni_map_cloud_ICloudCenter on java_lang_Object {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetDetailSearchResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call
@@ -132,7 +132,7 @@ mixin com_baidu_platform_comjni_map_cloud_ICloudCenter on java_lang_Object {
             case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetCloudRgcResult':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var2\':${args['var2']}])');
+                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
               }
         
               // handle the native call

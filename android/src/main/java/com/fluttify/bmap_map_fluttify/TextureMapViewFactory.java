@@ -264,7 +264,7 @@ class TextureMapViewFactory extends PlatformViewFactory {
             try {
                 ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                     // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback");
+                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.CustomMapStyleCallBack::Callback");
                     android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
         
                     // call dart method
@@ -575,8 +575,7 @@ class TextureMapViewFactory extends PlatformViewFactory {
             // convert result to jsonable result
             Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
         
             __methodResult__.success(jsonableResult);

@@ -124,7 +124,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* mapScaleBarPositionValue = (NSValue*) HEAP[@([args[@"mapScaleBarPosition"] integerValue])];
+            NSValue* mapScaleBarPositionValue = (NSValue*) HEAP[args[@"mapScaleBarPosition"]];
             CGPoint mapScaleBarPosition;
             [mapScaleBarPositionValue getValue:&mapScaleBarPosition];
         
@@ -160,7 +160,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+            NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
             BMKMapRect visibleMapRect;
             [visibleMapRectValue getValue:&visibleMapRect];
         
@@ -179,7 +179,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* mapPaddingValue = (NSValue*) HEAP[@([args[@"mapPadding"] integerValue])];
+            NSValue* mapPaddingValue = (NSValue*) HEAP[args[@"mapPadding"]];
             UIEdgeInsets mapPadding;
             [mapPaddingValue getValue:&mapPadding];
         
@@ -385,7 +385,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* accuracyCircleFillColor = (UIColor*) HEAP[@([args[@"accuracyCircleFillColor"] integerValue])];
+            UIColor* accuracyCircleFillColor = (UIColor*) HEAP[args[@"accuracyCircleFillColor"]];
         
             // ref
             BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -402,7 +402,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* accuracyCircleStrokeColor = (UIColor*) HEAP[@([args[@"accuracyCircleStrokeColor"] integerValue])];
+            UIColor* accuracyCircleStrokeColor = (UIColor*) HEAP[args[@"accuracyCircleStrokeColor"]];
         
             // ref
             BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -453,7 +453,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIImage* locationViewImage = (UIImage*) HEAP[@([args[@"locationViewImage"] integerValue])];
+            UIImage* locationViewImage = (UIImage*) HEAP[args[@"locationViewImage"]];
         
             // ref
             BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -555,7 +555,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* targetScreenPtValue = (NSValue*) HEAP[@([args[@"targetScreenPt"] integerValue])];
+            NSValue* targetScreenPtValue = (NSValue*) HEAP[args[@"targetScreenPt"]];
             CGPoint targetScreenPt;
             [targetScreenPtValue getValue:&targetScreenPt];
         
@@ -574,7 +574,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* targetGeoPtValue = (NSValue*) HEAP[@([args[@"targetGeoPt"] integerValue])];
+            NSValue* targetGeoPtValue = (NSValue*) HEAP[args[@"targetGeoPt"]];
             CLLocationCoordinate2D targetGeoPt;
             [targetGeoPtValue getValue:&targetGeoPt];
         
@@ -610,7 +610,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+            NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
             CLLocationCoordinate2D pt;
             [ptValue getValue:&pt];
         
@@ -646,7 +646,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            BMKGradient* mGradient = (BMKGradient*) HEAP[@([args[@"mGradient"] integerValue])];
+            BMKGradient* mGradient = (BMKGradient*) HEAP[args[@"mGradient"]];
         
             // ref
             BMKHeatMap* ref = (BMKHeatMap*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -724,7 +724,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            BMKActionPaopaoView* paopaoView = (BMKActionPaopaoView*) HEAP[@([args[@"paopaoView"] integerValue])];
+            BMKActionPaopaoView* paopaoView = (BMKActionPaopaoView*) HEAP[args[@"paopaoView"]];
         
             // ref
             BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -741,7 +741,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+            id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
         
             // ref
             BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -758,7 +758,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+            UIImage* image = (UIImage*) HEAP[args[@"image"]];
         
             // ref
             BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -775,7 +775,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* centerOffsetValue = (NSValue*) HEAP[@([args[@"centerOffset"] integerValue])];
+            NSValue* centerOffsetValue = (NSValue*) HEAP[args[@"centerOffset"]];
             CGPoint centerOffset;
             [centerOffsetValue getValue:&centerOffset];
         
@@ -794,7 +794,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* calloutOffsetValue = (NSValue*) HEAP[@([args[@"calloutOffset"] integerValue])];
+            NSValue* calloutOffsetValue = (NSValue*) HEAP[args[@"calloutOffset"]];
             CGPoint calloutOffset;
             [calloutOffsetValue getValue:&calloutOffset];
         
@@ -881,7 +881,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIView* leftCalloutAccessoryView = (UIView*) HEAP[@([args[@"leftCalloutAccessoryView"] integerValue])];
+            UIView* leftCalloutAccessoryView = (UIView*) HEAP[args[@"leftCalloutAccessoryView"]];
         
             // ref
             BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -898,7 +898,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIView* rightCalloutAccessoryView = (UIView*) HEAP[@([args[@"rightCalloutAccessoryView"] integerValue])];
+            UIView* rightCalloutAccessoryView = (UIView*) HEAP[args[@"rightCalloutAccessoryView"]];
         
             // ref
             BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1068,7 +1068,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+            UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
         
             // ref
             BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1085,7 +1085,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+            UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
             // ref
             BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1464,7 +1464,7 @@ extern BOOL enableLog;
         
             // args
             // struct arg
-            NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+            NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
             CLLocationCoordinate2D pt;
             [ptValue getValue:&pt];
         
@@ -1719,7 +1719,7 @@ extern BOOL enableLog;
         
             // args
             // ref arg
-            BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) HEAP[@([args[@"rgcData"] integerValue])];
+            BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) HEAP[args[@"rgcData"]];
         
             // ref
             BMKLocation* ref = (BMKLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1869,7 +1869,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+                UIColor* fillColor = (UIColor*) HEAP[args[@"fillColor"]];
         
                 // ref
                 BMKOverlayPathView* ref = (BMKOverlayPathView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1887,7 +1887,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+                UIColor* strokeColor = (UIColor*) HEAP[args[@"strokeColor"]];
         
                 // ref
                 BMKOverlayPathView* ref = (BMKOverlayPathView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -1982,7 +1982,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+                NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
                 CLLocationCoordinate2D pt;
                 [ptValue getValue:&pt];
         
@@ -2002,7 +2002,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* anchorValue = (NSValue*) HEAP[@([args[@"anchor"] integerValue])];
+                NSValue* anchorValue = (NSValue*) HEAP[args[@"anchor"]];
                 CGPoint anchor;
                 [anchorValue getValue:&anchor];
         
@@ -2022,7 +2022,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* boundValue = (NSValue*) HEAP[@([args[@"bound"] integerValue])];
+                NSValue* boundValue = (NSValue*) HEAP[args[@"bound"]];
                 BMKCoordinateBounds bound;
                 [boundValue getValue:&bound];
         
@@ -2042,7 +2042,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIImage* icon = (UIImage*) HEAP[@([args[@"icon"] integerValue])];
+                UIImage* icon = (UIImage*) HEAP[args[@"icon"]];
         
                 // ref
                 BMKGroundOverlay* ref = (BMKGroundOverlay*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -2078,7 +2078,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -2116,7 +2116,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* screenPointToLockValue = (NSValue*) HEAP[@([args[@"screenPointToLock"] integerValue])];
+                NSValue* screenPointToLockValue = (NSValue*) HEAP[args[@"screenPointToLock"]];
                 CGPoint screenPointToLock;
                 [screenPointToLockValue getValue:&screenPointToLock];
         
@@ -2277,7 +2277,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+                NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
                 BMKMapRect visibleMapRect;
                 [visibleMapRectValue getValue:&visibleMapRect];
         
@@ -2351,7 +2351,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+                NSValue* coordinateValue = (NSValue*) HEAP[args[@"coordinate"]];
                 CLLocationCoordinate2D coordinate;
                 [coordinateValue getValue:&coordinate];
         
@@ -2407,7 +2407,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+                NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
                 CLLocationCoordinate2D pt;
                 [ptValue getValue:&pt];
         
@@ -2463,7 +2463,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+                NSValue* regionValue = (NSValue*) HEAP[args[@"region"]];
                 BMKCoordinateRegion region;
                 [regionValue getValue:&region];
         
@@ -2483,7 +2483,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* limitMapRegionValue = (NSValue*) HEAP[@([args[@"limitMapRegion"] integerValue])];
+                NSValue* limitMapRegionValue = (NSValue*) HEAP[args[@"limitMapRegion"]];
                 BMKCoordinateRegion limitMapRegion;
                 [limitMapRegionValue getValue:&limitMapRegion];
         
@@ -2503,7 +2503,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* compassPositionValue = (NSValue*) HEAP[@([args[@"compassPosition"] integerValue])];
+                NSValue* compassPositionValue = (NSValue*) HEAP[args[@"compassPosition"]];
                 CGPoint compassPosition;
                 [compassPositionValue getValue:&compassPosition];
         
@@ -2523,7 +2523,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerCoordinateValue = (NSValue*) HEAP[@([args[@"centerCoordinate"] integerValue])];
+                NSValue* centerCoordinateValue = (NSValue*) HEAP[args[@"centerCoordinate"]];
                 CLLocationCoordinate2D centerCoordinate;
                 [centerCoordinateValue getValue:&centerCoordinate];
         
@@ -2867,7 +2867,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* mapScaleBarPositionValue = (NSValue*) HEAP[@([args[@"mapScaleBarPosition"] integerValue])];
+                NSValue* mapScaleBarPositionValue = (NSValue*) HEAP[args[@"mapScaleBarPosition"]];
                 CGPoint mapScaleBarPosition;
                 [mapScaleBarPositionValue getValue:&mapScaleBarPosition];
         
@@ -2905,7 +2905,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+                NSValue* visibleMapRectValue = (NSValue*) HEAP[args[@"visibleMapRect"]];
                 BMKMapRect visibleMapRect;
                 [visibleMapRectValue getValue:&visibleMapRect];
         
@@ -2925,7 +2925,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* mapPaddingValue = (NSValue*) HEAP[@([args[@"mapPadding"] integerValue])];
+                NSValue* mapPaddingValue = (NSValue*) HEAP[args[@"mapPadding"]];
                 UIEdgeInsets mapPadding;
                 [mapPaddingValue getValue:&mapPadding];
         
@@ -3143,7 +3143,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* accuracyCircleFillColor = (UIColor*) HEAP[@([args[@"accuracyCircleFillColor"] integerValue])];
+                UIColor* accuracyCircleFillColor = (UIColor*) HEAP[args[@"accuracyCircleFillColor"]];
         
                 // ref
                 BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3161,7 +3161,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* accuracyCircleStrokeColor = (UIColor*) HEAP[@([args[@"accuracyCircleStrokeColor"] integerValue])];
+                UIColor* accuracyCircleStrokeColor = (UIColor*) HEAP[args[@"accuracyCircleStrokeColor"]];
         
                 // ref
                 BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3215,7 +3215,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIImage* locationViewImage = (UIImage*) HEAP[@([args[@"locationViewImage"] integerValue])];
+                UIImage* locationViewImage = (UIImage*) HEAP[args[@"locationViewImage"]];
         
                 // ref
                 BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3323,7 +3323,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* targetScreenPtValue = (NSValue*) HEAP[@([args[@"targetScreenPt"] integerValue])];
+                NSValue* targetScreenPtValue = (NSValue*) HEAP[args[@"targetScreenPt"]];
                 CGPoint targetScreenPt;
                 [targetScreenPtValue getValue:&targetScreenPt];
         
@@ -3343,7 +3343,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* targetGeoPtValue = (NSValue*) HEAP[@([args[@"targetGeoPt"] integerValue])];
+                NSValue* targetGeoPtValue = (NSValue*) HEAP[args[@"targetGeoPt"]];
                 CLLocationCoordinate2D targetGeoPt;
                 [targetGeoPtValue getValue:&targetGeoPt];
         
@@ -3381,7 +3381,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+                NSValue* ptValue = (NSValue*) HEAP[args[@"pt"]];
                 CLLocationCoordinate2D pt;
                 [ptValue getValue:&pt];
         
@@ -3419,7 +3419,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                BMKGradient* mGradient = (BMKGradient*) HEAP[@([args[@"mGradient"] integerValue])];
+                BMKGradient* mGradient = (BMKGradient*) HEAP[args[@"mGradient"]];
         
                 // ref
                 BMKHeatMap* ref = (BMKHeatMap*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3501,7 +3501,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                BMKActionPaopaoView* paopaoView = (BMKActionPaopaoView*) HEAP[@([args[@"paopaoView"] integerValue])];
+                BMKActionPaopaoView* paopaoView = (BMKActionPaopaoView*) HEAP[args[@"paopaoView"]];
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3519,7 +3519,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+                id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[args[@"annotation"]];
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3537,7 +3537,7 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+                UIImage* image = (UIImage*) HEAP[args[@"image"]];
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
@@ -3555,7 +3555,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* centerOffsetValue = (NSValue*) HEAP[@([args[@"centerOffset"] integerValue])];
+                NSValue* centerOffsetValue = (NSValue*) HEAP[args[@"centerOffset"]];
                 CGPoint centerOffset;
                 [centerOffsetValue getValue:&centerOffset];
         
@@ -3575,7 +3575,7 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* calloutOffsetValue = (NSValue*) HEAP[@([args[@"calloutOffset"] integerValue])];
+                NSValue* calloutOffsetValue = (NSValue*) HEAP[args[@"calloutOffset"]];
                 CGPoint calloutOffset;
                 [calloutOffsetValue getValue:&calloutOffset];
         

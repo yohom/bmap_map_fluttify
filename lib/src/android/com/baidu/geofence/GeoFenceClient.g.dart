@@ -336,14 +336,14 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
   
   
     // handle native call
-    MethodChannel('com.baidu.geofence.GeoFenceClient::setGeoFenceListener::Callback')
+    MethodChannel('com.baidu.geofence.GeoFenceListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
             case 'Callback::com.baidu.geofence.GeoFenceListener::onGeoFenceCreateFinished':
               // print log
               if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGeoFenceCreateFinished([\'var2\':${args['var2']}, \'var3\':${args['var3']}])');
+                debugPrint('fluttify-dart-callback: onGeoFenceCreateFinished([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
               }
         
               // handle the native call

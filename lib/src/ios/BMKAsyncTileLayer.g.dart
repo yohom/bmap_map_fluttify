@@ -62,7 +62,7 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   
   
     // handle native call
-    MethodChannel('BMKAsyncTileLayer::loadTileForX_y_zoom_result::Callback')
+    MethodChannel('void|UIImage*#tileImage,NSError*#error::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
