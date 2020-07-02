@@ -75,7 +75,7 @@ class com_baidu_mapapi_search_poi_PoiNearbySearchOption extends java_lang_Object
   Future<com_baidu_mapapi_search_poi_PoiSortType> get_sortType() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_sortType", {'refId': refId});
   
-    return com_baidu_mapapi_search_poi_PoiSortType.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_search_poi_PoiSortType();
   }
   
   Future<String> get_mTag() async {
@@ -224,7 +224,7 @@ class com_baidu_mapapi_search_poi_PoiNearbySearchOption extends java_lang_Object
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiNearbySearchOption::sortType', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiNearbySearchOption::sortType', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -450,7 +450,7 @@ extension com_baidu_mapapi_search_poi_PoiNearbySearchOption_Batch on List<com_ba
   
   Future<List<com_baidu_mapapi_search_poi_PoiSortType>> get_sortType_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_sortType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiSortType.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_poi_PoiSortType()).toList();
   
     return typedResult;
   }
@@ -596,7 +596,7 @@ extension com_baidu_mapapi_search_poi_PoiNearbySearchOption_Batch on List<com_ba
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiNearbySearchOption::sortType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiNearbySearchOption::sortType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

@@ -11,10 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  bmap_core_fluttify: ^0.2.0
+  bmap_core_fluttify: ^0.2.2
   bmap_utils_fluttify: ^0.1.0
-  foundation_fluttify: ^0.8.7
-  core_location_fluttify: ^0.2.1
+  foundation_fluttify: ^0.8.10
+  core_location_fluttify: ^0.2.3
 
 dev_dependencies:
   flutter_test:

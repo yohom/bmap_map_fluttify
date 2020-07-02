@@ -58,7 +58,7 @@ class com_baidu_mapapi_animation_RotateAnimation extends com_baidu_mapapi_animat
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.RotateAnimation::setRepeatMode', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.RotateAnimation::setRepeatMode', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -118,7 +118,7 @@ extension com_baidu_mapapi_animation_RotateAnimation_Batch on List<com_baidu_map
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.RotateAnimation::setRepeatMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.RotateAnimation::setRepeatMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

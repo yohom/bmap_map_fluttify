@@ -5,6 +5,25 @@
 
 enum BMKLineDashType {
   kBMKLineDashTypeNone /* 0 */,
-  kBMKLineDashTypeSquare /* 0 */,
-  kBMKLineDashTypeDot /* 0 */
+  kBMKLineDashTypeSquare /* null */,
+  kBMKLineDashTypeDot /* null */
+}
+
+extension BMKLineDashTypeToX on BMKLineDashType {
+  int toValue() {
+    switch (this) {
+      case BMKLineDashType.kBMKLineDashTypeNone: return 0;
+      case BMKLineDashType.kBMKLineDashTypeSquare: return BMKLineDashType.kBMKLineDashTypeSquare.index + 0;
+      case BMKLineDashType.kBMKLineDashTypeDot: return BMKLineDashType.kBMKLineDashTypeDot.index + 0;
+    }
+  }
+}
+
+extension BMKLineDashTypeFromX on int {
+  BMKLineDashType toBMKLineDashType() {
+    switch (this) {
+      case 0: return BMKLineDashType.kBMKLineDashTypeNone;
+      default: return BMKLineDashType.values[this + 0];
+    }
+  }
 }

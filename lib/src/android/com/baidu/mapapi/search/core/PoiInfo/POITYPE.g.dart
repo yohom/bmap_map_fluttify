@@ -4,9 +4,30 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_core_PoiInfo_POITYPE {
-  POINT /* 0 */,
-  BUS_STATION /* 0 */,
-  BUS_LINE /* 0 */,
-  SUBWAY_STATION /* 0 */,
-  SUBWAY_LINE /* 0 */
+  POINT /* null */,
+  BUS_STATION /* null */,
+  BUS_LINE /* null */,
+  SUBWAY_STATION /* null */,
+  SUBWAY_LINE /* null */
+}
+
+extension com_baidu_mapapi_search_core_PoiInfo_POITYPEToX on com_baidu_mapapi_search_core_PoiInfo_POITYPE {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_core_PoiInfo_POITYPE.POINT: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.POINT.index + 0;
+      case com_baidu_mapapi_search_core_PoiInfo_POITYPE.BUS_STATION: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.BUS_STATION.index + 0;
+      case com_baidu_mapapi_search_core_PoiInfo_POITYPE.BUS_LINE: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.BUS_LINE.index + 0;
+      case com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_STATION: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_STATION.index + 0;
+      case com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_LINE: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_LINE.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_core_PoiInfo_POITYPEFromX on int {
+  com_baidu_mapapi_search_core_PoiInfo_POITYPE tocom_baidu_mapapi_search_core_PoiInfo_POITYPE() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.values[this + 0];
+    }
+  }
 }

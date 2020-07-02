@@ -5,7 +5,27 @@
 
 enum BMKGeoFenceActiveAction {
   BMKGeoFenceActiveActionNone /* 0 */,
-  BMKGeoFenceActiveActionInside /* 0 */,
-  BMKGeoFenceActiveActionOutside /* 0 */,
-  BMKGeoFenceActiveActionStayed /* 0 */
+  BMKGeoFenceActiveActionInside /* null */,
+  BMKGeoFenceActiveActionOutside /* null */,
+  BMKGeoFenceActiveActionStayed /* null */
+}
+
+extension BMKGeoFenceActiveActionToX on BMKGeoFenceActiveAction {
+  int toValue() {
+    switch (this) {
+      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionNone: return 0;
+      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionInside: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionInside.index + 0;
+      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionOutside: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionOutside.index + 0;
+      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionStayed: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionStayed.index + 0;
+    }
+  }
+}
+
+extension BMKGeoFenceActiveActionFromX on int {
+  BMKGeoFenceActiveAction toBMKGeoFenceActiveAction() {
+    switch (this) {
+      case 0: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionNone;
+      default: return BMKGeoFenceActiveAction.values[this + 0];
+    }
+  }
 }

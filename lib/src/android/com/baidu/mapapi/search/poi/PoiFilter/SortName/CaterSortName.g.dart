@@ -4,10 +4,32 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName {
-  DEFAULT /* 0 */,
-  CATER_PRICE /* 0 */,
-  CATER_DISTANCE /* 0 */,
-  CATER_TASTE_RATING /* 0 */,
-  CATER_OVERALL_RATING /* 0 */,
-  CATER_SERVICE_RATING /* 0 */
+  DEFAULT /* null */,
+  CATER_PRICE /* null */,
+  CATER_DISTANCE /* null */,
+  CATER_TASTE_RATING /* null */,
+  CATER_OVERALL_RATING /* null */,
+  CATER_SERVICE_RATING /* null */
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortNameToX on com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.DEFAULT: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.DEFAULT.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_PRICE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_PRICE.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_DISTANCE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_DISTANCE.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_TASTE_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_TASTE_RATING.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_OVERALL_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_OVERALL_RATING.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_SERVICE_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_SERVICE_RATING.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortNameFromX on int {
+  com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName tocom_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.values[this + 0];
+    }
+  }
 }

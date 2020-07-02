@@ -69,7 +69,7 @@ class BMKGeoFencePolygonRegion extends BMKGeoFenceRegion with NSCopying {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor', {"customid": customid, "identityid": identityid, "coor": coor.map((__it__) => __it__?.refId).toList(), "count": count, "type": type.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor', {"customid": customid, "identityid": identityid, "coor": coor.map((__it__) => __it__?.refId).toList(), "count": count, "type": type.toValue(), "refId": refId});
   
   
     // handle native call
@@ -118,7 +118,7 @@ extension BMKGeoFencePolygonRegion_Batch on List<BMKGeoFencePolygonRegion> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customid": customid[__i__], "identityid": identityid[__i__], "coor": coor[__i__].map((it) => it.refId).toList(), "count": count[__i__], "type": type[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customid": customid[__i__], "identityid": identityid[__i__], "coor": coor[__i__].map((it) => it.refId).toList(), "count": count[__i__], "type": type[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

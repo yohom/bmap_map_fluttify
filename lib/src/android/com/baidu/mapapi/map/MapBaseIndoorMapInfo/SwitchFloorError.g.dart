@@ -4,9 +4,30 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError {
-  SWITCH_OK /* 0 */,
-  FLOOR_INFO_ERROR /* 0 */,
-  FLOOR_OVERLFLOW /* 0 */,
-  FOCUSED_ID_ERROR /* 0 */,
-  SWITCH_ERROR /* 0 */
+  SWITCH_OK /* null */,
+  FLOOR_INFO_ERROR /* null */,
+  FLOOR_OVERLFLOW /* null */,
+  FOCUSED_ID_ERROR /* null */,
+  SWITCH_ERROR /* null */
+}
+
+extension com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorErrorToX on com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.SWITCH_OK: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.SWITCH_OK.index + 0;
+      case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FLOOR_INFO_ERROR: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FLOOR_INFO_ERROR.index + 0;
+      case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FLOOR_OVERLFLOW: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FLOOR_OVERLFLOW.index + 0;
+      case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FOCUSED_ID_ERROR: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FOCUSED_ID_ERROR.index + 0;
+      case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.SWITCH_ERROR: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.SWITCH_ERROR.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorErrorFromX on int {
+  com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError tocom_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.values[this + 0];
+    }
+  }
 }

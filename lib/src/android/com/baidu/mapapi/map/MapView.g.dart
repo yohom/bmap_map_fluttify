@@ -225,7 +225,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.CustomMapStyleCallBack::Callback')
+    MethodChannel('com.baidu.mapapi.map.MapView::setMapCustomStyle::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -351,7 +351,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setLogoPosition', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setLogoPosition', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -385,7 +385,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_baidu_mapapi_map_LogoPosition.values[__result__];
+      final __return__ = (__result__ as int).tocom_baidu_mapapi_map_LogoPosition();
     
       return __return__;
     }
@@ -1143,7 +1143,7 @@ extension com_baidu_mapapi_map_MapView_Batch on List<com_baidu_mapapi_map_MapVie
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setLogoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setLogoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -1170,7 +1170,7 @@ extension com_baidu_mapapi_map_MapView_Batch on List<com_baidu_mapapi_map_MapVie
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_LogoPosition.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_LogoPosition()).toList();
     
       return typedResult;
     }

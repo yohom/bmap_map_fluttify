@@ -799,7 +799,7 @@ public class SubHandler8 {
                 try {
                     ref.setAnimationListener(new com.baidu.mapapi.animation.Animation.AnimationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.animation.Animation.AnimationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.animation.Animation::setAnimationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -4104,7 +4104,7 @@ public class SubHandler8 {
                 try {
                     ref.setOnGetSuggestionResultListener(new com.baidu.mapapi.search.sug.OnGetSuggestionResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.sug.OnGetSuggestionResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.sug.SuggestionSearch::setOnGetSuggestionResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -5101,7 +5101,7 @@ public class SubHandler8 {
                 try {
                     ref.setOnGetBusLineSearchResultListener(new com.baidu.mapapi.search.busline.OnGetBusLineSearchResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.busline.OnGetBusLineSearchResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.busline.BusLineSearch::setOnGetBusLineSearchResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

@@ -63,19 +63,19 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
   Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity> get_mTacticsIncity() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIncity", {'refId': refId});
   
-    return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity();
   }
   
   Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity> get_mTacticsIntercity() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIntercity", {'refId': refId});
   
-    return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity();
   }
   
   Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity> get_mTransTypeIntercity() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTransTypeIntercity", {'refId': refId});
   
-    return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity();
   }
   
   Future<int> get_mPageSize() async {
@@ -224,7 +224,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -248,7 +248,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -272,7 +272,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -364,21 +364,21 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
   
   Future<List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity>> get_mTacticsIncity_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIncity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity()).toList();
   
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity>> get_mTacticsIntercity_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIntercity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity()).toList();
   
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity>> get_mTransTypeIntercity_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTransTypeIntercity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity()).toList();
   
     return typedResult;
   }
@@ -518,7 +518,7 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -538,7 +538,7 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -558,7 +558,7 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

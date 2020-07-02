@@ -264,7 +264,7 @@ class TextureMapViewFactory extends PlatformViewFactory {
             try {
                 ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                     // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.CustomMapStyleCallBack::Callback");
+                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback");
                     android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
         
                     // call dart method

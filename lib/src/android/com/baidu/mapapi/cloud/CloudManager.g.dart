@@ -68,7 +68,7 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.cloud.CloudListener::Callback')
+    MethodChannel('com.baidu.mapapi.cloud.CloudManager::init__com_baidu_mapapi_cloud_CloudListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -150,7 +150,7 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.cloud.CloudListener::Callback')
+    MethodChannel('com.baidu.mapapi.cloud.CloudManager::registerListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

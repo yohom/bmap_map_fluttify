@@ -81,19 +81,19 @@ class BMKOverlayGLBasicView extends BMKOverlayView  {
   Future<BMKLineJoinType> get_lineJoinType({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayGLBasicView::get_lineJoinType", {'refId': refId});
   
-    return BMKLineJoinType.values[__result__];
+    return (__result__ as int).toBMKLineJoinType();
   }
   
   Future<BMKLineCapType> get_lineCapType({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayGLBasicView::get_lineCapType", {'refId': refId});
   
-    return BMKLineCapType.values[__result__];
+    return (__result__ as int).toBMKLineCapType();
   }
   
   Future<BMKLineDashType> get_lineDashType({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayGLBasicView::get_lineDashType", {'refId': refId});
   
-    return BMKLineDashType.values[__result__];
+    return (__result__ as int).toBMKLineDashType();
   }
   
   //endregion
@@ -206,21 +206,21 @@ extension BMKOverlayGLBasicView_Batch on List<BMKOverlayGLBasicView> {
   
   Future<List<BMKLineJoinType>> get_lineJoinType_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayGLBasicView::get_lineJoinType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLineJoinType.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLineJoinType()).toList();
   
     return typedResult;
   }
   
   Future<List<BMKLineCapType>> get_lineCapType_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayGLBasicView::get_lineCapType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLineCapType.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLineCapType()).toList();
   
     return typedResult;
   }
   
   Future<List<BMKLineDashType>> get_lineDashType_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayGLBasicView::get_lineDashType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLineDashType.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLineDashType()).toList();
   
     return typedResult;
   }

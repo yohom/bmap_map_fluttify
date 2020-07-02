@@ -5,9 +5,31 @@
 
 enum BMKLogoPosition {
   BMKLogoPositionLeftBottom /* 0 */,
-  BMKLogoPositionLeftTop /* 0 */,
-  BMKLogoPositionCenterBottom /* 0 */,
-  BMKLogoPositionCenterTop /* 0 */,
-  BMKLogoPositionRightBottom /* 0 */,
-  BMKLogoPositionRightTop /* 0 */
+  BMKLogoPositionLeftTop /* null */,
+  BMKLogoPositionCenterBottom /* null */,
+  BMKLogoPositionCenterTop /* null */,
+  BMKLogoPositionRightBottom /* null */,
+  BMKLogoPositionRightTop /* null */
+}
+
+extension BMKLogoPositionToX on BMKLogoPosition {
+  int toValue() {
+    switch (this) {
+      case BMKLogoPosition.BMKLogoPositionLeftBottom: return 0;
+      case BMKLogoPosition.BMKLogoPositionLeftTop: return BMKLogoPosition.BMKLogoPositionLeftTop.index + 0;
+      case BMKLogoPosition.BMKLogoPositionCenterBottom: return BMKLogoPosition.BMKLogoPositionCenterBottom.index + 0;
+      case BMKLogoPosition.BMKLogoPositionCenterTop: return BMKLogoPosition.BMKLogoPositionCenterTop.index + 0;
+      case BMKLogoPosition.BMKLogoPositionRightBottom: return BMKLogoPosition.BMKLogoPositionRightBottom.index + 0;
+      case BMKLogoPosition.BMKLogoPositionRightTop: return BMKLogoPosition.BMKLogoPositionRightTop.index + 0;
+    }
+  }
+}
+
+extension BMKLogoPositionFromX on int {
+  BMKLogoPosition toBMKLogoPosition() {
+    switch (this) {
+      case 0: return BMKLogoPosition.BMKLogoPositionLeftBottom;
+      default: return BMKLogoPosition.values[this + 0];
+    }
+  }
 }

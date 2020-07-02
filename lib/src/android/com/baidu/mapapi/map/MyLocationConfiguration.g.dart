@@ -64,7 +64,7 @@ class com_baidu_mapapi_map_MyLocationConfiguration extends java_lang_Object  {
   Future<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode> get_locationMode() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_locationMode", {'refId': refId});
   
-    return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_map_MyLocationConfiguration_LocationMode();
   }
   
   Future<bool> get_enableDirection() async {
@@ -117,7 +117,7 @@ extension com_baidu_mapapi_map_MyLocationConfiguration_Batch on List<com_baidu_m
   //region getters
   Future<List<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode>> get_locationMode_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_locationMode_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_MyLocationConfiguration_LocationMode()).toList();
   
     return typedResult;
   }

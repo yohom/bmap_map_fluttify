@@ -4,6 +4,24 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType {
-  SCALE_X /* 0 */,
-  SCALE_Y /* 0 */
+  SCALE_X /* null */,
+  SCALE_Y /* null */
+}
+
+extension com_baidu_mapapi_animation_SingleScaleAnimation_ScaleTypeToX on com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_X: return com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_X.index + 0;
+      case com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_Y: return com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_Y.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_animation_SingleScaleAnimation_ScaleTypeFromX on int {
+  com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType tocom_baidu_mapapi_animation_SingleScaleAnimation_ScaleType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.values[this + 0];
+    }
+  }
 }

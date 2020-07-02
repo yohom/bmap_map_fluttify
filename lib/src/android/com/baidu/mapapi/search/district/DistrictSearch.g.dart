@@ -92,7 +92,7 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.district.OnGetDistricSearchResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.district.DistrictSearch::setOnDistrictSearchListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

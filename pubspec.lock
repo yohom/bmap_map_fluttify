@@ -28,7 +28,7 @@ packages:
       name: bmap_core_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.1"
+    version: "0.2.2"
   bmap_utils_fluttify:
     dependency: "direct main"
     description:
@@ -70,7 +70,7 @@ packages:
       name: core_location_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.1"
+    version: "0.2.3"
   crypto:
     dependency: transitive
     description:
@@ -94,7 +94,7 @@ packages:
       name: foundation_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.7+1"
+    version: "0.8.10"
   image:
     dependency: transitive
     description:

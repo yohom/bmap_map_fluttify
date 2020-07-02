@@ -2454,7 +2454,7 @@ public class SubHandler11 {
                 try {
                     __result__ = ref.sortName(new com.baidu.mapapi.search.poi.PoiFilter.SortName() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.poi.PoiFilter.SortName::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.poi.PoiFilter.Builder::sortName::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -3187,7 +3187,7 @@ public class SubHandler11 {
                 try {
                     ref.setOnGetPoiSearchResultListener(new com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.poi.PoiSearch::setOnGetPoiSearchResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -4524,7 +4524,7 @@ public class SubHandler11 {
                 try {
                     ref.setOnDistrictSearchListener(new com.baidu.mapapi.search.district.OnGetDistricSearchResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.district.OnGetDistricSearchResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.district.DistrictSearch::setOnDistrictSearchListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -5632,7 +5632,7 @@ public class SubHandler11 {
                 try {
                     ref.setOnGetGeoCodeResultListener(new com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

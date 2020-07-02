@@ -4,7 +4,26 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_poi_PoiFilter_IndustryType {
-  HOTEL /* 0 */,
-  CATER /* 0 */,
-  LIFE /* 0 */
+  HOTEL /* null */,
+  CATER /* null */,
+  LIFE /* null */
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_IndustryTypeToX on com_baidu_mapapi_search_poi_PoiFilter_IndustryType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_poi_PoiFilter_IndustryType.HOTEL: return com_baidu_mapapi_search_poi_PoiFilter_IndustryType.HOTEL.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_IndustryType.CATER: return com_baidu_mapapi_search_poi_PoiFilter_IndustryType.CATER.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_IndustryType.LIFE: return com_baidu_mapapi_search_poi_PoiFilter_IndustryType.LIFE.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_IndustryTypeFromX on int {
+  com_baidu_mapapi_search_poi_PoiFilter_IndustryType tocom_baidu_mapapi_search_poi_PoiFilter_IndustryType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_poi_PoiFilter_IndustryType.values[this + 0];
+    }
+  }
 }

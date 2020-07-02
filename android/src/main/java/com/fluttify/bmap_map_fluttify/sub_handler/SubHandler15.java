@@ -50,7 +50,7 @@ public class SubHandler15 {
                 try {
                     ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.CustomMapStyleCallBack::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.MapView::setMapCustomStyle::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -2166,7 +2166,7 @@ public class SubHandler15 {
                 try {
                     ref.init(new com.baidu.mapapi.cloud.CloudListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.cloud.CloudListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.cloud.CloudManager::init__com_baidu_mapapi_cloud_CloudListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -2345,7 +2345,7 @@ public class SubHandler15 {
                 try {
                     ref.registerListener(new com.baidu.mapapi.cloud.CloudListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.cloud.CloudListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.cloud.CloudManager::registerListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -4428,7 +4428,7 @@ public class SubHandler15 {
                 try {
                     ref.setGeoFenceListener(new com.baidu.geofence.GeoFenceListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.geofence.GeoFenceListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.geofence.GeoFenceClient::setGeoFenceListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

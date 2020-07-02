@@ -5,7 +5,27 @@
 
 enum BMKSwitchIndoorFloorError {
   BMKSwitchIndoorFloorSuccess /* 0 */,
-  BMKSwitchIndoorFloorFailed /* 0 */,
-  BMKSwitchIndoorFloorNotFocused /* 0 */,
-  BMKSwitchIndoorFloorNotExist /* 0 */
+  BMKSwitchIndoorFloorFailed /* null */,
+  BMKSwitchIndoorFloorNotFocused /* null */,
+  BMKSwitchIndoorFloorNotExist /* null */
+}
+
+extension BMKSwitchIndoorFloorErrorToX on BMKSwitchIndoorFloorError {
+  int toValue() {
+    switch (this) {
+      case BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorSuccess: return 0;
+      case BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorFailed: return BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorFailed.index + 0;
+      case BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotFocused: return BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotFocused.index + 0;
+      case BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotExist: return BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotExist.index + 0;
+    }
+  }
+}
+
+extension BMKSwitchIndoorFloorErrorFromX on int {
+  BMKSwitchIndoorFloorError toBMKSwitchIndoorFloorError() {
+    switch (this) {
+      case 0: return BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorSuccess;
+      default: return BMKSwitchIndoorFloorError.values[this + 0];
+    }
+  }
 }

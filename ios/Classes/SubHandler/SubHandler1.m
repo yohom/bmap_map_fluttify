@@ -13,6 +13,7 @@ extern BOOL enableLog;
 
 @implementation BmapMapFluttifyPlugin (SubHandler1)
 - (NSDictionary<NSString*, Handler>*) getSubHandler1 {
+    __weak __typeof(self)weakSelf = self;
     return @{
         @"BMKCircle::setCircleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
@@ -1347,9 +1348,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-                NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+                NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
                 for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
                     [annotations addObject:item];
                 }
         
@@ -1402,9 +1403,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-                NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+                NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
                 for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
                     [annotations addObject:item];
                 }
         
@@ -1538,9 +1539,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-                NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+                NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
                 for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
                     [annotations addObject:item];
                 }
                 // jsonable arg
@@ -1627,9 +1628,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-                NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
+                NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
                 for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
                     [overlays addObject:item];
                 }
         
@@ -1682,9 +1683,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-                NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
+                NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
                 for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
                     [overlays addObject:item];
                 }
         
@@ -2491,18 +2492,18 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-                NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+                NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
                 for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
                     [partPt addObject:item];
                 }
                 // jsonable arg
                 CGFloat lineWidth = [args[@"lineWidth"] floatValue];
                 // list arg
                 NSArray<NSNumber*>* textureIndexsRefArray = (NSArray<NSNumber*> *) args[@"textureIndexs"];
-                NSMutableArray<NSArray*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
+                NSMutableArray<NSObject*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
                 for (int __i__ = 0; __i__ < textureIndexsRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
                     [textureIndexs addObject:item];
                 }
                 // jsonable arg
@@ -2532,18 +2533,18 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-                NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+                NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
                 for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
                     [partPt addObject:item];
                 }
                 // jsonable arg
                 CGFloat lineWidth = [args[@"lineWidth"] floatValue];
                 // list arg
                 NSArray<NSNumber*>* textureIndexsRefArray = (NSArray<NSNumber*> *) args[@"textureIndexs"];
-                NSMutableArray<NSArray*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
+                NSMutableArray<NSObject*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
                 for (int __i__ = 0; __i__ < textureIndexsRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
                     [textureIndexs addObject:item];
                 }
                 // jsonable arg
@@ -2624,9 +2625,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-                NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+                NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
                 for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
                     [partPt addObject:item];
                 }
                 // jsonable arg
@@ -2666,9 +2667,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-                NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+                NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
                 for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
                     [partPt addObject:item];
                 }
                 // jsonable arg
@@ -2911,9 +2912,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* textureImagesRefArray = (NSArray<NSNumber*> *) args[@"textureImages"];
-                NSMutableArray<NSArray<UIImage*>*>* textureImages = [NSMutableArray arrayWithCapacity:textureImagesRefArray.count];
+                NSMutableArray<UIImage*>* textureImages = [NSMutableArray arrayWithCapacity:textureImagesRefArray.count];
                 for (int __i__ = 0; __i__ < textureImagesRefArray.count; __i__++) {
-                    NSArray<UIImage*>* item = (NSArray<UIImage*>*) HEAP[[textureImagesRefArray objectAtIndex:__i__]];
+                    UIImage* item = (UIImage*) HEAP[[textureImagesRefArray objectAtIndex:__i__]];
                     [textureImages addObject:item];
                 }
         

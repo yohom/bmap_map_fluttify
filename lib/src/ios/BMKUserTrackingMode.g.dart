@@ -5,7 +5,27 @@
 
 enum BMKUserTrackingMode {
   BMKUserTrackingModeNone /* 0 */,
-  BMKUserTrackingModeHeading /* 0 */,
-  BMKUserTrackingModeFollow /* 0 */,
-  BMKUserTrackingModeFollowWithHeading /* 0 */
+  BMKUserTrackingModeHeading /* null */,
+  BMKUserTrackingModeFollow /* null */,
+  BMKUserTrackingModeFollowWithHeading /* null */
+}
+
+extension BMKUserTrackingModeToX on BMKUserTrackingMode {
+  int toValue() {
+    switch (this) {
+      case BMKUserTrackingMode.BMKUserTrackingModeNone: return 0;
+      case BMKUserTrackingMode.BMKUserTrackingModeHeading: return BMKUserTrackingMode.BMKUserTrackingModeHeading.index + 0;
+      case BMKUserTrackingMode.BMKUserTrackingModeFollow: return BMKUserTrackingMode.BMKUserTrackingModeFollow.index + 0;
+      case BMKUserTrackingMode.BMKUserTrackingModeFollowWithHeading: return BMKUserTrackingMode.BMKUserTrackingModeFollowWithHeading.index + 0;
+    }
+  }
+}
+
+extension BMKUserTrackingModeFromX on int {
+  BMKUserTrackingMode toBMKUserTrackingMode() {
+    switch (this) {
+      case 0: return BMKUserTrackingMode.BMKUserTrackingModeNone;
+      default: return BMKUserTrackingMode.values[this + 0];
+    }
+  }
 }

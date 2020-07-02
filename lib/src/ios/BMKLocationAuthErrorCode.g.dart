@@ -9,3 +9,26 @@ enum BMKLocationAuthErrorCode {
   BMKLocationAuthErrorNetworkFailed /* 1 */,
   BMKLocationAuthErrorFailed /* 2 */
 }
+
+extension BMKLocationAuthErrorCodeToX on BMKLocationAuthErrorCode {
+  int toValue() {
+    switch (this) {
+      case BMKLocationAuthErrorCode.BMKLocationAuthErrorUnknown: return -1;
+      case BMKLocationAuthErrorCode.BMKLocationAuthErrorSuccess: return 0;
+      case BMKLocationAuthErrorCode.BMKLocationAuthErrorNetworkFailed: return 1;
+      case BMKLocationAuthErrorCode.BMKLocationAuthErrorFailed: return 2;
+    }
+  }
+}
+
+extension BMKLocationAuthErrorCodeFromX on int {
+  BMKLocationAuthErrorCode toBMKLocationAuthErrorCode() {
+    switch (this) {
+      case -1: return BMKLocationAuthErrorCode.BMKLocationAuthErrorUnknown;
+      case 0: return BMKLocationAuthErrorCode.BMKLocationAuthErrorSuccess;
+      case 1: return BMKLocationAuthErrorCode.BMKLocationAuthErrorNetworkFailed;
+      case 2: return BMKLocationAuthErrorCode.BMKLocationAuthErrorFailed;
+      default: return BMKLocationAuthErrorCode.values[this + -1];
+    }
+  }
+}

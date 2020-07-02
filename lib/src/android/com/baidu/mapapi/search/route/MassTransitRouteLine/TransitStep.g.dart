@@ -452,7 +452,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.values[__result__];
+      final __return__ = (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType();
     
       return __return__;
     }
@@ -466,7 +466,7 @@ class com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep extends com
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep::setVehileType', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep::setVehileType', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -853,7 +853,7 @@ extension com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_Batch o
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType()).toList();
     
       return typedResult;
     }
@@ -866,7 +866,7 @@ extension com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_Batch o
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep::setVehileType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep::setVehileType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

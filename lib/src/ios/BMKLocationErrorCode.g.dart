@@ -13,3 +13,34 @@ enum BMKLocationErrorCode {
   BMKLocationErrorGetExtraParseFailed /* 6 */,
   BMKLocationErrorFailureAuth /* 7 */
 }
+
+extension BMKLocationErrorCodeToX on BMKLocationErrorCode {
+  int toValue() {
+    switch (this) {
+      case BMKLocationErrorCode.BMKLocationErrorUnKnown: return 0;
+      case BMKLocationErrorCode.BMKLocationErrorLocFailed: return 1;
+      case BMKLocationErrorCode.BMKLocationErrorDenied: return 2;
+      case BMKLocationErrorCode.BMKLocationErrorNetWork: return 3;
+      case BMKLocationErrorCode.BMKLocationErrorHeadingFailed: return 4;
+      case BMKLocationErrorCode.BMKLocationErrorGetExtraNetworkFailed: return 5;
+      case BMKLocationErrorCode.BMKLocationErrorGetExtraParseFailed: return 6;
+      case BMKLocationErrorCode.BMKLocationErrorFailureAuth: return 7;
+    }
+  }
+}
+
+extension BMKLocationErrorCodeFromX on int {
+  BMKLocationErrorCode toBMKLocationErrorCode() {
+    switch (this) {
+      case 0: return BMKLocationErrorCode.BMKLocationErrorUnKnown;
+      case 1: return BMKLocationErrorCode.BMKLocationErrorLocFailed;
+      case 2: return BMKLocationErrorCode.BMKLocationErrorDenied;
+      case 3: return BMKLocationErrorCode.BMKLocationErrorNetWork;
+      case 4: return BMKLocationErrorCode.BMKLocationErrorHeadingFailed;
+      case 5: return BMKLocationErrorCode.BMKLocationErrorGetExtraNetworkFailed;
+      case 6: return BMKLocationErrorCode.BMKLocationErrorGetExtraParseFailed;
+      case 7: return BMKLocationErrorCode.BMKLocationErrorFailureAuth;
+      default: return BMKLocationErrorCode.values[this + 0];
+    }
+  }
+}

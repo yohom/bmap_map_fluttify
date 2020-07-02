@@ -64,7 +64,7 @@ class com_baidu_mapapi_search_core_SearchResult extends java_lang_Object with an
   Future<com_baidu_mapapi_search_core_SearchResult_ERRORNO> get_error() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_error", {'refId': refId});
   
-    return com_baidu_mapapi_search_core_SearchResult_ERRORNO.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_search_core_SearchResult_ERRORNO();
   }
   
   Future<int> get_status() async {
@@ -99,7 +99,7 @@ extension com_baidu_mapapi_search_core_SearchResult_Batch on List<com_baidu_mapa
   //region getters
   Future<List<com_baidu_mapapi_search_core_SearchResult_ERRORNO>> get_error_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_error_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_core_SearchResult_ERRORNO.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_core_SearchResult_ERRORNO()).toList();
   
     return typedResult;
   }

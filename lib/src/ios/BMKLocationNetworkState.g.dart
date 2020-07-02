@@ -5,9 +5,31 @@
 
 enum BMKLocationNetworkState {
   BMKLocationNetworkStateUnknown /* 0 */,
-  BMKLocationNetworkStateWifi /* 0 */,
-  BMKLocationNetworkStateWifiHotSpot /* 0 */,
-  BMKLocationNetworkStateMobile2G /* 0 */,
-  BMKLocationNetworkStateMobile3G /* 0 */,
-  BMKLocationNetworkStateMobile4G /* 0 */
+  BMKLocationNetworkStateWifi /* null */,
+  BMKLocationNetworkStateWifiHotSpot /* null */,
+  BMKLocationNetworkStateMobile2G /* null */,
+  BMKLocationNetworkStateMobile3G /* null */,
+  BMKLocationNetworkStateMobile4G /* null */
+}
+
+extension BMKLocationNetworkStateToX on BMKLocationNetworkState {
+  int toValue() {
+    switch (this) {
+      case BMKLocationNetworkState.BMKLocationNetworkStateUnknown: return 0;
+      case BMKLocationNetworkState.BMKLocationNetworkStateWifi: return BMKLocationNetworkState.BMKLocationNetworkStateWifi.index + 0;
+      case BMKLocationNetworkState.BMKLocationNetworkStateWifiHotSpot: return BMKLocationNetworkState.BMKLocationNetworkStateWifiHotSpot.index + 0;
+      case BMKLocationNetworkState.BMKLocationNetworkStateMobile2G: return BMKLocationNetworkState.BMKLocationNetworkStateMobile2G.index + 0;
+      case BMKLocationNetworkState.BMKLocationNetworkStateMobile3G: return BMKLocationNetworkState.BMKLocationNetworkStateMobile3G.index + 0;
+      case BMKLocationNetworkState.BMKLocationNetworkStateMobile4G: return BMKLocationNetworkState.BMKLocationNetworkStateMobile4G.index + 0;
+    }
+  }
+}
+
+extension BMKLocationNetworkStateFromX on int {
+  BMKLocationNetworkState toBMKLocationNetworkState() {
+    switch (this) {
+      case 0: return BMKLocationNetworkState.BMKLocationNetworkStateUnknown;
+      default: return BMKLocationNetworkState.values[this + 0];
+    }
+  }
 }

@@ -500,7 +500,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.location.BDLocationListener::Callback')
+    MethodChannel('com.baidu.location.LocationClient::registerNotifyLocationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -540,7 +540,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.location.BDLocationListener::Callback')
+    MethodChannel('com.baidu.location.LocationClient::registerLocationListener__com_baidu_location_BDLocationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -580,7 +580,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.location.BDLocationListener::Callback')
+    MethodChannel('com.baidu.location.LocationClient::unRegisterLocationListener__com_baidu_location_BDLocationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

@@ -65,7 +65,7 @@ class com_baidu_mapapi_map_offline_MKOfflineMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.offline.MKOfflineMapListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.offline.MKOfflineMap::init::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

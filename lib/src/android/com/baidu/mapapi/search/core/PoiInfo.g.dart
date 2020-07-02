@@ -105,7 +105,7 @@ class com_baidu_mapapi_search_core_PoiInfo extends java_lang_Object with android
   Future<com_baidu_mapapi_search_core_PoiInfo_POITYPE> get_type() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.PoiInfo::get_type", {'refId': refId});
   
-    return com_baidu_mapapi_search_core_PoiInfo_POITYPE.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_search_core_PoiInfo_POITYPE();
   }
   
   Future<com_baidu_mapapi_model_LatLng> get_location() async {
@@ -966,7 +966,7 @@ class com_baidu_mapapi_search_core_PoiInfo extends java_lang_Object with android
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_baidu_mapapi_search_core_PoiInfo_POITYPE.values[__result__];
+      final __return__ = (__result__ as int).tocom_baidu_mapapi_search_core_PoiInfo_POITYPE();
     
       return __return__;
     }
@@ -980,7 +980,7 @@ class com_baidu_mapapi_search_core_PoiInfo extends java_lang_Object with android
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::setType', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::setType', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -1265,7 +1265,7 @@ extension com_baidu_mapapi_search_core_PoiInfo_Batch on List<com_baidu_mapapi_se
   
   Future<List<com_baidu_mapapi_search_core_PoiInfo_POITYPE>> get_type_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.PoiInfo::get_type_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_core_PoiInfo_POITYPE.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_core_PoiInfo_POITYPE()).toList();
   
     return typedResult;
   }
@@ -2020,7 +2020,7 @@ extension com_baidu_mapapi_search_core_PoiInfo_Batch on List<com_baidu_mapapi_se
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_core_PoiInfo_POITYPE.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_core_PoiInfo_POITYPE()).toList();
     
       return typedResult;
     }
@@ -2033,7 +2033,7 @@ extension com_baidu_mapapi_search_core_PoiInfo_Batch on List<com_baidu_mapapi_se
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::setType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::setType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

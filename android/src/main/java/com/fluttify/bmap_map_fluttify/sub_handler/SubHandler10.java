@@ -1812,7 +1812,7 @@ public class SubHandler10 {
                 try {
                     ref.setOnGetRoutePlanResultListener(new com.baidu.mapapi.search.route.OnGetRoutePlanResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.route.OnGetRoutePlanResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.route.RoutePlanSearch::setOnGetRoutePlanResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

@@ -4,8 +4,28 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_utils_CoordinateConverter_CoordType {
-  GPS /* 0 */,
-  COMMON /* 0 */,
-  BD09LL /* 0 */,
-  BD09MC /* 0 */
+  GPS /* null */,
+  COMMON /* null */,
+  BD09LL /* null */,
+  BD09MC /* null */
+}
+
+extension com_baidu_mapapi_utils_CoordinateConverter_CoordTypeToX on com_baidu_mapapi_utils_CoordinateConverter_CoordType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_utils_CoordinateConverter_CoordType.GPS: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.GPS.index + 0;
+      case com_baidu_mapapi_utils_CoordinateConverter_CoordType.COMMON: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.COMMON.index + 0;
+      case com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09LL: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09LL.index + 0;
+      case com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09MC: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09MC.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_utils_CoordinateConverter_CoordTypeFromX on int {
+  com_baidu_mapapi_utils_CoordinateConverter_CoordType tocom_baidu_mapapi_utils_CoordinateConverter_CoordType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.values[this + 0];
+    }
+  }
 }

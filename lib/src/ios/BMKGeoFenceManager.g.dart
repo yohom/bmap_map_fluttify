@@ -45,7 +45,7 @@ class BMKGeoFenceManager extends NSObject  {
   Future<BMKGeoFenceActiveAction> get_activeAction() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceManager::get_activeAction", {'refId': refId});
   
-    return BMKGeoFenceActiveAction.values[__result__];
+    return (__result__ as int).toBMKGeoFenceActiveAction();
   }
   
   Future<bool> get_pausesLocationUpdatesAutomatically() async {
@@ -132,7 +132,7 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID', {"center": center?.refId, "radius": radius, "type": type.index + 0, "customID": customID, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID', {"center": center?.refId, "radius": radius, "type": type.toValue(), "customID": customID, "refId": refId});
   
   
     // handle native call
@@ -156,7 +156,7 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID', {"coordinates": coordinates.map((__it__) => __it__?.refId).toList(), "count": count, "type": type.index + 0, "customID": customID, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID', {"coordinates": coordinates.map((__it__) => __it__?.refId).toList(), "count": count, "type": type.toValue(), "customID": customID, "refId": refId});
   
   
     // handle native call
@@ -275,7 +275,7 @@ extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
   //region getters
   Future<List<BMKGeoFenceActiveAction>> get_activeAction_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceManager::get_activeAction_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKGeoFenceActiveAction.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKGeoFenceActiveAction()).toList();
   
     return typedResult;
   }
@@ -325,7 +325,7 @@ extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"center": center[__i__].refId, "radius": radius[__i__], "type": type[__i__].index, "customID": customID[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"center": center[__i__].refId, "radius": radius[__i__], "type": type[__i__].toValue(), "customID": customID[__i__], "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -345,7 +345,7 @@ extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinates": coordinates[__i__].map((it) => it.refId).toList(), "count": count[__i__], "type": type[__i__].index, "customID": customID[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinates": coordinates[__i__].map((it) => it.refId).toList(), "count": count[__i__], "type": type[__i__].toValue(), "customID": customID[__i__], "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

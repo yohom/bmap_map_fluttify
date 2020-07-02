@@ -5,7 +5,27 @@
 
 enum BMKLocationCoordinateType {
   BMKLocationCoordinateTypeBMK09LL /* 0 */,
-  BMKLocationCoordinateTypeBMK09MC /* 0 */,
-  BMKLocationCoordinateTypeWGS84 /* 0 */,
-  BMKLocationCoordinateTypeGCJ02 /* 0 */
+  BMKLocationCoordinateTypeBMK09MC /* null */,
+  BMKLocationCoordinateTypeWGS84 /* null */,
+  BMKLocationCoordinateTypeGCJ02 /* null */
+}
+
+extension BMKLocationCoordinateTypeToX on BMKLocationCoordinateType {
+  int toValue() {
+    switch (this) {
+      case BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09LL: return 0;
+      case BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09MC: return BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09MC.index + 0;
+      case BMKLocationCoordinateType.BMKLocationCoordinateTypeWGS84: return BMKLocationCoordinateType.BMKLocationCoordinateTypeWGS84.index + 0;
+      case BMKLocationCoordinateType.BMKLocationCoordinateTypeGCJ02: return BMKLocationCoordinateType.BMKLocationCoordinateTypeGCJ02.index + 0;
+    }
+  }
+}
+
+extension BMKLocationCoordinateTypeFromX on int {
+  BMKLocationCoordinateType toBMKLocationCoordinateType() {
+    switch (this) {
+      case 0: return BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09LL;
+      default: return BMKLocationCoordinateType.values[this + 0];
+    }
+  }
 }

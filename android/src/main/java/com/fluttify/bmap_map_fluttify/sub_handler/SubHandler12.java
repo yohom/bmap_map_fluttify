@@ -82,7 +82,7 @@ public class SubHandler12 {
                 try {
                     ref.setOnGetShareUrlResultListener(new com.baidu.mapapi.search.share.OnGetShareUrlResultListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.share.OnGetShareUrlResultListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.search.share.ShareUrlSearch::setOnGetShareUrlResultListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

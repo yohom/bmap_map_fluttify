@@ -92,7 +92,7 @@ class com_baidu_mapapi_search_sug_SuggestionSearch extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.sug.OnGetSuggestionResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.sug.SuggestionSearch::setOnGetSuggestionResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

@@ -58,7 +58,7 @@ class com_baidu_mapapi_OpenLogUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable', {"var0": var0.index + 0, "var1": var1});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable', {"var0": var0.toValue(), "var1": var1});
   
   
     // handle native call
@@ -94,7 +94,7 @@ extension com_baidu_mapapi_OpenLogUtil_Batch on List<com_baidu_mapapi_OpenLogUti
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__].index, "var1": var1[__i__]}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__].toValue(), "var1": var1[__i__]}]);
   
   
     // convert native result to dart side object

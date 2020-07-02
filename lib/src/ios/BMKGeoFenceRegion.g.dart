@@ -57,13 +57,13 @@ class BMKGeoFenceRegion extends NSObject with NSCopying {
   Future<BMKGeoFenceRegionStatus> get_fenceStatus() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceRegion::get_fenceStatus", {'refId': refId});
   
-    return BMKGeoFenceRegionStatus.values[__result__];
+    return (__result__ as int).toBMKGeoFenceRegionStatus();
   }
   
   Future<BMKLocationCoordinateType> get_coordinateType() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceRegion::get_coordinateType", {'refId': refId});
   
-    return BMKLocationCoordinateType.values[__result__];
+    return (__result__ as int).toBMKLocationCoordinateType();
   }
   
   Future<double> get_lastEventTime() async {
@@ -108,7 +108,7 @@ class BMKGeoFenceRegion extends NSObject with NSCopying {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = BMKGeoFenceRegionStatus.values[__result__];
+      final __return__ = (__result__ as int).toBMKGeoFenceRegionStatus();
     
       return __return__;
     }
@@ -135,14 +135,14 @@ extension BMKGeoFenceRegion_Batch on List<BMKGeoFenceRegion> {
   
   Future<List<BMKGeoFenceRegionStatus>> get_fenceStatus_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceRegion::get_fenceStatus_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKGeoFenceRegionStatus.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKGeoFenceRegionStatus()).toList();
   
     return typedResult;
   }
   
   Future<List<BMKLocationCoordinateType>> get_coordinateType_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceRegion::get_coordinateType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLocationCoordinateType.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLocationCoordinateType()).toList();
   
     return typedResult;
   }
@@ -186,7 +186,7 @@ extension BMKGeoFenceRegion_Batch on List<BMKGeoFenceRegion> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKGeoFenceRegionStatus.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKGeoFenceRegionStatus()).toList();
     
       return typedResult;
     }

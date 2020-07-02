@@ -13,6 +13,7 @@ extern BOOL enableLog;
 
 @implementation BmapMapFluttifyPlugin (SubHandler4)
 - (NSDictionary<NSString*, Handler>*) getSubHandler4 {
+    __weak __typeof(self)weakSelf = self;
     return @{
         @"BMKMapView::set_zoomEnabledWithTap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
@@ -681,9 +682,9 @@ extern BOOL enableLog;
             // args
             // list arg
             NSArray<NSNumber*>* mDataRefArray = (NSArray<NSNumber*> *) args[@"mData"];
-            NSMutableArray<NSMutableArray*>* mData = [NSMutableArray arrayWithCapacity:mDataRefArray.count];
+            NSMutableArray<NSObject*>* mData = [NSMutableArray arrayWithCapacity:mDataRefArray.count];
             for (int __i__ = 0; __i__ < mDataRefArray.count; __i__++) {
-                NSMutableArray* item = (NSMutableArray*) HEAP[[mDataRefArray objectAtIndex:__i__]];
+                NSObject* item = (NSObject*) HEAP[[mDataRefArray objectAtIndex:__i__]];
                 [mData addObject:item];
             }
         
@@ -703,9 +704,9 @@ extern BOOL enableLog;
             // args
             // list arg
             NSArray<NSNumber*>* colorsRefArray = (NSArray<NSNumber*> *) args[@"colors"];
-            NSMutableArray<NSArray<UIColor*>*>* colors = [NSMutableArray arrayWithCapacity:colorsRefArray.count];
+            NSMutableArray<UIColor*>* colors = [NSMutableArray arrayWithCapacity:colorsRefArray.count];
             for (int __i__ = 0; __i__ < colorsRefArray.count; __i__++) {
-                NSArray<UIColor*>* item = (NSArray<UIColor*>*) HEAP[[colorsRefArray objectAtIndex:__i__]];
+                UIColor* item = (UIColor*) HEAP[[colorsRefArray objectAtIndex:__i__]];
                 [colors addObject:item];
             }
         
@@ -1324,9 +1325,9 @@ extern BOOL enableLog;
             // args
             // list arg
             NSArray<NSNumber*>* childCitiesRefArray = (NSArray<NSNumber*> *) args[@"childCities"];
-            NSMutableArray<NSArray*>* childCities = [NSMutableArray arrayWithCapacity:childCitiesRefArray.count];
+            NSMutableArray<NSObject*>* childCities = [NSMutableArray arrayWithCapacity:childCitiesRefArray.count];
             for (int __i__ = 0; __i__ < childCitiesRefArray.count; __i__++) {
-                NSArray* item = (NSArray*) HEAP[[childCitiesRefArray objectAtIndex:__i__]];
+                NSObject* item = (NSObject*) HEAP[[childCitiesRefArray objectAtIndex:__i__]];
                 [childCities addObject:item];
             }
         
@@ -1521,7 +1522,7 @@ extern BOOL enableLog;
             // ref
             BMKOfflineMap* ref = (BMKOfflineMap*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
-            ref.delegate = self;
+            ref.delegate = weakSelf;
             methodResult(@"success");
         },
         
@@ -1537,7 +1538,7 @@ extern BOOL enableLog;
             // ref
             BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
-            ref.delegate = self;
+            ref.delegate = weakSelf;
             methodResult(@"success");
         },
         
@@ -1808,7 +1809,7 @@ extern BOOL enableLog;
             // ref
             BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
-            ref.delegate = self;
+            ref.delegate = weakSelf;
             methodResult(@"success");
         },
         
@@ -1960,9 +1961,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* lineDashPatternRefArray = (NSArray<NSNumber*> *) args[@"lineDashPattern"];
-                NSMutableArray<NSArray*>* lineDashPattern = [NSMutableArray arrayWithCapacity:lineDashPatternRefArray.count];
+                NSMutableArray<NSObject*>* lineDashPattern = [NSMutableArray arrayWithCapacity:lineDashPatternRefArray.count];
                 for (int __i__ = 0; __i__ < lineDashPatternRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[lineDashPatternRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[lineDashPatternRefArray objectAtIndex:__i__]];
                     [lineDashPattern addObject:item];
                 }
         
@@ -2137,9 +2138,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* mColorsRefArray = (NSArray<NSNumber*> *) args[@"mColors"];
-                NSMutableArray<NSArray*>* mColors = [NSMutableArray arrayWithCapacity:mColorsRefArray.count];
+                NSMutableArray<NSObject*>* mColors = [NSMutableArray arrayWithCapacity:mColorsRefArray.count];
                 for (int __i__ = 0; __i__ < mColorsRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[mColorsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[mColorsRefArray objectAtIndex:__i__]];
                     [mColors addObject:item];
                 }
         
@@ -2160,9 +2161,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* mStartPointsRefArray = (NSArray<NSNumber*> *) args[@"mStartPoints"];
-                NSMutableArray<NSArray*>* mStartPoints = [NSMutableArray arrayWithCapacity:mStartPointsRefArray.count];
+                NSMutableArray<NSObject*>* mStartPoints = [NSMutableArray arrayWithCapacity:mStartPointsRefArray.count];
                 for (int __i__ = 0; __i__ < mStartPointsRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[mStartPointsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[mStartPointsRefArray objectAtIndex:__i__]];
                     [mStartPoints addObject:item];
                 }
         
@@ -2219,9 +2220,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* arrStrFloorsRefArray = (NSArray<NSNumber*> *) args[@"arrStrFloors"];
-                NSMutableArray<NSMutableArray*>* arrStrFloors = [NSMutableArray arrayWithCapacity:arrStrFloorsRefArray.count];
+                NSMutableArray<NSObject*>* arrStrFloors = [NSMutableArray arrayWithCapacity:arrStrFloorsRefArray.count];
                 for (int __i__ = 0; __i__ < arrStrFloorsRefArray.count; __i__++) {
-                    NSMutableArray* item = (NSMutableArray*) HEAP[[arrStrFloorsRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[arrStrFloorsRefArray objectAtIndex:__i__]];
                     [arrStrFloors addObject:item];
                 }
         
@@ -3456,9 +3457,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* mDataRefArray = (NSArray<NSNumber*> *) args[@"mData"];
-                NSMutableArray<NSMutableArray*>* mData = [NSMutableArray arrayWithCapacity:mDataRefArray.count];
+                NSMutableArray<NSObject*>* mData = [NSMutableArray arrayWithCapacity:mDataRefArray.count];
                 for (int __i__ = 0; __i__ < mDataRefArray.count; __i__++) {
-                    NSMutableArray* item = (NSMutableArray*) HEAP[[mDataRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[mDataRefArray objectAtIndex:__i__]];
                     [mData addObject:item];
                 }
         
@@ -3479,9 +3480,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* colorsRefArray = (NSArray<NSNumber*> *) args[@"colors"];
-                NSMutableArray<NSArray<UIColor*>*>* colors = [NSMutableArray arrayWithCapacity:colorsRefArray.count];
+                NSMutableArray<UIColor*>* colors = [NSMutableArray arrayWithCapacity:colorsRefArray.count];
                 for (int __i__ = 0; __i__ < colorsRefArray.count; __i__++) {
-                    NSArray<UIColor*>* item = (NSArray<UIColor*>*) HEAP[[colorsRefArray objectAtIndex:__i__]];
+                    UIColor* item = (UIColor*) HEAP[[colorsRefArray objectAtIndex:__i__]];
                     [colors addObject:item];
                 }
         

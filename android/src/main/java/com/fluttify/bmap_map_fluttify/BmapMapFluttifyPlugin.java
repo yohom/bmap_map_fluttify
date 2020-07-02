@@ -78,7 +78,7 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         handlerMapList.add(SubHandler26.getSubHandler(messenger));
         handlerMapList.add(SubHandler27.getSubHandler(messenger));
         handlerMapList.add(SubHandler28.getSubHandler(messenger));
-        handlerMapList.add(SubHandlerCustom.getSubHandler(messenger));
+        handlerMapList.add(SubHandlerCustom.getSubHandler(messenger, registrar.activity()));
 
         channel.setMethodCallHandler(plugin);
 
@@ -133,7 +133,6 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
         handlerMapList.add(SubHandler26.getSubHandler(messenger));
         handlerMapList.add(SubHandler27.getSubHandler(messenger));
         handlerMapList.add(SubHandler28.getSubHandler(messenger));
-        handlerMapList.add(SubHandlerCustom.getSubHandler(messenger));
 
         channel.setMethodCallHandler(this);
     }
@@ -151,6 +150,8 @@ public class BmapMapFluttifyPlugin implements FlutterPlugin, MethodChannel.Metho
             Log.d("fluttify-java", "BmapMapFluttifyPlugin::onAttachedToActivity@" + binding);
         }
         Activity activity = binding.getActivity();
+
+        handlerMapList.add(SubHandlerCustom.getSubHandler(messenger, activity));
 
         // register platform view
         platformViewRegistry.registerViewFactory("com.fluttify/com.baidu.mapapi.map.TextureMapView", new TextureMapViewFactory(messenger, activity));

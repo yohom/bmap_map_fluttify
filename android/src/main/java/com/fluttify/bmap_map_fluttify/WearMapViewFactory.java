@@ -72,7 +72,7 @@ class WearMapViewFactory extends PlatformViewFactory {
             try {
                 ref.setOnDismissCallbackListener(new com.baidu.mapapi.map.WearMapView.OnDismissCallback() {
                     // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView.OnDismissCallback::Callback");
+                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback");
                     android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
         
                     // call dart method
@@ -387,7 +387,7 @@ class WearMapViewFactory extends PlatformViewFactory {
             try {
                 ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                     // method channel
-                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.CustomMapStyleCallBack::Callback");
+                    MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback");
                     android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
         
                     // call dart method

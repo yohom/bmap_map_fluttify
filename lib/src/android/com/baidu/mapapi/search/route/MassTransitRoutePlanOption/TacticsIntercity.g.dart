@@ -4,7 +4,26 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity {
-  ETRANS_LEAST_TIME /* 0 */,
-  ETRANS_START_EARLY /* 0 */,
-  ETRANS_LEAST_PRICE /* 0 */
+  ETRANS_LEAST_TIME /* null */,
+  ETRANS_START_EARLY /* null */,
+  ETRANS_LEAST_PRICE /* null */
+}
+
+extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercityToX on com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.ETRANS_LEAST_TIME: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.ETRANS_LEAST_TIME.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.ETRANS_START_EARLY: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.ETRANS_START_EARLY.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.ETRANS_LEAST_PRICE: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.ETRANS_LEAST_PRICE.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercityFromX on int {
+  com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.values[this + 0];
+    }
+  }
 }

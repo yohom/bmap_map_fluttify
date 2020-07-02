@@ -73,7 +73,7 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
               }
         
               // handle the native call
-              result(TypeOpBmapMapFluttifyIOS((args['tileImage'] as Object))?.as__<UIImage>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              if (result != null) result(TypeOpBmapMapFluttifyIOS((args['tileImage'] as Object))?.as__<UIImage>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
               break;
             default:
               break;

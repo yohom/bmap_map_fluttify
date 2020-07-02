@@ -50,11 +50,29 @@ extern BOOL enableLog;
 }
 
 - (UIView *)view {
+  __weak __typeof(self)weakSelf = self;
   if (_view == nil) {
     _view = [[BMKOverlayView alloc] initWithFrame:_frame];
     // 这里用一个magic number调整一下id
     HEAP[@(2147483647 - _viewId)] = _view;
   }
+
+  //region method call handler
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKOverlayView"
+            binaryMessenger:[_registrar messenger]];
+
+  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
+    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
+
+    __strong __typeof(weakSelf) strongSelf = weakSelf;
+    if (strongSelf->_handlerMap[methodCall.method] != nil) {
+      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
+    } else {
+      methodResult(FlutterMethodNotImplemented);
+    }
+  }];
+  //endregion
 
   //region handlers
   _handlerMap = @{
@@ -428,18 +446,18 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-          NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+          NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
           for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
               [partPt addObject:item];
           }
           // jsonable arg
           CGFloat lineWidth = [args[@"lineWidth"] floatValue];
           // list arg
           NSArray<NSNumber*>* textureIndexsRefArray = (NSArray<NSNumber*> *) args[@"textureIndexs"];
-          NSMutableArray<NSArray*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
+          NSMutableArray<NSObject*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
           for (int __i__ = 0; __i__ < textureIndexsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
               [textureIndexs addObject:item];
           }
           // jsonable arg
@@ -466,18 +484,18 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-          NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+          NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
           for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
               [partPt addObject:item];
           }
           // jsonable arg
           CGFloat lineWidth = [args[@"lineWidth"] floatValue];
           // list arg
           NSArray<NSNumber*>* textureIndexsRefArray = (NSArray<NSNumber*> *) args[@"textureIndexs"];
-          NSMutableArray<NSArray*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
+          NSMutableArray<NSObject*>* textureIndexs = [NSMutableArray arrayWithCapacity:textureIndexsRefArray.count];
           for (int __i__ = 0; __i__ < textureIndexsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[textureIndexsRefArray objectAtIndex:__i__]];
               [textureIndexs addObject:item];
           }
           // jsonable arg
@@ -552,9 +570,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-          NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+          NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
           for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
               [partPt addObject:item];
           }
           // jsonable arg
@@ -591,9 +609,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* partPtRefArray = (NSArray<NSNumber*> *) args[@"partPt"];
-          NSMutableArray<NSArray*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
+          NSMutableArray<NSObject*>* partPt = [NSMutableArray arrayWithCapacity:partPtRefArray.count];
           for (int __i__ = 0; __i__ < partPtRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[partPtRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[partPtRefArray objectAtIndex:__i__]];
               [partPt addObject:item];
           }
           // jsonable arg
@@ -815,9 +833,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* textureImagesRefArray = (NSArray<NSNumber*> *) args[@"textureImages"];
-          NSMutableArray<NSArray<UIImage*>*>* textureImages = [NSMutableArray arrayWithCapacity:textureImagesRefArray.count];
+          NSMutableArray<UIImage*>* textureImages = [NSMutableArray arrayWithCapacity:textureImagesRefArray.count];
           for (int __i__ = 0; __i__ < textureImagesRefArray.count; __i__++) {
-              NSArray<UIImage*>* item = (NSArray<UIImage*>*) HEAP[[textureImagesRefArray objectAtIndex:__i__]];
+              UIImage* item = (UIImage*) HEAP[[textureImagesRefArray objectAtIndex:__i__]];
               [textureImages addObject:item];
           }
       
@@ -907,9 +925,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* colorsRefArray = (NSArray<NSNumber*> *) args[@"colors"];
-          NSMutableArray<NSArray<UIColor*>*>* colors = [NSMutableArray arrayWithCapacity:colorsRefArray.count];
+          NSMutableArray<UIColor*>* colors = [NSMutableArray arrayWithCapacity:colorsRefArray.count];
           for (int __i__ = 0; __i__ < colorsRefArray.count; __i__++) {
-              NSArray<UIColor*>* item = (NSArray<UIColor*>*) HEAP[[colorsRefArray objectAtIndex:__i__]];
+              UIColor* item = (UIColor*) HEAP[[colorsRefArray objectAtIndex:__i__]];
               [colors addObject:item];
           }
       
@@ -921,24 +939,6 @@ extern BOOL enableLog;
       },
       
   };
-  //endregion
-
-  //region method call handler
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKOverlayView"
-            binaryMessenger:[_registrar messenger]];
-
-  __weak __typeof(self)weakSelf = self;
-  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
-    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
-
-    __strong __typeof(weakSelf)strongSelf = weakSelf;
-    if (strongSelf->_handlerMap[methodCall.method] != nil) {
-      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
-    } else {
-      methodResult(FlutterMethodNotImplemented);
-    }
-  }];
   //endregion
   return _view;
 }

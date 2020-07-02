@@ -57,7 +57,7 @@ class BMKLocationManager extends NSObject  {
   Future<BMKLocationCoordinateType> get_coordinateType() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationManager::get_coordinateType", {'refId': refId});
   
-    return BMKLocationCoordinateType.values[__result__];
+    return (__result__ as int).toBMKLocationCoordinateType();
   }
   
   Future<bool> get_pausesLocationUpdatesAutomatically() async {
@@ -146,7 +146,7 @@ class BMKLocationManager extends NSObject  {
             }
         
             // handle the native call
-            delegate?.BMKLocationManager_didChangeAuthorizationStatus(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), CLAuthorizationStatus.values[args['status'] - 0]);
+            delegate?.BMKLocationManager_didChangeAuthorizationStatus(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), (args['status'] as int).toCLAuthorizationStatus());
             break;
           case 'Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration':
             // print log
@@ -173,7 +173,7 @@ class BMKLocationManager extends NSObject  {
             }
         
             // handle the native call
-            delegate?.BMKLocationManager_didUpdateNetworkState_orError(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), BMKLocationNetworkState.values[args['state'] - 0], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+            delegate?.BMKLocationManager_didUpdateNetworkState_orError(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), (args['state'] as int).toBMKLocationNetworkState(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
             break;
           default:
             break;
@@ -267,7 +267,7 @@ class BMKLocationManager extends NSObject  {
               }
         
               // handle the native call
-              completionBlock(TypeOpBmapMapFluttifyIOS((args['location'] as Object))?.as__<BMKLocation>(), BMKLocationNetworkState.values[args['state'] - 0], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              if (completionBlock != null) completionBlock(TypeOpBmapMapFluttifyIOS((args['location'] as Object))?.as__<BMKLocation>(), (args['state'] as int).toBMKLocationNetworkState(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
               break;
             default:
               break;
@@ -484,7 +484,7 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType', {"coordinate": coordinate?.refId, "srctype": srctype.index + 0, "destype": destype.index + 0});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType', {"coordinate": coordinate?.refId, "srctype": srctype.toValue(), "destype": destype.toValue()});
   
   
     // handle native call
@@ -508,7 +508,7 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType', {"coordinate": coordinate?.refId, "coortype": coortype.index + 0});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType', {"coordinate": coordinate?.refId, "coortype": coortype.toValue()});
   
   
     // handle native call
@@ -545,7 +545,7 @@ extension BMKLocationManager_Batch on List<BMKLocationManager> {
   
   Future<List<BMKLocationCoordinateType>> get_coordinateType_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationManager::get_coordinateType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLocationCoordinateType.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLocationCoordinateType()).toList();
   
     return typedResult;
   }
@@ -832,7 +832,7 @@ extension BMKLocationManager_Batch on List<BMKLocationManager> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__].refId, "srctype": srctype[__i__].index, "destype": destype[__i__].index}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__].refId, "srctype": srctype[__i__].toValue(), "destype": destype[__i__].toValue()}]);
   
   
     // convert native result to dart side object
@@ -852,7 +852,7 @@ extension BMKLocationManager_Batch on List<BMKLocationManager> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__].refId, "coortype": coortype[__i__].index}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__].refId, "coortype": coortype[__i__].toValue()}]);
   
   
     // convert native result to dart side object

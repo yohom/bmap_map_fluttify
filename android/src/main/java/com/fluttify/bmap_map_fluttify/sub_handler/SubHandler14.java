@@ -48,7 +48,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapStatusChangeListener(new com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -224,7 +224,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapTouchListener(new com.baidu.mapapi.map.BaiduMap.OnMapTouchListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -295,7 +295,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -400,7 +400,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapLoadedCallback(new com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -464,7 +464,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapRenderCallbadk(new com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -528,7 +528,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapDoubleClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -599,7 +599,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapLongClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -670,7 +670,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnPolylineClickListener(new com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -741,7 +741,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMarkerClickListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -812,7 +812,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMarkerDragListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -951,7 +951,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMyLocationClickListener(new com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -1015,7 +1015,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapDrawFrameCallback(new com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -1129,7 +1129,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnBaseIndoorMapListener(new com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -1203,7 +1203,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnMapRenderValidDataListener(new com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -1274,7 +1274,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnSynchronizationListener(new com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -1445,7 +1445,7 @@ public class SubHandler14 {
                 try {
                     ref.removeMarkerClickListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -2068,7 +2068,7 @@ public class SubHandler14 {
                 try {
                     ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.CustomMapStyleCallBack::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -5341,7 +5341,7 @@ public class SubHandler14 {
                 try {
                     ref.setOnDismissCallbackListener(new com.baidu.mapapi.map.WearMapView.OnDismissCallback() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView.OnDismissCallback::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -5656,7 +5656,7 @@ public class SubHandler14 {
                 try {
                     ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.CustomMapStyleCallBack::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -7177,7 +7177,7 @@ public class SubHandler14 {
                 try {
                     __result__ = ref.init(new com.baidu.mapapi.map.offline.MKOfflineMapListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.offline.MKOfflineMapListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.offline.MKOfflineMap::init::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

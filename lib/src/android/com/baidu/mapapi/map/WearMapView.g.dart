@@ -81,7 +81,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.WearMapView.OnDismissCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -126,7 +126,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setShape', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setShape', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -298,7 +298,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.CustomMapStyleCallBack::Callback')
+    MethodChannel('com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -796,7 +796,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setShape_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setShape_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

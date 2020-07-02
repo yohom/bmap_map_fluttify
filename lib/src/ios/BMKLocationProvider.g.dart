@@ -5,5 +5,23 @@
 
 enum BMKLocationProvider {
   BMKLocationProviderIOS /* 0 */,
-  BMKLocationProviderOther /* 0 */
+  BMKLocationProviderOther /* null */
+}
+
+extension BMKLocationProviderToX on BMKLocationProvider {
+  int toValue() {
+    switch (this) {
+      case BMKLocationProvider.BMKLocationProviderIOS: return 0;
+      case BMKLocationProvider.BMKLocationProviderOther: return BMKLocationProvider.BMKLocationProviderOther.index + 0;
+    }
+  }
+}
+
+extension BMKLocationProviderFromX on int {
+  BMKLocationProvider toBMKLocationProvider() {
+    switch (this) {
+      case 0: return BMKLocationProvider.BMKLocationProviderIOS;
+      default: return BMKLocationProvider.values[this + 0];
+    }
+  }
 }

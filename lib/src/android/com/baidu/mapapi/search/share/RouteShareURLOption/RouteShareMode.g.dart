@@ -4,8 +4,28 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode {
-  CAR_ROUTE_SHARE_MODE /* 0 */,
-  FOOT_ROUTE_SHARE_MODE /* 0 */,
-  CYCLE_ROUTE_SHARE_MODE /* 0 */,
-  BUS_ROUTE_SHARE_MODE /* 0 */
+  CAR_ROUTE_SHARE_MODE /* null */,
+  FOOT_ROUTE_SHARE_MODE /* null */,
+  CYCLE_ROUTE_SHARE_MODE /* null */,
+  BUS_ROUTE_SHARE_MODE /* null */
+}
+
+extension com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareModeToX on com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.CAR_ROUTE_SHARE_MODE: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.CAR_ROUTE_SHARE_MODE.index + 0;
+      case com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.FOOT_ROUTE_SHARE_MODE: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.FOOT_ROUTE_SHARE_MODE.index + 0;
+      case com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.CYCLE_ROUTE_SHARE_MODE: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.CYCLE_ROUTE_SHARE_MODE.index + 0;
+      case com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.BUS_ROUTE_SHARE_MODE: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.BUS_ROUTE_SHARE_MODE.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareModeFromX on int {
+  com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.values[this + 0];
+    }
+  }
 }

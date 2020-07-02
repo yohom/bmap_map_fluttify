@@ -68,7 +68,7 @@ class com_baidu_mapapi_search_poi_PoiSearch extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.poi.PoiSearch::setOnGetPoiSearchResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

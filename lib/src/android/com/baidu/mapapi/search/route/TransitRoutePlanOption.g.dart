@@ -63,7 +63,7 @@ class com_baidu_mapapi_search_route_TransitRoutePlanOption extends java_lang_Obj
   Future<com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy> get_mPolicy() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.TransitRoutePlanOption::get_mPolicy", {'refId': refId});
   
-    return com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.values[__result__];
+    return (__result__ as int).tocom_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy();
   }
   
   //endregion
@@ -176,7 +176,7 @@ class com_baidu_mapapi_search_route_TransitRoutePlanOption extends java_lang_Obj
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRoutePlanOption::policy', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRoutePlanOption::policy', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -220,7 +220,7 @@ extension com_baidu_mapapi_search_route_TransitRoutePlanOption_Batch on List<com
   
   Future<List<com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy>> get_mPolicy_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.TransitRoutePlanOption::get_mPolicy_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy()).toList();
   
     return typedResult;
   }
@@ -322,7 +322,7 @@ extension com_baidu_mapapi_search_route_TransitRoutePlanOption_Batch on List<com
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRoutePlanOption::policy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRoutePlanOption::policy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

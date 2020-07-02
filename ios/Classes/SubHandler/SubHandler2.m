@@ -13,6 +13,7 @@ extern BOOL enableLog;
 
 @implementation BmapMapFluttifyPlugin (SubHandler2)
 - (NSDictionary<NSString*, Handler>*) getSubHandler2 {
+    __weak __typeof(self)weakSelf = self;
     return @{
         @"BMKMapView::get_mapScaleBarPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log

@@ -1078,7 +1078,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::snapshot::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1286,7 +1286,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1353,7 +1353,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1393,7 +1393,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1442,7 +1442,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1482,7 +1482,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1522,7 +1522,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1562,7 +1562,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1602,7 +1602,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1642,7 +1642,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1682,7 +1682,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1740,7 +1740,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1780,7 +1780,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1820,7 +1820,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1860,7 +1860,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1900,7 +1900,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -1970,7 +1970,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.values[__result__];
+      final __return__ = (__result__ as int).tocom_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError();
     
       return __return__;
     }
@@ -2012,7 +2012,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -2240,7 +2240,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder', {"var1": var1.index + 0, "var2": var2.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder', {"var1": var1.toValue(), "var2": var2.toValue(), "refId": refId});
   
   
     // handle native call
@@ -2264,7 +2264,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable', {"var1": var1.index + 0, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable', {"var1": var1.toValue(), "var2": var2, "refId": refId});
   
   
     // handle native call
@@ -3351,7 +3351,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError()).toList();
     
       return typedResult;
     }
@@ -3544,7 +3544,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "var2": var2[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "var2": var2[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -3564,7 +3564,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "var2": var2[__i__], "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

@@ -250,7 +250,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::busStrategyType', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::busStrategyType', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -284,7 +284,7 @@ class com_baidu_mapapi_utils_route_RouteParaOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.values[__result__];
+      final __return__ = (__result__ as int).tocom_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType();
     
       return __return__;
     }
@@ -518,7 +518,7 @@ extension com_baidu_mapapi_utils_route_RouteParaOption_Batch on List<com_baidu_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::busStrategyType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.route.RouteParaOption::busStrategyType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -545,7 +545,7 @@ extension com_baidu_mapapi_utils_route_RouteParaOption_Batch on List<com_baidu_m
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType()).toList();
     
       return typedResult;
     }

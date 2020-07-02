@@ -4,5 +4,22 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_ModuleName {
-  TILE_OVERLAY_MODULE /* 0 */
+  TILE_OVERLAY_MODULE /* null */
+}
+
+extension com_baidu_mapapi_ModuleNameToX on com_baidu_mapapi_ModuleName {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_ModuleName.TILE_OVERLAY_MODULE: return com_baidu_mapapi_ModuleName.TILE_OVERLAY_MODULE.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_ModuleNameFromX on int {
+  com_baidu_mapapi_ModuleName tocom_baidu_mapapi_ModuleName() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_ModuleName.values[this + 0];
+    }
+  }
 }

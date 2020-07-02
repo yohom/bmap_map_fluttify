@@ -50,11 +50,29 @@ extern BOOL enableLog;
 }
 
 - (UIView *)view {
+  __weak __typeof(self)weakSelf = self;
   if (_view == nil) {
     _view = [[BMKActionPaopaoView alloc] initWithFrame:_frame];
     // 这里用一个magic number调整一下id
     HEAP[@(2147483647 - _viewId)] = _view;
   }
+
+  //region method call handler
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKActionPaopaoView"
+            binaryMessenger:[_registrar messenger]];
+
+  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
+    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
+
+    __strong __typeof(weakSelf) strongSelf = weakSelf;
+    if (strongSelf->_handlerMap[methodCall.method] != nil) {
+      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
+    } else {
+      methodResult(FlutterMethodNotImplemented);
+    }
+  }];
+  //endregion
 
   //region handlers
   _handlerMap = @{
@@ -82,24 +100,6 @@ extern BOOL enableLog;
           methodResult(jsonableResult);
       },
   };
-  //endregion
-
-  //region method call handler
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKActionPaopaoView"
-            binaryMessenger:[_registrar messenger]];
-
-  __weak __typeof(self)weakSelf = self;
-  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
-    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
-
-    __strong __typeof(weakSelf)strongSelf = weakSelf;
-    if (strongSelf->_handlerMap[methodCall.method] != nil) {
-      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
-    } else {
-      methodResult(FlutterMethodNotImplemented);
-    }
-  }];
   //endregion
   return _view;
 }

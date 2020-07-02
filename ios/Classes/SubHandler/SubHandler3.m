@@ -13,6 +13,7 @@ extern BOOL enableLog;
 
 @implementation BmapMapFluttifyPlugin (SubHandler3)
 - (NSDictionary<NSString*, Handler>*) getSubHandler3 {
+    __weak __typeof(self)weakSelf = self;
     return @{
         @"BMKMapView::get_isZoomEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
@@ -3226,9 +3227,9 @@ extern BOOL enableLog;
             // args
             // list arg
             NSArray<NSNumber*>* lineDashPatternRefArray = (NSArray<NSNumber*> *) args[@"lineDashPattern"];
-            NSMutableArray<NSArray*>* lineDashPattern = [NSMutableArray arrayWithCapacity:lineDashPatternRefArray.count];
+            NSMutableArray<NSObject*>* lineDashPattern = [NSMutableArray arrayWithCapacity:lineDashPatternRefArray.count];
             for (int __i__ = 0; __i__ < lineDashPatternRefArray.count; __i__++) {
-                NSArray* item = (NSArray*) HEAP[[lineDashPatternRefArray objectAtIndex:__i__]];
+                NSObject* item = (NSObject*) HEAP[[lineDashPatternRefArray objectAtIndex:__i__]];
                 [lineDashPattern addObject:item];
             }
         
@@ -3394,9 +3395,9 @@ extern BOOL enableLog;
             // args
             // list arg
             NSArray<NSNumber*>* mColorsRefArray = (NSArray<NSNumber*> *) args[@"mColors"];
-            NSMutableArray<NSArray*>* mColors = [NSMutableArray arrayWithCapacity:mColorsRefArray.count];
+            NSMutableArray<NSObject*>* mColors = [NSMutableArray arrayWithCapacity:mColorsRefArray.count];
             for (int __i__ = 0; __i__ < mColorsRefArray.count; __i__++) {
-                NSArray* item = (NSArray*) HEAP[[mColorsRefArray objectAtIndex:__i__]];
+                NSObject* item = (NSObject*) HEAP[[mColorsRefArray objectAtIndex:__i__]];
                 [mColors addObject:item];
             }
         
@@ -3416,9 +3417,9 @@ extern BOOL enableLog;
             // args
             // list arg
             NSArray<NSNumber*>* mStartPointsRefArray = (NSArray<NSNumber*> *) args[@"mStartPoints"];
-            NSMutableArray<NSArray*>* mStartPoints = [NSMutableArray arrayWithCapacity:mStartPointsRefArray.count];
+            NSMutableArray<NSObject*>* mStartPoints = [NSMutableArray arrayWithCapacity:mStartPointsRefArray.count];
             for (int __i__ = 0; __i__ < mStartPointsRefArray.count; __i__++) {
-                NSArray* item = (NSArray*) HEAP[[mStartPointsRefArray objectAtIndex:__i__]];
+                NSObject* item = (NSObject*) HEAP[[mStartPointsRefArray objectAtIndex:__i__]];
                 [mStartPoints addObject:item];
             }
         
@@ -3472,9 +3473,9 @@ extern BOOL enableLog;
             // args
             // list arg
             NSArray<NSNumber*>* arrStrFloorsRefArray = (NSArray<NSNumber*> *) args[@"arrStrFloors"];
-            NSMutableArray<NSMutableArray*>* arrStrFloors = [NSMutableArray arrayWithCapacity:arrStrFloorsRefArray.count];
+            NSMutableArray<NSObject*>* arrStrFloors = [NSMutableArray arrayWithCapacity:arrStrFloorsRefArray.count];
             for (int __i__ = 0; __i__ < arrStrFloorsRefArray.count; __i__++) {
-                NSMutableArray* item = (NSMutableArray*) HEAP[[arrStrFloorsRefArray objectAtIndex:__i__]];
+                NSObject* item = (NSObject*) HEAP[[arrStrFloorsRefArray objectAtIndex:__i__]];
                 [arrStrFloors addObject:item];
             }
         
@@ -3690,7 +3691,7 @@ extern BOOL enableLog;
             // ref
             BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
         
-            ref.delegate = self;
+            ref.delegate = weakSelf;
             methodResult(@"success");
         },
         

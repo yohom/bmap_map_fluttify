@@ -13,6 +13,7 @@ extern BOOL enableLog;
 
 @implementation BmapMapFluttifyPlugin (SubHandler5)
 - (NSDictionary<NSString*, Handler>*) getSubHandler5 {
+    __weak __typeof(self)weakSelf = self;
     return @{
         @"BMKAnnotationView::set_enabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
@@ -543,9 +544,9 @@ extern BOOL enableLog;
                 // args
                 // list arg
                 NSArray<NSNumber*>* childCitiesRefArray = (NSArray<NSNumber*> *) args[@"childCities"];
-                NSMutableArray<NSArray*>* childCities = [NSMutableArray arrayWithCapacity:childCitiesRefArray.count];
+                NSMutableArray<NSObject*>* childCities = [NSMutableArray arrayWithCapacity:childCitiesRefArray.count];
                 for (int __i__ = 0; __i__ < childCitiesRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[childCitiesRefArray objectAtIndex:__i__]];
+                    NSObject* item = (NSObject*) HEAP[[childCitiesRefArray objectAtIndex:__i__]];
                     [childCities addObject:item];
                 }
         

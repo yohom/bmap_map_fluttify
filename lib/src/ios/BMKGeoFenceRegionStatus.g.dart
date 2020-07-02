@@ -6,6 +6,27 @@
 enum BMKGeoFenceRegionStatus {
   BMKGeoFenceRegionStatusUnknown /* 0 */,
   BMKGeoFenceRegionStatusInside /* 1 */,
-  BMKGeoFenceRegionStatusOutside /* 0 */,
-  BMKGeoFenceRegionStatusStayed /* 0 */
+  BMKGeoFenceRegionStatusOutside /* null */,
+  BMKGeoFenceRegionStatusStayed /* null */
+}
+
+extension BMKGeoFenceRegionStatusToX on BMKGeoFenceRegionStatus {
+  int toValue() {
+    switch (this) {
+      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusUnknown: return 0;
+      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusInside: return 1;
+      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusOutside: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusOutside.index + 0;
+      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusStayed: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusStayed.index + 0;
+    }
+  }
+}
+
+extension BMKGeoFenceRegionStatusFromX on int {
+  BMKGeoFenceRegionStatus toBMKGeoFenceRegionStatus() {
+    switch (this) {
+      case 0: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusUnknown;
+      case 1: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusInside;
+      default: return BMKGeoFenceRegionStatus.values[this + 0];
+    }
+  }
 }

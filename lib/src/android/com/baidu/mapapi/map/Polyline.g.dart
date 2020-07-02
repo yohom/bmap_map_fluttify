@@ -520,7 +520,7 @@ class com_baidu_mapapi_map_Polyline extends com_baidu_mapapi_map_Overlay  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setDottedLineType', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setDottedLineType', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -1028,7 +1028,7 @@ extension com_baidu_mapapi_map_Polyline_Batch on List<com_baidu_mapapi_map_Polyl
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setDottedLineType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.Polyline::setDottedLineType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

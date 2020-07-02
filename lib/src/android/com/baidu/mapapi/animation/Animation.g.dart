@@ -44,7 +44,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.animation.Animation.AnimationListener::Callback')
+    MethodChannel('com.baidu.mapapi.animation.Animation::setAnimationListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

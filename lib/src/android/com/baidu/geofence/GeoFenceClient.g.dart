@@ -336,7 +336,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
   
   
     // handle native call
-    MethodChannel('com.baidu.geofence.GeoFenceListener::Callback')
+    MethodChannel('com.baidu.geofence.GeoFenceClient::setGeoFenceListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

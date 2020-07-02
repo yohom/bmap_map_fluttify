@@ -4,6 +4,24 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode {
-  mapMode /* 0 */,
-  absoluteMode /* 0 */
+  mapMode /* null */,
+  absoluteMode /* null */
+}
+
+extension com_baidu_mapapi_map_MapViewLayoutParams_ELayoutModeToX on com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.mapMode: return com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.mapMode.index + 0;
+      case com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.absoluteMode: return com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.absoluteMode.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_map_MapViewLayoutParams_ELayoutModeFromX on int {
+  com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode tocom_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.values[this + 0];
+    }
+  }
 }

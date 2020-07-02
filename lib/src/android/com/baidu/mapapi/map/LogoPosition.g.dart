@@ -4,10 +4,32 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_LogoPosition {
-  logoPostionleftBottom /* 0 */,
-  logoPostionleftTop /* 0 */,
-  logoPostionCenterBottom /* 0 */,
-  logoPostionCenterTop /* 0 */,
-  logoPostionRightBottom /* 0 */,
-  logoPostionRightTop /* 0 */
+  logoPostionleftBottom /* null */,
+  logoPostionleftTop /* null */,
+  logoPostionCenterBottom /* null */,
+  logoPostionCenterTop /* null */,
+  logoPostionRightBottom /* null */,
+  logoPostionRightTop /* null */
+}
+
+extension com_baidu_mapapi_map_LogoPositionToX on com_baidu_mapapi_map_LogoPosition {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_map_LogoPosition.logoPostionleftBottom: return com_baidu_mapapi_map_LogoPosition.logoPostionleftBottom.index + 0;
+      case com_baidu_mapapi_map_LogoPosition.logoPostionleftTop: return com_baidu_mapapi_map_LogoPosition.logoPostionleftTop.index + 0;
+      case com_baidu_mapapi_map_LogoPosition.logoPostionCenterBottom: return com_baidu_mapapi_map_LogoPosition.logoPostionCenterBottom.index + 0;
+      case com_baidu_mapapi_map_LogoPosition.logoPostionCenterTop: return com_baidu_mapapi_map_LogoPosition.logoPostionCenterTop.index + 0;
+      case com_baidu_mapapi_map_LogoPosition.logoPostionRightBottom: return com_baidu_mapapi_map_LogoPosition.logoPostionRightBottom.index + 0;
+      case com_baidu_mapapi_map_LogoPosition.logoPostionRightTop: return com_baidu_mapapi_map_LogoPosition.logoPostionRightTop.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_map_LogoPositionFromX on int {
+  com_baidu_mapapi_map_LogoPosition tocom_baidu_mapapi_map_LogoPosition() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_map_LogoPosition.values[this + 0];
+    }
+  }
 }

@@ -751,8 +751,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -983,8 +982,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -1768,8 +1766,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -1791,8 +1788,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -1814,8 +1810,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -1986,8 +1981,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -2074,8 +2068,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -2123,8 +2116,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);
@@ -3504,8 +3496,7 @@ public class SubHandler2 {
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
-                jsonableResult = System.identityHashCode(__result__);
-                getHEAP().put(jsonableResult, __result__);
+                jsonableResult = __result__.ordinal();
             }
             
                     __resultList__.add(jsonableResult);

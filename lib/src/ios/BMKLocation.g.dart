@@ -57,7 +57,7 @@ class BMKLocation extends NSObject  {
   Future<BMKLocationProvider> get_provider() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_provider", {'refId': refId});
   
-    return BMKLocationProvider.values[__result__];
+    return (__result__ as int).toBMKLocationProvider();
   }
   
   Future<String> get_locationID() async {
@@ -136,7 +136,7 @@ extension BMKLocation_Batch on List<BMKLocation> {
   
   Future<List<BMKLocationProvider>> get_provider_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_provider_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLocationProvider.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLocationProvider()).toList();
   
     return typedResult;
   }

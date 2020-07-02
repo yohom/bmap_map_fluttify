@@ -50,11 +50,29 @@ extern BOOL enableLog;
 }
 
 - (UIView *)view {
+  __weak __typeof(self)weakSelf = self;
   if (_view == nil) {
     _view = [[BMKMapView alloc] initWithFrame:_frame];
     // 这里用一个magic number调整一下id
     HEAP[@(2147483647 - _viewId)] = _view;
   }
+
+  //region method call handler
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKMapView"
+            binaryMessenger:[_registrar messenger]];
+
+  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
+    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
+
+    __strong __typeof(weakSelf) strongSelf = weakSelf;
+    if (strongSelf->_handlerMap[methodCall.method] != nil) {
+      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
+    } else {
+      methodResult(FlutterMethodNotImplemented);
+    }
+  }];
+  //endregion
 
   //region handlers
   _handlerMap = @{
@@ -190,7 +208,7 @@ extern BOOL enableLog;
           [ref setCustomMapStyleWithOption : option preLoad: ^(NSString* path) {
               FlutterMethodChannel *channel = [FlutterMethodChannel
                   methodChannelWithName:@"void|NSString*#path::Callback"
-                        binaryMessenger:[[self registrar] messenger]];
+                        binaryMessenger:[[weakSelf registrar] messenger]];
       
               // print log
               if (enableLog) {
@@ -208,7 +226,7 @@ extern BOOL enableLog;
           } success: ^(NSString* path) {
               FlutterMethodChannel *channel = [FlutterMethodChannel
                   methodChannelWithName:@"void|NSString*#path::Callback"
-                        binaryMessenger:[[self registrar] messenger]];
+                        binaryMessenger:[[weakSelf registrar] messenger]];
       
               // print log
               if (enableLog) {
@@ -226,7 +244,7 @@ extern BOOL enableLog;
           } failure: ^(NSError* error, NSString* path) {
               FlutterMethodChannel *channel = [FlutterMethodChannel
                   methodChannelWithName:@"void|NSError*#error,NSString*#path::Callback"
-                        binaryMessenger:[[self registrar] messenger]];
+                        binaryMessenger:[[weakSelf registrar] messenger]];
       
               // print log
               if (enableLog) {
@@ -1278,9 +1296,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+          NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
           for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
               [annotations addObject:item];
           }
       
@@ -1327,9 +1345,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+          NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
           for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
               [annotations addObject:item];
           }
       
@@ -1448,9 +1466,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
+          NSMutableArray<NSObject*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
           for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
               [annotations addObject:item];
           }
           // jsonable arg
@@ -1528,9 +1546,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
+          NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
           for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
               [overlays addObject:item];
           }
       
@@ -1577,9 +1595,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
+          NSMutableArray<NSObject*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
           for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
               [overlays addObject:item];
           }
       
@@ -2522,7 +2540,7 @@ extern BOOL enableLog;
           // ref
           BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
       
-          ref.delegate = self;
+          ref.delegate = weakSelf;
           methodResult(@"success");
       },
       
@@ -3136,24 +3154,6 @@ extern BOOL enableLog;
       },
       
   };
-  //endregion
-
-  //region method call handler
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKMapView"
-            binaryMessenger:[_registrar messenger]];
-
-  __weak __typeof(self)weakSelf = self;
-  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
-    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
-
-    __strong __typeof(weakSelf)strongSelf = weakSelf;
-    if (strongSelf->_handlerMap[methodCall.method] != nil) {
-      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
-    } else {
-      methodResult(FlutterMethodNotImplemented);
-    }
-  }];
   //endregion
   return _view;
 }

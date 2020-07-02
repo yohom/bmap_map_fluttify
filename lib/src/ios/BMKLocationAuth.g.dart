@@ -45,7 +45,7 @@ class BMKLocationAuth extends NSObject  {
   Future<BMKLocationAuthErrorCode> get_permisionState() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationAuth::get_permisionState", {'refId': refId});
   
-    return BMKLocationAuthErrorCode.values[__result__];
+    return (__result__ as int).toBMKLocationAuthErrorCode();
   }
   
   //endregion
@@ -102,7 +102,7 @@ class BMKLocationAuth extends NSObject  {
               }
         
               // handle the native call
-              delegate?.onCheckPermissionState(BMKLocationAuthErrorCode.values[args['iError'] - -1]);
+              delegate?.onCheckPermissionState((args['iError'] as int).toBMKLocationAuthErrorCode());
               break;
             default:
               break;
@@ -126,7 +126,7 @@ extension BMKLocationAuth_Batch on List<BMKLocationAuth> {
   //region getters
   Future<List<BMKLocationAuthErrorCode>> get_permisionState_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationAuth::get_permisionState_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLocationAuthErrorCode.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLocationAuthErrorCode()).toList();
   
     return typedResult;
   }

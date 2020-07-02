@@ -2501,7 +2501,7 @@ public class SubHandler7 {
                 try {
                     ref.registerNotifyLocationListener(new com.baidu.location.BDLocationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.BDLocationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.LocationClient::registerNotifyLocationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -2572,7 +2572,7 @@ public class SubHandler7 {
                 try {
                     ref.registerLocationListener(new com.baidu.location.BDLocationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.BDLocationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.LocationClient::registerLocationListener__com_baidu_location_BDLocationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -2643,7 +2643,7 @@ public class SubHandler7 {
                 try {
                     ref.unRegisterLocationListener(new com.baidu.location.BDLocationListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.BDLocationListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.location.LocationClient::unRegisterLocationListener__com_baidu_location_BDLocationListener::Callback");
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method

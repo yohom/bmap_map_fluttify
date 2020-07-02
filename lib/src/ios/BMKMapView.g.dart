@@ -45,7 +45,7 @@ class BMKMapView extends UIView  {
   Future<BMKMapType> get_mapType({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_mapType", {'refId': refId});
   
-    return BMKMapType.values[__result__];
+    return (__result__ as int).toBMKMapType();
   }
   
   Future<BMKCoordinateRegion> get_region({bool viewChannel = true}) async {
@@ -201,7 +201,7 @@ class BMKMapView extends UIView  {
   Future<BMKLogoPosition> get_logoPosition({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_logoPosition", {'refId': refId});
   
-    return BMKLogoPosition.values[__result__];
+    return (__result__ as int).toBMKLogoPosition();
   }
   
   Future<BMKMapRect> get_visibleMapRect({bool viewChannel = true}) async {
@@ -255,7 +255,7 @@ class BMKMapView extends UIView  {
   Future<BMKUserTrackingMode> get_userTrackingMode({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_userTrackingMode", {'refId': refId});
   
-    return BMKUserTrackingMode.values[__result__];
+    return (__result__ as int).toBMKUserTrackingMode();
   }
   
   Future<bool> get_userLocationVisible({bool viewChannel = true}) async {
@@ -344,7 +344,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_regionWillChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[args['reason'] - 0]);
+            delegate?.mapView_regionWillChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], (args['reason'] as int).toBMKRegionChangeReason());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated':
             // print log
@@ -362,7 +362,7 @@ class BMKMapView extends UIView  {
             }
         
             // handle the native call
-            delegate?.mapView_regionDidChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], BMKRegionChangeReason.values[args['reason'] - 0]);
+            delegate?.mapView_regionDidChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], (args['reason'] as int).toBMKRegionChangeReason());
             break;
           case 'Callback::BMKMapViewDelegate::mapView_viewForAnnotation':
             // print log
@@ -879,7 +879,7 @@ class BMKMapView extends UIView  {
               }
         
               // handle the native call
-              preLoad(args['path']);
+              if (preLoad != null) preLoad(args['path']);
               break;
             default:
               break;
@@ -896,7 +896,7 @@ class BMKMapView extends UIView  {
               }
         
               // handle the native call
-              success(args['path']);
+              if (success != null) success(args['path']);
               break;
             default:
               break;
@@ -913,7 +913,7 @@ class BMKMapView extends UIView  {
               }
         
               // handle the native call
-              failure(TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>(), args['path']);
+              if (failure != null) failure(TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>(), args['path']);
               break;
             default:
               break;
@@ -1812,7 +1812,7 @@ class BMKMapView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = BMKSwitchIndoorFloorError.values[__result__];
+      final __return__ = (__result__ as int).toBMKSwitchIndoorFloorError();
     
       return __return__;
     }
@@ -2401,7 +2401,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   //region getters
   Future<List<BMKMapType>> get_mapType_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_mapType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKMapType.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKMapType()).toList();
   
     return typedResult;
   }
@@ -2583,7 +2583,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   
   Future<List<BMKLogoPosition>> get_logoPosition_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_logoPosition_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLogoPosition.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKLogoPosition()).toList();
   
     return typedResult;
   }
@@ -2646,7 +2646,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   
   Future<List<BMKUserTrackingMode>> get_userTrackingMode_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapView::get_userTrackingMode_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKUserTrackingMode.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKUserTrackingMode()).toList();
   
     return typedResult;
   }
@@ -3729,7 +3729,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKSwitchIndoorFloorError.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toBMKSwitchIndoorFloorError()).toList();
     
       return typedResult;
     }

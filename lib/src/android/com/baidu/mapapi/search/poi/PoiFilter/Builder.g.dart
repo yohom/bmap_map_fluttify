@@ -82,7 +82,7 @@ class com_baidu_mapapi_search_poi_PoiFilter_Builder extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiFilter.Builder::industryType', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiFilter.Builder::industryType', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -110,7 +110,7 @@ class com_baidu_mapapi_search_poi_PoiFilter_Builder extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.poi.PoiFilter.SortName::Callback')
+    MethodChannel('com.baidu.mapapi.search.poi.PoiFilter.Builder::sortName::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
@@ -242,7 +242,7 @@ extension com_baidu_mapapi_search_poi_PoiFilter_Builder_Batch on List<com_baidu_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiFilter.Builder::industryType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiFilter.Builder::industryType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

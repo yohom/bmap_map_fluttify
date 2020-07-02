@@ -99,7 +99,7 @@ class BMKLocationViewDisplayParam extends NSObject with NSCopying {
   Future<LocationViewHierarchy> get_locationViewHierarchy() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationViewDisplayParam::get_locationViewHierarchy", {'refId': refId});
   
-    return LocationViewHierarchy.values[__result__];
+    return (__result__ as int).toLocationViewHierarchy();
   }
   
   //endregion
@@ -239,7 +239,7 @@ extension BMKLocationViewDisplayParam_Batch on List<BMKLocationViewDisplayParam>
   
   Future<List<LocationViewHierarchy>> get_locationViewHierarchy_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationViewDisplayParam::get_locationViewHierarchy_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => LocationViewHierarchy.values[__result__]).toList();
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).toLocationViewHierarchy()).toList();
   
     return typedResult;
   }

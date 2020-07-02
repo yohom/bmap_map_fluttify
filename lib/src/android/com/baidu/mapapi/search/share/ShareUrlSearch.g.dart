@@ -140,7 +140,7 @@ class com_baidu_mapapi_search_share_ShareUrlSearch extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.share.OnGetShareUrlResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.share.ShareUrlSearch::setOnGetShareUrlResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {

@@ -50,11 +50,29 @@ extern BOOL enableLog;
 }
 
 - (UIView *)view {
+  __weak __typeof(self)weakSelf = self;
   if (_view == nil) {
     _view = [[BMKOverlayPathView alloc] initWithFrame:_frame];
     // 这里用一个magic number调整一下id
     HEAP[@(2147483647 - _viewId)] = _view;
   }
+
+  //region method call handler
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKOverlayPathView"
+            binaryMessenger:[_registrar messenger]];
+
+  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
+    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
+
+    __strong __typeof(weakSelf) strongSelf = weakSelf;
+    if (strongSelf->_handlerMap[methodCall.method] != nil) {
+      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
+    } else {
+      methodResult(FlutterMethodNotImplemented);
+    }
+  }];
+  //endregion
 
   //region handlers
   _handlerMap = @{
@@ -309,9 +327,9 @@ extern BOOL enableLog;
           // args
           // list arg
           NSArray<NSNumber*>* lineDashPatternRefArray = (NSArray<NSNumber*> *) args[@"lineDashPattern"];
-          NSMutableArray<NSArray*>* lineDashPattern = [NSMutableArray arrayWithCapacity:lineDashPatternRefArray.count];
+          NSMutableArray<NSObject*>* lineDashPattern = [NSMutableArray arrayWithCapacity:lineDashPatternRefArray.count];
           for (int __i__ = 0; __i__ < lineDashPatternRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[lineDashPatternRefArray objectAtIndex:__i__]];
+              NSObject* item = (NSObject*) HEAP[[lineDashPatternRefArray objectAtIndex:__i__]];
               [lineDashPattern addObject:item];
           }
       
@@ -323,24 +341,6 @@ extern BOOL enableLog;
       },
       
   };
-  //endregion
-
-  //region method call handler
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKOverlayPathView"
-            binaryMessenger:[_registrar messenger]];
-
-  __weak __typeof(self)weakSelf = self;
-  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
-    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
-
-    __strong __typeof(weakSelf)strongSelf = weakSelf;
-    if (strongSelf->_handlerMap[methodCall.method] != nil) {
-      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
-    } else {
-      methodResult(FlutterMethodNotImplemented);
-    }
-  }];
   //endregion
   return _view;
 }

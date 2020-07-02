@@ -116,7 +116,7 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::setCoordType', {"var0": var0.index + 0});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::setCoordType', {"var0": var0.toValue()});
   
   
     // handle native call
@@ -150,7 +150,7 @@ class com_baidu_mapapi_SDKInitializer extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_baidu_mapapi_CoordType.values[__result__];
+      final __return__ = (__result__ as int).tocom_baidu_mapapi_CoordType();
     
       return __return__;
     }
@@ -284,7 +284,7 @@ extension com_baidu_mapapi_SDKInitializer_Batch on List<com_baidu_mapapi_SDKInit
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::setCoordType_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__].index}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.SDKInitializer::setCoordType_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__].toValue()}]);
   
   
     // convert native result to dart side object
@@ -311,7 +311,7 @@ extension com_baidu_mapapi_SDKInitializer_Batch on List<com_baidu_mapapi_SDKInit
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_CoordType.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_CoordType()).toList();
     
       return typedResult;
     }

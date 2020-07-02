@@ -634,7 +634,7 @@ class com_baidu_location_LocationClientOption extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationPurpose', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationPurpose', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -1042,7 +1042,7 @@ class com_baidu_location_LocationClientOption extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationMode', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationMode', {"var1": var1.toValue(), "refId": refId});
   
   
     // handle native call
@@ -1076,7 +1076,7 @@ class com_baidu_location_LocationClientOption extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = com_baidu_location_LocationClientOption_LocationMode.values[__result__];
+      final __return__ = (__result__ as int).tocom_baidu_location_LocationClientOption_LocationMode();
     
       return __return__;
     }
@@ -2052,7 +2052,7 @@ extension com_baidu_location_LocationClientOption_Batch on List<com_baidu_locati
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationPurpose_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationPurpose_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -2392,7 +2392,7 @@ extension com_baidu_location_LocationClientOption_Batch on List<com_baidu_locati
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClientOption::setLocationMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object
@@ -2419,7 +2419,7 @@ extension com_baidu_location_LocationClientOption_Batch on List<com_baidu_locati
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_location_LocationClientOption_LocationMode.values[__result__]).toList();
+      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_location_LocationClientOption_LocationMode()).toList();
     
       return typedResult;
     }

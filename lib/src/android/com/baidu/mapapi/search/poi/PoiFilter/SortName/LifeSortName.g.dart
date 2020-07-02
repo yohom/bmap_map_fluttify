@@ -4,9 +4,30 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName {
-  DEFAULT /* 0 */,
-  PRICE /* 0 */,
-  DISTANCE /* 0 */,
-  LIFE_OVERALL_RATING /* 0 */,
-  LIFE_COMMENT_RATING /* 0 */
+  DEFAULT /* null */,
+  PRICE /* null */,
+  DISTANCE /* null */,
+  LIFE_OVERALL_RATING /* null */,
+  LIFE_COMMENT_RATING /* null */
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortNameToX on com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.DEFAULT: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.DEFAULT.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.PRICE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.PRICE.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.DISTANCE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.DISTANCE.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_OVERALL_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_OVERALL_RATING.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_COMMENT_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_COMMENT_RATING.index + 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortNameFromX on int {
+  com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName tocom_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.values[this + 0];
+    }
+  }
 }

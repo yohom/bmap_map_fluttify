@@ -116,7 +116,7 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener::Callback')
         .setMethodCallHandler((methodCall) async {
           final args = methodCall.arguments as Map;
           switch (methodCall.method) {
