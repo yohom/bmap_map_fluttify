@@ -31,6 +31,80 @@ public class SubHandler24 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.map.MapView::setLogoPosition_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // enum arg
+                    com.baidu.mapapi.map.LogoPosition var1 = com.baidu.mapapi.map.LogoPosition.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+            
+                    // ref
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.baidu.mapapi.map.MapView ref = (com.baidu.mapapi.map.MapView) getHEAP().get(refId);
+            
+                    // invoke native method
+                    try {
+                        ref.setLogoPosition(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    // convert result to jsonable result
+                    String jsonableResult = "success";
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::getLogoPosition_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.baidu.mapapi.map.MapView ref = (com.baidu.mapapi.map.MapView) getHEAP().get(refId);
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.LogoPosition __result__;
+                    try {
+                        __result__ = ref.getLogoPosition();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    // convert result to jsonable result
+                    Integer jsonableResult = null;
+                    if (__result__ != null) {
+                        jsonableResult = System.identityHashCode(__result__);
+                        getHEAP().put(jsonableResult, __result__);
+                    }
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
             put("com.baidu.mapapi.map.MapView::getMapLevel_batch", (__argsBatch__, __methodResult__) -> {
                 List<Integer> __resultList__ = new ArrayList<>();
             
@@ -218,8 +292,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -398,8 +472,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -473,8 +547,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -509,11 +583,11 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
                     // ref arg
-                    Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                    android.os.Bundle var2 = __var2__ != null ? (android.os.Bundle) getHEAP().get(__var2__) : null;
+                    Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+                    android.os.Bundle var2 = __var2RefId__ != null ? (android.os.Bundle) getHEAP().get(__var2RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -583,8 +657,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    android.view.MotionEvent var1 = __var1__ != null ? (android.view.MotionEvent) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.view.MotionEvent var1 = __var1RefId__ != null ? (android.view.MotionEvent) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1206,8 +1280,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.map.BitmapDescriptor var1 = __var1__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.map.BitmapDescriptor var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1742,8 +1816,8 @@ public class SubHandler24 {
                     // jsonable arg
                     String var1 = (String) ((Map<String, Object>) __args__).get("var1");
                     // ref arg
-                    Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                    com.baidu.mapapi.http.HttpClient.ProtoResultCallback var2 = __var2__ != null ? (com.baidu.mapapi.http.HttpClient.ProtoResultCallback) getHEAP().get(__var2__) : null;
+                    Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+                    com.baidu.mapapi.http.HttpClient.ProtoResultCallback var2 = __var2RefId__ != null ? (com.baidu.mapapi.http.HttpClient.ProtoResultCallback) getHEAP().get(__var2RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2126,8 +2200,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.cloud.LocalSearchInfo var1 = __var1__ != null ? (com.baidu.mapapi.cloud.LocalSearchInfo) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.cloud.LocalSearchInfo var1 = __var1RefId__ != null ? (com.baidu.mapapi.cloud.LocalSearchInfo) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2163,8 +2237,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.cloud.NearbySearchInfo var1 = __var1__ != null ? (com.baidu.mapapi.cloud.NearbySearchInfo) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.cloud.NearbySearchInfo var1 = __var1RefId__ != null ? (com.baidu.mapapi.cloud.NearbySearchInfo) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2200,8 +2274,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.cloud.BoundSearchInfo var1 = __var1__ != null ? (com.baidu.mapapi.cloud.BoundSearchInfo) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.cloud.BoundSearchInfo var1 = __var1RefId__ != null ? (com.baidu.mapapi.cloud.BoundSearchInfo) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2237,8 +2311,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.cloud.DetailSearchInfo var1 = __var1__ != null ? (com.baidu.mapapi.cloud.DetailSearchInfo) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.cloud.DetailSearchInfo var1 = __var1RefId__ != null ? (com.baidu.mapapi.cloud.DetailSearchInfo) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2274,8 +2348,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.cloud.CloudRgcInfo var1 = __var1__ != null ? (com.baidu.mapapi.cloud.CloudRgcInfo) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.cloud.CloudRgcInfo var1 = __var1RefId__ != null ? (com.baidu.mapapi.cloud.CloudRgcInfo) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2452,8 +2526,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2716,8 +2790,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.model.inner.Point var1 = __var1__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.model.inner.Point var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2791,8 +2865,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.model.inner.Point var1 = __var1__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.model.inner.Point var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2967,8 +3041,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3043,8 +3117,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                    com.baidu.mapapi.model.inner.GeoPoint var0 = __var0__ != null ? (com.baidu.mapapi.model.inner.GeoPoint) getHEAP().get(__var0__) : null;
+                    Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.inner.GeoPoint var0 = __var0RefId__ != null ? (com.baidu.mapapi.model.inner.GeoPoint) getHEAP().get(__var0RefId__) : null;
             
                     // ref
             
@@ -3083,8 +3157,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                    com.baidu.mapapi.model.LatLng var0 = __var0__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0__) : null;
+                    Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.LatLng var0 = __var0RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0RefId__) : null;
             
                     // ref
             
@@ -3123,8 +3197,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                    com.baidu.mapapi.model.LatLng var0 = __var0__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0__) : null;
+                    Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.LatLng var0 = __var0RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0RefId__) : null;
             
                     // ref
             
@@ -3163,8 +3237,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                    com.baidu.mapapi.model.LatLng var0 = __var0__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0__) : null;
+                    Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.LatLng var0 = __var0RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var0RefId__) : null;
                     // jsonable arg
                     int var1 = (int) ((Map<String, Object>) __args__).get("var1");
             
@@ -3364,11 +3438,11 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                    com.baidu.mapapi.model.inner.Point var0 = __var0__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var0__) : null;
+                    Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    com.baidu.mapapi.model.inner.Point var0 = __var0RefId__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var0RefId__) : null;
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.mapapi.model.inner.Point var1 = __var1__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.mapapi.model.inner.Point var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.inner.Point) getHEAP().get(__var1RefId__) : null;
             
                     // ref
             
@@ -3403,8 +3477,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3618,8 +3692,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                    android.app.Application var0 = __var0__ != null ? (android.app.Application) getHEAP().get(__var0__) : null;
+                    Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.app.Application var0 = __var0RefId__ != null ? (android.app.Application) getHEAP().get(__var0RefId__) : null;
             
                     // ref
             
@@ -3761,8 +3835,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.geofence.model.DPoint var1 = __var1__ != null ? (com.baidu.geofence.model.DPoint) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.geofence.model.DPoint var1 = __var1RefId__ != null ? (com.baidu.geofence.model.DPoint) getHEAP().get(__var1RefId__) : null;
                     // jsonable arg
                     String var2 = (String) ((Map<String, Object>) __args__).get("var2");
                     // jsonable arg
@@ -3850,8 +3924,8 @@ public class SubHandler24 {
                     // jsonable arg
                     String var2 = (String) ((Map<String, Object>) __args__).get("var2");
                     // ref arg
-                    Integer __var3__ = (Integer) ((Map<String, Object>) __args__).get("var3");
-                    com.baidu.geofence.model.DPoint var3 = __var3__ != null ? (com.baidu.geofence.model.DPoint) getHEAP().get(__var3__) : null;
+                    Integer __var3RefId__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                    com.baidu.geofence.model.DPoint var3 = __var3RefId__ != null ? (com.baidu.geofence.model.DPoint) getHEAP().get(__var3RefId__) : null;
                     // jsonable arg
                     String var4 = (String) ((Map<String, Object>) __args__).get("var4");
                     // jsonable arg
@@ -4008,8 +4082,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.geofence.GeoFence var1 = __var1__ != null ? (com.baidu.geofence.GeoFence) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.geofence.GeoFence var1 = __var1RefId__ != null ? (com.baidu.geofence.GeoFence) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5256,8 +5330,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.location.BDLocation var1 = __var1__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.location.BDLocation var1 = __var1RefId__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5292,8 +5366,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.geofence.PoiItem var1 = __var1__ != null ? (com.baidu.geofence.PoiItem) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.geofence.PoiItem var1 = __var1RefId__ != null ? (com.baidu.geofence.PoiItem) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5433,8 +5507,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    com.baidu.geofence.model.DPoint var1 = __var1__ != null ? (com.baidu.geofence.model.DPoint) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    com.baidu.geofence.model.DPoint var1 = __var1RefId__ != null ? (com.baidu.geofence.model.DPoint) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -6846,8 +6920,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                    android.content.Context var0 = __var0__ != null ? (android.content.Context) getHEAP().get(__var0__) : null;
+                    Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                    android.content.Context var0 = __var0RefId__ != null ? (android.content.Context) getHEAP().get(__var0RefId__) : null;
             
                     // ref
             
@@ -6956,8 +7030,8 @@ public class SubHandler24 {
             
                     // args
                     // ref arg
-                    Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                    android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
+                    Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                    android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
             
                     // ref
                     int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -7083,20 +7157,6 @@ public class SubHandler24 {
                 Object ref = getHEAP().get(refId);
             
                 __methodResult__.success(ref instanceof com.baidu.location.Address);
-            });
-            put("RefClass::isKindOfcom_baidu_location_BDNotifyListener", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.location.BDNotifyListener);
-            });
-            put("RefClass::isKindOfcom_baidu_location_Jni", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.location.Jni);
             });
         }};
     }

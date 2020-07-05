@@ -1202,8 +1202,8 @@ public class SubHandler7 {
             put("com.baidu.location.BDNotifyListener::onNotify", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDLocation var1 = __var1__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.BDLocation var1 = __var1RefId__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1RefId__) : null;
                 // jsonable arg
                 Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
             
@@ -1628,8 +1628,8 @@ public class SubHandler7 {
             put("com.baidu.location.BDAbstractLocationListener::onReceiveLocation", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDLocation var1 = __var1__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.BDLocation var1 = __var1RefId__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1731,8 +1731,8 @@ public class SubHandler7 {
             put("com.baidu.location.LLSInterface::onCreate", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1764,8 +1764,8 @@ public class SubHandler7 {
             put("com.baidu.location.LLSInterface::onStartCommand", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Intent var1 = __var1__ != null ? (android.content.Intent) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.content.Intent var1 = __var1RefId__ != null ? (android.content.Intent) getHEAP().get(__var1RefId__) : null;
                 // jsonable arg
                 int var2 = (int) ((Map<String, Object>) __args__).get("var2");
                 // jsonable arg
@@ -1802,8 +1802,8 @@ public class SubHandler7 {
             put("com.baidu.location.LLSInterface::onUnBind", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Intent var1 = __var1__ != null ? (android.content.Intent) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.content.Intent var1 = __var1RefId__ != null ? (android.content.Intent) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1867,8 +1867,8 @@ public class SubHandler7 {
             put("com.baidu.location.LLSInterface::onTaskRemoved", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Intent var1 = __var1__ != null ? (android.content.Intent) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.content.Intent var1 = __var1RefId__ != null ? (android.content.Intent) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1968,8 +1968,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::setLocOption", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.LocationClientOption var1 = __var1__ != null ? (com.baidu.location.LocationClientOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.LocationClientOption var1 = __var1RefId__ != null ? (com.baidu.location.LocationClientOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2001,8 +2001,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::updateLocation", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.location.Location var1 = __var1__ != null ? (android.location.Location) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                android.location.Location var1 = __var1RefId__ != null ? (android.location.Location) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2263,8 +2263,8 @@ public class SubHandler7 {
                 // jsonable arg
                 int var1 = (int) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                android.app.Notification var2 = __var2__ != null ? (android.app.Notification) getHEAP().get(__var2__) : null;
+                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+                android.app.Notification var2 = __var2RefId__ != null ? (android.app.Notification) getHEAP().get(__var2RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2421,8 +2421,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::registerNotify", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDNotifyListener var1 = __var1__ != null ? (com.baidu.location.BDNotifyListener) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.BDNotifyListener var1 = __var1RefId__ != null ? (com.baidu.location.BDNotifyListener) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2454,8 +2454,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::removeNotifyEvent", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDNotifyListener var1 = __var1__ != null ? (com.baidu.location.BDNotifyListener) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.BDNotifyListener var1 = __var1RefId__ != null ? (com.baidu.location.BDNotifyListener) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2700,8 +2700,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::registerLocationListener__com_baidu_location_BDAbstractLocationListener", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDAbstractLocationListener var1 = __var1__ != null ? (com.baidu.location.BDAbstractLocationListener) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.BDAbstractLocationListener var1 = __var1RefId__ != null ? (com.baidu.location.BDAbstractLocationListener) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2733,8 +2733,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::unRegisterLocationListener__com_baidu_location_BDAbstractLocationListener", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDAbstractLocationListener var1 = __var1__ != null ? (com.baidu.location.BDAbstractLocationListener) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.BDAbstractLocationListener var1 = __var1RefId__ != null ? (com.baidu.location.BDAbstractLocationListener) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2894,8 +2894,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::getBDLocationInCoorType", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var0__ = (Integer) ((Map<String, Object>) __args__).get("var0");
-                com.baidu.location.BDLocation var0 = __var0__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var0__) : null;
+                Integer __var0RefId__ = (Integer) ((Map<String, Object>) __args__).get("var0");
+                com.baidu.location.BDLocation var0 = __var0RefId__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var0RefId__) : null;
                 // jsonable arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
@@ -2933,8 +2933,8 @@ public class SubHandler7 {
             put("com.baidu.location.LocationClient::onReceiveLocation", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDLocation var1 = __var1__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.BDLocation var1 = __var1RefId__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3416,8 +3416,8 @@ public class SubHandler7 {
             put("com.baidu.location.BDLocation::setPoiRegion", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.PoiRegion var1 = __var1__ != null ? (com.baidu.location.PoiRegion) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.PoiRegion var1 = __var1RefId__ != null ? (com.baidu.location.PoiRegion) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5215,8 +5215,8 @@ public class SubHandler7 {
             put("com.baidu.location.BDLocation::setAddr", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.Address var1 = __var1__ != null ? (com.baidu.location.Address) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.location.Address var1 = __var1RefId__ != null ? (com.baidu.location.Address) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -6538,8 +6538,8 @@ public class SubHandler7 {
                 // jsonable arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                android.location.Location var2 = __var2__ != null ? (android.location.Location) getHEAP().get(__var2__) : null;
+                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+                android.location.Location var2 = __var2RefId__ != null ? (android.location.Location) getHEAP().get(__var2RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");

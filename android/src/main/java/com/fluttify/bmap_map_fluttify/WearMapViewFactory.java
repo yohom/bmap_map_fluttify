@@ -371,8 +371,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.WearMapView::setMapCustomStyle", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-            com.baidu.mapapi.map.MapCustomStyleOptions var1 = __var1__ != null ? (com.baidu.mapapi.map.MapCustomStyleOptions) getHEAP().get(__var1__) : null;
+            Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            com.baidu.mapapi.map.MapCustomStyleOptions var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.MapCustomStyleOptions) getHEAP().get(__var1RefId__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -535,8 +535,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.WearMapView::onInterceptTouchEvent", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-            android.view.MotionEvent var1 = __var1__ != null ? (android.view.MotionEvent) getHEAP().get(__var1__) : null;
+            Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.view.MotionEvent var1 = __var1RefId__ != null ? (android.view.MotionEvent) getHEAP().get(__var1RefId__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -699,8 +699,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.WearMapView::onEnterAmbient", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-            android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
+            Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -865,8 +865,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.WearMapView::setZoomControlsPosition", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-            android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
+            Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -994,8 +994,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.WearMapView::setScaleControlPosition", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-            android.graphics.Point var1 = __var1__ != null ? (android.graphics.Point) getHEAP().get(__var1__) : null;
+            Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1027,8 +1027,8 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.WearMapView::onSaveInstanceState", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-            android.os.Bundle var1 = __var1__ != null ? (android.os.Bundle) getHEAP().get(__var1__) : null;
+            Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1060,11 +1060,11 @@ class WearMapViewFactory extends PlatformViewFactory {
         put("com.baidu.mapapi.map.WearMapView::onCreate", (__args__, __methodResult__) -> {
             // args
             // ref arg
-            Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-            android.content.Context var1 = __var1__ != null ? (android.content.Context) getHEAP().get(__var1__) : null;
+            Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+            android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
             // ref arg
-            Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-            android.os.Bundle var2 = __var2__ != null ? (android.os.Bundle) getHEAP().get(__var2__) : null;
+            Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+            android.os.Bundle var2 = __var2RefId__ != null ? (android.os.Bundle) getHEAP().get(__var2RefId__) : null;
         
             // ref
             int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1098,8 +1098,8 @@ class WearMapViewFactory extends PlatformViewFactory {
     public PlatformView create(Context __, int id, Object params) {
         Map<String, Object> __args__ = (Map<String, Object>) params;
         // ref arg
-        Integer __var2__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-        com.baidu.mapapi.map.BaiduMapOptions var2 = __var2__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2__) : null;
+        Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
+        com.baidu.mapapi.map.BaiduMapOptions var2 = __var2RefId__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2RefId__) : null;
 
         com.baidu.mapapi.map.WearMapView view = new com.baidu.mapapi.map.WearMapView(activity, var2);
         getHEAP().put(Integer.MAX_VALUE - id, view);

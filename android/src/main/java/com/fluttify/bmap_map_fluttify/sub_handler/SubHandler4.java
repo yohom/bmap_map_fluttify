@@ -44,8 +44,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.core.PoiInfo::set_location", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __location__ = (Integer) ((Map<String, Object>) __args__).get("location");
-                com.baidu.mapapi.model.LatLng location = __location__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__location__) : null;
+                Integer __locationRefId__ = (Integer) ((Map<String, Object>) __args__).get("location");
+                com.baidu.mapapi.model.LatLng location = __locationRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__locationRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
@@ -89,8 +89,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.core.PoiInfo::set_poiDetailInfo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __poiDetailInfo__ = (Integer) ((Map<String, Object>) __args__).get("poiDetailInfo");
-                com.baidu.mapapi.search.core.PoiDetailInfo poiDetailInfo = __poiDetailInfo__ != null ? (com.baidu.mapapi.search.core.PoiDetailInfo) getHEAP().get(__poiDetailInfo__) : null;
+                Integer __poiDetailInfoRefId__ = (Integer) ((Map<String, Object>) __args__).get("poiDetailInfo");
+                com.baidu.mapapi.search.core.PoiDetailInfo poiDetailInfo = __poiDetailInfoRefId__ != null ? (com.baidu.mapapi.search.core.PoiDetailInfo) getHEAP().get(__poiDetailInfoRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
@@ -123,8 +123,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.core.PoiInfo::set_parentPoiInfo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __parentPoiInfo__ = (Integer) ((Map<String, Object>) __args__).get("parentPoiInfo");
-                com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo parentPoiInfo = __parentPoiInfo__ != null ? (com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo) getHEAP().get(__parentPoiInfo__) : null;
+                Integer __parentPoiInfoRefId__ = (Integer) ((Map<String, Object>) __args__).get("parentPoiInfo");
+                com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo parentPoiInfo = __parentPoiInfoRefId__ != null ? (com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo) getHEAP().get(__parentPoiInfoRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
@@ -168,8 +168,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.core.PoiDetailInfo::set_naviLocation", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __naviLocation__ = (Integer) ((Map<String, Object>) __args__).get("naviLocation");
-                com.baidu.mapapi.model.LatLng naviLocation = __naviLocation__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__naviLocation__) : null;
+                Integer __naviLocationRefId__ = (Integer) ((Map<String, Object>) __args__).get("naviLocation");
+                com.baidu.mapapi.model.LatLng naviLocation = __naviLocationRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__naviLocationRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.core.PoiDetailInfo ref = (com.baidu.mapapi.search.core.PoiDetailInfo) getHEAP().get(refId);
@@ -378,8 +378,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mFrom", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mFrom__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
-                com.baidu.mapapi.search.route.PlanNode mFrom = __mFrom__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFrom__) : null;
+                Integer __mFromRefId__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
+                com.baidu.mapapi.search.route.PlanNode mFrom = __mFromRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFromRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.BikingRoutePlanOption ref = (com.baidu.mapapi.search.route.BikingRoutePlanOption) getHEAP().get(refId);
@@ -390,8 +390,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mTo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mTo__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
-                com.baidu.mapapi.search.route.PlanNode mTo = __mTo__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mTo__) : null;
+                Integer __mToRefId__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
+                com.baidu.mapapi.search.route.PlanNode mTo = __mToRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mToRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.BikingRoutePlanOption ref = (com.baidu.mapapi.search.route.BikingRoutePlanOption) getHEAP().get(refId);
@@ -413,8 +413,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.WalkingRoutePlanOption::set_mFrom", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mFrom__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
-                com.baidu.mapapi.search.route.PlanNode mFrom = __mFrom__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFrom__) : null;
+                Integer __mFromRefId__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
+                com.baidu.mapapi.search.route.PlanNode mFrom = __mFromRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFromRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.WalkingRoutePlanOption ref = (com.baidu.mapapi.search.route.WalkingRoutePlanOption) getHEAP().get(refId);
@@ -425,8 +425,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.WalkingRoutePlanOption::set_mTo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mTo__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
-                com.baidu.mapapi.search.route.PlanNode mTo = __mTo__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mTo__) : null;
+                Integer __mToRefId__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
+                com.baidu.mapapi.search.route.PlanNode mTo = __mToRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mToRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.WalkingRoutePlanOption ref = (com.baidu.mapapi.search.route.WalkingRoutePlanOption) getHEAP().get(refId);
@@ -437,8 +437,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mFrom", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mFrom__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
-                com.baidu.mapapi.search.route.PlanNode mFrom = __mFrom__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFrom__) : null;
+                Integer __mFromRefId__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
+                com.baidu.mapapi.search.route.PlanNode mFrom = __mFromRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFromRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.MassTransitRoutePlanOption ref = (com.baidu.mapapi.search.route.MassTransitRoutePlanOption) getHEAP().get(refId);
@@ -449,8 +449,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mTo__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
-                com.baidu.mapapi.search.route.PlanNode mTo = __mTo__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mTo__) : null;
+                Integer __mToRefId__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
+                com.baidu.mapapi.search.route.PlanNode mTo = __mToRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mToRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.MassTransitRoutePlanOption ref = (com.baidu.mapapi.search.route.MassTransitRoutePlanOption) getHEAP().get(refId);
@@ -527,8 +527,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mFrom", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mFrom__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
-                com.baidu.mapapi.search.route.IndoorPlanNode mFrom = __mFrom__ != null ? (com.baidu.mapapi.search.route.IndoorPlanNode) getHEAP().get(__mFrom__) : null;
+                Integer __mFromRefId__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
+                com.baidu.mapapi.search.route.IndoorPlanNode mFrom = __mFromRefId__ != null ? (com.baidu.mapapi.search.route.IndoorPlanNode) getHEAP().get(__mFromRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.IndoorRoutePlanOption ref = (com.baidu.mapapi.search.route.IndoorRoutePlanOption) getHEAP().get(refId);
@@ -539,8 +539,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mTo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mTo__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
-                com.baidu.mapapi.search.route.IndoorPlanNode mTo = __mTo__ != null ? (com.baidu.mapapi.search.route.IndoorPlanNode) getHEAP().get(__mTo__) : null;
+                Integer __mToRefId__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
+                com.baidu.mapapi.search.route.IndoorPlanNode mTo = __mToRefId__ != null ? (com.baidu.mapapi.search.route.IndoorPlanNode) getHEAP().get(__mToRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.IndoorRoutePlanOption ref = (com.baidu.mapapi.search.route.IndoorRoutePlanOption) getHEAP().get(refId);
@@ -551,8 +551,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.TransitRoutePlanOption::set_mFrom", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mFrom__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
-                com.baidu.mapapi.search.route.PlanNode mFrom = __mFrom__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFrom__) : null;
+                Integer __mFromRefId__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
+                com.baidu.mapapi.search.route.PlanNode mFrom = __mFromRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFromRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.TransitRoutePlanOption ref = (com.baidu.mapapi.search.route.TransitRoutePlanOption) getHEAP().get(refId);
@@ -563,8 +563,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.TransitRoutePlanOption::set_mTo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mTo__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
-                com.baidu.mapapi.search.route.PlanNode mTo = __mTo__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mTo__) : null;
+                Integer __mToRefId__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
+                com.baidu.mapapi.search.route.PlanNode mTo = __mToRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mToRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.TransitRoutePlanOption ref = (com.baidu.mapapi.search.route.TransitRoutePlanOption) getHEAP().get(refId);
@@ -597,8 +597,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mFrom", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mFrom__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
-                com.baidu.mapapi.search.route.PlanNode mFrom = __mFrom__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFrom__) : null;
+                Integer __mFromRefId__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
+                com.baidu.mapapi.search.route.PlanNode mFrom = __mFromRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFromRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.DrivingRoutePlanOption ref = (com.baidu.mapapi.search.route.DrivingRoutePlanOption) getHEAP().get(refId);
@@ -609,8 +609,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mTo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mTo__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
-                com.baidu.mapapi.search.route.PlanNode mTo = __mTo__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mTo__) : null;
+                Integer __mToRefId__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
+                com.baidu.mapapi.search.route.PlanNode mTo = __mToRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mToRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.route.DrivingRoutePlanOption ref = (com.baidu.mapapi.search.route.DrivingRoutePlanOption) getHEAP().get(refId);
@@ -757,8 +757,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPoiFilter", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mPoiFilter__ = (Integer) ((Map<String, Object>) __args__).get("mPoiFilter");
-                com.baidu.mapapi.search.poi.PoiFilter mPoiFilter = __mPoiFilter__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__mPoiFilter__) : null;
+                Integer __mPoiFilterRefId__ = (Integer) ((Map<String, Object>) __args__).get("mPoiFilter");
+                com.baidu.mapapi.search.poi.PoiFilter mPoiFilter = __mPoiFilterRefId__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__mPoiFilterRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiCitySearchOption ref = (com.baidu.mapapi.search.poi.PoiCitySearchOption) getHEAP().get(refId);
@@ -780,8 +780,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiAddrInfo::set_location", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __location__ = (Integer) ((Map<String, Object>) __args__).get("location");
-                com.baidu.mapapi.model.LatLng location = __location__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__location__) : null;
+                Integer __locationRefId__ = (Integer) ((Map<String, Object>) __args__).get("location");
+                com.baidu.mapapi.model.LatLng location = __locationRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__locationRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiAddrInfo ref = (com.baidu.mapapi.search.poi.PoiAddrInfo) getHEAP().get(refId);
@@ -891,8 +891,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiIndoorInfo::set_latLng", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __latLng__ = (Integer) ((Map<String, Object>) __args__).get("latLng");
-                com.baidu.mapapi.model.LatLng latLng = __latLng__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__latLng__) : null;
+                Integer __latLngRefId__ = (Integer) ((Map<String, Object>) __args__).get("latLng");
+                com.baidu.mapapi.model.LatLng latLng = __latLngRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__latLngRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiIndoorInfo ref = (com.baidu.mapapi.search.poi.PoiIndoorInfo) getHEAP().get(refId);
@@ -1035,8 +1035,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mBound", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mBound__ = (Integer) ((Map<String, Object>) __args__).get("mBound");
-                com.baidu.mapapi.model.LatLngBounds mBound = __mBound__ != null ? (com.baidu.mapapi.model.LatLngBounds) getHEAP().get(__mBound__) : null;
+                Integer __mBoundRefId__ = (Integer) ((Map<String, Object>) __args__).get("mBound");
+                com.baidu.mapapi.model.LatLngBounds mBound = __mBoundRefId__ != null ? (com.baidu.mapapi.model.LatLngBounds) getHEAP().get(__mBoundRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiBoundSearchOption ref = (com.baidu.mapapi.search.poi.PoiBoundSearchOption) getHEAP().get(refId);
@@ -1102,8 +1102,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPoiFilter", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mPoiFilter__ = (Integer) ((Map<String, Object>) __args__).get("mPoiFilter");
-                com.baidu.mapapi.search.poi.PoiFilter mPoiFilter = __mPoiFilter__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__mPoiFilter__) : null;
+                Integer __mPoiFilterRefId__ = (Integer) ((Map<String, Object>) __args__).get("mPoiFilter");
+                com.baidu.mapapi.search.poi.PoiFilter mPoiFilter = __mPoiFilterRefId__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__mPoiFilterRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiBoundSearchOption ref = (com.baidu.mapapi.search.poi.PoiBoundSearchOption) getHEAP().get(refId);
@@ -1125,8 +1125,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiDetailResult::set_location", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __location__ = (Integer) ((Map<String, Object>) __args__).get("location");
-                com.baidu.mapapi.model.LatLng location = __location__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__location__) : null;
+                Integer __locationRefId__ = (Integer) ((Map<String, Object>) __args__).get("location");
+                com.baidu.mapapi.model.LatLng location = __locationRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__locationRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get(refId);
@@ -1401,8 +1401,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::set_mLocation", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mLocation__ = (Integer) ((Map<String, Object>) __args__).get("mLocation");
-                com.baidu.mapapi.model.LatLng mLocation = __mLocation__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__mLocation__) : null;
+                Integer __mLocationRefId__ = (Integer) ((Map<String, Object>) __args__).get("mLocation");
+                com.baidu.mapapi.model.LatLng mLocation = __mLocationRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__mLocationRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get(refId);
@@ -1490,8 +1490,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::set_mPoiFilter", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mPoiFilter__ = (Integer) ((Map<String, Object>) __args__).get("mPoiFilter");
-                com.baidu.mapapi.search.poi.PoiFilter mPoiFilter = __mPoiFilter__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__mPoiFilter__) : null;
+                Integer __mPoiFilterRefId__ = (Integer) ((Map<String, Object>) __args__).get("mPoiFilter");
+                com.baidu.mapapi.search.poi.PoiFilter mPoiFilter = __mPoiFilterRefId__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__mPoiFilterRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get(refId);
@@ -1524,8 +1524,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.district.DistrictResult::set_centerPt", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __centerPt__ = (Integer) ((Map<String, Object>) __args__).get("centerPt");
-                com.baidu.mapapi.model.LatLng centerPt = __centerPt__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__centerPt__) : null;
+                Integer __centerPtRefId__ = (Integer) ((Map<String, Object>) __args__).get("centerPt");
+                com.baidu.mapapi.model.LatLng centerPt = __centerPtRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__centerPtRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.district.DistrictResult ref = (com.baidu.mapapi.search.district.DistrictResult) getHEAP().get(refId);
@@ -1734,8 +1734,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.share.LocationShareURLOption::set_mLocation", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mLocation__ = (Integer) ((Map<String, Object>) __args__).get("mLocation");
-                com.baidu.mapapi.model.LatLng mLocation = __mLocation__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__mLocation__) : null;
+                Integer __mLocationRefId__ = (Integer) ((Map<String, Object>) __args__).get("mLocation");
+                com.baidu.mapapi.model.LatLng mLocation = __mLocationRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__mLocationRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.share.LocationShareURLOption ref = (com.baidu.mapapi.search.share.LocationShareURLOption) getHEAP().get(refId);
@@ -1779,8 +1779,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.share.RouteShareURLOption::set_mFrom", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mFrom__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
-                com.baidu.mapapi.search.route.PlanNode mFrom = __mFrom__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFrom__) : null;
+                Integer __mFromRefId__ = (Integer) ((Map<String, Object>) __args__).get("mFrom");
+                com.baidu.mapapi.search.route.PlanNode mFrom = __mFromRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mFromRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.share.RouteShareURLOption ref = (com.baidu.mapapi.search.share.RouteShareURLOption) getHEAP().get(refId);
@@ -1791,8 +1791,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.search.share.RouteShareURLOption::set_mTo", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __mTo__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
-                com.baidu.mapapi.search.route.PlanNode mTo = __mTo__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mTo__) : null;
+                Integer __mToRefId__ = (Integer) ((Map<String, Object>) __args__).get("mTo");
+                com.baidu.mapapi.search.route.PlanNode mTo = __mToRefId__ != null ? (com.baidu.mapapi.search.route.PlanNode) getHEAP().get(__mToRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.search.share.RouteShareURLOption ref = (com.baidu.mapapi.search.share.RouteShareURLOption) getHEAP().get(refId);
@@ -1880,8 +1880,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.map.MapStatus::set_winRound", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __winRound__ = (Integer) ((Map<String, Object>) __args__).get("winRound");
-                com.baidu.mapapi.map.WinRound winRound = __winRound__ != null ? (com.baidu.mapapi.map.WinRound) getHEAP().get(__winRound__) : null;
+                Integer __winRoundRefId__ = (Integer) ((Map<String, Object>) __args__).get("winRound");
+                com.baidu.mapapi.map.WinRound winRound = __winRoundRefId__ != null ? (com.baidu.mapapi.map.WinRound) getHEAP().get(__winRoundRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get(refId);
@@ -1980,8 +1980,8 @@ public class SubHandler4 {
             // setter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::set_geoPt", (__args__, __methodResult__) -> {
                 // ref arg
-                Integer __geoPt__ = (Integer) ((Map<String, Object>) __args__).get("geoPt");
-                com.baidu.mapapi.model.LatLng geoPt = __geoPt__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__geoPt__) : null;
+                Integer __geoPtRefId__ = (Integer) ((Map<String, Object>) __args__).get("geoPt");
+                com.baidu.mapapi.model.LatLng geoPt = __geoPtRefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__geoPtRefId__) : null;
             
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
                 com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get(refId);

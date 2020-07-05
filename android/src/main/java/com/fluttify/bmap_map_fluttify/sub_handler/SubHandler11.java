@@ -330,8 +330,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiCitySearchOption::poiFilter", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiFilter var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiFilter var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -665,8 +665,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiBoundSearchOption::bound", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLngBounds var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLngBounds) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLngBounds var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLngBounds) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -851,8 +851,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiBoundSearchOption::poiFilter", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiFilter var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiFilter var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -2141,8 +2141,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiDetailResult::setLocation", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3346,8 +3346,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiSearch::searchInCity", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiCitySearchOption var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiCitySearchOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiCitySearchOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiCitySearchOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3380,8 +3380,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiSearch::searchNearby", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiNearbySearchOption var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiNearbySearchOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3414,8 +3414,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiSearch::searchInBound", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiBoundSearchOption var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiBoundSearchOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiBoundSearchOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiBoundSearchOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3448,8 +3448,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiSearch::searchPoiDetail", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiDetailSearchOption var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiDetailSearchOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiDetailSearchOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiDetailSearchOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3482,8 +3482,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiSearch::searchPoiIndoor", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiIndoorOption var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiIndoorOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiIndoorOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiIndoorOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -4032,8 +4032,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::location", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -4329,8 +4329,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::poiFilter", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.poi.PoiFilter var1 = __var1__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.poi.PoiFilter var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.poi.PoiFilter) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -4476,8 +4476,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.district.DistrictSearch::searchDistrict", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.district.DistrictSearchOption var1 = __var1__ != null ? (com.baidu.mapapi.search.district.DistrictSearchOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.district.DistrictSearchOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.district.DistrictSearchOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -4644,8 +4644,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.district.DistrictResult::setCenterPt", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -4840,8 +4840,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeOption::location", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5226,8 +5226,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.geocode.GeoCodeResult::setLocation", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5550,8 +5550,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.geocode.GeoCoder::geocode", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.geocode.GeoCodeOption var1 = __var1__ != null ? (com.baidu.mapapi.search.geocode.GeoCodeOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.geocode.GeoCodeOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.geocode.GeoCodeOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -5584,8 +5584,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.geocode.GeoCoder::reverseGeoCode", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.geocode.ReverseGeoCodeOption var1 = __var1__ != null ? (com.baidu.mapapi.search.geocode.ReverseGeoCodeOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.geocode.ReverseGeoCodeOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.geocode.ReverseGeoCodeOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -6174,8 +6174,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult::setAddressDetail", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent var1 = __var1__ != null ? (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -6307,8 +6307,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult::setLocation", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -6884,8 +6884,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.share.LocationShareURLOption::location", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -7031,8 +7031,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.share.ShareUrlSearch::requestPoiDetailShareUrl", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.share.PoiDetailShareURLOption var1 = __var1__ != null ? (com.baidu.mapapi.search.share.PoiDetailShareURLOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.share.PoiDetailShareURLOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.share.PoiDetailShareURLOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -7065,8 +7065,8 @@ public class SubHandler11 {
             put("com.baidu.mapapi.search.share.ShareUrlSearch::requestLocationShareUrl", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.search.share.LocationShareURLOption var1 = __var1__ != null ? (com.baidu.mapapi.search.share.LocationShareURLOption) getHEAP().get(__var1__) : null;
+                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
+                com.baidu.mapapi.search.share.LocationShareURLOption var1 = __var1RefId__ != null ? (com.baidu.mapapi.search.share.LocationShareURLOption) getHEAP().get(__var1RefId__) : null;
             
                 // ref
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
