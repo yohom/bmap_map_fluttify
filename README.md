@@ -89,10 +89,13 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 | 加入QQ群讨论 <br/> <img src="https://github.com/fluttify-project/fluttify-project/blob/master/resources/qrcode_1593774649831.jpg?raw=true" height="300"> |加入QQ群讨论 <br/> <img src="https://github.com/fluttify-project/fluttify-project/blob/master/resources/1593774713224_temp_qrcode_share_9993.png?raw=true" height="300"> | 
 
 ## 社区版与专业版
-|    | 社区版 | 专业版 |
+|  显示地图  | 社区版 | 专业版 |
 |:-----:|:-----:|:-----:|
 |  设置地图中心点  |  ✅ |  ✅   |
 |  设置我的位置数据  |  ✅ |  ✅   |
+
+|  在地图上绘制  | 社区版 | 专业版 |
+|:-----:|:-----:|:-----:|
 |  批量添加marker  |  ✅ |  ✅   |
 |  设置marker点击监听事件  |  ✅ |  ✅   |
 |  把marker列表从地图上移除  |  ✅ |  ✅   |
@@ -100,6 +103,10 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 |  添加折线  |  ✅ |  ✅   |
 |  添加多边形  |  ✅ |  ✅   |
 |  添加圆  |  ✅ |  ✅   |
+|  设置marker拖动监听事件  |  ✅ |  ✅   |
+
+|  与地图交互  | 社区版 | 专业版 |
+|:-----:|:-----:|:-----:|
 |  放大一个等级  |  ✅ |  ✅   |
 |  缩小一个等级  |  ✅ |  ✅   |
 |  选择显示图层  |  ✅ |  ✅   |
@@ -112,7 +119,6 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 |  获取当前缩放大小  |  ✅ |  ✅   |
 |  设置缩放是否以中心点为锚点  |  ✅ |  ✅   |
 |  获取地图中心点  |  ✅ |  ✅   |
-|  设置marker拖动监听事件  |  ✅ |  ✅   |
 |  设置地图移动监听事件  |  ✅ |  ✅   |
 
 ## LICENSE
