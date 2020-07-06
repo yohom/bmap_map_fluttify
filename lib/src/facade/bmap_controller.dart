@@ -578,7 +578,7 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
-  /// 放大一个等级
+  /// 缩小一个等级
   Future<void> zoomOut({bool animated = true}) async {
     await platform(
       android: (pool) async {
@@ -691,7 +691,7 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
-  /// 旋转手势使能
+  /// 倾斜手势使能
   Future<void> setOverlookingGesturesEnabled(bool enable) async {
     await platform(
       android: (pool) async {
