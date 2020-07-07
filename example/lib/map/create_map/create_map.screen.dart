@@ -162,6 +162,16 @@ class _CreateMapScreenState extends State<CreateMapScreen> {
                     );
                   },
                 ),
+                ListTile(
+                  title: Center(child: Text('自定义地图')),
+                  onTap: () {
+                    _controller?.setCustomMapStyle(
+                      androidBinaryStyle:
+                          'raw/7271bb55da29d3ec22c35b1760c1ab6c.sty',
+                      iosJsonStyle: 'raw/custom_map_config.json',
+                    );
+                  },
+                ),
               ],
             ),
           ),

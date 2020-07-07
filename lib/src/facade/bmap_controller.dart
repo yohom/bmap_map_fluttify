@@ -861,6 +861,51 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 自定义地图
+  ///
+  /// [androidStyleAsset] android端样式文件路径, 即在pubspec.yaml下注册的asset路径
+  /// [iosJsonStyle] ios端样式文件路径, 即在pubspec.yaml下注册的asset路径
+  ///
+  /// 这里的一个坑, 官方说明中, 不管是文档里, 还是创建自定义地图的提示中, 都指明了android和
+  /// ios两端用的是同一种二进制文件, 但是ios端实际操作过程中, 却发现总是报json格式错误, 后来
+  /// 使用了用于web端的json样式文件到ios端后, 发现是有用的, 所以这里要区分一下两端的文件! 哎!
+  /// 花了半天的时间趟这个坑, 简直是坑爹!
+  Future<void> setCustomMapStyle({
+    String androidBinaryStyle,
+    String iosJsonStyle,
+  }) async {
+    await platform(
+      android: (pool) async {
+        Uint8List styleData = await rootBundle
+            .load(androidBinaryStyle)
+            .then((byteData) => byteData.buffer.asUint8List());
+
+        final dir = await getApplicationSupportDirectory();
+        final file = File('${dir.path}/$androidBinaryStyle');
+        if (!file.existsSync()) file.createSync(recursive: true);
+
+        await file.writeAsBytes(styleData, flush: true);
+
+        await androidController.setMapCustomStylePath(file.path);
+        await androidController.setMapCustomStyleEnable(true);
+      },
+      ios: (pool) async {
+        Uint8List styleData = await rootBundle
+            .load(iosJsonStyle)
+            .then((byteData) => byteData.buffer.asUint8List());
+
+        final dir = await getApplicationSupportDirectory();
+        final file = File('${dir.path}/$iosJsonStyle');
+        if (!file.existsSync()) file.createSync(recursive: true);
+
+        await file.writeAsBytes(styleData, flush: true);
+
+        await iosController.setCustomMapStylePath(file.path);
+        await iosController.setCustomMapStyleEnable(true);
+      },
+    );
+  }
+
   /// 释放资源
   Future<void> dispose() async {
     await androidController?.onPause();
