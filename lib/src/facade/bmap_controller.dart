@@ -139,11 +139,16 @@ class BmapController with WidgetsBindingObserver {
     final latBatch = options.map((it) => it.latLng.latitude).toList();
     final lngBatch = options.map((it) => it.latLng.longitude).toList();
     final iconDataBatch = <Uint8List>[
-      for (final option in options)
-        if (option.iconUri != null && option.imageConfig != null)
-          await uri2ImageData(option.imageConfig, option.iconUri)
-        else if (option.widget != null)
-          await _state.widgetToImageData(option.widget)
+      ...await Future.wait([
+        for (final option in options)
+          if (option.iconProvider != null)
+            option.iconProvider
+                .toImageData(createLocalImageConfiguration(_state.context))
+      ]),
+      ...await _state.widgetToImageData(options
+          .where((element) => element.widget != null)
+          .map((e) => e.widget)
+          .toList()),
     ];
     final objectBatch = options.map((it) => it.object).toList();
 
@@ -175,7 +180,8 @@ class BmapController with WidgetsBindingObserver {
         final overlays = await map.addOverlays(markerOptionBatch);
         // 由于返回类型被重置为Polygon(因为是第一个子类的关系), 这里转换一下
         final markers = overlays
-            .map((it) => com_baidu_mapapi_map_Marker()..refId = it.refId)
+            .map((it) => TypeOpBmapMapFluttifyAndroid(it)
+                .as__<com_baidu_mapapi_map_Marker>())
             .toList();
 
         // marker不释放, 还有用
