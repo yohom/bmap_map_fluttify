@@ -280,11 +280,13 @@ class BmapController with WidgetsBindingObserver {
   /// 添加折线
   ///
   /// 可配置参数详见[PolylineOption]
-  Future<Polyline> addPolyline(PolylineOption option) {
+  Future<Polyline> addPolyline(PolylineOption option) async {
     assert(option != null);
 
     final latitudeBatch = option.latLngList.map((e) => e.latitude).toList();
     final longitudeBatch = option.latLngList.map((e) => e.longitude).toList();
+    Uint8List textureData = await option.textureProvider
+        ?.toImageData(createLocalImageConfiguration(_state.context));
 
     return platform(
       android: (pool) async {
@@ -312,10 +314,8 @@ class BmapController with WidgetsBindingObserver {
               .color(Int32List.fromList([option.strokeColor.value])[0]);
         }
         // 自定义贴图
-        if (option.customTexture != null && option.imageConfig != null) {
-          Uint8List iconData =
-              await uri2ImageData(option.imageConfig, option.customTexture);
-          final bitmap = await android_graphics_Bitmap.create(iconData);
+        if (textureData != null) {
+          final bitmap = await android_graphics_Bitmap.create(textureData);
           final texture = await com_baidu_mapapi_map_BitmapDescriptorFactory
               .fromBitmap(bitmap);
           await polylineOptions.customTexture(texture);
@@ -373,10 +373,7 @@ class BmapController with WidgetsBindingObserver {
           polyline.addJsonableProperty__(2, option.strokeColor.value);
         }
         // 设置图片
-        if (option.customTexture != null && option.imageConfig != null) {
-          Uint8List textureData =
-              await uri2ImageData(option.imageConfig, option.customTexture);
-
+        if (textureData != null) {
           final texture = await UIImage.create(textureData);
 
           polyline.addProperty__(3, texture);
