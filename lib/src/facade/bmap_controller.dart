@@ -10,6 +10,9 @@ typedef Future<void> OnMarkerDrag(Marker marker);
 /// 地图移动事件回调签名
 typedef Future<void> OnMapMove(MapMove move);
 
+/// 地图截屏回调签名
+typedef Future<void> OnScreenShot(Uint8List imageData);
+
 /// 地图控制类
 class BmapController with WidgetsBindingObserver {
   /// Android构造器
@@ -903,6 +906,29 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 截图
+  Future<void> screenShot(OnScreenShot onScreenShot) async {
+    assert(onScreenShot != null);
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        await map.snapshot(
+          _androidMapDelegate.._onScreenShot = onScreenShot,
+        );
+
+        pool.add(map);
+      },
+      ios: (pool) async {
+        final rect = await iosController.frame;
+        final image = await iosController.takeSnapshot();
+
+        if (onScreenShot != null) onScreenShot(await image.data);
+
+        pool..add(rect)..add(image);
+      },
+    );
+  }
+
   /// 释放资源
   Future<void> dispose() async {
     await androidController?.onPause();
@@ -1027,12 +1053,14 @@ class _AndroidMapDelegate extends java_lang_Object
     with
         com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener,
         com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener,
-        com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener {
+        com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener,
+        com_baidu_mapapi_map_BaiduMap_SnapshotReadyCallback {
   OnMarkerClicked _onMarkerClicked;
   OnMarkerDrag _onMarkerDragStart;
   OnMarkerDrag _onMarkerDragging;
   OnMarkerDrag _onMarkerDragEnd;
   OnMapMove _onMapMoveEnd;
+  OnScreenShot _onScreenShot;
 
   @override
   Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
@@ -1082,6 +1110,14 @@ class _AndroidMapDelegate extends java_lang_Object
         zoom: await var1.get_zoom(),
         tilt: await var1.get_overlook(),
       ));
+    }
+  }
+
+  @override
+  Future<void> onSnapshotReady(android_graphics_Bitmap var1) async {
+    super.onSnapshotReady(var1);
+    if (_onScreenShot != null) {
+      _onScreenShot(await var1.data);
     }
   }
 }

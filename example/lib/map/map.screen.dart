@@ -9,6 +9,7 @@ import 'draw_on_map/draw_point.screen.dart';
 import 'draw_on_map/draw_polygon.screen.dart';
 import 'draw_on_map/draw_polyline.screen.dart';
 import 'interact_with_map/code_interaction.screen.dart';
+import 'interact_with_map/screen_shot_screen.dart';
 
 class MapDemo extends StatelessWidget {
   @override
@@ -33,6 +34,11 @@ class MapDemo extends StatelessWidget {
               label: '调用方法交互',
               sublabel: 'CodeInteractionScreen',
               target: CodeInteractionScreen(),
+            ),
+            FunctionItem(
+              label: '截图',
+              sublabel: 'ScreenShotScreen',
+              target: ScreenShotScreen(),
             ),
           ],
         ),
