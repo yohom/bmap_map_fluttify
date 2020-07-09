@@ -980,6 +980,31 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 设置地图内间距
+  Future<void> setPadding(EdgeInsets padding) async {
+    assert(padding != null);
+    final ratio = MediaQuery.of(_state.context).devicePixelRatio;
+    await platform(
+      android: (pool) async {
+        await androidController.setPadding(
+          (ratio * padding.left)?.toInt() ?? 0,
+          (ratio * padding.top)?.toInt() ?? 0,
+          (ratio * padding.right)?.toInt() ?? 0,
+          (ratio * padding.bottom)?.toInt() ?? 0,
+        );
+      },
+      ios: (pool) async {
+        final insets = await UIEdgeInsets.create(
+          padding.top ?? 0.0,
+          padding.left ?? 0.0,
+          padding.bottom ?? 0.0,
+          padding.right ?? 0.0,
+        );
+        await iosController.set_mapPadding(insets);
+      },
+    );
+  }
+
   /// 释放资源
   Future<void> dispose() async {
     await androidController?.onPause();

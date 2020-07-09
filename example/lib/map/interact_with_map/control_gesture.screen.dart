@@ -93,6 +93,14 @@ class _ControlGestureScreenState extends State<ControlGestureScreen> {
                   options: <String>['左下', '左上', '中下', '中上', '右下', '右上'],
                   head: 'logo位置',
                 ),
+                ContinuousSetting(
+                  head: '地图内边距(重新设置logo位置查看效果)',
+                  min: 0,
+                  max: 100,
+                  onChanged: (value) async {
+                    _controller.setPadding(EdgeInsets.all(value));
+                  },
+                ),
               ],
             ),
           ),
