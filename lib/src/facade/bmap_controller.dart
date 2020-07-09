@@ -929,6 +929,57 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 设置logo位置
+  Future<void> setLogoPosition(Alignment position) async {
+    await platform(
+      android: (pool) async {
+        com_baidu_mapapi_map_LogoPosition logoPosition =
+            com_baidu_mapapi_map_LogoPosition.logoPostionleftBottom;
+        if (position == Alignment.bottomLeft) {
+          logoPosition =
+              com_baidu_mapapi_map_LogoPosition.logoPostionleftBottom;
+        } else if (position == Alignment.bottomCenter) {
+          logoPosition =
+              com_baidu_mapapi_map_LogoPosition.logoPostionCenterBottom;
+        } else if (position == Alignment.topCenter) {
+          logoPosition = com_baidu_mapapi_map_LogoPosition.logoPostionCenterTop;
+        } else if (position == Alignment.topLeft) {
+          logoPosition = com_baidu_mapapi_map_LogoPosition.logoPostionleftTop;
+        } else if (position == Alignment.topRight) {
+          logoPosition = com_baidu_mapapi_map_LogoPosition.logoPostionRightTop;
+        } else if (position == Alignment.bottomRight) {
+          logoPosition =
+              com_baidu_mapapi_map_LogoPosition.logoPostionRightBottom;
+        } else {
+          debugPrint('不支持的位置');
+        }
+
+        await androidController.setLogoPosition(logoPosition);
+      },
+      ios: (pool) async {
+        BMKLogoPosition logoPosition =
+            BMKLogoPosition.BMKLogoPositionLeftBottom;
+        if (position == Alignment.bottomLeft) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionLeftBottom;
+        } else if (position == Alignment.bottomCenter) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionCenterBottom;
+        } else if (position == Alignment.topCenter) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionCenterTop;
+        } else if (position == Alignment.topLeft) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionLeftTop;
+        } else if (position == Alignment.topRight) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionRightTop;
+        } else if (position == Alignment.bottomRight) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionRightBottom;
+        } else {
+          debugPrint('不支持的位置');
+        }
+
+        await iosController.set_logoPosition(logoPosition);
+      },
+    );
+  }
+
   /// 释放资源
   Future<void> dispose() async {
     await androidController?.onPause();
