@@ -58,7 +58,7 @@ class com_baidu_mapapi_map_GroundOverlayOptions extends com_baidu_mapapi_map_Ove
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::image', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::image', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -106,7 +106,7 @@ class com_baidu_mapapi_map_GroundOverlayOptions extends com_baidu_mapapi_map_Ove
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::position', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::position', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -322,7 +322,7 @@ class com_baidu_mapapi_map_GroundOverlayOptions extends com_baidu_mapapi_map_Ove
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::positionFromBounds', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::positionFromBounds', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -514,7 +514,7 @@ class com_baidu_mapapi_map_GroundOverlayOptions extends com_baidu_mapapi_map_Ove
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::extraInfo', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.GroundOverlayOptions::extraInfo', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

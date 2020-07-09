@@ -80,30 +80,6 @@ class com_baidu_mapapi_map_BitmapDescriptor extends java_lang_Object  {
     }
   }
   
-  
-  Future<void> recycle() async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.map.BitmapDescriptor@$refId::recycle([])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptor::recycle', {"refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
-  }
-  
   //endregion
 }
 
@@ -145,26 +121,6 @@ extension com_baidu_mapapi_map_BitmapDescriptor_Batch on List<com_baidu_mapapi_m
   
     // invoke native method
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptor::clearCache_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
-  }
-  
-  
-  Future<List<void>> recycle_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptor::recycle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
   
   
     // convert native result to dart side object

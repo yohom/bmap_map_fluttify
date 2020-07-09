@@ -104,7 +104,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position?.refId, "zoomLevel": zoomLevel, "anchor": anchor?.refId, "icon": icon?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position is Ref ? (position as Ref)?.refId : position, "zoomLevel": zoomLevel, "anchor": anchor is Ref ? (anchor as Ref)?.refId : anchor, "icon": icon is Ref ? (icon as Ref)?.refId : icon});
   
   
     // handle native call
@@ -128,7 +128,7 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds?.refId, "icon": icon?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds is Ref ? (bounds as Ref)?.refId : bounds, "icon": icon is Ref ? (icon as Ref)?.refId : icon});
   
   
     // handle native call

@@ -64,7 +64,7 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::geocode', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::geocode', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -88,7 +88,7 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::reverseGeoCode', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::reverseGeoCode', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

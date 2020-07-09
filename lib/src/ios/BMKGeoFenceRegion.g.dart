@@ -98,7 +98,7 @@ class BMKGeoFenceRegion extends NSObject with NSCopying {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceRegion::judgeStatusWithCoor', {"coor": coor?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceRegion::judgeStatusWithCoor', {"coor": coor is Ref ? (coor as Ref)?.refId : coor, "refId": refId});
   
   
     // handle native call

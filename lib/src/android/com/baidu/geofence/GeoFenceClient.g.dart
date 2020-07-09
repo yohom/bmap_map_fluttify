@@ -92,7 +92,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__com_baidu_geofence_model_DPoint__String__double__String', {"var1": var1?.refId, "var2": var2, "var3": var3, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__com_baidu_geofence_model_DPoint__String__double__String', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2, "var3": var3, "var4": var4, "refId": refId});
   
   
     // handle native call
@@ -140,7 +140,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__com_baidu_geofence_model_DPoint__String__double__int__String', {"var1": var1, "var2": var2, "var3": var3?.refId, "var4": var4, "var5": var5, "var6": var6, "var7": var7, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__com_baidu_geofence_model_DPoint__String__double__int__String', {"var1": var1, "var2": var2, "var3": var3 is Ref ? (var3 as Ref)?.refId : var3, "var4": var4, "var5": var5, "var6": var6, "var7": var7, "refId": refId});
   
   
     // handle native call
@@ -236,7 +236,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence__com_baidu_geofence_GeoFence', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence__com_baidu_geofence_GeoFence', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

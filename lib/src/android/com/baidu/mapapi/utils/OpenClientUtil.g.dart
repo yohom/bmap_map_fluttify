@@ -58,7 +58,7 @@ class com_baidu_mapapi_utils_OpenClientUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.OpenClientUtil::getBaiduMapVersion', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.OpenClientUtil::getBaiduMapVersion', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call
@@ -82,7 +82,7 @@ class com_baidu_mapapi_utils_OpenClientUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.OpenClientUtil::getLatestBaiduMapApp', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.OpenClientUtil::getLatestBaiduMapApp', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call

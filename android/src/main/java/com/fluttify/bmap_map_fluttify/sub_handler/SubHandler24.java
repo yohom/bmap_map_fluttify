@@ -31,80 +31,6 @@ public class SubHandler24 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.baidu.mapapi.map.MapView::setLogoPosition_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // enum arg
-                    com.baidu.mapapi.map.LogoPosition var1 = com.baidu.mapapi.map.LogoPosition.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                    // ref
-                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                    com.baidu.mapapi.map.MapView ref = (com.baidu.mapapi.map.MapView) getHEAP().get(refId);
-            
-                    // invoke native method
-                    try {
-                        ref.setLogoPosition(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    // convert result to jsonable result
-                    String jsonableResult = "success";
-            
-                    __resultList__.add(jsonableResult);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.MapView::getLogoPosition_batch", (__argsBatch__, __methodResult__) -> {
-                List<Integer> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                    com.baidu.mapapi.map.MapView ref = (com.baidu.mapapi.map.MapView) getHEAP().get(refId);
-            
-                    // invoke native method
-                    com.baidu.mapapi.map.LogoPosition __result__;
-                    try {
-                        __result__ = ref.getLogoPosition();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    // convert result to jsonable result
-                    Integer jsonableResult = null;
-                    if (__result__ != null) {
-                        jsonableResult = System.identityHashCode(__result__);
-                        getHEAP().put(jsonableResult, __result__);
-                    }
-            
-                    __resultList__.add(jsonableResult);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
             put("com.baidu.mapapi.map.MapView::getMapLevel_batch", (__argsBatch__, __methodResult__) -> {
                 List<Integer> __resultList__ = new ArrayList<>();
             
@@ -7157,6 +7083,20 @@ public class SubHandler24 {
                 Object ref = getHEAP().get(refId);
             
                 __methodResult__.success(ref instanceof com.baidu.location.Address);
+            });
+            put("RefClass::isKindOfcom_baidu_location_BDNotifyListener", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
+            
+                __methodResult__.success(ref instanceof com.baidu.location.BDNotifyListener);
+            });
+            put("RefClass::isKindOfcom_baidu_location_Jni", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
+            
+                __methodResult__.success(ref instanceof com.baidu.location.Jni);
             });
         }};
     }

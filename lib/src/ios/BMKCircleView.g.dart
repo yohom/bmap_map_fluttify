@@ -63,7 +63,7 @@ class BMKCircleView extends BMKOverlayGLBasicView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKCircleView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircleView::initWithCircle', {"circle": circle?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKCircleView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircleView::initWithCircle', {"circle": circle is Ref ? (circle as Ref)?.refId : circle, "refId": refId});
   
   
     // handle native call

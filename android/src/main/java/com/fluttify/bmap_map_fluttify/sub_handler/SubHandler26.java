@@ -30,20 +30,6 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 public class SubHandler26 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudEvent", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudEvent);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudManager", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudManager);
-            });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_BaseCloudSearchInfo", (__args__, __methodResult__) -> {
                 // 引用对象
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -3685,6 +3671,52 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.MyLocationConfiguration __obj__ = new com.baidu.mapapi.map.MyLocationConfiguration(var1, var2, var3, var4, var5);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor");
+                }
+            
+                // args
+                // enum arg
+                com.baidu.mapapi.map.MyLocationConfiguration.LocationMode var1 = com.baidu.mapapi.map.MyLocationConfiguration.LocationMode.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+                // jsonable arg
+                boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Integer __var3RefId__ = (Integer) ((Map<String, Object>) __args__).get("var3");
+                com.baidu.mapapi.map.BitmapDescriptor var3 = __var3RefId__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var3RefId__) : null;
+            
+                // create target object
+                com.baidu.mapapi.map.MyLocationConfiguration __obj__ = new com.baidu.mapapi.map.MyLocationConfiguration(var1, var2, var3);
+                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(System.identityHashCode(__obj__));
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_TileOverlayOptions__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TileOverlayOptions__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.TileOverlayOptions __obj__ = new com.baidu.mapapi.map.TileOverlayOptions();
                 getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP

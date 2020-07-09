@@ -84,7 +84,7 @@ mixin BMKAnnotation on NSObject {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::setCoordinate', {"newCoordinate": newCoordinate?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::setCoordinate', {"newCoordinate": newCoordinate is Ref ? (newCoordinate as Ref)?.refId : newCoordinate, "refId": refId});
   
   
     // handle native call

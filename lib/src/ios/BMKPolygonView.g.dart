@@ -63,7 +63,7 @@ class BMKPolygonView extends BMKOverlayGLBasicView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolygonView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygonView::initWithPolygon', {"polygon": polygon?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolygonView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygonView::initWithPolygon', {"polygon": polygon is Ref ? (polygon as Ref)?.refId : polygon, "refId": refId});
   
   
     // handle native call

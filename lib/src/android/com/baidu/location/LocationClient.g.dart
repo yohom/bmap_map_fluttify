@@ -112,7 +112,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::setLocOption', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::setLocOption', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -136,7 +136,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::updateLocation', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::updateLocation', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -328,7 +328,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::enableLocInForeground', {"var1": var1, "var2": var2?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::enableLocInForeground', {"var1": var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2, "refId": refId});
   
   
     // handle native call
@@ -448,7 +448,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::registerNotify', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::registerNotify', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -472,7 +472,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::removeNotifyEvent', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::removeNotifyEvent', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -616,7 +616,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::registerLocationListener__com_baidu_location_BDAbstractLocationListener', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::registerLocationListener__com_baidu_location_BDAbstractLocationListener', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -640,7 +640,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::unRegisterLocationListener__com_baidu_location_BDAbstractLocationListener', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::unRegisterLocationListener__com_baidu_location_BDAbstractLocationListener', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -760,7 +760,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::getBDLocationInCoorType', {"var0": var0?.refId, "var1": var1});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::getBDLocationInCoorType', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0, "var1": var1});
   
   
     // handle native call
@@ -784,7 +784,7 @@ class com_baidu_location_LocationClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::onReceiveLocation', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.LocationClient::onReceiveLocation', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

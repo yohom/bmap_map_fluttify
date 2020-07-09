@@ -42,7 +42,7 @@ mixin BMKOverlay on BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlay::intersectsMapRect', {"mapRect": mapRect?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlay::intersectsMapRect', {"mapRect": mapRect is Ref ? (mapRect as Ref)?.refId : mapRect, "refId": refId});
   
   
     // handle native call

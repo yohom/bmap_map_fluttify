@@ -484,7 +484,7 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType', {"coordinate": coordinate?.refId, "srctype": srctype.toValue(), "destype": destype.toValue()});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType', {"coordinate": coordinate is Ref ? (coordinate as Ref)?.refId : coordinate, "srctype": srctype.toValue(), "destype": destype.toValue()});
   
   
     // handle native call
@@ -508,7 +508,7 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType', {"coordinate": coordinate?.refId, "coortype": coortype.toValue()});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType', {"coordinate": coordinate is Ref ? (coordinate as Ref)?.refId : coordinate, "coortype": coortype.toValue()});
   
   
     // handle native call

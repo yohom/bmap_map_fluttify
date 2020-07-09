@@ -160,7 +160,7 @@ class com_baidu_mapapi_search_core_RouteLine<T> extends java_lang_Object with an
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteLine::setStarting', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteLine::setStarting', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -208,7 +208,7 @@ class com_baidu_mapapi_search_core_RouteLine<T> extends java_lang_Object with an
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteLine::setTerminal', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteLine::setTerminal', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

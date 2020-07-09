@@ -215,7 +215,7 @@ class com_baidu_location_BDLocation extends java_lang_Object with android_os_Par
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setPoiRegion', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setPoiRegion', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -1559,7 +1559,7 @@ class com_baidu_location_BDLocation extends java_lang_Object with android_os_Par
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setAddr', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setAddr', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -2543,7 +2543,7 @@ class com_baidu_location_BDLocation extends java_lang_Object with android_os_Par
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setExtraLocation', {"var1": var1, "var2": var2?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setExtraLocation', {"var1": var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2, "refId": refId});
   
   
     // handle native call
@@ -2711,7 +2711,7 @@ class com_baidu_location_BDLocation extends java_lang_Object with android_os_Par
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setReallLocation', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDLocation::setReallLocation', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

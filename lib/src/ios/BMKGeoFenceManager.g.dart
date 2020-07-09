@@ -132,7 +132,7 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID', {"center": center?.refId, "radius": radius, "type": type.toValue(), "customID": customID, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID', {"center": center is Ref ? (center as Ref)?.refId : center, "radius": radius, "type": type.toValue(), "customID": customID, "refId": refId});
   
   
     // handle native call
@@ -204,7 +204,7 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::removeTheGeoFenceRegion', {"region": region?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::removeTheGeoFenceRegion', {"region": region is Ref ? (region as Ref)?.refId : region, "refId": refId});
   
   
     // handle native call

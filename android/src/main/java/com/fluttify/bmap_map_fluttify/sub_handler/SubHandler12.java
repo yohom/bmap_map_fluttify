@@ -1766,37 +1766,6 @@ public class SubHandler12 {
                 __methodResult__.success(jsonableResult);
             });
             // method
-            put("com.baidu.mapapi.map.BitmapDescriptor::recycle", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BitmapDescriptor ref = (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BitmapDescriptor@" + refId + "::recycle(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.recycle();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
             put("com.baidu.mapapi.map.HeatMap.Builder::data", (__args__, __methodResult__) -> {
                 // args
                 // list arg
@@ -7139,6 +7108,38 @@ public class SubHandler12 {
                     jsonableResult = System.identityHashCode(__result__);
                     getHEAP().put(jsonableResult, __result__);
                 }
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
+            put("com.baidu.mapapi.map.GroundOverlay::setDimensions__int", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.mapapi.map.GroundOverlay ref = (com.baidu.mapapi.map.GroundOverlay) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.GroundOverlay@" + refId + "::setDimensions(" + var1 + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.setDimensions(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
             
                 __methodResult__.success(jsonableResult);
             });

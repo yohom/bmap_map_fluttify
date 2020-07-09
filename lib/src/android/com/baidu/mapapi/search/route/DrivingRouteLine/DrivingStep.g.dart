@@ -130,7 +130,7 @@ class com_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep::setEntrance', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep::setEntrance', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -178,7 +178,7 @@ class com_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep::setExit', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep::setExit', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

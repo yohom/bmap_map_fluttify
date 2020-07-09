@@ -1071,7 +1071,7 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // jsonable callback arg
-                NSString* argpath = path;
+                NSString* argpath = path == nil ? [NSNull null] : path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
@@ -1089,7 +1089,7 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // jsonable callback arg
-                NSString* argpath = path;
+                NSString* argpath = path == nil ? [NSNull null] : path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
@@ -1114,7 +1114,7 @@ extern BOOL enableLog;
                 }
         
                 // jsonable callback arg
-                NSString* argpath = path;
+                NSString* argpath = path == nil ? [NSNull null] : path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror, @"path": argpath}];

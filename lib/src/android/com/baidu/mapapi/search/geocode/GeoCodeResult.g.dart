@@ -82,7 +82,7 @@ class com_baidu_mapapi_search_geocode_GeoCodeResult extends com_baidu_mapapi_sea
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCodeResult::setLocation', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCodeResult::setLocation', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

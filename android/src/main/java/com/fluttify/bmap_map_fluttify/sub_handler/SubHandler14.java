@@ -31,38 +31,6 @@ public class SubHandler14 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.baidu.mapapi.map.BaiduMap::setPixelFormatTransparent", (__args__, __methodResult__) -> {
-                // args
-                // jsonable arg
-                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setPixelFormatTransparent(" + var1 + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setPixelFormatTransparent(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
             put("com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener", (__args__, __methodResult__) -> {
                 // args
             
@@ -7825,6 +7793,38 @@ public class SubHandler14 {
                 // invoke native method
                 try {
                     ref.setCustomStyleFilePathAndMode(var1, var2);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                // convert result to jsonable result
+                String jsonableResult = "success";
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::setMapCustomStylePath", (__args__, __methodResult__) -> {
+                // args
+                // jsonable arg
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.mapapi.map.MapView ref = (com.baidu.mapapi.map.MapView) getHEAP().get(refId);
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + refId + "::setMapCustomStylePath(" + var1 + ")");
+                }
+            
+                // invoke native method
+                try {
+                    ref.setMapCustomStylePath(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {

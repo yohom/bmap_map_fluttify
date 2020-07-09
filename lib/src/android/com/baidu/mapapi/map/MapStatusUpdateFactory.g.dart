@@ -40,7 +40,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newMapStatus', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newMapStatus', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call
@@ -64,7 +64,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLng', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLng', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call
@@ -88,7 +88,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds__com_baidu_mapapi_model_LatLngBounds', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds__com_baidu_mapapi_model_LatLngBounds', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call
@@ -112,7 +112,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int', {"var0": var0?.refId, "var1": var1, "var2": var2});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0, "var1": var1, "var2": var2});
   
   
     // handle native call
@@ -136,7 +136,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom__com_baidu_mapapi_model_LatLng__double', {"var0": var0?.refId, "var1": var1});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom__com_baidu_mapapi_model_LatLng__double', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0, "var1": var1});
   
   
     // handle native call
@@ -208,7 +208,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::zoomBy__double__android_graphics_Point', {"var0": var0, "var1": var1?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::zoomBy__double__android_graphics_Point', {"var0": var0, "var1": var1 is Ref ? (var1 as Ref)?.refId : var1});
   
   
     // handle native call
@@ -304,7 +304,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int__int__int', {"var0": var0?.refId, "var1": var1, "var2": var2, "var3": var3, "var4": var4});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int__int__int', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0, "var1": var1, "var2": var2, "var3": var3, "var4": var4});
   
   
     // handle native call
@@ -328,7 +328,7 @@ class com_baidu_mapapi_map_MapStatusUpdateFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom__com_baidu_mapapi_model_LatLngBounds__int__int__int__int', {"var0": var0?.refId, "var1": var1, "var2": var2, "var3": var3, "var4": var4});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapStatusUpdateFactory::newLatLngZoom__com_baidu_mapapi_model_LatLngBounds__int__int__int__int', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0, "var1": var1, "var2": var2, "var3": var3, "var4": var4});
   
   
     // handle native call

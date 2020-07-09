@@ -31,41 +31,6 @@ public class SubHandler19 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.baidu.mapapi.search.core.CoachInfo::setBooking_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // jsonable arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                    com.baidu.mapapi.search.core.CoachInfo ref = (com.baidu.mapapi.search.core.CoachInfo) getHEAP().get(refId);
-            
-                    // invoke native method
-                    try {
-                        ref.setBooking(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    // convert result to jsonable result
-                    String jsonableResult = "success";
-            
-                    __resultList__.add(jsonableResult);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
             put("com.baidu.mapapi.search.core.PoiInfo.POITYPE::getInt_batch", (__argsBatch__, __methodResult__) -> {
                 List<Integer> __resultList__ = new ArrayList<>();
             
@@ -7476,6 +7441,41 @@ public class SubHandler19 {
                         jsonableResult = System.identityHashCode(__result__);
                         getHEAP().put(jsonableResult, __result__);
                     }
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep::setVehileType_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // enum arg
+                    com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.StepVehicleInfoType var1 = com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.StepVehicleInfoType.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+            
+                    // ref
+                    int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                    com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep ref = (com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep) getHEAP().get(refId);
+            
+                    // invoke native method
+                    try {
+                        ref.setVehileType(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    // convert result to jsonable result
+                    String jsonableResult = "success";
             
                     __resultList__.add(jsonableResult);
                 }

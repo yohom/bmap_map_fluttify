@@ -88,7 +88,7 @@ class com_baidu_mapapi_favorite_FavoriteManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.favorite.FavoriteManager::add', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.favorite.FavoriteManager::add', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -208,7 +208,7 @@ class com_baidu_mapapi_favorite_FavoriteManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.favorite.FavoriteManager::updateFavPoi', {"var1": var1, "var2": var2?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.favorite.FavoriteManager::updateFavPoi', {"var1": var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2, "refId": refId});
   
   
     // handle native call
