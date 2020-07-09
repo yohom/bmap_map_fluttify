@@ -63,7 +63,7 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKArclineView::initWithArcline', {"arcline": arcline?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKArclineView::initWithArcline', {"arcline": arcline is Ref ? (arcline as Ref)?.refId : arcline, "refId": refId});
   
   
     // handle native call

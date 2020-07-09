@@ -58,7 +58,7 @@ class com_baidu_mapapi_search_core_RouteNode extends java_lang_Object with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteNode::titleAndLocation', {"var0": var0, "var1": var1?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteNode::titleAndLocation', {"var0": var0, "var1": var1 is Ref ? (var1 as Ref)?.refId : var1});
   
   
     // handle native call
@@ -82,7 +82,7 @@ class com_baidu_mapapi_search_core_RouteNode extends java_lang_Object with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteNode::location', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteNode::location', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call
@@ -178,7 +178,7 @@ class com_baidu_mapapi_search_core_RouteNode extends java_lang_Object with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteNode::setLocation', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteNode::setLocation', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

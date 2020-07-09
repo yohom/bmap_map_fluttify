@@ -69,7 +69,7 @@ class BMKGeoFenceCircleRegion extends BMKGeoFenceRegion with NSCopying {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceCircleRegion::initWithCustomID_identityID_center_radius_coor', {"customid": customid, "identityid": identityid, "center": center?.refId, "radius": radius, "type": type.toValue(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceCircleRegion::initWithCustomID_identityID_center_radius_coor', {"customid": customid, "identityid": identityid, "center": center is Ref ? (center as Ref)?.refId : center, "radius": radius, "type": type.toValue(), "refId": refId});
   
   
     // handle native call

@@ -86,7 +86,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithCenterCoordinate_radius', {"coord": coord?.refId, "radius": radius});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithCenterCoordinate_radius', {"coord": coord is Ref ? (coord as Ref)?.refId : coord, "radius": radius});
   
   
     // handle native call
@@ -110,7 +110,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithMapRect', {"mapRect": mapRect?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithMapRect', {"mapRect": mapRect is Ref ? (mapRect as Ref)?.refId : mapRect});
   
   
     // handle native call
@@ -134,7 +134,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithCenterCoordinate_radius', {"coord": coord?.refId, "radius": radius, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithCenterCoordinate_radius', {"coord": coord is Ref ? (coord as Ref)?.refId : coord, "radius": radius, "refId": refId});
   
   
     // handle native call
@@ -158,7 +158,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithMapRect', {"mapRect": mapRect?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithMapRect', {"mapRect": mapRect is Ref ? (mapRect as Ref)?.refId : mapRect, "refId": refId});
   
   
     // handle native call

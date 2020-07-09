@@ -74,7 +74,7 @@ class BMKPolylineView extends BMKOverlayGLBasicView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolylineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolylineView::initWithPolyline', {"polyline": polyline?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolylineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolylineView::initWithPolyline', {"polyline": polyline is Ref ? (polyline as Ref)?.refId : polyline, "refId": refId});
   
   
     // handle native call

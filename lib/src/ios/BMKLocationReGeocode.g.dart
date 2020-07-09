@@ -135,7 +135,7 @@ class BMKLocationReGeocode extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationReGeocode::initWithReGeocodeString', {"reGeocodeString": reGeocodeString?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationReGeocode::initWithReGeocodeString', {"reGeocodeString": reGeocodeString is Ref ? (reGeocodeString as Ref)?.refId : reGeocodeString, "refId": refId});
   
   
     // handle native call
@@ -159,7 +159,7 @@ class BMKLocationReGeocode extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationReGeocode::initWithJsonString_withHighAccuracy', {"jsonString": jsonString?.refId, "highAcc": highAcc, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationReGeocode::initWithJsonString_withHighAccuracy', {"jsonString": jsonString is Ref ? (jsonString as Ref)?.refId : jsonString, "highAcc": highAcc, "refId": refId});
   
   
     // handle native call

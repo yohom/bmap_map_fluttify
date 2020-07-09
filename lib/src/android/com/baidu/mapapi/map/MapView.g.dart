@@ -221,7 +221,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setMapCustomStyle', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setMapCustomStyle', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -519,7 +519,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setZoomControlsPosition', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setZoomControlsPosition', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -639,7 +639,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setScaleControlPosition', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setScaleControlPosition', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -687,7 +687,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::onSaveInstanceState', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::onSaveInstanceState', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call
@@ -711,7 +711,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::onCreate', {"var1": var1?.refId, "var2": var2?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::onCreate', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2, "refId": refId});
   
   
     // handle native call
@@ -759,7 +759,7 @@ class com_baidu_mapapi_map_MapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setUpViewEventToMapView', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_MapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapView::setUpViewEventToMapView', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

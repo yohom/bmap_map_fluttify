@@ -1071,7 +1071,7 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // jsonable callback arg
-                NSString* argpath = path;
+                NSString* argpath = path == nil ? [NSNull null] : path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
@@ -1089,7 +1089,7 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // jsonable callback arg
-                NSString* argpath = path;
+                NSString* argpath = path == nil ? [NSNull null] : path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
@@ -1114,7 +1114,7 @@ extern BOOL enableLog;
                 }
         
                 // jsonable callback arg
-                NSString* argpath = path;
+                NSString* argpath = path == nil ? [NSNull null] : path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror, @"path": argpath}];
@@ -1425,28 +1425,6 @@ extern BOOL enableLog;
             // return a ref
             HEAP[[NSNumber numberWithLong: (result).hash]] = result;
             NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
-        
-            methodResult(jsonableResult);
-        },
-        @"BMKMapView::setCompassImage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // args
-            // ref arg
-            UIImage* image = (UIImage*) HEAP[args[@"image"]];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-        
-            // print log
-            if (enableLog) {
-                NSLog(@"fluttify-objc: BMKMapView@%@::setCompassImage(%@)", args[@"refId"], args[@"image"]);
-            }
-        
-            // invoke native method
-            [ref setCompassImage : image];
-        
-            // result
-            // 无返回值
-            NSString* jsonableResult = @"success";
         
             methodResult(jsonableResult);
         },
@@ -5532,6 +5510,35 @@ extern BOOL enableLog;
                 // return a ref
                 HEAP[[NSNumber numberWithLong: (result).hash]] = result;
                 NSNumber* jsonableResult = [NSNumber numberWithLong: (result).hash];
+        
+                [resultList addObject:jsonableResult];
+            }
+        
+            methodResult(resultList);
+        },
+        @"BMKCircle::setCircleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* coordValue = (NSValue*) HEAP[args[@"coord"]];
+                CLLocationCoordinate2D coord;
+                [coordValue getValue:&coord];
+                // jsonable arg
+                CLLocationDistance radius = [args[@"radius"] doubleValue];
+        
+                // ref
+                BMKCircle* ref = (BMKCircle*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+        
+                // invoke native method
+                BOOL result = [ref setCircleWithCenterCoordinate: coord radius: radius];
+        
+                // result
+                // 返回值: Value
+                id jsonableResult = @(result);
         
                 [resultList addObject:jsonableResult];
             }

@@ -58,7 +58,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isPolygonContainsPoint', {"var0": var0.map((__it__) => __it__?.refId).toList(), "var1": var1?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isPolygonContainsPoint', {"var0": var0.map((__it__) => __it__?.refId).toList(), "var1": var1 is Ref ? (var1 as Ref)?.refId : var1});
   
   
     // handle native call
@@ -82,7 +82,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isCircleContainsPoint', {"var0": var0?.refId, "var1": var1, "var2": var2?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::isCircleContainsPoint', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0, "var1": var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2});
   
   
     // handle native call
@@ -106,7 +106,7 @@ class com_baidu_mapapi_utils_SpatialRelationUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::getNearestPointFromLine', {"var0": var0.map((__it__) => __it__?.refId).toList(), "var1": var1?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.SpatialRelationUtil::getNearestPointFromLine', {"var0": var0.map((__it__) => __it__?.refId).toList(), "var1": var1 is Ref ? (var1 as Ref)?.refId : var1});
   
   
     // handle native call

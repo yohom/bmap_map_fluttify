@@ -63,7 +63,7 @@ class BMKTileLayerView extends BMKOverlayView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKTileLayerView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKTileLayerView::initWithTileLayer', {"tileLayer": tileLayer?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKTileLayerView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKTileLayerView::initWithTileLayer', {"tileLayer": tileLayer is Ref ? (tileLayer as Ref)?.refId : tileLayer, "refId": refId});
   
   
     // handle native call

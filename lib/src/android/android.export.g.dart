@@ -316,3 +316,4 @@ export 'com/baidu/lbsapi/auth/LBSAuthManagerListener.g.dart';
 export 'com/baidu/lbsapi/auth/LBSAuthManager.g.dart';
 export 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
 export 'package:bmap_utils_fluttify/bmap_utils_fluttify.dart';
+export 'package:path_provider/path_provider.dart';

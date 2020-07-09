@@ -106,7 +106,7 @@ class com_baidu_mapapi_map_BitmapDescriptorFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptorFactory::fromBitmap', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptorFactory::fromBitmap', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call
@@ -274,7 +274,7 @@ class com_baidu_mapapi_map_BitmapDescriptorFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptorFactory::fromView', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptorFactory::fromView', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0});
   
   
     // handle native call
@@ -298,7 +298,7 @@ class com_baidu_mapapi_map_BitmapDescriptorFactory extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptorFactory::fromViewWithDpi', {"var0": var0?.refId, "var1": var1});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BitmapDescriptorFactory::fromViewWithDpi', {"var0": var0 is Ref ? (var0 as Ref)?.refId : var0, "var1": var1});
   
   
     // handle native call

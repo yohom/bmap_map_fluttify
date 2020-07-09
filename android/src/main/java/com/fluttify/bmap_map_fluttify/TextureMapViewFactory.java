@@ -409,44 +409,6 @@ class TextureMapViewFactory extends PlatformViewFactory {
             __methodResult__.success(jsonableResult);
         });
         // method
-        put("com.baidu.mapapi.map.TextureMapView::setPadding", (__args__, __methodResult__) -> {
-            // args
-            // jsonable arg
-            int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-            // jsonable arg
-            int var2 = (int) ((Map<String, Object>) __args__).get("var2");
-            // jsonable arg
-            int var3 = (int) ((Map<String, Object>) __args__).get("var3");
-            // jsonable arg
-            int var4 = (int) ((Map<String, Object>) __args__).get("var4");
-        
-            // ref
-            int refId = (int) ((Map<String, Object>) __args__).get("refId");
-            com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
-        
-            // print log
-            if (getEnableLog()) {
-                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setPadding(" + var1 + var2 + var3 + var4 + ")");
-            }
-        
-            // invoke native method
-            try {
-                ref.setPadding(var1, var2, var3, var4);
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
-                if (getEnableLog()) {
-                    Log.d("Current HEAP: ", getHEAP().toString());
-                }
-                __methodResult__.error(throwable.getMessage(), null, null);
-                return;
-            }
-        
-            // convert result to jsonable result
-            String jsonableResult = "success";
-        
-            __methodResult__.success(jsonableResult);
-        });
-        // method
         put("com.baidu.mapapi.map.TextureMapView::getMap", (__args__, __methodResult__) -> {
             // args
         
@@ -499,38 +461,6 @@ class TextureMapViewFactory extends PlatformViewFactory {
             // invoke native method
             try {
                 ref.onDestroy();
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
-                if (getEnableLog()) {
-                    Log.d("Current HEAP: ", getHEAP().toString());
-                }
-                __methodResult__.error(throwable.getMessage(), null, null);
-                return;
-            }
-        
-            // convert result to jsonable result
-            String jsonableResult = "success";
-        
-            __methodResult__.success(jsonableResult);
-        });
-        // method
-        put("com.baidu.mapapi.map.TextureMapView::setLogoPosition", (__args__, __methodResult__) -> {
-            // args
-            // enum arg
-            com.baidu.mapapi.map.LogoPosition var1 = com.baidu.mapapi.map.LogoPosition.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-        
-            // ref
-            int refId = (int) ((Map<String, Object>) __args__).get("refId");
-            com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
-        
-            // print log
-            if (getEnableLog()) {
-                Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setLogoPosition(" + var1 + ")");
-            }
-        
-            // invoke native method
-            try {
-                ref.setLogoPosition(var1);
             } catch (Throwable throwable) {
                 throwable.printStackTrace();
                 if (getEnableLog()) {

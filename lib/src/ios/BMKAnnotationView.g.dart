@@ -302,7 +302,7 @@ class BMKAnnotationView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation?.refId, "reuseIdentifier": reuseIdentifier, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation is Ref ? (annotation as Ref)?.refId : annotation, "reuseIdentifier": reuseIdentifier, "refId": refId});
   
   
     // handle native call

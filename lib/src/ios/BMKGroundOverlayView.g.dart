@@ -63,7 +63,7 @@ class BMKGroundOverlayView extends BMKOverlayView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKGroundOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlayView::initWithGroundOverlay', {"groundOverlay": groundOverlay?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKGroundOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlayView::initWithGroundOverlay', {"groundOverlay": groundOverlay is Ref ? (groundOverlay as Ref)?.refId : groundOverlay, "refId": refId});
   
   
     // handle native call

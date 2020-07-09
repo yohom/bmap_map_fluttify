@@ -202,7 +202,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.ArcOptions::points', {"var1": var1?.refId, "var2": var2?.refId, "var3": var3?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.ArcOptions::points', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2, "var3": var3 is Ref ? (var3 as Ref)?.refId : var3, "refId": refId});
   
   
     // handle native call
@@ -346,7 +346,7 @@ class com_baidu_mapapi_map_ArcOptions extends com_baidu_mapapi_map_OverlayOption
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.ArcOptions::extraInfo', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.ArcOptions::extraInfo', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
   
   
     // handle native call

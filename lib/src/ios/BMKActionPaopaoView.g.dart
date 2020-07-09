@@ -58,7 +58,7 @@ class BMKActionPaopaoView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView is Ref ? (customView as Ref)?.refId : customView, "refId": refId});
   
   
     // handle native call
