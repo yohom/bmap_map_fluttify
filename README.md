@@ -94,6 +94,7 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 |  设置地图中心点  |  ✅ |  ✅   |
 |  设置我的位置数据  |  ✅ |  ✅   |
 |  自定义地图  |  ☑️ |  ✅   |
+|  截图  |  ☑️ |  ✅   |
 
 |  在地图上绘制  | 社区版 | 专业版 |
 |:-----:|:-----:|:-----:|
@@ -121,6 +122,9 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 |  设置缩放是否以中心点为锚点  |  ✅ |  ✅   |
 |  获取地图中心点  |  ✅ |  ✅   |
 |  设置地图移动监听事件  |  ✅ |  ✅   |
+|  设置logo位置  |  ☑️ |  ✅   |
+|  设置地图内间距  |  ☑️ |  ✅   |
+|  是否显示指南针  |  ☑️ |  ✅   |
 
 ## LICENSE
 > Copyright (C) 2020 yohom
