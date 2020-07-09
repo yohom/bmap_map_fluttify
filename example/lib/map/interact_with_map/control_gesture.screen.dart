@@ -67,6 +67,13 @@ class _ControlGestureScreenState extends State<ControlGestureScreen> {
                     _controller?.setAllGesturesEnabled(value);
                   },
                 ),
+                BooleanSetting(
+                  selected: true,
+                  head: '是否显示指南针',
+                  onSelected: (value) {
+                    _controller?.showCompass(value);
+                  },
+                ),
                 DiscreteSetting(
                   onSelected: (String value) {
                     switch (value) {

@@ -1005,6 +1005,23 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 是否显示指南针 (true还是false都不显示, 两端问题一样)
+  Future<void> showCompass(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSettings = await map.getUiSettings();
+
+        await uiSettings.setCompassEnabled(enable);
+
+        pool..add(map)..add(uiSettings);
+      },
+      ios: (pool) async {
+        await iosController.setCompassImage(null);
+      },
+    );
+  }
+
   /// 释放资源
   Future<void> dispose() async {
     await androidController?.onPause();
