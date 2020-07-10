@@ -112,8 +112,7 @@ class BmapController with WidgetsBindingObserver {
           await map.setMyLocationData(await builder.build());
         });
 
-        await bitmap.recycle();
-        pool..add(map)..add(bitmap)..add(config);
+        pool..add(map)..add(config);
       },
       ios: (pool) async {
         await iosController.set_showsUserLocation(true);
