@@ -326,7 +326,8 @@ class BmapController with WidgetsBindingObserver {
           final texture = await com_baidu_mapapi_map_BitmapDescriptorFactory
               .fromBitmap(bitmap);
           await polylineOptions.customTexture(texture);
-
+          // 释放图片
+          await bitmap.recycle();
           pool..add(bitmap)..add(texture);
         }
         // 是否虚线
