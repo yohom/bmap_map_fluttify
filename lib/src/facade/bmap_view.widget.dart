@@ -64,14 +64,12 @@ class _BmapViewState extends State<BmapView> {
             onViewCreated: (controller) async {
               _controller = BmapController.android(controller, this);
 
-              final bundle = await android_os_Bundle.create();
-              final context = await android_app_Activity.get();
-              await controller.onCreate(context, bundle);
+              // 调用onCreate方法会造成内存泄露! 且官方文档的例子中也没有调用onCreate了
+              await controller.onResume();
 
               if (widget.onMapCreated != null) {
                 await widget.onMapCreated(_controller);
               }
-              await bundle.release__();
             },
           ),
         ],
