@@ -115,10 +115,4 @@ class _ControlGestureScreenState extends State<ControlGestureScreen> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 }
