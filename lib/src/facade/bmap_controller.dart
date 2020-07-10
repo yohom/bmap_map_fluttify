@@ -108,6 +108,9 @@ class BmapController with WidgetsBindingObserver {
 
           await map.setMyLocationData(await builder.build());
         });
+
+        await bitmap.recycle();
+        pool..add(map)..add(bitmap)..add(config);
       },
       ios: (pool) async {
         await iosController.set_showsUserLocation(true);
@@ -124,6 +127,7 @@ class BmapController with WidgetsBindingObserver {
           await data.set_location(await location.iosModel.get_location());
           await iosController.updateLocationData(data);
         });
+        pool..add(displayParam)..add(image);
       },
     );
   }
@@ -863,10 +867,12 @@ class BmapController with WidgetsBindingObserver {
 
   /// 释放资源
   Future<void> dispose() async {
+    final map = await androidController?.getMap();
+    await map?.setMyLocationEnabled(false);
+    await map?.release__();
+
     await androidController?.onPause();
     await androidController?.onDestroy();
-    final map = await androidController?.getMap();
-    await map.setMyLocationEnabled(false);
 
     await iosController?.viewWillDisappear();
 
