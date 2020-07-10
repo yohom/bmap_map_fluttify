@@ -145,6 +145,6 @@ class _BmapViewState extends State<BmapView> {
   }
 
   Future<void> _onPlatformViewDispose() async {
-    await _controller.dispose();
+    await _controller?.dispose();
   }
 }
