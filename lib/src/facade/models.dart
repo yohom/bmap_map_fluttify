@@ -78,39 +78,27 @@ class MarkerOption {
 /// 平滑移动Marker创建参数
 @immutable
 class SmoothMoveMarkerOption {
+  SmoothMoveMarkerOption({
+    @required this.path,
+    @required this.iconProvider,
+    @required this.duration,
+  });
+
   /// 轨迹经纬度列表
   final List<LatLng> path;
 
   /// 图片uri 可以是url, asset路径或者文件路径
   ///
-  /// 如果设置了[iconUri], 那么必须同时设置[imageConfig], 否则图片大小会不一致, 这是flutter
+  /// 如果设置了[iconProvider], 那么必须同时设置[imageConfig], 否则图片大小会不一致, 这是flutter
   /// 的bug
-  final Uri iconUri;
-
-  /// 图片参数
-  ///
-  /// 目前利用到的信息只有[devicePixelRatio], 使用[devicePixelRatio]获取当前设备
-  /// 对应分辨率的图片(Android), iOS使用1.0x的图片. 所以[size]设置了是没用的, 这是flutter
-  /// 的PlatformView的bug, 参考https://github.com/flutter/flutter/issues/24865.
-  /// 这个bug彻底解决之后才能保证marker是完美的.
-  final ImageConfiguration imageConfig;
+  final ImageProvider iconProvider;
 
   /// 动画时长
   final Duration duration;
 
-  SmoothMoveMarkerOption({
-    @required this.path,
-    @required this.iconUri,
-    @required this.imageConfig,
-    @required this.duration,
-  }) : assert(
-          (iconUri != null && imageConfig != null) || iconUri == null,
-          'iconUri和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
-        );
-
   @override
   String toString() {
-    return 'SmoothMoveMarkerOption{path: $path, iconUri: $iconUri, imageConfig: $imageConfig, duration: $duration}';
+    return 'SmoothMoveMarkerOption{path: $path, iconProvider: $iconProvider, duration: $duration}';
   }
 }
 
@@ -127,10 +115,7 @@ class PolylineOption {
   final Color strokeColor;
 
   /// 自定义纹理
-  final Uri customTexture;
-
-  /// 图片参数
-  final ImageConfiguration imageConfig;
+  final ImageProvider textureProvider;
 
   /// 线段末端样式
   final LineCapType lineCapType;
@@ -145,20 +130,15 @@ class PolylineOption {
     @required this.latLngList,
     this.width = 5,
     this.strokeColor = Colors.green,
-    this.customTexture,
-    this.imageConfig,
+    this.textureProvider,
     this.lineCapType,
     this.lineJoinType,
     this.dashType,
-  }) : assert(
-          (customTexture != null && imageConfig != null) ||
-              customTexture == null,
-          'customTexture和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
-        );
+  });
 
   @override
   String toString() {
-    return 'PolylineOption{latLngList: $latLngList, width: $width, strokeColor: $strokeColor, customTexture: $customTexture, imageConfig: $imageConfig, lineCapType: $lineCapType, lineJoinType: $lineJoinType, dotted: $dashType}';
+    return 'PolylineOption{latLngList: $latLngList, width: $width, strokeColor: $strokeColor, customTexture: $textureProvider, lineCapType: $lineCapType, lineJoinType: $lineJoinType, dashType: $dashType}';
   }
 }
 
