@@ -28,7 +28,7 @@ packages:
       name: bmap_core_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.3"
   bmap_utils_fluttify:
     dependency: "direct main"
     description:

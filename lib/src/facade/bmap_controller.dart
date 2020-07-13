@@ -75,10 +75,6 @@ mixin _Community on _Holder {
     LatLng coordinate, {
     bool animated = true,
   }) async {
-//    assert(
-//      zoomLevel == null || (zoomLevel >= 3 && zoomLevel <= 19),
-//      '缩放范围为3-19',
-//    );
     final lat = coordinate.latitude;
     final lng = coordinate.longitude;
     await platform(
@@ -1058,6 +1054,180 @@ mixin _Pro on _Holder {
       },
       ios: (pool) async {
         await iosController.setCompassImage(null);
+      },
+    );
+  }
+
+  /// 限制地图的显示范围
+  ///
+  /// [southWest]西南角, [northEast]东北角
+  Future<void> setMapRegionLimits(LatLng southWest, LatLng northEast) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        final southWestPoint = await com_baidu_mapapi_model_LatLng
+            .create__double__double(southWest.latitude, southWest.longitude);
+        final northEastPoint = await com_baidu_mapapi_model_LatLng
+            .create__double__double(northEast.latitude, northEast.longitude);
+
+        final latLngBoundsBuilder =
+            await com_baidu_mapapi_model_LatLngBounds_Builder.create__();
+        await latLngBoundsBuilder
+            .include__com_baidu_mapapi_model_LatLng(southWestPoint);
+        await latLngBoundsBuilder
+            .include__com_baidu_mapapi_model_LatLng(northEastPoint);
+
+        await map.setMapStatusLimits(await latLngBoundsBuilder.build());
+
+        pool
+          ..add(map)
+          ..add(southWestPoint)
+          ..add(northEastPoint)
+          ..add(latLngBoundsBuilder);
+      },
+      ios: (pool) async {
+        final center = await CLLocationCoordinate2D.create(
+          (southWest.latitude + northEast.latitude) / 2,
+          (southWest.longitude + northEast.longitude) / 2,
+        );
+        final span = await BMKCoordinateSpanMake(
+          northEast.latitude - southWest.latitude,
+          northEast.longitude - southWest.longitude,
+        );
+        final region = await BMKCoordinateRegionMake(center, span);
+        iosController.set_limitMapRegion(region);
+
+        pool..add(center)..add(span)..add(region);
+      },
+    );
+  }
+
+  /// 控制底图标注
+  ///
+  /// 百度地图SDK支持设置底图POI的是否显示，用户可以通过BMKMapView的showMapPoi属性来控制
+  /// 地图标注是否显示，默认显示底图标注。利用此属性可得到仅显示道路信息的地图。
+  Future<void> showMapPoi(bool show) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.showMapPoi(show);
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_showMapPoi(show);
+      },
+    );
+  }
+
+  /// 将指定的经纬度列表(包括但不限于marker, polyline, polygon等)调整至同一屏幕中显示
+  ///
+  /// [bounds]边界点形成的边界, [padding]地图内边距
+  Future<void> zoomToSpan(
+    List<LatLng> bounds, {
+    EdgeInsets padding = EdgeInsets.zero,
+    bool animated = true,
+  }) async {
+    final double minLat = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.latitude < cur.latitude ? pre : cur)
+        .then((bottom) => bottom.latitude);
+    final double minLng = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.longitude < cur.longitude ? pre : cur)
+        .then((left) => left.longitude);
+    final double maxLat = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.latitude > cur.latitude ? pre : cur)
+        .then((top) => top.latitude);
+    final double maxLng = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.longitude > cur.longitude ? pre : cur)
+        .then((right) => right.longitude);
+    final devicePixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // 西南角
+        final southWest = await com_baidu_mapapi_model_LatLng
+            .create__double__double(minLat, minLng);
+        // 东北角
+        final northEast = await com_baidu_mapapi_model_LatLng
+            .create__double__double(maxLat, maxLng);
+
+        // 可视区域矩形
+        final builder =
+            await com_baidu_mapapi_model_LatLngBounds_Builder.create__();
+        await builder.include__com_baidu_mapapi_model_LatLng(southWest);
+        await builder.include__com_baidu_mapapi_model_LatLng(northEast);
+
+        // 更新对象 android端由于单位是像素, 所以这里要乘以当前设备的像素密度
+        final cameraUpdate = await com_baidu_mapapi_map_MapStatusUpdateFactory
+            .newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int__int__int(
+          await builder.build(),
+          (padding.left.toInt() * devicePixelRatio).toInt(),
+          (padding.top.toInt() * devicePixelRatio).toInt(),
+          (padding.right.toInt() * devicePixelRatio).toInt(),
+          (padding.bottom.toInt() * devicePixelRatio).toInt(),
+        );
+
+        if (animated) {
+          await map.animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate(
+              cameraUpdate);
+        } else {
+          await map.setMapStatus(cameraUpdate);
+        }
+
+        pool
+          ..add(map)
+          ..add(southWest)
+          ..add(northEast)
+          ..add(builder)
+          ..add(cameraUpdate);
+      },
+      ios: (pool) async {
+        // 由于屏幕坐标的(0, 0)左上角, 所以需要西北角和东南角
+        // 西北角
+        final northWest = await CLLocationCoordinate2D.create(maxLat, minLng);
+        // 东南角
+        final southEast = await CLLocationCoordinate2D.create(minLat, maxLng);
+
+        // 西北角屏幕坐标
+        final northWestPoint = await BMKMapPointForCoordinate(northWest);
+        // 东南角屏幕坐标
+        final southEastPoint = await BMKMapPointForCoordinate(southEast);
+
+        // 矩形原点x
+        final x = await northWestPoint.get_x();
+        // 矩形原点y
+        final y = await northWestPoint.get_y();
+        // 矩形宽度
+        final width =
+            (await southEastPoint.get_x() - await northWestPoint.get_x()).abs();
+        // 矩形高度
+        final height =
+            (await southEastPoint.get_y() - await northWestPoint.get_y()).abs();
+
+        // 矩形
+        final rect = await BMKMapRectMake(x, y, width, height);
+
+        await iosController.fitVisibleMapRect_edgePadding_withAnimated(
+          rect,
+          await UIEdgeInsets.create(
+            padding.top,
+            padding.left,
+            padding.bottom,
+            padding.right,
+          ),
+          animated,
+        );
+
+        pool
+          ..add(northWest)
+          ..add(southEast)
+          ..add(northWestPoint)
+          ..add(southEastPoint)
+          ..add(rect);
       },
     );
   }

@@ -142,8 +142,16 @@ class _CreateMapScreenState extends State<CreateMapScreen> {
                 ),
                 BooleanSetting(
                   head: '是否显示路况信息',
+                  selected: true,
                   onSelected: (value) {
                     _controller?.showTraffic(value);
+                  },
+                ),
+                BooleanSetting(
+                  head: '显示底图标注',
+                  selected: true,
+                  onSelected: (value) {
+                    _controller?.showMapPoi(value);
                   },
                 ),
                 ListTile(
@@ -170,6 +178,14 @@ class _CreateMapScreenState extends State<CreateMapScreen> {
                           'raw/7271bb55da29d3ec22c35b1760c1ab6c.sty',
                       iosJsonStyle: 'raw/custom_map_config.json',
                     );
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('限制地图显示范围')),
+                  onTap: () async {
+                    final southWest = LatLng(40, 116);
+                    final northEast = LatLng(42, 118);
+                    await _controller?.setMapRegionLimits(southWest, northEast);
                   },
                 ),
               ],

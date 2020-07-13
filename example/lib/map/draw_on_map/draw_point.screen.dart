@@ -80,7 +80,22 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                       return false;
                     });
                   },
-                )
+                ),
+                ListTile(
+                  title: Center(child: Text('将地图缩放至可以显示所有Marker')),
+                  onTap: () async {
+                    Stream.fromIterable(_markers)
+                        .asyncMap((marker) => marker.location)
+                        .toList()
+                        .then((boundary) {
+                      debugPrint('boundary: $boundary');
+                      return _controller?.zoomToSpan(
+                        boundary,
+                        padding: EdgeInsets.only(top: 100),
+                      );
+                    });
+                  },
+                ),
               ],
             ),
           ),
