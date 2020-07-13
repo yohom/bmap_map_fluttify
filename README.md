@@ -144,6 +144,9 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 |  设置logo位置  |  ☑️ |  ✅   |
 |  设置地图内间距  |  ☑️ |  ✅   |
 |  是否显示指南针  |  ☑️ |  ✅   |
+|  调整覆盖物至同一屏幕中显示  |  ☑️ |  ✅   |
+|  控制底图标注显示  |  ☑️ |  ✅   |
+|  限制地图的显示范围  |  ☑️ |  ✅   |
 
 ## LICENSE
 > Copyright (C) 2020 yohom
