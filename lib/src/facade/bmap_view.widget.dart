@@ -21,6 +21,7 @@ import 'extensions.dart';
 import 'models.dart';
 
 part 'bmap_controller.dart';
+part 'map_delagates.dart';
 
 typedef Future<void> _OnMapCreated(BmapController controller);
 

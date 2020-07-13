@@ -14,25 +14,59 @@ typedef Future<void> OnMapMove(MapMove move);
 typedef Future<void> OnScreenShot(Uint8List imageData);
 
 /// 地图控制类
-class BmapController with WidgetsBindingObserver {
+class BmapController extends _Holder
+    with WidgetsBindingObserver, _Community, _Pro {
   /// Android构造器
-  BmapController.android(this.androidController, this._state) {
+  BmapController.android(
+    com_baidu_mapapi_map_TextureMapView androidController,
+    _BmapViewState state,
+  ) {
     WidgetsBinding.instance.addObserver(this);
+    this.androidController = androidController;
+    this._state = state;
   }
 
   /// iOS构造器
-  BmapController.ios(this.iosController, this._state) {
+  BmapController.ios(BMKMapView iosController, _BmapViewState state) {
     WidgetsBinding.instance.addObserver(this);
+    this.iosController = iosController;
+    this._state = state;
   }
 
-  com_baidu_mapapi_map_TextureMapView androidController;
-  BMKMapView iosController;
+  /// 释放资源
+  Future<void> dispose() async {
+    await androidController?.onPause();
+    await androidController?.onDestroy();
 
-  _BmapViewState _state;
+    await iosController?.viewWillDisappear();
 
-  final _iosMapDelegate = _IOSMapDelegate();
-  final _androidMapDelegate = _AndroidMapDelegate();
+    WidgetsBinding.instance.removeObserver(this);
+  }
 
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    debugPrint('didChangeAppLifecycleState: $state');
+    // 因为这里的生命周期其实已经是App的生命周期了, 所以除了这里还需要在dispose里释放资源
+    switch (state) {
+      case AppLifecycleState.resumed:
+        androidController?.onResume();
+        iosController?.viewWillAppear();
+        break;
+      case AppLifecycleState.inactive:
+        break;
+      case AppLifecycleState.paused:
+        androidController?.onPause();
+        iosController?.viewWillDisappear();
+        break;
+      case AppLifecycleState.detached:
+        androidController?.onDestroy();
+        break;
+    }
+  }
+}
+
+mixin _Community on _Holder {
   /// 设置地图中心点
   ///
   /// [coordinate] 经纬度
@@ -864,7 +898,9 @@ class BmapController with WidgetsBindingObserver {
       },
     );
   }
+}
 
+mixin _Pro on _Holder {
   /// 自定义地图
   ///
   /// [androidStyleAsset] android端样式文件路径, 即在pubspec.yaml下注册的asset路径
@@ -1025,194 +1061,14 @@ class BmapController with WidgetsBindingObserver {
       },
     );
   }
-
-  /// 释放资源
-  Future<void> dispose() async {
-    await androidController?.onPause();
-    await androidController?.onDestroy();
-
-    await iosController?.viewWillDisappear();
-
-    WidgetsBinding.instance.removeObserver(this);
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-    debugPrint('didChangeAppLifecycleState: $state');
-    // 因为这里的生命周期其实已经是App的生命周期了, 所以除了这里还需要在dispose里释放资源
-    switch (state) {
-      case AppLifecycleState.resumed:
-        androidController?.onResume();
-        iosController?.viewWillAppear();
-        break;
-      case AppLifecycleState.inactive:
-        break;
-      case AppLifecycleState.paused:
-        androidController?.onPause();
-        iosController?.viewWillDisappear();
-        break;
-      case AppLifecycleState.detached:
-        androidController?.onDestroy();
-        break;
-    }
-  }
 }
 
-class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
-  OnMarkerClicked _onMarkerClicked;
-  OnMarkerDrag _onMarkerDragStart;
-  OnMarkerDrag _onMarkerDragging;
-  OnMarkerDrag _onMarkerDragEnd;
-  OnMapMove _onMapMoveEnd;
+class _Holder {
+  com_baidu_mapapi_map_TextureMapView androidController;
+  BMKMapView iosController;
 
-  BMKMapView _iosController;
+  _BmapViewState _state;
 
-  @override
-  Future<void> mapView_clickAnnotationView(
-    BMKMapView mapView,
-    BMKAnnotationView view,
-  ) async {
-    super.mapView_clickAnnotationView(mapView, view);
-    if (_onMarkerClicked != null) {
-      await _onMarkerClicked(
-        Marker.ios(
-          BMKPointAnnotation()
-            ..refId = (await view.get_annotation(viewChannel: false)).refId,
-//          view,
-          _iosController,
-        ),
-      );
-    }
-  }
-
-  @override
-  Future<void> mapView_annotationView_didChangeDragState_fromOldState(
-    BMKMapView mapView,
-    BMKAnnotationView view,
-    int newState,
-    int oldState,
-  ) async {
-    super.mapView_annotationView_didChangeDragState_fromOldState(
-      mapView,
-      view,
-      newState,
-      oldState,
-    );
-    if (_onMarkerDragStart != null && newState == 0) {
-      await _onMarkerDragStart(
-        Marker.ios(
-          await view.get_annotation(viewChannel: false),
-//          view,
-          _iosController,
-        ),
-      );
-    }
-
-    if (_onMarkerDragging != null && newState == 1) {
-      await _onMarkerDragging(
-        Marker.ios(
-          await view.get_annotation(viewChannel: false),
-//          view,
-          _iosController,
-        ),
-      );
-    }
-
-    if (_onMarkerDragEnd != null && newState == 2) {
-      await _onMarkerDragEnd(
-        Marker.ios(
-          await view.get_annotation(viewChannel: false),
-//          view,
-          _iosController,
-        ),
-      );
-    }
-  }
-
-  @override
-  Future<void> mapStatusDidChanged(BMKMapView mapView) async {
-    super.mapStatusDidChanged(mapView);
-    if (_onMapMoveEnd != null) {
-      final location = await mapView.get_centerCoordinate();
-      await _onMapMoveEnd(MapMove(
-        latLng: LatLng(await location.latitude, await location.longitude),
-        zoom: await mapView.get_zoomLevel(),
-        tilt: (await mapView.get_overlooking()).toDouble(),
-      ));
-    }
-  }
-}
-
-class _AndroidMapDelegate extends java_lang_Object
-    with
-        com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener,
-        com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener,
-        com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener,
-        com_baidu_mapapi_map_BaiduMap_SnapshotReadyCallback {
-  OnMarkerClicked _onMarkerClicked;
-  OnMarkerDrag _onMarkerDragStart;
-  OnMarkerDrag _onMarkerDragging;
-  OnMarkerDrag _onMarkerDragEnd;
-  OnMapMove _onMapMoveEnd;
-  OnScreenShot _onScreenShot;
-
-  @override
-  Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerClick(var1);
-    if (_onMarkerClicked != null) {
-      await _onMarkerClicked(Marker.android(var1));
-    }
-    return true;
-  }
-
-  @override
-  Future<void> onMarkerDragStart(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDragStart(var1);
-    if (_onMarkerDragStart != null) {
-      await _onMarkerDragStart(Marker.android(var1));
-    }
-  }
-
-  @override
-  Future<void> onMarkerDrag(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDrag(var1);
-    if (_onMarkerDragging != null) {
-      await _onMarkerDragging(Marker.android(var1));
-    }
-  }
-
-  @override
-  Future<void> onMarkerDragEnd(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDragEnd(var1);
-    if (_onMarkerDragEnd != null) {
-      await _onMarkerDragEnd(Marker.android(var1));
-    }
-  }
-
-  @override
-  Future<void> onMapStatusChangeFinish(
-    com_baidu_mapapi_map_MapStatus var1,
-  ) async {
-    super.onMapStatusChangeFinish(var1);
-    if (_onMapMoveEnd != null) {
-      final location = await var1.get_target();
-      await _onMapMoveEnd(MapMove(
-        latLng: LatLng(
-          await location.get_latitude(),
-          await location.get_longitude(),
-        ),
-        zoom: await var1.get_zoom(),
-        tilt: await var1.get_overlook(),
-      ));
-    }
-  }
-
-  @override
-  Future<void> onSnapshotReady(android_graphics_Bitmap var1) async {
-    super.onSnapshotReady(var1);
-    if (_onScreenShot != null) {
-      _onScreenShot(await var1.data);
-    }
-  }
+  final _iosMapDelegate = _IOSMapDelegate();
+  final _androidMapDelegate = _AndroidMapDelegate();
 }
