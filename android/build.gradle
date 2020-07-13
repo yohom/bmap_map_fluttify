@@ -71,6 +71,7 @@ dependencies {
     // flutter plugin dependency
     compileOnly rootProject.findProject(":bmap_core_fluttify")
     compileOnly rootProject.findProject(":bmap_utils_fluttify")
+    compileOnly rootProject.findProject(":path_provider")
     // sdk dependency
     
 }

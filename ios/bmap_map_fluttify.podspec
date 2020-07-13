@@ -19,6 +19,7 @@ A new flutter plugin project.
   # flutter plugin dependency
   s.dependency 'bmap_core_fluttify'
   s.dependency 'bmap_utils_fluttify'
+  s.dependency 'path_provider'
   # sdk dependency
   
 

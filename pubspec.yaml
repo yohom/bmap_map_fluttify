@@ -13,9 +13,9 @@ dependencies:
     sdk: flutter
   bmap_core_fluttify: ^0.2.3
   bmap_utils_fluttify: ^0.1.0
-  foundation_fluttify: ^0.8.11-dev.1
-  core_location_fluttify: ^0.2.3
   path_provider: ^1.6.11
+  foundation_fluttify: ^0.8.10
+  core_location_fluttify: ^0.2.4
 
 dev_dependencies:
   flutter_test:
