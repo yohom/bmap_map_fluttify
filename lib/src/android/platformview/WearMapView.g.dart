@@ -67,6 +67,8 @@ class _com_baidu_mapapi_map_WearMapView_AndroidState extends State<com_baidu_map
   void dispose() {
     if (widget.onDispose != null) {
       widget.onDispose().then((_) => _controller.release__());
+    } else {
+      _controller.release__();
     }
     super.dispose();
   }
