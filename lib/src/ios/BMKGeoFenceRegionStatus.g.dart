@@ -6,8 +6,8 @@
 enum BMKGeoFenceRegionStatus {
   BMKGeoFenceRegionStatusUnknown /* 0 */,
   BMKGeoFenceRegionStatusInside /* 1 */,
-  BMKGeoFenceRegionStatusOutside /* null */,
-  BMKGeoFenceRegionStatusStayed /* null */
+  BMKGeoFenceRegionStatusOutside /* 1<<1 */,
+  BMKGeoFenceRegionStatusStayed /* 1<<2 */
 }
 
 extension BMKGeoFenceRegionStatusToX on BMKGeoFenceRegionStatus {
@@ -15,8 +15,8 @@ extension BMKGeoFenceRegionStatusToX on BMKGeoFenceRegionStatus {
     switch (this) {
       case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusUnknown: return 0;
       case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusInside: return 1;
-      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusOutside: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusOutside.index + 0;
-      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusStayed: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusStayed.index + 0;
+      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusOutside: return 1<<1;
+      case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusStayed: return 1<<2;
     }
   }
 }
@@ -26,6 +26,8 @@ extension BMKGeoFenceRegionStatusFromX on int {
     switch (this) {
       case 0: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusUnknown;
       case 1: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusInside;
+      case 1<<1: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusOutside;
+      case 1<<2: return BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusStayed;
       default: return BMKGeoFenceRegionStatus.values[this + 0];
     }
   }

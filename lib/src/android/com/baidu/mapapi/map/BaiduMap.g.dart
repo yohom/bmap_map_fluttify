@@ -203,30 +203,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   }
   
   
-  Future<void> setMapStatusLimits(com_baidu_mapapi_model_LatLngBounds var1) async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.map.BaiduMap@$refId::setMapStatusLimits([])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatusLimits', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
-  }
-  
-  
   Future<void> animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate__int(com_baidu_mapapi_map_MapStatusUpdate var1, int var2) async {
     // print log
     if (fluttifyLogEnabled) {
@@ -955,30 +931,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   
     // invoke native method
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isTrafficEnabled', {"refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
-  }
-  
-  
-  Future<void> showMapPoi(bool var1) async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.map.BaiduMap@$refId::showMapPoi([\'var1\':$var1])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapPoi', {"var1": var1, "refId": refId});
   
   
     // handle native call
@@ -2458,26 +2410,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
   }
   
   
-  Future<List<void>> setMapStatusLimits_batch(List<com_baidu_mapapi_model_LatLngBounds> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatusLimits_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
-  }
-  
-  
   Future<List<void>> animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate__int_batch(List<com_baidu_mapapi_map_MapStatusUpdate> var1, List<int> var2) async {
     if (var1.length != var2.length) {
       return Future.error('all args must have same length!');
@@ -3092,26 +3024,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
-  }
-  
-  
-  Future<List<void>> showMapPoi_batch(List<bool> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     
       return typedResult;
     }

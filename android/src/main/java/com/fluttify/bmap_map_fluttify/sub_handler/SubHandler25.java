@@ -30,34 +30,6 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 public class SubHandler25 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
-            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIGPSStatus", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.UIGPSStatus);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_UIOffType", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.UIOffType);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_SDKInitializer", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.SDKInitializer);
-            });
             put("RefClass::isKindOfcom_baidu_mapapi_NetworkUtil", (__args__, __methodResult__) -> {
                 // 引用对象
                 int refId = (int) ((Map<String, Object>) __args__).get("refId");
@@ -1429,6 +1401,34 @@ public class SubHandler25 {
                 Object ref = getHEAP().get(refId);
             
                 __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudEvent.ErrorNo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudSearchResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
+            
+                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudSearchResult);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_PoiInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
+            
+                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_AddressCompents", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
+            
+                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult", (__args__, __methodResult__) -> {
+                // 引用对象
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                Object ref = getHEAP().get(refId);
+            
+                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudRgcResult);
             });
         }};
     }

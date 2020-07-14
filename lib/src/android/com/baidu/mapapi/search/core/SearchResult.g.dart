@@ -77,7 +77,7 @@ class com_baidu_mapapi_search_core_SearchResult extends java_lang_Object with an
 
   //region setters
   Future<void> set_error(com_baidu_mapapi_search_core_SearchResult_ERRORNO error) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error', {'refId': refId, "error": error.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error', {'refId': refId, "error": error.toValue()});
   
   
   }
@@ -115,7 +115,7 @@ extension com_baidu_mapapi_search_core_SearchResult_Batch on List<com_baidu_mapa
 
   //region setters
   Future<void> set_error_batch(List<com_baidu_mapapi_search_core_SearchResult_ERRORNO> error) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "error": error[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "error": error[__i__].toValue()}]);
   
   
   }

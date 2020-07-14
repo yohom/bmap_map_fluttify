@@ -194,7 +194,7 @@ class BMKLocationManager extends NSObject  {
   }
   
   Future<void> set_coordinateType(BMKLocationCoordinateType coordinateType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::set_coordinateType', {'refId': refId, "coordinateType": coordinateType.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::set_coordinateType', {'refId': refId, "coordinateType": coordinateType.toValue()});
   
   
   }
@@ -615,7 +615,7 @@ extension BMKLocationManager_Batch on List<BMKLocationManager> {
   }
   
   Future<void> set_coordinateType_batch(List<BMKLocationCoordinateType> coordinateType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::set_coordinateType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "coordinateType": coordinateType[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationManager::set_coordinateType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "coordinateType": coordinateType[__i__].toValue()}]);
   
   
   }

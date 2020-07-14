@@ -100,7 +100,7 @@ class com_baidu_mapapi_search_route_DrivingRoutePlanOption extends java_lang_Obj
   }
   
   Future<void> set_mPolicy(com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy mPolicy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mPolicy', {'refId': refId, "mPolicy": mPolicy.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mPolicy', {'refId': refId, "mPolicy": mPolicy.toValue()});
   
   
   }
@@ -112,7 +112,7 @@ class com_baidu_mapapi_search_route_DrivingRoutePlanOption extends java_lang_Obj
   }
   
   Future<void> set_mtrafficPolicy(com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingTrafficPolicy mtrafficPolicy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mtrafficPolicy', {'refId': refId, "mtrafficPolicy": mtrafficPolicy.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mtrafficPolicy', {'refId': refId, "mtrafficPolicy": mtrafficPolicy.toValue()});
   
   
   }
@@ -333,7 +333,7 @@ extension com_baidu_mapapi_search_route_DrivingRoutePlanOption_Batch on List<com
   }
   
   Future<void> set_mPolicy_batch(List<com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy> mPolicy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mPolicy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mPolicy": mPolicy[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mPolicy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mPolicy": mPolicy[__i__].toValue()}]);
   
   
   }
@@ -345,7 +345,7 @@ extension com_baidu_mapapi_search_route_DrivingRoutePlanOption_Batch on List<com
   }
   
   Future<void> set_mtrafficPolicy_batch(List<com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingTrafficPolicy> mtrafficPolicy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mtrafficPolicy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mtrafficPolicy": mtrafficPolicy[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.DrivingRoutePlanOption::set_mtrafficPolicy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mtrafficPolicy": mtrafficPolicy[__i__].toValue()}]);
   
   
   }

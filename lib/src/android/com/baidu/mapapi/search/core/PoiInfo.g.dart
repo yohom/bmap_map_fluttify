@@ -220,7 +220,7 @@ class com_baidu_mapapi_search_core_PoiInfo extends java_lang_Object with android
   }
   
   Future<void> set_type(com_baidu_mapapi_search_core_PoiInfo_POITYPE type) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::set_type', {'refId': refId, "type": type.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::set_type', {'refId': refId, "type": type.toValue()});
   
   
   }
@@ -1390,7 +1390,7 @@ extension com_baidu_mapapi_search_core_PoiInfo_Batch on List<com_baidu_mapapi_se
   }
   
   Future<void> set_type_batch(List<com_baidu_mapapi_search_core_PoiInfo_POITYPE> type) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::set_type_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "type": type[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.PoiInfo::set_type_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "type": type[__i__].toValue()}]);
   
   
   }

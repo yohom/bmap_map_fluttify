@@ -136,19 +136,19 @@ class BMKOverlayGLBasicView extends BMKOverlayView  {
   }
   
   Future<void> set_lineJoinType(BMKLineJoinType lineJoinType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineJoinType', {'refId': refId, "lineJoinType": lineJoinType.index});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineJoinType', {'refId': refId, "lineJoinType": lineJoinType.toValue()});
   
   
   }
   
   Future<void> set_lineCapType(BMKLineCapType lineCapType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineCapType', {'refId': refId, "lineCapType": lineCapType.index});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineCapType', {'refId': refId, "lineCapType": lineCapType.toValue()});
   
   
   }
   
   Future<void> set_lineDashType(BMKLineDashType lineDashType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineDashType', {'refId': refId, "lineDashType": lineDashType.index});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineDashType', {'refId': refId, "lineDashType": lineDashType.toValue()});
   
   
   }
@@ -265,19 +265,19 @@ extension BMKOverlayGLBasicView_Batch on List<BMKOverlayGLBasicView> {
   }
   
   Future<void> set_lineJoinType_batch(List<BMKLineJoinType> lineJoinType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineJoinType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineJoinType": lineJoinType[__i__].index}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineJoinType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineJoinType": lineJoinType[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_lineCapType_batch(List<BMKLineCapType> lineCapType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineCapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineCapType": lineCapType[__i__].index}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineCapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineCapType": lineCapType[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_lineDashType_batch(List<BMKLineDashType> lineDashType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineDashType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineDashType": lineDashType[__i__].index}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayGLBasicView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayGLBasicView::set_lineDashType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineDashType": lineDashType[__i__].toValue()}]);
   
   
   }
