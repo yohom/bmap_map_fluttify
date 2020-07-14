@@ -12,7 +12,7 @@ import 'enums.dart';
 @immutable
 class MyLocationOption {
   MyLocationOption({
-    this.myLocationType = MyLocationType.Locate,
+    this.myLocationType = MyLocationType.Follow,
     this.interval = Duration.zero,
     this.iconProvider,
     this.strokeColor,
