@@ -157,9 +157,9 @@ mixin _Community on _Holder {
 
         locationStream.listen((location) async {
           await data.set_location(await location.iosModel.get_location());
+          await iosController.updateLocationViewWithParam(displayParam);
           await iosController.updateLocationData(data);
         });
-        pool..add(displayParam)..add(image);
       },
     );
   }
