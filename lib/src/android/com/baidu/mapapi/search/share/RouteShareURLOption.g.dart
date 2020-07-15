@@ -88,7 +88,7 @@ class com_baidu_mapapi_search_share_RouteShareURLOption extends java_lang_Object
   }
   
   Future<void> set_mMode(com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode mMode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode', {'refId': refId, "mMode": mMode.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode', {'refId': refId, "mMode": mMode.toValue()});
   
   
   }
@@ -308,7 +308,7 @@ extension com_baidu_mapapi_search_share_RouteShareURLOption_Batch on List<com_ba
   }
   
   Future<void> set_mMode_batch(List<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode> mMode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mMode": mMode[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mMode": mMode[__i__].toValue()}]);
   
   
   }

@@ -31,6 +31,101 @@ public class SubHandler3 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // getter
+            put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_directionDesc_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) getHEAP().get((int) __args__.get("refId"));
+            
+                    String __result__ = ref.directionDesc;
+            
+                    String jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
+            put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionName_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) getHEAP().get((int) __args__.get("refId"));
+            
+                    String __result__ = ref.regionName;
+            
+                    String jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
+            put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionTag_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) getHEAP().get((int) __args__.get("refId"));
+            
+                    String __result__ = ref.regionTag;
+            
+                    String jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
+            put("com.baidu.mapapi.search.geocode.GeoCodeOption::get_mCity_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.search.geocode.GeoCodeOption ref = (com.baidu.mapapi.search.geocode.GeoCodeOption) getHEAP().get((int) __args__.get("refId"));
+            
+                    String __result__ = ref.mCity;
+            
+                    String jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
+            put("com.baidu.mapapi.search.geocode.GeoCodeOption::get_mAddress_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.search.geocode.GeoCodeOption ref = (com.baidu.mapapi.search.geocode.GeoCodeOption) getHEAP().get((int) __args__.get("refId"));
+            
+                    String __result__ = ref.mAddress;
+            
+                    String jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
             put("com.baidu.mapapi.search.share.LocationShareURLOption::get_mLocation_batch", (__argsBatch__, __methodResult__) -> {
                 List<Integer> __resultList__ = new ArrayList<>();
             
@@ -430,6 +525,25 @@ public class SubHandler3 {
                 __methodResult__.success(__resultList__);
             });
             // getter
+            put("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get((int) __args__.get("refId"));
+            
+                    int __result__ = ref.mapStatusReason;
+            
+                    int jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
             put("com.baidu.mapapi.map.MapStatus::get_rotate_batch", (__argsBatch__, __methodResult__) -> {
                 List<Float> __resultList__ = new ArrayList<>();
             
@@ -566,6 +680,29 @@ public class SubHandler3 {
                     com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
             
                     com.baidu.mapapi.map.WinRound __result__ = ref.winRound;
+            
+                    Integer jsonableResult = null;
+            if (__result__ != null) {
+                jsonableResult = System.identityHashCode(__result__);
+                getHEAP().put(jsonableResult, __result__);
+            }
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
+            put("com.baidu.mapapi.map.HeatMap::get_DEFAULT_GRADIENT_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.map.HeatMap ref = (com.baidu.mapapi.map.HeatMap) getHEAP().get((int) __args__.get("refId"));
+            
+                    com.baidu.mapapi.map.Gradient __result__ = ref.DEFAULT_GRADIENT;
             
                     Integer jsonableResult = null;
             if (__result__ != null) {
@@ -1122,6 +1259,25 @@ public class SubHandler3 {
                     int __result__ = ref.satellitesNum;
             
                     int jsonableResult = __result__;
+            
+                    __resultList__.add(jsonableResult);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // getter
+            put("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable_batch", (__argsBatch__, __methodResult__) -> {
+                List<Boolean> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // ref object
+                    com.baidu.mapapi.http.HttpClient ref = (com.baidu.mapapi.http.HttpClient) getHEAP().get((int) __args__.get("refId"));
+            
+                    boolean __result__ = ref.isHttpsEnable;
+            
+                    boolean jsonableResult = __result__;
             
                     __resultList__.add(jsonableResult);
                 }
@@ -2938,6 +3094,17 @@ public class SubHandler3 {
                 __methodResult__.success("success");
             });
             // setter
+            put("com.baidu.location.indoor.mapversion.IndoorJni::set_a", (__args__, __methodResult__) -> {
+                // jsonable arg
+                boolean a = (boolean) ((Map<String, Object>) __args__).get("a");
+            
+                int refId = (int) ((Map<String, Object>) __args__).get("refId");
+                com.baidu.location.indoor.mapversion.IndoorJni ref = (com.baidu.location.indoor.mapversion.IndoorJni) getHEAP().get(refId);
+            
+                ref.a = a;
+                __methodResult__.success("success");
+            });
+            // setter
             put("com.baidu.mapapi.utils.poi.DispathcPoiData::set_name", (__args__, __methodResult__) -> {
                 // jsonable arg
                 String name = (String) ((Map<String, Object>) __args__).get("name");
@@ -3251,105 +3418,6 @@ public class SubHandler3 {
                 com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
             
                 ref.name = name;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_uid", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String uid = (String) ((Map<String, Object>) __args__).get("uid");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.uid = uid;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_address", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String address = (String) ((Map<String, Object>) __args__).get("address");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.address = address;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_province", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String province = (String) ((Map<String, Object>) __args__).get("province");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.province = province;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_city", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String city = (String) ((Map<String, Object>) __args__).get("city");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.city = city;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_area", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String area = (String) ((Map<String, Object>) __args__).get("area");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.area = area;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_street_id", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String street_id = (String) ((Map<String, Object>) __args__).get("street_id");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.street_id = street_id;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_phoneNum", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String phoneNum = (String) ((Map<String, Object>) __args__).get("phoneNum");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.phoneNum = phoneNum;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_postCode", (__args__, __methodResult__) -> {
-                // jsonable arg
-                String postCode = (String) ((Map<String, Object>) __args__).get("postCode");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.postCode = postCode;
-                __methodResult__.success("success");
-            });
-            // setter
-            put("com.baidu.mapapi.search.core.PoiInfo::set_detail", (__args__, __methodResult__) -> {
-                // jsonable arg
-                int detail = (int) ((Map<String, Object>) __args__).get("detail");
-            
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.search.core.PoiInfo ref = (com.baidu.mapapi.search.core.PoiInfo) getHEAP().get(refId);
-            
-                ref.detail = detail;
                 __methodResult__.success("success");
             });
         }};

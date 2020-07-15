@@ -52,10 +52,6 @@ extension TypeOpBmapMapFluttifyAndroid on Object {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_BDAbstractLocationListener', {'refId': (this as Ref).refId});
       return result;
     }
-    else if (T == com_baidu_location_LLSInterface) {
-      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_LLSInterface', {'refId': (this as Ref).refId});
-      return result;
-    }
     else if (T == com_baidu_location_LocationClient) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_location_LocationClient', {'refId': (this as Ref).refId});
       return result;
@@ -988,10 +984,6 @@ extension TypeOpBmapMapFluttifyAndroid on Object {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_lbsapi_auth_LBSAuthManager', {'refId': (this as Ref).refId});
       return result;
     }
-    else if (T == com_baidu_lbsapi_auth_LBSAuthManagerListener) {
-      final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfcom_baidu_lbsapi_auth_LBSAuthManagerListener', {'refId': (this as Ref).refId});
-      return result;
-    }
     else if (T == android_content_Context) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('RefClass::isKindOfandroid_content_Context', {'refId': (this as Ref).refId});
       return result;
@@ -1137,9 +1129,6 @@ extension TypeOpBmapMapFluttifyAndroid on Object {
     }
     else if (T == com_baidu_location_BDAbstractLocationListener) {
       return (com_baidu_location_BDAbstractLocationListener()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
-    }
-    else if (T == com_baidu_location_LLSInterface) {
-      return (com_baidu_location_LLSInterface.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
     }
     else if (T == com_baidu_location_LocationClient) {
       return (com_baidu_location_LocationClient()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
@@ -1839,9 +1828,6 @@ extension TypeOpBmapMapFluttifyAndroid on Object {
     }
     else if (T == com_baidu_lbsapi_auth_LBSAuthManager) {
       return (com_baidu_lbsapi_auth_LBSAuthManager()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
-    }
-    else if (T == com_baidu_lbsapi_auth_LBSAuthManagerListener) {
-      return (com_baidu_lbsapi_auth_LBSAuthManagerListener.subInstance()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;
     }
     else if (T == android_content_Context) {
       return (android_content_Context()..refId = (this is Ref ? (this as Ref).refId : this as int)..tag__ = 'bmap_map_fluttify') as T;

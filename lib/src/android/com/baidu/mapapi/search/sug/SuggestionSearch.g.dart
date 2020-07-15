@@ -33,30 +33,6 @@ class com_baidu_mapapi_search_sug_SuggestionSearch extends java_lang_Object  {
 
   //region methods
   
-  static Future<com_baidu_mapapi_search_sug_SuggestionSearch> newInstance() async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.search.sug.SuggestionSearch::newInstance([])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::newInstance', );
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_sug_SuggestionSearch()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
-      return __return__;
-    }
-  }
-  
-  
   Future<bool> requestSuggestion(com_baidu_mapapi_search_sug_SuggestionSearchOption var1) async {
     // print log
     if (fluttifyLogEnabled) {
@@ -157,26 +133,6 @@ extension com_baidu_mapapi_search_sug_SuggestionSearch_Batch on List<com_baidu_m
   //endregion
 
   //region methods
-  
-  static Future<List<com_baidu_mapapi_search_sug_SuggestionSearch>> newInstance_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::newInstance_batch', );
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_sug_SuggestionSearch()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
-  }
-  
   
   Future<List<bool>> requestSuggestion_batch(List<com_baidu_mapapi_search_sug_SuggestionSearchOption> var1) async {
     if (false) {

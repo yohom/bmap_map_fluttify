@@ -5,18 +5,18 @@
 
 enum BMKGeoFenceActiveAction {
   BMKGeoFenceActiveActionNone /* 0 */,
-  BMKGeoFenceActiveActionInside /* null */,
-  BMKGeoFenceActiveActionOutside /* null */,
-  BMKGeoFenceActiveActionStayed /* null */
+  BMKGeoFenceActiveActionInside /* 1<<0 */,
+  BMKGeoFenceActiveActionOutside /* 1<<1 */,
+  BMKGeoFenceActiveActionStayed /* 1<<2 */
 }
 
 extension BMKGeoFenceActiveActionToX on BMKGeoFenceActiveAction {
   int toValue() {
     switch (this) {
       case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionNone: return 0;
-      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionInside: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionInside.index + 0;
-      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionOutside: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionOutside.index + 0;
-      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionStayed: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionStayed.index + 0;
+      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionInside: return 1<<0;
+      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionOutside: return 1<<1;
+      case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionStayed: return 1<<2;
     }
   }
 }
@@ -25,6 +25,9 @@ extension BMKGeoFenceActiveActionFromX on int {
   BMKGeoFenceActiveAction toBMKGeoFenceActiveAction() {
     switch (this) {
       case 0: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionNone;
+      case 1<<0: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionInside;
+      case 1<<1: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionOutside;
+      case 1<<2: return BMKGeoFenceActiveAction.BMKGeoFenceActiveActionStayed;
       default: return BMKGeoFenceActiveAction.values[this + 0];
     }
   }

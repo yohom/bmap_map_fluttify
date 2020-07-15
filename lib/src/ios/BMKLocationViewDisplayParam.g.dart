@@ -160,7 +160,7 @@ class BMKLocationViewDisplayParam extends NSObject with NSCopying {
   }
   
   Future<void> set_locationViewHierarchy(LocationViewHierarchy locationViewHierarchy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy', {'refId': refId, "locationViewHierarchy": locationViewHierarchy.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy', {'refId': refId, "locationViewHierarchy": locationViewHierarchy.toValue()});
   
   
   }
@@ -302,7 +302,7 @@ extension BMKLocationViewDisplayParam_Batch on List<BMKLocationViewDisplayParam>
   }
   
   Future<void> set_locationViewHierarchy_batch(List<LocationViewHierarchy> locationViewHierarchy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "locationViewHierarchy": locationViewHierarchy[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "locationViewHierarchy": locationViewHierarchy[__i__].toValue()}]);
   
   
   }

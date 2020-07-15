@@ -24,10 +24,20 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
   //endregion
 
   //region getters
+  static Future<bool> get_a() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.indoor.mapversion.IndoorJni::get_a", );
+  
+    return __result__;
+  }
   
   //endregion
 
   //region setters
+  Future<void> set_a(bool a) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::set_a', {'refId': refId, "a": a});
+  
+  
+  }
   
   //endregion
 
@@ -253,10 +263,21 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
 
 extension com_baidu_location_indoor_mapversion_IndoorJni_Batch on List<com_baidu_location_indoor_mapversion_IndoorJni> {
   //region getters
+  Future<List<bool>> get_a_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.indoor.mapversion.IndoorJni::get_a_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
+    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+  
+    return typedResult;
+  }
   
   //endregion
 
   //region setters
+  Future<void> set_a_batch(List<bool> a) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::set_a_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "a": a[__i__]}]);
+  
+  
+  }
   
   //endregion
 

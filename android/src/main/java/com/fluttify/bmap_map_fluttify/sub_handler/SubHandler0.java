@@ -655,6 +655,19 @@ public class SubHandler0 {
                 __methodResult__.success(jsonableResult);
             });
             // getter
+            put("com.baidu.location.indoor.mapversion.IndoorJni::get_a", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
+            
+               // ref object
+               com.baidu.location.indoor.mapversion.IndoorJni ref = (com.baidu.location.indoor.mapversion.IndoorJni) getHEAP().get((int) __args__.get("refId"));
+            
+               boolean __result__ = ref.a;
+            
+               boolean jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // getter
             put("com.baidu.mapapi.utils.poi.DispathcPoiData::get_name", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
@@ -2754,19 +2767,6 @@ public class SubHandler0 {
                com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
             
                int __result__ = ref.grouponNum;
-            
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // getter
-            put("com.baidu.mapapi.search.poi.PoiDetailResult::get_commentNum", (__rawArgs__, __methodResult__) -> {
-               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
-            
-               // ref object
-               com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
-            
-               int __result__ = ref.commentNum;
             
                int jsonableResult = __result__;
             

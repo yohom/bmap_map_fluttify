@@ -25,6 +25,11 @@ class com_baidu_mapapi_map_HeatMap extends java_lang_Object  {
   //endregion
 
   //region getters
+  static Future<com_baidu_mapapi_map_Gradient> get_DEFAULT_GRADIENT() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.HeatMap::get_DEFAULT_GRADIENT", );
+    kNativeObjectPool.add(com_baidu_mapapi_map_Gradient()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    return com_baidu_mapapi_map_Gradient()..refId = __result__..tag__ = 'bmap_map_fluttify';
+  }
   
   //endregion
 
@@ -62,6 +67,12 @@ class com_baidu_mapapi_map_HeatMap extends java_lang_Object  {
 
 extension com_baidu_mapapi_map_HeatMap_Batch on List<com_baidu_mapapi_map_HeatMap> {
   //region getters
+  Future<List<com_baidu_mapapi_map_Gradient>> get_DEFAULT_GRADIENT_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.HeatMap::get_DEFAULT_GRADIENT_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_Gradient()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+    kNativeObjectPool.addAll(typedResult);
+    return typedResult;
+  }
   
   //endregion
 

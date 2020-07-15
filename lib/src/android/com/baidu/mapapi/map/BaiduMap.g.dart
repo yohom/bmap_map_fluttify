@@ -26,10 +26,20 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   //endregion
 
   //region getters
+  static Future<int> get_mapStatusReason() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason", );
+  
+    return __result__;
+  }
   
   //endregion
 
   //region setters
+  Future<void> set_mapStatusReason(int mapStatusReason) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::set_mapStatusReason', {'refId': refId, "mapStatusReason": mapStatusReason});
+  
+  
+  }
   
   //endregion
 
@@ -2309,10 +2319,21 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
 
 extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_BaiduMap> {
   //region getters
+  Future<List<int>> get_mapStatusReason_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+  
+    return typedResult;
+  }
   
   //endregion
 
   //region setters
+  Future<void> set_mapStatusReason_batch(List<int> mapStatusReason) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::set_mapStatusReason_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mapStatusReason": mapStatusReason[__i__]}]);
+  
+  
+  }
   
   //endregion
 

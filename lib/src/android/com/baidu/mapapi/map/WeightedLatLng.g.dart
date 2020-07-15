@@ -20,43 +20,6 @@ class com_baidu_mapapi_map_WeightedLatLng extends java_lang_Object  {
   //endregion
 
   //region creators
-  static Future<com_baidu_mapapi_map_WeightedLatLng> create__com_baidu_mapapi_model_LatLng__double(com_baidu_mapapi_model_LatLng var1, double var2) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double', {"var1": var1.refId, "var2": var2});
-    final object = com_baidu_mapapi_map_WeightedLatLng()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
-  }
-  
-  static Future<com_baidu_mapapi_map_WeightedLatLng> create__com_baidu_mapapi_model_LatLng(com_baidu_mapapi_model_LatLng var1) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng', {"var1": var1.refId});
-    final object = com_baidu_mapapi_map_WeightedLatLng()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
-  }
-  
-  static Future<List<com_baidu_mapapi_map_WeightedLatLng>> create_batch__com_baidu_mapapi_model_LatLng__double(List<com_baidu_mapapi_model_LatLng> var1, List<double> var2) async {
-    if (var1.length != var2.length) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__]}]);
-  
-    final List<com_baidu_mapapi_map_WeightedLatLng> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_WeightedLatLng()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
-  }
-  
-  static Future<List<com_baidu_mapapi_map_WeightedLatLng>> create_batch__com_baidu_mapapi_model_LatLng(List<com_baidu_mapapi_model_LatLng> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].refId}]);
-  
-    final List<com_baidu_mapapi_map_WeightedLatLng> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_WeightedLatLng()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
-  }
   
   //endregion
 

@@ -31,6 +31,19 @@ public class SubHandler1 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // getter
+            put("com.baidu.mapapi.search.poi.PoiDetailResult::get_commentNum", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
+            
+               // ref object
+               com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
+            
+               int __result__ = ref.commentNum;
+            
+               int jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // getter
             put("com.baidu.mapapi.search.poi.PoiDetailResult::get_discountNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
@@ -806,6 +819,19 @@ public class SubHandler1 {
                 __methodResult__.success(jsonableResult);
             });
             // getter
+            put("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
+            
+               // ref object
+               com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get((int) __args__.get("refId"));
+            
+               int __result__ = ref.mapStatusReason;
+            
+               int jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // getter
             put("com.baidu.mapapi.map.MapStatus::get_rotate", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
@@ -903,6 +929,23 @@ public class SubHandler1 {
                com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
             
                com.baidu.mapapi.map.WinRound __result__ = ref.winRound;
+            
+               Integer jsonableResult = null;
+               if (__result__ != null) {
+                   jsonableResult = System.identityHashCode(__result__);
+                   getHEAP().put(jsonableResult, __result__);
+               }
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // getter
+            put("com.baidu.mapapi.map.HeatMap::get_DEFAULT_GRADIENT", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
+            
+               // ref object
+               com.baidu.mapapi.map.HeatMap ref = (com.baidu.mapapi.map.HeatMap) getHEAP().get((int) __args__.get("refId"));
+            
+               com.baidu.mapapi.map.Gradient __result__ = ref.DEFAULT_GRADIENT;
             
                Integer jsonableResult = null;
                if (__result__ != null) {
@@ -1291,6 +1334,19 @@ public class SubHandler1 {
                int __result__ = ref.satellitesNum;
             
                int jsonableResult = __result__;
+            
+                __methodResult__.success(jsonableResult);
+            });
+            // getter
+            put("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable", (__rawArgs__, __methodResult__) -> {
+               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
+            
+               // ref object
+               com.baidu.mapapi.http.HttpClient ref = (com.baidu.mapapi.http.HttpClient) getHEAP().get((int) __args__.get("refId"));
+            
+               boolean __result__ = ref.isHttpsEnable;
+            
+               boolean jsonableResult = __result__;
             
                 __methodResult__.success(jsonableResult);
             });
@@ -2889,82 +2945,6 @@ public class SubHandler1 {
                     com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
             
                     String __result__ = ref.cityCode;
-            
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // getter
-            put("com.baidu.location.Address::get_district_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
-            
-                    String __result__ = ref.district;
-            
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // getter
-            put("com.baidu.location.Address::get_street_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
-            
-                    String __result__ = ref.street;
-            
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // getter
-            put("com.baidu.location.Address::get_streetNumber_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
-            
-                    String __result__ = ref.streetNumber;
-            
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // getter
-            put("com.baidu.location.Address::get_address_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
-            
-                    String __result__ = ref.address;
             
                     String jsonableResult = __result__;
             

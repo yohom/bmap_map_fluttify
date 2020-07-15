@@ -100,7 +100,7 @@ class BMKLocation extends NSObject  {
   }
   
   Future<void> set_provider(BMKLocationProvider provider) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_provider', {'refId': refId, "provider": provider.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_provider', {'refId': refId, "provider": provider.toValue()});
   
   
   }
@@ -186,7 +186,7 @@ extension BMKLocation_Batch on List<BMKLocation> {
   }
   
   Future<void> set_provider_batch(List<BMKLocationProvider> provider) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_provider_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "provider": provider[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_provider_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "provider": provider[__i__].toValue()}]);
   
   
   }

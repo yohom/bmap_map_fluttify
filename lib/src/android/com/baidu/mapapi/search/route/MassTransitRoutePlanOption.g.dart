@@ -112,19 +112,19 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
   }
   
   Future<void> set_mTacticsIncity(com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity mTacticsIncity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity', {'refId': refId, "mTacticsIncity": mTacticsIncity.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity', {'refId': refId, "mTacticsIncity": mTacticsIncity.toValue()});
   
   
   }
   
   Future<void> set_mTacticsIntercity(com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity mTacticsIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity', {'refId': refId, "mTacticsIntercity": mTacticsIntercity.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity', {'refId': refId, "mTacticsIntercity": mTacticsIntercity.toValue()});
   
   
   }
   
   Future<void> set_mTransTypeIntercity(com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity mTransTypeIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity', {'refId': refId, "mTransTypeIntercity": mTransTypeIntercity.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity', {'refId': refId, "mTransTypeIntercity": mTransTypeIntercity.toValue()});
   
   
   }
@@ -419,19 +419,19 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
   }
   
   Future<void> set_mTacticsIncity_batch(List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity> mTacticsIncity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTacticsIncity": mTacticsIncity[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTacticsIncity": mTacticsIncity[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_mTacticsIntercity_batch(List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity> mTacticsIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTacticsIntercity": mTacticsIntercity[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTacticsIntercity": mTacticsIntercity[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_mTransTypeIntercity_batch(List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity> mTransTypeIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTransTypeIntercity": mTransTypeIntercity[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTransTypeIntercity": mTransTypeIntercity[__i__].toValue()}]);
   
   
   }

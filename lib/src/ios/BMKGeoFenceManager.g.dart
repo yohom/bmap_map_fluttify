@@ -104,7 +104,7 @@ class BMKGeoFenceManager extends NSObject  {
   }
   
   Future<void> set_activeAction(BMKGeoFenceActiveAction activeAction) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::set_activeAction', {'refId': refId, "activeAction": activeAction.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::set_activeAction', {'refId': refId, "activeAction": activeAction.toValue()});
   
   
   }
@@ -298,7 +298,7 @@ extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
 
   //region setters
   Future<void> set_activeAction_batch(List<BMKGeoFenceActiveAction> activeAction) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::set_activeAction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "activeAction": activeAction[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceManager::set_activeAction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "activeAction": activeAction[__i__].toValue()}]);
   
   
   }

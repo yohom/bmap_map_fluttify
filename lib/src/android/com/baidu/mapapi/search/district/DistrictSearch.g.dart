@@ -33,30 +33,6 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
 
   //region methods
   
-  static Future<com_baidu_mapapi_search_district_DistrictSearch> newInstance() async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.search.district.DistrictSearch::newInstance([])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::newInstance', );
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_district_DistrictSearch()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
-      return __return__;
-    }
-  }
-  
-  
   Future<bool> searchDistrict(com_baidu_mapapi_search_district_DistrictSearchOption var1) async {
     // print log
     if (fluttifyLogEnabled) {
@@ -157,26 +133,6 @@ extension com_baidu_mapapi_search_district_DistrictSearch_Batch on List<com_baid
   //endregion
 
   //region methods
-  
-  static Future<List<com_baidu_mapapi_search_district_DistrictSearch>> newInstance_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::newInstance_batch', );
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_district_DistrictSearch()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
-  }
-  
   
   Future<List<bool>> searchDistrict_batch(List<com_baidu_mapapi_search_district_DistrictSearchOption> var1) async {
     if (false) {

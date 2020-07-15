@@ -272,30 +272,6 @@ class com_baidu_mapapi_search_core_RouteLine<T> extends java_lang_Object with an
     }
   }
   
-  
-  Future<void> setSteps(List<T> var1) async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.search.core.RouteLine@$refId::setSteps([])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.RouteLine::setSteps', {"refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
-  }
-  
   //endregion
 }
 

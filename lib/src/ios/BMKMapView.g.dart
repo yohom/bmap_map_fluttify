@@ -524,7 +524,7 @@ class BMKMapView extends UIView  {
   }
   
   Future<void> set_mapType(BMKMapType mapType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_mapType', {'refId': refId, "mapType": mapType.index});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_mapType', {'refId': refId, "mapType": mapType.toValue()});
   
   
   }
@@ -668,7 +668,7 @@ class BMKMapView extends UIView  {
   }
   
   Future<void> set_logoPosition(BMKLogoPosition logoPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_logoPosition', {'refId': refId, "logoPosition": logoPosition.index});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_logoPosition', {'refId': refId, "logoPosition": logoPosition.toValue()});
   
   
   }
@@ -722,7 +722,7 @@ class BMKMapView extends UIView  {
   }
   
   Future<void> set_userTrackingMode(BMKUserTrackingMode userTrackingMode, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_userTrackingMode', {'refId': refId, "userTrackingMode": userTrackingMode.index});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_userTrackingMode', {'refId': refId, "userTrackingMode": userTrackingMode.toValue()});
   
   
   }
@@ -2683,7 +2683,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
 
   //region setters
   Future<void> set_mapType_batch(List<BMKMapType> mapType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_mapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mapType": mapType[__i__].index}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_mapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mapType": mapType[__i__].toValue()}]);
   
   
   }
@@ -2827,7 +2827,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   Future<void> set_logoPosition_batch(List<BMKLogoPosition> logoPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_logoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "logoPosition": logoPosition[__i__].index}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_logoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "logoPosition": logoPosition[__i__].toValue()}]);
   
   
   }
@@ -2881,7 +2881,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   Future<void> set_userTrackingMode_batch(List<BMKUserTrackingMode> userTrackingMode, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_userTrackingMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "userTrackingMode": userTrackingMode[__i__].index}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapView::set_userTrackingMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "userTrackingMode": userTrackingMode[__i__].toValue()}]);
   
   
   }

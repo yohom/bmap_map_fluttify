@@ -24,10 +24,20 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
   //endregion
 
   //region getters
+  static Future<bool> get_isHttpsEnable() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable", );
+  
+    return __result__;
+  }
   
   //endregion
 
   //region setters
+  Future<void> set_isHttpsEnable(bool isHttpsEnable) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::set_isHttpsEnable', {'refId': refId, "isHttpsEnable": isHttpsEnable});
+  
+  
+  }
   
   //endregion
 
@@ -133,10 +143,21 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
 
 extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_HttpClient> {
   //region getters
+  Future<List<bool>> get_isHttpsEnable_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
+    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+  
+    return typedResult;
+  }
   
   //endregion
 
   //region setters
+  Future<void> set_isHttpsEnable_batch(List<bool> isHttpsEnable) async {
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::set_isHttpsEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "isHttpsEnable": isHttpsEnable[__i__]}]);
+  
+  
+  }
   
   //endregion
 

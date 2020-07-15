@@ -76,7 +76,7 @@ class BMKGeoFenceRegion extends NSObject with NSCopying {
 
   //region setters
   Future<void> set_fenceStatus(BMKGeoFenceRegionStatus fenceStatus) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceRegion::set_fenceStatus', {'refId': refId, "fenceStatus": fenceStatus.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceRegion::set_fenceStatus', {'refId': refId, "fenceStatus": fenceStatus.toValue()});
   
   
   }
@@ -158,7 +158,7 @@ extension BMKGeoFenceRegion_Batch on List<BMKGeoFenceRegion> {
 
   //region setters
   Future<void> set_fenceStatus_batch(List<BMKGeoFenceRegionStatus> fenceStatus) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceRegion::set_fenceStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "fenceStatus": fenceStatus[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceRegion::set_fenceStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "fenceStatus": fenceStatus[__i__].toValue()}]);
   
   
   }
