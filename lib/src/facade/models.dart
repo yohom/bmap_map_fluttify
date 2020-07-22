@@ -142,6 +142,34 @@ class PolylineOption {
   }
 }
 
+/// 弧线创建参数
+@immutable
+class ArcOption {
+  /// 经纬度列表
+  final LatLng startPoint;
+  final LatLng middlePoint;
+  final LatLng endPoint;
+
+  /// 宽度
+  final double width;
+
+  /// 颜色
+  final Color strokeColor;
+
+  ArcOption({
+    this.startPoint,
+    this.middlePoint,
+    this.endPoint,
+    this.width,
+    this.strokeColor,
+  });
+
+  @override
+  String toString() {
+    return 'ArcOption{startPoint: $startPoint, middlePoint: $middlePoint, endPoint: $endPoint, width: $width, strokeColor: $strokeColor}';
+  }
+}
+
 /// Polygon创建参数
 @immutable
 class PolygonOption {
@@ -289,6 +317,24 @@ class Polyline {
 
   com_baidu_mapapi_map_Polyline _androidModel;
   BMKPolyline _iosModel;
+  BMKMapView _iosController;
+
+  Future<void> remove() {
+    return platform(
+      android: (_) => _androidModel.remove(),
+      ios: (_) => _iosController?.removeOverlay(_iosModel),
+    );
+  }
+}
+
+/// 折线
+class Arc {
+  Arc.android(this._androidModel);
+
+  Arc.ios(this._iosModel, this._iosController);
+
+  com_baidu_mapapi_map_Arc _androidModel;
+  BMKArcline _iosModel;
   BMKMapView _iosController;
 
   Future<void> remove() {

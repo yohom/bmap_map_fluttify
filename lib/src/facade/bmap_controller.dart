@@ -1231,6 +1231,94 @@ mixin _Pro on _Holder {
       },
     );
   }
+
+  /// 添加弧线
+  Future<Arc> addArc(ArcOption option) async {
+    assert(option != null);
+
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // 构造折线点
+        com_baidu_mapapi_model_LatLng start =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          option.startPoint.latitude,
+          option.startPoint.longitude,
+        );
+        com_baidu_mapapi_model_LatLng middle =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          option.middlePoint.latitude,
+          option.middlePoint.longitude,
+        );
+        com_baidu_mapapi_model_LatLng end =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          option.endPoint.latitude,
+          option.endPoint.longitude,
+        );
+
+        // 构造折线参数
+        final arcOptions = await com_baidu_mapapi_map_ArcOptions.create__();
+
+        // 添加经纬度列表
+        await arcOptions.points(start, middle, end);
+        if (option.width != null) {
+          await arcOptions.width(option.width.toInt());
+        }
+        // 颜色
+        if (option.strokeColor != null) {
+          await arcOptions
+              .color(Int32List.fromList([option.strokeColor.value])[0]);
+        }
+        // 设置参数
+        final arc = await map.addOverlay(arcOptions);
+
+        pool..add(map)..add(arcOptions)..add(start)..add(middle)..add(end);
+
+        return Arc.android(
+          TypeOpBmapMapFluttifyAndroid(arc).as__<com_baidu_mapapi_map_Arc>(),
+        );
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(_iosMapDelegate);
+
+        // 构造折线点
+        CLLocationCoordinate2D start = await CLLocationCoordinate2D.create(
+          option.startPoint.latitude,
+          option.startPoint.longitude,
+        );
+        CLLocationCoordinate2D middle = await CLLocationCoordinate2D.create(
+          option.middlePoint.latitude,
+          option.middlePoint.longitude,
+        );
+        CLLocationCoordinate2D end = await CLLocationCoordinate2D.create(
+          option.endPoint.latitude,
+          option.endPoint.longitude,
+        );
+
+        // 构造折线参数
+        final arc =
+            await BMKArcline.arclineWithCoordinates([start, middle, end]);
+
+        // 宽度和颜色需要设置到STACK里去
+        if (option.width != null) {
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          arc.addJsonableProperty__(1, option.width / pixelRatio);
+        }
+        // 颜色
+        if (option.strokeColor != null) {
+          arc.addJsonableProperty__(2, option.strokeColor.value);
+        }
+
+        // 设置参数
+        await iosController.addOverlay(arc);
+
+        pool..add(start)..add(middle)..add(end);
+
+        return Arc.ios(arc, iosController);
+      },
+    );
+  }
 }
 
 class _Holder {

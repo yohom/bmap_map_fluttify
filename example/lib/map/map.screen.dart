@@ -4,6 +4,7 @@ import 'package:demo_widgets/demo_widgets.dart';
 import 'package:flutter/material.dart';
 
 import 'create_map/create_map.screen.dart';
+import 'draw_on_map/draw_arc.screen.dart';
 import 'draw_on_map/draw_circle.screen.dart';
 import 'draw_on_map/draw_point.screen.dart';
 import 'draw_on_map/draw_polygon.screen.dart';
@@ -71,6 +72,11 @@ class MapDemo extends StatelessWidget {
               label: '绘制多边形',
               sublabel: 'DrawPolygonScreen',
               target: DrawPolygonScreen(),
+            ),
+            FunctionItem(
+              label: '绘制弧线',
+              sublabel: 'DrawArcScreen',
+              target: DrawArcScreen(),
             ),
           ],
         ),

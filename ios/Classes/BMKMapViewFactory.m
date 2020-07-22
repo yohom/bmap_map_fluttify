@@ -3829,12 +3829,34 @@ extern BOOL enableLog;
 //      return multiPointOverlayRenderer;
 //  }
 
-  // 图片
-  if ([overlay isKindOfClass:[BMKGroundOverlay class]])
-  {
-      BMKGroundOverlayView *groundPverlayRenderer = [[BMKGroundOverlayView alloc] initWithGroundOverlay: overlay];
-      return groundPverlayRenderer;
-  }
+    // 图片
+    if ([overlay isKindOfClass:[BMKGroundOverlay class]])
+    {
+        BMKGroundOverlayView *groundPverlayRenderer = [[BMKGroundOverlayView alloc] initWithGroundOverlay: overlay];
+        return groundPverlayRenderer;
+    }
+    
+    // 弧线
+    if ([overlay isKindOfClass:[BMKArcline class]])
+    {
+        NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
+        NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
+        
+        BMKArclineView *renderer = [[BMKArclineView alloc] initWithArcline: overlay];
+        // 宽度
+        if (width != nil) renderer.lineWidth = [width doubleValue];
+
+        // 描边颜色
+        NSUInteger rgba = [strokeColor unsignedIntegerValue];
+        float components[4];
+        for (int i = 3; i >= 0; i--) {
+            components[i] = (rgba & 0xff) / 255.0;
+            rgba >>= 8;
+        }
+        renderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
+
+        return renderer;
+    }
   ////////////////////////////////////////////////////////////////////////////////
   
   return nil;
