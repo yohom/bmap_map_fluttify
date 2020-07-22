@@ -125,6 +125,7 @@ import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 |  添加多边形  |  ✅ |  ✅   |
 |  添加圆  |  ✅ |  ✅   |
 |  设置marker拖动监听事件  |  ✅ |  ✅   |
+|  添加弧线  |  ☑️ |  ✅   |
 
 |  与地图交互  | 社区版 | 专业版 |
 |:-----:|:-----:|:-----:|
