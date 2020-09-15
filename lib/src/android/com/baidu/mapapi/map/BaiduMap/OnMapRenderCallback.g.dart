@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapRenderCallback on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onMapRenderFinished() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapRenderFinished::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onMapRenderFinished() {}
   
 }
 

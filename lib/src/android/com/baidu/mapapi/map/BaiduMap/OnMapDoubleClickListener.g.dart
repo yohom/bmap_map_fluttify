@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapDoubleClickListener on java_lang_Object
   
 
   @mustCallSuper
-  Future<void> onMapDoubleClick(com_baidu_mapapi_model_LatLng var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapDoubleClick::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onMapDoubleClick(com_baidu_mapapi_model_LatLng var1) {}
   
 }
 

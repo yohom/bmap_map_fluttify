@@ -24,31 +24,13 @@ mixin com_baidu_mapapi_cloud_CloudListener on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onGetSearchResult(com_baidu_mapapi_cloud_CloudSearchResult var1, int var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetSearchResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetSearchResult(com_baidu_mapapi_cloud_CloudSearchResult var1, int var2) {}
   
   @mustCallSuper
-  Future<void> onGetDetailSearchResult(com_baidu_mapapi_cloud_DetailSearchResult var1, int var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetDetailSearchResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetDetailSearchResult(com_baidu_mapapi_cloud_DetailSearchResult var1, int var2) {}
   
   @mustCallSuper
-  Future<void> onGetCloudRgcResult(com_baidu_mapapi_cloud_CloudRgcResult var1, int var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetCloudRgcResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetCloudRgcResult(com_baidu_mapapi_cloud_CloudRgcResult var1, int var2) {}
   
 }
 

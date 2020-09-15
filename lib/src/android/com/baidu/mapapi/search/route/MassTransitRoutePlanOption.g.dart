@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
 
   //region creators
   static Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRoutePlanOption__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRoutePlanOption__', );
     final object = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_MassTransitRoutePlanOption__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_MassTransitRoutePlanOption__', {'length': length});
   
     final List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,100 +40,92 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
 
   //region getters
   Future<com_baidu_mapapi_search_route_PlanNode> get_mFrom() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mFrom", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mFrom", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<com_baidu_mapapi_search_route_PlanNode> get_mTo() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTo", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTo", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<String> get_mCoordType() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mCoordType", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mCoordType", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity> get_mTacticsIncity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIncity", {'refId': refId});
-  
-    return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.values[__result__];
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIncity", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity());
   }
   
   Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity> get_mTacticsIntercity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIntercity", {'refId': refId});
-  
-    return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.values[__result__];
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIntercity", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity());
   }
   
   Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity> get_mTransTypeIntercity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTransTypeIntercity", {'refId': refId});
-  
-    return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.values[__result__];
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTransTypeIntercity", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity());
   }
   
   Future<int> get_mPageSize() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageSize", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageSize", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_mPageIndex() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageIndex", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageIndex", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_mFrom(com_baidu_mapapi_search_route_PlanNode mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mFrom', {'refId': refId, "mFrom": mFrom.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mFrom', <String, dynamic>{'__this__': this, "mFrom": mFrom});
   
   
   }
   
   Future<void> set_mTo(com_baidu_mapapi_search_route_PlanNode mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTo', {'refId': refId, "mTo": mTo.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTo', <String, dynamic>{'__this__': this, "mTo": mTo});
   
   
   }
   
   Future<void> set_mCoordType(String mCoordType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mCoordType', {'refId': refId, "mCoordType": mCoordType});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mCoordType', <String, dynamic>{'__this__': this, "mCoordType": mCoordType});
   
   
   }
   
   Future<void> set_mTacticsIncity(com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity mTacticsIncity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity', {'refId': refId, "mTacticsIncity": mTacticsIncity.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity', <String, dynamic>{'__this__': this, "mTacticsIncity": mTacticsIncity.toValue()});
   
   
   }
   
   Future<void> set_mTacticsIntercity(com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity mTacticsIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity', {'refId': refId, "mTacticsIntercity": mTacticsIntercity.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity', <String, dynamic>{'__this__': this, "mTacticsIntercity": mTacticsIntercity.toValue()});
   
   
   }
   
   Future<void> set_mTransTypeIntercity(com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity mTransTypeIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity', {'refId': refId, "mTransTypeIntercity": mTransTypeIntercity.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity', <String, dynamic>{'__this__': this, "mTransTypeIntercity": mTransTypeIntercity.toValue()});
   
   
   }
   
   Future<void> set_mPageSize(int mPageSize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageSize', {'refId': refId, "mPageSize": mPageSize});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageSize', <String, dynamic>{'__this__': this, "mPageSize": mPageSize});
   
   
   }
   
   Future<void> set_mPageIndex(int mPageIndex) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageIndex', {'refId': refId, "mPageIndex": mPageIndex});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageIndex', <String, dynamic>{'__this__': this, "mPageIndex": mPageIndex});
   
   
   }
@@ -152,7 +141,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::from', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::from', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -163,31 +152,6 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
-  }
-  
-  
-  Future<com_baidu_mapapi_search_route_MassTransitRoutePlanOption> to(com_baidu_mapapi_search_route_PlanNode var1) async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.search.route.MassTransitRoutePlanOption@$refId::to([])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::to', {"var1": var1?.refId, "refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -200,7 +164,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::coordType', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::coordType', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -211,7 +175,6 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -224,7 +187,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
@@ -235,7 +198,6 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -248,7 +210,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
@@ -259,7 +221,6 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -272,7 +233,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
@@ -283,7 +244,6 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -296,7 +256,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageSize', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageSize', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -307,7 +267,6 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -320,7 +279,7 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageIndex', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageIndex', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -331,7 +290,6 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -342,58 +300,58 @@ class com_baidu_mapapi_search_route_MassTransitRoutePlanOption extends java_lang
 extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption> {
   //region getters
   Future<List<com_baidu_mapapi_search_route_PlanNode>> get_mFrom_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mFrom_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mFrom_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_search_route_PlanNode>> get_mTo_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTo_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTo_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<String>> get_mCoordType_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mCoordType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mCoordType_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity>> get_mTacticsIncity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIncity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.values[__result__]).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIncity_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity()).toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity>> get_mTacticsIntercity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIntercity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity.values[__result__]).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTacticsIntercity_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity()).toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity>> get_mTransTypeIntercity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTransTypeIntercity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.values[__result__]).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mTransTypeIntercity_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity()).toList();
     return typedResult;
   }
   
   Future<List<int>> get_mPageSize_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageSize_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageSize_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_mPageIndex_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageIndex_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.MassTransitRoutePlanOption::get_mPageIndex_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -401,49 +359,49 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
 
   //region setters
   Future<void> set_mFrom_batch(List<com_baidu_mapapi_search_route_PlanNode> mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mFrom": mFrom[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mFrom": mFrom[__i__]}]);
   
   
   }
   
   Future<void> set_mTo_batch(List<com_baidu_mapapi_search_route_PlanNode> mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTo": mTo[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTo": mTo[__i__]}]);
   
   
   }
   
   Future<void> set_mCoordType_batch(List<String> mCoordType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mCoordType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mCoordType": mCoordType[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mCoordType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCoordType": mCoordType[__i__]}]);
   
   
   }
   
   Future<void> set_mTacticsIncity_batch(List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity> mTacticsIncity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTacticsIncity": mTacticsIncity[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTacticsIncity": mTacticsIncity[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_mTacticsIntercity_batch(List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIntercity> mTacticsIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTacticsIntercity": mTacticsIntercity[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTacticsIntercity": mTacticsIntercity[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_mTransTypeIntercity_batch(List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity> mTransTypeIntercity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTransTypeIntercity": mTransTypeIntercity[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mTransTypeIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTransTypeIntercity": mTransTypeIntercity[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_mPageSize_batch(List<int> mPageSize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mPageSize": mPageSize[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageSize": mPageSize[__i__]}]);
   
   
   }
   
   Future<void> set_mPageIndex_batch(List<int> mPageIndex) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mPageIndex": mPageIndex[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::set_mPageIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageIndex": mPageIndex[__i__]}]);
   
   
   }
@@ -458,35 +416,14 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
-  }
-  
-  
-  Future<List<com_baidu_mapapi_search_route_MassTransitRoutePlanOption>> to_batch(List<com_baidu_mapapi_search_route_PlanNode> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::to_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -498,15 +435,14 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::coordType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::coordType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -518,15 +454,14 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIncity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -538,15 +473,14 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::tacticsIntercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -558,15 +492,14 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::transtypeintercity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -578,15 +511,14 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -598,15 +530,14 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_Batch on List
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.MassTransitRoutePlanOption::pageIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_MassTransitRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }

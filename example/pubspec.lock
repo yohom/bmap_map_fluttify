@@ -21,7 +21,7 @@ packages:
       name: asn1lib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.4"
+    version: "0.6.5"
   async:
     dependency: transitive
     description:
@@ -32,28 +32,24 @@ packages:
   bmap_core_fluttify:
     dependency: transitive
     description:
-      path: "."
-      ref: develop
-      resolved-ref: b78bf9f7f1225a93e8c46bca30f7595190973168
-      url: "git@github.com:fluttify-project/bmap_core_fluttify.git"
-    source: git
-    version: "0.1.1"
+      name: bmap_core_fluttify
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.3"
   bmap_map_fluttify:
     dependency: "direct dev"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.3"
+    version: "0.0.1"
   bmap_utils_fluttify:
     dependency: transitive
     description:
-      path: "."
-      ref: develop
-      resolved-ref: ca3a769eef15397eefb4a71627e944ae4baec24a
-      url: "git@github.com:fluttify-project/bmap_utils_fluttify.git"
-    source: git
-    version: "0.0.1"
+      name: bmap_utils_fluttify
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -95,7 +91,7 @@ packages:
       name: core_location_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.1"
+    version: "0.2.4"
   crypto:
     dependency: transitive
     description:
@@ -116,7 +112,14 @@ packages:
       name: decorated_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.13"
+    version: "0.12.14"
+  demo_widgets:
+    dependency: "direct main"
+    description:
+      name: demo_widgets
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   dio:
     dependency: transitive
     description:
@@ -137,7 +140,7 @@ packages:
       name: file
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.2.0"
+    version: "5.2.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -173,7 +176,7 @@ packages:
       name: foundation_fluttify
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.5+1"
+    version: "0.8.11-dev.6"
   http:
     dependency: transitive
     description:
@@ -264,14 +267,14 @@ packages:
       name: path_provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.10"
+    version: "1.6.11"
   path_provider_linux:
     dependency: transitive
     description:
       name: path_provider_linux
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.1+1"
+    version: "0.0.1+2"
   path_provider_macos:
     dependency: transitive
     description:
@@ -299,7 +302,7 @@ packages:
       name: permission_handler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.1"
+    version: "5.0.1+1"
   permission_handler_platform_interface:
     dependency: transitive
     description:

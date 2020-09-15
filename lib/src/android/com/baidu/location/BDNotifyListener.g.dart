@@ -25,112 +25,103 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
 
   //region getters
   Future<double> get_mLatitude() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitude", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitude", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_mLongitude() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitude", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitude", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_mRadius() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mRadius", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mRadius", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_differDistance() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_differDistance", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_differDistance", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_mCoorType() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mCoorType", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mCoorType", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_mLatitudeC() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitudeC", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitudeC", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_mLongitudeC() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitudeC", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitudeC", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_Notified() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_Notified", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_Notified", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<bool> get_isAdded() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_isAdded", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_isAdded", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_mLatitude(double mLatitude) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitude', {'refId': refId, "mLatitude": mLatitude});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitude', <String, dynamic>{'__this__': this, "mLatitude": mLatitude});
   
   
   }
   
   Future<void> set_mLongitude(double mLongitude) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitude', {'refId': refId, "mLongitude": mLongitude});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitude', <String, dynamic>{'__this__': this, "mLongitude": mLongitude});
   
   
   }
   
   Future<void> set_mRadius(double mRadius) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mRadius', {'refId': refId, "mRadius": mRadius});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_mRadius', <String, dynamic>{'__this__': this, "mRadius": mRadius});
   
   
   }
   
   Future<void> set_differDistance(double differDistance) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_differDistance', {'refId': refId, "differDistance": differDistance});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_differDistance', <String, dynamic>{'__this__': this, "differDistance": differDistance});
   
   
   }
   
   Future<void> set_mCoorType(String mCoorType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mCoorType', {'refId': refId, "mCoorType": mCoorType});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_mCoorType', <String, dynamic>{'__this__': this, "mCoorType": mCoorType});
   
   
   }
   
   Future<void> set_mLatitudeC(double mLatitudeC) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitudeC', {'refId': refId, "mLatitudeC": mLatitudeC});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitudeC', <String, dynamic>{'__this__': this, "mLatitudeC": mLatitudeC});
   
   
   }
   
   Future<void> set_mLongitudeC(double mLongitudeC) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitudeC', {'refId': refId, "mLongitudeC": mLongitudeC});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitudeC', <String, dynamic>{'__this__': this, "mLongitudeC": mLongitudeC});
   
   
   }
   
   Future<void> set_Notified(int Notified) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_Notified', {'refId': refId, "Notified": Notified});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_Notified', <String, dynamic>{'__this__': this, "Notified": Notified});
   
   
   }
   
   Future<void> set_isAdded(bool isAdded) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_isAdded', {'refId': refId, "isAdded": isAdded});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::set_isAdded', <String, dynamic>{'__this__': this, "isAdded": isAdded});
   
   
   }
@@ -146,7 +137,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::SetNotifyLocation', {"var1": var1, "var3": var3, "var5": var5, "var6": var6, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::SetNotifyLocation', {"var1": var1, "var3": var3, "var5": var5, "var6": var6, "__this__": this});
   
   
     // handle native call
@@ -157,7 +148,6 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -170,7 +160,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::onNotify', {"var1": var1?.refId, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::onNotify', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -181,7 +171,6 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -192,65 +181,65 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
 extension com_baidu_location_BDNotifyListener_Batch on List<com_baidu_location_BDNotifyListener> {
   //region getters
   Future<List<double>> get_mLatitude_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitude_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitude_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_mLongitude_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitude_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitude_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_mRadius_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mRadius_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mRadius_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_differDistance_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_differDistance_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_differDistance_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_mCoorType_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mCoorType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mCoorType_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_mLatitudeC_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitudeC_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLatitudeC_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_mLongitudeC_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitudeC_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_mLongitudeC_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_Notified_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_Notified_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_Notified_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<bool>> get_isAdded_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.location.BDNotifyListener::get_isAdded_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.BDNotifyListener::get_isAdded_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -258,55 +247,55 @@ extension com_baidu_location_BDNotifyListener_Batch on List<com_baidu_location_B
 
   //region setters
   Future<void> set_mLatitude_batch(List<double> mLatitude) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitude_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mLatitude": mLatitude[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitude_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mLatitude": mLatitude[__i__]}]);
   
   
   }
   
   Future<void> set_mLongitude_batch(List<double> mLongitude) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitude_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mLongitude": mLongitude[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitude_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mLongitude": mLongitude[__i__]}]);
   
   
   }
   
   Future<void> set_mRadius_batch(List<double> mRadius) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mRadius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mRadius": mRadius[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_mRadius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mRadius": mRadius[__i__]}]);
   
   
   }
   
   Future<void> set_differDistance_batch(List<double> differDistance) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_differDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "differDistance": differDistance[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_differDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "differDistance": differDistance[__i__]}]);
   
   
   }
   
   Future<void> set_mCoorType_batch(List<String> mCoorType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mCoorType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mCoorType": mCoorType[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_mCoorType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCoorType": mCoorType[__i__]}]);
   
   
   }
   
   Future<void> set_mLatitudeC_batch(List<double> mLatitudeC) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitudeC_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mLatitudeC": mLatitudeC[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_mLatitudeC_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mLatitudeC": mLatitudeC[__i__]}]);
   
   
   }
   
   Future<void> set_mLongitudeC_batch(List<double> mLongitudeC) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitudeC_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mLongitudeC": mLongitudeC[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_mLongitudeC_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mLongitudeC": mLongitudeC[__i__]}]);
   
   
   }
   
   Future<void> set_Notified_batch(List<int> Notified) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_Notified_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "Notified": Notified[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_Notified_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "Notified": Notified[__i__]}]);
   
   
   }
   
   Future<void> set_isAdded_batch(List<bool> isAdded) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::set_isAdded_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "isAdded": isAdded[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.location.BDNotifyListener::set_isAdded_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isAdded": isAdded[__i__]}]);
   
   
   }
@@ -321,7 +310,7 @@ extension com_baidu_location_BDNotifyListener_Batch on List<com_baidu_location_B
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::SetNotifyLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var3": var3[__i__], "var5": var5[__i__], "var6": var6[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::SetNotifyLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var3": var3[__i__], "var5": var5[__i__], "var6": var6[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -329,7 +318,6 @@ extension com_baidu_location_BDNotifyListener_Batch on List<com_baidu_location_B
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -341,7 +329,7 @@ extension com_baidu_location_BDNotifyListener_Batch on List<com_baidu_location_B
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDNotifyListener::onNotify_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDNotifyListener::onNotify_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -349,7 +337,6 @@ extension com_baidu_location_BDNotifyListener_Batch on List<com_baidu_location_B
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

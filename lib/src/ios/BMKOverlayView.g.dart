@@ -20,22 +20,19 @@ class BMKOverlayView extends UIView  {
   //endregion
 
   //region creators
-  static Future<BMKOverlayView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKOverlayView');
+  static Future<BMKOverlayView> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKOverlayView', {'init': init});
     final object = BMKOverlayView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKOverlayView>> create_batch__(int length) async {
+  static Future<List<BMKOverlayView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKOverlayView', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKOverlayView', {'length': length, 'init': init});
   
     final List<BMKOverlayView> typedResult = resultBatch.map((result) => BMKOverlayView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,28 +40,25 @@ class BMKOverlayView extends UIView  {
 
   //region getters
   Future<BMKOverlay> get_overlay({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayView::get_overlay", {'refId': refId});
-    kNativeObjectPool.add(BMKOverlay.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKOverlay.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayView::get_overlay", {'__this__': this});
+    return __result__ == null ? null : (BMKOverlay.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<int> get_strokeTextureID({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayView::get_strokeTextureID", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayView::get_strokeTextureID", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<List<UIColor>> get_colors({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayView::get_colors", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => UIColor()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => UIColor()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayView::get_colors", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => UIColor()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
   }
   
   //endregion
 
   //region setters
   Future<void> set_colors(List<UIColor> colors, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::set_colors', {'refId': refId, "colors": colors.map((it) => it.refId).toList()});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::set_colors', <String, dynamic>{'__this__': this, "colors": colors});
   
   
   }
@@ -80,7 +74,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::setOverlayGeometryDelegate', {"delegate": delegate is Ref ? (delegate as Ref)?.refId : delegate, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::setOverlayGeometryDelegate', {"delegate": delegate, "__this__": this});
   
   
     // handle native call
@@ -91,7 +85,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -104,7 +97,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::initWithOverlay', {"overlay": overlay?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::initWithOverlay', {"overlay": overlay, "__this__": this});
   
   
     // handle native call
@@ -115,7 +108,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -128,7 +120,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::pointForMapPoint', {"mapPoint": mapPoint?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::pointForMapPoint', {"mapPoint": mapPoint, "__this__": this});
   
   
     // handle native call
@@ -139,7 +131,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -152,7 +143,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::mapPointForPoint', {"point": point?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::mapPointForPoint', {"point": point, "__this__": this});
   
   
     // handle native call
@@ -163,7 +154,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -176,7 +166,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::rectForMapRect', {"mapRect": mapRect?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::rectForMapRect', {"mapRect": mapRect, "__this__": this});
   
   
     // handle native call
@@ -187,7 +177,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -200,7 +189,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::mapRectForRect', {"rect": rect?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::mapRectForRect', {"rect": rect, "__this__": this});
   
   
     // handle native call
@@ -211,7 +200,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -224,7 +212,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::canDrawMapRect_zoomScale', {"mapRect": mapRect?.refId, "zoomScale": zoomScale, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::canDrawMapRect_zoomScale', {"mapRect": mapRect, "zoomScale": zoomScale, "__this__": this});
   
   
     // handle native call
@@ -235,7 +223,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -248,7 +235,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::setNeedsDisplayInMapRect', {"mapRect": mapRect?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::setNeedsDisplayInMapRect', {"mapRect": mapRect, "__this__": this});
   
   
     // handle native call
@@ -259,7 +246,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -272,7 +258,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "strokeColor": strokeColor?.refId, "lineWidth": lineWidth, "looped": looped, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped', {"points": points, "pointCount": pointCount, "strokeColor": strokeColor, "lineWidth": lineWidth, "looped": looped, "__this__": this});
   
   
     // handle native call
@@ -283,7 +269,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -296,7 +281,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_looped', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "lineWidth": lineWidth, "textureID": textureID, "looped": looped, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_looped', {"points": points, "pointCount": pointCount, "lineWidth": lineWidth, "textureID": textureID, "looped": looped, "__this__": this});
   
   
     // handle native call
@@ -307,7 +292,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -320,7 +304,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDashType', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "strokeColor": strokeColor?.refId, "lineWidth": lineWidth, "looped": looped, "lineDashType": lineDashType.index + 0, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDashType', {"points": points, "pointCount": pointCount, "strokeColor": strokeColor, "lineWidth": lineWidth, "looped": looped, "lineDashType": lineDashType.toValue(), "__this__": this});
   
   
     // handle native call
@@ -331,7 +315,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -344,7 +327,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDash', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "strokeColor": strokeColor?.refId, "lineWidth": lineWidth, "looped": looped, "lineDash": lineDash, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDash', {"points": points, "pointCount": pointCount, "strokeColor": strokeColor, "lineWidth": lineWidth, "looped": looped, "lineDash": lineDash, "__this__": this});
   
   
     // handle native call
@@ -355,7 +338,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -368,7 +350,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus', {"partPt": partPt.map((__it__) => __it__?.refId).toList(), "lineWidth": lineWidth, "textureIndexs": textureIndexs.map((__it__) => __it__?.refId).toList(), "isFoucs": isFoucs, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus', {"partPt": partPt, "lineWidth": lineWidth, "textureIndexs": textureIndexs, "isFoucs": isFoucs, "__this__": this});
   
   
     // handle native call
@@ -379,7 +361,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -392,7 +373,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale', {"partPt": partPt.map((__it__) => __it__?.refId).toList(), "lineWidth": lineWidth, "textureIndexs": textureIndexs.map((__it__) => __it__?.refId).toList(), "isFoucs": isFoucs, "tileTexture": tileTexture, "keepscale": keepscale, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale', {"partPt": partPt, "lineWidth": lineWidth, "textureIndexs": textureIndexs, "isFoucs": isFoucs, "tileTexture": tileTexture, "keepscale": keepscale, "__this__": this});
   
   
     // handle native call
@@ -403,7 +384,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -416,7 +396,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_strokeColor_looped_tileTexture_keepScale', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "lineWidth": lineWidth, "textureID": textureID, "strokeColor": strokeColor?.refId, "looped": looped, "tileTexture": tileTexture, "keepScale": keepScale, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_strokeColor_looped_tileTexture_keepScale', {"points": points, "pointCount": pointCount, "lineWidth": lineWidth, "textureID": textureID, "strokeColor": strokeColor, "looped": looped, "tileTexture": tileTexture, "keepScale": keepScale, "__this__": this});
   
   
     // handle native call
@@ -427,7 +407,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -440,7 +419,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType', {"partPt": partPt.map((__it__) => __it__?.refId).toList(), "lineWidth": lineWidth, "textureIndexs": textureIndexs, "isFoucs": isFoucs, "keepScale": keepScale, "lineJoinType": lineJoinType.index + 0, "lineCapType": lineCapType.index + 0, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType', {"partPt": partPt, "lineWidth": lineWidth, "textureIndexs": textureIndexs, "isFoucs": isFoucs, "keepScale": keepScale, "lineJoinType": lineJoinType.toValue(), "lineCapType": lineCapType.toValue(), "__this__": this});
   
   
     // handle native call
@@ -451,7 +430,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -464,7 +442,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType', {"partPt": partPt.map((__it__) => __it__?.refId).toList(), "lineWidth": lineWidth, "textureIndexs": textureIndexs, "lineDashType": lineDashType.index + 0, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType', {"partPt": partPt, "lineWidth": lineWidth, "textureIndexs": textureIndexs, "lineDashType": lineDashType.toValue(), "__this__": this});
   
   
     // handle native call
@@ -475,7 +453,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -488,7 +465,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderRegionWithPoints_pointCount_fillColor_usingTriangleFan', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "fillColor": fillColor?.refId, "usingTriangleFan": usingTriangleFan, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderRegionWithPoints_pointCount_fillColor_usingTriangleFan', {"points": points, "pointCount": pointCount, "fillColor": fillColor, "usingTriangleFan": usingTriangleFan, "__this__": this});
   
   
     // handle native call
@@ -499,7 +476,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -512,7 +488,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderATRegionWithPoint_pointCount_fillColor_usingTriangleFan', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "fillColor": fillColor?.refId, "usingTriangleFan": usingTriangleFan, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderATRegionWithPoint_pointCount_fillColor_usingTriangleFan', {"points": points, "pointCount": pointCount, "fillColor": fillColor, "usingTriangleFan": usingTriangleFan, "__this__": this});
   
   
     // handle native call
@@ -523,7 +499,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -536,7 +511,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::rendeCircleWithPoints_pointCount_lineWidth_fillColor_strokeColor', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "lineWidth": lineWidth, "fillColor": fillColor?.refId, "strokeColor": strokeColor?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::rendeCircleWithPoints_pointCount_lineWidth_fillColor_strokeColor', {"points": points, "pointCount": pointCount, "lineWidth": lineWidth, "fillColor": fillColor, "strokeColor": strokeColor, "__this__": this});
   
   
     // handle native call
@@ -547,7 +522,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -560,7 +534,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::rendePolygonWithPoints_pointCount_lineWidth_fillColor_strokeColor', {"points": points.map((__it__) => __it__?.refId).toList(), "pointCount": pointCount, "lineWidth": lineWidth, "fillColor": fillColor?.refId, "strokeColor": strokeColor?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::rendePolygonWithPoints_pointCount_lineWidth_fillColor_strokeColor', {"points": points, "pointCount": pointCount, "lineWidth": lineWidth, "fillColor": fillColor, "strokeColor": strokeColor, "__this__": this});
   
   
     // handle native call
@@ -571,7 +545,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -584,7 +557,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::glRender', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::glRender', {"__this__": this});
   
   
     // handle native call
@@ -595,7 +568,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -608,7 +580,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::loadStrokeTextureImage', {"textureImage": textureImage?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::loadStrokeTextureImage', {"textureImage": textureImage, "__this__": this});
   
   
     // handle native call
@@ -619,7 +591,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -632,7 +603,7 @@ class BMKOverlayView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::loadStrokeTextureImages', {"textureImages": textureImages.map((__it__) => __it__?.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::loadStrokeTextureImages', {"textureImages": textureImages, "__this__": this});
   
   
     // handle native call
@@ -643,7 +614,6 @@ class BMKOverlayView extends UIView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -654,23 +624,23 @@ class BMKOverlayView extends UIView  {
 extension BMKOverlayView_Batch on List<BMKOverlayView> {
   //region getters
   Future<List<BMKOverlay>> get_overlay_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayView::get_overlay_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKOverlay.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayView::get_overlay_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKOverlay.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<int>> get_strokeTextureID_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayView::get_strokeTextureID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayView::get_strokeTextureID_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<List<UIColor>>> get_colors_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayView::get_colors_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => UIColor()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayView::get_colors_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => UIColor()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     return typedResult;
   }
   
@@ -678,7 +648,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
 
   //region setters
   Future<void> set_colors_batch(List<List<UIColor>> colors, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::set_colors_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "colors": colors[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayView::set_colors_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "colors": colors[__i__]}]);
   
   
   }
@@ -693,7 +663,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::setOverlayGeometryDelegate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"delegate": delegate[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::setOverlayGeometryDelegate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"delegate": delegate[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -701,7 +671,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -713,15 +682,14 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::initWithOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::initWithOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -733,15 +701,14 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::pointForMapPoint_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapPoint": mapPoint[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::pointForMapPoint_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapPoint": mapPoint[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -753,15 +720,14 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::mapPointForPoint_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"point": point[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::mapPointForPoint_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"point": point[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKMapPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -773,15 +739,14 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::rectForMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::rectForMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -793,15 +758,14 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::mapRectForRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::mapRectForRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -813,7 +777,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::canDrawMapRect_zoomScale_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__].refId, "zoomScale": zoomScale[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::canDrawMapRect_zoomScale_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "zoomScale": zoomScale[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -821,7 +785,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -833,7 +796,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::setNeedsDisplayInMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::setNeedsDisplayInMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -841,7 +804,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -853,7 +815,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "strokeColor": strokeColor[__i__].refId, "lineWidth": lineWidth[__i__], "looped": looped[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "strokeColor": strokeColor[__i__], "lineWidth": lineWidth[__i__], "looped": looped[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -861,7 +823,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -873,7 +834,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_looped_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "textureID": textureID[__i__], "looped": looped[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_looped_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "textureID": textureID[__i__], "looped": looped[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -881,7 +842,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -893,7 +853,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDashType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "strokeColor": strokeColor[__i__].refId, "lineWidth": lineWidth[__i__], "looped": looped[__i__], "lineDashType": lineDashType[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDashType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "strokeColor": strokeColor[__i__], "lineWidth": lineWidth[__i__], "looped": looped[__i__], "lineDashType": lineDashType[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -901,7 +861,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -913,7 +872,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDash_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "strokeColor": strokeColor[__i__].refId, "lineWidth": lineWidth[__i__], "looped": looped[__i__], "lineDash": lineDash[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderLinesWithPoints_pointCount_strokeColor_lineWidth_looped_lineDash_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "strokeColor": strokeColor[__i__], "lineWidth": lineWidth[__i__], "looped": looped[__i__], "lineDash": lineDash[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -921,7 +880,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -933,7 +891,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__].map((it) => it.refId).toList(), "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__].map((it) => it.refId).toList(), "isFoucs": isFoucs[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__], "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__], "isFoucs": isFoucs[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -941,7 +899,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -953,7 +910,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__].map((it) => it.refId).toList(), "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__].map((it) => it.refId).toList(), "isFoucs": isFoucs[__i__], "tileTexture": tileTexture[__i__], "keepscale": keepscale[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__], "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__], "isFoucs": isFoucs[__i__], "tileTexture": tileTexture[__i__], "keepscale": keepscale[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -961,7 +918,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -973,7 +929,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_strokeColor_looped_tileTexture_keepScale_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "textureID": textureID[__i__], "strokeColor": strokeColor[__i__].refId, "looped": looped[__i__], "tileTexture": tileTexture[__i__], "keepScale": keepScale[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderTexturedLinesWithPoints_pointCount_lineWidth_textureID_strokeColor_looped_tileTexture_keepScale_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "textureID": textureID[__i__], "strokeColor": strokeColor[__i__], "looped": looped[__i__], "tileTexture": tileTexture[__i__], "keepScale": keepScale[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -981,7 +937,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -993,7 +948,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__].map((it) => it.refId).toList(), "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__], "isFoucs": isFoucs[__i__], "keepScale": keepScale[__i__], "lineJoinType": lineJoinType[__i__].index, "lineCapType": lineCapType[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__], "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__], "isFoucs": isFoucs[__i__], "keepScale": keepScale[__i__], "lineJoinType": lineJoinType[__i__].toValue(), "lineCapType": lineCapType[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1001,7 +956,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1013,7 +967,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__].map((it) => it.refId).toList(), "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__], "lineDashType": lineDashType[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"partPt": partPt[__i__], "lineWidth": lineWidth[__i__], "textureIndexs": textureIndexs[__i__], "lineDashType": lineDashType[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1021,7 +975,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1033,7 +986,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderRegionWithPoints_pointCount_fillColor_usingTriangleFan_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "fillColor": fillColor[__i__].refId, "usingTriangleFan": usingTriangleFan[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderRegionWithPoints_pointCount_fillColor_usingTriangleFan_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "fillColor": fillColor[__i__], "usingTriangleFan": usingTriangleFan[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1041,7 +994,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1053,7 +1005,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::renderATRegionWithPoint_pointCount_fillColor_usingTriangleFan_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "fillColor": fillColor[__i__].refId, "usingTriangleFan": usingTriangleFan[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::renderATRegionWithPoint_pointCount_fillColor_usingTriangleFan_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "fillColor": fillColor[__i__], "usingTriangleFan": usingTriangleFan[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1061,7 +1013,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1073,7 +1024,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::rendeCircleWithPoints_pointCount_lineWidth_fillColor_strokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "fillColor": fillColor[__i__].refId, "strokeColor": strokeColor[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::rendeCircleWithPoints_pointCount_lineWidth_fillColor_strokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "fillColor": fillColor[__i__], "strokeColor": strokeColor[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1081,7 +1032,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1093,7 +1043,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::rendePolygonWithPoints_pointCount_lineWidth_fillColor_strokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "fillColor": fillColor[__i__].refId, "strokeColor": strokeColor[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::rendePolygonWithPoints_pointCount_lineWidth_fillColor_strokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "pointCount": pointCount[__i__], "lineWidth": lineWidth[__i__], "fillColor": fillColor[__i__], "strokeColor": strokeColor[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1101,7 +1051,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1113,7 +1062,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::glRender_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::glRender_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1121,7 +1070,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1133,7 +1081,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::loadStrokeTextureImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"textureImage": textureImage[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::loadStrokeTextureImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"textureImage": textureImage[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1141,7 +1089,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1153,7 +1100,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayView::loadStrokeTextureImages_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"textureImages": textureImages[__i__].map((it) => it.refId).toList(), "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayView::loadStrokeTextureImages_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"textureImages": textureImages[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1161,7 +1108,6 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

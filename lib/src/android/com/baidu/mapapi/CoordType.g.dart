@@ -4,6 +4,25 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_CoordType {
-  GCJ02 /* 0 */,
-  BD09LL /* 0 */
+  GCJ02 /* null */,
+  BD09LL /* null */
+}
+
+extension com_baidu_mapapi_CoordTypeToX on com_baidu_mapapi_CoordType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_CoordType.GCJ02: return com_baidu_mapapi_CoordType.GCJ02.index + 0;
+      case com_baidu_mapapi_CoordType.BD09LL: return com_baidu_mapapi_CoordType.BD09LL.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_CoordTypeFromX on int {
+  com_baidu_mapapi_CoordType tocom_baidu_mapapi_CoordType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_CoordType.values[this + 0];
+    }
+  }
 }

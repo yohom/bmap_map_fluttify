@@ -12,64 +12,19 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-class _com_baidu_lbsapi_auth_LBSAuthManagerListener_SUB extends java_lang_Object with com_baidu_lbsapi_auth_LBSAuthManagerListener {}
+
 
 mixin com_baidu_lbsapi_auth_LBSAuthManagerListener on java_lang_Object {
   
 
-  static com_baidu_lbsapi_auth_LBSAuthManagerListener subInstance() => _com_baidu_lbsapi_auth_LBSAuthManagerListener_SUB();
-
   
 
   
 
   
-  Future<void> onAuthResult(int var1, String var2) async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.lbsapi.auth.LBSAuthManagerListener@$refId::onAuthResult([\'var1\':$var1, \'var2\':$var2])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManagerListener::onAuthResult', {"var1": var1, "var2": var2, "refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
-  }
+
+  @mustCallSuper
+  Future<void> onAuthResult(int var1, String var2) {}
   
 }
 
-extension com_baidu_lbsapi_auth_LBSAuthManagerListener_Batch on List<com_baidu_lbsapi_auth_LBSAuthManagerListener> {
-  //region methods
-  
-  Future<List<void>> onAuthResult_batch(List<int> var1, List<String> var2) async {
-    if (var1.length != var2.length) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManagerListener::onAuthResult_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
-  }
-  
-  //endregion
-}

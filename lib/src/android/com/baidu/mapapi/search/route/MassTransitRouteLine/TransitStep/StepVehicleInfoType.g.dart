@@ -4,10 +4,33 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType {
-  ESTEP_TRAIN /* 0 */,
-  ESTEP_PLANE /* 0 */,
-  ESTEP_BUS /* 0 */,
-  ESTEP_DRIVING /* 0 */,
-  ESTEP_WALK /* 0 */,
-  ESTEP_COACH /* 0 */
+  ESTEP_TRAIN /* null */,
+  ESTEP_PLANE /* null */,
+  ESTEP_BUS /* null */,
+  ESTEP_DRIVING /* null */,
+  ESTEP_WALK /* null */,
+  ESTEP_COACH /* null */
+}
+
+extension com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoTypeToX on com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_TRAIN: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_TRAIN.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_PLANE: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_PLANE.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_BUS: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_BUS.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_DRIVING: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_DRIVING.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_WALK: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_WALK.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_COACH: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_COACH.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoTypeFromX on int {
+  com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType tocom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.values[this + 0];
+    }
+  }
 }

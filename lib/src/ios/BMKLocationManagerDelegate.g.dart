@@ -24,73 +24,25 @@ mixin BMKLocationManagerDelegate on NSObject {
   
 
   @mustCallSuper
-  Future<void> BMKLocationManager_doRequestAlwaysAuthorization(BMKLocationManager manager, CLLocationManager locationManager) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    if (locationManager is Ref) kNativeObjectPool.add(locationManager);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKLocationManager_doRequestAlwaysAuthorization::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> BMKLocationManager_doRequestAlwaysAuthorization(BMKLocationManager manager, CLLocationManager locationManager) {}
   
   @mustCallSuper
-  Future<void> BMKLocationManager_didFailWithError(BMKLocationManager manager, NSError error) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    if (error is Ref) kNativeObjectPool.add(error);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKLocationManager_didFailWithError::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> BMKLocationManager_didFailWithError(BMKLocationManager manager, NSError error) {}
   
   @mustCallSuper
-  Future<void> BMKLocationManager_didUpdateLocation_orError(BMKLocationManager manager, BMKLocation location, NSError error) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    if (location is Ref) kNativeObjectPool.add(location);
-    if (error is Ref) kNativeObjectPool.add(error);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKLocationManager_didUpdateLocation_orError::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> BMKLocationManager_didUpdateLocation_orError(BMKLocationManager manager, BMKLocation location, NSError error) {}
   
   @mustCallSuper
-  Future<void> BMKLocationManager_didChangeAuthorizationStatus(BMKLocationManager manager, CLAuthorizationStatus status) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKLocationManager_didChangeAuthorizationStatus::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> BMKLocationManager_didChangeAuthorizationStatus(BMKLocationManager manager, CLAuthorizationStatus status) {}
   
   @mustCallSuper
-  Future<bool> BMKLocationManagerShouldDisplayHeadingCalibration(BMKLocationManager manager) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKLocationManagerShouldDisplayHeadingCalibration::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> BMKLocationManagerShouldDisplayHeadingCalibration(BMKLocationManager manager) {}
   
   @mustCallSuper
-  Future<void> BMKLocationManager_didUpdateHeading(BMKLocationManager manager, CLHeading heading) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    if (heading is Ref) kNativeObjectPool.add(heading);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKLocationManager_didUpdateHeading::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> BMKLocationManager_didUpdateHeading(BMKLocationManager manager, CLHeading heading) {}
   
   @mustCallSuper
-  Future<void> BMKLocationManager_didUpdateNetworkState_orError(BMKLocationManager manager, BMKLocationNetworkState state, NSError error) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    if (error is Ref) kNativeObjectPool.add(error);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKLocationManager_didUpdateNetworkState_orError::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> BMKLocationManager_didUpdateNetworkState_orError(BMKLocationManager manager, BMKLocationNetworkState state, NSError error) {}
   
 }
 

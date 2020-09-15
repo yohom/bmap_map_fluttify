@@ -1,23 +1,34 @@
 ![Logo](https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/Logo-Landscape.png?raw=true)
 
-# 🗺&nbsp;百度 `地图`组件
-
+# 百度地图 地图组件 Flutter插件
 [![pub package](https://img.shields.io/pub/v/bmap_map_fluttify.svg)](https://pub.Flutter-io.cn/packages/bmap_map_fluttify)
 
-Dart接口基于[Fluttify](https://github.com/yohom/fluttify-core-example)编译器生成. dartdoc[接口文档](https://pub.flutter-io.cn/documentation/bmap_map_fluttify/latest/). 
+**专业版为付费插件, 如有需要请联系qq 382146139**
 
-## 👨🏻‍💻&nbsp;DEMO 与 社区
+**专业版为付费插件, 如有需要请联系qq 382146139**
 
-| Demo | QQ群 |
-| :----------: | :----------: |
-| 扫描二维码 <br> 或者 <br> [点击下载](https://github.com/fluttify-project/bmap_map_fluttify/blob/master/example/build/app/outputs/apk/release/app-release.apk?raw=true) </br> <img src="assets/bmap_map_fluttify_apk.png" height="300"> | 加入QQ群讨论 <br/> <img src="https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/QQ%E7%BE%A4.png?raw=true" height="300"> |
+**专业版为付费插件, 如有需要请联系qq 382146139**
 
-## 📱&nbsp;如何使用
-1. 申请百度appkey:
-- android: http://lbsyun.baidu.com/index.php?title=androidsdk/guide/create-project/ak
-- ios: http://lbsyun.baidu.com/index.php?title=iossdk/guide/create-project/ak
+# Fluttify系列插件
+|  名称  | 描述 | 仓库 |
+|:-----:|:-----:|:-----:|
+| [高德地图](https://github.com/fluttify-project/amap_map_fluttify)  |  高德地图地图组件, 提供地图控件 | [![pub package](https://img.shields.io/pub/v/amap_map_fluttify.svg)](https://pub.Flutter-io.cn/packages/amap_map_fluttify) |
+| [高德定位](https://github.com/fluttify-project/amap_location_fluttify)  |  高德地图定位组件, 提供独立的定位功能 | [![pub package](https://img.shields.io/pub/v/amap_location_fluttify.svg)](https://pub.Flutter-io.cn/packages/amap_location_fluttify) |
+| [高德搜索](https://github.com/fluttify-project/amap_search_fluttify)  |  高德地图搜索组件, 提供poi搜索等功能 | [![pub package](https://img.shields.io/pub/v/amap_search_fluttify.svg)](https://pub.Flutter-io.cn/packages/amap_search_fluttify) |
+| [百度地图](https://github.com/fluttify-project/bmap_map_fluttify)  |  百度地图, 包含了地图控件, 定位以及搜索poi等功能 | [![pub package](https://img.shields.io/pub/v/bmap_map_fluttify.svg)](https://pub.Flutter-io.cn/packages/bmap_map_fluttify) |
+| [百度人脸识别](https://github.com/fluttify-project/baidu_face_flutter)  |  百度人脸识别, 提供活体检测等功能 | [![pub package](https://img.shields.io/pub/v/baidu_face_flutter.svg)](https://pub.Flutter-io.cn/packages/baidu_face_flutter) |
+| [网易直播](https://github.com/fluttify-project/netease_live_fluttify)  |  网易直播推流组件 | [![pub package](https://img.shields.io/pub/v/netease_live_fluttify.svg)](https://pub.Flutter-io.cn/packages/netease_live_fluttify) |
+| [网易云信](https://github.com/fluttify-project/nim_fluttify)  |  网易云信 IM组件 | [![pub package](https://img.shields.io/pub/v/nim_fluttify.svg)](https://pub.Flutter-io.cn/packages/nim_fluttify) |
+| [腾讯直播](https://github.com/fluttify-project/tencent_live_fluttify)  |  腾讯直播, 包含推流组件和播放组件 | [![pub package](https://img.shields.io/pub/v/tencent_live_fluttify.svg)](https://pub.Flutter-io.cn/packages/tencent_live_fluttify) |
+| [腾讯IM](https://github.com/fluttify-project/tim_fluttify)  |  腾讯IM组件 | [![pub package](https://img.shields.io/pub/v/tim_fluttify.svg)](https://pub.Flutter-io.cn/packages/tim_fluttify) |
+| [腾讯地图](https://github.com/fluttify-project/tmap_map_fluttify)  |  腾讯地图组件 | [![pub package](https://img.shields.io/pub/v/tmap_map_fluttify.svg)](https://pub.Flutter-io.cn/packages/tmap_map_fluttify) |
+| [讯飞语音合成](https://github.com/fluttify-project/xftts_fluttify)  |  腾讯语言合成组件, 提供文字转语言功能 | [![pub package](https://img.shields.io/pub/v/xftts_fluttify.svg)](https://pub.flutter-io.cn/packages/xftts_fluttify) |
+| [极光统计](https://github.com/fluttify-project/janalytics_fluttify)  |  极光统计组件, 提供异常上报等功能 | [![pub package](https://img.shields.io/pub/v/janalytics_fluttify.svg)](https://pub.flutter-io.cn/packages/janalytics_fluttify) |
+| [阿里云RTC](https://github.com/fluttify-project/ali_rtc_fluttify)  |  阿里云实时音视频 | [![pub package](https://img.shields.io/pub/v/ali_rtc_fluttify.svg)](https://pub.flutter-io.cn/packages/ali_rtc_fluttify) |
+| [环信](https://github.com/fluttify-project/easemob_im_fluttify)  |  环信IM | [![pub package](https://img.shields.io/pub/v/easemob_im_fluttify.svg)](https://pub.flutter-io.cn/packages/easemob_im_fluttify) |
+| [未完待续...](https://github.com/fluttify-project)  |  如有其它需求, 请联系qq 382146139 | ![fluttify](https://img.shields.io/badge/fluttify-welcom-green) |
 
-2. 安装: 
+## 依赖
 ```yaml
 dependencies:
   flutter:
@@ -25,90 +36,131 @@ dependencies:
   bmap_map_fluttify: ^x.x.x
 ```
 
-3. 导入:
+## 配置
+### Android
+1. 在AndroidManifest.xml的application标签下配置app key:
+```xml
+<application>
+    <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="FQxxxxxxxxxxxxxxxxxxxxxxx2R"/>
+</application>
+```
+2. 注意在app/build.gradle的android块中配置签名信息, 并在buildTypes块中指定签名信息, 否则将无法匹配到你在百度后台配置的appkey, 例如:
+```groovy
+android {
+    signingConfigs {
+        release {
+            keyAlias 'bmap_map_test'
+            keyPassword 'bmap_map_test'
+            storeFile file('../bmap_map_test.jks')
+            storePassword 'bmap_map_test'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        profile {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+        }
+    }
+}
+```
+
+### iOS
+1. 使用地图需要使能UiKitView, 在Info.plist中添加:
+```xml
+<key>io.flutter.embedded_views_preview</key>
+<string>YES</string>
+```
+2. 百度地图要求项目配置BundleDisplayName, 在Info.plist中添加:
+```xml
+<key>CFBundleDisplayName</key>
+<string>填入你的名称</string>
+```
+3. 如果是swift项目(flutter创建项目时默认), 需要注释掉Podfile中的`use_frameworks!`, 如下:
+```ruby
+target 'Runner' do
+  # use_frameworks!
+  use_modular_headers!
+
+  # Flutter Pod
+...
+```
+
+
+## 导入
 ```dart
 import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 ```
 
-4. 使用:
-```dart 
-/// !!使用真机调试!!
-/// !注意: 只要是返回Future的方法, 一律使用`await`修饰, 确保当前方法执行完成后再执行下一行, 在不能使用`await`修饰的环境下, 在`then`方法中执行下一步.
-/// 
-/// android端的appkey需要在AndroidManifest.xml中配置, 详见 http://lbsyun.baidu.com/index.php?title=androidsdk/guide/create-map/showmap
-await BmapService.init(iosKey: '7a***********************f4');
-/// 如果你觉得引擎的日志太多, 可以关闭Fluttify引擎的日志
-await enableFluttifyLog(false); // 关闭log
+## 使用
+参考[wiki](https://github.com/fluttify-project/bmap_map_fluttify/wiki).
 
-class BmapWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return BmapView(
-      // 缩放级别 (可选)
-      zoomLevel: 10, 
-      // 中心点坐标 (可选)
-      centerCoordinate: LatLng(39, 116),
-      // 地图创建完成回调 (可选)
-      onMapCreated: (controller) async {
-        // requestPermission是权限请求方法, 需要你自己实现 
-        // 如果不知道怎么处理, 可以参考example工程的实现, example工程依赖了`permission_handler`插件.
-        if (await requestPermission()) {
-          // 请开始你的表演
-        }
-      },
-    );
-  }
-}
-```
+## 社区
+| QQ群 |
+| :----------: |
+| <img src="https://github.com/fluttify-project/fluttify-project/blob/master/resources/1593774713224_temp_qrcode_share_9993.png?raw=true" height="300"> | 
 
-`requestPermission`的参考实现(需要依赖`permission_handler`插件): 
-```dart
-import 'package:decorated_flutter/decorated_flutter.dart';
-import 'package:permission_handler/permission_handler.dart';
+## 社区版与专业版
+|  显示地图  | 社区版 | 专业版 |
+|:-----:|:-----:|:-----:|
+|  设置地图中心点  |  ✅ |  ✅   |
+|  设置我的位置数据  |  ✅ |  ✅   |
+|  自定义地图  |  ☑️ |  ✅   |
+|  截图  |  ☑️ |  ✅   |
 
-Future<bool> requestPermission() async {
-  if ((await Permission.location.request()).isGranted) {
-    return true;
-  } else {
-    // 处理授权失败的情况
-    toast('需要定位权限!');
-    return false;
-  }
-}
-```
+|  在地图上绘制  | 社区版 | 专业版 |
+|:-----:|:-----:|:-----:|
+|  批量添加marker  |  ✅ |  ✅   |
+|  设置marker点击监听事件  |  ✅ |  ✅   |
+|  把marker列表从地图上移除  |  ✅ |  ✅   |
+|  清除地图上所有覆盖物  |  ✅ |  ✅   |
+|  添加折线  |  ✅ |  ✅   |
+|  添加多边形  |  ✅ |  ✅   |
+|  添加圆  |  ✅ |  ✅   |
+|  设置marker拖动监听事件  |  ✅ |  ✅   |
+|  添加弧线  |  ☑️ |  ✅   |
 
-iOS `Info.plist`配置:
-```xml
-<!--使用PlatformView的声明-->
-<key>io.flutter.embedded_views_preview</key>
-<string>YES</string>
-<!--定位权限声明-->
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>需要定位权限</string>
-<!--这个是app在桌面显示的名称 百度地图要求必须有这个键值对-->
-<key>CFBundleDisplayName</key>
-<string>百度地图测试</string>
-```
-
-5. 说明
-- ios端添加marker时会出现日志`暂不支持有返回值的回调方法`, 这个可以忽略, 因为已经通过手写代码处理了.
-- 插件中所有的方法都集中在[BmapController](https://pub.dev/documentation/bmap_map_fluttify/latest/bmap_map_fluttify/BmapController-class.html)和[BmapService](https://pub.dev/documentation/bmap_map_fluttify/latest/bmap_map_fluttify/BmapService-class.html)中, `BmapController`在`BmapWidget`创建完成时返回, 用来操作地图. `BmapService`中全都是静态方法, 不直接涉及地图组件的方法都放在这个类中, 比如初始化, 其他的各种计算等.
-
-| 微信支持 | 支付宝支持 |
-| :----------: | :----------: |
-| <img src="https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/WechatIMG111.jpeg?raw=true" height="300"> | <img src="https://github.com/fluttify-project/fluttify-core-example/blob/develop/other/1557492318.jpg?raw=true" height="300"> |
+|  与地图交互  | 社区版 | 专业版 |
+|:-----:|:-----:|:-----:|
+|  放大一个等级  |  ✅ |  ✅   |
+|  缩小一个等级  |  ✅ |  ✅   |
+|  选择显示图层  |  ✅ |  ✅   |
+|  显示路况信息  |  ✅ |  ✅   |
+|  缩放手势使能  |  ✅ |  ✅   |
+|  滑动手势使能  |  ✅ |  ✅   |
+|  旋转手势使能  |  ✅ |  ✅   |
+|  倾斜手势使能  |  ✅ |  ✅   |
+|  设置缩放大小  |  ✅ |  ✅   |
+|  获取当前缩放大小  |  ✅ |  ✅   |
+|  设置缩放是否以中心点为锚点  |  ✅ |  ✅   |
+|  获取地图中心点  |  ✅ |  ✅   |
+|  设置地图移动监听事件  |  ✅ |  ✅   |
+|  设置logo位置  |  ☑️ |  ✅   |
+|  设置地图内间距  |  ☑️ |  ✅   |
+|  是否显示指南针  |  ☑️ |  ✅   |
+|  调整覆盖物至同一屏幕中显示  |  ☑️ |  ✅   |
+|  控制底图标注显示  |  ☑️ |  ✅   |
+|  限制地图的显示范围  |  ☑️ |  ✅   |
 
 ## LICENSE
-> Copyright 2020 yohom
->   
-> Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
->
->    http://www.apache.org/licenses/LICENSE-2.0
+> Copyright (C) 2020 yohom
 > 
->  Unless required by applicable law or agreed to in writing, software
->  distributed under the License is distributed on an "AS IS" BASIS,
->  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
->  See the License for the specific language governing permissions and
->  limitations under the License.
+> This program is free software: you can redistribute it and/or modify
+> it under the terms of the GNU General Public License as published by
+> the Free Software Foundation, either version 3 of the License, or
+> (at your option) any later version.
+> 
+> This program is distributed in the hope that it will be useful,
+> but WITHOUT ANY WARRANTY; without even the implied warranty of
+> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> GNU General Public License for more details.
+> 
+> You should have received a copy of the GNU General Public License
+> along with this program.  If not, see <https://www.gnu.org/licenses/>.

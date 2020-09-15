@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_SnapshotReadyCallback on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onSnapshotReady(android_graphics_Bitmap var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onSnapshotReady::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onSnapshotReady(android_graphics_Bitmap var1) {}
   
 }
 

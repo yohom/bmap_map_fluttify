@@ -21,10 +21,8 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
 
   //region creators
   static Future<com_baidu_mapapi_model_inner_MapBound> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_model_inner_MapBound__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_model_inner_MapBound__', );
     final object = com_baidu_mapapi_model_inner_MapBound()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_model_inner_MapBound__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_model_inner_MapBound__', {'length': length});
   
     final List<com_baidu_mapapi_model_inner_MapBound> typedResult = resultBatch.map((result) => com_baidu_mapapi_model_inner_MapBound()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,28 +40,26 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
 
   //region getters
   Future<com_baidu_mapapi_model_inner_Point> get_ptLB() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptLB", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptLB", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<com_baidu_mapapi_model_inner_Point> get_ptRT() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptRT", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptRT", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   //endregion
 
   //region setters
   Future<void> set_ptLB(com_baidu_mapapi_model_inner_Point ptLB) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptLB', {'refId': refId, "ptLB": ptLB.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptLB', <String, dynamic>{'__this__': this, "ptLB": ptLB});
   
   
   }
   
   Future<void> set_ptRT(com_baidu_mapapi_model_inner_Point ptRT) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptRT', {'refId': refId, "ptRT": ptRT.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptRT', <String, dynamic>{'__this__': this, "ptRT": ptRT});
   
   
   }
@@ -80,7 +75,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtLB', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtLB', {"__this__": this});
   
   
     // handle native call
@@ -91,7 +86,6 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -104,7 +98,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtLB', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtLB', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -115,7 +109,6 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -128,7 +121,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtRT', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtRT', {"__this__": this});
   
   
     // handle native call
@@ -139,7 +132,6 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -152,7 +144,7 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtRT', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtRT', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -163,7 +155,6 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -174,16 +165,16 @@ class com_baidu_mapapi_model_inner_MapBound extends java_lang_Object with java_i
 extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_model_inner_MapBound> {
   //region getters
   Future<List<com_baidu_mapapi_model_inner_Point>> get_ptLB_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptLB_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptLB_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_model_inner_Point>> get_ptRT_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptRT_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.model.inner.MapBound::get_ptRT_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
@@ -191,13 +182,13 @@ extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_m
 
   //region setters
   Future<void> set_ptLB_batch(List<com_baidu_mapapi_model_inner_Point> ptLB) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptLB_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "ptLB": ptLB[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptLB_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ptLB": ptLB[__i__]}]);
   
   
   }
   
   Future<void> set_ptRT_batch(List<com_baidu_mapapi_model_inner_Point> ptRT) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptRT_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "ptRT": ptRT[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.model.inner.MapBound::set_ptRT_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ptRT": ptRT[__i__]}]);
   
   
   }
@@ -212,15 +203,14 @@ extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtLB_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtLB_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -232,7 +222,7 @@ extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtLB_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtLB_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -240,7 +230,6 @@ extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_m
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -252,15 +241,14 @@ extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtRT_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::getPtRT_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_inner_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -272,7 +260,7 @@ extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtRT_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.model.inner.MapBound::setPtRT_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -280,7 +268,6 @@ extension com_baidu_mapapi_model_inner_MapBound_Batch on List<com_baidu_mapapi_m
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

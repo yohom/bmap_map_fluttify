@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_search_busline_OnGetBusLineSearchResultListener on java_l
   
 
   @mustCallSuper
-  Future<void> onGetBusLineResult(com_baidu_mapapi_search_busline_BusLineResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetBusLineResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetBusLineResult(com_baidu_mapapi_search_busline_BusLineResult var1) {}
   
 }
 

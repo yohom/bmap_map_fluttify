@@ -24,10 +24,14 @@ class BMKTileLayerView_iOS extends StatefulWidget {
     Key key,
     this.onViewCreated,
     this.onDispose,
+    this.params = const <String, dynamic>{},
+    this.gestureRecognizers,
   }) : super(key: key);
 
   final BMKTileLayerViewCreatedCallback onViewCreated;
   final _OnUiKitViewDispose onDispose;
+  final Map<String, dynamic> params;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _BMKTileLayerView_iOSState createState() => _BMKTileLayerView_iOSState();
@@ -38,9 +42,9 @@ class _BMKTileLayerView_iOSState extends State<BMKTileLayerView_iOS> {
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
     final messageCodec = StandardMessageCodec();
     return UiKitView(
@@ -48,12 +52,15 @@ class _BMKTileLayerView_iOSState extends State<BMKTileLayerView_iOS> {
       gestureRecognizers: gestureRecognizers,
       onPlatformViewCreated: _onViewCreated,
       creationParamsCodec: messageCodec,
+      creationParams: widget.params,
     );
   }
 
-  void _onViewCreated(int id) {
+  void _onViewCreated(int id) async {
     // 碰到一个对象返回的hashCode为0的情况, 造成和这个id冲突了, 这里用一个magic number避免一下
-    _controller = BMKTileLayerView()..refId = 2147483647 - id;
+    // 把viewId转换为refId再使用, 使其与其他对象统一
+    final refId = await viewId2RefId((2147483647 - id).toString());
+    _controller = BMKTileLayerView()..refId = refId..tag__ = 'bmap_map_fluttify';
     if (widget.onViewCreated != null) {
       widget.onViewCreated(_controller);
     }
@@ -63,6 +70,8 @@ class _BMKTileLayerView_iOSState extends State<BMKTileLayerView_iOS> {
   void dispose() {
     if (widget.onDispose != null) {
       widget.onDispose().then((_) => _controller.release__());
+    } else {
+      _controller.release__();
     }
     super.dispose();
   }

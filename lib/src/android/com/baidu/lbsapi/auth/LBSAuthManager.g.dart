@@ -47,7 +47,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getInstance', {"var0": var0?.refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getInstance', {"var0": var0});
   
   
     // handle native call
@@ -58,7 +58,6 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_lbsapi_auth_LBSAuthManager()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -71,7 +70,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getKey', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getKey', {"__this__": this});
   
   
     // handle native call
@@ -82,7 +81,6 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -95,7 +93,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getMCode', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getMCode', {"__this__": this});
   
   
     // handle native call
@@ -106,7 +104,6 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -119,7 +116,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getPublicKey', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getPublicKey', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -130,7 +127,6 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -143,7 +139,7 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getCUID', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getCUID', {"__this__": this});
   
   
     // handle native call
@@ -154,7 +150,6 @@ class com_baidu_lbsapi_auth_LBSAuthManager extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -179,15 +174,14 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getInstance_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getInstance_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_lbsapi_auth_LBSAuthManager()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_lbsapi_auth_LBSAuthManager()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -199,7 +193,7 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getKey_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getKey_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -207,7 +201,6 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -219,7 +212,7 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getMCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getMCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -227,7 +220,6 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -239,7 +231,7 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getPublicKey_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getPublicKey_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -247,7 +239,6 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -259,7 +250,7 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getCUID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.lbsapi.auth.LBSAuthManager::getCUID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -267,7 +258,6 @@ extension com_baidu_lbsapi_auth_LBSAuthManager_Batch on List<com_baidu_lbsapi_au
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

@@ -4,6 +4,25 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_CircleDottedStrokeType {
-  DOTTED_LINE_SQUARE /* 0 */,
-  DOTTED_LINE_CIRCLE /* 0 */
+  DOTTED_LINE_SQUARE /* null */,
+  DOTTED_LINE_CIRCLE /* null */
+}
+
+extension com_baidu_mapapi_map_CircleDottedStrokeTypeToX on com_baidu_mapapi_map_CircleDottedStrokeType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_map_CircleDottedStrokeType.DOTTED_LINE_SQUARE: return com_baidu_mapapi_map_CircleDottedStrokeType.DOTTED_LINE_SQUARE.index + 0;
+      case com_baidu_mapapi_map_CircleDottedStrokeType.DOTTED_LINE_CIRCLE: return com_baidu_mapapi_map_CircleDottedStrokeType.DOTTED_LINE_CIRCLE.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_map_CircleDottedStrokeTypeFromX on int {
+  com_baidu_mapapi_map_CircleDottedStrokeType tocom_baidu_mapapi_map_CircleDottedStrokeType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_map_CircleDottedStrokeType.values[this + 0];
+    }
+  }
 }

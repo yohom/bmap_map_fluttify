@@ -4,6 +4,25 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_poi_PoiSortType {
-  comprehensive /* 0 */,
-  distance_from_near_to_far /* 0 */
+  comprehensive /* null */,
+  distance_from_near_to_far /* null */
+}
+
+extension com_baidu_mapapi_search_poi_PoiSortTypeToX on com_baidu_mapapi_search_poi_PoiSortType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_poi_PoiSortType.comprehensive: return com_baidu_mapapi_search_poi_PoiSortType.comprehensive.index + 0;
+      case com_baidu_mapapi_search_poi_PoiSortType.distance_from_near_to_far: return com_baidu_mapapi_search_poi_PoiSortType.distance_from_near_to_far.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_poi_PoiSortTypeFromX on int {
+  com_baidu_mapapi_search_poi_PoiSortType tocom_baidu_mapapi_search_poi_PoiSortType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_poi_PoiSortType.values[this + 0];
+    }
+  }
 }

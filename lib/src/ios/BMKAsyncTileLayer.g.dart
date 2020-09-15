@@ -20,22 +20,19 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   //endregion
 
   //region creators
-  static Future<BMKAsyncTileLayer> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKAsyncTileLayer');
+  static Future<BMKAsyncTileLayer> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKAsyncTileLayer', {'init': init});
     final object = BMKAsyncTileLayer()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKAsyncTileLayer>> create_batch__(int length) async {
+  static Future<List<BMKAsyncTileLayer>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKAsyncTileLayer', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKAsyncTileLayer', {'length': length, 'init': init});
   
     final List<BMKAsyncTileLayer> typedResult = resultBatch.map((result) => BMKAsyncTileLayer()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,25 +55,30 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAsyncTileLayer::loadTileForX_y_zoom_result', {"x": x, "y": y, "zoom": zoom, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKAsyncTileLayer::loadTileForX_y_zoom_result', {"x": x, "y": y, "zoom": zoom, "__this__": this});
   
   
     // handle native call
-    MethodChannel('BMKAsyncTileLayer::loadTileForX_y_zoom_result::Callback')
+    MethodChannel('void|UIImage*#tileImage,NSError*#error::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error':
-              // print log
-              if (fluttifyLogEnabled) {
-        
-              }
-        
-              // handle the native call
-              result(TypeOpBmapMapFluttifyIOS((args['tileImage'] as Object))?.as__<UIImage>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error':
+                // print log
+                if (fluttifyLogEnabled) {
+          
+                }
+          
+                // handle the native call
+                if (result != null) result(TypeOpBmapMapFluttifyIOS((args['tileImage'] as Object))?.as__<UIImage>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -85,7 +87,6 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }

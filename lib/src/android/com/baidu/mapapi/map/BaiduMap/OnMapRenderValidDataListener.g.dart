@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapRenderValidDataListener on java_lang_Ob
   
 
   @mustCallSuper
-  Future<void> onMapRenderValidData(bool var1, int var2, String var3) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapRenderValidData::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onMapRenderValidData(bool var1, int var2, String var3) {}
   
 }
 

@@ -20,22 +20,19 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   //endregion
 
   //region creators
-  static Future<BMKURLTileLayer> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKURLTileLayer');
+  static Future<BMKURLTileLayer> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKURLTileLayer', {'init': init});
     final object = BMKURLTileLayer()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKURLTileLayer>> create_batch__(int length) async {
+  static Future<List<BMKURLTileLayer>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKURLTileLayer', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKURLTileLayer', {'length': length, 'init': init});
   
     final List<BMKURLTileLayer> typedResult = resultBatch.map((result) => BMKURLTileLayer()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,9 +40,8 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
 
   //region getters
   Future<String> get_URLTemplate() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKURLTileLayer::get_URLTemplate", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKURLTileLayer::get_URLTemplate", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
@@ -63,7 +59,7 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKURLTileLayer::initWithURLTemplate', {"URLTemplate": URLTemplate, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::initWithURLTemplate', {"URLTemplate": URLTemplate, "__this__": this});
   
   
     // handle native call
@@ -74,7 +70,6 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
       return null;
     } else {
       final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -87,7 +82,7 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKURLTileLayer::cleanTileDataCache', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::cleanTileDataCache', {"__this__": this});
   
   
     // handle native call
@@ -98,7 +93,6 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -109,9 +103,9 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
 extension BMKURLTileLayer_Batch on List<BMKURLTileLayer> {
   //region getters
   Future<List<String>> get_URLTemplate_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKURLTileLayer::get_URLTemplate_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKURLTileLayer::get_URLTemplate_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -129,15 +123,14 @@ extension BMKURLTileLayer_Batch on List<BMKURLTileLayer> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKURLTileLayer::initWithURLTemplate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"URLTemplate": URLTemplate[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::initWithURLTemplate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"URLTemplate": URLTemplate[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -149,7 +142,7 @@ extension BMKURLTileLayer_Batch on List<BMKURLTileLayer> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKURLTileLayer::cleanTileDataCache_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::cleanTileDataCache_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -157,7 +150,6 @@ extension BMKURLTileLayer_Batch on List<BMKURLTileLayer> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

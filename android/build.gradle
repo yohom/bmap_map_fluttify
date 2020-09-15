@@ -9,6 +9,7 @@ buildscript {
         maven { url "https://oss.sonatype.org/content/groups/public" }
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url "https://dl.bintray.com/aweme-open-sdk-team/public" }
+        maven { url 'http://developer.huawei.com/repo/' }
     }
 
     dependencies {
@@ -24,6 +25,7 @@ rootProject.allprojects {
         maven { url "https://oss.sonatype.org/content/groups/public" }
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url "https://dl.bintray.com/aweme-open-sdk-team/public" }
+        maven { url 'http://developer.huawei.com/repo/' }
     }
 }
 
@@ -54,15 +56,22 @@ android {
         merge 'classes.jar'
         merge 'proguard.txt'
     }
+    buildTypes {
+        release {
+            consumerProguardFiles "proguard-rules.pro"
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     compileOnly rootProject.findProject(":foundation_fluttify")
     // flutter plugin dependency
     compileOnly rootProject.findProject(":bmap_core_fluttify")
+    compileOnly rootProject.findProject(":bmap_utils_fluttify")
+    compileOnly rootProject.findProject(":path_provider")
     // sdk dependency
     
 }

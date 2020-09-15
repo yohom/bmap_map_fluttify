@@ -38,10 +38,8 @@ class com_baidu_mapapi_UIMsg_WalkNaviMsg extends java_lang_Object  {
 
   //region creators
   static Future<com_baidu_mapapi_UIMsg_WalkNaviMsg> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__', );
     final object = com_baidu_mapapi_UIMsg_WalkNaviMsg()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -49,10 +47,9 @@ class com_baidu_mapapi_UIMsg_WalkNaviMsg extends java_lang_Object  {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_UIMsg_WalkNaviMsg__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_UIMsg_WalkNaviMsg__', {'length': length});
   
     final List<com_baidu_mapapi_UIMsg_WalkNaviMsg> typedResult = resultBatch.map((result) => com_baidu_mapapi_UIMsg_WalkNaviMsg()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   

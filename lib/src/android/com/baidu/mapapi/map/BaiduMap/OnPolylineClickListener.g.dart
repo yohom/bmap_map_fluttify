@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_OnPolylineClickListener on java_lang_Object 
   
 
   @mustCallSuper
-  Future<bool> onPolylineClick(com_baidu_mapapi_map_Polyline var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onPolylineClick::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> onPolylineClick(com_baidu_mapapi_map_Polyline var1) {}
   
 }
 

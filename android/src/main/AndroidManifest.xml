@@ -21,6 +21,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- 访问网络，网络定位需要上网-->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!--如果不加回报 error, Neither user 10426 nor current process has android.permission.WAKE_LOCK., null-->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <application>
         <service android:name="com.baidu.location.f" android:enabled="true" android:process=":remote"> </service>
     </application>

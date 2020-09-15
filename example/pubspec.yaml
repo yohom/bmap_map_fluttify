@@ -12,6 +12,7 @@ dependencies:
   permission_handler: ^5.0.0+hotfix.3
   oktoast: ^2.3.2
   decorated_flutter: ^0.12.0+1
+  demo_widgets: ^0.1.1
 
 dev_dependencies:
   flutter_test:
@@ -23,3 +24,4 @@ flutter:
   uses-material-design: true
   assets:
     - images/
+    - raw/

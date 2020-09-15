@@ -24,10 +24,14 @@ class BMKCircleView_iOS extends StatefulWidget {
     Key key,
     this.onViewCreated,
     this.onDispose,
+    this.params = const <String, dynamic>{},
+    this.gestureRecognizers,
   }) : super(key: key);
 
   final BMKCircleViewCreatedCallback onViewCreated;
   final _OnUiKitViewDispose onDispose;
+  final Map<String, dynamic> params;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _BMKCircleView_iOSState createState() => _BMKCircleView_iOSState();
@@ -38,9 +42,9 @@ class _BMKCircleView_iOSState extends State<BMKCircleView_iOS> {
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
     final messageCodec = StandardMessageCodec();
     return UiKitView(
@@ -48,12 +52,15 @@ class _BMKCircleView_iOSState extends State<BMKCircleView_iOS> {
       gestureRecognizers: gestureRecognizers,
       onPlatformViewCreated: _onViewCreated,
       creationParamsCodec: messageCodec,
+      creationParams: widget.params,
     );
   }
 
-  void _onViewCreated(int id) {
+  void _onViewCreated(int id) async {
     // 碰到一个对象返回的hashCode为0的情况, 造成和这个id冲突了, 这里用一个magic number避免一下
-    _controller = BMKCircleView()..refId = 2147483647 - id;
+    // 把viewId转换为refId再使用, 使其与其他对象统一
+    final refId = await viewId2RefId((2147483647 - id).toString());
+    _controller = BMKCircleView()..refId = refId..tag__ = 'bmap_map_fluttify';
     if (widget.onViewCreated != null) {
       widget.onViewCreated(_controller);
     }
@@ -63,6 +70,8 @@ class _BMKCircleView_iOSState extends State<BMKCircleView_iOS> {
   void dispose() {
     if (widget.onDispose != null) {
       widget.onDispose().then((_) => _controller.release__());
+    } else {
+      _controller.release__();
     }
     super.dispose();
   }

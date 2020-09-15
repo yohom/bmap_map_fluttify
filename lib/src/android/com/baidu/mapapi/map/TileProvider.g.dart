@@ -31,7 +31,7 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.TileProvider::getMaxDisLevel', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TileProvider::getMaxDisLevel', {"__this__": this});
   
   
     // handle native call
@@ -42,7 +42,6 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -55,7 +54,7 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.TileProvider::getMinDisLevel', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TileProvider::getMinDisLevel', {"__this__": this});
   
   
     // handle native call
@@ -66,7 +65,6 @@ mixin com_baidu_mapapi_map_TileProvider on java_lang_Object {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -82,7 +80,7 @@ extension com_baidu_mapapi_map_TileProvider_Batch on List<com_baidu_mapapi_map_T
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.TileProvider::getMaxDisLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TileProvider::getMaxDisLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -90,7 +88,6 @@ extension com_baidu_mapapi_map_TileProvider_Batch on List<com_baidu_mapapi_map_T
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -102,7 +99,7 @@ extension com_baidu_mapapi_map_TileProvider_Batch on List<com_baidu_mapapi_map_T
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.TileProvider::getMinDisLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TileProvider::getMinDisLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -110,7 +107,6 @@ extension com_baidu_mapapi_map_TileProvider_Batch on List<com_baidu_mapapi_map_T
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

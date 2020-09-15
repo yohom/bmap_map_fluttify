@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_OnSynchronizationListener on java_lang_Objec
   
 
   @mustCallSuper
-  Future<void> onMapStatusChangeReason(int var1) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapStatusChangeReason::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onMapStatusChangeReason(int var1) {}
   
 }
 

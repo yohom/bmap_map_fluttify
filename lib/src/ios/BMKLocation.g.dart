@@ -20,22 +20,19 @@ class BMKLocation extends NSObject  {
   //endregion
 
   //region creators
-  static Future<BMKLocation> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKLocation');
+  static Future<BMKLocation> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKLocation', {'init': init});
     final object = BMKLocation()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKLocation>> create_batch__(int length) async {
+  static Future<List<BMKLocation>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKLocation', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKLocation', {'length': length, 'init': init});
   
     final List<BMKLocation> typedResult = resultBatch.map((result) => BMKLocation()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,70 +40,62 @@ class BMKLocation extends NSObject  {
 
   //region getters
   Future<CLLocation> get_location() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_location", {'refId': refId});
-    kNativeObjectPool.add(CLLocation()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CLLocation()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_location", {'__this__': this});
+    return __result__ == null ? null : (CLLocation()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<BMKLocationReGeocode> get_rgcData() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_rgcData", {'refId': refId});
-    kNativeObjectPool.add(BMKLocationReGeocode()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKLocationReGeocode()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_rgcData", {'__this__': this});
+    return __result__ == null ? null : (BMKLocationReGeocode()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<BMKLocationProvider> get_provider() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_provider", {'refId': refId});
-  
-    return BMKLocationProvider.values[__result__];
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_provider", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as int).toBMKLocationProvider());
   }
   
   Future<String> get_locationID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_locationID", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_locationID", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_floorString() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_floorString", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_floorString", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_buildingID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_buildingID", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_buildingID", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_buildingName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_buildingName", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_buildingName", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<Map> get_extraInfo() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_extraInfo", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_extraInfo", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_rgcData(BMKLocationReGeocode rgcData) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_rgcData', {'refId': refId, "rgcData": rgcData.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocation::set_rgcData', <String, dynamic>{'__this__': this, "rgcData": rgcData});
   
   
   }
   
   Future<void> set_provider(BMKLocationProvider provider) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_provider', {'refId': refId, "provider": provider.index});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocation::set_provider', <String, dynamic>{'__this__': this, "provider": provider.toValue()});
   
   
   }
   
   Future<void> set_locationID(String locationID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_locationID', {'refId': refId, "locationID": locationID});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocation::set_locationID', <String, dynamic>{'__this__': this, "locationID": locationID});
   
   
   }
@@ -121,58 +110,58 @@ class BMKLocation extends NSObject  {
 extension BMKLocation_Batch on List<BMKLocation> {
   //region getters
   Future<List<CLLocation>> get_location_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_location_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CLLocation()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_location_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocation()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<BMKLocationReGeocode>> get_rgcData_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_rgcData_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLocationReGeocode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_rgcData_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKLocationReGeocode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<BMKLocationProvider>> get_provider_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_provider_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKLocationProvider.values[__result__]).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_provider_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKLocationProvider()).toList();
     return typedResult;
   }
   
   Future<List<String>> get_locationID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_locationID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_locationID_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_floorString_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_floorString_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_floorString_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_buildingID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_buildingID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_buildingID_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_buildingName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_buildingName_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_buildingName_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<Map>> get_extraInfo_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocation::get_extraInfo_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<Map>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocation::get_extraInfo_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<Map>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -180,19 +169,19 @@ extension BMKLocation_Batch on List<BMKLocation> {
 
   //region setters
   Future<void> set_rgcData_batch(List<BMKLocationReGeocode> rgcData) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_rgcData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "rgcData": rgcData[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocation::set_rgcData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "rgcData": rgcData[__i__]}]);
   
   
   }
   
   Future<void> set_provider_batch(List<BMKLocationProvider> provider) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_provider_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "provider": provider[__i__].index}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocation::set_provider_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "provider": provider[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_locationID_batch(List<String> locationID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocation::set_locationID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "locationID": locationID[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocation::set_locationID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationID": locationID[__i__]}]);
   
   
   }

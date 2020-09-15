@@ -20,22 +20,19 @@ class BMKOverlayPathView extends BMKOverlayView  {
   //endregion
 
   //region creators
-  static Future<BMKOverlayPathView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKOverlayPathView');
+  static Future<BMKOverlayPathView> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKOverlayPathView', {'init': init});
     final object = BMKOverlayPathView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKOverlayPathView>> create_batch__(int length) async {
+  static Future<List<BMKOverlayPathView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKOverlayPathView', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKOverlayPathView', {'length': length, 'init': init});
   
     final List<BMKOverlayPathView> typedResult = resultBatch.map((result) => BMKOverlayPathView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,76 +40,70 @@ class BMKOverlayPathView extends BMKOverlayView  {
 
   //region getters
   Future<UIColor> get_fillColor({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_fillColor", {'refId': refId});
-    kNativeObjectPool.add(UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_fillColor", {'__this__': this});
+    return __result__ == null ? null : (UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<UIColor> get_strokeColor({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_strokeColor", {'refId': refId});
-    kNativeObjectPool.add(UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_strokeColor", {'__this__': this});
+    return __result__ == null ? null : (UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<double> get_lineWidth({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_lineWidth", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineWidth", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_miterLimit({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_miterLimit", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_miterLimit", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_lineDashPhase({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_lineDashPhase", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineDashPhase", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<List<NSObject>> get_lineDashPattern({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_lineDashPattern", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineDashPattern", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
   }
   
   //endregion
 
   //region setters
   Future<void> set_fillColor(UIColor fillColor, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_fillColor', {'refId': refId, "fillColor": fillColor.refId});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::set_fillColor', <String, dynamic>{'__this__': this, "fillColor": fillColor});
   
   
   }
   
   Future<void> set_strokeColor(UIColor strokeColor, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_strokeColor', {'refId': refId, "strokeColor": strokeColor.refId});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::set_strokeColor', <String, dynamic>{'__this__': this, "strokeColor": strokeColor});
   
   
   }
   
   Future<void> set_lineWidth(double lineWidth, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_lineWidth', {'refId': refId, "lineWidth": lineWidth});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::set_lineWidth', <String, dynamic>{'__this__': this, "lineWidth": lineWidth});
   
   
   }
   
   Future<void> set_miterLimit(double miterLimit, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_miterLimit', {'refId': refId, "miterLimit": miterLimit});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::set_miterLimit', <String, dynamic>{'__this__': this, "miterLimit": miterLimit});
   
   
   }
   
   Future<void> set_lineDashPhase(double lineDashPhase, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_lineDashPhase', {'refId': refId, "lineDashPhase": lineDashPhase});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::set_lineDashPhase', <String, dynamic>{'__this__': this, "lineDashPhase": lineDashPhase});
   
   
   }
   
   Future<void> set_lineDashPattern(List<NSObject> lineDashPattern, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_lineDashPattern', {'refId': refId, "lineDashPattern": lineDashPattern.map((it) => it.refId).toList()});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::set_lineDashPattern', <String, dynamic>{'__this__': this, "lineDashPattern": lineDashPattern});
   
   
   }
@@ -128,7 +119,7 @@ class BMKOverlayPathView extends BMKOverlayView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::createPath', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::createPath', {"__this__": this});
   
   
     // handle native call
@@ -139,7 +130,6 @@ class BMKOverlayPathView extends BMKOverlayView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -152,7 +142,7 @@ class BMKOverlayPathView extends BMKOverlayView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::invalidatePath', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::invalidatePath', {"__this__": this});
   
   
     // handle native call
@@ -163,7 +153,6 @@ class BMKOverlayPathView extends BMKOverlayView  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -174,44 +163,44 @@ class BMKOverlayPathView extends BMKOverlayView  {
 extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
   //region getters
   Future<List<UIColor>> get_fillColor_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_fillColor_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_fillColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<UIColor>> get_strokeColor_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_strokeColor_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_strokeColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<double>> get_lineWidth_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_lineWidth_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineWidth_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_miterLimit_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_miterLimit_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_miterLimit_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_lineDashPhase_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_lineDashPhase_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineDashPhase_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<List<NSObject>>> get_lineDashPattern_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKOverlayPathView::get_lineDashPattern_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineDashPattern_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     return typedResult;
   }
   
@@ -219,37 +208,37 @@ extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
 
   //region setters
   Future<void> set_fillColor_batch(List<UIColor> fillColor, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_fillColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "fillColor": fillColor[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayPathView::set_fillColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "fillColor": fillColor[__i__]}]);
   
   
   }
   
   Future<void> set_strokeColor_batch(List<UIColor> strokeColor, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_strokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "strokeColor": strokeColor[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayPathView::set_strokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "strokeColor": strokeColor[__i__]}]);
   
   
   }
   
   Future<void> set_lineWidth_batch(List<double> lineWidth, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_lineWidth_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineWidth": lineWidth[__i__]}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayPathView::set_lineWidth_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "lineWidth": lineWidth[__i__]}]);
   
   
   }
   
   Future<void> set_miterLimit_batch(List<double> miterLimit, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_miterLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "miterLimit": miterLimit[__i__]}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayPathView::set_miterLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "miterLimit": miterLimit[__i__]}]);
   
   
   }
   
   Future<void> set_lineDashPhase_batch(List<double> lineDashPhase, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_lineDashPhase_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineDashPhase": lineDashPhase[__i__]}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayPathView::set_lineDashPhase_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "lineDashPhase": lineDashPhase[__i__]}]);
   
   
   }
   
   Future<void> set_lineDashPattern_batch(List<List<NSObject>> lineDashPattern, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::set_lineDashPattern_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "lineDashPattern": lineDashPattern[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayPathView::set_lineDashPattern_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "lineDashPattern": lineDashPattern[__i__]}]);
   
   
   }
@@ -264,7 +253,7 @@ extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::createPath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::createPath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -272,7 +261,6 @@ extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -284,7 +272,7 @@ extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKOverlayPathView::invalidatePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::invalidatePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -292,7 +280,6 @@ extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

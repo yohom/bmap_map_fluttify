@@ -4,7 +4,27 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType {
-  BUSLINE /* 0 */,
-  SUBWAY /* 0 */,
-  WAKLING /* 0 */
+  BUSLINE /* null */,
+  SUBWAY /* null */,
+  WAKLING /* null */
+}
+
+extension com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepTypeToX on com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.BUSLINE: return com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.BUSLINE.index + 0;
+      case com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.SUBWAY: return com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.SUBWAY.index + 0;
+      case com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.WAKLING: return com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.WAKLING.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepTypeFromX on int {
+  com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType tocom_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.values[this + 0];
+    }
+  }
 }

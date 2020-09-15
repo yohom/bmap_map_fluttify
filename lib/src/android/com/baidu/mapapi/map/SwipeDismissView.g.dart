@@ -21,10 +21,8 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
 
   //region creators
   static Future<com_baidu_mapapi_map_SwipeDismissView> create__android_content_Context__android_view_View(android_content_Context var1, android_view_View var2) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View', {"var1": var1.refId, "var2": var2.refId});
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View', {"var1": var1, "var2": var2});
     final object = com_baidu_mapapi_map_SwipeDismissView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
     if (var1.length != var2.length) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__].refId}]);
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__]}]);
   
     final List<com_baidu_mapapi_map_SwipeDismissView> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_SwipeDismissView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,34 +55,39 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.SwipeDismissView::setCallback', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.SwipeDismissView::setCallback', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.SwipeDismissView::setCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.SwipeDismissView::setCallback::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onDismiss([])');
-              }
-        
-              // handle the native call
-              var1?.onDismiss();
-              break;
-            case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onNotify([])');
-              }
-        
-              // handle the native call
-              var1?.onNotify();
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onDismiss([])');
+                }
+          
+                // handle the native call
+                var1?.onDismiss();
+                break;
+              case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onNotify([])');
+                }
+          
+                // handle the native call
+                var1?.onNotify();
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -94,7 +96,6 @@ class com_baidu_mapapi_map_SwipeDismissView extends android_widget_RelativeLayou
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }

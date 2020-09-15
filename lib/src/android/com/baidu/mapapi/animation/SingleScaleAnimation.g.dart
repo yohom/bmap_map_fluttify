@@ -20,6 +20,21 @@ class com_baidu_mapapi_animation_SingleScaleAnimation extends com_baidu_mapapi_a
   //endregion
 
   //region creators
+  static Future<com_baidu_mapapi_animation_SingleScaleAnimation> create__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float(com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType var1, double var2) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_animation_SingleScaleAnimation__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float', {"var1": var1, "var2": var2});
+    final object = com_baidu_mapapi_animation_SingleScaleAnimation()..refId = refId..tag__ = 'bmap_map_fluttify';
+    return object;
+  }
+  
+  static Future<List<com_baidu_mapapi_animation_SingleScaleAnimation>> create_batch__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float(List<com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType> var1, List<double> var2) async {
+    if (var1.length != var2.length) {
+      return Future.error('all args must have same length!');
+    }
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_animation_SingleScaleAnimation__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__]}]);
+  
+    final List<com_baidu_mapapi_animation_SingleScaleAnimation> typedResult = resultBatch.map((result) => com_baidu_mapapi_animation_SingleScaleAnimation()..refId = result..tag__ = 'bmap_map_fluttify').toList();
+    return typedResult;
+  }
   
   //endregion
 
@@ -40,7 +55,7 @@ class com_baidu_mapapi_animation_SingleScaleAnimation extends com_baidu_mapapi_a
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatMode', {"var1": var1.index + 0, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatMode', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
@@ -51,7 +66,6 @@ class com_baidu_mapapi_animation_SingleScaleAnimation extends com_baidu_mapapi_a
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -64,7 +78,7 @@ class com_baidu_mapapi_animation_SingleScaleAnimation extends com_baidu_mapapi_a
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatCount', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatCount', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -75,7 +89,6 @@ class com_baidu_mapapi_animation_SingleScaleAnimation extends com_baidu_mapapi_a
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -100,7 +113,7 @@ extension com_baidu_mapapi_animation_SingleScaleAnimation_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].index, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -108,7 +121,6 @@ extension com_baidu_mapapi_animation_SingleScaleAnimation_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -120,7 +132,7 @@ extension com_baidu_mapapi_animation_SingleScaleAnimation_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatCount_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.SingleScaleAnimation::setRepeatCount_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -128,7 +140,6 @@ extension com_baidu_mapapi_animation_SingleScaleAnimation_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

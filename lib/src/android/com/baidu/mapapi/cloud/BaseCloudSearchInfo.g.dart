@@ -25,76 +25,70 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
 
   //region getters
   Future<String> get_q() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_q", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_q", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_tags() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_tags", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_tags", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_sortby() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_sortby", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_sortby", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_filter() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_filter", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_filter", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_pageIndex() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageIndex", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageIndex", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_pageSize() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageSize", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageSize", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_q(String q) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_q', {'refId': refId, "q": q});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_q', <String, dynamic>{'__this__': this, "q": q});
   
   
   }
   
   Future<void> set_tags(String tags) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_tags', {'refId': refId, "tags": tags});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_tags', <String, dynamic>{'__this__': this, "tags": tags});
   
   
   }
   
   Future<void> set_sortby(String sortby) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_sortby', {'refId': refId, "sortby": sortby});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_sortby', <String, dynamic>{'__this__': this, "sortby": sortby});
   
   
   }
   
   Future<void> set_filter(String filter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_filter', {'refId': refId, "filter": filter});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_filter', <String, dynamic>{'__this__': this, "filter": filter});
   
   
   }
   
   Future<void> set_pageIndex(int pageIndex) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageIndex', {'refId': refId, "pageIndex": pageIndex});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageIndex', <String, dynamic>{'__this__': this, "pageIndex": pageIndex});
   
   
   }
   
   Future<void> set_pageSize(int pageSize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageSize', {'refId': refId, "pageSize": pageSize});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageSize', <String, dynamic>{'__this__': this, "pageSize": pageSize});
   
   
   }
@@ -109,44 +103,44 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
 extension com_baidu_mapapi_cloud_BaseCloudSearchInfo_Batch on List<com_baidu_mapapi_cloud_BaseCloudSearchInfo> {
   //region getters
   Future<List<String>> get_q_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_q_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_q_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_tags_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_tags_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_tags_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_sortby_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_sortby_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_sortby_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_filter_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_filter_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_filter_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_pageIndex_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageIndex_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageIndex_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_pageSize_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageSize_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageSize_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -154,37 +148,37 @@ extension com_baidu_mapapi_cloud_BaseCloudSearchInfo_Batch on List<com_baidu_map
 
   //region setters
   Future<void> set_q_batch(List<String> q) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_q_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "q": q[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_q_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "q": q[__i__]}]);
   
   
   }
   
   Future<void> set_tags_batch(List<String> tags) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_tags_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "tags": tags[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_tags_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "tags": tags[__i__]}]);
   
   
   }
   
   Future<void> set_sortby_batch(List<String> sortby) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_sortby_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "sortby": sortby[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_sortby_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "sortby": sortby[__i__]}]);
   
   
   }
   
   Future<void> set_filter_batch(List<String> filter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_filter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "filter": filter[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_filter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "filter": filter[__i__]}]);
   
   
   }
   
   Future<void> set_pageIndex_batch(List<int> pageIndex) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "pageIndex": pageIndex[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pageIndex": pageIndex[__i__]}]);
   
   
   }
   
   Future<void> set_pageSize_batch(List<int> pageSize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "pageSize": pageSize[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseCloudSearchInfo::set_pageSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pageSize": pageSize[__i__]}]);
   
   
   }

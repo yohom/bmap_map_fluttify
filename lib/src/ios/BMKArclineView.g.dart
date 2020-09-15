@@ -20,22 +20,19 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
   //endregion
 
   //region creators
-  static Future<BMKArclineView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKArclineView');
+  static Future<BMKArclineView> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKArclineView', {'init': init});
     final object = BMKArclineView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKArclineView>> create_batch__(int length) async {
+  static Future<List<BMKArclineView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKArclineView', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKArclineView', {'length': length, 'init': init});
   
     final List<BMKArclineView> typedResult = resultBatch.map((result) => BMKArclineView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,9 +40,8 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
 
   //region getters
   Future<BMKArcline> get_arcline({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKArclineView::get_arcline", {'refId': refId});
-    kNativeObjectPool.add(BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKArclineView::get_arcline", {'__this__': this});
+    return __result__ == null ? null : (BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   //endregion
@@ -63,7 +59,7 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKArclineView::initWithArcline', {"arcline": arcline?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKArclineView::initWithArcline', {"arcline": arcline, "__this__": this});
   
   
     // handle native call
@@ -74,7 +70,6 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
       return null;
     } else {
       final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
       return __return__;
     }
   }
@@ -85,9 +80,9 @@ class BMKArclineView extends BMKOverlayGLBasicView  {
 extension BMKArclineView_Batch on List<BMKArclineView> {
   //region getters
   Future<List<BMKArcline>> get_arcline_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKArclineView::get_arcline_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKArclineView::get_arcline_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
@@ -105,15 +100,14 @@ extension BMKArclineView_Batch on List<BMKArclineView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKArclineView::initWithArcline_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"arcline": arcline[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKArclineView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKArclineView::initWithArcline_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"arcline": arcline[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }

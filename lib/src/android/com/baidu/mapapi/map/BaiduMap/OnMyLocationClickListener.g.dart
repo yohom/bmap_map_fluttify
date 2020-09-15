@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMyLocationClickListener on java_lang_Objec
   
 
   @mustCallSuper
-  Future<bool> onMyLocationClick() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMyLocationClick::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> onMyLocationClick() {}
   
 }
 

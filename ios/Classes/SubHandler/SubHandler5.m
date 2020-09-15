@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////
 
 #import "SubHandler5.h"
+#import "FluttifyMessageCodec.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
 extern NSMutableDictionary<NSString*, NSObject*>* STACK;
@@ -13,6 +14,7 @@ extern BOOL enableLog;
 
 @implementation BmapMapFluttifyPlugin (SubHandler5)
 - (NSDictionary<NSString*, Handler>*) getSubHandler5 {
+    __weak __typeof(self)weakSelf = self;
     return @{
         @"BMKAnnotationView::set_enabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
@@ -23,7 +25,7 @@ extern BOOL enableLog;
                 BOOL enabled = [args[@"enabled"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.enabled = enabled;
                 methodResult(@"success");
@@ -41,7 +43,7 @@ extern BOOL enableLog;
                 BOOL selected = [args[@"selected"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.selected = selected;
                 methodResult(@"success");
@@ -59,7 +61,7 @@ extern BOOL enableLog;
                 BOOL canShowCallout = [args[@"canShowCallout"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.canShowCallout = canShowCallout;
                 methodResult(@"success");
@@ -74,10 +76,10 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIView* leftCalloutAccessoryView = (UIView*) HEAP[@([args[@"leftCalloutAccessoryView"] integerValue])];
+                UIView* leftCalloutAccessoryView = (UIView*) args[@"leftCalloutAccessoryView"];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.leftCalloutAccessoryView = leftCalloutAccessoryView;
                 methodResult(@"success");
@@ -92,10 +94,10 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIView* rightCalloutAccessoryView = (UIView*) HEAP[@([args[@"rightCalloutAccessoryView"] integerValue])];
+                UIView* rightCalloutAccessoryView = (UIView*) args[@"rightCalloutAccessoryView"];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.rightCalloutAccessoryView = rightCalloutAccessoryView;
                 methodResult(@"success");
@@ -113,7 +115,7 @@ extern BOOL enableLog;
                 BOOL draggable = [args[@"draggable"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.draggable = draggable;
                 methodResult(@"success");
@@ -131,7 +133,7 @@ extern BOOL enableLog;
                 NSUInteger dragState = [args[@"dragState"] unsignedIntegerValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.dragState = dragState;
                 methodResult(@"success");
@@ -149,7 +151,7 @@ extern BOOL enableLog;
                 BOOL hidePaopaoWhenSingleTapOnMap = [args[@"hidePaopaoWhenSingleTapOnMap"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.hidePaopaoWhenSingleTapOnMap = hidePaopaoWhenSingleTapOnMap;
                 methodResult(@"success");
@@ -167,7 +169,7 @@ extern BOOL enableLog;
                 BOOL hidePaopaoWhenDoubleTapOnMap = [args[@"hidePaopaoWhenDoubleTapOnMap"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.hidePaopaoWhenDoubleTapOnMap = hidePaopaoWhenDoubleTapOnMap;
                 methodResult(@"success");
@@ -185,7 +187,7 @@ extern BOOL enableLog;
                 BOOL hidePaopaoWhenTwoFingersTapOnMap = [args[@"hidePaopaoWhenTwoFingersTapOnMap"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.hidePaopaoWhenTwoFingersTapOnMap = hidePaopaoWhenTwoFingersTapOnMap;
                 methodResult(@"success");
@@ -203,7 +205,7 @@ extern BOOL enableLog;
                 BOOL hidePaopaoWhenSelectOthers = [args[@"hidePaopaoWhenSelectOthers"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.hidePaopaoWhenSelectOthers = hidePaopaoWhenSelectOthers;
                 methodResult(@"success");
@@ -221,7 +223,7 @@ extern BOOL enableLog;
                 BOOL hidePaopaoWhenDrag = [args[@"hidePaopaoWhenDrag"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.hidePaopaoWhenDrag = hidePaopaoWhenDrag;
                 methodResult(@"success");
@@ -239,7 +241,7 @@ extern BOOL enableLog;
                 BOOL hidePaopaoWhenDragOthers = [args[@"hidePaopaoWhenDragOthers"] boolValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.hidePaopaoWhenDragOthers = hidePaopaoWhenDragOthers;
                 methodResult(@"success");
@@ -257,7 +259,7 @@ extern BOOL enableLog;
                 float displayPriority = [args[@"displayPriority"] floatValue];
         
                 // ref
-                BMKAnnotationView* ref = (BMKAnnotationView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.displayPriority = displayPriority;
                 methodResult(@"success");
@@ -272,10 +274,10 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* fillColor = (UIColor*) HEAP[@([args[@"fillColor"] integerValue])];
+                UIColor* fillColor = (UIColor*) args[@"fillColor"];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.fillColor = fillColor;
                 methodResult(@"success");
@@ -290,10 +292,10 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                UIColor* strokeColor = (UIColor*) HEAP[@([args[@"strokeColor"] integerValue])];
+                UIColor* strokeColor = (UIColor*) args[@"strokeColor"];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.strokeColor = strokeColor;
                 methodResult(@"success");
@@ -311,7 +313,7 @@ extern BOOL enableLog;
                 CGFloat lineWidth = [args[@"lineWidth"] floatValue];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.lineWidth = lineWidth;
                 methodResult(@"success");
@@ -329,7 +331,7 @@ extern BOOL enableLog;
                 BOOL lineDash = [args[@"lineDash"] boolValue];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.lineDash = lineDash;
                 methodResult(@"success");
@@ -347,7 +349,7 @@ extern BOOL enableLog;
                 BOOL tileTexture = [args[@"tileTexture"] boolValue];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.tileTexture = tileTexture;
                 methodResult(@"success");
@@ -365,7 +367,7 @@ extern BOOL enableLog;
                 BOOL keepScale = [args[@"keepScale"] boolValue];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.keepScale = keepScale;
                 methodResult(@"success");
@@ -383,7 +385,7 @@ extern BOOL enableLog;
                 BMKLineJoinType lineJoinType = (BMKLineJoinType) [args[@"lineJoinType"] integerValue];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.lineJoinType = lineJoinType;
                 methodResult(@"success");
@@ -401,7 +403,7 @@ extern BOOL enableLog;
                 BMKLineCapType lineCapType = (BMKLineCapType) [args[@"lineCapType"] integerValue];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.lineCapType = lineCapType;
                 methodResult(@"success");
@@ -419,7 +421,7 @@ extern BOOL enableLog;
                 BMKLineDashType lineDashType = (BMKLineDashType) [args[@"lineDashType"] integerValue];
         
                 // ref
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
         
                 ref.lineDashType = lineDashType;
                 methodResult(@"success");
@@ -437,7 +439,7 @@ extern BOOL enableLog;
                 NSString* title = (NSString*) args[@"title"];
         
                 // ref
-                BMKShape* ref = (BMKShape*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKShape* ref = (BMKShape*) args[@"__this__"];
         
                 ref.title = title;
                 methodResult(@"success");
@@ -455,7 +457,7 @@ extern BOOL enableLog;
                 NSString* subtitle = (NSString*) args[@"subtitle"];
         
                 // ref
-                BMKShape* ref = (BMKShape*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKShape* ref = (BMKShape*) args[@"__this__"];
         
                 ref.subtitle = subtitle;
                 methodResult(@"success");
@@ -473,7 +475,7 @@ extern BOOL enableLog;
                 NSString* cityName = (NSString*) args[@"cityName"];
         
                 // ref
-                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
         
                 ref.cityName = cityName;
                 methodResult(@"success");
@@ -491,7 +493,7 @@ extern BOOL enableLog;
                 int64_t size = [args[@"size"] longLongValue];
         
                 // ref
-                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
         
                 ref.size = size;
                 methodResult(@"success");
@@ -509,7 +511,7 @@ extern BOOL enableLog;
                 int cityID = [args[@"cityID"] intValue];
         
                 // ref
-                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
         
                 ref.cityID = cityID;
                 methodResult(@"success");
@@ -527,7 +529,7 @@ extern BOOL enableLog;
                 int cityType = [args[@"cityType"] intValue];
         
                 // ref
-                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
         
                 ref.cityType = cityType;
                 methodResult(@"success");
@@ -542,15 +544,10 @@ extern BOOL enableLog;
         
                 // args
                 // list arg
-                NSArray<NSNumber*>* childCitiesRefArray = (NSArray<NSNumber*> *) args[@"childCities"];
-                NSMutableArray<NSArray*>* childCities = [NSMutableArray arrayWithCapacity:childCitiesRefArray.count];
-                for (int __i__ = 0; __i__ < childCitiesRefArray.count; __i__++) {
-                    NSArray* item = (NSArray*) HEAP[[childCitiesRefArray objectAtIndex:__i__]];
-                    [childCities addObject:item];
-                }
+                NSArray<NSObject*>* childCities = (NSArray<NSObject*>*) args[@"childCities"];
         
                 // ref
-                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
         
                 ref.childCities = childCities;
                 methodResult(@"success");
@@ -568,7 +565,7 @@ extern BOOL enableLog;
                 NSString* cityName = (NSString*) args[@"cityName"];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.cityName = cityName;
                 methodResult(@"success");
@@ -586,7 +583,7 @@ extern BOOL enableLog;
                 int cityID = [args[@"cityID"] intValue];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.cityID = cityID;
                 methodResult(@"success");
@@ -604,7 +601,7 @@ extern BOOL enableLog;
                 int64_t size = [args[@"size"] longLongValue];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.size = size;
                 methodResult(@"success");
@@ -622,7 +619,7 @@ extern BOOL enableLog;
                 int64_t serversize = [args[@"serversize"] longLongValue];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.serversize = serversize;
                 methodResult(@"success");
@@ -640,7 +637,7 @@ extern BOOL enableLog;
                 int ratio = [args[@"ratio"] intValue];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.ratio = ratio;
                 methodResult(@"success");
@@ -658,7 +655,7 @@ extern BOOL enableLog;
                 int status = [args[@"status"] intValue];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.status = status;
                 methodResult(@"success");
@@ -676,7 +673,7 @@ extern BOOL enableLog;
                 BOOL update = [args[@"update"] boolValue];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.update = update;
                 methodResult(@"success");
@@ -691,12 +688,12 @@ extern BOOL enableLog;
         
                 // args
                 // struct arg
-                NSValue* ptValue = (NSValue*) HEAP[@([args[@"pt"] integerValue])];
+                NSValue* ptValue = (NSValue*) args[@"pt"];
                 CLLocationCoordinate2D pt;
                 [ptValue getValue:&pt];
         
                 // ref
-                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
         
                 ref.pt = pt;
                 methodResult(@"success");
@@ -714,7 +711,7 @@ extern BOOL enableLog;
                 NSString* customMapStyleID = (NSString*) args[@"customMapStyleID"];
         
                 // ref
-                BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) args[@"__this__"];
         
                 ref.customMapStyleID = customMapStyleID;
                 methodResult(@"success");
@@ -732,7 +729,7 @@ extern BOOL enableLog;
                 NSString* customMapStyleFilePath = (NSString*) args[@"customMapStyleFilePath"];
         
                 // ref
-                BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) args[@"__this__"];
         
                 ref.customMapStyleFilePath = customMapStyleFilePath;
                 methodResult(@"success");
@@ -750,7 +747,7 @@ extern BOOL enableLog;
                 CLLocationDistance distanceFilter = [args[@"distanceFilter"] doubleValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.distanceFilter = distanceFilter;
                 methodResult(@"success");
@@ -768,7 +765,7 @@ extern BOOL enableLog;
                 CLLocationAccuracy desiredAccuracy = [args[@"desiredAccuracy"] doubleValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.desiredAccuracy = desiredAccuracy;
                 methodResult(@"success");
@@ -786,7 +783,7 @@ extern BOOL enableLog;
                 BMKLocationCoordinateType coordinateType = (BMKLocationCoordinateType) [args[@"coordinateType"] integerValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.coordinateType = coordinateType;
                 methodResult(@"success");
@@ -804,7 +801,7 @@ extern BOOL enableLog;
                 BOOL pausesLocationUpdatesAutomatically = [args[@"pausesLocationUpdatesAutomatically"] boolValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.pausesLocationUpdatesAutomatically = pausesLocationUpdatesAutomatically;
                 methodResult(@"success");
@@ -822,7 +819,7 @@ extern BOOL enableLog;
                 BOOL allowsBackgroundLocationUpdates = [args[@"allowsBackgroundLocationUpdates"] boolValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;
                 methodResult(@"success");
@@ -840,7 +837,7 @@ extern BOOL enableLog;
                 NSInteger locationTimeout = [args[@"locationTimeout"] longValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.locationTimeout = locationTimeout;
                 methodResult(@"success");
@@ -858,7 +855,7 @@ extern BOOL enableLog;
                 NSInteger reGeocodeTimeout = [args[@"reGeocodeTimeout"] longValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.reGeocodeTimeout = reGeocodeTimeout;
                 methodResult(@"success");
@@ -876,7 +873,7 @@ extern BOOL enableLog;
                 BOOL locatingWithReGeocode = [args[@"locatingWithReGeocode"] boolValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.locatingWithReGeocode = locatingWithReGeocode;
                 methodResult(@"success");
@@ -894,7 +891,7 @@ extern BOOL enableLog;
                 BOOL isNeedNewVersionReGeocode = [args[@"isNeedNewVersionReGeocode"] boolValue];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.isNeedNewVersionReGeocode = isNeedNewVersionReGeocode;
                 methodResult(@"success");
@@ -912,7 +909,7 @@ extern BOOL enableLog;
                 NSString* userID = (NSString*) args[@"userID"];
         
                 // ref
-                BMKLocationManager* ref = (BMKLocationManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
         
                 ref.userID = userID;
                 methodResult(@"success");
@@ -927,10 +924,10 @@ extern BOOL enableLog;
         
                 // args
                 // ref arg
-                BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) HEAP[@([args[@"rgcData"] integerValue])];
+                BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) args[@"rgcData"];
         
                 // ref
-                BMKLocation* ref = (BMKLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocation* ref = (BMKLocation*) args[@"__this__"];
         
                 ref.rgcData = rgcData;
                 methodResult(@"success");
@@ -948,7 +945,7 @@ extern BOOL enableLog;
                 BMKLocationProvider provider = (BMKLocationProvider) [args[@"provider"] integerValue];
         
                 // ref
-                BMKLocation* ref = (BMKLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocation* ref = (BMKLocation*) args[@"__this__"];
         
                 ref.provider = provider;
                 methodResult(@"success");
@@ -966,7 +963,7 @@ extern BOOL enableLog;
                 NSString* locationID = (NSString*) args[@"locationID"];
         
                 // ref
-                BMKLocation* ref = (BMKLocation*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKLocation* ref = (BMKLocation*) args[@"__this__"];
         
                 ref.locationID = locationID;
                 methodResult(@"success");
@@ -984,7 +981,7 @@ extern BOOL enableLog;
                 BMKGeoFenceRegionStatus fenceStatus = (BMKGeoFenceRegionStatus) [args[@"fenceStatus"] integerValue];
         
                 // ref
-                BMKGeoFenceRegion* ref = (BMKGeoFenceRegion*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKGeoFenceRegion* ref = (BMKGeoFenceRegion*) args[@"__this__"];
         
                 ref.fenceStatus = fenceStatus;
                 methodResult(@"success");
@@ -1002,7 +999,7 @@ extern BOOL enableLog;
                 NSTimeInterval lastEventTime = [args[@"lastEventTime"] doubleValue];
         
                 // ref
-                BMKGeoFenceRegion* ref = (BMKGeoFenceRegion*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKGeoFenceRegion* ref = (BMKGeoFenceRegion*) args[@"__this__"];
         
                 ref.lastEventTime = lastEventTime;
                 methodResult(@"success");
@@ -1020,7 +1017,7 @@ extern BOOL enableLog;
                 BMKGeoFenceActiveAction activeAction = (BMKGeoFenceActiveAction) [args[@"activeAction"] integerValue];
         
                 // ref
-                BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKGeoFenceManager* ref = (BMKGeoFenceManager*) args[@"__this__"];
         
                 ref.activeAction = activeAction;
                 methodResult(@"success");
@@ -1038,7 +1035,7 @@ extern BOOL enableLog;
                 BOOL pausesLocationUpdatesAutomatically = [args[@"pausesLocationUpdatesAutomatically"] boolValue];
         
                 // ref
-                BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKGeoFenceManager* ref = (BMKGeoFenceManager*) args[@"__this__"];
         
                 ref.pausesLocationUpdatesAutomatically = pausesLocationUpdatesAutomatically;
                 methodResult(@"success");
@@ -1056,7 +1053,7 @@ extern BOOL enableLog;
                 BOOL allowsBackgroundLocationUpdates = [args[@"allowsBackgroundLocationUpdates"] boolValue];
         
                 // ref
-                BMKGeoFenceManager* ref = (BMKGeoFenceManager*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+                BMKGeoFenceManager* ref = (BMKGeoFenceManager*) args[@"__this__"];
         
                 ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;
                 methodResult(@"success");
@@ -1067,1014 +1064,370 @@ extern BOOL enableLog;
         
         @"RefClass::isKindOfBMKActionPaopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKActionPaopaoView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKActionPaopaoView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKTileLayerView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKTileLayerView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKTileLayerView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKOverlayPathView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKOverlayPathView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKOverlayPathView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKGroundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKGroundOverlay class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKGroundOverlay class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKPolyline class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKPolyline class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKCircleView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKCircleView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKCircleView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKPointAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKPointAnnotation class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKPointAnnotation class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKGradient": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKGradient class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKGradient class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKArcline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKArcline class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKArcline class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKMultiPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKMultiPoint class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKMultiPoint class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKBaseIndoorMapInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKBaseIndoorMapInfo class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKBaseIndoorMapInfo class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKTileLayer class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKTileLayer class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKURLTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKURLTileLayer class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKURLTileLayer class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKSyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKSyncTileLayer class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKSyncTileLayer class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKAsyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKAsyncTileLayer class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKAsyncTileLayer class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKPolylineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKPolylineView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKPolylineView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKPinAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKPinAnnotationView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKPinAnnotationView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKCircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKCircle class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKCircle class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKMapPoi class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKMapPoi class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKMapView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKMapView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKMapView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKLocationViewDisplayParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKLocationViewDisplayParam class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKLocationViewDisplayParam class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKMapStatus class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKMapStatus class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKArclineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKArclineView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKArclineView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKHeatMapNode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKHeatMapNode class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKHeatMapNode class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKHeatMap class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKHeatMap class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKPolygon class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKPolygon class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKPolygonView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKPolygonView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKPolygonView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKOverlayView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKOverlayView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKGroundOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKGroundOverlayView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKGroundOverlayView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKAnnotationView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKAnnotationView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKOverlayGLBasicView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKOverlayGLBasicView class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKOverlayGLBasicView class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKShape class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKShape class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKOLSearchRecord": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKOLSearchRecord class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKOLSearchRecord class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKOLUpdateElement": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKOLUpdateElement class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKOLUpdateElement class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKCustomMapStyleOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKCustomMapStyleOption class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKCustomMapStyleOption class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKOfflineMap class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKOfflineMap class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKLocationReGeocode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKLocationReGeocode class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKLocationReGeocode class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKLocationManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKLocationManager class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKLocationManager class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKLocationAuth": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKLocationAuth class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKLocationAuth class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKLocationPoiRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKLocationPoiRegion class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKLocationPoiRegion class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKLocationPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKLocationPoi class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKLocationPoi class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKLocation class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKLocation class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKGeoFenceRegion class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKGeoFenceRegion class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKGeoFenceCircleRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKGeoFenceCircleRegion class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKGeoFenceCircleRegion class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKGeoFencePolygonRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKGeoFencePolygonRegion class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKGeoFencePolygonRegion class]];
             methodResult(@(isTargetType));
         },
         
         @"RefClass::isKindOfBMKGeoFenceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
+            NSObject* __this__ = ((NSDictionary<NSString*, NSObject*>*) args)[@"__this__"];
         
-            BOOL isTargetType = [ref isKindOfClass:[BMKGeoFenceManager class]];
+            BOOL isTargetType = [__this__ isKindOfClass:[BMKGeoFenceManager class]];
             methodResult(@(isTargetType));
-        },
-        
-        @"RefClass::asBMKActionPaopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKActionPaopaoView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKTileLayerView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKTileLayerView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOverlayPathView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOverlayPathView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGroundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGroundOverlay *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolyline *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKCircleView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKCircleView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPointAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPointAnnotation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGradient": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGradient *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKArcline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKArcline *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMultiPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMultiPoint *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKBaseIndoorMapInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKBaseIndoorMapInfo *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKURLTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKURLTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKSyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKSyncTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKAsyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKAsyncTileLayer *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolylineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolylineView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPinAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPinAnnotationView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKCircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKCircle *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMapPoi *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMapView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMapView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationViewDisplayParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationViewDisplayParam *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKMapStatus *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKArclineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKArclineView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKHeatMapNode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKHeatMapNode *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKHeatMap *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolygon *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKPolygonView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKPolygonView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOverlayView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGroundOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGroundOverlayView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKAnnotationView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOverlayGLBasicView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOverlayGLBasicView *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKShape *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOLSearchRecord": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOLSearchRecord *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOLUpdateElement": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOLUpdateElement *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKCustomMapStyleOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKCustomMapStyleOption *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKOfflineMap *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationReGeocode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationReGeocode *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationManager *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationAuth": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationAuth *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationPoiRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationPoiRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocationPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocationPoi *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKLocation *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFenceRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFenceCircleRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFenceCircleRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFencePolygonRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFencePolygonRegion *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
-        },
-        
-        @"RefClass::asBMKGeoFenceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // 引用对象
-            NSNumber* refId = ((NSDictionary<NSString*, NSNumber*>*) args)[@"refId"];
-            id ref = HEAP[refId];
-        
-            // 转型
-            ref = (BMKGeoFenceManager *) ref;
-            // 放回HEAP
-            HEAP[refId] = ref;
-        
-            methodResult(refId);
         },
         
         @"ObjectFactory::createBMKActionPaopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2083,10 +1436,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKActionPaopaoView");
             }
         
-            BMKActionPaopaoView* ref = [[BMKActionPaopaoView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKActionPaopaoView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKActionPaopaoView alloc] init];
+            } else {
+                __this__ = [BMKActionPaopaoView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2097,10 +1454,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKTileLayerView");
             }
         
-            BMKTileLayerView* ref = [[BMKTileLayerView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKTileLayerView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKTileLayerView alloc] init];
+            } else {
+                __this__ = [BMKTileLayerView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2111,10 +1472,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKOverlayPathView");
             }
         
-            BMKOverlayPathView* ref = [[BMKOverlayPathView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKOverlayPathView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKOverlayPathView alloc] init];
+            } else {
+                __this__ = [BMKOverlayPathView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2125,10 +1490,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKGroundOverlay");
             }
         
-            BMKGroundOverlay* ref = [[BMKGroundOverlay alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKGroundOverlay* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKGroundOverlay alloc] init];
+            } else {
+                __this__ = [BMKGroundOverlay alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2139,10 +1508,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKPolyline");
             }
         
-            BMKPolyline* ref = [[BMKPolyline alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKPolyline* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKPolyline alloc] init];
+            } else {
+                __this__ = [BMKPolyline alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2153,10 +1526,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKCircleView");
             }
         
-            BMKCircleView* ref = [[BMKCircleView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKCircleView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKCircleView alloc] init];
+            } else {
+                __this__ = [BMKCircleView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2167,10 +1544,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKPointAnnotation");
             }
         
-            BMKPointAnnotation* ref = [[BMKPointAnnotation alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKPointAnnotation* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKPointAnnotation alloc] init];
+            } else {
+                __this__ = [BMKPointAnnotation alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2181,10 +1562,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKGradient");
             }
         
-            BMKGradient* ref = [[BMKGradient alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKGradient* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKGradient alloc] init];
+            } else {
+                __this__ = [BMKGradient alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2195,10 +1580,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKArcline");
             }
         
-            BMKArcline* ref = [[BMKArcline alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKArcline* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKArcline alloc] init];
+            } else {
+                __this__ = [BMKArcline alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2209,10 +1598,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKMultiPoint");
             }
         
-            BMKMultiPoint* ref = [[BMKMultiPoint alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKMultiPoint* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKMultiPoint alloc] init];
+            } else {
+                __this__ = [BMKMultiPoint alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2223,10 +1616,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKBaseIndoorMapInfo");
             }
         
-            BMKBaseIndoorMapInfo* ref = [[BMKBaseIndoorMapInfo alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKBaseIndoorMapInfo* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKBaseIndoorMapInfo alloc] init];
+            } else {
+                __this__ = [BMKBaseIndoorMapInfo alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2237,10 +1634,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKTileLayer");
             }
         
-            BMKTileLayer* ref = [[BMKTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKTileLayer* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKTileLayer alloc] init];
+            } else {
+                __this__ = [BMKTileLayer alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2251,10 +1652,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKURLTileLayer");
             }
         
-            BMKURLTileLayer* ref = [[BMKURLTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKURLTileLayer* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKURLTileLayer alloc] init];
+            } else {
+                __this__ = [BMKURLTileLayer alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2265,10 +1670,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKSyncTileLayer");
             }
         
-            BMKSyncTileLayer* ref = [[BMKSyncTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKSyncTileLayer* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKSyncTileLayer alloc] init];
+            } else {
+                __this__ = [BMKSyncTileLayer alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2279,10 +1688,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKAsyncTileLayer");
             }
         
-            BMKAsyncTileLayer* ref = [[BMKAsyncTileLayer alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKAsyncTileLayer* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKAsyncTileLayer alloc] init];
+            } else {
+                __this__ = [BMKAsyncTileLayer alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2293,10 +1706,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKPolylineView");
             }
         
-            BMKPolylineView* ref = [[BMKPolylineView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKPolylineView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKPolylineView alloc] init];
+            } else {
+                __this__ = [BMKPolylineView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2307,10 +1724,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKPinAnnotationView");
             }
         
-            BMKPinAnnotationView* ref = [[BMKPinAnnotationView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKPinAnnotationView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKPinAnnotationView alloc] init];
+            } else {
+                __this__ = [BMKPinAnnotationView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2321,10 +1742,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKCircle");
             }
         
-            BMKCircle* ref = [[BMKCircle alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKCircle* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKCircle alloc] init];
+            } else {
+                __this__ = [BMKCircle alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2335,10 +1760,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKMapPoi");
             }
         
-            BMKMapPoi* ref = [[BMKMapPoi alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKMapPoi* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKMapPoi alloc] init];
+            } else {
+                __this__ = [BMKMapPoi alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2349,10 +1778,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKMapView");
             }
         
-            BMKMapView* ref = [[BMKMapView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKMapView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKMapView alloc] init];
+            } else {
+                __this__ = [BMKMapView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2363,10 +1796,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKLocationViewDisplayParam");
             }
         
-            BMKLocationViewDisplayParam* ref = [[BMKLocationViewDisplayParam alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocationViewDisplayParam* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKLocationViewDisplayParam alloc] init];
+            } else {
+                __this__ = [BMKLocationViewDisplayParam alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2377,10 +1814,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKMapStatus");
             }
         
-            BMKMapStatus* ref = [[BMKMapStatus alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKMapStatus* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKMapStatus alloc] init];
+            } else {
+                __this__ = [BMKMapStatus alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2391,10 +1832,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKArclineView");
             }
         
-            BMKArclineView* ref = [[BMKArclineView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKArclineView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKArclineView alloc] init];
+            } else {
+                __this__ = [BMKArclineView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2405,10 +1850,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKHeatMapNode");
             }
         
-            BMKHeatMapNode* ref = [[BMKHeatMapNode alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKHeatMapNode* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKHeatMapNode alloc] init];
+            } else {
+                __this__ = [BMKHeatMapNode alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2419,10 +1868,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKHeatMap");
             }
         
-            BMKHeatMap* ref = [[BMKHeatMap alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKHeatMap* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKHeatMap alloc] init];
+            } else {
+                __this__ = [BMKHeatMap alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2433,10 +1886,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKPolygon");
             }
         
-            BMKPolygon* ref = [[BMKPolygon alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKPolygon* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKPolygon alloc] init];
+            } else {
+                __this__ = [BMKPolygon alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2447,10 +1904,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKPolygonView");
             }
         
-            BMKPolygonView* ref = [[BMKPolygonView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKPolygonView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKPolygonView alloc] init];
+            } else {
+                __this__ = [BMKPolygonView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2461,10 +1922,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKOverlayView");
             }
         
-            BMKOverlayView* ref = [[BMKOverlayView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKOverlayView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKOverlayView alloc] init];
+            } else {
+                __this__ = [BMKOverlayView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2475,10 +1940,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKGroundOverlayView");
             }
         
-            BMKGroundOverlayView* ref = [[BMKGroundOverlayView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKGroundOverlayView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKGroundOverlayView alloc] init];
+            } else {
+                __this__ = [BMKGroundOverlayView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2489,10 +1958,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKAnnotationView");
             }
         
-            BMKAnnotationView* ref = [[BMKAnnotationView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKAnnotationView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKAnnotationView alloc] init];
+            } else {
+                __this__ = [BMKAnnotationView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2503,10 +1976,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKOverlayGLBasicView");
             }
         
-            BMKOverlayGLBasicView* ref = [[BMKOverlayGLBasicView alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKOverlayGLBasicView* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKOverlayGLBasicView alloc] init];
+            } else {
+                __this__ = [BMKOverlayGLBasicView alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2517,10 +1994,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKShape");
             }
         
-            BMKShape* ref = [[BMKShape alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKShape* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKShape alloc] init];
+            } else {
+                __this__ = [BMKShape alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2531,10 +2012,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKOLSearchRecord");
             }
         
-            BMKOLSearchRecord* ref = [[BMKOLSearchRecord alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKOLSearchRecord* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKOLSearchRecord alloc] init];
+            } else {
+                __this__ = [BMKOLSearchRecord alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2545,10 +2030,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKOLUpdateElement");
             }
         
-            BMKOLUpdateElement* ref = [[BMKOLUpdateElement alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKOLUpdateElement* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKOLUpdateElement alloc] init];
+            } else {
+                __this__ = [BMKOLUpdateElement alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2559,10 +2048,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKCustomMapStyleOption");
             }
         
-            BMKCustomMapStyleOption* ref = [[BMKCustomMapStyleOption alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKCustomMapStyleOption* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKCustomMapStyleOption alloc] init];
+            } else {
+                __this__ = [BMKCustomMapStyleOption alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2573,10 +2066,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKOfflineMap");
             }
         
-            BMKOfflineMap* ref = [[BMKOfflineMap alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKOfflineMap* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKOfflineMap alloc] init];
+            } else {
+                __this__ = [BMKOfflineMap alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2587,10 +2084,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKLocationReGeocode");
             }
         
-            BMKLocationReGeocode* ref = [[BMKLocationReGeocode alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocationReGeocode* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKLocationReGeocode alloc] init];
+            } else {
+                __this__ = [BMKLocationReGeocode alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2601,10 +2102,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKLocationManager");
             }
         
-            BMKLocationManager* ref = [[BMKLocationManager alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocationManager* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKLocationManager alloc] init];
+            } else {
+                __this__ = [BMKLocationManager alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2615,10 +2120,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKLocationAuth");
             }
         
-            BMKLocationAuth* ref = [[BMKLocationAuth alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocationAuth* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKLocationAuth alloc] init];
+            } else {
+                __this__ = [BMKLocationAuth alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2629,10 +2138,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKLocationPoiRegion");
             }
         
-            BMKLocationPoiRegion* ref = [[BMKLocationPoiRegion alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocationPoiRegion* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKLocationPoiRegion alloc] init];
+            } else {
+                __this__ = [BMKLocationPoiRegion alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2643,10 +2156,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKLocationPoi");
             }
         
-            BMKLocationPoi* ref = [[BMKLocationPoi alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocationPoi* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKLocationPoi alloc] init];
+            } else {
+                __this__ = [BMKLocationPoi alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2657,10 +2174,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKLocation");
             }
         
-            BMKLocation* ref = [[BMKLocation alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKLocation* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKLocation alloc] init];
+            } else {
+                __this__ = [BMKLocation alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2671,10 +2192,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKGeoFenceRegion");
             }
         
-            BMKGeoFenceRegion* ref = [[BMKGeoFenceRegion alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKGeoFenceRegion* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKGeoFenceRegion alloc] init];
+            } else {
+                __this__ = [BMKGeoFenceRegion alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2685,10 +2210,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKGeoFenceCircleRegion");
             }
         
-            BMKGeoFenceCircleRegion* ref = [[BMKGeoFenceCircleRegion alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKGeoFenceCircleRegion* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKGeoFenceCircleRegion alloc] init];
+            } else {
+                __this__ = [BMKGeoFenceCircleRegion alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2699,10 +2228,14 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKGeoFencePolygonRegion");
             }
         
-            BMKGeoFencePolygonRegion* ref = [[BMKGeoFencePolygonRegion alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKGeoFencePolygonRegion* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKGeoFencePolygonRegion alloc] init];
+            } else {
+                __this__ = [BMKGeoFencePolygonRegion alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
@@ -2713,22 +2246,31 @@ extern BOOL enableLog;
                 NSLog(@"ObjectFactory::createBMKGeoFenceManager");
             }
         
-            BMKGeoFenceManager* ref = [[BMKGeoFenceManager alloc] init];
-            HEAP[@(ref.hash)] = ref;
+            BMKGeoFenceManager* __this__;
+            if ([((NSDictionary<NSString*, id>*) args)[@"init"] boolValue]) {
+                __this__ = [[BMKGeoFenceManager alloc] init];
+            } else {
+                __this__ = [BMKGeoFenceManager alloc];
+            }
         
-            methodResult(@(ref.hash));
+            methodResult(__this__);
         
             if (enableLog) NSLog(@"HEAP: %@", HEAP);
         },
         
         @"ObjectFactory::create_batchBMKActionPaopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
         
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKActionPaopaoView* ref = [[BMKActionPaopaoView alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKActionPaopaoView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKActionPaopaoView alloc] init];
+                } else {
+                    __this__ = [BMKActionPaopaoView alloc];
+                }
+                [resultList addObject:__this__];
             }
         
             methodResult(resultList);
@@ -2737,13 +2279,18 @@ extern BOOL enableLog;
         },
         
         @"ObjectFactory::create_batchBMKTileLayerView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
         
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKTileLayerView* ref = [[BMKTileLayerView alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKTileLayerView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKTileLayerView alloc] init];
+                } else {
+                    __this__ = [BMKTileLayerView alloc];
+                }
+                [resultList addObject:__this__];
             }
         
             methodResult(resultList);
@@ -2752,13 +2299,18 @@ extern BOOL enableLog;
         },
         
         @"ObjectFactory::create_batchBMKOverlayPathView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
         
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKOverlayPathView* ref = [[BMKOverlayPathView alloc] init];
-                HEAP[@(ref.hash)] = ref;
-        
-                [resultList addObject:@(ref.hash)];
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKOverlayPathView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKOverlayPathView alloc] init];
+                } else {
+                    __this__ = [BMKOverlayPathView alloc];
+                }
+                [resultList addObject:__this__];
             }
         
             methodResult(resultList);
@@ -2767,13 +2319,858 @@ extern BOOL enableLog;
         },
         
         @"ObjectFactory::create_batchBMKGroundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray<NSNumber*>* resultList = [NSMutableArray array];
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
         
-            for (int __i__ = 0; __i__ < [(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"] integerValue]; __i__++) {
-                BMKGroundOverlay* ref = [[BMKGroundOverlay alloc] init];
-                HEAP[@(ref.hash)] = ref;
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKGroundOverlay* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKGroundOverlay alloc] init];
+                } else {
+                    __this__ = [BMKGroundOverlay alloc];
+                }
+                [resultList addObject:__this__];
+            }
         
-                [resultList addObject:@(ref.hash)];
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKPolyline* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKPolyline alloc] init];
+                } else {
+                    __this__ = [BMKPolyline alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKCircleView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKCircleView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKCircleView alloc] init];
+                } else {
+                    __this__ = [BMKCircleView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPointAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKPointAnnotation* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKPointAnnotation alloc] init];
+                } else {
+                    __this__ = [BMKPointAnnotation alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGradient": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKGradient* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKGradient alloc] init];
+                } else {
+                    __this__ = [BMKGradient alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKArcline": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKArcline* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKArcline alloc] init];
+                } else {
+                    __this__ = [BMKArcline alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMultiPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKMultiPoint* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKMultiPoint alloc] init];
+                } else {
+                    __this__ = [BMKMultiPoint alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKBaseIndoorMapInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKBaseIndoorMapInfo* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKBaseIndoorMapInfo alloc] init];
+                } else {
+                    __this__ = [BMKBaseIndoorMapInfo alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKTileLayer* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKTileLayer alloc] init];
+                } else {
+                    __this__ = [BMKTileLayer alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKURLTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKURLTileLayer* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKURLTileLayer alloc] init];
+                } else {
+                    __this__ = [BMKURLTileLayer alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKSyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKSyncTileLayer* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKSyncTileLayer alloc] init];
+                } else {
+                    __this__ = [BMKSyncTileLayer alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKAsyncTileLayer": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKAsyncTileLayer* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKAsyncTileLayer alloc] init];
+                } else {
+                    __this__ = [BMKAsyncTileLayer alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolylineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKPolylineView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKPolylineView alloc] init];
+                } else {
+                    __this__ = [BMKPolylineView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPinAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKPinAnnotationView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKPinAnnotationView alloc] init];
+                } else {
+                    __this__ = [BMKPinAnnotationView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKCircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKCircle* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKCircle alloc] init];
+                } else {
+                    __this__ = [BMKCircle alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKMapPoi* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKMapPoi alloc] init];
+                } else {
+                    __this__ = [BMKMapPoi alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMapView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKMapView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKMapView alloc] init];
+                } else {
+                    __this__ = [BMKMapView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationViewDisplayParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKLocationViewDisplayParam* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKLocationViewDisplayParam alloc] init];
+                } else {
+                    __this__ = [BMKLocationViewDisplayParam alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKMapStatus* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKMapStatus alloc] init];
+                } else {
+                    __this__ = [BMKMapStatus alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKArclineView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKArclineView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKArclineView alloc] init];
+                } else {
+                    __this__ = [BMKArclineView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKHeatMapNode": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKHeatMapNode* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKHeatMapNode alloc] init];
+                } else {
+                    __this__ = [BMKHeatMapNode alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKHeatMap* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKHeatMap alloc] init];
+                } else {
+                    __this__ = [BMKHeatMap alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKPolygon* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKPolygon alloc] init];
+                } else {
+                    __this__ = [BMKPolygon alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKPolygonView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKPolygonView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKPolygonView alloc] init];
+                } else {
+                    __this__ = [BMKPolygonView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKOverlayView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKOverlayView alloc] init];
+                } else {
+                    __this__ = [BMKOverlayView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGroundOverlayView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKGroundOverlayView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKGroundOverlayView alloc] init];
+                } else {
+                    __this__ = [BMKGroundOverlayView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKAnnotationView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKAnnotationView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKAnnotationView alloc] init];
+                } else {
+                    __this__ = [BMKAnnotationView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOverlayGLBasicView": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKOverlayGLBasicView* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKOverlayGLBasicView alloc] init];
+                } else {
+                    __this__ = [BMKOverlayGLBasicView alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKShape": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKShape* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKShape alloc] init];
+                } else {
+                    __this__ = [BMKShape alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOLSearchRecord": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKOLSearchRecord* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKOLSearchRecord alloc] init];
+                } else {
+                    __this__ = [BMKOLSearchRecord alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOLUpdateElement": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKOLUpdateElement* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKOLUpdateElement alloc] init];
+                } else {
+                    __this__ = [BMKOLUpdateElement alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKCustomMapStyleOption": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKCustomMapStyleOption* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKCustomMapStyleOption alloc] init];
+                } else {
+                    __this__ = [BMKCustomMapStyleOption alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKOfflineMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKOfflineMap* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKOfflineMap alloc] init];
+                } else {
+                    __this__ = [BMKOfflineMap alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationReGeocode": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKLocationReGeocode* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKLocationReGeocode alloc] init];
+                } else {
+                    __this__ = [BMKLocationReGeocode alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKLocationManager* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKLocationManager alloc] init];
+                } else {
+                    __this__ = [BMKLocationManager alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationAuth": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKLocationAuth* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKLocationAuth alloc] init];
+                } else {
+                    __this__ = [BMKLocationAuth alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationPoiRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKLocationPoiRegion* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKLocationPoiRegion alloc] init];
+                } else {
+                    __this__ = [BMKLocationPoiRegion alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocationPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKLocationPoi* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKLocationPoi alloc] init];
+                } else {
+                    __this__ = [BMKLocationPoi alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKLocation* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKLocation alloc] init];
+                } else {
+                    __this__ = [BMKLocation alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFenceRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKGeoFenceRegion* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKGeoFenceRegion alloc] init];
+                } else {
+                    __this__ = [BMKGeoFenceRegion alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFenceCircleRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKGeoFenceCircleRegion* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKGeoFenceCircleRegion alloc] init];
+                } else {
+                    __this__ = [BMKGeoFenceCircleRegion alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFencePolygonRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKGeoFencePolygonRegion* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKGeoFencePolygonRegion alloc] init];
+                } else {
+                    __this__ = [BMKGeoFencePolygonRegion alloc];
+                }
+                [resultList addObject:__this__];
+            }
+        
+            methodResult(resultList);
+        
+            if (enableLog) NSLog(@"HEAP: %@", HEAP);
+        },
+        
+        @"ObjectFactory::create_batchBMKGeoFenceManager": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray<NSObject*>* resultList = [NSMutableArray array];
+        
+            NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
+            NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
+            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+                BMKGeoFenceManager* __this__;
+                if ([init boolValue]) {
+                    __this__ = [[BMKGeoFenceManager alloc] init];
+                } else {
+                    __this__ = [BMKGeoFenceManager alloc];
+                }
+                [resultList addObject:__this__];
             }
         
             methodResult(resultList);

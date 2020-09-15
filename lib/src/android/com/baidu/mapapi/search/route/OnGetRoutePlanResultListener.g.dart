@@ -24,58 +24,22 @@ mixin com_baidu_mapapi_search_route_OnGetRoutePlanResultListener on java_lang_Ob
   
 
   @mustCallSuper
-  Future<void> onGetWalkingRouteResult(com_baidu_mapapi_search_route_WalkingRouteResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetWalkingRouteResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetWalkingRouteResult(com_baidu_mapapi_search_route_WalkingRouteResult var1) {}
   
   @mustCallSuper
-  Future<void> onGetTransitRouteResult(com_baidu_mapapi_search_route_TransitRouteResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetTransitRouteResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetTransitRouteResult(com_baidu_mapapi_search_route_TransitRouteResult var1) {}
   
   @mustCallSuper
-  Future<void> onGetMassTransitRouteResult(com_baidu_mapapi_search_route_MassTransitRouteResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetMassTransitRouteResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetMassTransitRouteResult(com_baidu_mapapi_search_route_MassTransitRouteResult var1) {}
   
   @mustCallSuper
-  Future<void> onGetDrivingRouteResult(com_baidu_mapapi_search_route_DrivingRouteResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetDrivingRouteResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetDrivingRouteResult(com_baidu_mapapi_search_route_DrivingRouteResult var1) {}
   
   @mustCallSuper
-  Future<void> onGetIndoorRouteResult(com_baidu_mapapi_search_route_IndoorRouteResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetIndoorRouteResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetIndoorRouteResult(com_baidu_mapapi_search_route_IndoorRouteResult var1) {}
   
   @mustCallSuper
-  Future<void> onGetBikingRouteResult(com_baidu_mapapi_search_route_BikingRouteResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetBikingRouteResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetBikingRouteResult(com_baidu_mapapi_search_route_BikingRouteResult var1) {}
   
 }
 
