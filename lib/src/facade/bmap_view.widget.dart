@@ -57,40 +57,44 @@ class _BmapViewState extends State<BmapView> {
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
-      return Stack(
-        children: <Widget>[
-          if (_widgetLayer != null) _widgetLayer,
-          com_baidu_mapapi_map_TextureMapView_Android(
-            onDispose: _onPlatformViewDispose,
-            onViewCreated: (controller) async {
-              _controller = BmapController.android(controller, this);
+      return ScopedReleasePool(
+        child: Stack(
+          children: <Widget>[
+            if (_widgetLayer != null) _widgetLayer,
+            com_baidu_mapapi_map_TextureMapView_Android(
+              onDispose: _onPlatformViewDispose,
+              onViewCreated: (controller) async {
+                _controller = BmapController.android(controller, this);
 
-              // 调用onCreate方法会造成内存泄露! 且官方文档的例子中也没有调用onCreate了
-              await controller.onResume();
+                // 调用onCreate方法会造成内存泄露! 且官方文档的例子中也没有调用onCreate了
+                await controller.onResume();
 
-              if (widget.onMapCreated != null) {
-                await widget.onMapCreated(_controller);
-              }
-            },
-          ),
-        ],
+                if (widget.onMapCreated != null) {
+                  await widget.onMapCreated(_controller);
+                }
+              },
+            ),
+          ],
+        ),
       );
     } else if (Platform.isIOS) {
-      return Stack(
-        children: <Widget>[
-          if (_widgetLayer != null) _widgetLayer,
-          BMKMapView_iOS(
-            onDispose: _onPlatformViewDispose,
-            onViewCreated: (controller) async {
-              _controller = BmapController.ios(controller, this);
-              await controller.viewWillAppear();
+      return ScopedReleasePool(
+        child: Stack(
+          children: <Widget>[
+            if (_widgetLayer != null) _widgetLayer,
+            BMKMapView_iOS(
+              onDispose: _onPlatformViewDispose,
+              onViewCreated: (controller) async {
+                _controller = BmapController.ios(controller, this);
+                await controller.viewWillAppear();
 
-              if (widget.onMapCreated != null) {
-                await widget.onMapCreated(_controller);
-              }
-            },
-          ),
-        ],
+                if (widget.onMapCreated != null) {
+                  await widget.onMapCreated(_controller);
+                }
+              },
+            ),
+          ],
+        ),
       );
     } else {
       return Center(child: Text('未实现的平台'));
@@ -135,16 +139,6 @@ class _BmapViewState extends State<BmapView> {
     });
 
     return completer.future;
-  }
-
-  @override
-  void dispose() {
-    final isCurrentPlugin = (Ref it) => it.tag__ == 'bmap_map_fluttify';
-    kNativeObjectPool
-        .where(isCurrentPlugin)
-        .release_batch()
-        .then((_) => kNativeObjectPool.removeWhere(isCurrentPlugin));
-    super.dispose();
   }
 
   Future<void> _onPlatformViewDispose() async {
