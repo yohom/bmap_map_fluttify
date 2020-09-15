@@ -15,6 +15,7 @@ extension com_baidu_mapapi_map_MyLocationConfiguration_LocationModeToX on com_ba
       case com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.NORMAL: return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.NORMAL.index + 0;
       case com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.FOLLOWING: return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.FOLLOWING.index + 0;
       case com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.COMPASS: return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.COMPASS.index + 0;
+      default: return 0;
     }
   }
 }

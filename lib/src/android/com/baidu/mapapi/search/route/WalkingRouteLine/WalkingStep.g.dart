@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
 
   //region creators
   static Future<com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep__', );
     final object = com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep__', {'length': length});
   
     final List<com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,7 +55,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getDirection', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getDirection', {"__this__": this});
   
   
     // handle native call
@@ -69,7 +66,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -82,7 +78,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setDirection', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setDirection', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -93,7 +89,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -106,7 +101,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntrance', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntrance', {"__this__": this});
   
   
     // handle native call
@@ -117,7 +112,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_RouteNode()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -130,7 +124,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntrance', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntrance', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -141,7 +135,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -154,7 +147,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExit', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExit', {"__this__": this});
   
   
     // handle native call
@@ -165,7 +158,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_RouteNode()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -178,7 +170,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExit', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExit', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -189,7 +181,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -202,7 +193,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setPathString', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setPathString', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -213,7 +204,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -226,7 +216,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntranceInstructions', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntranceInstructions', {"__this__": this});
   
   
     // handle native call
@@ -237,7 +227,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -250,7 +239,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntranceInstructions', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntranceInstructions', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -261,7 +250,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -274,7 +262,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExitInstructions', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExitInstructions', {"__this__": this});
   
   
     // handle native call
@@ -285,7 +273,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -298,7 +285,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExitInstructions', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExitInstructions', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -309,7 +296,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -322,7 +308,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getInstructions', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getInstructions', {"__this__": this});
   
   
     // handle native call
@@ -333,7 +319,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -346,7 +331,7 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setInstructions', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setInstructions', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -357,7 +342,6 @@ class com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep extends com_bai
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -382,7 +366,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -390,7 +374,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -402,7 +385,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -410,7 +393,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -422,15 +404,14 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntrance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntrance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_core_RouteNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_core_RouteNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -442,7 +423,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntrance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntrance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -450,7 +431,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -462,15 +442,14 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_core_RouteNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_core_RouteNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -482,7 +461,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -490,7 +469,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -502,7 +480,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setPathString_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setPathString_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -510,7 +488,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -522,7 +499,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntranceInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getEntranceInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -530,7 +507,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -542,7 +518,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntranceInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setEntranceInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -550,7 +526,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -562,7 +537,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExitInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getExitInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -570,7 +545,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -582,7 +556,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExitInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setExitInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -590,7 +564,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -602,7 +575,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::getInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -610,7 +583,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -622,7 +594,7 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep::setInstructions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -630,7 +602,6 @@ extension com_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep_Batch on Li
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

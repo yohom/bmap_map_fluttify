@@ -15,6 +15,7 @@ extension BMKRegionChangeReasonToX on BMKRegionChangeReason {
       case BMKRegionChangeReason.BMKRegionChangeReasonGesture: return 0;
       case BMKRegionChangeReason.BMKRegionChangeReasonEvent: return BMKRegionChangeReason.BMKRegionChangeReasonEvent.index + 0;
       case BMKRegionChangeReason.BMKRegionChangeReasonAPIs: return BMKRegionChangeReason.BMKRegionChangeReasonAPIs.index + 0;
+      default: return 0;
     }
   }
 }

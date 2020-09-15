@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapDrawFrameCallback on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onMapDrawFrame__com_baidu_mapapi_map_MapStatus(com_baidu_mapapi_map_MapStatus var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapDrawFrame__com_baidu_mapapi_map_MapStatus::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onMapDrawFrame__com_baidu_mapapi_map_MapStatus(com_baidu_mapapi_map_MapStatus var1) {}
   
 }
 

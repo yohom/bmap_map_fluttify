@@ -17,6 +17,7 @@ extension com_baidu_mapapi_map_MarkerOptions_MarkerAnimateTypeToX on com_baidu_m
       case com_baidu_mapapi_map_MarkerOptions_MarkerAnimateType.drop: return com_baidu_mapapi_map_MarkerOptions_MarkerAnimateType.drop.index + 0;
       case com_baidu_mapapi_map_MarkerOptions_MarkerAnimateType.grow: return com_baidu_mapapi_map_MarkerOptions_MarkerAnimateType.grow.index + 0;
       case com_baidu_mapapi_map_MarkerOptions_MarkerAnimateType.jump: return com_baidu_mapapi_map_MarkerOptions_MarkerAnimateType.jump.index + 0;
+      default: return 0;
     }
   }
 }

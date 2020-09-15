@@ -13,6 +13,7 @@ extension com_baidu_mapapi_map_PolylineDottedLineTypeToX on com_baidu_mapapi_map
     switch (this) {
       case com_baidu_mapapi_map_PolylineDottedLineType.DOTTED_LINE_SQUARE: return com_baidu_mapapi_map_PolylineDottedLineType.DOTTED_LINE_SQUARE.index + 0;
       case com_baidu_mapapi_map_PolylineDottedLineType.DOTTED_LINE_CIRCLE: return com_baidu_mapapi_map_PolylineDottedLineType.DOTTED_LINE_CIRCLE.index + 0;
+      default: return 0;
     }
   }
 }

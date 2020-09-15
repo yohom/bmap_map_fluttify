@@ -21,18 +21,14 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
 
   //region creators
   static Future<com_baidu_mapapi_map_WearMapView> create__android_content_Context(android_content_Context var1) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context', {"var1": var1.refId});
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context', {"var1": var1});
     final object = com_baidu_mapapi_map_WearMapView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
   static Future<com_baidu_mapapi_map_WearMapView> create__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions(android_content_Context var1, com_baidu_mapapi_map_BaiduMapOptions var2) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions', {"var1": var1.refId, "var2": var2.refId});
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions', {"var1": var1, "var2": var2});
     final object = com_baidu_mapapi_map_WearMapView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -40,10 +36,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_WearMapView__android_content_Context', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].refId}]);
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_WearMapView__android_content_Context', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
   
     final List<com_baidu_mapapi_map_WearMapView> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_WearMapView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -51,10 +46,9 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     if (var1.length != var2.length) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__].refId}]);
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__]}]);
   
     final List<com_baidu_mapapi_map_WearMapView> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_WearMapView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -77,34 +71,39 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onDismiss([])');
-              }
-        
-              // handle the native call
-              var1?.onDismiss();
-              break;
-            case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onNotify([])');
-              }
-        
-              // handle the native call
-              var1?.onNotify();
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onDismiss':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onDismiss([])');
+                }
+          
+                // handle the native call
+                var1?.onDismiss();
+                break;
+              case 'Callback::com.baidu.mapapi.map.WearMapView.OnDismissCallback::onNotify':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onNotify([])');
+                }
+          
+                // handle the native call
+                var1?.onNotify();
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -113,7 +112,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -126,7 +124,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setShape', {"var1": var1.toValue(), "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setShape', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
@@ -137,7 +135,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -150,7 +147,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomMapStylePath', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomMapStylePath', {"var0": var0});
   
   
     // handle native call
@@ -161,7 +158,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -174,7 +170,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setIconCustom', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setIconCustom', {"var0": var0});
   
   
     // handle native call
@@ -185,7 +181,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -198,7 +193,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode', {"var0": var0});
   
   
     // handle native call
@@ -209,7 +204,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -222,7 +216,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomEnable', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomEnable', {"var0": var0});
   
   
     // handle native call
@@ -233,7 +227,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -246,7 +239,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomStyleFilePathAndMode', {"var1": var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomStyleFilePathAndMode', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -257,7 +250,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -270,7 +262,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStylePath', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStylePath', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -281,7 +273,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -294,43 +285,48 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStyle', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStyle', {"var1": var1, "__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback')
+    MethodChannel('com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onPreLoadLastCustomMapStyle([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var2?.onPreLoadLastCustomMapStyle(args['var1']);
-              break;
-            case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onCustomMapStyleLoadSuccess([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var2?.onCustomMapStyleLoadSuccess(args['var1'], args['var2']);
-              break;
-            case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onCustomMapStyleLoadFailed([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
-              }
-        
-              // handle the native call
-              var2?.onCustomMapStyleLoadFailed(args['var1'], args['var2'], args['var3']);
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onPreLoadLastCustomMapStyle([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var2?.onPreLoadLastCustomMapStyle(args['var1']);
+                break;
+              case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onCustomMapStyleLoadSuccess([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                }
+          
+                // handle the native call
+                var2?.onCustomMapStyleLoadSuccess(args['var1'], args['var2']);
+                break;
+              case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onCustomMapStyleLoadFailed([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
+                }
+          
+                // handle the native call
+                var2?.onCustomMapStyleLoadFailed(args['var1'], args['var2'], args['var3']);
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -339,7 +335,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -352,7 +347,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStyleEnable', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStyleEnable', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -363,7 +358,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -376,7 +370,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onInterceptTouchEvent', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onInterceptTouchEvent', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -387,7 +381,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -400,7 +393,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setViewAnimitionEnable', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setViewAnimitionEnable', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -411,7 +404,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -424,7 +416,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getMap', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getMap', {"__this__": this});
   
   
     // handle native call
@@ -435,7 +427,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -448,7 +439,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onDestroy', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onDestroy', {"__this__": this});
   
   
     // handle native call
@@ -459,7 +450,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -472,7 +462,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onDismiss', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onDismiss', {"__this__": this});
   
   
     // handle native call
@@ -483,7 +473,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -496,7 +485,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onEnterAmbient', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onEnterAmbient', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -507,7 +496,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -520,7 +508,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onExitAmbient', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onExitAmbient', {"__this__": this});
   
   
     // handle native call
@@ -531,7 +519,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -544,7 +531,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getMapLevel', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getMapLevel', {"__this__": this});
   
   
     // handle native call
@@ -555,7 +542,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -568,7 +554,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "__this__": this});
   
   
     // handle native call
@@ -579,7 +565,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -592,7 +577,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::showZoomControls', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::showZoomControls', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -603,7 +588,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -616,7 +600,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setZoomControlsPosition', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setZoomControlsPosition', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -627,7 +611,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -640,7 +623,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::showScaleControl', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::showScaleControl', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -651,7 +634,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -664,7 +646,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewWidth', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewWidth', {"__this__": this});
   
   
     // handle native call
@@ -675,7 +657,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -688,7 +669,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewHeight', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewHeight', {"__this__": this});
   
   
     // handle native call
@@ -699,7 +680,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -712,7 +692,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setScaleControlPosition', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setScaleControlPosition', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -723,7 +703,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -736,7 +715,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onSaveInstanceState', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onSaveInstanceState', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -747,7 +726,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -760,7 +738,7 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onCreate', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onCreate', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -771,7 +749,6 @@ class com_baidu_mapapi_map_WearMapView extends android_view_ViewGroup with andro
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -796,7 +773,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setShape_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setShape_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -804,7 +781,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -816,7 +792,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomMapStylePath_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomMapStylePath_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
     // convert native result to dart side object
@@ -824,7 +800,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -836,7 +811,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setIconCustom_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setIconCustom_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
     // convert native result to dart side object
@@ -844,7 +819,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -856,7 +830,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
     // convert native result to dart side object
@@ -864,7 +838,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -876,7 +849,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
     // convert native result to dart side object
@@ -884,7 +857,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -896,7 +868,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomStyleFilePathAndMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setCustomStyleFilePathAndMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -904,7 +876,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -916,7 +887,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -924,7 +895,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -936,7 +906,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStyleEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setMapCustomStyleEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -944,7 +914,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -956,7 +925,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onInterceptTouchEvent_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onInterceptTouchEvent_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -964,7 +933,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -976,7 +944,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setViewAnimitionEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setViewAnimitionEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -984,7 +952,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -996,15 +963,14 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -1016,7 +982,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onDestroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onDestroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1024,7 +990,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1036,7 +1001,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onDismiss_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onDismiss_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1044,7 +1009,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1056,7 +1020,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onEnterAmbient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onEnterAmbient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1064,7 +1028,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1076,7 +1039,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onExitAmbient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onExitAmbient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1084,7 +1047,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1096,7 +1058,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getMapLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getMapLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1104,7 +1066,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1116,7 +1077,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1124,7 +1085,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1136,7 +1096,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::showZoomControls_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::showZoomControls_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1144,7 +1104,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1156,7 +1115,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setZoomControlsPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setZoomControlsPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1164,7 +1123,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1176,7 +1134,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::showScaleControl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::showScaleControl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1184,7 +1142,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1196,7 +1153,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewWidth_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewWidth_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1204,7 +1161,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1216,7 +1172,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewHeight_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::getScaleControlViewHeight_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1224,7 +1180,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1236,7 +1191,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::setScaleControlPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::setScaleControlPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1244,7 +1199,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1256,7 +1210,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onSaveInstanceState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onSaveInstanceState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1264,7 +1218,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -1276,7 +1229,7 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.WearMapView::onCreate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_WearMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WearMapView::onCreate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -1284,7 +1237,6 @@ extension com_baidu_mapapi_map_WearMapView_Batch on List<com_baidu_mapapi_map_We
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

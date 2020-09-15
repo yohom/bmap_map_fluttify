@@ -13,6 +13,7 @@ extension com_baidu_mapapi_map_MapViewLayoutParams_ELayoutModeToX on com_baidu_m
     switch (this) {
       case com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.mapMode: return com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.mapMode.index + 0;
       case com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.absoluteMode: return com_baidu_mapapi_map_MapViewLayoutParams_ELayoutMode.absoluteMode.index + 0;
+      default: return 0;
     }
   }
 }

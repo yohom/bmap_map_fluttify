@@ -13,6 +13,7 @@ extension com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingTrafficPol
     switch (this) {
       case com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingTrafficPolicy.ROUTE_PATH: return com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingTrafficPolicy.ROUTE_PATH.index + 0;
       case com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingTrafficPolicy.ROUTE_PATH_AND_TRAFFIC: return com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingTrafficPolicy.ROUTE_PATH_AND_TRAFFIC.index + 0;
+      default: return 0;
     }
   }
 }

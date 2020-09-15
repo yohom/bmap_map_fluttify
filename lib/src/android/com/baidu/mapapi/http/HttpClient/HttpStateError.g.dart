@@ -19,6 +19,7 @@ extension com_baidu_mapapi_http_HttpClient_HttpStateErrorToX on com_baidu_mapapi
       case com_baidu_mapapi_http_HttpClient_HttpStateError.INNER_ERROR: return com_baidu_mapapi_http_HttpClient_HttpStateError.INNER_ERROR.index + 0;
       case com_baidu_mapapi_http_HttpClient_HttpStateError.REQUEST_ERROR: return com_baidu_mapapi_http_HttpClient_HttpStateError.REQUEST_ERROR.index + 0;
       case com_baidu_mapapi_http_HttpClient_HttpStateError.SERVER_ERROR: return com_baidu_mapapi_http_HttpClient_HttpStateError.SERVER_ERROR.index + 0;
+      default: return 0;
     }
   }
 }

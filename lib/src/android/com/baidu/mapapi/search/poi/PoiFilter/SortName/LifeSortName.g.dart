@@ -19,6 +19,7 @@ extension com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortNameToX on com_
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.DISTANCE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.DISTANCE.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_OVERALL_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_OVERALL_RATING.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_COMMENT_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_LifeSortName.LIFE_COMMENT_RATING.index + 0;
+      default: return 0;
     }
   }
 }

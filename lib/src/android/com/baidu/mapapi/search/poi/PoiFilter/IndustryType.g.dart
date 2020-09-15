@@ -15,6 +15,7 @@ extension com_baidu_mapapi_search_poi_PoiFilter_IndustryTypeToX on com_baidu_map
       case com_baidu_mapapi_search_poi_PoiFilter_IndustryType.HOTEL: return com_baidu_mapapi_search_poi_PoiFilter_IndustryType.HOTEL.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_IndustryType.CATER: return com_baidu_mapapi_search_poi_PoiFilter_IndustryType.CATER.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_IndustryType.LIFE: return com_baidu_mapapi_search_poi_PoiFilter_IndustryType.LIFE.index + 0;
+      default: return 0;
     }
   }
 }

@@ -24,31 +24,13 @@ mixin com_baidu_mapapi_map_SwipeDismissTouchListener_DismissCallbacks on java_la
   
 
   @mustCallSuper
-  Future<bool> canDismiss(Object var1) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('canDismiss::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> canDismiss(Object var1) {}
   
   @mustCallSuper
-  Future<void> onDismiss(android_view_View var1, Object var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onDismiss::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onDismiss(android_view_View var1, Object var2) {}
   
   @mustCallSuper
-  Future<void> onNotify() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onNotify::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onNotify() {}
   
 }
 

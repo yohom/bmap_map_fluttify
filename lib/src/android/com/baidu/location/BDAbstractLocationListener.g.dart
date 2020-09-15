@@ -40,7 +40,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -51,7 +51,6 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -64,7 +63,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage', {"var1": var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -75,7 +74,6 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -88,7 +86,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage', {"var1": var1, "var2": var2, "var3": var3, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage', {"var1": var1, "var2": var2, "var3": var3, "__this__": this});
   
   
     // handle native call
@@ -99,7 +97,6 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -124,7 +121,7 @@ extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -132,7 +129,6 @@ extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -144,7 +140,7 @@ extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -152,7 +148,6 @@ extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -164,7 +159,7 @@ extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -172,7 +167,6 @@ extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

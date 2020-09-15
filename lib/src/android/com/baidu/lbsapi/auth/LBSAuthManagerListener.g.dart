@@ -24,13 +24,7 @@ mixin com_baidu_lbsapi_auth_LBSAuthManagerListener on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onAuthResult(int var1, String var2) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onAuthResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onAuthResult(int var1, String var2) {}
   
 }
 

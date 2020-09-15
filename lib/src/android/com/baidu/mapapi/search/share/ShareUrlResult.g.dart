@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
 
   //region creators
   static Future<com_baidu_mapapi_search_share_ShareUrlResult> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_share_ShareUrlResult__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_share_ShareUrlResult__', );
     final object = com_baidu_mapapi_search_share_ShareUrlResult()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_share_ShareUrlResult__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_share_ShareUrlResult__', {'length': length});
   
     final List<com_baidu_mapapi_search_share_ShareUrlResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_share_ShareUrlResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,7 +55,7 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::getUrl', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::getUrl', {"__this__": this});
   
   
     // handle native call
@@ -69,7 +66,6 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -82,7 +78,7 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setUrl', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setUrl', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -93,7 +89,6 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -106,7 +101,7 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setType', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setType', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -117,7 +112,6 @@ class com_baidu_mapapi_search_share_ShareUrlResult extends com_baidu_mapapi_sear
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -142,7 +136,7 @@ extension com_baidu_mapapi_search_share_ShareUrlResult_Batch on List<com_baidu_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::getUrl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::getUrl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -150,7 +144,6 @@ extension com_baidu_mapapi_search_share_ShareUrlResult_Batch on List<com_baidu_m
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -162,7 +155,7 @@ extension com_baidu_mapapi_search_share_ShareUrlResult_Batch on List<com_baidu_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setUrl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setUrl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -170,7 +163,6 @@ extension com_baidu_mapapi_search_share_ShareUrlResult_Batch on List<com_baidu_m
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -182,7 +174,7 @@ extension com_baidu_mapapi_search_share_ShareUrlResult_Batch on List<com_baidu_m
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.ShareUrlResult::setType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -190,7 +182,6 @@ extension com_baidu_mapapi_search_share_ShareUrlResult_Batch on List<com_baidu_m
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

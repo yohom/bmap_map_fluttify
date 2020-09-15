@@ -15,6 +15,7 @@ extension com_baidu_location_LocationClientOption_BDLocationPurposeToX on com_ba
       case com_baidu_location_LocationClientOption_BDLocationPurpose.SignIn: return com_baidu_location_LocationClientOption_BDLocationPurpose.SignIn.index + 0;
       case com_baidu_location_LocationClientOption_BDLocationPurpose.Sport: return com_baidu_location_LocationClientOption_BDLocationPurpose.Sport.index + 0;
       case com_baidu_location_LocationClientOption_BDLocationPurpose.Transport: return com_baidu_location_LocationClientOption_BDLocationPurpose.Transport.index + 0;
+      default: return 0;
     }
   }
 }

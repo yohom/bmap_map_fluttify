@@ -19,9 +19,11 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import io.flutter.plugin.common.StandardMethodCodec;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 
 import com.fluttify.bmap_map_fluttify.BmapMapFluttifyPlugin.Handler;
+import me.yohom.foundation_fluttify.core.FluttifyMessageCodec;
 
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
@@ -31,1385 +33,25 @@ public class SubHandler14 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
-            put("com.baidu.mapapi.map.BaiduMap::setPixelFormatTransparent", (__args__, __methodResult__) -> {
-                // args
-                // jsonable arg
-                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setPixelFormatTransparent(" + var1 + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setPixelFormatTransparent(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapStatusChangeListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapStatusChangeListener(new com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapStatusChangeStart(com.baidu.mapapi.map.MapStatus var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeStart(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMapStatusChangeStart(com.baidu.mapapi.map.MapStatus var1, int var2) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeStart(" + var1 + var2 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-                            // jsonable arg
-                            int argvar2 = var2;
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMapStatusChange(com.baidu.mapapi.map.MapStatus var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChange(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChange",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMapStatusChangeFinish(com.baidu.mapapi.map.MapStatus var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeFinish(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeFinish",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapTouchListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapTouchListener(new com.baidu.mapapi.map.BaiduMap.OnMapTouchListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onTouch(android.view.MotionEvent var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onTouch(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::onTouch",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapClick(com.baidu.mapapi.model.LatLng var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapClick(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMapPoiClick(com.baidu.mapapi.map.MapPoi var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapPoiClick(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapPoiClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapLoadedCallback(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapLoadedCallback(new com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapLoaded() {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapLoaded(" + "" + ")");
-                            }
-            
-                            // convert to jsonable data
-            
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::onMapLoaded",
-                                        new HashMap<String, Object>() {{
-                    
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapRenderCallbadk(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapRenderCallbadk(new com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapRenderFinished() {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapRenderFinished(" + "" + ")");
-                            }
-            
-                            // convert to jsonable data
-            
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::onMapRenderFinished",
-                                        new HashMap<String, Object>() {{
-                    
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapDoubleClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapDoubleClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapDoubleClick(com.baidu.mapapi.model.LatLng var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapDoubleClick(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::onMapDoubleClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapLongClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapLongClickListener(new com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapLongClick(com.baidu.mapapi.model.LatLng var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapLongClick(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::onMapLongClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnPolylineClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnPolylineClickListener(new com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public boolean onPolylineClick(com.baidu.mapapi.map.Polyline var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onPolylineClick(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::onPolylineClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-                            return true;
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMarkerClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMarkerClickListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public boolean onMarkerClick(com.baidu.mapapi.map.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerClick(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-                            return true;
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMarkerDragListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMarkerDragListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMarkerDrag(com.baidu.mapapi.map.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerDrag(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDrag",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMarkerDragEnd(com.baidu.mapapi.map.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerDragEnd(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragEnd",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMarkerDragStart(com.baidu.mapapi.map.Marker var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMarkerDragStart(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragStart",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMyLocationClickListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMyLocationClickListener(new com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public boolean onMyLocationClick() {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMyLocationClick(" + "" + ")");
-                            }
-            
-                            // convert to jsonable data
-            
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::onMyLocationClick",
-                                        new HashMap<String, Object>() {{
-                    
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-                            return true;
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapDrawFrameCallback(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapDrawFrameCallback(new com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapDrawFrame(javax.microedition.khronos.opengles.GL10 var1, com.baidu.mapapi.map.MapStatus var2) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapDrawFrame(" + var1 + var2 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-                            // ref arg
-                            final Integer argvar2;
-                            if (var2 != null) {
-                                argvar2 = System.identityHashCode(var2);
-                                getHEAP().put(argvar2, var2);
-                            } else {
-                                argvar2 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__javax_microedition_khronos_opengles_GL10__com_baidu_mapapi_map_MapStatus",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                        @Override
-                        public void onMapDrawFrame(com.baidu.mapapi.map.MapStatus var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapDrawFrame(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__com_baidu_mapapi_map_MapStatus",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnBaseIndoorMapListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnBaseIndoorMapListener(new com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onBaseIndoorMapMode(boolean var1, com.baidu.mapapi.map.MapBaseIndoorMapInfo var2) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onBaseIndoorMapMode(" + var1 + var2 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // jsonable arg
-                            boolean argvar1 = var1;
-                            // ref arg
-                            final Integer argvar2;
-                            if (var2 != null) {
-                                argvar2 = System.identityHashCode(var2);
-                                getHEAP().put(argvar2, var2);
-                            } else {
-                                argvar2 = null;
-                            }
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::onBaseIndoorMapMode",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnMapRenderValidDataListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnMapRenderValidDataListener(new com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapRenderValidData(boolean var1, int var2, String var3) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapRenderValidData(" + var1 + var2 + var3 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // jsonable arg
-                            boolean argvar1 = var1;
-                            // jsonable arg
-                            int argvar2 = var2;
-                            // jsonable arg
-                            String argvar3 = var3;
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::onMapRenderValidData",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
-                                            put("var3", argvar3);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOnSynchronizationListener(" + "" + ")");
-                }
-            
-                // invoke native method
-                try {
-                    ref.setOnSynchronizationListener(new com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener() {
-                        // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback");
-                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
-            
-                        // call dart method
-                        @Override
-                        public void onMapStatusChangeReason(int var1) {
-                            // print log
-                            if (getEnableLog()) {
-                                Log.d("java-callback", "fluttify-java-callback: onMapStatusChangeReason(" + var1 + ")");
-                            }
-            
-                            // convert to jsonable data
-                            // jsonable arg
-                            int argvar1 = var1;
-            
-                            // call dart method
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    callbackChannel.invokeMethod(
-                                        "Callback::com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::onMapStatusChangeReason",
-                                        new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                        }}
-                                    );
-                                }
-                            });
-            
-                            // method result
-            
-                        }
-            
-                });
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::getFocusedBaseIndoorMapInfo", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::getFocusedBaseIndoorMapInfo(" + "" + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo __result__;
-                try {
-                    __result__ = ref.getFocusedBaseIndoorMapInfo();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
-            });
-            // method
             put("com.baidu.mapapi.map.BaiduMap::switchBaseIndoorMapFloor", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
+                // ref arg
                 String var2 = (String) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::switchBaseIndoorMapFloor(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::switchBaseIndoorMapFloor(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo.SwitchFloorError __result__;
+                com.baidu.mapapi.map.MapBaseIndoorMapInfo.SwitchFloorError __result__ = null;
                 try {
-                    __result__ = ref.switchBaseIndoorMapFloor(var1, var2);
+                    __result__ = __this__.switchBaseIndoorMapFloor(var1, var2);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1419,13 +61,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = __result__.ordinal();
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::isBaseIndoorMapMode", (__args__, __methodResult__) -> {
@@ -1433,18 +69,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::isBaseIndoorMapMode(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::isBaseIndoorMapMode(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isBaseIndoorMapMode();
+                    __result__ = __this__.isBaseIndoorMapMode();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1454,10 +89,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener", (__args__, __methodResult__) -> {
@@ -1465,19 +97,19 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::removeMarkerClickListener(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::removeMarkerClickListener(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.removeMarkerClickListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener() {
+                    __this__.removeMarkerClickListener(new com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -1488,16 +120,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onMarkerClick(" + var1 + ")");
                             }
             
-                            // convert to jsonable data
-                            // ref arg
-                            final Integer argvar1;
-                            if (var1 != null) {
-                                argvar1 = System.identityHashCode(var1);
-                                getHEAP().put(argvar1, var1);
-                            } else {
-                                argvar1 = null;
-                            }
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -1505,7 +127,7 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
+                                            put("var1", var1);
                                         }}
                                     );
                                 }
@@ -1525,31 +147,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::addTileLayer", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.TileOverlayOptions var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.TileOverlayOptions) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.TileOverlayOptions var1 = (com.baidu.mapapi.map.TileOverlayOptions) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::addTileLayer(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::addTileLayer(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TileOverlay __result__;
+                com.baidu.mapapi.map.TileOverlay __result__ = null;
                 try {
-                    __result__ = ref.addTileLayer(var1);
+                    __result__ = __this__.addTileLayer(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1559,14 +176,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::hideSDKLayer", (__args__, __methodResult__) -> {
@@ -1574,17 +184,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::hideSDKLayer(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::hideSDKLayer(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.hideSDKLayer();
+                    __this__.hideSDKLayer();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1594,10 +204,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::showSDKLayer", (__args__, __methodResult__) -> {
@@ -1605,17 +212,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::showSDKLayer(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::showSDKLayer(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.showSDKLayer();
+                    __this__.showSDKLayer();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1625,29 +232,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::changeLocationLayerOrder", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::changeLocationLayerOrder(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::changeLocationLayerOrder(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.changeLocationLayerOrder(var1);
+                    __this__.changeLocationLayerOrder(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1657,29 +261,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::setCompassEnable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setCompassEnable(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::setCompassEnable(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setCompassEnable(var1);
+                    __this__.setCompassEnable(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1689,10 +290,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::getProjectionMatrix", (__args__, __methodResult__) -> {
@@ -1700,18 +298,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::getProjectionMatrix(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::getProjectionMatrix(" + "" + ")");
                 }
             
                 // invoke native method
-                float[] __result__;
+                float[] __result__ = null;
                 try {
-                    __result__ = ref.getProjectionMatrix();
+                    __result__ = __this__.getProjectionMatrix();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1721,10 +318,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float[] jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::getViewMatrix", (__args__, __methodResult__) -> {
@@ -1732,18 +326,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::getViewMatrix(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::getViewMatrix(" + "" + ")");
                 }
             
                 // invoke native method
-                float[] __result__;
+                float[] __result__ = null;
                 try {
-                    __result__ = ref.getViewMatrix();
+                    __result__ = __this__.getViewMatrix();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1753,29 +346,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float[] jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::setOverlayUnderPoi", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setOverlayUnderPoi(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::setOverlayUnderPoi(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setOverlayUnderPoi(var1);
+                    __this__.setOverlayUnderPoi(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1785,10 +375,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::switchLayerOrder", (__args__, __methodResult__) -> {
@@ -1799,17 +386,17 @@ public class SubHandler14 {
                 com.baidu.mapapi.map.MapLayer var2 = com.baidu.mapapi.map.MapLayer.values()[(int) ((Map<String, Object>) __args__).get("var2")];
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::switchLayerOrder(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::switchLayerOrder(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.switchLayerOrder(var1, var2);
+                    __this__.switchLayerOrder(var1, var2);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1819,31 +406,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::setLayerClickable", (__args__, __methodResult__) -> {
                 // args
                 // enum arg
                 com.baidu.mapapi.map.MapLayer var1 = com.baidu.mapapi.map.MapLayer.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                // jsonable arg
+                // ref arg
                 boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::setLayerClickable(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::setLayerClickable(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setLayerClickable(var1, var2);
+                    __this__.setLayerClickable(var1, var2);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1853,29 +437,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMap::cleanCache", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + refId + "::cleanCache(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMap@" + __this__ + "::cleanCache(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.cleanCache(var1);
+                    __this__.cleanCache(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1885,15 +466,12 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
@@ -1905,6 +483,7 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
                     com.baidu.mapapi.map.TextureMapView.setCustomMapStylePath(var0);
                 } catch (Throwable throwable) {
@@ -1916,16 +495,13 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setIconCustom", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
+                // ref arg
+                Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
             
@@ -1936,8 +512,9 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    com.baidu.mapapi.map.TextureMapView.setIconCustom(var0);
+                    com.baidu.mapapi.map.TextureMapView.setIconCustom(var0.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1947,16 +524,13 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
+                // ref arg
+                Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
             
@@ -1967,8 +541,9 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    com.baidu.mapapi.map.TextureMapView.setLoadCustomMapStyleFileMode(var0);
+                    com.baidu.mapapi.map.TextureMapView.setLoadCustomMapStyleFileMode(var0.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -1978,15 +553,12 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setMapCustomEnable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
@@ -1998,6 +570,7 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
                     com.baidu.mapapi.map.TextureMapView.setMapCustomEnable(var0);
                 } catch (Throwable throwable) {
@@ -2009,31 +582,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setCustomStyleFilePathAndMode", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setCustomStyleFilePathAndMode(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setCustomStyleFilePathAndMode(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setCustomStyleFilePathAndMode(var1, var2);
+                    __this__.setCustomStyleFilePathAndMode(var1, var2.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2043,29 +613,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setMapCustomStylePath", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setMapCustomStylePath(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setMapCustomStylePath(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setMapCustomStylePath(var1);
+                    __this__.setMapCustomStylePath(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2075,32 +642,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setMapCustomStyle", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.MapCustomStyleOptions var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.MapCustomStyleOptions) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.MapCustomStyleOptions var1 = (com.baidu.mapapi.map.MapCustomStyleOptions) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setMapCustomStyle(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setMapCustomStyle(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
+                    __this__.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -2111,10 +674,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onPreLoadLastCustomMapStyle(" + var1 + ")");
                             }
             
-                            // convert to jsonable data
-                            // jsonable arg
-                            String argvar1 = var1;
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -2122,7 +681,7 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
+                                            put("var1", var1);
                                         }}
                                     );
                                 }
@@ -2139,12 +698,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadSuccess(" + var1 + var2 + ")");
                             }
             
-                            // convert to jsonable data
-                            // jsonable arg
-                            boolean argvar1 = var1;
-                            // jsonable arg
-                            String argvar2 = var2;
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -2152,8 +705,8 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
+                                            put("var1", var1);
+                                            put("var2", var2);
                                         }}
                                     );
                                 }
@@ -2170,14 +723,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadFailed(" + var1 + var2 + var3 + ")");
                             }
             
-                            // convert to jsonable data
-                            // jsonable arg
-                            int argvar1 = var1;
-                            // jsonable arg
-                            String argvar2 = var2;
-                            // jsonable arg
-                            String argvar3 = var3;
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -2185,9 +730,9 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
-                                            put("var3", argvar3);
+                                            put("var1", var1);
+                                            put("var2", var2);
+                                            put("var3", var3);
                                         }}
                                     );
                                 }
@@ -2207,29 +752,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setMapCustomStyleEnable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setMapCustomStyleEnable(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setMapCustomStyleEnable(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setMapCustomStyleEnable(var1);
+                    __this__.setMapCustomStyleEnable(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2239,35 +781,32 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setPadding", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
-                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
-                // jsonable arg
-                int var4 = (int) ((Map<String, Object>) __args__).get("var4");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
+                Number var4 = (Number) ((Map<String, Object>) __args__).get("var4");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setPadding(" + var1 + var2 + var3 + var4 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setPadding(" + var1 + var2 + var3 + var4 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setPadding(var1, var2, var3, var4);
+                    __this__.setPadding(var1.intValue(), var2.intValue(), var3.intValue(), var4.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2277,10 +816,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::getMap", (__args__, __methodResult__) -> {
@@ -2288,18 +824,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::getMap(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::getMap(" + "" + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMap __result__;
+                com.baidu.mapapi.map.BaiduMap __result__ = null;
                 try {
-                    __result__ = ref.getMap();
+                    __result__ = __this__.getMap();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2309,14 +844,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::onDestroy", (__args__, __methodResult__) -> {
@@ -2324,17 +852,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::onDestroy(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::onDestroy(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onDestroy();
+                    __this__.onDestroy();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2344,10 +872,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setLogoPosition", (__args__, __methodResult__) -> {
@@ -2356,17 +881,17 @@ public class SubHandler14 {
                 com.baidu.mapapi.map.LogoPosition var1 = com.baidu.mapapi.map.LogoPosition.values()[(int) ((Map<String, Object>) __args__).get("var1")];
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setLogoPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setLogoPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setLogoPosition(var1);
+                    __this__.setLogoPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2376,10 +901,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::getLogoPosition", (__args__, __methodResult__) -> {
@@ -2387,18 +909,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::getLogoPosition(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::getLogoPosition(" + "" + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.LogoPosition __result__;
+                com.baidu.mapapi.map.LogoPosition __result__ = null;
                 try {
-                    __result__ = ref.getLogoPosition();
+                    __result__ = __this__.getLogoPosition();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2408,13 +929,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = __result__.ordinal();
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::onPause", (__args__, __methodResult__) -> {
@@ -2422,17 +937,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::onPause(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::onPause(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onPause();
+                    __this__.onPause();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2442,10 +957,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::onResume", (__args__, __methodResult__) -> {
@@ -2453,17 +965,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::onResume(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::onResume(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onResume();
+                    __this__.onResume();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2473,29 +985,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::showZoomControls", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::showZoomControls(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::showZoomControls(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.showZoomControls(var1);
+                    __this__.showZoomControls(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2505,30 +1014,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setZoomControlsPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setZoomControlsPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setZoomControlsPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setZoomControlsPosition(var1);
+                    __this__.setZoomControlsPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2538,29 +1043,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::showScaleControl", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::showScaleControl(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::showScaleControl(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.showScaleControl(var1);
+                    __this__.showScaleControl(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2570,30 +1072,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::setScaleControlPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::setScaleControlPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::setScaleControlPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setScaleControlPosition(var1);
+                    __this__.setScaleControlPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2603,10 +1101,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::getScaleControlViewWidth", (__args__, __methodResult__) -> {
@@ -2614,18 +1109,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::getScaleControlViewWidth(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::getScaleControlViewWidth(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getScaleControlViewWidth();
+                    __result__ = __this__.getScaleControlViewWidth();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2635,10 +1129,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::getScaleControlViewHeight", (__args__, __methodResult__) -> {
@@ -2646,18 +1137,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::getScaleControlViewHeight(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::getScaleControlViewHeight(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getScaleControlViewHeight();
+                    __result__ = __this__.getScaleControlViewHeight();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2667,10 +1157,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::getMapLevel", (__args__, __methodResult__) -> {
@@ -2678,18 +1165,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::getMapLevel(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::getMapLevel(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getMapLevel();
+                    __result__ = __this__.getMapLevel();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2699,30 +1185,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::onSaveInstanceState", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
+                android.os.Bundle var1 = (android.os.Bundle) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::onSaveInstanceState(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::onSaveInstanceState(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onSaveInstanceState(var1);
+                    __this__.onSaveInstanceState(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2732,33 +1214,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextureMapView::onCreate", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                android.os.Bundle var2 = __var2RefId__ != null ? (android.os.Bundle) getHEAP().get(__var2RefId__) : null;
+                android.os.Bundle var2 = (android.os.Bundle) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextureMapView ref = (com.baidu.mapapi.map.TextureMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + refId + "::onCreate(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextureMapView@" + __this__ + "::onCreate(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onCreate(var1, var2);
+                    __this__.onCreate(var1, var2);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2768,10 +1245,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::isVisible", (__args__, __methodResult__) -> {
@@ -2779,18 +1253,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::isVisible(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::isVisible(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isVisible();
+                    __result__ = __this__.isVisible();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2800,29 +1273,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::setVisible", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::setVisible(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::setVisible(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setVisible(var1);
+                    __this__.setVisible(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2832,10 +1302,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::getZIndex", (__args__, __methodResult__) -> {
@@ -2843,18 +1310,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::getZIndex(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::getZIndex(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getZIndex();
+                    __result__ = __this__.getZIndex();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2864,29 +1330,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::setZIndex", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::setZIndex(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::setZIndex(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setZIndex(var1);
+                    __this__.setZIndex(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2896,10 +1359,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::getExtraInfo", (__args__, __methodResult__) -> {
@@ -2907,18 +1367,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::getExtraInfo(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::getExtraInfo(" + "" + ")");
                 }
             
                 // invoke native method
-                android.os.Bundle __result__;
+                android.os.Bundle __result__ = null;
                 try {
-                    __result__ = ref.getExtraInfo();
+                    __result__ = __this__.getExtraInfo();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2928,34 +1387,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::setExtraInfo", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
+                android.os.Bundle var1 = (android.os.Bundle) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::setExtraInfo(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::setExtraInfo(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setExtraInfo(var1);
+                    __this__.setExtraInfo(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2965,10 +1416,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::remove", (__args__, __methodResult__) -> {
@@ -2976,17 +1424,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::remove(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::remove(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.remove();
+                    __this__.remove();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -2996,10 +1444,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Overlay::isRemoved", (__args__, __methodResult__) -> {
@@ -3007,18 +1452,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Overlay ref = (com.baidu.mapapi.map.Overlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.Overlay __this__ = (com.baidu.mapapi.map.Overlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + refId + "::isRemoved(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Overlay@" + __this__ + "::isRemoved(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isRemoved();
+                    __result__ = __this__.isRemoved();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3028,10 +1472,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.HoleOptions::getHoleType", (__args__, __methodResult__) -> {
@@ -3039,18 +1480,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.HoleOptions ref = (com.baidu.mapapi.map.HoleOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.HoleOptions __this__ = (com.baidu.mapapi.map.HoleOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.HoleOptions@" + refId + "::getHoleType(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.HoleOptions@" + __this__ + "::getHoleType(" + "" + ")");
                 }
             
                 // invoke native method
-                String __result__;
+                String __result__ = null;
                 try {
-                    __result__ = ref.getHoleType();
+                    __result__ = __this__.getHoleType();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3060,10 +1500,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.HeatMap::removeHeatMap", (__args__, __methodResult__) -> {
@@ -3071,17 +1508,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.HeatMap ref = (com.baidu.mapapi.map.HeatMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.HeatMap __this__ = (com.baidu.mapapi.map.HeatMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.HeatMap@" + refId + "::removeHeatMap(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.HeatMap@" + __this__ + "::removeHeatMap(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.removeHeatMap();
+                    __this__.removeHeatMap();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3091,30 +1528,199 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapStatus.Builder::rotate", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
-                __methodResult__.success(jsonableResult);
+                // ref
+                com.baidu.mapapi.map.MapStatus.Builder __this__ = (com.baidu.mapapi.map.MapStatus.Builder) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapStatus.Builder@" + __this__ + "::rotate(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.MapStatus.Builder __result__ = null;
+                try {
+                    __result__ = __this__.rotate(var1.floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapStatus.Builder::target", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.map.MapStatus.Builder __this__ = (com.baidu.mapapi.map.MapStatus.Builder) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapStatus.Builder@" + __this__ + "::target(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.MapStatus.Builder __result__ = null;
+                try {
+                    __result__ = __this__.target(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapStatus.Builder::overlook", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.map.MapStatus.Builder __this__ = (com.baidu.mapapi.map.MapStatus.Builder) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapStatus.Builder@" + __this__ + "::overlook(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.MapStatus.Builder __result__ = null;
+                try {
+                    __result__ = __this__.overlook(var1.floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapStatus.Builder::zoom", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.map.MapStatus.Builder __this__ = (com.baidu.mapapi.map.MapStatus.Builder) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapStatus.Builder@" + __this__ + "::zoom(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.MapStatus.Builder __result__ = null;
+                try {
+                    __result__ = __this__.zoom(var1.floatValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapStatus.Builder::targetScreen", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.map.MapStatus.Builder __this__ = (com.baidu.mapapi.map.MapStatus.Builder) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapStatus.Builder@" + __this__ + "::targetScreen(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.MapStatus.Builder __result__ = null;
+                try {
+                    __result__ = __this__.targetScreen(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapStatus.Builder::build", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapStatus.Builder __this__ = (com.baidu.mapapi.map.MapStatus.Builder) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapStatus.Builder@" + __this__ + "::build(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.MapStatus __result__ = null;
+                try {
+                    __result__ = __this__.build();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setIcon", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.BitmapDescriptor var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.BitmapDescriptor var1 = (com.baidu.mapapi.map.BitmapDescriptor) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setIcon(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setIcon(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setIcon(var1);
+                    __this__.setIcon(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3124,29 +1730,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setAnimateType", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setAnimateType(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setAnimateType(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setAnimateType(var1);
+                    __this__.setAnimateType(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3156,10 +1759,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getIcon", (__args__, __methodResult__) -> {
@@ -3167,18 +1767,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getIcon(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getIcon(" + "" + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BitmapDescriptor __result__;
+                com.baidu.mapapi.map.BitmapDescriptor __result__ = null;
                 try {
-                    __result__ = ref.getIcon();
+                    __result__ = __this__.getIcon();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3188,37 +1787,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setIcons", (__args__, __methodResult__) -> {
                 // args
-                // list arg
-                List<Integer> var1RefIdList = (List<Integer>) ((Map<String, Object>) __args__).get("var1");
-                java.util.ArrayList<com.baidu.mapapi.map.BitmapDescriptor> var1 = new ArrayList<>();
-                for (int refId : var1RefIdList) {
-                    ((ArrayList<com.baidu.mapapi.map.BitmapDescriptor>) var1).add((com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(refId));
-                }
+                // ref arg
+                java.util.ArrayList<com.baidu.mapapi.map.BitmapDescriptor> var1 = (java.util.ArrayList<com.baidu.mapapi.map.BitmapDescriptor>) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setIcons(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setIcons(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setIcons((ArrayList) var1);
+                    __this__.setIcons(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3228,10 +1816,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getIcons", (__args__, __methodResult__) -> {
@@ -3239,18 +1824,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getIcons(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getIcons(" + "" + ")");
                 }
             
                 // invoke native method
-                java.util.ArrayList<com.baidu.mapapi.map.BitmapDescriptor> __result__;
+                java.util.ArrayList<com.baidu.mapapi.map.BitmapDescriptor> __result__ = null;
                 try {
-                    __result__ = ref.getIcons();
+                    __result__ = __this__.getIcons();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3260,36 +1844,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                List<Integer> jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = new ArrayList<>();
-                    for (com.baidu.mapapi.map.BitmapDescriptor item : __result__) {
-                        getHEAP().put(System.identityHashCode(item), item);
-                        jsonableResult.add(System.identityHashCode(item));
-                    }
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setPeriod", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setPeriod(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setPeriod(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setPeriod(var1);
+                    __this__.setPeriod(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3299,29 +1873,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setAlpha", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setAlpha(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setAlpha(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setAlpha(new Double(var1).floatValue());
+                    __this__.setAlpha(var1.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3331,10 +1902,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getAlpha", (__args__, __methodResult__) -> {
@@ -3342,18 +1910,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getAlpha(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getAlpha(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getAlpha();
+                    __result__ = __this__.getAlpha();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3363,10 +1930,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getPeriod", (__args__, __methodResult__) -> {
@@ -3374,18 +1938,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getPeriod(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getPeriod(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getPeriod();
+                    __result__ = __this__.getPeriod();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3395,10 +1958,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setToTop", (__args__, __methodResult__) -> {
@@ -3406,17 +1966,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setToTop(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setToTop(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setToTop();
+                    __this__.setToTop();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3426,30 +1986,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setPosition(var1);
+                    __this__.setPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3459,30 +2015,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setPositionWithInfoWindow", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setPositionWithInfoWindow(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setPositionWithInfoWindow(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setPositionWithInfoWindow(var1);
+                    __this__.setPositionWithInfoWindow(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3492,10 +2044,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getPosition", (__args__, __methodResult__) -> {
@@ -3503,18 +2052,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getPosition(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getPosition(" + "" + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.model.LatLng __result__;
+                com.baidu.mapapi.model.LatLng __result__ = null;
                 try {
-                    __result__ = ref.getPosition();
+                    __result__ = __this__.getPosition();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3524,33 +2072,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setPerspective", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setPerspective(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setPerspective(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setPerspective(var1);
+                    __this__.setPerspective(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3560,10 +2101,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::isPerspective", (__args__, __methodResult__) -> {
@@ -3571,18 +2109,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::isPerspective(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::isPerspective(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isPerspective();
+                    __result__ = __this__.isPerspective();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3592,29 +2129,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setDraggable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setDraggable(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setDraggable(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setDraggable(var1);
+                    __this__.setDraggable(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3624,10 +2158,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::isDraggable", (__args__, __methodResult__) -> {
@@ -3635,18 +2166,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::isDraggable(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::isDraggable(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isDraggable();
+                    __result__ = __this__.isDraggable();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3656,10 +2186,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::isFlat", (__args__, __methodResult__) -> {
@@ -3667,18 +2194,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::isFlat(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::isFlat(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isFlat();
+                    __result__ = __this__.isFlat();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3688,29 +2214,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setFlat", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setFlat(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setFlat(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setFlat(var1);
+                    __this__.setFlat(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3720,31 +2243,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setAnchor", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setAnchor(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setAnchor(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setAnchor(new Double(var1).floatValue(), new Double(var2).floatValue());
+                    __this__.setAnchor(var1.floatValue(), var2.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3754,10 +2274,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getAnchorX", (__args__, __methodResult__) -> {
@@ -3765,18 +2282,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getAnchorX(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getAnchorX(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getAnchorX();
+                    __result__ = __this__.getAnchorX();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3786,10 +2302,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getAnchorY", (__args__, __methodResult__) -> {
@@ -3797,18 +2310,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getAnchorY(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getAnchorY(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getAnchorY();
+                    __result__ = __this__.getAnchorY();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3818,29 +2330,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setRotate", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setRotate(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setRotate(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setRotate(new Double(var1).floatValue());
+                    __this__.setRotate(var1.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3850,10 +2359,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getRotate", (__args__, __methodResult__) -> {
@@ -3861,18 +2367,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getRotate(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getRotate(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getRotate();
+                    __result__ = __this__.getRotate();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3882,29 +2387,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setTitle", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setTitle(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setTitle(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setTitle(var1);
+                    __this__.setTitle(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3914,10 +2416,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getTitle", (__args__, __methodResult__) -> {
@@ -3925,18 +2424,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getTitle(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getTitle(" + "" + ")");
                 }
             
                 // invoke native method
-                String __result__;
+                String __result__ = null;
                 try {
-                    __result__ = ref.getTitle();
+                    __result__ = __this__.getTitle();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3946,10 +2444,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getId", (__args__, __methodResult__) -> {
@@ -3957,18 +2452,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getId(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getId(" + "" + ")");
                 }
             
                 // invoke native method
-                String __result__;
+                String __result__ = null;
                 try {
-                    __result__ = ref.getId();
+                    __result__ = __this__.getId();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -3978,10 +2472,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getYOffset", (__args__, __methodResult__) -> {
@@ -3989,18 +2480,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getYOffset(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getYOffset(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getYOffset();
+                    __result__ = __this__.getYOffset();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4010,29 +2500,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setYOffset", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setYOffset(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setYOffset(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setYOffset(var1);
+                    __this__.setYOffset(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4042,30 +2529,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setAnimation", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.animation.Animation var1 = __var1RefId__ != null ? (com.baidu.mapapi.animation.Animation) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.animation.Animation var1 = (com.baidu.mapapi.animation.Animation) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setAnimation(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setAnimation(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setAnimation(var1);
+                    __this__.setAnimation(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4075,10 +2558,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::startAnimation", (__args__, __methodResult__) -> {
@@ -4086,17 +2566,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::startAnimation(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::startAnimation(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.startAnimation();
+                    __this__.startAnimation();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4106,10 +2586,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::cancelAnimation", (__args__, __methodResult__) -> {
@@ -4117,17 +2594,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::cancelAnimation(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::cancelAnimation(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.cancelAnimation();
+                    __this__.cancelAnimation();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4137,10 +2614,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getScaleX", (__args__, __methodResult__) -> {
@@ -4148,18 +2622,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getScaleX(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getScaleX(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getScaleX();
+                    __result__ = __this__.getScaleX();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4169,29 +2642,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setScaleX", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setScaleX(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setScaleX(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setScaleX(new Double(var1).floatValue());
+                    __this__.setScaleX(var1.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4201,10 +2671,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getScaleY", (__args__, __methodResult__) -> {
@@ -4212,18 +2679,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getScaleY(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getScaleY(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getScaleY();
+                    __result__ = __this__.getScaleY();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4233,29 +2699,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setScaleY", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setScaleY(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setScaleY(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setScaleY(new Double(var1).floatValue());
+                    __this__.setScaleY(var1.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4265,10 +2728,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getScale", (__args__, __methodResult__) -> {
@@ -4276,18 +2736,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getScale(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getScale(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getScale();
+                    __result__ = __this__.getScale();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4297,29 +2756,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setScale", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setScale(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setScale(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setScale(new Double(var1).floatValue());
+                    __this__.setScale(var1.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4329,10 +2785,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::isFixed", (__args__, __methodResult__) -> {
@@ -4340,18 +2793,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::isFixed(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::isFixed(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isFixed();
+                    __result__ = __this__.isFixed();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4361,30 +2813,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setFixedScreenPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setFixedScreenPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setFixedScreenPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setFixedScreenPosition(var1);
+                    __this__.setFixedScreenPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4394,10 +2842,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getFixedPosition", (__args__, __methodResult__) -> {
@@ -4405,18 +2850,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getFixedPosition(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getFixedPosition(" + "" + ")");
                 }
             
                 // invoke native method
-                android.graphics.Point __result__;
+                android.graphics.Point __result__ = null;
                 try {
-                    __result__ = ref.getFixedPosition();
+                    __result__ = __this__.getFixedPosition();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4426,33 +2870,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::setClickable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::setClickable(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::setClickable(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setClickable(var1);
+                    __this__.setClickable(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4462,10 +2899,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::isClickable", (__args__, __methodResult__) -> {
@@ -4473,18 +2907,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::isClickable(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::isClickable(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isClickable();
+                    __result__ = __this__.isClickable();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4494,10 +2927,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::getInfoWindow", (__args__, __methodResult__) -> {
@@ -4505,18 +2935,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::getInfoWindow(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::getInfoWindow(" + "" + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.InfoWindow __result__;
+                com.baidu.mapapi.map.InfoWindow __result__ = null;
                 try {
-                    __result__ = ref.getInfoWindow();
+                    __result__ = __this__.getInfoWindow();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4526,34 +2955,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::showInfoWindow", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.InfoWindow var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.InfoWindow) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.InfoWindow var1 = (com.baidu.mapapi.map.InfoWindow) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::showInfoWindow(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::showInfoWindow(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.showInfoWindow(var1);
+                    __this__.showInfoWindow(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4563,30 +2984,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::showSmoothMoveInfoWindow", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.InfoWindow var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.InfoWindow) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.InfoWindow var1 = (com.baidu.mapapi.map.InfoWindow) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::showSmoothMoveInfoWindow(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::showSmoothMoveInfoWindow(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.showSmoothMoveInfoWindow(var1);
+                    __this__.showSmoothMoveInfoWindow(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4596,10 +3013,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::hideInfoWindow", (__args__, __methodResult__) -> {
@@ -4607,17 +3021,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::hideInfoWindow(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::hideInfoWindow(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.hideInfoWindow();
+                    __this__.hideInfoWindow();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4627,10 +3041,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::isInfoWindowEnabled", (__args__, __methodResult__) -> {
@@ -4638,18 +3049,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::isInfoWindowEnabled(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::isInfoWindowEnabled(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isInfoWindowEnabled();
+                    __result__ = __this__.isInfoWindowEnabled();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4659,30 +3069,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::updateInfoWindowView", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.view.View var1 = __var1RefId__ != null ? (android.view.View) getHEAP().get(__var1RefId__) : null;
+                android.view.View var1 = (android.view.View) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::updateInfoWindowView(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::updateInfoWindowView(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.updateInfoWindowView(var1);
+                    __this__.updateInfoWindowView(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4692,30 +3098,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::updateInfoWindowBitmapDescriptor", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.BitmapDescriptor var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.BitmapDescriptor var1 = (com.baidu.mapapi.map.BitmapDescriptor) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::updateInfoWindowBitmapDescriptor(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::updateInfoWindowBitmapDescriptor(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.updateInfoWindowBitmapDescriptor(var1);
+                    __this__.updateInfoWindowBitmapDescriptor(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4725,30 +3127,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::updateInfoWindowPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::updateInfoWindowPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::updateInfoWindowPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.updateInfoWindowPosition(var1);
+                    __this__.updateInfoWindowPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4758,29 +3156,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.Marker::updateInfoWindowYOffset", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.Marker ref = (com.baidu.mapapi.map.Marker) getHEAP().get(refId);
+                com.baidu.mapapi.map.Marker __this__ = (com.baidu.mapapi.map.Marker) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + refId + "::updateInfoWindowYOffset(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.Marker@" + __this__ + "::updateInfoWindowYOffset(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.updateInfoWindowYOffset(var1);
+                    __this__.updateInfoWindowYOffset(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4790,30 +3185,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TileOverlayOptions::setMaxTileTmp", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TileOverlayOptions ref = (com.baidu.mapapi.map.TileOverlayOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TileOverlayOptions __this__ = (com.baidu.mapapi.map.TileOverlayOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlayOptions@" + refId + "::setMaxTileTmp(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlayOptions@" + __this__ + "::setMaxTileTmp(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TileOverlayOptions __result__;
+                com.baidu.mapapi.map.TileOverlayOptions __result__ = null;
                 try {
-                    __result__ = ref.setMaxTileTmp(var1);
+                    __result__ = __this__.setMaxTileTmp(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4823,35 +3214,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TileOverlayOptions::tileProvider", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.TileProvider var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.TileProvider) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.TileProvider var1 = (com.baidu.mapapi.map.TileProvider) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TileOverlayOptions ref = (com.baidu.mapapi.map.TileOverlayOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TileOverlayOptions __this__ = (com.baidu.mapapi.map.TileOverlayOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlayOptions@" + refId + "::tileProvider(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlayOptions@" + __this__ + "::tileProvider(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TileOverlayOptions __result__;
+                com.baidu.mapapi.map.TileOverlayOptions __result__ = null;
                 try {
-                    __result__ = ref.tileProvider(var1);
+                    __result__ = __this__.tileProvider(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4861,35 +3243,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TileOverlayOptions::setPositionFromBounds", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLngBounds var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLngBounds) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.model.LatLngBounds var1 = (com.baidu.mapapi.model.LatLngBounds) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TileOverlayOptions ref = (com.baidu.mapapi.map.TileOverlayOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TileOverlayOptions __this__ = (com.baidu.mapapi.map.TileOverlayOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlayOptions@" + refId + "::setPositionFromBounds(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlayOptions@" + __this__ + "::setPositionFromBounds(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TileOverlayOptions __result__;
+                com.baidu.mapapi.map.TileOverlayOptions __result__ = null;
                 try {
-                    __result__ = ref.setPositionFromBounds(var1);
+                    __result__ = __this__.setPositionFromBounds(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4899,35 +3272,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::mapStatus", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.MapStatus var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.MapStatus) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.MapStatus var1 = (com.baidu.mapapi.map.MapStatus) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::mapStatus(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::mapStatus(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.mapStatus(var1);
+                    __result__ = __this__.mapStatus(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4937,34 +3301,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::compassEnabled", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::compassEnabled(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::compassEnabled(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.compassEnabled(var1);
+                    __result__ = __this__.compassEnabled(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -4974,34 +3330,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::mapType", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::mapType(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::mapType(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.mapType(var1);
+                    __result__ = __this__.mapType(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5011,34 +3359,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::rotateGesturesEnabled", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::rotateGesturesEnabled(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::rotateGesturesEnabled(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.rotateGesturesEnabled(var1);
+                    __result__ = __this__.rotateGesturesEnabled(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5048,34 +3388,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::scrollGesturesEnabled", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::scrollGesturesEnabled(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::scrollGesturesEnabled(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.scrollGesturesEnabled(var1);
+                    __result__ = __this__.scrollGesturesEnabled(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5085,34 +3417,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::overlookingGesturesEnabled", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::overlookingGesturesEnabled(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::overlookingGesturesEnabled(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.overlookingGesturesEnabled(var1);
+                    __result__ = __this__.overlookingGesturesEnabled(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5122,34 +3446,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::zoomControlsEnabled", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::zoomControlsEnabled(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::zoomControlsEnabled(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.zoomControlsEnabled(var1);
+                    __result__ = __this__.zoomControlsEnabled(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5159,34 +3475,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::zoomGesturesEnabled", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::zoomGesturesEnabled(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::zoomGesturesEnabled(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.zoomGesturesEnabled(var1);
+                    __result__ = __this__.zoomGesturesEnabled(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5196,34 +3504,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::scaleControlEnabled", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::scaleControlEnabled(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::scaleControlEnabled(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.scaleControlEnabled(var1);
+                    __result__ = __this__.scaleControlEnabled(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5233,35 +3533,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::scaleControlPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::scaleControlPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::scaleControlPosition(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.scaleControlPosition(var1);
+                    __result__ = __this__.scaleControlPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5271,35 +3562,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::zoomControlsPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::zoomControlsPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::zoomControlsPosition(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.zoomControlsPosition(var1);
+                    __result__ = __this__.zoomControlsPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5309,14 +3591,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.BaiduMapOptions::logoPosition", (__args__, __methodResult__) -> {
@@ -5325,18 +3600,17 @@ public class SubHandler14 {
                 com.baidu.mapapi.map.LogoPosition var1 = com.baidu.mapapi.map.LogoPosition.values()[(int) ((Map<String, Object>) __args__).get("var1")];
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.BaiduMapOptions ref = (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.BaiduMapOptions __this__ = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + refId + "::logoPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.BaiduMapOptions@" + __this__ + "::logoPosition(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMapOptions __result__;
+                com.baidu.mapapi.map.BaiduMapOptions __result__ = null;
                 try {
-                    __result__ = ref.logoPosition(var1);
+                    __result__ = __this__.logoPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5346,14 +3620,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener", (__args__, __methodResult__) -> {
@@ -5361,19 +3628,19 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setOnDismissCallbackListener(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setOnDismissCallbackListener(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setOnDismissCallbackListener(new com.baidu.mapapi.map.WearMapView.OnDismissCallback() {
+                    __this__.setOnDismissCallbackListener(new com.baidu.mapapi.map.WearMapView.OnDismissCallback() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setOnDismissCallbackListener::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -5383,9 +3650,6 @@ public class SubHandler14 {
                             if (getEnableLog()) {
                                 Log.d("java-callback", "fluttify-java-callback: onDismiss(" + "" + ")");
                             }
-            
-                            // convert to jsonable data
-            
             
                             // call dart method
                             handler.post(new Runnable() {
@@ -5410,9 +3674,6 @@ public class SubHandler14 {
                             if (getEnableLog()) {
                                 Log.d("java-callback", "fluttify-java-callback: onNotify(" + "" + ")");
                             }
-            
-                            // convert to jsonable data
-            
             
                             // call dart method
                             handler.post(new Runnable() {
@@ -5441,10 +3702,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setShape", (__args__, __methodResult__) -> {
@@ -5453,17 +3711,17 @@ public class SubHandler14 {
                 com.baidu.mapapi.map.WearMapView.ScreenShape var1 = com.baidu.mapapi.map.WearMapView.ScreenShape.values()[(int) ((Map<String, Object>) __args__).get("var1")];
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setShape(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setShape(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setShape(var1);
+                    __this__.setShape(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5473,15 +3731,12 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setCustomMapStylePath", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
@@ -5493,6 +3748,7 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
                     com.baidu.mapapi.map.WearMapView.setCustomMapStylePath(var0);
                 } catch (Throwable throwable) {
@@ -5504,16 +3760,13 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setIconCustom", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
+                // ref arg
+                Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
             
@@ -5524,8 +3777,9 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    com.baidu.mapapi.map.WearMapView.setIconCustom(var0);
+                    com.baidu.mapapi.map.WearMapView.setIconCustom(var0.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5535,16 +3789,13 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setLoadCustomMapStyleFileMode", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
+                // ref arg
+                Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
             
@@ -5555,8 +3806,9 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    com.baidu.mapapi.map.WearMapView.setLoadCustomMapStyleFileMode(var0);
+                    com.baidu.mapapi.map.WearMapView.setLoadCustomMapStyleFileMode(var0.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5566,15 +3818,12 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setMapCustomEnable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
@@ -5586,6 +3835,7 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
                     com.baidu.mapapi.map.WearMapView.setMapCustomEnable(var0);
                 } catch (Throwable throwable) {
@@ -5597,31 +3847,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setCustomStyleFilePathAndMode", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setCustomStyleFilePathAndMode(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setCustomStyleFilePathAndMode(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setCustomStyleFilePathAndMode(var1, var2);
+                    __this__.setCustomStyleFilePathAndMode(var1, var2.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5631,29 +3878,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setMapCustomStylePath", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setMapCustomStylePath(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setMapCustomStylePath(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setMapCustomStylePath(var1);
+                    __this__.setMapCustomStylePath(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5663,32 +3907,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setMapCustomStyle", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.MapCustomStyleOptions var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.MapCustomStyleOptions) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.MapCustomStyleOptions var1 = (com.baidu.mapapi.map.MapCustomStyleOptions) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setMapCustomStyle(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setMapCustomStyle(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
+                    __this__.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.WearMapView::setMapCustomStyle::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -5699,10 +3939,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onPreLoadLastCustomMapStyle(" + var1 + ")");
                             }
             
-                            // convert to jsonable data
-                            // jsonable arg
-                            String argvar1 = var1;
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -5710,7 +3946,7 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
+                                            put("var1", var1);
                                         }}
                                     );
                                 }
@@ -5727,12 +3963,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadSuccess(" + var1 + var2 + ")");
                             }
             
-                            // convert to jsonable data
-                            // jsonable arg
-                            boolean argvar1 = var1;
-                            // jsonable arg
-                            String argvar2 = var2;
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -5740,8 +3970,8 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
+                                            put("var1", var1);
+                                            put("var2", var2);
                                         }}
                                     );
                                 }
@@ -5758,14 +3988,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadFailed(" + var1 + var2 + var3 + ")");
                             }
             
-                            // convert to jsonable data
-                            // jsonable arg
-                            int argvar1 = var1;
-                            // jsonable arg
-                            String argvar2 = var2;
-                            // jsonable arg
-                            String argvar3 = var3;
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -5773,9 +3995,9 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
-                                            put("var3", argvar3);
+                                            put("var1", var1);
+                                            put("var2", var2);
+                                            put("var3", var3);
                                         }}
                                     );
                                 }
@@ -5795,29 +4017,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setMapCustomStyleEnable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setMapCustomStyleEnable(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setMapCustomStyleEnable(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setMapCustomStyleEnable(var1);
+                    __this__.setMapCustomStyleEnable(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5827,31 +4046,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::onInterceptTouchEvent", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.view.MotionEvent var1 = __var1RefId__ != null ? (android.view.MotionEvent) getHEAP().get(__var1RefId__) : null;
+                android.view.MotionEvent var1 = (android.view.MotionEvent) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::onInterceptTouchEvent(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::onInterceptTouchEvent(" + var1 + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.onInterceptTouchEvent(var1);
+                    __result__ = __this__.onInterceptTouchEvent(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5861,29 +4075,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setViewAnimitionEnable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setViewAnimitionEnable(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setViewAnimitionEnable(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setViewAnimitionEnable(var1);
+                    __this__.setViewAnimitionEnable(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5893,10 +4104,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::getMap", (__args__, __methodResult__) -> {
@@ -5904,18 +4112,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::getMap(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::getMap(" + "" + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.BaiduMap __result__;
+                com.baidu.mapapi.map.BaiduMap __result__ = null;
                 try {
-                    __result__ = ref.getMap();
+                    __result__ = __this__.getMap();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5925,14 +4132,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::onDestroy", (__args__, __methodResult__) -> {
@@ -5940,17 +4140,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::onDestroy(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::onDestroy(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onDestroy();
+                    __this__.onDestroy();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5960,10 +4160,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::onDismiss", (__args__, __methodResult__) -> {
@@ -5971,17 +4168,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::onDismiss(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::onDismiss(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onDismiss();
+                    __this__.onDismiss();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5991,30 +4188,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::onEnterAmbient", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
+                android.os.Bundle var1 = (android.os.Bundle) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::onEnterAmbient(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::onEnterAmbient(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onEnterAmbient(var1);
+                    __this__.onEnterAmbient(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6024,10 +4217,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::onExitAmbient", (__args__, __methodResult__) -> {
@@ -6035,17 +4225,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::onExitAmbient(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::onExitAmbient(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onExitAmbient();
+                    __this__.onExitAmbient();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6055,10 +4245,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::getMapLevel", (__args__, __methodResult__) -> {
@@ -6066,18 +4253,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::getMapLevel(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::getMapLevel(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getMapLevel();
+                    __result__ = __this__.getMapLevel();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6087,35 +4273,32 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setPadding", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
-                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
-                // jsonable arg
-                int var4 = (int) ((Map<String, Object>) __args__).get("var4");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
+                Number var4 = (Number) ((Map<String, Object>) __args__).get("var4");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setPadding(" + var1 + var2 + var3 + var4 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setPadding(" + var1 + var2 + var3 + var4 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setPadding(var1, var2, var3, var4);
+                    __this__.setPadding(var1.intValue(), var2.intValue(), var3.intValue(), var4.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6125,29 +4308,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::showZoomControls", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::showZoomControls(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::showZoomControls(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.showZoomControls(var1);
+                    __this__.showZoomControls(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6157,30 +4337,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setZoomControlsPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setZoomControlsPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setZoomControlsPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setZoomControlsPosition(var1);
+                    __this__.setZoomControlsPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6190,29 +4366,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::showScaleControl", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::showScaleControl(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::showScaleControl(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.showScaleControl(var1);
+                    __this__.showScaleControl(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6222,10 +4395,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::getScaleControlViewWidth", (__args__, __methodResult__) -> {
@@ -6233,18 +4403,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::getScaleControlViewWidth(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::getScaleControlViewWidth(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getScaleControlViewWidth();
+                    __result__ = __this__.getScaleControlViewWidth();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6254,10 +4423,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::getScaleControlViewHeight", (__args__, __methodResult__) -> {
@@ -6265,18 +4431,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::getScaleControlViewHeight(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::getScaleControlViewHeight(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getScaleControlViewHeight();
+                    __result__ = __this__.getScaleControlViewHeight();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6286,30 +4451,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::setScaleControlPosition", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::setScaleControlPosition(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::setScaleControlPosition(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setScaleControlPosition(var1);
+                    __this__.setScaleControlPosition(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6319,30 +4480,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::onSaveInstanceState", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
+                android.os.Bundle var1 = (android.os.Bundle) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::onSaveInstanceState(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::onSaveInstanceState(" + var1 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onSaveInstanceState(var1);
+                    __this__.onSaveInstanceState(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6352,33 +4509,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.WearMapView::onCreate", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                android.os.Bundle var2 = __var2RefId__ != null ? (android.os.Bundle) getHEAP().get(__var2RefId__) : null;
+                android.os.Bundle var2 = (android.os.Bundle) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.WearMapView ref = (com.baidu.mapapi.map.WearMapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.WearMapView __this__ = (com.baidu.mapapi.map.WearMapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + refId + "::onCreate(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.WearMapView@" + __this__ + "::onCreate(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.onCreate(var1, var2);
+                    __this__.onCreate(var1, var2);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6388,10 +4540,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getText", (__args__, __methodResult__) -> {
@@ -6399,18 +4548,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getText(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getText(" + "" + ")");
                 }
             
                 // invoke native method
-                String __result__;
+                String __result__ = null;
                 try {
-                    __result__ = ref.getText();
+                    __result__ = __this__.getText();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6420,10 +4568,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getPosition", (__args__, __methodResult__) -> {
@@ -6431,18 +4576,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getPosition(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getPosition(" + "" + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.model.LatLng __result__;
+                com.baidu.mapapi.model.LatLng __result__ = null;
                 try {
-                    __result__ = ref.getPosition();
+                    __result__ = __this__.getPosition();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6452,14 +4596,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getBgColor", (__args__, __methodResult__) -> {
@@ -6467,18 +4604,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getBgColor(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getBgColor(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getBgColor();
+                    __result__ = __this__.getBgColor();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6488,10 +4624,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getFontColor", (__args__, __methodResult__) -> {
@@ -6499,18 +4632,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getFontColor(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getFontColor(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getFontColor();
+                    __result__ = __this__.getFontColor();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6520,10 +4652,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getFontSize", (__args__, __methodResult__) -> {
@@ -6531,18 +4660,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getFontSize(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getFontSize(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getFontSize();
+                    __result__ = __this__.getFontSize();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6552,10 +4680,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getAlignX", (__args__, __methodResult__) -> {
@@ -6563,18 +4688,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getAlignX(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getAlignX(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getAlignX();
+                    __result__ = __this__.getAlignX();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6584,10 +4708,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getAlignY", (__args__, __methodResult__) -> {
@@ -6595,18 +4716,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getAlignY(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getAlignY(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getAlignY();
+                    __result__ = __this__.getAlignY();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6616,10 +4736,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getRotate", (__args__, __methodResult__) -> {
@@ -6627,18 +4744,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getRotate(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getRotate(" + "" + ")");
                 }
             
                 // invoke native method
-                float __result__;
+                Float __result__ = null;
                 try {
-                    __result__ = ref.getRotate();
+                    __result__ = __this__.getRotate();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6648,30 +4764,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::text", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::text(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::text(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.text(var1);
+                    __result__ = __this__.text(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6681,35 +4793,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::position", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::position(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::position(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.position(var1);
+                    __result__ = __this__.position(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6719,34 +4822,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::bgColor", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::bgColor(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::bgColor(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.bgColor(var1);
+                    __result__ = __this__.bgColor(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6756,34 +4851,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::fontColor", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::fontColor(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::fontColor(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.fontColor(var1);
+                    __result__ = __this__.fontColor(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6793,34 +4880,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::fontSize", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::fontSize(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::fontSize(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.fontSize(var1);
+                    __result__ = __this__.fontSize(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6830,36 +4909,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::align", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::align(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::align(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.align(var1, var2);
+                    __result__ = __this__.align(var1.intValue(), var2.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6869,34 +4940,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::rotate", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::rotate(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::rotate(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.rotate(new Double(var1).floatValue());
+                    __result__ = __this__.rotate(var1.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6906,34 +4969,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::visible", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::visible(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::visible(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.visible(var1);
+                    __result__ = __this__.visible(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6943,14 +4998,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::isVisible", (__args__, __methodResult__) -> {
@@ -6958,18 +5006,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::isVisible(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::isVisible(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.isVisible();
+                    __result__ = __this__.isVisible();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -6979,30 +5026,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::zIndex", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::zIndex(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::zIndex(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.zIndex(var1);
+                    __result__ = __this__.zIndex(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7012,14 +5055,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getZIndex", (__args__, __methodResult__) -> {
@@ -7027,18 +5063,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getZIndex(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getZIndex(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.getZIndex();
+                    __result__ = __this__.getZIndex();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7048,31 +5083,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::extraInfo", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.os.Bundle var1 = __var1RefId__ != null ? (android.os.Bundle) getHEAP().get(__var1RefId__) : null;
+                android.os.Bundle var1 = (android.os.Bundle) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::extraInfo(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::extraInfo(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.TextOptions __result__;
+                com.baidu.mapapi.map.TextOptions __result__ = null;
                 try {
-                    __result__ = ref.extraInfo(var1);
+                    __result__ = __this__.extraInfo(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7082,14 +5112,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TextOptions::getExtraInfo", (__args__, __methodResult__) -> {
@@ -7097,18 +5120,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TextOptions ref = (com.baidu.mapapi.map.TextOptions) getHEAP().get(refId);
+                com.baidu.mapapi.map.TextOptions __this__ = (com.baidu.mapapi.map.TextOptions) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + refId + "::getExtraInfo(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TextOptions@" + __this__ + "::getExtraInfo(" + "" + ")");
                 }
             
                 // invoke native method
-                android.os.Bundle __result__;
+                android.os.Bundle __result__ = null;
                 try {
-                    __result__ = ref.getExtraInfo();
+                    __result__ = __this__.getExtraInfo();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7118,14 +5140,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TileOverlay::clearTileCache", (__args__, __methodResult__) -> {
@@ -7133,18 +5148,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TileOverlay ref = (com.baidu.mapapi.map.TileOverlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.TileOverlay __this__ = (com.baidu.mapapi.map.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlay@" + refId + "::clearTileCache(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlay@" + __this__ + "::clearTileCache(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.clearTileCache();
+                    __result__ = __this__.clearTileCache();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7154,10 +5168,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.TileOverlay::removeTileOverlay", (__args__, __methodResult__) -> {
@@ -7165,17 +5176,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.TileOverlay ref = (com.baidu.mapapi.map.TileOverlay) getHEAP().get(refId);
+                com.baidu.mapapi.map.TileOverlay __this__ = (com.baidu.mapapi.map.TileOverlay) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlay@" + refId + "::removeTileOverlay(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.TileOverlay@" + __this__ + "::removeTileOverlay(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.removeTileOverlay();
+                    __this__.removeTileOverlay();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7185,10 +5196,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::init", (__args__, __methodResult__) -> {
@@ -7196,20 +5204,19 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::init(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::init(" + "" + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.init(new com.baidu.mapapi.map.offline.MKOfflineMapListener() {
+                    __result__ = __this__.init(new com.baidu.mapapi.map.offline.MKOfflineMapListener() {
                         // method channel
-                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.offline.MKOfflineMap::init::Callback");
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.offline.MKOfflineMap::init::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
                         android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
             
                         // call dart method
@@ -7220,12 +5227,6 @@ public class SubHandler14 {
                                 Log.d("java-callback", "fluttify-java-callback: onGetOfflineMapState(" + var1 + var2 + ")");
                             }
             
-                            // convert to jsonable data
-                            // jsonable arg
-                            int argvar1 = var1;
-                            // jsonable arg
-                            int argvar2 = var2;
-            
                             // call dart method
                             handler.post(new Runnable() {
                                 @Override
@@ -7233,8 +5234,8 @@ public class SubHandler14 {
                                     callbackChannel.invokeMethod(
                                         "Callback::com.baidu.mapapi.map.offline.MKOfflineMapListener::onGetOfflineMapState",
                                         new HashMap<String, Object>() {{
-                                            put("var1", argvar1);
-                                            put("var2", argvar2);
+                                            put("var1", var1);
+                                            put("var2", var2);
                                         }}
                                     );
                                 }
@@ -7254,30 +5255,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::start", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::start(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::start(" + var1 + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.start(var1);
+                    __result__ = __this__.start(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7287,30 +5284,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::update", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::update(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::update(" + var1 + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.update(var1);
+                    __result__ = __this__.update(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7320,30 +5313,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::pause", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::pause(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::pause(" + var1 + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.pause(var1);
+                    __result__ = __this__.pause(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7353,10 +5342,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::destroy", (__args__, __methodResult__) -> {
@@ -7364,17 +5350,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::destroy(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::destroy(" + "" + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.destroy();
+                    __this__.destroy();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7384,30 +5370,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::remove", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::remove(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::remove(" + var1 + ")");
                 }
             
                 // invoke native method
-                boolean __result__;
+                Boolean __result__ = null;
                 try {
-                    __result__ = ref.remove(var1);
+                    __result__ = __this__.remove(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7417,10 +5399,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::getHotCityList", (__args__, __methodResult__) -> {
@@ -7428,18 +5407,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::getHotCityList(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::getHotCityList(" + "" + ")");
                 }
             
                 // invoke native method
-                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__;
+                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__ = null;
                 try {
-                    __result__ = ref.getHotCityList();
+                    __result__ = __this__.getHotCityList();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7449,17 +5427,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                List<Integer> jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = new ArrayList<>();
-                    for (com.baidu.mapapi.map.offline.MKOLSearchRecord item : __result__) {
-                        getHEAP().put(System.identityHashCode(item), item);
-                        jsonableResult.add(System.identityHashCode(item));
-                    }
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::getOfflineCityList", (__args__, __methodResult__) -> {
@@ -7467,18 +5435,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::getOfflineCityList(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::getOfflineCityList(" + "" + ")");
                 }
             
                 // invoke native method
-                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__;
+                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__ = null;
                 try {
-                    __result__ = ref.getOfflineCityList();
+                    __result__ = __this__.getOfflineCityList();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7488,37 +5455,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                List<Integer> jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = new ArrayList<>();
-                    for (com.baidu.mapapi.map.offline.MKOLSearchRecord item : __result__) {
-                        getHEAP().put(System.identityHashCode(item), item);
-                        jsonableResult.add(System.identityHashCode(item));
-                    }
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::searchCity", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::searchCity(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::searchCity(" + var1 + ")");
                 }
             
                 // invoke native method
-                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__;
+                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__ = null;
                 try {
-                    __result__ = ref.searchCity(var1);
+                    __result__ = __this__.searchCity(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7528,17 +5484,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                List<Integer> jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = new ArrayList<>();
-                    for (com.baidu.mapapi.map.offline.MKOLSearchRecord item : __result__) {
-                        getHEAP().put(System.identityHashCode(item), item);
-                        jsonableResult.add(System.identityHashCode(item));
-                    }
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::getAllUpdateInfo", (__args__, __methodResult__) -> {
@@ -7546,18 +5492,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::getAllUpdateInfo(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::getAllUpdateInfo(" + "" + ")");
                 }
             
                 // invoke native method
-                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLUpdateElement> __result__;
+                java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLUpdateElement> __result__ = null;
                 try {
-                    __result__ = ref.getAllUpdateInfo();
+                    __result__ = __this__.getAllUpdateInfo();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7567,37 +5512,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                List<Integer> jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = new ArrayList<>();
-                    for (com.baidu.mapapi.map.offline.MKOLUpdateElement item : __result__) {
-                        getHEAP().put(System.identityHashCode(item), item);
-                        jsonableResult.add(System.identityHashCode(item));
-                    }
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::getUpdateInfo", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::getUpdateInfo(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::getUpdateInfo(" + var1 + ")");
                 }
             
                 // invoke native method
-                com.baidu.mapapi.map.offline.MKOLUpdateElement __result__;
+                com.baidu.mapapi.map.offline.MKOLUpdateElement __result__ = null;
                 try {
-                    __result__ = ref.getUpdateInfo(var1);
+                    __result__ = __this__.getUpdateInfo(var1.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7607,14 +5541,7 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                Integer jsonableResult = null;
-                if (__result__ != null) {
-                    jsonableResult = System.identityHashCode(__result__);
-                    getHEAP().put(jsonableResult, __result__);
-                }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::importOfflineData", (__args__, __methodResult__) -> {
@@ -7622,18 +5549,17 @@ public class SubHandler14 {
             
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::importOfflineData(" + "" + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::importOfflineData(" + "" + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.importOfflineData();
+                    __result__ = __this__.importOfflineData();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7643,30 +5569,26 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.offline.MKOfflineMap::importOfflineData__bool", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.offline.MKOfflineMap ref = (com.baidu.mapapi.map.offline.MKOfflineMap) getHEAP().get(refId);
+                com.baidu.mapapi.map.offline.MKOfflineMap __this__ = (com.baidu.mapapi.map.offline.MKOfflineMap) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + refId + "::importOfflineData(" + var1 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.offline.MKOfflineMap@" + __this__ + "::importOfflineData(" + var1 + ")");
                 }
             
                 // invoke native method
-                int __result__;
+                Integer __result__ = null;
                 try {
-                    __result__ = ref.importOfflineData(var1);
+                    __result__ = __this__.importOfflineData(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7676,15 +5598,12 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.MapView::setCustomMapStylePath", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var0 = (String) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
@@ -7696,6 +5615,7 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
                     com.baidu.mapapi.map.MapView.setCustomMapStylePath(var0);
                 } catch (Throwable throwable) {
@@ -7707,16 +5627,13 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.MapView::setIconCustom", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
+                // ref arg
+                Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
             
@@ -7727,8 +5644,9 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    com.baidu.mapapi.map.MapView.setIconCustom(var0);
+                    com.baidu.mapapi.map.MapView.setIconCustom(var0.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7738,16 +5656,13 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.MapView::setLoadCustomMapStyleFileMode", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
-                int var0 = (int) ((Map<String, Object>) __args__).get("var0");
+                // ref arg
+                Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
             
@@ -7758,8 +5673,9 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    com.baidu.mapapi.map.MapView.setLoadCustomMapStyleFileMode(var0);
+                    com.baidu.mapapi.map.MapView.setLoadCustomMapStyleFileMode(var0.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7769,15 +5685,12 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.MapView::setMapCustomEnable", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
             
                 // ref
@@ -7789,6 +5702,7 @@ public class SubHandler14 {
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
                     com.baidu.mapapi.map.MapView.setMapCustomEnable(var0);
                 } catch (Throwable throwable) {
@@ -7800,31 +5714,28 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // method
             put("com.baidu.mapapi.map.MapView::setCustomStyleFilePathAndMode", (__args__, __methodResult__) -> {
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // ref
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                com.baidu.mapapi.map.MapView ref = (com.baidu.mapapi.map.MapView) getHEAP().get(refId);
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
             
                 // print log
                 if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + refId + "::setCustomStyleFilePathAndMode(" + var1 + var2 + ")");
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setCustomStyleFilePathAndMode(" + var1 + var2 + ")");
                 }
             
                 // invoke native method
+                Void __result__ = null;
                 try {
-                    ref.setCustomStyleFilePathAndMode(var1, var2);
+                    __this__.setCustomStyleFilePathAndMode(var1, var2.intValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -7834,10 +5745,407 @@ public class SubHandler14 {
                     return;
                 }
             
-                // convert result to jsonable result
-                String jsonableResult = "success";
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::setMapCustomStylePath", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
-                __methodResult__.success(jsonableResult);
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setMapCustomStylePath(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setMapCustomStylePath(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::setMapCustomStyle", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                com.baidu.mapapi.map.MapCustomStyleOptions var1 = (com.baidu.mapapi.map.MapCustomStyleOptions) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setMapCustomStyle(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setMapCustomStyle(var1, new com.baidu.mapapi.map.CustomMapStyleCallBack() {
+                        // method channel
+                        MethodChannel callbackChannel = new MethodChannel(messenger, "com.baidu.mapapi.map.MapView::setMapCustomStyle::Callback@" + String.valueOf(System.identityHashCode(__this__)), new StandardMethodCodec(new FluttifyMessageCodec()));
+                        android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
+            
+                        // call dart method
+                        @Override
+                        public boolean onPreLoadLastCustomMapStyle(String var1) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onPreLoadLastCustomMapStyle(" + var1 + ")");
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onPreLoadLastCustomMapStyle",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", var1);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
+            
+                        @Override
+                        public boolean onCustomMapStyleLoadSuccess(boolean var1, String var2) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadSuccess(" + var1 + var2 + ")");
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", var1);
+                                            put("var2", var2);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
+            
+                        @Override
+                        public boolean onCustomMapStyleLoadFailed(int var1, String var2, String var3) {
+                            // print log
+                            if (getEnableLog()) {
+                                Log.d("java-callback", "fluttify-java-callback: onCustomMapStyleLoadFailed(" + var1 + var2 + var3 + ")");
+                            }
+            
+                            // call dart method
+                            handler.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    callbackChannel.invokeMethod(
+                                        "Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed",
+                                        new HashMap<String, Object>() {{
+                                            put("var1", var1);
+                                            put("var2", var2);
+                                            put("var3", var3);
+                                        }}
+                                    );
+                                }
+                            });
+            
+                            // method result
+                            return true;
+                        }
+            
+                });
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::setMapCustomStyleEnable", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setMapCustomStyleEnable(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setMapCustomStyleEnable(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::getMap", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::getMap(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.BaiduMap __result__ = null;
+                try {
+                    __result__ = __this__.getMap();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::onDestroy", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::onDestroy(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.onDestroy();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::setLogoPosition", (__args__, __methodResult__) -> {
+                // args
+                // enum arg
+                com.baidu.mapapi.map.LogoPosition var1 = com.baidu.mapapi.map.LogoPosition.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setLogoPosition(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setLogoPosition(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::getLogoPosition", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::getLogoPosition(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.LogoPosition __result__ = null;
+                try {
+                    __result__ = __this__.getLogoPosition();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::getMapLevel", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::getMapLevel(" + "" + ")");
+                }
+            
+                // invoke native method
+                Integer __result__ = null;
+                try {
+                    __result__ = __this__.getMapLevel();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::onPause", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::onPause(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.onPause();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::onResume", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::onResume(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.onResume();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::setPadding", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
+                Number var4 = (Number) ((Map<String, Object>) __args__).get("var4");
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setPadding(" + var1 + var2 + var3 + var4 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setPadding(var1.intValue(), var2.intValue(), var3.intValue(), var4.intValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
             });
         }};
     }

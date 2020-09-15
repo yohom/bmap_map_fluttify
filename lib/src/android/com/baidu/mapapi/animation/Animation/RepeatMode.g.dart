@@ -13,6 +13,7 @@ extension com_baidu_mapapi_animation_Animation_RepeatModeToX on com_baidu_mapapi
     switch (this) {
       case com_baidu_mapapi_animation_Animation_RepeatMode.RESTART: return com_baidu_mapapi_animation_Animation_RepeatMode.RESTART.index + 0;
       case com_baidu_mapapi_animation_Animation_RepeatMode.REVERSE: return com_baidu_mapapi_animation_Animation_RepeatMode.REVERSE.index + 0;
+      default: return 0;
     }
   }
 }

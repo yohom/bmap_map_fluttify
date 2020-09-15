@@ -17,6 +17,7 @@ extension com_baidu_mapapi_search_core_RouteLine_TYPEToX on com_baidu_mapapi_sea
       case com_baidu_mapapi_search_core_RouteLine_TYPE.TRANSITSTEP: return com_baidu_mapapi_search_core_RouteLine_TYPE.TRANSITSTEP.index + 0;
       case com_baidu_mapapi_search_core_RouteLine_TYPE.WALKSTEP: return com_baidu_mapapi_search_core_RouteLine_TYPE.WALKSTEP.index + 0;
       case com_baidu_mapapi_search_core_RouteLine_TYPE.BIKINGSTEP: return com_baidu_mapapi_search_core_RouteLine_TYPE.BIKINGSTEP.index + 0;
+      default: return 0;
     }
   }
 }

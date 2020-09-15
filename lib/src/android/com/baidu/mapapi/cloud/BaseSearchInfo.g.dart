@@ -25,40 +25,37 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
 
   //region getters
   Future<String> get_ak() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_ak", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_ak", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_geoTableId() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_geoTableId", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_geoTableId", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_sn() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_sn", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_sn", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_ak(String ak) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_ak', {'refId': refId, "ak": ak});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_ak', <String, dynamic>{'__this__': this, "ak": ak});
   
   
   }
   
   Future<void> set_geoTableId(int geoTableId) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_geoTableId', {'refId': refId, "geoTableId": geoTableId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_geoTableId', <String, dynamic>{'__this__': this, "geoTableId": geoTableId});
   
   
   }
   
   Future<void> set_sn(String sn) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_sn', {'refId': refId, "sn": sn});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_sn', <String, dynamic>{'__this__': this, "sn": sn});
   
   
   }
@@ -73,23 +70,23 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
 extension com_baidu_mapapi_cloud_BaseSearchInfo_Batch on List<com_baidu_mapapi_cloud_BaseSearchInfo> {
   //region getters
   Future<List<String>> get_ak_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_ak_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_ak_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_geoTableId_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_geoTableId_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_geoTableId_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_sn_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_sn_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchInfo::get_sn_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -97,19 +94,19 @@ extension com_baidu_mapapi_cloud_BaseSearchInfo_Batch on List<com_baidu_mapapi_c
 
   //region setters
   Future<void> set_ak_batch(List<String> ak) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_ak_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "ak": ak[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_ak_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ak": ak[__i__]}]);
   
   
   }
   
   Future<void> set_geoTableId_batch(List<int> geoTableId) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_geoTableId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "geoTableId": geoTableId[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_geoTableId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "geoTableId": geoTableId[__i__]}]);
   
   
   }
   
   Future<void> set_sn_batch(List<String> sn) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_sn_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "sn": sn[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseSearchInfo::set_sn_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "sn": sn[__i__]}]);
   
   
   }

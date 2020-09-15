@@ -21,6 +21,7 @@ extension BMKGeoFenceErrorCodeToX on BMKGeoFenceErrorCode {
       case BMKGeoFenceErrorCode.BMKGeoFenceErrorFailureAuth: return 4;
       case BMKGeoFenceErrorCode.BMKGeoFenceErrorNoValidFence: return 5;
       case BMKGeoFenceErrorCode.BMKGeoFenceErroFailureLocating: return 6;
+      default: return 0;
     }
   }
 }

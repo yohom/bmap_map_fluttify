@@ -15,6 +15,7 @@ extension BMKLineDashTypeToX on BMKLineDashType {
       case BMKLineDashType.kBMKLineDashTypeNone: return 0;
       case BMKLineDashType.kBMKLineDashTypeSquare: return BMKLineDashType.kBMKLineDashTypeSquare.index + 0;
       case BMKLineDashType.kBMKLineDashTypeDot: return BMKLineDashType.kBMKLineDashTypeDot.index + 0;
+      default: return 0;
     }
   }
 }

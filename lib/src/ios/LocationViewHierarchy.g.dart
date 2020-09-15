@@ -13,6 +13,7 @@ extension LocationViewHierarchyToX on LocationViewHierarchy {
     switch (this) {
       case LocationViewHierarchy.LOCATION_VIEW_HIERARCHY_TOP: return LocationViewHierarchy.LOCATION_VIEW_HIERARCHY_TOP.index + 0;
       case LocationViewHierarchy.LOCATION_VIEW_HIERARCHY_BOTTOM: return LocationViewHierarchy.LOCATION_VIEW_HIERARCHY_BOTTOM.index + 0;
+      default: return 0;
     }
   }
 }

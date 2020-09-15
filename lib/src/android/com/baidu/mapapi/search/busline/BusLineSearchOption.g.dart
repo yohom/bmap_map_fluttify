@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
 
   //region creators
   static Future<com_baidu_mapapi_search_busline_BusLineSearchOption> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineSearchOption__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineSearchOption__', );
     final object = com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_busline_BusLineSearchOption__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_busline_BusLineSearchOption__', {'length': length});
   
     final List<com_baidu_mapapi_search_busline_BusLineSearchOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,28 +40,26 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
 
   //region getters
   Future<String> get_mUid() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mUid", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mUid", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_mCity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mCity", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mCity", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_mUid(String mUid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mUid', {'refId': refId, "mUid": mUid});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mUid', <String, dynamic>{'__this__': this, "mUid": mUid});
   
   
   }
   
   Future<void> set_mCity(String mCity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mCity', {'refId': refId, "mCity": mCity});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mCity', <String, dynamic>{'__this__': this, "mCity": mCity});
   
   
   }
@@ -80,7 +75,7 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::city', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::city', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -91,7 +86,6 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -104,7 +98,7 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::uid', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::uid', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -115,7 +109,6 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -126,16 +119,16 @@ class com_baidu_mapapi_search_busline_BusLineSearchOption extends java_lang_Obje
 extension com_baidu_mapapi_search_busline_BusLineSearchOption_Batch on List<com_baidu_mapapi_search_busline_BusLineSearchOption> {
   //region getters
   Future<List<String>> get_mUid_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mUid_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mUid_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_mCity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mCity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.busline.BusLineSearchOption::get_mCity_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -143,13 +136,13 @@ extension com_baidu_mapapi_search_busline_BusLineSearchOption_Batch on List<com_
 
   //region setters
   Future<void> set_mUid_batch(List<String> mUid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mUid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mUid": mUid[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mUid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mUid": mUid[__i__]}]);
   
   
   }
   
   Future<void> set_mCity_batch(List<String> mCity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mCity": mCity[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::set_mCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCity": mCity[__i__]}]);
   
   
   }
@@ -164,15 +157,14 @@ extension com_baidu_mapapi_search_busline_BusLineSearchOption_Batch on List<com_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -184,15 +176,14 @@ extension com_baidu_mapapi_search_busline_BusLineSearchOption_Batch on List<com_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::uid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.busline.BusLineSearchOption::uid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_busline_BusLineSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }

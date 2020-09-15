@@ -17,6 +17,7 @@ extension BMKGeoFenceActiveActionToX on BMKGeoFenceActiveAction {
       case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionInside: return 1<<0;
       case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionOutside: return 1<<1;
       case BMKGeoFenceActiveAction.BMKGeoFenceActiveActionStayed: return 1<<2;
+      default: return 0;
     }
   }
 }

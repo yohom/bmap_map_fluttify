@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_route_TransitRouteLine extends java_lang_Object wi
 
   //region creators
   static Future<com_baidu_mapapi_search_route_TransitRouteLine> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteLine__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteLine__', );
     final object = com_baidu_mapapi_search_route_TransitRouteLine()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_route_TransitRouteLine extends java_lang_Object wi
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_TransitRouteLine__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_TransitRouteLine__', {'length': length});
   
     final List<com_baidu_mapapi_search_route_TransitRouteLine> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_route_TransitRouteLine()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,7 +55,7 @@ class com_baidu_mapapi_search_route_TransitRouteLine extends java_lang_Object wi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::getTaxitInfo', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::getTaxitInfo', {"__this__": this});
   
   
     // handle native call
@@ -69,7 +66,6 @@ class com_baidu_mapapi_search_route_TransitRouteLine extends java_lang_Object wi
       return null;
     } else {
       final __return__ = com_baidu_mapapi_search_core_TaxiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -82,7 +78,7 @@ class com_baidu_mapapi_search_route_TransitRouteLine extends java_lang_Object wi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::setTaxitInfo', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::setTaxitInfo', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -93,7 +89,6 @@ class com_baidu_mapapi_search_route_TransitRouteLine extends java_lang_Object wi
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -118,15 +113,14 @@ extension com_baidu_mapapi_search_route_TransitRouteLine_Batch on List<com_baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::getTaxitInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::getTaxitInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_core_TaxiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_core_TaxiInfo()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -138,7 +132,7 @@ extension com_baidu_mapapi_search_route_TransitRouteLine_Batch on List<com_baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::setTaxitInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.TransitRouteLine::setTaxitInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -146,7 +140,6 @@ extension com_baidu_mapapi_search_route_TransitRouteLine_Batch on List<com_baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

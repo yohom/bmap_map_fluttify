@@ -19,9 +19,11 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import io.flutter.plugin.common.StandardMethodCodec;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 
 import com.fluttify.bmap_map_fluttify.BmapMapFluttifyPlugin.Handler;
+import me.yohom.foundation_fluttify.core.FluttifyMessageCodec;
 
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
@@ -30,145 +32,29 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 public class SubHandler26 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_NearbySearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.NearbySearchInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_BoundSearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.BoundSearchInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds_Builder", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.LatLngBounds.Builder);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_Point", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.inner.Point);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_MapBound", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.inner.MapBound);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_GeoPoint", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.inner.GeoPoint);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.LatLngBounds);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.LatLng);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_CoordUtil", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.CoordUtil);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_ParcelItem", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.model.ParcelItem);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_VersionInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.VersionInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_JNIInitializer", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.JNIInitializer);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_l_ErrorNo", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.l_ErrorNo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_PermissionUtils", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.PermissionUtils);
-            });
-            put("RefClass::isKindOfcom_baidu_geofence_GeoFenceClient", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.geofence.GeoFenceClient);
-            });
-            put("RefClass::isKindOfcom_baidu_geofence_model_DistrictItem", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.geofence.model.DistrictItem);
-            });
             put("RefClass::isKindOfcom_baidu_geofence_model_DPoint", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.geofence.model.DPoint);
+                __methodResult__.success(__this__ instanceof com.baidu.geofence.model.DPoint);
             });
             put("RefClass::isKindOfcom_baidu_geofence_GeoFence", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.geofence.GeoFence);
+                __methodResult__.success(__this__ instanceof com.baidu.geofence.GeoFence);
             });
             put("RefClass::isKindOfcom_baidu_geofence_PoiItem", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.geofence.PoiItem);
+                __methodResult__.success(__this__ instanceof com.baidu.geofence.PoiItem);
             });
             put("RefClass::isKindOfcom_baidu_lbsapi_auth_LBSAuthManager", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.lbsapi.auth.LBSAuthManager);
+                __methodResult__.success(__this__ instanceof com.baidu.lbsapi.auth.LBSAuthManager);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_Poi__String__String__double__String__String", (__args__, __methodResult__) -> {
@@ -177,27 +63,26 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
+                // ref arg
                 String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
-                double var3 = (double) ((Map<String, Object>) __args__).get("var3");
-                // jsonable arg
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
                 String var5 = (String) ((Map<String, Object>) __args__).get("var5");
-                // jsonable arg
+                // ref arg
                 String var6 = (String) ((Map<String, Object>) __args__).get("var6");
             
                 // create target object
-                com.baidu.location.Poi __obj__ = new com.baidu.location.Poi(var1, var2, var3, var5, var6);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.location.Poi __obj__ = new com.baidu.location.Poi(var1, var2, var3.doubleValue(), var5, var6);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_Address_Builder__", (__args__, __methodResult__) -> {
@@ -210,14 +95,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.location.Address.Builder __obj__ = new com.baidu.location.Address.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_LocationClientOption__", (__args__, __methodResult__) -> {
@@ -230,14 +114,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.location.LocationClientOption __obj__ = new com.baidu.location.LocationClientOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_LocationClientOption__com_baidu_location_LocationClientOption", (__args__, __methodResult__) -> {
@@ -247,19 +130,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.LocationClientOption var1 = __var1RefId__ != null ? (com.baidu.location.LocationClientOption) getHEAP().get(__var1RefId__) : null;
+                com.baidu.location.LocationClientOption var1 = (com.baidu.location.LocationClientOption) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.location.LocationClientOption __obj__ = new com.baidu.location.LocationClientOption(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_Jni__", (__args__, __methodResult__) -> {
@@ -272,14 +153,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.location.Jni __obj__ = new com.baidu.location.Jni();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_PoiRegion__String__String__String", (__args__, __methodResult__) -> {
@@ -288,23 +168,22 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
+                // ref arg
                 String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
+                // ref arg
                 String var3 = (String) ((Map<String, Object>) __args__).get("var3");
             
                 // create target object
                 com.baidu.location.PoiRegion __obj__ = new com.baidu.location.PoiRegion(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_PoiRegion__com_baidu_location_PoiRegion", (__args__, __methodResult__) -> {
@@ -314,19 +193,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.PoiRegion var1 = __var1RefId__ != null ? (com.baidu.location.PoiRegion) getHEAP().get(__var1RefId__) : null;
+                com.baidu.location.PoiRegion var1 = (com.baidu.location.PoiRegion) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.location.PoiRegion __obj__ = new com.baidu.location.PoiRegion(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_LocationClient__android_content_Context", (__args__, __methodResult__) -> {
@@ -336,19 +213,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.location.LocationClient __obj__ = new com.baidu.location.LocationClient(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_LocationClient__android_content_Context__com_baidu_location_LocationClientOption", (__args__, __methodResult__) -> {
@@ -358,22 +233,19 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.location.LocationClientOption var2 = __var2RefId__ != null ? (com.baidu.location.LocationClientOption) getHEAP().get(__var2RefId__) : null;
+                com.baidu.location.LocationClientOption var2 = (com.baidu.location.LocationClientOption) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.location.LocationClient __obj__ = new com.baidu.location.LocationClient(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_BDLocation__", (__args__, __methodResult__) -> {
@@ -386,14 +258,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.location.BDLocation __obj__ = new com.baidu.location.BDLocation();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_BDLocation__com_baidu_location_BDLocation", (__args__, __methodResult__) -> {
@@ -403,19 +274,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.location.BDLocation var1 = __var1RefId__ != null ? (com.baidu.location.BDLocation) getHEAP().get(__var1RefId__) : null;
+                com.baidu.location.BDLocation var1 = (com.baidu.location.BDLocation) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.location.BDLocation __obj__ = new com.baidu.location.BDLocation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_location_BDLocation__String", (__args__, __methodResult__) -> {
@@ -424,19 +293,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.location.BDLocation __obj__ = new com.baidu.location.BDLocation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_UIMsg__", (__args__, __methodResult__) -> {
@@ -449,14 +317,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.UIMsg __obj__ = new com.baidu.mapapi.UIMsg();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_NetworkUtil__", (__args__, __methodResult__) -> {
@@ -469,14 +336,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.NetworkUtil __obj__ = new com.baidu.mapapi.NetworkUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_animation_AnimationSet__", (__args__, __methodResult__) -> {
@@ -489,14 +355,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.animation.AnimationSet __obj__ = new com.baidu.mapapi.animation.AnimationSet();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__com_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
@@ -506,19 +371,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_animation_Transformation__android_graphics_Point", (__args__, __methodResult__) -> {
@@ -528,19 +391,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.Point var1 = __var1RefId__ != null ? (android.graphics.Point) getHEAP().get(__var1RefId__) : null;
+                android.graphics.Point var1 = (android.graphics.Point) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.animation.Transformation __obj__ = new com.baidu.mapapi.animation.Transformation(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_animation_RotateAnimation__float__float", (__args__, __methodResult__) -> {
@@ -549,21 +410,20 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
-                com.baidu.mapapi.animation.RotateAnimation __obj__ = new com.baidu.mapapi.animation.RotateAnimation(new Double(var1).floatValue(), new Double(var2).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.animation.RotateAnimation __obj__ = new com.baidu.mapapi.animation.RotateAnimation(var1.floatValue(), var2.floatValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_animation_SingleScaleAnimation__com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType__float", (__args__, __methodResult__) -> {
@@ -574,19 +434,18 @@ public class SubHandler26 {
                 // args
                 // enum arg
                 com.baidu.mapapi.animation.SingleScaleAnimation.ScaleType var1 = com.baidu.mapapi.animation.SingleScaleAnimation.ScaleType.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                // jsonable arg
-                Double var2 = (Double) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
-                com.baidu.mapapi.animation.SingleScaleAnimation __obj__ = new com.baidu.mapapi.animation.SingleScaleAnimation(var1, new Double(var2).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.animation.SingleScaleAnimation __obj__ = new com.baidu.mapapi.animation.SingleScaleAnimation(var1, var2.floatValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_animation_AlphaAnimation__float", (__args__, __methodResult__) -> {
@@ -595,19 +454,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
-                com.baidu.mapapi.animation.AlphaAnimation __obj__ = new com.baidu.mapapi.animation.AlphaAnimation(new Double(var1).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.animation.AlphaAnimation __obj__ = new com.baidu.mapapi.animation.AlphaAnimation(var1.floatValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_animation_ScaleAnimation__float", (__args__, __methodResult__) -> {
@@ -616,19 +474,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
-                Double var1 = (Double) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
-                com.baidu.mapapi.animation.ScaleAnimation __obj__ = new com.baidu.mapapi.animation.ScaleAnimation(new Double(var1).floatValue());
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.animation.ScaleAnimation __obj__ = new com.baidu.mapapi.animation.ScaleAnimation(var1.floatValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__", (__args__, __methodResult__) -> {
@@ -641,14 +498,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException __obj__ = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String", (__args__, __methodResult__) -> {
@@ -657,19 +513,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException __obj__ = new com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_navi_NaviParaOption__", (__args__, __methodResult__) -> {
@@ -682,14 +537,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.navi.NaviParaOption __obj__ = new com.baidu.mapapi.navi.NaviParaOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapNavigation__", (__args__, __methodResult__) -> {
@@ -702,14 +556,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.navi.BaiduMapNavigation __obj__ = new com.baidu.mapapi.navi.BaiduMapNavigation();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__", (__args__, __methodResult__) -> {
@@ -722,14 +575,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.navi.IllegalNaviArgumentException __obj__ = new com.baidu.mapapi.navi.IllegalNaviArgumentException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__String", (__args__, __methodResult__) -> {
@@ -738,19 +590,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.navi.IllegalNaviArgumentException __obj__ = new com.baidu.mapapi.navi.IllegalNaviArgumentException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_favorite_FavoritePoiInfo__", (__args__, __methodResult__) -> {
@@ -763,14 +614,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.favorite.FavoritePoiInfo __obj__ = new com.baidu.mapapi.favorite.FavoritePoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_route_BaiduMapRoutePlan__", (__args__, __methodResult__) -> {
@@ -783,14 +633,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.route.BaiduMapRoutePlan __obj__ = new com.baidu.mapapi.utils.route.BaiduMapRoutePlan();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__", (__args__, __methodResult__) -> {
@@ -803,14 +652,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException __obj__ = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String", (__args__, __methodResult__) -> {
@@ -819,19 +667,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException __obj__ = new com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_route_RouteParaOption__", (__args__, __methodResult__) -> {
@@ -844,14 +691,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.route.RouteParaOption __obj__ = new com.baidu.mapapi.utils.route.RouteParaOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_DistanceUtil__", (__args__, __methodResult__) -> {
@@ -864,14 +710,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.DistanceUtil __obj__ = new com.baidu.mapapi.utils.DistanceUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_SpatialRelationUtil__", (__args__, __methodResult__) -> {
@@ -884,14 +729,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.SpatialRelationUtil __obj__ = new com.baidu.mapapi.utils.SpatialRelationUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_CoordinateConverter__", (__args__, __methodResult__) -> {
@@ -904,14 +748,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.CoordinateConverter __obj__ = new com.baidu.mapapi.utils.CoordinateConverter();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_poi_PoiParaOption__", (__args__, __methodResult__) -> {
@@ -924,14 +767,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.poi.PoiParaOption __obj__ = new com.baidu.mapapi.utils.poi.PoiParaOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_poi_DispathcPoiData__", (__args__, __methodResult__) -> {
@@ -944,14 +786,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.poi.DispathcPoiData __obj__ = new com.baidu.mapapi.utils.poi.DispathcPoiData();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__", (__args__, __methodResult__) -> {
@@ -964,14 +805,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException __obj__ = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException__String", (__args__, __methodResult__) -> {
@@ -980,19 +820,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException __obj__ = new com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch__", (__args__, __methodResult__) -> {
@@ -1005,14 +844,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.poi.BaiduMapPoiSearch __obj__ = new com.baidu.mapapi.utils.poi.BaiduMapPoiSearch();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_OpenClientUtil__", (__args__, __methodResult__) -> {
@@ -1025,14 +863,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.OpenClientUtil __obj__ = new com.baidu.mapapi.utils.OpenClientUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_utils_AreaUtil__", (__args__, __methodResult__) -> {
@@ -1045,14 +882,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.utils.AreaUtil __obj__ = new com.baidu.mapapi.utils.AreaUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__", (__args__, __methodResult__) -> {
@@ -1065,14 +901,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.UIMsg.WalkNaviMsg __obj__ = new com.baidu.mapapi.UIMsg.WalkNaviMsg();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_BMapManager__", (__args__, __methodResult__) -> {
@@ -1085,14 +920,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.BMapManager __obj__ = new com.baidu.mapapi.BMapManager();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionResult__", (__args__, __methodResult__) -> {
@@ -1105,14 +939,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.sug.SuggestionResult __obj__ = new com.baidu.mapapi.search.sug.SuggestionResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
@@ -1126,14 +959,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.sug.SuggestionResult __obj__ = new com.baidu.mapapi.search.sug.SuggestionResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo__", (__args__, __methodResult__) -> {
@@ -1146,14 +978,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.sug.SuggestionResult.SuggestionInfo __obj__ = new com.baidu.mapapi.search.sug.SuggestionResult.SuggestionInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionSearchOption__", (__args__, __methodResult__) -> {
@@ -1166,14 +997,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.sug.SuggestionSearchOption __obj__ = new com.baidu.mapapi.search.sug.SuggestionSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStep__", (__args__, __methodResult__) -> {
@@ -1186,14 +1016,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.busline.BusLineResult.BusStep __obj__ = new com.baidu.mapapi.search.busline.BusLineResult.BusStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineSearchOption__", (__args__, __methodResult__) -> {
@@ -1206,14 +1035,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.busline.BusLineSearchOption __obj__ = new com.baidu.mapapi.search.busline.BusLineSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStation__", (__args__, __methodResult__) -> {
@@ -1226,14 +1054,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.busline.BusLineResult.BusStation __obj__ = new com.baidu.mapapi.search.busline.BusLineResult.BusStation();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult__", (__args__, __methodResult__) -> {
@@ -1246,14 +1073,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.busline.BusLineResult __obj__ = new com.baidu.mapapi.search.busline.BusLineResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_PriceInfo__", (__args__, __methodResult__) -> {
@@ -1266,14 +1092,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.PriceInfo __obj__ = new com.baidu.mapapi.search.core.PriceInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_TransitBaseInfo__", (__args__, __methodResult__) -> {
@@ -1286,14 +1111,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.TransitBaseInfo __obj__ = new com.baidu.mapapi.search.core.TransitBaseInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_TransitResultNode__int__String__com_baidu_mapapi_model_LatLng__String", (__args__, __methodResult__) -> {
@@ -1302,26 +1126,24 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
                 String var2 = (String) ((Map<String, Object>) __args__).get("var2");
                 // ref arg
-                Integer __var3RefId__ = (Integer) ((Map<String, Object>) __args__).get("var3");
-                com.baidu.mapapi.model.LatLng var3 = __var3RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var3RefId__) : null;
-                // jsonable arg
+                com.baidu.mapapi.model.LatLng var3 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
                 String var4 = (String) ((Map<String, Object>) __args__).get("var4");
             
                 // create target object
-                com.baidu.mapapi.search.core.TransitResultNode __obj__ = new com.baidu.mapapi.search.core.TransitResultNode(var1, var2, var3, var4);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.search.core.TransitResultNode __obj__ = new com.baidu.mapapi.search.core.TransitResultNode(var1.intValue(), var2, var3, var4);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo__", (__args__, __methodResult__) -> {
@@ -1334,14 +1156,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo __obj__ = new com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__", (__args__, __methodResult__) -> {
@@ -1354,14 +1175,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.SearchResult __obj__ = new com.baidu.mapapi.search.core.SearchResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
@@ -1375,14 +1195,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.SearchResult __obj__ = new com.baidu.mapapi.search.core.SearchResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiInfo__", (__args__, __methodResult__) -> {
@@ -1395,14 +1214,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.PoiInfo __obj__ = new com.baidu.mapapi.search.core.PoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_TaxiInfo__", (__args__, __methodResult__) -> {
@@ -1415,14 +1233,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.TaxiInfo __obj__ = new com.baidu.mapapi.search.core.TaxiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiDetailInfo__", (__args__, __methodResult__) -> {
@@ -1435,14 +1252,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.PoiDetailInfo __obj__ = new com.baidu.mapapi.search.core.PoiDetailInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_PlaneInfo__", (__args__, __methodResult__) -> {
@@ -1455,14 +1271,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.PlaneInfo __obj__ = new com.baidu.mapapi.search.core.PlaneInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_TrainInfo__", (__args__, __methodResult__) -> {
@@ -1475,14 +1290,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.TrainInfo __obj__ = new com.baidu.mapapi.search.core.TrainInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_RouteNode__", (__args__, __methodResult__) -> {
@@ -1495,14 +1309,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.RouteNode __obj__ = new com.baidu.mapapi.search.core.RouteNode();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_CityInfo__", (__args__, __methodResult__) -> {
@@ -1515,14 +1328,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.CityInfo __obj__ = new com.baidu.mapapi.search.core.CityInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_BusInfo__", (__args__, __methodResult__) -> {
@@ -1535,14 +1347,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.BusInfo __obj__ = new com.baidu.mapapi.search.core.BusInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_PoiChildrenInfo__", (__args__, __methodResult__) -> {
@@ -1555,14 +1366,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.PoiChildrenInfo __obj__ = new com.baidu.mapapi.search.core.PoiChildrenInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_VehicleInfo__", (__args__, __methodResult__) -> {
@@ -1575,14 +1385,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.VehicleInfo __obj__ = new com.baidu.mapapi.search.core.VehicleInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_core_CoachInfo__", (__args__, __methodResult__) -> {
@@ -1595,14 +1404,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.core.CoachInfo __obj__ = new com.baidu.mapapi.search.core.CoachInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode__", (__args__, __methodResult__) -> {
@@ -1615,14 +1423,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode __obj__ = new com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRoutePlanOption__", (__args__, __methodResult__) -> {
@@ -1635,14 +1442,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.BikingRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.BikingRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition__", (__args__, __methodResult__) -> {
@@ -1655,14 +1461,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteLine__", (__args__, __methodResult__) -> {
@@ -1675,14 +1480,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.TransitRouteLine __obj__ = new com.baidu.mapapi.search.route.TransitRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteLine_TransitStep__", (__args__, __methodResult__) -> {
@@ -1695,14 +1499,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __obj__ = new com.baidu.mapapi.search.route.TransitRouteLine.TransitStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRouteResult__", (__args__, __methodResult__) -> {
@@ -1715,14 +1518,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.TransitRouteResult __obj__ = new com.baidu.mapapi.search.route.TransitRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteResult__", (__args__, __methodResult__) -> {
@@ -1735,14 +1537,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.MassTransitRouteResult __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep__", (__args__, __methodResult__) -> {
@@ -1755,14 +1556,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep __obj__ = new com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteLine__", (__args__, __methodResult__) -> {
@@ -1775,14 +1575,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.BikingRouteLine __obj__ = new com.baidu.mapapi.search.route.BikingRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine__", (__args__, __methodResult__) -> {
@@ -1795,14 +1594,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.IndoorRouteLine __obj__ = new com.baidu.mapapi.search.route.IndoorRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteResult__", (__args__, __methodResult__) -> {
@@ -1815,14 +1613,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.BikingRouteResult __obj__ = new com.baidu.mapapi.search.route.BikingRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_SuggestAddrInfo__", (__args__, __methodResult__) -> {
@@ -1835,14 +1632,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.SuggestAddrInfo __obj__ = new com.baidu.mapapi.search.route.SuggestAddrInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRoutePlanOption__", (__args__, __methodResult__) -> {
@@ -1855,14 +1651,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.WalkingRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.WalkingRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteLine__", (__args__, __methodResult__) -> {
@@ -1875,14 +1670,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.MassTransitRouteLine __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRoutePlanOption__", (__args__, __methodResult__) -> {
@@ -1895,14 +1689,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.MassTransitRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.MassTransitRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteLine_BikingStep__", (__args__, __methodResult__) -> {
@@ -1915,14 +1708,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.BikingRouteLine.BikingStep __obj__ = new com.baidu.mapapi.search.route.BikingRouteLine.BikingStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRoutePlanOption__", (__args__, __methodResult__) -> {
@@ -1935,14 +1727,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.IndoorRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.IndoorRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep__", (__args__, __methodResult__) -> {
@@ -1955,14 +1746,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep __obj__ = new com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteResult__", (__args__, __methodResult__) -> {
@@ -1975,14 +1765,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.WalkingRouteResult __obj__ = new com.baidu.mapapi.search.route.WalkingRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep__", (__args__, __methodResult__) -> {
@@ -1995,14 +1784,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep __obj__ = new com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRouteResult__", (__args__, __methodResult__) -> {
@@ -2015,14 +1803,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.DrivingRouteResult __obj__ = new com.baidu.mapapi.search.route.DrivingRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteResult__", (__args__, __methodResult__) -> {
@@ -2035,14 +1822,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.IndoorRouteResult __obj__ = new com.baidu.mapapi.search.route.IndoorRouteResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_IndoorPlanNode__com_baidu_mapapi_model_LatLng__String", (__args__, __methodResult__) -> {
@@ -2052,21 +1838,19 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.model.LatLng var1 = __var1RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var1RefId__) : null;
-                // jsonable arg
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
                 String var2 = (String) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.search.route.IndoorPlanNode __obj__ = new com.baidu.mapapi.search.route.IndoorPlanNode(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep__", (__args__, __methodResult__) -> {
@@ -2079,14 +1863,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep __obj__ = new com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_TransitRoutePlanOption__", (__args__, __methodResult__) -> {
@@ -2099,14 +1882,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.TransitRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.TransitRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_WalkingRouteLine__", (__args__, __methodResult__) -> {
@@ -2119,14 +1901,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.WalkingRouteLine __obj__ = new com.baidu.mapapi.search.route.WalkingRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRoutePlanOption__", (__args__, __methodResult__) -> {
@@ -2139,14 +1920,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.DrivingRoutePlanOption __obj__ = new com.baidu.mapapi.search.route.DrivingRoutePlanOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_route_DrivingRouteLine__", (__args__, __methodResult__) -> {
@@ -2159,14 +1939,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.route.DrivingRouteLine __obj__ = new com.baidu.mapapi.search.route.DrivingRouteLine();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiCitySearchOption__", (__args__, __methodResult__) -> {
@@ -2179,14 +1958,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiCitySearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiCitySearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiAddrInfo__", (__args__, __methodResult__) -> {
@@ -2199,14 +1977,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiAddrInfo __obj__ = new com.baidu.mapapi.search.poi.PoiAddrInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorInfo__", (__args__, __methodResult__) -> {
@@ -2219,14 +1996,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiIndoorInfo __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorOption__", (__args__, __methodResult__) -> {
@@ -2239,14 +2015,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiIndoorOption __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailSearchResult__", (__args__, __methodResult__) -> {
@@ -2259,14 +2034,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiDetailSearchResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailSearchResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailSearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
@@ -2280,14 +2054,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiDetailSearchResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailSearchResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiBoundSearchOption__", (__args__, __methodResult__) -> {
@@ -2300,14 +2073,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiBoundSearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiBoundSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailResult__", (__args__, __methodResult__) -> {
@@ -2320,14 +2092,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiDetailResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
@@ -2341,14 +2112,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiDetailResult __obj__ = new com.baidu.mapapi.search.poi.PoiDetailResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiFilter_Builder__", (__args__, __methodResult__) -> {
@@ -2361,14 +2131,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiFilter.Builder __obj__ = new com.baidu.mapapi.search.poi.PoiFilter.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiResult__", (__args__, __methodResult__) -> {
@@ -2381,14 +2150,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiResult __obj__ = new com.baidu.mapapi.search.poi.PoiResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
@@ -2402,14 +2170,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiResult __obj__ = new com.baidu.mapapi.search.poi.PoiResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorResult__", (__args__, __methodResult__) -> {
@@ -2422,14 +2189,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiIndoorResult __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiIndoorResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO", (__args__, __methodResult__) -> {
@@ -2443,14 +2209,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiIndoorResult __obj__ = new com.baidu.mapapi.search.poi.PoiIndoorResult(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiDetailSearchOption__", (__args__, __methodResult__) -> {
@@ -2463,14 +2228,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiDetailSearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiDetailSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_poi_PoiNearbySearchOption__", (__args__, __methodResult__) -> {
@@ -2483,14 +2247,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.poi.PoiNearbySearchOption __obj__ = new com.baidu.mapapi.search.poi.PoiNearbySearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_district_DistrictSearchOption__", (__args__, __methodResult__) -> {
@@ -2503,14 +2266,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.district.DistrictSearchOption __obj__ = new com.baidu.mapapi.search.district.DistrictSearchOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_district_DistrictResult__", (__args__, __methodResult__) -> {
@@ -2523,14 +2285,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.district.DistrictResult __obj__ = new com.baidu.mapapi.search.district.DistrictResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeOption__", (__args__, __methodResult__) -> {
@@ -2543,14 +2304,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.geocode.ReverseGeoCodeOption __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_geocode_GeoCodeResult__", (__args__, __methodResult__) -> {
@@ -2563,14 +2323,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.geocode.GeoCodeResult __obj__ = new com.baidu.mapapi.search.geocode.GeoCodeResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent__", (__args__, __methodResult__) -> {
@@ -2583,14 +2342,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult__", (__args__, __methodResult__) -> {
@@ -2603,14 +2361,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.geocode.ReverseGeoCodeResult __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo__", (__args__, __methodResult__) -> {
@@ -2623,14 +2380,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo __obj__ = new com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_geocode_GeoCodeOption__", (__args__, __methodResult__) -> {
@@ -2643,14 +2399,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.geocode.GeoCodeOption __obj__ = new com.baidu.mapapi.search.geocode.GeoCodeOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_share_LocationShareURLOption__", (__args__, __methodResult__) -> {
@@ -2663,14 +2418,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.share.LocationShareURLOption __obj__ = new com.baidu.mapapi.search.share.LocationShareURLOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_share_ShareUrlResult__", (__args__, __methodResult__) -> {
@@ -2683,14 +2437,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.share.ShareUrlResult __obj__ = new com.baidu.mapapi.search.share.ShareUrlResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_share_PoiDetailShareURLOption__", (__args__, __methodResult__) -> {
@@ -2703,14 +2456,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.share.PoiDetailShareURLOption __obj__ = new com.baidu.mapapi.search.share.PoiDetailShareURLOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_search_share_RouteShareURLOption__", (__args__, __methodResult__) -> {
@@ -2723,14 +2475,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.search.share.RouteShareURLOption __obj__ = new com.baidu.mapapi.search.share.RouteShareURLOption();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_OpenLogUtil__", (__args__, __methodResult__) -> {
@@ -2743,14 +2494,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.OpenLogUtil __obj__ = new com.baidu.mapapi.OpenLogUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_common_SysOSUtil__", (__args__, __methodResult__) -> {
@@ -2763,14 +2513,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.common.SysOSUtil __obj__ = new com.baidu.mapapi.common.SysOSUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_common_Logger__", (__args__, __methodResult__) -> {
@@ -2783,14 +2532,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.common.Logger __obj__ = new com.baidu.mapapi.common.Logger();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__", (__args__, __methodResult__) -> {
@@ -2803,14 +2551,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.common.BaiduMapSDKException __obj__ = new com.baidu.mapapi.common.BaiduMapSDKException();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_common_BaiduMapSDKException__String", (__args__, __methodResult__) -> {
@@ -2819,19 +2566,18 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.common.BaiduMapSDKException __obj__ = new com.baidu.mapapi.common.BaiduMapSDKException(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_common_EnvironmentUtilities__", (__args__, __methodResult__) -> {
@@ -2844,14 +2590,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.common.EnvironmentUtilities __obj__ = new com.baidu.mapapi.common.EnvironmentUtilities();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_common_AppTools__", (__args__, __methodResult__) -> {
@@ -2864,14 +2609,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.common.AppTools __obj__ = new com.baidu.mapapi.common.AppTools();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_HeatMap_Builder__", (__args__, __methodResult__) -> {
@@ -2884,14 +2628,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.HeatMap.Builder __obj__ = new com.baidu.mapapi.map.HeatMap.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_PolygonHoleOptions__", (__args__, __methodResult__) -> {
@@ -2904,14 +2647,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.PolygonHoleOptions __obj__ = new com.baidu.mapapi.map.PolygonHoleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_CircleHoleOptions__", (__args__, __methodResult__) -> {
@@ -2924,14 +2666,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.CircleHoleOptions __obj__ = new com.baidu.mapapi.map.CircleHoleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapPoi__", (__args__, __methodResult__) -> {
@@ -2944,14 +2685,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.MapPoi __obj__ = new com.baidu.mapapi.map.MapPoi();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_BitmapDescriptorFactory__", (__args__, __methodResult__) -> {
@@ -2964,14 +2704,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.BitmapDescriptorFactory __obj__ = new com.baidu.mapapi.map.BitmapDescriptorFactory();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapViewLayoutParams_Builder__", (__args__, __methodResult__) -> {
@@ -2984,14 +2723,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.MapViewLayoutParams.Builder __obj__ = new com.baidu.mapapi.map.MapViewLayoutParams.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_DotOptions__", (__args__, __methodResult__) -> {
@@ -3004,14 +2742,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.DotOptions __obj__ = new com.baidu.mapapi.map.DotOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationData_Builder__", (__args__, __methodResult__) -> {
@@ -3024,14 +2761,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.MyLocationData.Builder __obj__ = new com.baidu.mapapi.map.MyLocationData.Builder();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_PolylineOptions__", (__args__, __methodResult__) -> {
@@ -3044,14 +2780,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.PolylineOptions __obj__ = new com.baidu.mapapi.map.PolylineOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_Tile__int__int__byteArray", (__args__, __methodResult__) -> {
@@ -3060,23 +2795,22 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
                 byte[] var3 = (byte[]) ((Map<String, Object>) __args__).get("var3");
             
                 // create target object
-                com.baidu.mapapi.map.Tile __obj__ = new com.baidu.mapapi.map.Tile(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.map.Tile __obj__ = new com.baidu.mapapi.map.Tile(var1.intValue(), var2.intValue(), var3);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_WinRound__", (__args__, __methodResult__) -> {
@@ -3089,14 +2823,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.WinRound __obj__ = new com.baidu.mapapi.map.WinRound();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_Gradient__intArray__floatArray", (__args__, __methodResult__) -> {
@@ -3105,21 +2838,20 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 int[] var1 = (int[]) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
+                // ref arg
                 float[] var2 = (float[]) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.map.Gradient __obj__ = new com.baidu.mapapi.map.Gradient(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_GroundOverlayOptions__", (__args__, __methodResult__) -> {
@@ -3132,14 +2864,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.GroundOverlayOptions __obj__ = new com.baidu.mapapi.map.GroundOverlayOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MarkerOptions__", (__args__, __methodResult__) -> {
@@ -3152,14 +2883,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.MarkerOptions __obj__ = new com.baidu.mapapi.map.MarkerOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapCustomStyleOptions__", (__args__, __methodResult__) -> {
@@ -3172,14 +2902,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.MapCustomStyleOptions __obj__ = new com.baidu.mapapi.map.MapCustomStyleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_Stroke__int__int", (__args__, __methodResult__) -> {
@@ -3188,21 +2917,20 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
-                int var1 = (int) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
-                int var2 = (int) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
-                com.baidu.mapapi.map.Stroke __obj__ = new com.baidu.mapapi.map.Stroke(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.map.Stroke __obj__ = new com.baidu.mapapi.map.Stroke(var1.intValue(), var2.intValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_PolygonOptions__", (__args__, __methodResult__) -> {
@@ -3215,14 +2943,55 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.PolygonOptions __obj__ = new com.baidu.mapapi.map.PolygonOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng__double");
+                }
+            
+                // args
+                // ref arg
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
+            
+                // create target object
+                com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1, var2.doubleValue());
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_WeightedLatLng__com_baidu_mapapi_model_LatLng");
+                }
+            
+                // args
+                // ref arg
+                com.baidu.mapapi.model.LatLng var1 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var1");
+            
+                // create target object
+                com.baidu.mapapi.map.WeightedLatLng __obj__ = new com.baidu.mapapi.map.WeightedLatLng(var1);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_SwipeDismissView__android_content_Context__android_view_View", (__args__, __methodResult__) -> {
@@ -3232,22 +3001,19 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                android.view.View var2 = __var2RefId__ != null ? (android.view.View) getHEAP().get(__var2RefId__) : null;
+                android.view.View var2 = (android.view.View) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.map.SwipeDismissView __obj__ = new com.baidu.mapapi.map.SwipeDismissView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_ArcOptions__", (__args__, __methodResult__) -> {
@@ -3260,14 +3026,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.ArcOptions __obj__ = new com.baidu.mapapi.map.ArcOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int", (__args__, __methodResult__) -> {
@@ -3277,24 +3042,21 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.view.View var1 = __var1RefId__ != null ? (android.view.View) getHEAP().get(__var1RefId__) : null;
+                android.view.View var1 = (android.view.View) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.model.LatLng var2 = __var2RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var2RefId__) : null;
-                // jsonable arg
-                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
+                com.baidu.mapapi.model.LatLng var2 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
             
                 // create target object
-                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3.intValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_InfoWindow__android_view_View__com_baidu_mapapi_model_LatLng__int__boolean__int", (__args__, __methodResult__) -> {
@@ -3304,28 +3066,25 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.view.View var1 = __var1RefId__ != null ? (android.view.View) getHEAP().get(__var1RefId__) : null;
+                android.view.View var1 = (android.view.View) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.model.LatLng var2 = __var2RefId__ != null ? (com.baidu.mapapi.model.LatLng) getHEAP().get(__var2RefId__) : null;
-                // jsonable arg
-                int var3 = (int) ((Map<String, Object>) __args__).get("var3");
-                // jsonable arg
+                com.baidu.mapapi.model.LatLng var2 = (com.baidu.mapapi.model.LatLng) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
                 boolean var4 = (boolean) ((Map<String, Object>) __args__).get("var4");
-                // jsonable arg
-                int var5 = (int) ((Map<String, Object>) __args__).get("var5");
+                // ref arg
+                Number var5 = (Number) ((Map<String, Object>) __args__).get("var5");
             
                 // create target object
-                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3, var4, var5);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.map.InfoWindow __obj__ = new com.baidu.mapapi.map.InfoWindow(var1, var2, var3.intValue(), var4, var5.intValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_CircleOptions__", (__args__, __methodResult__) -> {
@@ -3338,14 +3097,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.CircleOptions __obj__ = new com.baidu.mapapi.map.CircleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__", (__args__, __methodResult__) -> {
@@ -3358,14 +3116,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.MapBaseIndoorMapInfo __obj__ = new com.baidu.mapapi.map.MapBaseIndoorMapInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__String__String__java_util_ArrayList_String_", (__args__, __methodResult__) -> {
@@ -3374,23 +3131,22 @@ public class SubHandler26 {
                 }
             
                 // args
-                // jsonable arg
+                // ref arg
                 String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                // jsonable arg
+                // ref arg
                 String var2 = (String) ((Map<String, Object>) __args__).get("var2");
-                // jsonable arg
+                // ref arg
                 java.util.ArrayList<String> var3 = (java.util.ArrayList<String>) ((Map<String, Object>) __args__).get("var3");
             
                 // create target object
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo __obj__ = new com.baidu.mapapi.map.MapBaseIndoorMapInfo(var1, var2, (ArrayList) var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.map.MapBaseIndoorMapInfo __obj__ = new com.baidu.mapapi.map.MapBaseIndoorMapInfo(var1, var2, var3);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapBaseIndoorMapInfo__com_baidu_mapapi_map_MapBaseIndoorMapInfo", (__args__, __methodResult__) -> {
@@ -3400,19 +3156,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                com.baidu.mapapi.map.MapBaseIndoorMapInfo var1 = __var1RefId__ != null ? (com.baidu.mapapi.map.MapBaseIndoorMapInfo) getHEAP().get(__var1RefId__) : null;
+                com.baidu.mapapi.map.MapBaseIndoorMapInfo var1 = (com.baidu.mapapi.map.MapBaseIndoorMapInfo) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.map.MapBaseIndoorMapInfo __obj__ = new com.baidu.mapapi.map.MapBaseIndoorMapInfo(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_ItemizedOverlay__android_graphics_drawable_Drawable__com_baidu_mapapi_map_MapView", (__args__, __methodResult__) -> {
@@ -3422,22 +3176,19 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.graphics.drawable.Drawable var1 = __var1RefId__ != null ? (android.graphics.drawable.Drawable) getHEAP().get(__var1RefId__) : null;
+                android.graphics.drawable.Drawable var1 = (android.graphics.drawable.Drawable) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.MapView var2 = __var2RefId__ != null ? (com.baidu.mapapi.map.MapView) getHEAP().get(__var2RefId__) : null;
+                com.baidu.mapapi.map.MapView var2 = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.map.ItemizedOverlay __obj__ = new com.baidu.mapapi.map.ItemizedOverlay(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context", (__args__, __methodResult__) -> {
@@ -3447,19 +3198,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (__args__, __methodResult__) -> {
@@ -3469,22 +3218,19 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.BaiduMapOptions var2 = __var2RefId__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2RefId__) : null;
+                com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.map.TextureMapView __obj__ = new com.baidu.mapapi.map.TextureMapView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_HoleOptions__", (__args__, __methodResult__) -> {
@@ -3497,14 +3243,52 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.HoleOptions __obj__ = new com.baidu.mapapi.map.HoleOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_MapStatus_Builder__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapStatus_Builder__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.map.MapStatus.Builder __obj__ = new com.baidu.mapapi.map.MapStatus.Builder();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_map_MapStatus_Builder__com_baidu_mapapi_map_MapStatus", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapStatus_Builder__com_baidu_mapapi_map_MapStatus");
+                }
+            
+                // args
+                // ref arg
+                com.baidu.mapapi.map.MapStatus var1 = (com.baidu.mapapi.map.MapStatus) ((Map<String, Object>) __args__).get("var1");
+            
+                // create target object
+                com.baidu.mapapi.map.MapStatus.Builder __obj__ = new com.baidu.mapapi.map.MapStatus.Builder(var1);
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int", (__args__, __methodResult__) -> {
@@ -3515,26 +3299,24 @@ public class SubHandler26 {
                 // args
                 // enum arg
                 com.baidu.mapapi.map.MyLocationConfiguration.LocationMode var1 = com.baidu.mapapi.map.MyLocationConfiguration.LocationMode.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                // jsonable arg
+                // ref arg
                 boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
                 // ref arg
-                Integer __var3RefId__ = (Integer) ((Map<String, Object>) __args__).get("var3");
-                com.baidu.mapapi.map.BitmapDescriptor var3 = __var3RefId__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var3RefId__) : null;
-                // jsonable arg
-                int var4 = (int) ((Map<String, Object>) __args__).get("var4");
-                // jsonable arg
-                int var5 = (int) ((Map<String, Object>) __args__).get("var5");
+                com.baidu.mapapi.map.BitmapDescriptor var3 = (com.baidu.mapapi.map.BitmapDescriptor) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
+                Number var4 = (Number) ((Map<String, Object>) __args__).get("var4");
+                // ref arg
+                Number var5 = (Number) ((Map<String, Object>) __args__).get("var5");
             
                 // create target object
-                com.baidu.mapapi.map.MyLocationConfiguration __obj__ = new com.baidu.mapapi.map.MyLocationConfiguration(var1, var2, var3, var4, var5);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
+                com.baidu.mapapi.map.MyLocationConfiguration __obj__ = new com.baidu.mapapi.map.MyLocationConfiguration(var1, var2, var3, var4.intValue(), var5.intValue());
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor", (__args__, __methodResult__) -> {
@@ -3545,22 +3327,20 @@ public class SubHandler26 {
                 // args
                 // enum arg
                 com.baidu.mapapi.map.MyLocationConfiguration.LocationMode var1 = com.baidu.mapapi.map.MyLocationConfiguration.LocationMode.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                // jsonable arg
+                // ref arg
                 boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
                 // ref arg
-                Integer __var3RefId__ = (Integer) ((Map<String, Object>) __args__).get("var3");
-                com.baidu.mapapi.map.BitmapDescriptor var3 = __var3RefId__ != null ? (com.baidu.mapapi.map.BitmapDescriptor) getHEAP().get(__var3RefId__) : null;
+                com.baidu.mapapi.map.BitmapDescriptor var3 = (com.baidu.mapapi.map.BitmapDescriptor) ((Map<String, Object>) __args__).get("var3");
             
                 // create target object
                 com.baidu.mapapi.map.MyLocationConfiguration __obj__ = new com.baidu.mapapi.map.MyLocationConfiguration(var1, var2, var3);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_TileOverlayOptions__", (__args__, __methodResult__) -> {
@@ -3573,14 +3353,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.TileOverlayOptions __obj__ = new com.baidu.mapapi.map.TileOverlayOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_BaiduMapOptions__", (__args__, __methodResult__) -> {
@@ -3593,14 +3372,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.BaiduMapOptions __obj__ = new com.baidu.mapapi.map.BaiduMapOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context", (__args__, __methodResult__) -> {
@@ -3610,19 +3388,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_WearMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (__args__, __methodResult__) -> {
@@ -3632,22 +3408,19 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.BaiduMapOptions var2 = __var2RefId__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2RefId__) : null;
+                com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.map.WearMapView __obj__ = new com.baidu.mapapi.map.WearMapView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_TextOptions__", (__args__, __methodResult__) -> {
@@ -3660,14 +3433,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.TextOptions __obj__ = new com.baidu.mapapi.map.TextOptions();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLUpdateElement__", (__args__, __methodResult__) -> {
@@ -3680,14 +3452,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.offline.MKOLUpdateElement __obj__ = new com.baidu.mapapi.map.offline.MKOLUpdateElement();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_offline_OfflineMapUtil__", (__args__, __methodResult__) -> {
@@ -3700,14 +3471,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.offline.OfflineMapUtil __obj__ = new com.baidu.mapapi.map.offline.OfflineMapUtil();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLSearchRecord__", (__args__, __methodResult__) -> {
@@ -3720,14 +3490,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.offline.MKOLSearchRecord __obj__ = new com.baidu.mapapi.map.offline.MKOLSearchRecord();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_offline_MKOfflineMap__", (__args__, __methodResult__) -> {
@@ -3740,14 +3509,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.map.offline.MKOfflineMap __obj__ = new com.baidu.mapapi.map.offline.MKOfflineMap();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapView__android_content_Context", (__args__, __methodResult__) -> {
@@ -3757,19 +3525,17 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
             
                 // create target object
                 com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions", (__args__, __methodResult__) -> {
@@ -3779,22 +3545,19 @@ public class SubHandler26 {
             
                 // args
                 // ref arg
-                Integer __var1RefId__ = (Integer) ((Map<String, Object>) __args__).get("var1");
-                android.content.Context var1 = __var1RefId__ != null ? (android.content.Context) getHEAP().get(__var1RefId__) : null;
+                android.content.Context var1 = (android.content.Context) ((Map<String, Object>) __args__).get("var1");
                 // ref arg
-                Integer __var2RefId__ = (Integer) ((Map<String, Object>) __args__).get("var2");
-                com.baidu.mapapi.map.BaiduMapOptions var2 = __var2RefId__ != null ? (com.baidu.mapapi.map.BaiduMapOptions) getHEAP().get(__var2RefId__) : null;
+                com.baidu.mapapi.map.BaiduMapOptions var2 = (com.baidu.mapapi.map.BaiduMapOptions) ((Map<String, Object>) __args__).get("var2");
             
                 // create target object
                 com.baidu.mapapi.map.MapView __obj__ = new com.baidu.mapapi.map.MapView(var1, var2);
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_http_AsyncHttpClient__", (__args__, __methodResult__) -> {
@@ -3807,14 +3570,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.http.AsyncHttpClient __obj__ = new com.baidu.mapapi.http.AsyncHttpClient();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_UIMsg_NetDetectedType__", (__args__, __methodResult__) -> {
@@ -3827,14 +3589,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.UIMsg.NetDetectedType __obj__ = new com.baidu.mapapi.UIMsg.NetDetectedType();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudEvent__", (__args__, __methodResult__) -> {
@@ -3847,14 +3608,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.cloud.CloudEvent __obj__ = new com.baidu.mapapi.cloud.CloudEvent();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_cloud_LocalSearchInfo__", (__args__, __methodResult__) -> {
@@ -3867,14 +3627,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.cloud.LocalSearchInfo __obj__ = new com.baidu.mapapi.cloud.LocalSearchInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudPoiInfo__", (__args__, __methodResult__) -> {
@@ -3887,14 +3646,13 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.cloud.CloudPoiInfo __obj__ = new com.baidu.mapapi.cloud.CloudPoiInfo();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
             });
             // factory
             put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudSearchResult__", (__args__, __methodResult__) -> {
@@ -3907,14 +3665,247 @@ public class SubHandler26 {
             
                 // create target object
                 com.baidu.mapapi.cloud.CloudSearchResult __obj__ = new com.baidu.mapapi.cloud.CloudSearchResult();
-                getHEAP().put(System.identityHashCode(__obj__), __obj__);
             
                 // print current HEAP
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "HEAP: " + getHEAP());
                 }
             
-                __methodResult__.success(System.identityHashCode(__obj__));
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudRgcResult__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudRgcResult__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.cloud.CloudRgcResult __obj__ = new com.baidu.mapapi.cloud.CloudRgcResult();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_cloud_DetailSearchResult__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_DetailSearchResult__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.cloud.DetailSearchResult __obj__ = new com.baidu.mapapi.cloud.DetailSearchResult();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_cloud_DetailSearchInfo__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_DetailSearchInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.cloud.DetailSearchInfo __obj__ = new com.baidu.mapapi.cloud.DetailSearchInfo();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_cloud_VersionInfo__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_VersionInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.cloud.VersionInfo __obj__ = new com.baidu.mapapi.cloud.VersionInfo();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudRgcInfo__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudRgcInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.cloud.CloudRgcInfo __obj__ = new com.baidu.mapapi.cloud.CloudRgcInfo();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_cloud_NearbySearchInfo__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_NearbySearchInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.cloud.NearbySearchInfo __obj__ = new com.baidu.mapapi.cloud.NearbySearchInfo();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_cloud_BoundSearchInfo__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_BoundSearchInfo__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.cloud.BoundSearchInfo __obj__ = new com.baidu.mapapi.cloud.BoundSearchInfo();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_LatLngBounds_Builder__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_LatLngBounds_Builder__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.LatLngBounds.Builder __obj__ = new com.baidu.mapapi.model.LatLngBounds.Builder();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_Point__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_Point__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_Point__int__int", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_Point__int__int");
+                }
+            
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
+            
+                // create target object
+                com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point(var1.intValue(), var2.intValue());
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_MapBound__", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_MapBound__");
+                }
+            
+                // args
+            
+            
+                // create target object
+                com.baidu.mapapi.model.inner.MapBound __obj__ = new com.baidu.mapapi.model.inner.MapBound();
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
+            });
+            // factory
+            put("ObjectFactory::createcom_baidu_mapapi_model_inner_GeoPoint__double__double", (__args__, __methodResult__) -> {
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_GeoPoint__double__double");
+                }
+            
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
+            
+                // create target object
+                com.baidu.mapapi.model.inner.GeoPoint __obj__ = new com.baidu.mapapi.model.inner.GeoPoint(var1.doubleValue(), var3.doubleValue());
+            
+                // print current HEAP
+                if (getEnableLog()) {
+                    Log.d("ObjectFactory", "HEAP: " + getHEAP());
+                }
+            
+                __methodResult__.success(__obj__);
             });
         }};
     }

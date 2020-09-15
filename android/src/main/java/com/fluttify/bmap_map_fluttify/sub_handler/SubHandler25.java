@@ -19,9 +19,11 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import io.flutter.plugin.common.StandardMethodCodec;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 
 import com.fluttify.bmap_map_fluttify.BmapMapFluttifyPlugin.Handler;
+import me.yohom.foundation_fluttify.core.FluttifyMessageCodec;
 
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
@@ -30,1405 +32,1205 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 public class SubHandler25 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
-            put("RefClass::isKindOfcom_baidu_mapapi_animation_RotateAnimation", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.RotateAnimation);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_animation_Animation", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.Animation);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_animation_SingleScaleAnimation", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.SingleScaleAnimation);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_animation_AlphaAnimation", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.AlphaAnimation);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_animation_ScaleAnimation", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.animation.ScaleAnimation);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_navi_NaviParaOption", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.NaviParaOption);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapNavigation", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.BaiduMapNavigation);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_navi_IllegalNaviArgumentException", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.navi.IllegalNaviArgumentException);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_favorite_FavoriteManager", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.favorite.FavoriteManager);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_favorite_FavoritePoiInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.favorite.FavoritePoiInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_BaiduMapRoutePlan", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.route.BaiduMapRoutePlan);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_RouteParaOption", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.route.RouteParaOption);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_utils_DistanceUtil", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.DistanceUtil);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_utils_SpatialRelationUtil", (__args__, __methodResult__) -> {
-                // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
-            
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.SpatialRelationUtil);
-            });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_CoordinateConverter", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.CoordinateConverter);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.CoordinateConverter);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_PoiParaOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.PoiParaOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.poi.PoiParaOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_DispathcPoiData", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.DispathcPoiData);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.poi.DispathcPoiData);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_IllegalPoiSearchArgumentException", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.poi.IllegalPoiSearchArgumentException);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_poi_BaiduMapPoiSearch", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.poi.BaiduMapPoiSearch);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.poi.BaiduMapPoiSearch);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_OpenClientUtil", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.OpenClientUtil);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.OpenClientUtil);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_AreaUtil", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.utils.AreaUtil);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.AreaUtil);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_WalkNaviMsg", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.WalkNaviMsg);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.WalkNaviMsg);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_BMapManager", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.BMapManager);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.BMapManager);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionSearch", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionSearch);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.sug.SuggestionSearch);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.sug.SuggestionResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionResult_SuggestionInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionResult.SuggestionInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.sug.SuggestionResult.SuggestionInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_sug_SuggestionSearchOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.sug.SuggestionSearchOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.sug.SuggestionSearchOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult_BusStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineResult.BusStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.busline.BusLineResult.BusStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineSearchOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineSearchOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.busline.BusLineSearchOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult_BusStation", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineResult.BusStation);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.busline.BusLineResult.BusStation);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineSearch", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineSearch);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.busline.BusLineSearch);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_busline_BusLineResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.busline.BusLineResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.busline.BusLineResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_PriceInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PriceInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.PriceInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_TransitBaseInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TransitBaseInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.TransitBaseInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_TransitResultNode", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TransitResultNode);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.TransitResultNode);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_RouteLine", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.RouteLine);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.RouteLine);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiInfo_ParentPoiInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_SearchResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.SearchResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.SearchResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.PoiInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_RouteStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.RouteStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.RouteStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_TaxiInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TaxiInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.TaxiInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiDetailInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiDetailInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.PoiDetailInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_PlaneInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PlaneInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.PlaneInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_TrainInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.TrainInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.TrainInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_RouteNode", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.RouteNode);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.RouteNode);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_CityInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.CityInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.CityInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_BusInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.BusInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.BusInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_PoiChildrenInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.PoiChildrenInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.PoiChildrenInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_VehicleInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.VehicleInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.VehicleInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_core_CoachInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.core.CoachInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.core.CoachInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRoutePlanOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRoutePlanOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.BikingRoutePlanOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_TrafficCondition", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteLine", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRouteLine);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.TransitRouteLine);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteLine_TransitStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRouteLine.TransitStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.TransitRouteLine.TransitStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRouteResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRouteResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.TransitRouteResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.MassTransitRouteResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteLine_DrivingStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteLine", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRouteLine);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.BikingRouteLine);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteLine);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.IndoorRouteLine);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_RoutePlanSearch", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.RoutePlanSearch);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.RoutePlanSearch);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRouteResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.BikingRouteResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_SuggestAddrInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.SuggestAddrInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.SuggestAddrInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_PlanNode", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.PlanNode);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.PlanNode);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRoutePlanOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRoutePlanOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.WalkingRoutePlanOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteLine);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.MassTransitRouteLine);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRoutePlanOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRoutePlanOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.MassTransitRoutePlanOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_BikingRouteLine_BikingStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.BikingRouteLine.BikingStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.BikingRouteLine.BikingStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRoutePlanOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRoutePlanOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.IndoorRoutePlanOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteLine_WalkingStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.WalkingRouteLine.WalkingStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRouteResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.WalkingRouteResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRouteResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.DrivingRouteResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorRouteResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorRouteResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.IndoorRouteResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_IndoorPlanNode", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.IndoorPlanNode);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.IndoorPlanNode);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_TransitRoutePlanOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.TransitRoutePlanOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.TransitRoutePlanOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_WalkingRouteLine", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.WalkingRouteLine);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.WalkingRouteLine);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRoutePlanOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRoutePlanOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.DrivingRoutePlanOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_route_DrivingRouteLine", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.route.DrivingRouteLine);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.route.DrivingRouteLine);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiCitySearchOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiCitySearchOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiCitySearchOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiAddrInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiAddrInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiAddrInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiIndoorInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiIndoorInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiIndoorOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiIndoorOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailSearchResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiDetailSearchResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiDetailSearchResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiBoundSearchOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiBoundSearchOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiBoundSearchOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiDetailResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiDetailResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiFilter", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiFilter);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiFilter);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiFilter_Builder", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiFilter.Builder);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiFilter.Builder);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiSearch", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiSearch);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiSearch);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiIndoorResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiIndoorResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiIndoorResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiDetailSearchOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiDetailSearchOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiDetailSearchOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_poi_PoiNearbySearchOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.poi.PoiNearbySearchOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.poi.PoiNearbySearchOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictSearchOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.district.DistrictSearchOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.district.DistrictSearchOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictSearch", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.district.DistrictSearch);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.district.DistrictSearch);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_district_DistrictResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.district.DistrictResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.district.DistrictResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCodeResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.GeoCodeResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.geocode.GeoCodeResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCoder", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.GeoCoder);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.geocode.GeoCoder);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_geocode_GeoCodeOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.geocode.GeoCodeOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.geocode.GeoCodeOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_share_LocationShareURLOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.LocationShareURLOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.share.LocationShareURLOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_share_ShareUrlSearch", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.ShareUrlSearch);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.share.ShareUrlSearch);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_share_ShareUrlResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.ShareUrlResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.share.ShareUrlResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_share_PoiDetailShareURLOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.PoiDetailShareURLOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.share.PoiDetailShareURLOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_search_share_RouteShareURLOption", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.search.share.RouteShareURLOption);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.search.share.RouteShareURLOption);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_OpenLogUtil", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.OpenLogUtil);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.OpenLogUtil);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_m_AppUI", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.m_AppUI);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.m_AppUI);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_common_SysOSUtil", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.common.SysOSUtil);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.common.SysOSUtil);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_common_Logger", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.common.Logger);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.common.Logger);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_common_BaiduMapSDKException", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.common.BaiduMapSDKException);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.common.BaiduMapSDKException);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_common_EnvironmentUtilities", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.common.EnvironmentUtilities);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.common.EnvironmentUtilities);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_common_AppTools", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.common.AppTools);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.common.AppTools);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Polygon", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Polygon);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Polygon);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptor", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.BitmapDescriptor);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.BitmapDescriptor);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_HeatMap_Builder", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.HeatMap.Builder);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.HeatMap.Builder);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_PolygonHoleOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.PolygonHoleOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.PolygonHoleOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_FileTileProvider", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.FileTileProvider);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.FileTileProvider);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_CircleHoleOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.CircleHoleOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.CircleHoleOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Text", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Text);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Text);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapPoi", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapPoi);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapPoi);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_UiSettings", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.UiSettings);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.UiSettings);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdateFactory", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapStatusUpdateFactory);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapStatusUpdateFactory);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissTouchListener", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.SwipeDismissTouchListener);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.SwipeDismissTouchListener);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_BitmapDescriptorFactory", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.BitmapDescriptorFactory);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.BitmapDescriptorFactory);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapViewLayoutParams_Builder", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapViewLayoutParams.Builder);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapViewLayoutParams.Builder);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_DotOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.DotOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.DotOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_UrlTileProvider", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.UrlTileProvider);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.UrlTileProvider);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MyLocationData_Builder", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MyLocationData.Builder);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MyLocationData.Builder);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_PolylineOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.PolylineOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.PolylineOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Tile", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Tile);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Tile);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_WinRound", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.WinRound);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.WinRound);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Gradient", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Gradient);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Gradient);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlayOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.GroundOverlayOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.GroundOverlayOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_GroundOverlay", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.GroundOverlay);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.GroundOverlay);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MarkerOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MarkerOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MarkerOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapCustomStyleOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapCustomStyleOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapCustomStyleOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Stroke", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Stroke);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Stroke);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Arc", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Arc);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Arc);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_OverlayOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.OverlayOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.OverlayOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Circle", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Circle);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Circle);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_PolygonOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.PolygonOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.PolygonOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_WeightedLatLng", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.WeightedLatLng);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.WeightedLatLng);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_SwipeDismissView", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.SwipeDismissView);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.SwipeDismissView);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Dot", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Dot);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Dot);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_ArcOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.ArcOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.ArcOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_InfoWindow", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.InfoWindow);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.InfoWindow);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Projection", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Projection);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Projection);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_CircleOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.CircleOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.CircleOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapBaseIndoorMapInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapBaseIndoorMapInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapBaseIndoorMapInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_ItemizedOverlay", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.ItemizedOverlay);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.ItemizedOverlay);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapStatusUpdate", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapStatusUpdate);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapStatusUpdate);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_BaiduMap", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.BaiduMap);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.BaiduMap);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_TextureMapView", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.TextureMapView);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.TextureMapView);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Overlay", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Overlay);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Overlay);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapStatus", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapStatus);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapStatus);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_HoleOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.HoleOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.HoleOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_HeatMap", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.HeatMap);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.HeatMap);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapStatus_Builder", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapStatus.Builder);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapStatus.Builder);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MyLocationConfiguration", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MyLocationConfiguration);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MyLocationConfiguration);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Marker", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Marker);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Marker);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_TileOverlayOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.TileOverlayOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.TileOverlayOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_BaiduMapOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.BaiduMapOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.BaiduMapOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_WearMapView", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.WearMapView);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.WearMapView);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_TextOptions", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.TextOptions);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.TextOptions);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_TileOverlay", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.TileOverlay);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.TileOverlay);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOLUpdateElement", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.offline.MKOLUpdateElement);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.offline.MKOLUpdateElement);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_offline_OfflineMapUtil", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.offline.OfflineMapUtil);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.offline.OfflineMapUtil);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOLSearchRecord", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.offline.MKOLSearchRecord);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.offline.MKOLSearchRecord);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_offline_MKOfflineMap", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.offline.MKOfflineMap);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.offline.MKOfflineMap);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapView", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MapView);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MapView);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_Polyline", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.Polyline);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.Polyline);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MyLocationData", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.map.MyLocationData);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MyLocationData);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_d_ResultType", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.d_ResultType);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.d_ResultType);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_f_FUN", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.f_FUN);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.f_FUN);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_http_AsyncHttpClient", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.http.AsyncHttpClient);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.http.AsyncHttpClient);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_http_HttpClient", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.http.HttpClient);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.http.HttpClient);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_http_HttpClient_ProtoResultCallback", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.http.HttpClient.ProtoResultCallback);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.http.HttpClient.ProtoResultCallback);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_NetDetectedType", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.UIMsg.NetDetectedType);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.NetDetectedType);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudEvent", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudEvent);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudEvent);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudManager", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudManager);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudManager);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_BaseCloudSearchInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.BaseCloudSearchInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BaseCloudSearchInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_LocalSearchInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.LocalSearchInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.LocalSearchInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudPoiInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudPoiInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudPoiInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_BaseSearchResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.BaseSearchResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BaseSearchResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_BaseSearchInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.BaseSearchInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BaseSearchInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudEvent_ErrorNo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudEvent.ErrorNo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudEvent.ErrorNo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudSearchResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudSearchResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudSearchResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_PoiInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_AddressCompents", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudRgcResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_DetailSearchResult", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.DetailSearchResult);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.DetailSearchResult);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_DetailSearchInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.DetailSearchInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.DetailSearchInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_VersionInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.VersionInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.VersionInfo);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcInfo", (__args__, __methodResult__) -> {
                 // 引用对象
-                int refId = (int) ((Map<String, Object>) __args__).get("refId");
-                Object ref = getHEAP().get(refId);
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
-                __methodResult__.success(ref instanceof com.baidu.mapapi.cloud.CloudRgcInfo);
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_cloud_NearbySearchInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.NearbySearchInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_cloud_BoundSearchInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BoundSearchInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds_Builder", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.LatLngBounds.Builder);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_Point", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.Point);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_MapBound", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.MapBound);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_GeoPoint", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.GeoPoint);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.LatLngBounds);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.LatLng);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_CoordUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.CoordUtil);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_model_ParcelItem", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.ParcelItem);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_VersionInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.VersionInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_JNIInitializer", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.JNIInitializer);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_l_ErrorNo", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.l_ErrorNo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_PermissionUtils", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.PermissionUtils);
+            });
+            put("RefClass::isKindOfcom_baidu_geofence_GeoFenceClient", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.geofence.GeoFenceClient);
+            });
+            put("RefClass::isKindOfcom_baidu_geofence_model_DistrictItem", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.geofence.model.DistrictItem);
             });
         }};
     }

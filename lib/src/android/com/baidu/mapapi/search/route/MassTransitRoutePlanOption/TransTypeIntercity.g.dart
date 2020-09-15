@@ -15,6 +15,7 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeInte
       case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.ETRANS_TRAIN_FIRST: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.ETRANS_TRAIN_FIRST.index + 0;
       case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.ETRANS_PLANE_FIRST: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.ETRANS_PLANE_FIRST.index + 0;
       case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.ETRANS_COACH_FIRST: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TransTypeIntercity.ETRANS_COACH_FIRST.index + 0;
+      default: return 0;
     }
   }
 }

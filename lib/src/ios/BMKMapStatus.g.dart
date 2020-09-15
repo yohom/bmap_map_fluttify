@@ -20,22 +20,19 @@ class BMKMapStatus extends NSObject  {
   //endregion
 
   //region creators
-  static Future<BMKMapStatus> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKMapStatus');
+  static Future<BMKMapStatus> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKMapStatus', {'init': init});
     final object = BMKMapStatus()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKMapStatus>> create_batch__(int length) async {
+  static Future<List<BMKMapStatus>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKMapStatus', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKMapStatus', {'length': length, 'init': init});
   
     final List<BMKMapStatus> typedResult = resultBatch.map((result) => BMKMapStatus()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,70 +40,64 @@ class BMKMapStatus extends NSObject  {
 
   //region getters
   Future<double> get_fLevel() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_fLevel", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_fLevel", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_fRotation() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_fRotation", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_fRotation", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<double> get_fOverlooking() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_fOverlooking", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_fOverlooking", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<CGPoint> get_targetScreenPt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_targetScreenPt", {'refId': refId});
-    kNativeObjectPool.add(CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_targetScreenPt", {'__this__': this});
+    return __result__ == null ? null : (CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<CLLocationCoordinate2D> get_targetGeoPt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_targetGeoPt", {'refId': refId});
-    kNativeObjectPool.add(CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_targetGeoPt", {'__this__': this});
+    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<BMKMapRect> get_visibleMapRect() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_visibleMapRect", {'refId': refId});
-    kNativeObjectPool.add(BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_visibleMapRect", {'__this__': this});
+    return __result__ == null ? null : (BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   //endregion
 
   //region setters
   Future<void> set_fLevel(double fLevel) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_fLevel', {'refId': refId, "fLevel": fLevel});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapStatus::set_fLevel', <String, dynamic>{'__this__': this, "fLevel": fLevel});
   
   
   }
   
   Future<void> set_fRotation(double fRotation) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_fRotation', {'refId': refId, "fRotation": fRotation});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapStatus::set_fRotation', <String, dynamic>{'__this__': this, "fRotation": fRotation});
   
   
   }
   
   Future<void> set_fOverlooking(double fOverlooking) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_fOverlooking', {'refId': refId, "fOverlooking": fOverlooking});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapStatus::set_fOverlooking', <String, dynamic>{'__this__': this, "fOverlooking": fOverlooking});
   
   
   }
   
   Future<void> set_targetScreenPt(CGPoint targetScreenPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_targetScreenPt', {'refId': refId, "targetScreenPt": targetScreenPt.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapStatus::set_targetScreenPt', <String, dynamic>{'__this__': this, "targetScreenPt": targetScreenPt});
   
   
   }
   
   Future<void> set_targetGeoPt(CLLocationCoordinate2D targetGeoPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_targetGeoPt', {'refId': refId, "targetGeoPt": targetGeoPt.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapStatus::set_targetGeoPt', <String, dynamic>{'__this__': this, "targetGeoPt": targetGeoPt});
   
   
   }
@@ -121,44 +112,44 @@ class BMKMapStatus extends NSObject  {
 extension BMKMapStatus_Batch on List<BMKMapStatus> {
   //region getters
   Future<List<double>> get_fLevel_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_fLevel_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_fLevel_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_fRotation_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_fRotation_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_fRotation_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<double>> get_fOverlooking_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_fOverlooking_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_fOverlooking_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<CGPoint>> get_targetScreenPt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_targetScreenPt_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_targetScreenPt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<CLLocationCoordinate2D>> get_targetGeoPt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_targetGeoPt_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_targetGeoPt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<BMKMapRect>> get_visibleMapRect_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKMapStatus::get_visibleMapRect_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapStatus::get_visibleMapRect_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
@@ -166,31 +157,31 @@ extension BMKMapStatus_Batch on List<BMKMapStatus> {
 
   //region setters
   Future<void> set_fLevel_batch(List<double> fLevel) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_fLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "fLevel": fLevel[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapStatus::set_fLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "fLevel": fLevel[__i__]}]);
   
   
   }
   
   Future<void> set_fRotation_batch(List<double> fRotation) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_fRotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "fRotation": fRotation[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapStatus::set_fRotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "fRotation": fRotation[__i__]}]);
   
   
   }
   
   Future<void> set_fOverlooking_batch(List<double> fOverlooking) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_fOverlooking_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "fOverlooking": fOverlooking[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapStatus::set_fOverlooking_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "fOverlooking": fOverlooking[__i__]}]);
   
   
   }
   
   Future<void> set_targetScreenPt_batch(List<CGPoint> targetScreenPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_targetScreenPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "targetScreenPt": targetScreenPt[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapStatus::set_targetScreenPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "targetScreenPt": targetScreenPt[__i__]}]);
   
   
   }
   
   Future<void> set_targetGeoPt_batch(List<CLLocationCoordinate2D> targetGeoPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKMapStatus::set_targetGeoPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "targetGeoPt": targetGeoPt[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapStatus::set_targetGeoPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "targetGeoPt": targetGeoPt[__i__]}]);
   
   
   }

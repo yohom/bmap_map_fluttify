@@ -17,6 +17,7 @@ extension BMKSwitchIndoorFloorErrorToX on BMKSwitchIndoorFloorError {
       case BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorFailed: return BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorFailed.index + 0;
       case BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotFocused: return BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotFocused.index + 0;
       case BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotExist: return BMKSwitchIndoorFloorError.BMKSwitchIndoorFloorNotExist.index + 0;
+      default: return 0;
     }
   }
 }

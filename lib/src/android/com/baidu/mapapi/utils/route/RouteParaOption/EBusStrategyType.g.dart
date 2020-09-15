@@ -19,6 +19,7 @@ extension com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyTypeToX on co
       case com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.bus_walk_little: return com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.bus_walk_little.index + 0;
       case com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.bus_no_subway: return com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.bus_no_subway.index + 0;
       case com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.bus_recommend_way: return com_baidu_mapapi_utils_route_RouteParaOption_EBusStrategyType.bus_recommend_way.index + 0;
+      default: return 0;
     }
   }
 }

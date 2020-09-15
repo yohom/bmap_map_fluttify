@@ -20,22 +20,19 @@ class BMKPinAnnotationView extends BMKAnnotationView  {
   //endregion
 
   //region creators
-  static Future<BMKPinAnnotationView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKPinAnnotationView');
+  static Future<BMKPinAnnotationView> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKPinAnnotationView', {'init': init});
     final object = BMKPinAnnotationView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKPinAnnotationView>> create_batch__(int length) async {
+  static Future<List<BMKPinAnnotationView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKPinAnnotationView', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKPinAnnotationView', {'length': length, 'init': init});
   
     final List<BMKPinAnnotationView> typedResult = resultBatch.map((result) => BMKPinAnnotationView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,28 +40,26 @@ class BMKPinAnnotationView extends BMKAnnotationView  {
 
   //region getters
   Future<int> get_pinColor({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKPinAnnotationView::get_pinColor", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPinAnnotationView::get_pinColor", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<bool> get_animatesDrop({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKPinAnnotationView::get_animatesDrop", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPinAnnotationView::get_animatesDrop", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_pinColor(int pinColor, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPinAnnotationView::set_pinColor', {'refId': refId, "pinColor": pinColor});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKPinAnnotationView::set_pinColor', <String, dynamic>{'__this__': this, "pinColor": pinColor});
   
   
   }
   
   Future<void> set_animatesDrop(bool animatesDrop, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPinAnnotationView::set_animatesDrop', {'refId': refId, "animatesDrop": animatesDrop});
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKPinAnnotationView::set_animatesDrop', <String, dynamic>{'__this__': this, "animatesDrop": animatesDrop});
   
   
   }
@@ -79,16 +74,16 @@ class BMKPinAnnotationView extends BMKAnnotationView  {
 extension BMKPinAnnotationView_Batch on List<BMKPinAnnotationView> {
   //region getters
   Future<List<int>> get_pinColor_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKPinAnnotationView::get_pinColor_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPinAnnotationView::get_pinColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<bool>> get_animatesDrop_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKPinAnnotationView::get_animatesDrop_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPinAnnotationView::get_animatesDrop_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -96,13 +91,13 @@ extension BMKPinAnnotationView_Batch on List<BMKPinAnnotationView> {
 
   //region setters
   Future<void> set_pinColor_batch(List<int> pinColor, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPinAnnotationView::set_pinColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "pinColor": pinColor[__i__]}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKPinAnnotationView::set_pinColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pinColor": pinColor[__i__]}]);
   
   
   }
   
   Future<void> set_animatesDrop_batch(List<bool> animatesDrop, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPinAnnotationView::set_animatesDrop_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "animatesDrop": animatesDrop[__i__]}]);
+    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPinAnnotationView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKPinAnnotationView::set_animatesDrop_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "animatesDrop": animatesDrop[__i__]}]);
   
   
   }

@@ -20,22 +20,19 @@ class BMKHeatMap extends NSObject  {
   //endregion
 
   //region creators
-  static Future<BMKHeatMap> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKHeatMap');
+  static Future<BMKHeatMap> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKHeatMap', {'init': init});
     final object = BMKHeatMap()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKHeatMap>> create_batch__(int length) async {
+  static Future<List<BMKHeatMap>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKHeatMap', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKHeatMap', {'length': length, 'init': init});
   
     final List<BMKHeatMap> typedResult = resultBatch.map((result) => BMKHeatMap()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,52 +40,48 @@ class BMKHeatMap extends NSObject  {
 
   //region getters
   Future<int> get_mRadius() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mRadius", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mRadius", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<BMKGradient> get_mGradient() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mGradient", {'refId': refId});
-    kNativeObjectPool.add(BMKGradient()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKGradient()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mGradient", {'__this__': this});
+    return __result__ == null ? null : (BMKGradient()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<double> get_mOpacity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mOpacity", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mOpacity", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<List<NSObject>> get_mData() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mData", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mData", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
   }
   
   //endregion
 
   //region setters
   Future<void> set_mRadius(int mRadius) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mRadius', {'refId': refId, "mRadius": mRadius});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKHeatMap::set_mRadius', <String, dynamic>{'__this__': this, "mRadius": mRadius});
   
   
   }
   
   Future<void> set_mGradient(BMKGradient mGradient) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mGradient', {'refId': refId, "mGradient": mGradient.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKHeatMap::set_mGradient', <String, dynamic>{'__this__': this, "mGradient": mGradient});
   
   
   }
   
   Future<void> set_mOpacity(double mOpacity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mOpacity', {'refId': refId, "mOpacity": mOpacity});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKHeatMap::set_mOpacity', <String, dynamic>{'__this__': this, "mOpacity": mOpacity});
   
   
   }
   
   Future<void> set_mData(List<NSObject> mData) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mData', {'refId': refId, "mData": mData.map((it) => it.refId).toList()});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKHeatMap::set_mData', <String, dynamic>{'__this__': this, "mData": mData});
   
   
   }
@@ -103,30 +96,30 @@ class BMKHeatMap extends NSObject  {
 extension BMKHeatMap_Batch on List<BMKHeatMap> {
   //region getters
   Future<List<int>> get_mRadius_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mRadius_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mRadius_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<BMKGradient>> get_mGradient_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mGradient_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKGradient()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mGradient_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKGradient()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<double>> get_mOpacity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mOpacity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mOpacity_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<List<NSObject>>> get_mData_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKHeatMap::get_mData_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mData_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     return typedResult;
   }
   
@@ -134,25 +127,25 @@ extension BMKHeatMap_Batch on List<BMKHeatMap> {
 
   //region setters
   Future<void> set_mRadius_batch(List<int> mRadius) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mRadius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mRadius": mRadius[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKHeatMap::set_mRadius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mRadius": mRadius[__i__]}]);
   
   
   }
   
   Future<void> set_mGradient_batch(List<BMKGradient> mGradient) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mGradient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mGradient": mGradient[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKHeatMap::set_mGradient_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mGradient": mGradient[__i__]}]);
   
   
   }
   
   Future<void> set_mOpacity_batch(List<double> mOpacity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mOpacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mOpacity": mOpacity[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKHeatMap::set_mOpacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mOpacity": mOpacity[__i__]}]);
   
   
   }
   
   Future<void> set_mData_batch(List<List<NSObject>> mData) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKHeatMap::set_mData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mData": mData[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKHeatMap::set_mData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mData": mData[__i__]}]);
   
   
   }

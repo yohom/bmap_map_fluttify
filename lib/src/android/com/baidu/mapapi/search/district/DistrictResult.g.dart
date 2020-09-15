@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
 
   //region creators
   static Future<com_baidu_mapapi_search_district_DistrictResult> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_district_DistrictResult__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_district_DistrictResult__', );
     final object = com_baidu_mapapi_search_district_DistrictResult()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_district_DistrictResult__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_district_DistrictResult__', {'length': length});
   
     final List<com_baidu_mapapi_search_district_DistrictResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_district_DistrictResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,40 +40,37 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
 
   //region getters
   Future<com_baidu_mapapi_model_LatLng> get_centerPt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_centerPt", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_centerPt", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<int> get_cityCode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityCode", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityCode", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_cityName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityName", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityName", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_centerPt(com_baidu_mapapi_model_LatLng centerPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_centerPt', {'refId': refId, "centerPt": centerPt.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_centerPt', <String, dynamic>{'__this__': this, "centerPt": centerPt});
   
   
   }
   
   Future<void> set_cityCode(int cityCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityCode', {'refId': refId, "cityCode": cityCode});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityCode', <String, dynamic>{'__this__': this, "cityCode": cityCode});
   
   
   }
   
   Future<void> set_cityName(String cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityName', {'refId': refId, "cityName": cityName});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityName', <String, dynamic>{'__this__': this, "cityName": cityName});
   
   
   }
@@ -92,7 +86,7 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityName', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityName', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -103,7 +97,6 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -116,7 +109,7 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCenterPt', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCenterPt', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -127,7 +120,6 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -140,7 +132,7 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setPolylines', {"var1": [], "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setPolylines', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -151,7 +143,6 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -164,7 +155,7 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityCode', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityCode', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -175,7 +166,6 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -188,7 +178,7 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCenterPt', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCenterPt', {"__this__": this});
   
   
     // handle native call
@@ -199,7 +189,6 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -212,7 +201,7 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityCode', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityCode', {"__this__": this});
   
   
     // handle native call
@@ -223,7 +212,6 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -236,7 +224,7 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityName', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityName', {"__this__": this});
   
   
     // handle native call
@@ -247,7 +235,6 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -258,23 +245,23 @@ class com_baidu_mapapi_search_district_DistrictResult extends com_baidu_mapapi_s
 extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baidu_mapapi_search_district_DistrictResult> {
   //region getters
   Future<List<com_baidu_mapapi_model_LatLng>> get_centerPt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_centerPt_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_centerPt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<int>> get_cityCode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityCode_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_cityName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityName_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.district.DistrictResult::get_cityName_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -282,19 +269,19 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
 
   //region setters
   Future<void> set_centerPt_batch(List<com_baidu_mapapi_model_LatLng> centerPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_centerPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "centerPt": centerPt[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_centerPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "centerPt": centerPt[__i__]}]);
   
   
   }
   
   Future<void> set_cityCode_batch(List<int> cityCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityCode": cityCode[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityCode": cityCode[__i__]}]);
   
   
   }
   
   Future<void> set_cityName_batch(List<String> cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityName": cityName[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityName": cityName[__i__]}]);
   
   
   }
@@ -309,7 +296,7 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -317,7 +304,6 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -329,7 +315,7 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCenterPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCenterPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -337,7 +323,6 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -349,7 +334,7 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setPolylines_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": [], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setPolylines_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -357,7 +342,6 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -369,7 +353,7 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::setCityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -377,7 +361,6 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -389,15 +372,14 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCenterPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCenterPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -409,7 +391,7 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -417,7 +399,6 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -429,7 +410,7 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictResult::getCityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -437,7 +418,6 @@ extension com_baidu_mapapi_search_district_DistrictResult_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

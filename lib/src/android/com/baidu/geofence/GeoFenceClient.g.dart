@@ -31,10 +31,8 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
 
   //region creators
   static Future<com_baidu_geofence_GeoFenceClient> create__android_content_Context(android_content_Context var1) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_geofence_GeoFenceClient__android_content_Context', {"var1": var1.refId});
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_geofence_GeoFenceClient__android_content_Context', {"var1": var1});
     final object = com_baidu_geofence_GeoFenceClient()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -42,10 +40,9 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_geofence_GeoFenceClient__android_content_Context', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__].refId}]);
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_geofence_GeoFenceClient__android_content_Context', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
   
     final List<com_baidu_geofence_GeoFenceClient> typedResult = resultBatch.map((result) => com_baidu_geofence_GeoFenceClient()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -68,7 +65,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::isHighAccuracyLoc', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::isHighAccuracyLoc', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -79,7 +76,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -92,7 +88,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__com_baidu_geofence_model_DPoint__String__double__String', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2, "var3": var3, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__com_baidu_geofence_model_DPoint__String__double__String', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "__this__": this});
   
   
     // handle native call
@@ -103,7 +99,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -116,7 +111,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__List_com_baidu_geofence_model_DPoint___String__String', {"var1": var1.map((__it__) => __it__?.refId).toList(), "var2": var2, "var3": var3, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__List_com_baidu_geofence_model_DPoint___String__String', {"var1": var1, "var2": var2, "var3": var3, "__this__": this});
   
   
     // handle native call
@@ -127,7 +122,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -140,7 +134,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__com_baidu_geofence_model_DPoint__String__double__int__String', {"var1": var1, "var2": var2, "var3": var3 is Ref ? (var3 as Ref)?.refId : var3, "var4": var4, "var5": var5, "var6": var6, "var7": var7, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__com_baidu_geofence_model_DPoint__String__double__int__String', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "var5": var5, "var6": var6, "var7": var7, "__this__": this});
   
   
     // handle native call
@@ -151,7 +145,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -164,7 +157,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__String__int__String', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "var5": var5, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__String__int__String', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "var5": var5, "__this__": this});
   
   
     // handle native call
@@ -175,7 +168,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -188,7 +180,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String', {"var1": var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -199,7 +191,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -212,7 +203,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence', {"__this__": this});
   
   
     // handle native call
@@ -223,7 +214,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -236,7 +226,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence__com_baidu_geofence_GeoFence', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence__com_baidu_geofence_GeoFence', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -247,7 +237,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -260,7 +249,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::getAllGeoFence', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::getAllGeoFence', {"__this__": this});
   
   
     // handle native call
@@ -270,8 +259,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_geofence_GeoFence()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
+      final __return__ = (__result__ as List).cast<String>().map((__it__) => com_baidu_geofence_GeoFence()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
       return __return__;
     }
   }
@@ -284,7 +272,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::setActivateAction', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::setActivateAction', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -295,7 +283,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -308,7 +295,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::setTriggerCount', {"var1": var1, "var2": var2, "var3": var3, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::setTriggerCount', {"var1": var1, "var2": var2, "var3": var3, "__this__": this});
   
   
     // handle native call
@@ -319,7 +306,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -332,25 +318,30 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::setGeoFenceListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::setGeoFenceListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.geofence.GeoFenceClient::setGeoFenceListener::Callback')
+    MethodChannel('com.baidu.geofence.GeoFenceClient::setGeoFenceListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.geofence.GeoFenceListener::onGeoFenceCreateFinished':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGeoFenceCreateFinished([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
-              }
-        
-              // handle the native call
-              var1?.onGeoFenceCreateFinished((args['var1'] as List).cast<int>().map((__it__) => TypeOpBmapMapFluttifyAndroid(__it__).as__<com_baidu_geofence_GeoFence>()).toList(), args['var2'], args['var3']);
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.geofence.GeoFenceListener::onGeoFenceCreateFinished':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGeoFenceCreateFinished([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
+                }
+          
+                // handle the native call
+                var1?.onGeoFenceCreateFinished((args['var1'] as List).cast<String>().map((__it__) => TypeOpBmapMapFluttifyAndroid(__it__).as__<com_baidu_geofence_GeoFence>()).toList(), args['var2'], args['var3']);
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -359,7 +350,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -372,7 +362,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::setGeoFenceAble', {"var1": var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::setGeoFenceAble', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -383,7 +373,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -396,7 +385,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::pauseGeoFence', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::pauseGeoFence', {"__this__": this});
   
   
     // handle native call
@@ -407,7 +396,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -420,7 +408,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::resumeGeoFence', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::resumeGeoFence', {"__this__": this});
   
   
     // handle native call
@@ -431,7 +419,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -444,7 +431,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::isPause', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::isPause', {"__this__": this});
   
   
     // handle native call
@@ -455,7 +442,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -468,7 +454,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::createPendingIntent', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::createPendingIntent', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -479,7 +465,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -492,7 +477,7 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::clear', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::clear', {"__this__": this});
   
   
     // handle native call
@@ -503,7 +488,6 @@ class com_baidu_geofence_GeoFenceClient extends com_baidu_location_BDAbstractLoc
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -528,7 +512,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::isHighAccuracyLoc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::isHighAccuracyLoc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -536,7 +520,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -548,7 +531,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__com_baidu_geofence_model_DPoint__String__double__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__com_baidu_geofence_model_DPoint__String__double__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -556,7 +539,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -568,7 +550,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__List_com_baidu_geofence_model_DPoint___String__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].map((it) => it.refId).toList(), "var2": var2[__i__], "var3": var3[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__List_com_baidu_geofence_model_DPoint___String__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -576,7 +558,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -588,7 +569,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__com_baidu_geofence_model_DPoint__String__double__int__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__].refId, "var4": var4[__i__], "var5": var5[__i__], "var6": var6[__i__], "var7": var7[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__com_baidu_geofence_model_DPoint__String__double__int__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "var5": var5[__i__], "var6": var6[__i__], "var7": var7[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -596,7 +577,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -608,7 +588,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__String__int__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "var5": var5[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String__String__int__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "var5": var5[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -616,7 +596,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -628,7 +607,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::addGeoFence__String__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -636,7 +615,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -648,7 +626,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -656,7 +634,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -668,7 +645,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence__com_baidu_geofence_GeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::removeGeoFence__com_baidu_geofence_GeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -676,7 +653,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -688,15 +664,14 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::getAllGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::getAllGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_geofence_GeoFence()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => com_baidu_geofence_GeoFence()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       return typedResult;
     }
   }
@@ -708,7 +683,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::setActivateAction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::setActivateAction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -716,7 +691,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -728,7 +702,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::setTriggerCount_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::setTriggerCount_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -736,7 +710,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -748,7 +721,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::setGeoFenceAble_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::setGeoFenceAble_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -756,7 +729,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -768,7 +740,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::pauseGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::pauseGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -776,7 +748,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -788,7 +759,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::resumeGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::resumeGeoFence_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -796,7 +767,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -808,7 +778,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::isPause_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::isPause_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -816,7 +786,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -828,7 +797,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::createPendingIntent_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::createPendingIntent_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -836,7 +805,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -848,7 +816,7 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.geofence.GeoFenceClient::clear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.geofence.GeoFenceClient::clear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -856,7 +824,6 @@ extension com_baidu_geofence_GeoFenceClient_Batch on List<com_baidu_geofence_Geo
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

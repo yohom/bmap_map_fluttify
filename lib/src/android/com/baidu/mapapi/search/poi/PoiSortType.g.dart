@@ -13,6 +13,7 @@ extension com_baidu_mapapi_search_poi_PoiSortTypeToX on com_baidu_mapapi_search_
     switch (this) {
       case com_baidu_mapapi_search_poi_PoiSortType.comprehensive: return com_baidu_mapapi_search_poi_PoiSortType.comprehensive.index + 0;
       case com_baidu_mapapi_search_poi_PoiSortType.distance_from_near_to_far: return com_baidu_mapapi_search_poi_PoiSortType.distance_from_near_to_far.index + 0;
+      default: return 0;
     }
   }
 }

@@ -21,18 +21,14 @@ class com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException extends java_lang
 
   //region creators
   static Future<com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__', );
     final object = com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
   static Future<com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException> create__String(String var1) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String', {"var1": var1});
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String', {"var1": var1});
     final object = com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -40,10 +36,9 @@ class com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException extends java_lang
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__', {'length': length});
   
     final List<com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException> typedResult = resultBatch.map((result) => com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -51,10 +46,9 @@ class com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException extends java_lang
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException__String', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
   
     final List<com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException> typedResult = resultBatch.map((result) => com_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   

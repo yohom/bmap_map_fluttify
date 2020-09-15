@@ -40,7 +40,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onSuccess', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onSuccess', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -51,7 +51,6 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -64,7 +63,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onFailed', {"var1": var1.toValue(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onFailed', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
@@ -75,7 +74,6 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -100,7 +98,7 @@ extension com_baidu_mapapi_http_HttpClient_ProtoResultCallback_Batch on List<com
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onSuccess_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onSuccess_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -108,7 +106,6 @@ extension com_baidu_mapapi_http_HttpClient_ProtoResultCallback_Batch on List<com
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -120,7 +117,7 @@ extension com_baidu_mapapi_http_HttpClient_ProtoResultCallback_Batch on List<com
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onFailed_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient.ProtoResultCallback::onFailed_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -128,7 +125,6 @@ extension com_baidu_mapapi_http_HttpClient_ProtoResultCallback_Batch on List<com
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

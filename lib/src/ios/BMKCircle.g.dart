@@ -20,22 +20,19 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   //endregion
 
   //region creators
-  static Future<BMKCircle> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKCircle');
+  static Future<BMKCircle> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKCircle', {'init': init});
     final object = BMKCircle()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKCircle>> create_batch__(int length) async {
+  static Future<List<BMKCircle>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKCircle', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKCircle', {'length': length, 'init': init});
   
     final List<BMKCircle> typedResult = resultBatch.map((result) => BMKCircle()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,34 +40,31 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
 
   //region getters
   Future<CLLocationCoordinate2D> get_coordinate() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircle::get_coordinate", {'refId': refId});
-    kNativeObjectPool.add(CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKCircle::get_coordinate", {'__this__': this});
+    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<double> get_radius() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircle::get_radius", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKCircle::get_radius", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<BMKMapRect> get_boundingMapRect() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircle::get_boundingMapRect", {'refId': refId});
-    kNativeObjectPool.add(BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKCircle::get_boundingMapRect", {'__this__': this});
+    return __result__ == null ? null : (BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   //endregion
 
   //region setters
   Future<void> set_coordinate(CLLocationCoordinate2D coordinate) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::set_coordinate', {'refId': refId, "coordinate": coordinate.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
   
   
   }
   
   Future<void> set_radius(double radius) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::set_radius', {'refId': refId, "radius": radius});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::set_radius', <String, dynamic>{'__this__': this, "radius": radius});
   
   
   }
@@ -86,7 +80,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithCenterCoordinate_radius', {"coord": coord is Ref ? (coord as Ref)?.refId : coord, "radius": radius});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::circleWithCenterCoordinate_radius', {"coord": coord, "radius": radius});
   
   
     // handle native call
@@ -97,7 +91,6 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -110,7 +103,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithMapRect', {"mapRect": mapRect is Ref ? (mapRect as Ref)?.refId : mapRect});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::circleWithMapRect', {"mapRect": mapRect});
   
   
     // handle native call
@@ -121,7 +114,6 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -134,7 +126,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithCenterCoordinate_radius', {"coord": coord is Ref ? (coord as Ref)?.refId : coord, "radius": radius, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::setCircleWithCenterCoordinate_radius', {"coord": coord, "radius": radius, "__this__": this});
   
   
     // handle native call
@@ -145,7 +137,6 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -158,7 +149,7 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithMapRect', {"mapRect": mapRect is Ref ? (mapRect as Ref)?.refId : mapRect, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::setCircleWithMapRect', {"mapRect": mapRect, "__this__": this});
   
   
     // handle native call
@@ -169,7 +160,6 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -180,23 +170,23 @@ class BMKCircle extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
 extension BMKCircle_Batch on List<BMKCircle> {
   //region getters
   Future<List<CLLocationCoordinate2D>> get_coordinate_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircle::get_coordinate_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKCircle::get_coordinate_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<double>> get_radius_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircle::get_radius_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKCircle::get_radius_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<BMKMapRect>> get_boundingMapRect_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircle::get_boundingMapRect_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKCircle::get_boundingMapRect_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
@@ -204,13 +194,13 @@ extension BMKCircle_Batch on List<BMKCircle> {
 
   //region setters
   Future<void> set_coordinate_batch(List<CLLocationCoordinate2D> coordinate) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::set_coordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "coordinate": coordinate[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKCircle::set_coordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "coordinate": coordinate[__i__]}]);
   
   
   }
   
   Future<void> set_radius_batch(List<double> radius) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::set_radius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "radius": radius[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKCircle::set_radius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "radius": radius[__i__]}]);
   
   
   }
@@ -225,15 +215,14 @@ extension BMKCircle_Batch on List<BMKCircle> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithCenterCoordinate_radius_batch', [for (int __i__ = 0; __i__ < coord.length; __i__++) {"coord": coord[__i__].refId, "radius": radius[__i__]}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::circleWithCenterCoordinate_radius_batch', [for (int __i__ = 0; __i__ < coord.length; __i__++) {"coord": coord[__i__], "radius": radius[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -245,15 +234,14 @@ extension BMKCircle_Batch on List<BMKCircle> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::circleWithMapRect_batch', [for (int __i__ = 0; __i__ < mapRect.length; __i__++) {"mapRect": mapRect[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::circleWithMapRect_batch', [for (int __i__ = 0; __i__ < mapRect.length; __i__++) {"mapRect": mapRect[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -265,7 +253,7 @@ extension BMKCircle_Batch on List<BMKCircle> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithCenterCoordinate_radius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coord": coord[__i__].refId, "radius": radius[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::setCircleWithCenterCoordinate_radius_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coord": coord[__i__], "radius": radius[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -273,7 +261,6 @@ extension BMKCircle_Batch on List<BMKCircle> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -285,7 +272,7 @@ extension BMKCircle_Batch on List<BMKCircle> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircle::setCircleWithMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKCircle::setCircleWithMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -293,7 +280,6 @@ extension BMKCircle_Batch on List<BMKCircle> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

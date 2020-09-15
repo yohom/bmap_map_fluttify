@@ -24,31 +24,13 @@ mixin com_baidu_mapapi_map_CustomMapStyleCallBack on java_lang_Object {
   
 
   @mustCallSuper
-  Future<bool> onPreLoadLastCustomMapStyle(String var1) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onPreLoadLastCustomMapStyle::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> onPreLoadLastCustomMapStyle(String var1) {}
   
   @mustCallSuper
-  Future<bool> onCustomMapStyleLoadSuccess(bool var1, String var2) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onCustomMapStyleLoadSuccess::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> onCustomMapStyleLoadSuccess(bool var1, String var2) {}
   
   @mustCallSuper
-  Future<bool> onCustomMapStyleLoadFailed(int var1, String var2, String var3) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onCustomMapStyleLoadFailed::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> onCustomMapStyleLoadFailed(int var1, String var2, String var3) {}
   
 }
 

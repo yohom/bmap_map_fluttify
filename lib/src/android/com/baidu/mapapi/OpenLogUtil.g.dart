@@ -21,10 +21,8 @@ class com_baidu_mapapi_OpenLogUtil extends java_lang_Object  {
 
   //region creators
   static Future<com_baidu_mapapi_OpenLogUtil> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_OpenLogUtil__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_OpenLogUtil__', );
     final object = com_baidu_mapapi_OpenLogUtil()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_OpenLogUtil extends java_lang_Object  {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_OpenLogUtil__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_OpenLogUtil__', {'length': length});
   
     final List<com_baidu_mapapi_OpenLogUtil> typedResult = resultBatch.map((result) => com_baidu_mapapi_OpenLogUtil()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,7 +55,7 @@ class com_baidu_mapapi_OpenLogUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable', {"var0": var0.toValue(), "var1": var1});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable', {"var0": var0.toValue(), "var1": var1});
   
   
     // handle native call
@@ -69,7 +66,6 @@ class com_baidu_mapapi_OpenLogUtil extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -94,7 +90,7 @@ extension com_baidu_mapapi_OpenLogUtil_Batch on List<com_baidu_mapapi_OpenLogUti
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__].toValue(), "var1": var1[__i__]}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.OpenLogUtil::setModuleLogEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__].toValue(), "var1": var1[__i__]}]);
   
   
     // convert native result to dart side object
@@ -102,7 +98,6 @@ extension com_baidu_mapapi_OpenLogUtil_Batch on List<com_baidu_mapapi_OpenLogUti
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

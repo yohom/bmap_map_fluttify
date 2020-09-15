@@ -17,6 +17,7 @@ extension com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicyToX 
       case com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy.ECAR_TIME_FIRST: return com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy.ECAR_TIME_FIRST.index + 0;
       case com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy.ECAR_DIS_FIRST: return com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy.ECAR_DIS_FIRST.index + 0;
       case com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy.ECAR_FEE_FIRST: return com_baidu_mapapi_search_route_DrivingRoutePlanOption_DrivingPolicy.ECAR_FEE_FIRST.index + 0;
+      default: return 0;
     }
   }
 }

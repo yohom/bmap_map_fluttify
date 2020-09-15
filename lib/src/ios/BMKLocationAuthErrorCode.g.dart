@@ -17,6 +17,7 @@ extension BMKLocationAuthErrorCodeToX on BMKLocationAuthErrorCode {
       case BMKLocationAuthErrorCode.BMKLocationAuthErrorSuccess: return 0;
       case BMKLocationAuthErrorCode.BMKLocationAuthErrorNetworkFailed: return 1;
       case BMKLocationAuthErrorCode.BMKLocationAuthErrorFailed: return 2;
+      default: return 0;
     }
   }
 }

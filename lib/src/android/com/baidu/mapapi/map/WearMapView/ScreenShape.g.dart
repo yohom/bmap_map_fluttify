@@ -15,6 +15,7 @@ extension com_baidu_mapapi_map_WearMapView_ScreenShapeToX on com_baidu_mapapi_ma
       case com_baidu_mapapi_map_WearMapView_ScreenShape.ROUND: return com_baidu_mapapi_map_WearMapView_ScreenShape.ROUND.index + 0;
       case com_baidu_mapapi_map_WearMapView_ScreenShape.RECTANGLE: return com_baidu_mapapi_map_WearMapView_ScreenShape.RECTANGLE.index + 0;
       case com_baidu_mapapi_map_WearMapView_ScreenShape.UNDETECTED: return com_baidu_mapapi_map_WearMapView_ScreenShape.UNDETECTED.index + 0;
+      default: return 0;
     }
   }
 }

@@ -19,9 +19,11 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
+import io.flutter.plugin.common.StandardMethodCodec;
 import io.flutter.plugin.platform.PlatformViewRegistry;
 
 import com.fluttify.bmap_map_fluttify.BmapMapFluttifyPlugin.Handler;
+import me.yohom.foundation_fluttify.core.FluttifyMessageCodec;
 
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getEnableLog;
 import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
@@ -35,2296 +37,1837 @@ public class SubHandler1 {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiDetailResult __this__ = (com.baidu.mapapi.search.poi.PoiDetailResult) __args__.get("__this__");
             
-               int __result__ = ref.commentNum;
+               Integer __result__ = __this__.commentNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiDetailResult::get_discountNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiDetailResult __this__ = (com.baidu.mapapi.search.poi.PoiDetailResult) __args__.get("__this__");
             
-               int __result__ = ref.discountNum;
+               Integer __result__ = __this__.discountNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiDetailResult::get_favoriteNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiDetailResult __this__ = (com.baidu.mapapi.search.poi.PoiDetailResult) __args__.get("__this__");
             
-               int __result__ = ref.favoriteNum;
+               Integer __result__ = __this__.favoriteNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiDetailResult::get_checkinNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiDetailResult __this__ = (com.baidu.mapapi.search.poi.PoiDetailResult) __args__.get("__this__");
             
-               int __result__ = ref.checkinNum;
+               Integer __result__ = __this__.checkinNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiDetailResult::get_shopHours", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiDetailResult ref = (com.baidu.mapapi.search.poi.PoiDetailResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiDetailResult __this__ = (com.baidu.mapapi.search.poi.PoiDetailResult) __args__.get("__this__");
             
-               String __result__ = ref.shopHours;
+               String __result__ = __this__.shopHours;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiIndoorResult::get_poiNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiIndoorResult ref = (com.baidu.mapapi.search.poi.PoiIndoorResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiIndoorResult __this__ = (com.baidu.mapapi.search.poi.PoiIndoorResult) __args__.get("__this__");
             
-               int __result__ = ref.poiNum;
+               Integer __result__ = __this__.poiNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiIndoorResult::get_pageNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiIndoorResult ref = (com.baidu.mapapi.search.poi.PoiIndoorResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiIndoorResult __this__ = (com.baidu.mapapi.search.poi.PoiIndoorResult) __args__.get("__this__");
             
-               int __result__ = ref.pageNum;
+               Integer __result__ = __this__.pageNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mKeyword", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               String __result__ = ref.mKeyword;
+               String __result__ = __this__.mKeyword;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mLocation", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.mLocation;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.mLocation;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mRadius", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               int __result__ = ref.mRadius;
+               Integer __result__ = __this__.mRadius;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mPageNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               int __result__ = ref.mPageNum;
+               Integer __result__ = __this__.mPageNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mPageCapacity", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               int __result__ = ref.mPageCapacity;
+               Integer __result__ = __this__.mPageCapacity;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_sortType", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               com.baidu.mapapi.search.poi.PoiSortType __result__ = ref.sortType;
+               com.baidu.mapapi.search.poi.PoiSortType __result__ = __this__.sortType;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = __result__.ordinal();
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mTag", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               String __result__ = ref.mTag;
+               String __result__ = __this__.mTag;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mScope", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               int __result__ = ref.mScope;
+               Integer __result__ = __this__.mScope;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mRadiusLimit", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               boolean __result__ = ref.mRadiusLimit;
+               Boolean __result__ = __this__.mRadiusLimit;
             
-               boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.poi.PoiNearbySearchOption::get_mPoiFilter", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.poi.PoiNearbySearchOption ref = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.poi.PoiNearbySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiNearbySearchOption) __args__.get("__this__");
             
-               com.baidu.mapapi.search.poi.PoiFilter __result__ = ref.mPoiFilter;
+               com.baidu.mapapi.search.poi.PoiFilter __result__ = __this__.mPoiFilter;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.district.DistrictSearchOption::get_mCityName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.district.DistrictSearchOption ref = (com.baidu.mapapi.search.district.DistrictSearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.district.DistrictSearchOption __this__ = (com.baidu.mapapi.search.district.DistrictSearchOption) __args__.get("__this__");
             
-               String __result__ = ref.mCityName;
+               String __result__ = __this__.mCityName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.district.DistrictSearchOption::get_mDistrictName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.district.DistrictSearchOption ref = (com.baidu.mapapi.search.district.DistrictSearchOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.district.DistrictSearchOption __this__ = (com.baidu.mapapi.search.district.DistrictSearchOption) __args__.get("__this__");
             
-               String __result__ = ref.mDistrictName;
+               String __result__ = __this__.mDistrictName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.district.DistrictResult::get_centerPt", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.district.DistrictResult ref = (com.baidu.mapapi.search.district.DistrictResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.district.DistrictResult __this__ = (com.baidu.mapapi.search.district.DistrictResult) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.centerPt;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.centerPt;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.district.DistrictResult::get_cityCode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.district.DistrictResult ref = (com.baidu.mapapi.search.district.DistrictResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.district.DistrictResult __this__ = (com.baidu.mapapi.search.district.DistrictResult) __args__.get("__this__");
             
-               int __result__ = ref.cityCode;
+               Integer __result__ = __this__.cityCode;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.district.DistrictResult::get_cityName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.district.DistrictResult ref = (com.baidu.mapapi.search.district.DistrictResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.district.DistrictResult __this__ = (com.baidu.mapapi.search.district.DistrictResult) __args__.get("__this__");
             
-               String __result__ = ref.cityName;
+               String __result__ = __this__.cityName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_streetNumber", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.streetNumber;
+               String __result__ = __this__.streetNumber;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_street", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.street;
+               String __result__ = __this__.street;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_town", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.town;
+               String __result__ = __this__.town;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_district", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.district;
+               String __result__ = __this__.district;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_city", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.city;
+               String __result__ = __this__.city;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_province", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.province;
+               String __result__ = __this__.province;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.countryName;
+               String __result__ = __this__.countryName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryCode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               int __result__ = ref.countryCode;
+               Integer __result__ = __this__.countryCode;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_adcode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               int __result__ = ref.adcode;
+               Integer __result__ = __this__.adcode;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_direction", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.direction;
+               String __result__ = __this__.direction;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_distance", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent) __args__.get("__this__");
             
-               String __result__ = ref.distance;
+               String __result__ = __this__.distance;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_directionDesc", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) __args__.get("__this__");
             
-               String __result__ = ref.directionDesc;
+               String __result__ = __this__.directionDesc;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) __args__.get("__this__");
             
-               String __result__ = ref.regionName;
+               String __result__ = __this__.regionName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionTag", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo ref = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo __this__ = (com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo) __args__.get("__this__");
             
-               String __result__ = ref.regionTag;
+               String __result__ = __this__.regionTag;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.GeoCodeOption::get_mCity", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.GeoCodeOption ref = (com.baidu.mapapi.search.geocode.GeoCodeOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.GeoCodeOption __this__ = (com.baidu.mapapi.search.geocode.GeoCodeOption) __args__.get("__this__");
             
-               String __result__ = ref.mCity;
+               String __result__ = __this__.mCity;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.geocode.GeoCodeOption::get_mAddress", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.geocode.GeoCodeOption ref = (com.baidu.mapapi.search.geocode.GeoCodeOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.geocode.GeoCodeOption __this__ = (com.baidu.mapapi.search.geocode.GeoCodeOption) __args__.get("__this__");
             
-               String __result__ = ref.mAddress;
+               String __result__ = __this__.mAddress;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.LocationShareURLOption::get_mLocation", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.LocationShareURLOption ref = (com.baidu.mapapi.search.share.LocationShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.LocationShareURLOption __this__ = (com.baidu.mapapi.search.share.LocationShareURLOption) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.mLocation;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.mLocation;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.LocationShareURLOption::get_mName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.LocationShareURLOption ref = (com.baidu.mapapi.search.share.LocationShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.LocationShareURLOption __this__ = (com.baidu.mapapi.search.share.LocationShareURLOption) __args__.get("__this__");
             
-               String __result__ = ref.mName;
+               String __result__ = __this__.mName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.LocationShareURLOption::get_mSnippet", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.LocationShareURLOption ref = (com.baidu.mapapi.search.share.LocationShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.LocationShareURLOption __this__ = (com.baidu.mapapi.search.share.LocationShareURLOption) __args__.get("__this__");
             
-               String __result__ = ref.mSnippet;
+               String __result__ = __this__.mSnippet;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.PoiDetailShareURLOption::get_mUid", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.PoiDetailShareURLOption ref = (com.baidu.mapapi.search.share.PoiDetailShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.PoiDetailShareURLOption __this__ = (com.baidu.mapapi.search.share.PoiDetailShareURLOption) __args__.get("__this__");
             
-               String __result__ = ref.mUid;
+               String __result__ = __this__.mUid;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.RouteShareURLOption::get_mFrom", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.RouteShareURLOption ref = (com.baidu.mapapi.search.share.RouteShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) __args__.get("__this__");
             
-               com.baidu.mapapi.search.route.PlanNode __result__ = ref.mFrom;
+               com.baidu.mapapi.search.route.PlanNode __result__ = __this__.mFrom;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.RouteShareURLOption::get_mTo", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.RouteShareURLOption ref = (com.baidu.mapapi.search.share.RouteShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) __args__.get("__this__");
             
-               com.baidu.mapapi.search.route.PlanNode __result__ = ref.mTo;
+               com.baidu.mapapi.search.route.PlanNode __result__ = __this__.mTo;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.RouteShareURLOption::get_mMode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.RouteShareURLOption ref = (com.baidu.mapapi.search.share.RouteShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) __args__.get("__this__");
             
-               com.baidu.mapapi.search.share.RouteShareURLOption.RouteShareMode __result__ = ref.mMode;
+               com.baidu.mapapi.search.share.RouteShareURLOption.RouteShareMode __result__ = __this__.mMode;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = __result__.ordinal();
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.RouteShareURLOption::get_mPn", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.RouteShareURLOption ref = (com.baidu.mapapi.search.share.RouteShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) __args__.get("__this__");
             
-               int __result__ = ref.mPn;
+               Integer __result__ = __this__.mPn;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.search.share.RouteShareURLOption::get_mCityCode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.search.share.RouteShareURLOption ref = (com.baidu.mapapi.search.share.RouteShareURLOption) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) __args__.get("__this__");
             
-               int __result__ = ref.mCityCode;
+               Integer __result__ = __this__.mCityCode;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.Tile::get_data", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.Tile ref = (com.baidu.mapapi.map.Tile) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.Tile __this__ = (com.baidu.mapapi.map.Tile) __args__.get("__this__");
             
-               byte[] __result__ = ref.data;
+               byte[] __result__ = __this__.data;
             
-               byte[] jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.Tile::get_height", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.Tile ref = (com.baidu.mapapi.map.Tile) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.Tile __this__ = (com.baidu.mapapi.map.Tile) __args__.get("__this__");
             
-               int __result__ = ref.height;
+               Integer __result__ = __this__.height;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.Tile::get_width", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.Tile ref = (com.baidu.mapapi.map.Tile) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.Tile __this__ = (com.baidu.mapapi.map.Tile) __args__.get("__this__");
             
-               int __result__ = ref.width;
+               Integer __result__ = __this__.width;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.WinRound::get_left", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.WinRound ref = (com.baidu.mapapi.map.WinRound) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.WinRound __this__ = (com.baidu.mapapi.map.WinRound) __args__.get("__this__");
             
-               int __result__ = ref.left;
+               Integer __result__ = __this__.left;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.WinRound::get_right", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.WinRound ref = (com.baidu.mapapi.map.WinRound) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.WinRound __this__ = (com.baidu.mapapi.map.WinRound) __args__.get("__this__");
             
-               int __result__ = ref.right;
+               Integer __result__ = __this__.right;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.WinRound::get_top", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.WinRound ref = (com.baidu.mapapi.map.WinRound) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.WinRound __this__ = (com.baidu.mapapi.map.WinRound) __args__.get("__this__");
             
-               int __result__ = ref.top;
+               Integer __result__ = __this__.top;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.WinRound::get_bottom", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.WinRound ref = (com.baidu.mapapi.map.WinRound) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.WinRound __this__ = (com.baidu.mapapi.map.WinRound) __args__.get("__this__");
             
-               int __result__ = ref.bottom;
+               Integer __result__ = __this__.bottom;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.Stroke::get_strokeWidth", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.Stroke ref = (com.baidu.mapapi.map.Stroke) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.Stroke __this__ = (com.baidu.mapapi.map.Stroke) __args__.get("__this__");
             
-               int __result__ = ref.strokeWidth;
+               Integer __result__ = __this__.strokeWidth;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.Stroke::get_color", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.Stroke ref = (com.baidu.mapapi.map.Stroke) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.Stroke __this__ = (com.baidu.mapapi.map.Stroke) __args__.get("__this__");
             
-               int __result__ = ref.color;
+               Integer __result__ = __this__.color;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.WeightedLatLng::get_intensity", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.WeightedLatLng ref = (com.baidu.mapapi.map.WeightedLatLng) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.WeightedLatLng __this__ = (com.baidu.mapapi.map.WeightedLatLng) __args__.get("__this__");
             
-               double __result__ = ref.intensity;
+               Double __result__ = __this__.intensity;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.WeightedLatLng::get_latLng", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.WeightedLatLng ref = (com.baidu.mapapi.map.WeightedLatLng) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.WeightedLatLng __this__ = (com.baidu.mapapi.map.WeightedLatLng) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.latLng;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.latLng;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.BaiduMap ref = (com.baidu.mapapi.map.BaiduMap) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) __args__.get("__this__");
             
-               int __result__ = ref.mapStatusReason;
+               Integer __result__ = __this__.mapStatusReason;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MapStatus::get_rotate", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MapStatus __this__ = (com.baidu.mapapi.map.MapStatus) __args__.get("__this__");
             
-               float __result__ = ref.rotate;
+               Float __result__ = __this__.rotate;
             
-               float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MapStatus::get_target", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MapStatus __this__ = (com.baidu.mapapi.map.MapStatus) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.target;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.target;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MapStatus::get_overlook", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MapStatus __this__ = (com.baidu.mapapi.map.MapStatus) __args__.get("__this__");
             
-               float __result__ = ref.overlook;
+               Float __result__ = __this__.overlook;
             
-               float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MapStatus::get_zoom", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MapStatus __this__ = (com.baidu.mapapi.map.MapStatus) __args__.get("__this__");
             
-               float __result__ = ref.zoom;
+               Float __result__ = __this__.zoom;
             
-               float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MapStatus::get_targetScreen", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MapStatus __this__ = (com.baidu.mapapi.map.MapStatus) __args__.get("__this__");
             
-               android.graphics.Point __result__ = ref.targetScreen;
+               android.graphics.Point __result__ = __this__.targetScreen;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MapStatus::get_bound", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MapStatus __this__ = (com.baidu.mapapi.map.MapStatus) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLngBounds __result__ = ref.bound;
+               com.baidu.mapapi.model.LatLngBounds __result__ = __this__.bound;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MapStatus::get_winRound", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MapStatus ref = (com.baidu.mapapi.map.MapStatus) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MapStatus __this__ = (com.baidu.mapapi.map.MapStatus) __args__.get("__this__");
             
-               com.baidu.mapapi.map.WinRound __result__ = ref.winRound;
+               com.baidu.mapapi.map.WinRound __result__ = __this__.winRound;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.HeatMap::get_DEFAULT_GRADIENT", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.HeatMap ref = (com.baidu.mapapi.map.HeatMap) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.HeatMap __this__ = (com.baidu.mapapi.map.HeatMap) __args__.get("__this__");
             
-               com.baidu.mapapi.map.Gradient __result__ = ref.DEFAULT_GRADIENT;
+               com.baidu.mapapi.map.Gradient __result__ = __this__.DEFAULT_GRADIENT;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationConfiguration::get_locationMode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationConfiguration ref = (com.baidu.mapapi.map.MyLocationConfiguration) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationConfiguration __this__ = (com.baidu.mapapi.map.MyLocationConfiguration) __args__.get("__this__");
             
-               com.baidu.mapapi.map.MyLocationConfiguration.LocationMode __result__ = ref.locationMode;
+               com.baidu.mapapi.map.MyLocationConfiguration.LocationMode __result__ = __this__.locationMode;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = __result__.ordinal();
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationConfiguration::get_enableDirection", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationConfiguration ref = (com.baidu.mapapi.map.MyLocationConfiguration) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationConfiguration __this__ = (com.baidu.mapapi.map.MyLocationConfiguration) __args__.get("__this__");
             
-               boolean __result__ = ref.enableDirection;
+               Boolean __result__ = __this__.enableDirection;
             
-               boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationConfiguration::get_customMarker", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationConfiguration ref = (com.baidu.mapapi.map.MyLocationConfiguration) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationConfiguration __this__ = (com.baidu.mapapi.map.MyLocationConfiguration) __args__.get("__this__");
             
-               com.baidu.mapapi.map.BitmapDescriptor __result__ = ref.customMarker;
+               com.baidu.mapapi.map.BitmapDescriptor __result__ = __this__.customMarker;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleFillColor", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationConfiguration ref = (com.baidu.mapapi.map.MyLocationConfiguration) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationConfiguration __this__ = (com.baidu.mapapi.map.MyLocationConfiguration) __args__.get("__this__");
             
-               int __result__ = ref.accuracyCircleFillColor;
+               Integer __result__ = __this__.accuracyCircleFillColor;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleStrokeColor", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationConfiguration ref = (com.baidu.mapapi.map.MyLocationConfiguration) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationConfiguration __this__ = (com.baidu.mapapi.map.MyLocationConfiguration) __args__.get("__this__");
             
-               int __result__ = ref.accuracyCircleStrokeColor;
+               Integer __result__ = __this__.accuracyCircleStrokeColor;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.TileOverlayOptions::get_datasource", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.TileOverlayOptions ref = (com.baidu.mapapi.map.TileOverlayOptions) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.TileOverlayOptions __this__ = (com.baidu.mapapi.map.TileOverlayOptions) __args__.get("__this__");
             
-               int __result__ = ref.datasource;
+               Integer __result__ = __this__.datasource;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.TileOverlayOptions::get_urlString", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.TileOverlayOptions ref = (com.baidu.mapapi.map.TileOverlayOptions) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.TileOverlayOptions __this__ = (com.baidu.mapapi.map.TileOverlayOptions) __args__.get("__this__");
             
-               String __result__ = ref.urlString;
+               String __result__ = __this__.urlString;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityID", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               int __result__ = ref.cityID;
+               Integer __result__ = __this__.cityID;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               String __result__ = ref.cityName;
+               String __result__ = __this__.cityName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_ratio", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               int __result__ = ref.ratio;
+               Integer __result__ = __this__.ratio;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_status", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               int __result__ = ref.status;
+               Integer __result__ = __this__.status;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_geoPt", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.geoPt;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.geoPt;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_size", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               int __result__ = ref.size;
+               Integer __result__ = __this__.size;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_serversize", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               int __result__ = ref.serversize;
+               Integer __result__ = __this__.serversize;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_level", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               int __result__ = ref.level;
+               Integer __result__ = __this__.level;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_update", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLUpdateElement ref = (com.baidu.mapapi.map.offline.MKOLUpdateElement) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLUpdateElement __this__ = (com.baidu.mapapi.map.offline.MKOLUpdateElement) __args__.get("__this__");
             
-               boolean __result__ = ref.update;
+               Boolean __result__ = __this__.update;
             
-               boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityID", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLSearchRecord ref = (com.baidu.mapapi.map.offline.MKOLSearchRecord) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLSearchRecord __this__ = (com.baidu.mapapi.map.offline.MKOLSearchRecord) __args__.get("__this__");
             
-               int __result__ = ref.cityID;
+               Integer __result__ = __this__.cityID;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_size", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLSearchRecord ref = (com.baidu.mapapi.map.offline.MKOLSearchRecord) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLSearchRecord __this__ = (com.baidu.mapapi.map.offline.MKOLSearchRecord) __args__.get("__this__");
             
-               int __result__ = ref.size;
+               Integer __result__ = __this__.size;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_dataSize", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLSearchRecord ref = (com.baidu.mapapi.map.offline.MKOLSearchRecord) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLSearchRecord __this__ = (com.baidu.mapapi.map.offline.MKOLSearchRecord) __args__.get("__this__");
             
-               long __result__ = ref.dataSize;
+               Long __result__ = __this__.dataSize;
             
-               long jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLSearchRecord ref = (com.baidu.mapapi.map.offline.MKOLSearchRecord) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLSearchRecord __this__ = (com.baidu.mapapi.map.offline.MKOLSearchRecord) __args__.get("__this__");
             
-               String __result__ = ref.cityName;
+               String __result__ = __this__.cityName;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityType", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLSearchRecord ref = (com.baidu.mapapi.map.offline.MKOLSearchRecord) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLSearchRecord __this__ = (com.baidu.mapapi.map.offline.MKOLSearchRecord) __args__.get("__this__");
             
-               int __result__ = ref.cityType;
+               Integer __result__ = __this__.cityType;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_childCities", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.offline.MKOLSearchRecord ref = (com.baidu.mapapi.map.offline.MKOLSearchRecord) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.offline.MKOLSearchRecord __this__ = (com.baidu.mapapi.map.offline.MKOLSearchRecord) __args__.get("__this__");
             
-               java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__ = ref.childCities;
+               java.util.ArrayList<com.baidu.mapapi.map.offline.MKOLSearchRecord> __result__ = __this__.childCities;
             
-               List<Integer> jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = new ArrayList<>();
-                   for (com.baidu.mapapi.map.offline.MKOLSearchRecord item : __result__) {
-                       getHEAP().put(System.identityHashCode(item), item);
-                       jsonableResult.add(System.identityHashCode(item));
-                   }
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationData::get_latitude", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationData ref = (com.baidu.mapapi.map.MyLocationData) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationData __this__ = (com.baidu.mapapi.map.MyLocationData) __args__.get("__this__");
             
-               double __result__ = ref.latitude;
+               Double __result__ = __this__.latitude;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationData::get_longitude", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationData ref = (com.baidu.mapapi.map.MyLocationData) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationData __this__ = (com.baidu.mapapi.map.MyLocationData) __args__.get("__this__");
             
-               double __result__ = ref.longitude;
+               Double __result__ = __this__.longitude;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationData::get_speed", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationData ref = (com.baidu.mapapi.map.MyLocationData) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationData __this__ = (com.baidu.mapapi.map.MyLocationData) __args__.get("__this__");
             
-               float __result__ = ref.speed;
+               Float __result__ = __this__.speed;
             
-               float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationData::get_direction", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationData ref = (com.baidu.mapapi.map.MyLocationData) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationData __this__ = (com.baidu.mapapi.map.MyLocationData) __args__.get("__this__");
             
-               float __result__ = ref.direction;
+               Float __result__ = __this__.direction;
             
-               float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationData::get_accuracy", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationData ref = (com.baidu.mapapi.map.MyLocationData) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationData __this__ = (com.baidu.mapapi.map.MyLocationData) __args__.get("__this__");
             
-               float __result__ = ref.accuracy;
+               Float __result__ = __this__.accuracy;
             
-               float jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.map.MyLocationData::get_satellitesNum", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.map.MyLocationData ref = (com.baidu.mapapi.map.MyLocationData) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.map.MyLocationData __this__ = (com.baidu.mapapi.map.MyLocationData) __args__.get("__this__");
             
-               int __result__ = ref.satellitesNum;
+               Integer __result__ = __this__.satellitesNum;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.http.HttpClient ref = (com.baidu.mapapi.http.HttpClient) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.http.HttpClient __this__ = (com.baidu.mapapi.http.HttpClient) __args__.get("__this__");
             
-               boolean __result__ = ref.isHttpsEnable;
+               Boolean __result__ = __this__.isHttpsEnable;
             
-               boolean jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_q", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseCloudSearchInfo ref = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseCloudSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.q;
+               String __result__ = __this__.q;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_tags", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseCloudSearchInfo ref = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseCloudSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.tags;
+               String __result__ = __this__.tags;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_sortby", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseCloudSearchInfo ref = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseCloudSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.sortby;
+               String __result__ = __this__.sortby;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_filter", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseCloudSearchInfo ref = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseCloudSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.filter;
+               String __result__ = __this__.filter;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageIndex", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseCloudSearchInfo ref = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseCloudSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) __args__.get("__this__");
             
-               int __result__ = ref.pageIndex;
+               Integer __result__ = __this__.pageIndex;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseCloudSearchInfo::get_pageSize", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseCloudSearchInfo ref = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseCloudSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseCloudSearchInfo) __args__.get("__this__");
             
-               int __result__ = ref.pageSize;
+               Integer __result__ = __this__.pageSize;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.LocalSearchInfo::get_region", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.LocalSearchInfo ref = (com.baidu.mapapi.cloud.LocalSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.LocalSearchInfo __this__ = (com.baidu.mapapi.cloud.LocalSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.region;
+               String __result__ = __this__.region;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_uid", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               int __result__ = ref.uid;
+               Integer __result__ = __this__.uid;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_poiId", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.poiId;
+               String __result__ = __this__.poiId;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_geotableId", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               int __result__ = ref.geotableId;
+               Integer __result__ = __this__.geotableId;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_title", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.title;
+               String __result__ = __this__.title;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_address", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.address;
+               String __result__ = __this__.address;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_province", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.province;
+               String __result__ = __this__.province;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_city", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.city;
+               String __result__ = __this__.city;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_district", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.district;
+               String __result__ = __this__.district;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_latitude", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               double __result__ = ref.latitude;
+               Double __result__ = __this__.latitude;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_longitude", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               double __result__ = ref.longitude;
+               Double __result__ = __this__.longitude;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_tags", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.tags;
+               String __result__ = __this__.tags;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_distance", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               int __result__ = ref.distance;
+               Integer __result__ = __this__.distance;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_direction", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.direction;
+               String __result__ = __this__.direction;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_weight", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               int __result__ = ref.weight;
+               Integer __result__ = __this__.weight;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudPoiInfo::get_extras", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudPoiInfo ref = (com.baidu.mapapi.cloud.CloudPoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudPoiInfo __this__ = (com.baidu.mapapi.cloud.CloudPoiInfo) __args__.get("__this__");
             
-               java.util.Map<String,java.lang.Object> __result__ = ref.extras;
+               java.util.Map<String,java.lang.Object> __result__ = __this__.extras;
             
-               java.util.Map<String,java.lang.Object> jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseSearchResult::get_status", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseSearchResult ref = (com.baidu.mapapi.cloud.BaseSearchResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseSearchResult __this__ = (com.baidu.mapapi.cloud.BaseSearchResult) __args__.get("__this__");
             
-               int __result__ = ref.status;
+               Integer __result__ = __this__.status;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseSearchResult::get_size", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseSearchResult ref = (com.baidu.mapapi.cloud.BaseSearchResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseSearchResult __this__ = (com.baidu.mapapi.cloud.BaseSearchResult) __args__.get("__this__");
             
-               int __result__ = ref.size;
+               Integer __result__ = __this__.size;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseSearchResult::get_total", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseSearchResult ref = (com.baidu.mapapi.cloud.BaseSearchResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseSearchResult __this__ = (com.baidu.mapapi.cloud.BaseSearchResult) __args__.get("__this__");
             
-               int __result__ = ref.total;
+               Integer __result__ = __this__.total;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseSearchInfo::get_ak", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseSearchInfo ref = (com.baidu.mapapi.cloud.BaseSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.ak;
+               String __result__ = __this__.ak;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseSearchInfo::get_geoTableId", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseSearchInfo ref = (com.baidu.mapapi.cloud.BaseSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseSearchInfo) __args__.get("__this__");
             
-               int __result__ = ref.geoTableId;
+               Integer __result__ = __this__.geoTableId;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BaseSearchInfo::get_sn", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BaseSearchInfo ref = (com.baidu.mapapi.cloud.BaseSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BaseSearchInfo __this__ = (com.baidu.mapapi.cloud.BaseSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.sn;
+               String __result__ = __this__.sn;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudSearchResult::get_poiList", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudSearchResult ref = (com.baidu.mapapi.cloud.CloudSearchResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudSearchResult __this__ = (com.baidu.mapapi.cloud.CloudSearchResult) __args__.get("__this__");
             
-               java.util.List<com.baidu.mapapi.cloud.CloudPoiInfo> __result__ = ref.poiList;
+               java.util.List<com.baidu.mapapi.cloud.CloudPoiInfo> __result__ = __this__.poiList;
             
-               List<Integer> jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = new ArrayList<>();
-                   for (com.baidu.mapapi.cloud.CloudPoiInfo item : __result__) {
-                       getHEAP().put(System.identityHashCode(item), item);
-                       jsonableResult.add(System.identityHashCode(item));
-                   }
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo::get_name", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo ref = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.name;
+               String __result__ = __this__.name;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo::get_uid", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo ref = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.uid;
+               String __result__ = __this__.uid;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo::get_address", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo ref = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.address;
+               String __result__ = __this__.address;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo::get_tag", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo ref = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.tag;
+               String __result__ = __this__.tag;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo::get_location", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo ref = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.location;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.location;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo::get_direction", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo ref = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) __args__.get("__this__");
             
-               String __result__ = ref.direction;
+               String __result__ = __this__.direction;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo::get_distance", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo ref = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo) __args__.get("__this__");
             
-               int __result__ = ref.distance;
+               Integer __result__ = __this__.distance;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_country", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               String __result__ = ref.country;
+               String __result__ = __this__.country;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_province", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               String __result__ = ref.province;
+               String __result__ = __this__.province;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_city", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               String __result__ = ref.city;
+               String __result__ = __this__.city;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_district", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               String __result__ = ref.district;
+               String __result__ = __this__.district;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_street", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               String __result__ = ref.street;
+               String __result__ = __this__.street;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_streetNumber", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               String __result__ = ref.streetNumber;
+               String __result__ = __this__.streetNumber;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_adminAreaCode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               int __result__ = ref.adminAreaCode;
+               Integer __result__ = __this__.adminAreaCode;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_countryCode", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents ref = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __this__ = (com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents) __args__.get("__this__");
             
-               String __result__ = ref.countryCode;
+               String __result__ = __this__.countryCode;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_status", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               int __result__ = ref.status;
+               Integer __result__ = __this__.status;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_message", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               String __result__ = ref.message;
+               String __result__ = __this__.message;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_location", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.location;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.location;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_addressCompents", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __result__ = ref.addressCompents;
+               com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents __result__ = __this__.addressCompents;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_formattedAddress", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               String __result__ = ref.formattedAddress;
+               String __result__ = __this__.formattedAddress;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_pois", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               java.util.List<com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo> __result__ = ref.pois;
+               java.util.List<com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo> __result__ = __this__.pois;
             
-               List<Integer> jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = new ArrayList<>();
-                   for (com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo item : __result__) {
-                       getHEAP().put(System.identityHashCode(item), item);
-                       jsonableResult.add(System.identityHashCode(item));
-                   }
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_customPois", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               java.util.List<com.baidu.mapapi.cloud.CloudPoiInfo> __result__ = ref.customPois;
+               java.util.List<com.baidu.mapapi.cloud.CloudPoiInfo> __result__ = __this__.customPois;
             
-               List<Integer> jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = new ArrayList<>();
-                   for (com.baidu.mapapi.cloud.CloudPoiInfo item : __result__) {
-                       getHEAP().put(System.identityHashCode(item), item);
-                       jsonableResult.add(System.identityHashCode(item));
-                   }
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_customLocationDescription", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               String __result__ = ref.customLocationDescription;
+               String __result__ = __this__.customLocationDescription;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcResult::get_recommendedLocationDescription", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcResult ref = (com.baidu.mapapi.cloud.CloudRgcResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcResult __this__ = (com.baidu.mapapi.cloud.CloudRgcResult) __args__.get("__this__");
             
-               String __result__ = ref.recommendedLocationDescription;
+               String __result__ = __this__.recommendedLocationDescription;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.DetailSearchResult::get_poiInfo", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.DetailSearchResult ref = (com.baidu.mapapi.cloud.DetailSearchResult) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.DetailSearchResult __this__ = (com.baidu.mapapi.cloud.DetailSearchResult) __args__.get("__this__");
             
-               com.baidu.mapapi.cloud.CloudPoiInfo __result__ = ref.poiInfo;
+               com.baidu.mapapi.cloud.CloudPoiInfo __result__ = __this__.poiInfo;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.DetailSearchInfo::get_uid", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.DetailSearchInfo ref = (com.baidu.mapapi.cloud.DetailSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.DetailSearchInfo __this__ = (com.baidu.mapapi.cloud.DetailSearchInfo) __args__.get("__this__");
             
-               int __result__ = ref.uid;
+               Integer __result__ = __this__.uid;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.DetailSearchInfo::get_poiId", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.DetailSearchInfo ref = (com.baidu.mapapi.cloud.DetailSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.DetailSearchInfo __this__ = (com.baidu.mapapi.cloud.DetailSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.poiId;
+               String __result__ = __this__.poiId;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcInfo::get_location", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcInfo ref = (com.baidu.mapapi.cloud.CloudRgcInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcInfo) __args__.get("__this__");
             
-               String __result__ = ref.location;
+               String __result__ = __this__.location;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.CloudRgcInfo::get_geoTableId", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.CloudRgcInfo ref = (com.baidu.mapapi.cloud.CloudRgcInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.CloudRgcInfo __this__ = (com.baidu.mapapi.cloud.CloudRgcInfo) __args__.get("__this__");
             
-               int __result__ = ref.geoTableId;
+               Integer __result__ = __this__.geoTableId;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.NearbySearchInfo::get_location", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.NearbySearchInfo ref = (com.baidu.mapapi.cloud.NearbySearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.NearbySearchInfo __this__ = (com.baidu.mapapi.cloud.NearbySearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.location;
+               String __result__ = __this__.location;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.NearbySearchInfo::get_radius", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.NearbySearchInfo ref = (com.baidu.mapapi.cloud.NearbySearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.NearbySearchInfo __this__ = (com.baidu.mapapi.cloud.NearbySearchInfo) __args__.get("__this__");
             
-               int __result__ = ref.radius;
+               Integer __result__ = __this__.radius;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.cloud.BoundSearchInfo::get_bound", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.cloud.BoundSearchInfo ref = (com.baidu.mapapi.cloud.BoundSearchInfo) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.cloud.BoundSearchInfo __this__ = (com.baidu.mapapi.cloud.BoundSearchInfo) __args__.get("__this__");
             
-               String __result__ = ref.bound;
+               String __result__ = __this__.bound;
             
-               String jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.inner.Point::get_x", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.inner.Point ref = (com.baidu.mapapi.model.inner.Point) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.inner.Point __this__ = (com.baidu.mapapi.model.inner.Point) __args__.get("__this__");
             
-               int __result__ = ref.x;
+               Integer __result__ = __this__.x;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.inner.Point::get_y", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.inner.Point ref = (com.baidu.mapapi.model.inner.Point) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.inner.Point __this__ = (com.baidu.mapapi.model.inner.Point) __args__.get("__this__");
             
-               int __result__ = ref.y;
+               Integer __result__ = __this__.y;
             
-               int jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.inner.MapBound::get_ptLB", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.inner.MapBound ref = (com.baidu.mapapi.model.inner.MapBound) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.inner.MapBound __this__ = (com.baidu.mapapi.model.inner.MapBound) __args__.get("__this__");
             
-               com.baidu.mapapi.model.inner.Point __result__ = ref.ptLB;
+               com.baidu.mapapi.model.inner.Point __result__ = __this__.ptLB;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.inner.MapBound::get_ptRT", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.inner.MapBound ref = (com.baidu.mapapi.model.inner.MapBound) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.inner.MapBound __this__ = (com.baidu.mapapi.model.inner.MapBound) __args__.get("__this__");
             
-               com.baidu.mapapi.model.inner.Point __result__ = ref.ptRT;
+               com.baidu.mapapi.model.inner.Point __result__ = __this__.ptRT;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.LatLngBounds::get_northeast", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.LatLngBounds ref = (com.baidu.mapapi.model.LatLngBounds) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.LatLngBounds __this__ = (com.baidu.mapapi.model.LatLngBounds) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.northeast;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.northeast;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.LatLngBounds::get_southwest", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.LatLngBounds ref = (com.baidu.mapapi.model.LatLngBounds) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.LatLngBounds __this__ = (com.baidu.mapapi.model.LatLngBounds) __args__.get("__this__");
             
-               com.baidu.mapapi.model.LatLng __result__ = ref.southwest;
+               com.baidu.mapapi.model.LatLng __result__ = __this__.southwest;
             
-               Integer jsonableResult = null;
-               if (__result__ != null) {
-                   jsonableResult = System.identityHashCode(__result__);
-                   getHEAP().put(jsonableResult, __result__);
-               }
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.LatLng::get_latitude", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.LatLng ref = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.LatLng __this__ = (com.baidu.mapapi.model.LatLng) __args__.get("__this__");
             
-               double __result__ = ref.latitude;
+               Double __result__ = __this__.latitude;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.LatLng::get_longitude", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.LatLng ref = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.LatLng __this__ = (com.baidu.mapapi.model.LatLng) __args__.get("__this__");
             
-               double __result__ = ref.longitude;
+               Double __result__ = __this__.longitude;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.LatLng::get_latitudeE6", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.LatLng ref = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.LatLng __this__ = (com.baidu.mapapi.model.LatLng) __args__.get("__this__");
             
-               double __result__ = ref.latitudeE6;
+               Double __result__ = __this__.latitudeE6;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.mapapi.model.LatLng::get_longitudeE6", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             
                // ref object
-               com.baidu.mapapi.model.LatLng ref = (com.baidu.mapapi.model.LatLng) getHEAP().get((int) __args__.get("refId"));
+               com.baidu.mapapi.model.LatLng __this__ = (com.baidu.mapapi.model.LatLng) __args__.get("__this__");
             
-               double __result__ = ref.longitudeE6;
+               Double __result__ = __this__.longitudeE6;
             
-               double jsonableResult = __result__;
-            
-                __methodResult__.success(jsonableResult);
+                __methodResult__.success(__result__);
             });
             // getter
             put("com.baidu.location.LocationClientOption::get_coorType_batch", (__argsBatch__, __methodResult__) -> {
@@ -2334,13 +1877,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    String __result__ = ref.coorType;
+                    String __result__ = __this__.coorType;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2353,13 +1894,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    String __result__ = ref.addrType;
+                    String __result__ = __this__.addrType;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2372,13 +1911,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.openGps;
+                    Boolean __result__ = __this__.openGps;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2391,13 +1928,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    int __result__ = ref.scanSpan;
+                    Integer __result__ = __this__.scanSpan;
             
-                    int jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2410,13 +1945,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    int __result__ = ref.timeOut;
+                    Integer __result__ = __this__.timeOut;
             
-                    int jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2429,13 +1962,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    String __result__ = ref.prodName;
+                    String __result__ = __this__.prodName;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2448,13 +1979,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    int __result__ = ref.priority;
+                    Integer __result__ = __this__.priority;
             
-                    int jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2467,13 +1996,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.location_change_notify;
+                    Boolean __result__ = __this__.location_change_notify;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2486,13 +2013,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.disableLocCache;
+                    Boolean __result__ = __this__.disableLocCache;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2505,13 +2030,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.enableSimulateGps;
+                    Boolean __result__ = __this__.enableSimulateGps;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2524,13 +2047,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    double __result__ = ref.judgeMockDisValue;
+                    Double __result__ = __this__.judgeMockDisValue;
             
-                    double jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2543,13 +2064,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isNeedRealLocWhenIsMock;
+                    Boolean __result__ = __this__.isNeedRealLocWhenIsMock;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2562,13 +2081,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    String __result__ = ref.serviceName;
+                    String __result__ = __this__.serviceName;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2581,13 +2098,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isIgnoreCacheException;
+                    Boolean __result__ = __this__.isIgnoreCacheException;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2600,13 +2115,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isIgnoreKillProcess;
+                    Boolean __result__ = __this__.isIgnoreKillProcess;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2619,13 +2132,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.mIsNeedDeviceDirect;
+                    Boolean __result__ = __this__.mIsNeedDeviceDirect;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2638,13 +2149,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isNeedAptag;
+                    Boolean __result__ = __this__.isNeedAptag;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2657,13 +2166,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isNeedAptagd;
+                    Boolean __result__ = __this__.isNeedAptagd;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2676,13 +2183,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isNeedPoiRegion;
+                    Boolean __result__ = __this__.isNeedPoiRegion;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2695,13 +2200,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isNeedRegular;
+                    Boolean __result__ = __this__.isNeedRegular;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2714,13 +2217,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isNeedAltitude;
+                    Boolean __result__ = __this__.isNeedAltitude;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2733,13 +2234,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isNeedNewVersionRgc;
+                    Boolean __result__ = __this__.isNeedNewVersionRgc;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2752,13 +2251,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    boolean __result__ = ref.isOnceLocation;
+                    Boolean __result__ = __this__.isOnceLocation;
             
-                    boolean jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2771,13 +2268,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    int __result__ = ref.autoNotifyMaxInterval;
+                    Integer __result__ = __this__.autoNotifyMaxInterval;
             
-                    int jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2790,13 +2285,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    float __result__ = ref.autoNotifyLocSensitivity;
+                    Float __result__ = __this__.autoNotifyLocSensitivity;
             
-                    float jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2809,13 +2302,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    int __result__ = ref.autoNotifyMinTimeInterval;
+                    Integer __result__ = __this__.autoNotifyMinTimeInterval;
             
-                    int jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2828,13 +2319,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    int __result__ = ref.autoNotifyMinDistance;
+                    Integer __result__ = __this__.autoNotifyMinDistance;
             
-                    int jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2847,13 +2336,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.LocationClientOption ref = (com.baidu.location.LocationClientOption) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
             
-                    int __result__ = ref.wifiCacheTimeOut;
+                    Integer __result__ = __this__.wifiCacheTimeOut;
             
-                    int jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2866,13 +2353,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.Address __this__ = (com.baidu.location.Address) __args__.get("__this__");
             
-                    String __result__ = ref.country;
+                    String __result__ = __this__.country;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2885,13 +2370,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.Address __this__ = (com.baidu.location.Address) __args__.get("__this__");
             
-                    String __result__ = ref.countryCode;
+                    String __result__ = __this__.countryCode;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2904,13 +2387,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.Address __this__ = (com.baidu.location.Address) __args__.get("__this__");
             
-                    String __result__ = ref.province;
+                    String __result__ = __this__.province;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2923,13 +2404,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.Address __this__ = (com.baidu.location.Address) __args__.get("__this__");
             
-                    String __result__ = ref.city;
+                    String __result__ = __this__.city;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);
@@ -2942,13 +2421,11 @@ public class SubHandler1 {
                     Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
             
                     // ref object
-                    com.baidu.location.Address ref = (com.baidu.location.Address) getHEAP().get((int) __args__.get("refId"));
+                    com.baidu.location.Address __this__ = (com.baidu.location.Address) __args__.get("__this__");
             
-                    String __result__ = ref.cityCode;
+                    String __result__ = __this__.cityCode;
             
-                    String jsonableResult = __result__;
-            
-                    __resultList__.add(jsonableResult);
+                    __resultList__.add(__result__);
                 }
             
                 __methodResult__.success(__resultList__);

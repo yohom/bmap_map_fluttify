@@ -21,6 +21,7 @@ extension com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortNameToX on com
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_TASTE_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_TASTE_RATING.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_OVERALL_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_OVERALL_RATING.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_SERVICE_RATING: return com_baidu_mapapi_search_poi_PoiFilter_SortName_CaterSortName.CATER_SERVICE_RATING.index + 0;
+      default: return 0;
     }
   }
 }

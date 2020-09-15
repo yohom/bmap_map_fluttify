@@ -26,20 +26,14 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
   //endregion
 
   //region getters
-  static Future<int> get_mapStatusReason() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason", );
-  
-    return __result__;
+  static Future<int> get_static_mapStatusReason() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason", );
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
-  Future<void> set_mapStatusReason(int mapStatusReason) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::set_mapStatusReason', {'refId': refId, "mapStatusReason": mapStatusReason});
-  
-  
-  }
   
   //endregion
 
@@ -52,7 +46,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlay', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlay', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -63,7 +57,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_Overlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -76,7 +69,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlays', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlays', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -86,8 +79,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_Overlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
+      final __return__ = (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_map_Overlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
       return __return__;
     }
   }
@@ -100,7 +92,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMarkersInBounds', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMarkersInBounds', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -110,8 +102,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_Marker()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
+      final __return__ = (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_map_Marker()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
       return __return__;
     }
   }
@@ -124,7 +115,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::clear', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::clear', {"__this__": this});
   
   
     // handle native call
@@ -135,7 +126,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -148,7 +138,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatus', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatus', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -159,7 +149,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -172,7 +161,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatus', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatus', {"__this__": this});
   
   
     // handle native call
@@ -183,7 +172,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_MapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -196,7 +184,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatusLimit', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatusLimit', {"__this__": this});
   
   
     // handle native call
@@ -207,7 +195,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -220,7 +207,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatusLimits', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatusLimits', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -231,7 +218,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -244,7 +230,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate__int', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate__int', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -255,7 +241,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -268,7 +253,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getZoomToBound', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "var5": var5, "var6": var6, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getZoomToBound', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "var5": var5, "var6": var6, "__this__": this});
   
   
     // handle native call
@@ -279,7 +264,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -292,7 +276,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -303,7 +287,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -316,7 +299,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapType', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapType', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -327,7 +310,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -340,7 +322,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapType', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapType', {"__this__": this});
   
   
     // handle native call
@@ -351,7 +333,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -364,7 +345,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMaxZoomLevel', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMaxZoomLevel', {"__this__": this});
   
   
     // handle native call
@@ -375,7 +356,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -388,7 +368,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMaxAndMinZoomLevel', {"var1": var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMaxAndMinZoomLevel', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -399,7 +379,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -412,7 +391,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMinZoomLevel', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMinZoomLevel', {"__this__": this});
   
   
     // handle native call
@@ -423,7 +402,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -436,7 +414,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjection', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjection', {"__this__": this});
   
   
     // handle native call
@@ -447,7 +425,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_Projection()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -460,7 +437,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getUiSettings', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getUiSettings', {"__this__": this});
   
   
     // handle native call
@@ -471,7 +448,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_UiSettings()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -484,7 +460,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setBuildingsEnabled', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setBuildingsEnabled', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -495,7 +471,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -508,7 +483,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isBuildingsEnabled', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isBuildingsEnabled', {"__this__": this});
   
   
     // handle native call
@@ -519,7 +494,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -532,7 +506,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationEnabled', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationEnabled', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -543,7 +517,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -556,7 +529,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isMyLocationEnabled', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isMyLocationEnabled', {"__this__": this});
   
   
     // handle native call
@@ -567,7 +540,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -580,7 +552,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationData', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationData', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -591,7 +563,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -604,7 +575,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationData', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationData', {"__this__": this});
   
   
     // handle native call
@@ -615,7 +586,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_MyLocationData()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -628,7 +598,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfiguration', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfiguration', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -639,7 +609,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -652,7 +621,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfigeration', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfigeration', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -663,7 +632,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -676,7 +644,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfiguration', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfiguration', {"__this__": this});
   
   
     // handle native call
@@ -687,7 +655,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_MyLocationConfiguration()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -700,7 +667,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfigeration', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfigeration', {"__this__": this});
   
   
     // handle native call
@@ -711,7 +678,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_MyLocationConfiguration()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -724,7 +690,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addHeatMap', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addHeatMap', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -735,7 +701,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -748,7 +713,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setBaiduHeatMapEnabled', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setBaiduHeatMapEnabled', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -759,7 +724,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -772,7 +736,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setIndoorEnable', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setIndoorEnable', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -783,7 +747,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -796,7 +759,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassPosition', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassPosition', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -807,7 +770,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -820,7 +782,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassIcon', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassIcon', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -831,7 +793,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -844,7 +805,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getCompassPosition', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getCompassPosition', {"__this__": this});
   
   
     // handle native call
@@ -855,7 +816,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = android_graphics_Point()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -868,7 +828,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaiduHeatMapEnabled', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaiduHeatMapEnabled', {"__this__": this});
   
   
     // handle native call
@@ -879,7 +839,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -892,7 +851,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isSupportBaiduHeatMap', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isSupportBaiduHeatMap', {"__this__": this});
   
   
     // handle native call
@@ -903,7 +862,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -916,7 +874,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setTrafficEnabled', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setTrafficEnabled', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -927,7 +885,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -940,7 +897,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCustomTrafficColor', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCustomTrafficColor', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "__this__": this});
   
   
     // handle native call
@@ -951,7 +908,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -964,7 +920,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isTrafficEnabled', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isTrafficEnabled', {"__this__": this});
   
   
     // handle native call
@@ -975,7 +931,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -988,7 +943,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapPoi', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapPoi', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -999,7 +954,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1012,7 +966,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapIndoorPoi', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapIndoorPoi', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -1023,7 +977,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1036,7 +989,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "__this__": this});
   
   
     // handle native call
@@ -1047,7 +1000,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1060,7 +1012,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setViewPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setViewPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "__this__": this});
   
   
     // handle native call
@@ -1071,7 +1023,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1084,25 +1035,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::snapshot', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::snapshot', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::snapshot::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::snapshot::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback::onSnapshotReady':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onSnapshotReady([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onSnapshotReady(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<android_graphics_Bitmap>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.SnapshotReadyCallback::onSnapshotReady':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onSnapshotReady([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onSnapshotReady(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<android_graphics_Bitmap>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1111,7 +1067,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1124,7 +1079,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -1135,7 +1090,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1148,7 +1102,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow__bool', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow__bool', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -1159,7 +1113,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1172,7 +1125,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindows', {"var1": var1.map((__it__) => __it__?.refId).toList(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindows', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -1183,7 +1136,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1196,7 +1148,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getAllInfoWindows', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getAllInfoWindows', {"__this__": this});
   
   
     // handle native call
@@ -1206,8 +1158,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_InfoWindow()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
+      final __return__ = (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_map_InfoWindow()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
       return __return__;
     }
   }
@@ -1220,7 +1171,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow', {"__this__": this});
   
   
     // handle native call
@@ -1231,7 +1182,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1244,7 +1194,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow__com_baidu_mapapi_map_InfoWindow', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow__com_baidu_mapapi_map_InfoWindow', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -1255,7 +1205,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1268,7 +1217,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setPixelFormatTransparent', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setPixelFormatTransparent', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -1279,7 +1228,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1292,52 +1240,57 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapStatusChangeListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
-              break;
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>(), args['var2']);
-              break;
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChange':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChange([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapStatusChange(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
-              break;
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeFinish':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChangeFinish([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapStatusChangeFinish(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
+                break;
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>(), args['var2']);
+                break;
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChange':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapStatusChange([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapStatusChange(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
+                break;
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapStatusChangeListener::onMapStatusChangeFinish':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapStatusChangeFinish([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapStatusChangeFinish(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1346,7 +1299,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1359,25 +1311,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapTouchListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::onTouch':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onTouch([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onTouch(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<android_view_MotionEvent>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapTouchListener::onTouch':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onTouch([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onTouch(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<android_view_MotionEvent>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1386,7 +1343,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1399,34 +1355,39 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapClickListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapClickListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapClickListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapClick([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_model_LatLng>());
-              break;
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapPoiClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapPoiClick([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapPoiClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapPoi>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapClick([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_model_LatLng>());
+                break;
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapClickListener::onMapPoiClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapPoiClick([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapPoiClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapPoi>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1435,7 +1396,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1448,25 +1408,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLoadedCallback::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::onMapLoaded':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapLoaded([])');
-              }
-        
-              // handle the native call
-              var1?.onMapLoaded();
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapLoadedCallback::onMapLoaded':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapLoaded([])');
+                }
+          
+                // handle the native call
+                var1?.onMapLoaded();
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1475,7 +1440,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1488,25 +1452,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderCallbadk::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::onMapRenderFinished':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapRenderFinished([])');
-              }
-        
-              // handle the native call
-              var1?.onMapRenderFinished();
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderCallback::onMapRenderFinished':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapRenderFinished([])');
+                }
+          
+                // handle the native call
+                var1?.onMapRenderFinished();
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1515,7 +1484,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1528,25 +1496,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDoubleClickListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::onMapDoubleClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapDoubleClick([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapDoubleClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_model_LatLng>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapDoubleClickListener::onMapDoubleClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapDoubleClick([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapDoubleClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_model_LatLng>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1555,7 +1528,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1568,25 +1540,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapLongClickListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::onMapLongClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapLongClick([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapLongClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_model_LatLng>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapLongClickListener::onMapLongClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapLongClick([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapLongClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_model_LatLng>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1595,7 +1572,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1608,25 +1584,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnPolylineClickListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::onPolylineClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onPolylineClick([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onPolylineClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Polyline>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnPolylineClickListener::onPolylineClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onPolylineClick([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onPolylineClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Polyline>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1635,7 +1616,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1648,25 +1628,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerClickListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerClick([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMarkerClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMarkerClick([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMarkerClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1675,7 +1660,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1688,43 +1672,48 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMarkerDragListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDrag':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerDrag([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMarkerDrag(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
-              break;
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragEnd':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerDragEnd([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMarkerDragEnd(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
-              break;
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragStart':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerDragStart([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMarkerDragStart(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDrag':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMarkerDrag([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMarkerDrag(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
+                break;
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragEnd':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMarkerDragEnd([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMarkerDragEnd(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
+                break;
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerDragListener::onMarkerDragStart':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMarkerDragStart([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMarkerDragStart(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1733,7 +1722,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1746,25 +1734,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMyLocationClickListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::onMyLocationClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMyLocationClick([])');
-              }
-        
-              // handle the native call
-              var1?.onMyLocationClick();
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMyLocationClickListener::onMyLocationClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMyLocationClick([])');
+                }
+          
+                // handle the native call
+                var1?.onMyLocationClick();
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1773,7 +1766,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1786,25 +1778,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapDrawFrameCallback::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__com_baidu_mapapi_map_MapStatus':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapDrawFrame__com_baidu_mapapi_map_MapStatus([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapDrawFrame__com_baidu_mapapi_map_MapStatus(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapDrawFrameCallback::onMapDrawFrame__com_baidu_mapapi_map_MapStatus':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapDrawFrame__com_baidu_mapapi_map_MapStatus([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapDrawFrame__com_baidu_mapapi_map_MapStatus(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_MapStatus>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1813,7 +1810,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1826,25 +1822,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnBaseIndoorMapListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::onBaseIndoorMapMode':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onBaseIndoorMapMode([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onBaseIndoorMapMode(args['var1'], TypeOpBmapMapFluttifyAndroid((args['var2'] as Object))?.as__<com_baidu_mapapi_map_MapBaseIndoorMapInfo>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnBaseIndoorMapListener::onBaseIndoorMapMode':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onBaseIndoorMapMode([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                }
+          
+                // handle the native call
+                var1?.onBaseIndoorMapMode(args['var1'], TypeOpBmapMapFluttifyAndroid((args['var2'] as Object))?.as__<com_baidu_mapapi_map_MapBaseIndoorMapInfo>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1853,7 +1854,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1866,25 +1866,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnMapRenderValidDataListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::onMapRenderValidData':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapRenderValidData([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapRenderValidData(args['var1'], args['var2'], args['var3']);
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMapRenderValidDataListener::onMapRenderValidData':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapRenderValidData([\'var1\':${args['var1']}, \'var2\':${args['var2']}, \'var3\':${args['var3']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapRenderValidData(args['var1'], args['var2'], args['var3']);
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1893,7 +1898,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1906,25 +1910,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::setOnSynchronizationListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::onMapStatusChangeReason':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMapStatusChangeReason([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMapStatusChangeReason(args['var1']);
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnSynchronizationListener::onMapStatusChangeReason':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMapStatusChangeReason([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMapStatusChangeReason(args['var1']);
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -1933,7 +1942,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -1946,7 +1954,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getFocusedBaseIndoorMapInfo', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getFocusedBaseIndoorMapInfo', {"__this__": this});
   
   
     // handle native call
@@ -1957,7 +1965,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -1970,7 +1977,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchBaseIndoorMapFloor', {"var1": var1, "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::switchBaseIndoorMapFloor', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -1981,7 +1988,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = (__result__ as int).tocom_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError();
-    
       return __return__;
     }
   }
@@ -1994,7 +2000,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaseIndoorMapMode', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaseIndoorMapMode', {"__this__": this});
   
   
     // handle native call
@@ -2005,7 +2011,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2018,25 +2023,30 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback')
+    MethodChannel('com.baidu.mapapi.map.BaiduMap::removeMarkerClickListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onMarkerClick([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onMarkerClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener::onMarkerClick':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onMarkerClick([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onMarkerClick(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_map_Marker>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -2045,7 +2055,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2058,7 +2067,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addTileLayer', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addTileLayer', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -2069,7 +2078,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = com_baidu_mapapi_map_TileOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -2082,7 +2090,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::hideSDKLayer', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::hideSDKLayer', {"__this__": this});
   
   
     // handle native call
@@ -2093,7 +2101,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2106,7 +2113,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showSDKLayer', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showSDKLayer', {"__this__": this});
   
   
     // handle native call
@@ -2117,7 +2124,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2130,7 +2136,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::changeLocationLayerOrder', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::changeLocationLayerOrder', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -2141,7 +2147,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2154,7 +2159,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassEnable', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassEnable', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -2165,7 +2170,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2178,7 +2182,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjectionMatrix', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjectionMatrix', {"__this__": this});
   
   
     // handle native call
@@ -2189,7 +2193,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__ as Float64List;
-    
       return __return__;
     }
   }
@@ -2202,7 +2205,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getViewMatrix', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getViewMatrix', {"__this__": this});
   
   
     // handle native call
@@ -2213,7 +2216,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__ as Float64List;
-    
       return __return__;
     }
   }
@@ -2226,7 +2228,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOverlayUnderPoi', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOverlayUnderPoi', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -2237,7 +2239,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2250,7 +2251,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder', {"var1": var1.toValue(), "var2": var2.toValue(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder', {"var1": var1.toValue(), "var2": var2.toValue(), "__this__": this});
   
   
     // handle native call
@@ -2261,7 +2262,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2274,7 +2274,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable', {"var1": var1.toValue(), "var2": var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable', {"var1": var1.toValue(), "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -2285,7 +2285,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2298,7 +2297,7 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::cleanCache', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::cleanCache', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -2309,7 +2308,6 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -2319,21 +2317,16 @@ class com_baidu_mapapi_map_BaiduMap extends java_lang_Object  {
 
 extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_BaiduMap> {
   //region getters
-  Future<List<int>> get_mapStatusReason_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+  Future<List<int>> get_static_mapStatusReason_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.BaiduMap::get_mapStatusReason_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   //endregion
 
   //region setters
-  Future<void> set_mapStatusReason_batch(List<int> mapStatusReason) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::set_mapStatusReason_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mapStatusReason": mapStatusReason[__i__]}]);
-  
-  
-  }
   
   //endregion
 
@@ -2345,15 +2338,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_Overlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_Overlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2365,15 +2357,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlays_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].map((it) => it.refId).toList(), "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addOverlays_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_Overlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_map_Overlay()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       return typedResult;
     }
   }
@@ -2385,15 +2376,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMarkersInBounds_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMarkersInBounds_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_Marker()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_map_Marker()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       return typedResult;
     }
   }
@@ -2405,7 +2395,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::clear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::clear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2413,7 +2403,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2425,7 +2414,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2433,7 +2422,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2445,15 +2433,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_MapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2465,15 +2452,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatusLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapStatusLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2485,7 +2471,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatusLimits_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapStatusLimits_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2493,7 +2479,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2505,7 +2490,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate__int_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate__int_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2513,7 +2498,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2525,7 +2509,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getZoomToBound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "var5": var5[__i__], "var6": var6[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getZoomToBound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "var5": var5[__i__], "var6": var6[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2533,7 +2517,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2545,7 +2528,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2553,7 +2536,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2565,7 +2547,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2573,7 +2555,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2585,7 +2566,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2593,7 +2574,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2605,7 +2585,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMaxZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMaxZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2613,7 +2593,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2625,7 +2604,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMaxAndMinZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMaxAndMinZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2633,7 +2612,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2645,7 +2623,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getMinZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getMinZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2653,7 +2631,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2665,15 +2642,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_Projection()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_Projection()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2685,15 +2661,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getUiSettings_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getUiSettings_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_UiSettings()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_UiSettings()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2705,7 +2680,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setBuildingsEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setBuildingsEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2713,7 +2688,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2725,7 +2699,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isBuildingsEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isBuildingsEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2733,7 +2707,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2745,7 +2718,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2753,7 +2726,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2765,7 +2737,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isMyLocationEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isMyLocationEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2773,7 +2745,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2785,7 +2756,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2793,7 +2764,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2805,15 +2775,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MyLocationData()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_MyLocationData()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2825,7 +2794,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfiguration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfiguration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2833,7 +2802,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2845,7 +2813,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfigeration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setMyLocationConfigeration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2853,7 +2821,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2865,15 +2832,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfiguration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfiguration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2885,15 +2851,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfigeration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getLocationConfigeration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -2905,7 +2870,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2913,7 +2878,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2925,7 +2889,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setBaiduHeatMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setBaiduHeatMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2933,7 +2897,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2945,7 +2908,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setIndoorEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setIndoorEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2953,7 +2916,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2965,7 +2927,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2973,7 +2935,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -2985,7 +2946,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassIcon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassIcon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -2993,7 +2954,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3005,15 +2965,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getCompassPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getCompassPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => android_graphics_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => android_graphics_Point()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -3025,7 +2984,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaiduHeatMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaiduHeatMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3033,7 +2992,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3045,7 +3003,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isSupportBaiduHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isSupportBaiduHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3053,7 +3011,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3065,7 +3022,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setTrafficEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setTrafficEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3073,7 +3030,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3085,7 +3041,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCustomTrafficColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCustomTrafficColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3093,7 +3049,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3105,7 +3060,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isTrafficEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isTrafficEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3113,7 +3068,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3125,7 +3079,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3133,7 +3087,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3145,7 +3098,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapIndoorPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showMapIndoorPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3153,7 +3106,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3165,7 +3117,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3173,7 +3125,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3185,7 +3136,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setViewPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setViewPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3193,7 +3144,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3205,7 +3155,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3213,7 +3163,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3225,7 +3174,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow__bool_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindow__com_baidu_mapapi_map_InfoWindow__bool_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3233,7 +3182,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3245,7 +3193,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindows_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].map((it) => it.refId).toList(), "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showInfoWindows_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3253,7 +3201,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3265,15 +3212,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getAllInfoWindows_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getAllInfoWindows_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_InfoWindow()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_map_InfoWindow()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
       return typedResult;
     }
   }
@@ -3285,7 +3231,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3293,7 +3239,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3305,7 +3250,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow__com_baidu_mapapi_map_InfoWindow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::hideInfoWindow__com_baidu_mapapi_map_InfoWindow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3313,7 +3258,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3325,7 +3269,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setPixelFormatTransparent_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setPixelFormatTransparent_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3333,7 +3277,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3345,15 +3288,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getFocusedBaseIndoorMapInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getFocusedBaseIndoorMapInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_MapBaseIndoorMapInfo()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -3365,15 +3307,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchBaseIndoorMapFloor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::switchBaseIndoorMapFloor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError()).toList();
-    
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError()).toList();
       return typedResult;
     }
   }
@@ -3385,7 +3326,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaseIndoorMapMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::isBaseIndoorMapMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3393,7 +3334,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3405,15 +3345,14 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::addTileLayer_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::addTileLayer_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_TileOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_TileOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -3425,7 +3364,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::hideSDKLayer_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::hideSDKLayer_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3433,7 +3372,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3445,7 +3383,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::showSDKLayer_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::showSDKLayer_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3453,7 +3391,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3465,7 +3402,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::changeLocationLayerOrder_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::changeLocationLayerOrder_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3473,7 +3410,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3485,7 +3421,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setCompassEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3493,7 +3429,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3505,7 +3440,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjectionMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getProjectionMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3513,7 +3448,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<Float64List>().map((__result__) => __result__ as Float64List).toList();
-    
       return typedResult;
     }
   }
@@ -3525,7 +3459,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::getViewMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::getViewMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3533,7 +3467,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<Float64List>().map((__result__) => __result__ as Float64List).toList();
-    
       return typedResult;
     }
   }
@@ -3545,7 +3478,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setOverlayUnderPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setOverlayUnderPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3553,7 +3486,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3565,7 +3497,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "var2": var2[__i__].toValue(), "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::switchLayerOrder_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "var2": var2[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3573,7 +3505,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3585,7 +3516,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::setLayerClickable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3593,7 +3524,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -3605,7 +3535,7 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.BaiduMap::cleanCache_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.BaiduMap::cleanCache_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -3613,7 +3543,6 @@ extension com_baidu_mapapi_map_BaiduMap_Batch on List<com_baidu_mapapi_map_Baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

@@ -21,6 +21,7 @@ extension BMKLocationNetworkStateToX on BMKLocationNetworkState {
       case BMKLocationNetworkState.BMKLocationNetworkStateMobile2G: return BMKLocationNetworkState.BMKLocationNetworkStateMobile2G.index + 0;
       case BMKLocationNetworkState.BMKLocationNetworkStateMobile3G: return BMKLocationNetworkState.BMKLocationNetworkStateMobile3G.index + 0;
       case BMKLocationNetworkState.BMKLocationNetworkStateMobile4G: return BMKLocationNetworkState.BMKLocationNetworkStateMobile4G.index + 0;
+      default: return 0;
     }
   }
 }

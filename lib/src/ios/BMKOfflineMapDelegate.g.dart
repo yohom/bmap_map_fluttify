@@ -24,13 +24,7 @@ mixin BMKOfflineMapDelegate on NSObject {
   
 
   @mustCallSuper
-  Future<void> onGetOfflineMapState_withState(int type, int state) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetOfflineMapState_withState::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetOfflineMapState_withState(int type, int state) {}
   
 }
 

@@ -13,6 +13,7 @@ extension com_baidu_mapapi_CoordTypeToX on com_baidu_mapapi_CoordType {
     switch (this) {
       case com_baidu_mapapi_CoordType.GCJ02: return com_baidu_mapapi_CoordType.GCJ02.index + 0;
       case com_baidu_mapapi_CoordType.BD09LL: return com_baidu_mapapi_CoordType.BD09LL.index + 0;
+      default: return 0;
     }
   }
 }

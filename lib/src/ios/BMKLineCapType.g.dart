@@ -13,6 +13,7 @@ extension BMKLineCapTypeToX on BMKLineCapType {
     switch (this) {
       case BMKLineCapType.kBMKLineCapButt: return 0;
       case BMKLineCapType.kBMKLineCapRound: return BMKLineCapType.kBMKLineCapRound.index + 0;
+      default: return 0;
     }
   }
 }

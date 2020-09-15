@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
 
   //region creators
   static Future<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo__', );
     final object = com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo__', {'length': length});
   
     final List<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,40 +40,37 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
 
   //region getters
   Future<String> get_directionDesc() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_directionDesc", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_directionDesc", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_regionName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionName", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionName", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_regionTag() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionTag", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionTag", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_directionDesc(String directionDesc) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_directionDesc', {'refId': refId, "directionDesc": directionDesc});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_directionDesc', <String, dynamic>{'__this__': this, "directionDesc": directionDesc});
   
   
   }
   
   Future<void> set_regionName(String regionName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionName', {'refId': refId, "regionName": regionName});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionName', <String, dynamic>{'__this__': this, "regionName": regionName});
   
   
   }
   
   Future<void> set_regionTag(String regionTag) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionTag', {'refId': refId, "regionTag": regionTag});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionTag', <String, dynamic>{'__this__': this, "regionTag": regionTag});
   
   
   }
@@ -92,7 +86,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getDirectionDesc', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getDirectionDesc', {"__this__": this});
   
   
     // handle native call
@@ -103,7 +97,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -116,7 +109,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setDirectionDesc', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setDirectionDesc', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -127,7 +120,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -140,7 +132,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionName', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionName', {"__this__": this});
   
   
     // handle native call
@@ -151,7 +143,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -164,7 +155,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionName', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionName', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -175,7 +166,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -188,7 +178,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionTag', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionTag', {"__this__": this});
   
   
     // handle native call
@@ -199,7 +189,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -212,7 +201,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionTag', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionTag', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -223,7 +212,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -234,23 +222,23 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo extend
 extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Batch on List<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo> {
   //region getters
   Future<List<String>> get_directionDesc_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_directionDesc_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_directionDesc_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_regionName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionName_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionName_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_regionTag_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionTag_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::get_regionTag_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -258,19 +246,19 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
 
   //region setters
   Future<void> set_directionDesc_batch(List<String> directionDesc) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_directionDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "directionDesc": directionDesc[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_directionDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "directionDesc": directionDesc[__i__]}]);
   
   
   }
   
   Future<void> set_regionName_batch(List<String> regionName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "regionName": regionName[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "regionName": regionName[__i__]}]);
   
   
   }
   
   Future<void> set_regionTag_batch(List<String> regionTag) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "regionTag": regionTag[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::set_regionTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "regionTag": regionTag[__i__]}]);
   
   
   }
@@ -285,7 +273,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getDirectionDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getDirectionDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -293,7 +281,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -305,7 +292,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setDirectionDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setDirectionDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -313,7 +300,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -325,7 +311,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -333,7 +319,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -345,7 +330,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -353,7 +338,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -365,7 +349,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::getRegionTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -373,7 +357,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -385,7 +368,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.PoiRegionsInfo::setRegionTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -393,7 +376,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_PoiRegionsInfo_Ba
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

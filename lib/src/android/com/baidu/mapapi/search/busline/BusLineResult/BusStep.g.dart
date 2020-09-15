@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_busline_BusLineResult_BusStep extends com_baidu_ma
 
   //region creators
   static Future<com_baidu_mapapi_search_busline_BusLineResult_BusStep> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStep__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStep__', );
     final object = com_baidu_mapapi_search_busline_BusLineResult_BusStep()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_busline_BusLineResult_BusStep extends com_baidu_ma
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_busline_BusLineResult_BusStep__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_busline_BusLineResult_BusStep__', {'length': length});
   
     final List<com_baidu_mapapi_search_busline_BusLineResult_BusStep> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_busline_BusLineResult_BusStep()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   

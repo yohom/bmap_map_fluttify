@@ -53,6 +53,7 @@ extension com_baidu_mapapi_search_core_SearchResult_ERRORNOToX on com_baidu_mapa
       case com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_SERVER_INTERNAL_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_SERVER_INTERNAL_ERROR.index + 0;
       case com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_OPTION_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_OPTION_ERROR.index + 0;
       case com_baidu_mapapi_search_core_SearchResult_ERRORNO.REQUEST_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.REQUEST_ERROR.index + 0;
+      default: return 0;
     }
   }
 }

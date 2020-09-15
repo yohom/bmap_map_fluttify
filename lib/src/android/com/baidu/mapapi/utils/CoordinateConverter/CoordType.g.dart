@@ -17,6 +17,7 @@ extension com_baidu_mapapi_utils_CoordinateConverter_CoordTypeToX on com_baidu_m
       case com_baidu_mapapi_utils_CoordinateConverter_CoordType.COMMON: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.COMMON.index + 0;
       case com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09LL: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09LL.index + 0;
       case com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09MC: return com_baidu_mapapi_utils_CoordinateConverter_CoordType.BD09MC.index + 0;
+      default: return 0;
     }
   }
 }

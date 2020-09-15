@@ -24,58 +24,22 @@ mixin com_baidu_location_LLSInterface on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onCreate(android_content_Context var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onCreate::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onCreate(android_content_Context var1) {}
   
   @mustCallSuper
-  Future<int> onStartCommand(android_content_Intent var1, int var2, int var3) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onStartCommand::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<int> onStartCommand(android_content_Intent var1, int var2, int var3) {}
   
   @mustCallSuper
-  Future<bool> onUnBind(android_content_Intent var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onUnBind::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<bool> onUnBind(android_content_Intent var1) {}
   
   @mustCallSuper
-  Future<void> onDestroy() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onDestroy::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onDestroy() {}
   
   @mustCallSuper
-  Future<void> onTaskRemoved(android_content_Intent var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onTaskRemoved::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onTaskRemoved(android_content_Intent var1) {}
   
   @mustCallSuper
-  Future<double> getVersion() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('getVersion::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<double> getVersion() {}
   
 }
 

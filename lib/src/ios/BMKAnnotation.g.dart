@@ -20,9 +20,8 @@ mixin BMKAnnotation on NSObject {
   static BMKAnnotation subInstance() => _BMKAnnotation_SUB();
 
   Future<CLLocationCoordinate2D> get_coordinate() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotation::get_coordinate", {'refId': refId});
-    kNativeObjectPool.add(CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKAnnotation::get_coordinate", {'__this__': this});
+    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
 
@@ -36,7 +35,7 @@ mixin BMKAnnotation on NSObject {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::title', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKAnnotation::title', {"__this__": this});
   
   
     // handle native call
@@ -47,7 +46,6 @@ mixin BMKAnnotation on NSObject {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -60,7 +58,7 @@ mixin BMKAnnotation on NSObject {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::subtitle', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKAnnotation::subtitle', {"__this__": this});
   
   
     // handle native call
@@ -71,7 +69,6 @@ mixin BMKAnnotation on NSObject {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -84,7 +81,7 @@ mixin BMKAnnotation on NSObject {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::setCoordinate', {"newCoordinate": newCoordinate is Ref ? (newCoordinate as Ref)?.refId : newCoordinate, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKAnnotation::setCoordinate', {"newCoordinate": newCoordinate, "__this__": this});
   
   
     // handle native call
@@ -95,7 +92,6 @@ mixin BMKAnnotation on NSObject {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -111,7 +107,7 @@ extension BMKAnnotation_Batch on List<BMKAnnotation> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::title_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKAnnotation::title_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -119,7 +115,6 @@ extension BMKAnnotation_Batch on List<BMKAnnotation> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -131,7 +126,7 @@ extension BMKAnnotation_Batch on List<BMKAnnotation> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::subtitle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKAnnotation::subtitle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -139,7 +134,6 @@ extension BMKAnnotation_Batch on List<BMKAnnotation> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -151,7 +145,7 @@ extension BMKAnnotation_Batch on List<BMKAnnotation> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotation::setCoordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"newCoordinate": newCoordinate[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKAnnotation::setCoordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"newCoordinate": newCoordinate[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -159,7 +153,6 @@ extension BMKAnnotation_Batch on List<BMKAnnotation> {
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

@@ -17,6 +17,7 @@ extension com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareModeToX on
       case com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.FOOT_ROUTE_SHARE_MODE: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.FOOT_ROUTE_SHARE_MODE.index + 0;
       case com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.CYCLE_ROUTE_SHARE_MODE: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.CYCLE_ROUTE_SHARE_MODE.index + 0;
       case com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.BUS_ROUTE_SHARE_MODE: return com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode.BUS_ROUTE_SHARE_MODE.index + 0;
+      default: return 0;
     }
   }
 }

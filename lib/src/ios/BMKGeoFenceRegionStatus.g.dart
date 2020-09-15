@@ -17,6 +17,7 @@ extension BMKGeoFenceRegionStatusToX on BMKGeoFenceRegionStatus {
       case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusInside: return 1;
       case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusOutside: return 1<<1;
       case BMKGeoFenceRegionStatus.BMKGeoFenceRegionStatusStayed: return 1<<2;
+      default: return 0;
     }
   }
 }

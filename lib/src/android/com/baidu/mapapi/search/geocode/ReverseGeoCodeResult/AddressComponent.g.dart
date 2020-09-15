@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
 
   //region creators
   static Future<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent__', );
     final object = com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent__', {'length': length});
   
     final List<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,136 +40,125 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
 
   //region getters
   Future<String> get_streetNumber() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_streetNumber", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_streetNumber", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_street() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_street", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_street", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_town() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_town", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_town", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_district() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_district", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_district", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_city() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_city", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_city", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_province() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_province", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_province", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_countryName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryName", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryName", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_countryCode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryCode", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryCode", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_adcode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_adcode", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_adcode", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_direction() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_direction", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_direction", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_distance() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_distance", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_distance", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_streetNumber(String streetNumber) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_streetNumber', {'refId': refId, "streetNumber": streetNumber});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_streetNumber', <String, dynamic>{'__this__': this, "streetNumber": streetNumber});
   
   
   }
   
   Future<void> set_street(String street) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_street', {'refId': refId, "street": street});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_street', <String, dynamic>{'__this__': this, "street": street});
   
   
   }
   
   Future<void> set_town(String town) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_town', {'refId': refId, "town": town});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_town', <String, dynamic>{'__this__': this, "town": town});
   
   
   }
   
   Future<void> set_district(String district) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_district', {'refId': refId, "district": district});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_district', <String, dynamic>{'__this__': this, "district": district});
   
   
   }
   
   Future<void> set_city(String city) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_city', {'refId': refId, "city": city});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_city', <String, dynamic>{'__this__': this, "city": city});
   
   
   }
   
   Future<void> set_province(String province) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_province', {'refId': refId, "province": province});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_province', <String, dynamic>{'__this__': this, "province": province});
   
   
   }
   
   Future<void> set_countryName(String countryName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryName', {'refId': refId, "countryName": countryName});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryName', <String, dynamic>{'__this__': this, "countryName": countryName});
   
   
   }
   
   Future<void> set_countryCode(int countryCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryCode', {'refId': refId, "countryCode": countryCode});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryCode', <String, dynamic>{'__this__': this, "countryCode": countryCode});
   
   
   }
   
   Future<void> set_adcode(int adcode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_adcode', {'refId': refId, "adcode": adcode});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_adcode', <String, dynamic>{'__this__': this, "adcode": adcode});
   
   
   }
   
   Future<void> set_direction(String direction) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_direction', {'refId': refId, "direction": direction});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_direction', <String, dynamic>{'__this__': this, "direction": direction});
   
   
   }
   
   Future<void> set_distance(String distance) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_distance', {'refId': refId, "distance": distance});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_distance', <String, dynamic>{'__this__': this, "distance": distance});
   
   
   }
@@ -188,7 +174,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getTown', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getTown', {"__this__": this});
   
   
     // handle native call
@@ -199,7 +185,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -212,7 +197,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setTown', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setTown', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -223,7 +208,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -236,7 +220,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDirection', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDirection', {"__this__": this});
   
   
     // handle native call
@@ -247,7 +231,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -260,7 +243,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDirection', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDirection', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -271,7 +254,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -284,7 +266,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDistance', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDistance', {"__this__": this});
   
   
     // handle native call
@@ -295,7 +277,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -308,7 +289,7 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDistance', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDistance', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -319,7 +300,6 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -330,79 +310,79 @@ class com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent exte
 extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_Batch on List<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent> {
   //region getters
   Future<List<String>> get_streetNumber_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_streetNumber_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_streetNumber_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_street_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_street_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_street_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_town_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_town_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_town_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_district_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_district_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_district_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_city_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_city_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_city_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_province_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_province_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_province_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_countryName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryName_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryName_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_countryCode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryCode_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_countryCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_adcode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_adcode_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_adcode_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_direction_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_direction_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_direction_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_distance_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_distance_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::get_distance_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -410,67 +390,67 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
 
   //region setters
   Future<void> set_streetNumber_batch(List<String> streetNumber) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_streetNumber_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "streetNumber": streetNumber[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_streetNumber_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "streetNumber": streetNumber[__i__]}]);
   
   
   }
   
   Future<void> set_street_batch(List<String> street) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_street_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "street": street[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_street_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "street": street[__i__]}]);
   
   
   }
   
   Future<void> set_town_batch(List<String> town) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_town_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "town": town[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_town_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "town": town[__i__]}]);
   
   
   }
   
   Future<void> set_district_batch(List<String> district) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_district_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "district": district[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_district_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "district": district[__i__]}]);
   
   
   }
   
   Future<void> set_city_batch(List<String> city) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "city": city[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "city": city[__i__]}]);
   
   
   }
   
   Future<void> set_province_batch(List<String> province) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_province_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "province": province[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_province_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "province": province[__i__]}]);
   
   
   }
   
   Future<void> set_countryName_batch(List<String> countryName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "countryName": countryName[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "countryName": countryName[__i__]}]);
   
   
   }
   
   Future<void> set_countryCode_batch(List<int> countryCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "countryCode": countryCode[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_countryCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "countryCode": countryCode[__i__]}]);
   
   
   }
   
   Future<void> set_adcode_batch(List<int> adcode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_adcode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "adcode": adcode[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_adcode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "adcode": adcode[__i__]}]);
   
   
   }
   
   Future<void> set_direction_batch(List<String> direction) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_direction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "direction": direction[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_direction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "direction": direction[__i__]}]);
   
   
   }
   
   Future<void> set_distance_batch(List<String> distance) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_distance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "distance": distance[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::set_distance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "distance": distance[__i__]}]);
   
   
   }
@@ -485,7 +465,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getTown_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getTown_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -493,7 +473,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -505,7 +484,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setTown_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setTown_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -513,7 +492,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -525,7 +503,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -533,7 +511,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -545,7 +522,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDirection_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -553,7 +530,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -565,7 +541,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::getDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -573,7 +549,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -585,7 +560,7 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.ReverseGeoCodeResult.AddressComponent::setDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -593,7 +568,6 @@ extension com_baidu_mapapi_search_geocode_ReverseGeoCodeResult_AddressComponent_
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

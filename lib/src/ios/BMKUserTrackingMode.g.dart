@@ -17,6 +17,7 @@ extension BMKUserTrackingModeToX on BMKUserTrackingMode {
       case BMKUserTrackingMode.BMKUserTrackingModeHeading: return BMKUserTrackingMode.BMKUserTrackingModeHeading.index + 0;
       case BMKUserTrackingMode.BMKUserTrackingModeFollow: return BMKUserTrackingMode.BMKUserTrackingModeFollow.index + 0;
       case BMKUserTrackingMode.BMKUserTrackingModeFollowWithHeading: return BMKUserTrackingMode.BMKUserTrackingModeFollowWithHeading.index + 0;
+      default: return 0;
     }
   }
 }

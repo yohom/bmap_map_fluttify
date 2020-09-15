@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_search_district_OnGetDistricSearchResultListener on java_
   
 
   @mustCallSuper
-  Future<void> onGetDistrictResult(com_baidu_mapapi_search_district_DistrictResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetDistrictResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetDistrictResult(com_baidu_mapapi_search_district_DistrictResult var1) {}
   
 }
 

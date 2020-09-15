@@ -20,22 +20,19 @@ class BMKPointAnnotation extends BMKShape with BMKAnnotation {
   //endregion
 
   //region creators
-  static Future<BMKPointAnnotation> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKPointAnnotation');
+  static Future<BMKPointAnnotation> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKPointAnnotation', {'init': init});
     final object = BMKPointAnnotation()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKPointAnnotation>> create_batch__(int length) async {
+  static Future<List<BMKPointAnnotation>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKPointAnnotation', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKPointAnnotation', {'length': length, 'init': init});
   
     final List<BMKPointAnnotation> typedResult = resultBatch.map((result) => BMKPointAnnotation()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,40 +40,37 @@ class BMKPointAnnotation extends BMKShape with BMKAnnotation {
 
   //region getters
   Future<CLLocationCoordinate2D> get_coordinate() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKPointAnnotation::get_coordinate", {'refId': refId});
-    kNativeObjectPool.add(CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPointAnnotation::get_coordinate", {'__this__': this});
+    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<bool> get_isLockedToScreen() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKPointAnnotation::get_isLockedToScreen", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPointAnnotation::get_isLockedToScreen", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<CGPoint> get_screenPointToLock() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKPointAnnotation::get_screenPointToLock", {'refId': refId});
-    kNativeObjectPool.add(CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPointAnnotation::get_screenPointToLock", {'__this__': this});
+    return __result__ == null ? null : (CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   //endregion
 
   //region setters
   Future<void> set_coordinate(CLLocationCoordinate2D coordinate) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPointAnnotation::set_coordinate', {'refId': refId, "coordinate": coordinate.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKPointAnnotation::set_coordinate', <String, dynamic>{'__this__': this, "coordinate": coordinate});
   
   
   }
   
   Future<void> set_isLockedToScreen(bool isLockedToScreen) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPointAnnotation::set_isLockedToScreen', {'refId': refId, "isLockedToScreen": isLockedToScreen});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKPointAnnotation::set_isLockedToScreen', <String, dynamic>{'__this__': this, "isLockedToScreen": isLockedToScreen});
   
   
   }
   
   Future<void> set_screenPointToLock(CGPoint screenPointToLock) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPointAnnotation::set_screenPointToLock', {'refId': refId, "screenPointToLock": screenPointToLock.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKPointAnnotation::set_screenPointToLock', <String, dynamic>{'__this__': this, "screenPointToLock": screenPointToLock});
   
   
   }
@@ -91,23 +85,23 @@ class BMKPointAnnotation extends BMKShape with BMKAnnotation {
 extension BMKPointAnnotation_Batch on List<BMKPointAnnotation> {
   //region getters
   Future<List<CLLocationCoordinate2D>> get_coordinate_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKPointAnnotation::get_coordinate_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPointAnnotation::get_coordinate_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<bool>> get_isLockedToScreen_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKPointAnnotation::get_isLockedToScreen_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPointAnnotation::get_isLockedToScreen_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<CGPoint>> get_screenPointToLock_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKPointAnnotation::get_screenPointToLock_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKPointAnnotation::get_screenPointToLock_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
@@ -115,19 +109,19 @@ extension BMKPointAnnotation_Batch on List<BMKPointAnnotation> {
 
   //region setters
   Future<void> set_coordinate_batch(List<CLLocationCoordinate2D> coordinate) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPointAnnotation::set_coordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "coordinate": coordinate[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKPointAnnotation::set_coordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "coordinate": coordinate[__i__]}]);
   
   
   }
   
   Future<void> set_isLockedToScreen_batch(List<bool> isLockedToScreen) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPointAnnotation::set_isLockedToScreen_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "isLockedToScreen": isLockedToScreen[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKPointAnnotation::set_isLockedToScreen_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isLockedToScreen": isLockedToScreen[__i__]}]);
   
   
   }
   
   Future<void> set_screenPointToLock_batch(List<CGPoint> screenPointToLock) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPointAnnotation::set_screenPointToLock_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "screenPointToLock": screenPointToLock[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKPointAnnotation::set_screenPointToLock_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "screenPointToLock": screenPointToLock[__i__]}]);
   
   
   }

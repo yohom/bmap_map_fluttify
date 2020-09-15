@@ -21,18 +21,14 @@ class com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException extends jav
 
   //region creators
   static Future<com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__', );
     final object = com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
   static Future<com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException> create__String(String var1) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String', {"var1": var1});
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String', {"var1": var1});
     final object = com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -40,10 +36,9 @@ class com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException extends jav
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__', {'length': length});
   
     final List<com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException> typedResult = resultBatch.map((result) => com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -51,10 +46,9 @@ class com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException extends jav
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException__String', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
   
     final List<com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException> typedResult = resultBatch.map((result) => com_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   

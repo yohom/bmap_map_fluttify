@@ -40,7 +40,7 @@ class com_baidu_mapapi_map_SwipeDismissTouchListener extends java_lang_Object wi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.SwipeDismissTouchListener::onTouch', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "var2": var2 is Ref ? (var2 as Ref)?.refId : var2, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.SwipeDismissTouchListener::onTouch', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
@@ -51,7 +51,6 @@ class com_baidu_mapapi_map_SwipeDismissTouchListener extends java_lang_Object wi
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -76,7 +75,7 @@ extension com_baidu_mapapi_map_SwipeDismissTouchListener_Batch on List<com_baidu
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.SwipeDismissTouchListener::onTouch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "var2": var2[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.SwipeDismissTouchListener::onTouch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -84,7 +83,6 @@ extension com_baidu_mapapi_map_SwipeDismissTouchListener_Batch on List<com_baidu
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

@@ -17,6 +17,7 @@ extension com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicyToX 
       case com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.EBUS_TRANSFER_FIRST: return com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.EBUS_TRANSFER_FIRST.index + 0;
       case com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.EBUS_WALK_FIRST: return com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.EBUS_WALK_FIRST.index + 0;
       case com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.EBUS_NO_SUBWAY: return com_baidu_mapapi_search_route_TransitRoutePlanOption_TransitPolicy.EBUS_NO_SUBWAY.index + 0;
+      default: return 0;
     }
   }
 }

@@ -21,6 +21,7 @@ extension com_baidu_mapapi_map_LogoPositionToX on com_baidu_mapapi_map_LogoPosit
       case com_baidu_mapapi_map_LogoPosition.logoPostionCenterTop: return com_baidu_mapapi_map_LogoPosition.logoPostionCenterTop.index + 0;
       case com_baidu_mapapi_map_LogoPosition.logoPostionRightBottom: return com_baidu_mapapi_map_LogoPosition.logoPostionRightBottom.index + 0;
       case com_baidu_mapapi_map_LogoPosition.logoPostionRightTop: return com_baidu_mapapi_map_LogoPosition.logoPostionRightTop.index + 0;
+      default: return 0;
     }
   }
 }

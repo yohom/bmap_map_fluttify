@@ -11,6 +11,7 @@
 #import "SubHandler/SubHandler4.h"
 #import "SubHandler/SubHandler5.h"
 #import "SubHandler/Custom/SubHandlerCustom.h"
+#import "FluttifyMessageCodec.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
 extern NSMutableDictionary<NSString*, NSObject*>* STACK;
@@ -45,7 +46,8 @@ extern BOOL enableLog;
 + (void)registerWithRegistrar:(NSObject <FlutterPluginRegistrar> *)registrar {
   FlutterMethodChannel *channel = [FlutterMethodChannel
       methodChannelWithName:@"com.fluttify/bmap_map_fluttify"
-            binaryMessenger:[registrar messenger]];
+            binaryMessenger:[registrar messenger]
+                      codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
 
   [registrar addMethodCallDelegate:[[BmapMapFluttifyPlugin alloc] initWithFlutterPluginRegistrar:registrar]
                            channel:channel];
@@ -79,8 +81,9 @@ extern BOOL enableLog;
 - (void)mapViewDidFinishLoading : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapViewDidFinishLoading");
@@ -88,15 +91,11 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
@@ -104,8 +103,9 @@ extern BOOL enableLog;
 - (void)mapViewDidRenderValidData : (BMKMapView*)mapView withError: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapViewDidRenderValidData_withError");
@@ -113,22 +113,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
@@ -136,8 +128,9 @@ extern BOOL enableLog;
 - (void)mapViewDidFinishRendering : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapViewDidFinishRendering");
@@ -145,15 +138,11 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
@@ -161,8 +150,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView onDrawMapFrame: (BMKMapStatus*)status
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onDrawMapFrame");
@@ -170,22 +160,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argstatus = [NSNull null];
-  if (status != nil) {
-      argstatus = [NSNumber numberWithLong: status.hash];
-      HEAP[argstatus] = status;
-  }
+  NSObject* argstatus = status;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"status": argstatus == nil ? [NSNull null] : argstatus}];
   });
   
 }
@@ -193,8 +175,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView regionWillChangeAnimated: (BOOL)animated
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionWillChangeAnimated");
@@ -202,17 +185,13 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated}];
   });
   
 }
@@ -220,8 +199,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView regionWillChangeAnimated: (BOOL)animated reason: (BMKRegionChangeReason)reason
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason");
@@ -229,11 +209,7 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
@@ -241,7 +217,7 @@ extern BOOL enableLog;
   NSNumber* argreason = @((NSInteger) reason);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated, @"reason": argreason == nil ? [NSNull null] : argreason}];
   });
   
 }
@@ -249,8 +225,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView regionDidChangeAnimated: (BOOL)animated
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionDidChangeAnimated");
@@ -258,17 +235,13 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated}];
   });
   
 }
@@ -276,8 +249,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView regionDidChangeAnimated: (BOOL)animated reason: (BMKRegionChangeReason)reason
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason");
@@ -285,11 +259,7 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* arganimated = @(animated);
@@ -297,7 +267,7 @@ extern BOOL enableLog;
   NSNumber* argreason = @((NSInteger) reason);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated, @"reason": argreason == nil ? [NSNull null] : argreason}];
   });
   
 }
@@ -305,8 +275,9 @@ extern BOOL enableLog;
 - (BMKAnnotationView*)mapView : (BMKMapView*)mapView viewForAnnotation: (id<BMKAnnotation>)annotation
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_viewForAnnotation");
@@ -314,24 +285,16 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argannotation = [NSNull null];
-  if (annotation != nil) {
-      argannotation = [NSNumber numberWithLong: annotation.hash];
-      HEAP[argannotation] = annotation;
-  }
+  NSObject* argannotation = annotation;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
-                  arguments:@{}
-                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
+                arguments:@{}
+                   result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
   });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
@@ -342,14 +305,15 @@ extern BOOL enableLog;
   
   ////////////////////////////////////////////////////////////////////////////////
   
-  return nil;
+  return (BMKAnnotationView*) nil;
 }
 
 - (void)mapView : (BMKMapView*)mapView didAddAnnotationViews: (NSArray*)views
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didAddAnnotationViews");
@@ -357,24 +321,13 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // list callback arg
-  NSMutableArray<NSNumber*>* argviews = [NSMutableArray arrayWithCapacity:views.count];
-  for (int __i__ = 0; __i__ < views.count; __i__++) {
-      NSObject* item = ((NSObject*) [views objectAtIndex:__i__]);
-      // return to dart side data
-      argviews[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* argviews = views;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"views": argviews == nil ? [NSNull null] : argviews}];
   });
   
 }
@@ -382,8 +335,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView clickAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_clickAnnotationView");
@@ -391,22 +345,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
@@ -414,8 +360,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView didSelectAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didSelectAnnotationView");
@@ -423,22 +370,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
@@ -446,8 +385,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView didDeselectAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didDeselectAnnotationView");
@@ -455,22 +395,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
@@ -478,8 +410,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView annotationView: (BMKAnnotationView*)view didChangeDragState: (NSUInteger)newState fromOldState: (NSUInteger)oldState
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState");
@@ -487,18 +420,10 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
   // primitive callback arg
   NSNumber* argnewState = @(newState);
@@ -506,7 +431,7 @@ extern BOOL enableLog;
   NSNumber* argoldState = @(oldState);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview, @"newState": argnewState == nil ? [NSNull null] : argnewState, @"oldState": argoldState == nil ? [NSNull null] : argoldState}];
   });
   
 }
@@ -514,8 +439,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView annotationViewForBubble: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_annotationViewForBubble");
@@ -523,22 +449,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = [NSNumber numberWithLong: view.hash];
-      HEAP[argview] = view;
-  }
+  NSObject* argview = view;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
   });
   
 }
@@ -546,8 +464,9 @@ extern BOOL enableLog;
 - (BMKOverlayView*)mapView : (BMKMapView*)mapView viewForOverlay: (id<BMKOverlay>)overlay
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_viewForOverlay");
@@ -555,24 +474,16 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argoverlay = [NSNull null];
-  if (overlay != nil) {
-      argoverlay = [NSNumber numberWithLong: overlay.hash];
-      HEAP[argoverlay] = overlay;
-  }
+  NSObject* argoverlay = overlay;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
-                  arguments:@{}
-                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
+                arguments:@{}
+                   result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
   });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
@@ -583,14 +494,15 @@ extern BOOL enableLog;
   
   ////////////////////////////////////////////////////////////////////////////////
   
-  return nil;
+  return (BMKOverlayView*) nil;
 }
 
 - (void)mapView : (BMKMapView*)mapView didAddOverlayViews: (NSArray*)overlayViews
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didAddOverlayViews");
@@ -598,24 +510,13 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // list callback arg
-  NSMutableArray<NSNumber*>* argoverlayViews = [NSMutableArray arrayWithCapacity:overlayViews.count];
-  for (int __i__ = 0; __i__ < overlayViews.count; __i__++) {
-      NSObject* item = ((NSObject*) [overlayViews objectAtIndex:__i__]);
-      // return to dart side data
-      argoverlayViews[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* argoverlayViews = overlayViews;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"overlayViews": argoverlayViews == nil ? [NSNull null] : argoverlayViews}];
   });
   
 }
@@ -623,8 +524,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView onClickedBMKOverlayView: (BMKOverlayView*)overlayView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onClickedBMKOverlayView");
@@ -632,22 +534,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argoverlayView = [NSNull null];
-  if (overlayView != nil) {
-      argoverlayView = [NSNumber numberWithLong: overlayView.hash];
-      HEAP[argoverlayView] = overlayView;
-  }
+  NSObject* argoverlayView = overlayView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"overlayView": argoverlayView == nil ? [NSNull null] : argoverlayView}];
   });
   
 }
@@ -655,8 +549,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView onClickedMapPoi: (BMKMapPoi*)mapPoi
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onClickedMapPoi");
@@ -664,22 +559,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // ref callback arg
-  NSNumber* argmapPoi = [NSNull null];
-  if (mapPoi != nil) {
-      argmapPoi = [NSNumber numberWithLong: mapPoi.hash];
-      HEAP[argmapPoi] = mapPoi;
-  }
+  NSObject* argmapPoi = mapPoi;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"mapPoi": argmapPoi == nil ? [NSNull null] : argmapPoi}];
   });
   
 }
@@ -687,8 +574,9 @@ extern BOOL enableLog;
 - (void)mapView : (BMKMapView*)mapView onClickedMapBlank: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onClickedMapBlank");
@@ -696,20 +584,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
   });
   
 }
@@ -717,8 +599,9 @@ extern BOOL enableLog;
 - (void)mapview : (BMKMapView*)mapView onDoubleClick: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_onDoubleClick");
@@ -726,20 +609,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
   });
   
 }
@@ -747,8 +624,9 @@ extern BOOL enableLog;
 - (void)mapview : (BMKMapView*)mapView onLongClick: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_onLongClick");
@@ -756,20 +634,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
   });
   
 }
@@ -777,8 +649,9 @@ extern BOOL enableLog;
 - (void)mapview : (BMKMapView*)mapView onForceTouch: (CLLocationCoordinate2D)coordinate force: (CGFloat)force maximumPossibleForce: (CGFloat)maximumPossibleForce
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce");
@@ -786,16 +659,10 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = [NSNumber numberWithLong: coordinateValue.hash];
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
   // primitive callback arg
   NSNumber* argforce = @(force);
@@ -803,7 +670,7 @@ extern BOOL enableLog;
   NSNumber* argmaximumPossibleForce = @(maximumPossibleForce);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate, @"force": argforce == nil ? [NSNull null] : argforce, @"maximumPossibleForce": argmaximumPossibleForce == nil ? [NSNull null] : argmaximumPossibleForce}];
   });
   
 }
@@ -811,8 +678,9 @@ extern BOOL enableLog;
 - (void)mapStatusDidChanged : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapStatusDidChanged");
@@ -820,15 +688,11 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
   });
   
 }
@@ -836,8 +700,9 @@ extern BOOL enableLog;
 - (void)mapview : (BMKMapView*)mapView baseIndoorMapWithIn: (BOOL)flag baseIndoorMapInfo: (BMKBaseIndoorMapInfo*)info
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKMapViewDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKMapViewDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo");
@@ -845,24 +710,16 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = [NSNumber numberWithLong: mapView.hash];
-      HEAP[argmapView] = mapView;
-  }
+  NSObject* argmapView = mapView;
   
   // primitive callback arg
   NSNumber* argflag = @(flag);
   // ref callback arg
-  NSNumber* arginfo = [NSNull null];
-  if (info != nil) {
-      arginfo = [NSNumber numberWithLong: info.hash];
-      HEAP[arginfo] = info;
-  }
+  NSObject* arginfo = info;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"flag": argflag == nil ? [NSNull null] : argflag, @"info": arginfo == nil ? [NSNull null] : arginfo}];
   });
   
 }
@@ -870,8 +727,9 @@ extern BOOL enableLog;
 - (void)onGetOfflineMapState : (int)type withState: (int)state
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKOfflineMapDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKOfflineMapDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKOfflineMapDelegate::onGetOfflineMapState_withState");
@@ -884,7 +742,7 @@ extern BOOL enableLog;
   NSNumber* argstate = @(state);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+    [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype == nil ? [NSNull null] : argtype, @"state": argstate == nil ? [NSNull null] : argstate}];
   });
   
 }
@@ -892,8 +750,9 @@ extern BOOL enableLog;
 - (void)BMKLocationManager : (BMKLocationManager*)manager doRequestAlwaysAuthorization: (CLLocationManager*)locationManager
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization");
@@ -901,22 +760,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // ref callback arg
-  NSNumber* arglocationManager = [NSNull null];
-  if (locationManager != nil) {
-      arglocationManager = [NSNumber numberWithLong: locationManager.hash];
-      HEAP[arglocationManager] = locationManager;
-  }
+  NSObject* arglocationManager = locationManager;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+    [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"locationManager": arglocationManager == nil ? [NSNull null] : arglocationManager}];
   });
   
 }
@@ -924,8 +775,9 @@ extern BOOL enableLog;
 - (void)BMKLocationManager : (BMKLocationManager*)manager didFailWithError: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didFailWithError");
@@ -933,22 +785,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError" arguments:@{@"manager": argmanager, @"error": argerror}];
+    [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
@@ -956,8 +800,9 @@ extern BOOL enableLog;
 - (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateLocation: (BMKLocation*)location orError: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError");
@@ -965,29 +810,17 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // ref callback arg
-  NSNumber* arglocation = [NSNull null];
-  if (location != nil) {
-      arglocation = [NSNumber numberWithLong: location.hash];
-      HEAP[arglocation] = location;
-  }
+  NSObject* arglocation = location;
   
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError" arguments:@{@"manager": argmanager, @"location": arglocation, @"error": argerror}];
+    [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"location": arglocation == nil ? [NSNull null] : arglocation, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
@@ -995,8 +828,9 @@ extern BOOL enableLog;
 - (void)BMKLocationManager : (BMKLocationManager*)manager didChangeAuthorizationStatus: (CLAuthorizationStatus)status
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus");
@@ -1004,17 +838,13 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // enum callback arg
   NSNumber* argstatus = @((NSInteger) status);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus" arguments:@{@"manager": argmanager, @"status": argstatus}];
+    [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"status": argstatus == nil ? [NSNull null] : argstatus}];
   });
   
 }
@@ -1022,8 +852,9 @@ extern BOOL enableLog;
 - (BOOL)BMKLocationManagerShouldDisplayHeadingCalibration : (BMKLocationManager*)manager
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration");
@@ -1031,17 +862,13 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration"
-                  arguments:@{}
-                     result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+    [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration"
+                arguments:@{}
+                   result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
   });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
@@ -1058,8 +885,9 @@ extern BOOL enableLog;
 - (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateHeading: (CLHeading*)heading
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading");
@@ -1067,22 +895,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // ref callback arg
-  NSNumber* argheading = [NSNull null];
-  if (heading != nil) {
-      argheading = [NSNumber numberWithLong: heading.hash];
-      HEAP[argheading] = heading;
-  }
+  NSObject* argheading = heading;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading" arguments:@{@"manager": argmanager, @"heading": argheading}];
+    [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"heading": argheading == nil ? [NSNull null] : argheading}];
   });
   
 }
@@ -1090,8 +910,9 @@ extern BOOL enableLog;
 - (void)BMKLocationManager : (BMKLocationManager*)manager didUpdateNetworkState: (BMKLocationNetworkState)state orError: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError");
@@ -1099,24 +920,16 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // enum callback arg
   NSNumber* argstate = @((NSInteger) state);
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError" arguments:@{@"manager": argmanager, @"state": argstate, @"error": argerror}];
+    [channel invokeMethod:@"Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"state": argstate == nil ? [NSNull null] : argstate, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
@@ -1124,8 +937,9 @@ extern BOOL enableLog;
 - (void)onCheckPermissionState : (BMKLocationAuthErrorCode)iError
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKLocationAuthDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKLocationAuthDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKLocationAuthDelegate::onCheckPermissionState");
@@ -1136,7 +950,7 @@ extern BOOL enableLog;
   NSNumber* argiError = @((NSInteger) iError);
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKLocationAuthDelegate::onCheckPermissionState" arguments:@{@"iError": argiError}];
+    [channel invokeMethod:@"Callback::BMKLocationAuthDelegate::onCheckPermissionState" arguments:@{@"iError": argiError == nil ? [NSNull null] : argiError}];
   });
   
 }
@@ -1144,8 +958,9 @@ extern BOOL enableLog;
 - (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager doRequestAlwaysAuthorization: (CLLocationManager*)locationManager
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization");
@@ -1153,22 +968,14 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // ref callback arg
-  NSNumber* arglocationManager = [NSNull null];
-  if (locationManager != nil) {
-      arglocationManager = [NSNumber numberWithLong: locationManager.hash];
-      HEAP[arglocationManager] = locationManager;
-  }
+  NSObject* arglocationManager = locationManager;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager, @"locationManager": arglocationManager}];
+    [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_doRequestAlwaysAuthorization" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"locationManager": arglocationManager == nil ? [NSNull null] : arglocationManager}];
   });
   
 }
@@ -1176,8 +983,9 @@ extern BOOL enableLog;
 - (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager didAddRegionForMonitoringFinished: (NSArray<BMKGeoFenceRegion*>*)regions customID: (NSString*)customID error: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error");
@@ -1185,33 +993,18 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // list callback arg
-  NSMutableArray<NSNumber*>* argregions = [NSMutableArray arrayWithCapacity:regions.count];
-  for (int __i__ = 0; __i__ < regions.count; __i__++) {
-      NSObject* item = ((NSObject*) [regions objectAtIndex:__i__]);
-      // return to dart side data
-      argregions[__i__] = [NSNumber numberWithLong: item.hash];
-      // add to HEAP
-      HEAP[[NSNumber numberWithLong: item.hash]] = item;
-  }
+  NSArray<NSObject*>* argregions = regions;
   // jsonable callback arg
-  NSString* argcustomID = customID == nil ? [NSNull null] : customID;
+  NSString* argcustomID = customID;
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error" arguments:@{@"manager": argmanager, @"regions": argregions, @"customID": argcustomID, @"error": argerror}];
+    [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"regions": argregions == nil ? [NSNull null] : argregions, @"customID": argcustomID == nil ? [NSNull null] : argcustomID, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }
@@ -1219,8 +1012,9 @@ extern BOOL enableLog;
 - (void)BMKGeoFenceManager : (BMKGeoFenceManager*)manager didGeoFencesStatusChangedForRegion: (BMKGeoFenceRegion*)region customID: (NSString*)customID error: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:@"BMKGeoFenceManagerDelegate::Callback"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error");
@@ -1228,31 +1022,19 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmanager = [NSNull null];
-  if (manager != nil) {
-      argmanager = [NSNumber numberWithLong: manager.hash];
-      HEAP[argmanager] = manager;
-  }
+  NSObject* argmanager = manager;
   
   // ref callback arg
-  NSNumber* argregion = [NSNull null];
-  if (region != nil) {
-      argregion = [NSNumber numberWithLong: region.hash];
-      HEAP[argregion] = region;
-  }
+  NSObject* argregion = region;
   
   // jsonable callback arg
-  NSString* argcustomID = customID == nil ? [NSNull null] : customID;
+  NSString* argcustomID = customID;
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = [NSNumber numberWithLong: error.hash];
-      HEAP[argerror] = error;
-  }
+  NSObject* argerror = error;
   
 
   dispatch_async(dispatch_get_main_queue(), ^{
-      [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error" arguments:@{@"manager": argmanager, @"region": argregion, @"customID": argcustomID, @"error": argerror}];
+    [channel invokeMethod:@"Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error" arguments:@{@"manager": argmanager == nil ? [NSNull null] : argmanager, @"region": argregion == nil ? [NSNull null] : argregion, @"customID": argcustomID == nil ? [NSNull null] : argcustomID, @"error": argerror == nil ? [NSNull null] : argerror}];
   });
   
 }

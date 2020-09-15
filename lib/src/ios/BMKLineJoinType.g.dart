@@ -15,6 +15,7 @@ extension BMKLineJoinTypeToX on BMKLineJoinType {
       case BMKLineJoinType.kBMKLineJoinBevel: return 0;
       case BMKLineJoinType.kBMKLineJoinMiter: return BMKLineJoinType.kBMKLineJoinMiter.index + 0;
       case BMKLineJoinType.kBMKLineJoinRound: return BMKLineJoinType.kBMKLineJoinRound.index + 0;
+      default: return 0;
     }
   }
 }

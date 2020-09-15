@@ -20,22 +20,19 @@ class BMKActionPaopaoView extends UIView  {
   //endregion
 
   //region creators
-  static Future<BMKActionPaopaoView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKActionPaopaoView');
+  static Future<BMKActionPaopaoView> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKActionPaopaoView', {'init': init});
     final object = BMKActionPaopaoView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKActionPaopaoView>> create_batch__(int length) async {
+  static Future<List<BMKActionPaopaoView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKActionPaopaoView', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKActionPaopaoView', {'length': length, 'init': init});
   
     final List<BMKActionPaopaoView> typedResult = resultBatch.map((result) => BMKActionPaopaoView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,7 +55,7 @@ class BMKActionPaopaoView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView is Ref ? (customView as Ref)?.refId : customView, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView, "__this__": this});
   
   
     // handle native call
@@ -69,7 +66,6 @@ class BMKActionPaopaoView extends UIView  {
       return null;
     } else {
       final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -94,15 +90,14 @@ extension BMKActionPaopaoView_Batch on List<BMKActionPaopaoView> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKActionPaopaoView::initWithCustomView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customView": customView[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKActionPaopaoView::initWithCustomView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customView": customView[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }

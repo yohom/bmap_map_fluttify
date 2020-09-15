@@ -17,6 +17,7 @@ extension BMKLocationCoordinateTypeToX on BMKLocationCoordinateType {
       case BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09MC: return BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09MC.index + 0;
       case BMKLocationCoordinateType.BMKLocationCoordinateTypeWGS84: return BMKLocationCoordinateType.BMKLocationCoordinateTypeWGS84.index + 0;
       case BMKLocationCoordinateType.BMKLocationCoordinateTypeGCJ02: return BMKLocationCoordinateType.BMKLocationCoordinateTypeGCJ02.index + 0;
+      default: return 0;
     }
   }
 }

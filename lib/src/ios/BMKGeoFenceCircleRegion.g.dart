@@ -20,22 +20,19 @@ class BMKGeoFenceCircleRegion extends BMKGeoFenceRegion with NSCopying {
   //endregion
 
   //region creators
-  static Future<BMKGeoFenceCircleRegion> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKGeoFenceCircleRegion');
+  static Future<BMKGeoFenceCircleRegion> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKGeoFenceCircleRegion', {'init': init});
     final object = BMKGeoFenceCircleRegion()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKGeoFenceCircleRegion>> create_batch__(int length) async {
+  static Future<List<BMKGeoFenceCircleRegion>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKGeoFenceCircleRegion', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKGeoFenceCircleRegion', {'length': length, 'init': init});
   
     final List<BMKGeoFenceCircleRegion> typedResult = resultBatch.map((result) => BMKGeoFenceCircleRegion()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,15 +40,13 @@ class BMKGeoFenceCircleRegion extends BMKGeoFenceRegion with NSCopying {
 
   //region getters
   Future<CLLocationCoordinate2D> get_center() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceCircleRegion::get_center", {'refId': refId});
-    kNativeObjectPool.add(CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceCircleRegion::get_center", {'__this__': this});
+    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<double> get_radius() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceCircleRegion::get_radius", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceCircleRegion::get_radius", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
@@ -69,7 +64,7 @@ class BMKGeoFenceCircleRegion extends BMKGeoFenceRegion with NSCopying {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceCircleRegion::initWithCustomID_identityID_center_radius_coor', {"customid": customid, "identityid": identityid, "center": center is Ref ? (center as Ref)?.refId : center, "radius": radius, "type": type.toValue(), "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceCircleRegion::initWithCustomID_identityID_center_radius_coor', {"customid": customid, "identityid": identityid, "center": center, "radius": radius, "type": type.toValue(), "__this__": this});
   
   
     // handle native call
@@ -80,7 +75,6 @@ class BMKGeoFenceCircleRegion extends BMKGeoFenceRegion with NSCopying {
       return null;
     } else {
       final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -91,16 +85,16 @@ class BMKGeoFenceCircleRegion extends BMKGeoFenceRegion with NSCopying {
 extension BMKGeoFenceCircleRegion_Batch on List<BMKGeoFenceCircleRegion> {
   //region getters
   Future<List<CLLocationCoordinate2D>> get_center_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceCircleRegion::get_center_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceCircleRegion::get_center_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<double>> get_radius_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGeoFenceCircleRegion::get_radius_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceCircleRegion::get_radius_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -118,15 +112,14 @@ extension BMKGeoFenceCircleRegion_Batch on List<BMKGeoFenceCircleRegion> {
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGeoFenceCircleRegion::initWithCustomID_identityID_center_radius_coor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customid": customid[__i__], "identityid": identityid[__i__], "center": center[__i__].refId, "radius": radius[__i__], "type": type[__i__].toValue(), "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceCircleRegion::initWithCustomID_identityID_center_radius_coor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customid": customid[__i__], "identityid": identityid[__i__], "center": center[__i__], "radius": radius[__i__], "type": type[__i__].toValue(), "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }

@@ -24,20 +24,14 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
   //endregion
 
   //region getters
-  static Future<bool> get_isHttpsEnable() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable", );
-  
-    return __result__;
+  static Future<bool> get_static_isHttpsEnable() async {
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable", );
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
-  Future<void> set_isHttpsEnable(bool isHttpsEnable) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::set_isHttpsEnable', {'refId': refId, "isHttpsEnable": isHttpsEnable});
-  
-  
-  }
   
   //endregion
 
@@ -50,7 +44,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::setReadTimeOut', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::setReadTimeOut', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -61,7 +55,6 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -74,7 +67,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::setMaxTimeOut', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::setMaxTimeOut', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -85,7 +78,6 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -98,7 +90,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::getPhoneInfo', );
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::getPhoneInfo', );
   
   
     // handle native call
@@ -109,7 +101,6 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -122,7 +113,7 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::getAuthToken', );
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::getAuthToken', );
   
   
     // handle native call
@@ -133,7 +124,6 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -143,21 +133,16 @@ class com_baidu_mapapi_http_HttpClient extends java_lang_Object  {
 
 extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_HttpClient> {
   //region getters
-  Future<List<bool>> get_isHttpsEnable_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+  Future<List<bool>> get_static_isHttpsEnable_batch() async {
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.http.HttpClient::get_isHttpsEnable_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   //endregion
 
   //region setters
-  Future<void> set_isHttpsEnable_batch(List<bool> isHttpsEnable) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::set_isHttpsEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "isHttpsEnable": isHttpsEnable[__i__]}]);
-  
-  
-  }
   
   //endregion
 
@@ -169,7 +154,7 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::setReadTimeOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::setReadTimeOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -177,7 +162,6 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -189,7 +173,7 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::setMaxTimeOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::setMaxTimeOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -197,7 +181,6 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -209,7 +192,7 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::getPhoneInfo_batch', );
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::getPhoneInfo_batch', );
   
   
     // convert native result to dart side object
@@ -217,7 +200,6 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -229,7 +211,7 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.http.HttpClient::getAuthToken_batch', );
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.http.HttpClient::getAuthToken_batch', );
   
   
     // convert native result to dart side object
@@ -237,7 +219,6 @@ extension com_baidu_mapapi_http_HttpClient_Batch on List<com_baidu_mapapi_http_H
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

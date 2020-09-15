@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_search_sug_OnGetSuggestionResultListener on java_lang_Obj
   
 
   @mustCallSuper
-  Future<void> onGetSuggestionResult(com_baidu_mapapi_search_sug_SuggestionResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetSuggestionResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetSuggestionResult(com_baidu_mapapi_search_sug_SuggestionResult var1) {}
   
 }
 

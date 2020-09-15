@@ -24,22 +24,10 @@ mixin com_baidu_mapapi_map_WearMapView_OnDismissCallback on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onDismiss() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onDismiss::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onDismiss() {}
   
   @mustCallSuper
-  Future<void> onNotify() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onNotify::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onNotify() {}
   
 }
 

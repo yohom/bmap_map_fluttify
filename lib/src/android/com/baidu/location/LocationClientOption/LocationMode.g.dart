@@ -15,6 +15,7 @@ extension com_baidu_location_LocationClientOption_LocationModeToX on com_baidu_l
       case com_baidu_location_LocationClientOption_LocationMode.Hight_Accuracy: return com_baidu_location_LocationClientOption_LocationMode.Hight_Accuracy.index + 0;
       case com_baidu_location_LocationClientOption_LocationMode.Battery_Saving: return com_baidu_location_LocationClientOption_LocationMode.Battery_Saving.index + 0;
       case com_baidu_location_LocationClientOption_LocationMode.Device_Sensors: return com_baidu_location_LocationClientOption_LocationMode.Device_Sensors.index + 0;
+      default: return 0;
     }
   }
 }

@@ -24,31 +24,13 @@ mixin com_baidu_mapapi_search_share_OnGetShareUrlResultListener on java_lang_Obj
   
 
   @mustCallSuper
-  Future<void> onGetPoiDetailShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetPoiDetailShareUrlResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetPoiDetailShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
   @mustCallSuper
-  Future<void> onGetLocationShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetLocationShareUrlResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetLocationShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
   @mustCallSuper
-  Future<void> onGetRouteShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetRouteShareUrlResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetRouteShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
 }
 

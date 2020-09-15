@@ -13,6 +13,7 @@ extension BMKLocationProviderToX on BMKLocationProvider {
     switch (this) {
       case BMKLocationProvider.BMKLocationProviderIOS: return 0;
       case BMKLocationProvider.BMKLocationProviderOther: return BMKLocationProvider.BMKLocationProviderOther.index + 0;
+      default: return 0;
     }
   }
 }

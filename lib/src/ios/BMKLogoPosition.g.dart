@@ -21,6 +21,7 @@ extension BMKLogoPositionToX on BMKLogoPosition {
       case BMKLogoPosition.BMKLogoPositionCenterTop: return BMKLogoPosition.BMKLogoPositionCenterTop.index + 0;
       case BMKLogoPosition.BMKLogoPositionRightBottom: return BMKLogoPosition.BMKLogoPositionRightBottom.index + 0;
       case BMKLogoPosition.BMKLogoPositionRightTop: return BMKLogoPosition.BMKLogoPositionRightTop.index + 0;
+      default: return 0;
     }
   }
 }

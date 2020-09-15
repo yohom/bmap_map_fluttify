@@ -21,10 +21,8 @@ class com_baidu_mapapi_cloud_CloudSearchResult extends com_baidu_mapapi_cloud_Ba
 
   //region creators
   static Future<com_baidu_mapapi_cloud_CloudSearchResult> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_cloud_CloudSearchResult__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_cloud_CloudSearchResult__', );
     final object = com_baidu_mapapi_cloud_CloudSearchResult()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_cloud_CloudSearchResult extends com_baidu_mapapi_cloud_Ba
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_cloud_CloudSearchResult__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_cloud_CloudSearchResult__', {'length': length});
   
     final List<com_baidu_mapapi_cloud_CloudSearchResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_cloud_CloudSearchResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,16 +40,15 @@ class com_baidu_mapapi_cloud_CloudSearchResult extends com_baidu_mapapi_cloud_Ba
 
   //region getters
   Future<List<com_baidu_mapapi_cloud_CloudPoiInfo>> get_poiList() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudSearchResult::get_poiList", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudSearchResult::get_poiList", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
   }
   
   //endregion
 
   //region setters
   Future<void> set_poiList(List<com_baidu_mapapi_cloud_CloudPoiInfo> poiList) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudSearchResult::set_poiList', {'refId': refId, "poiList": poiList.map((it) => it.refId).toList()});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudSearchResult::set_poiList', <String, dynamic>{'__this__': this, "poiList": poiList});
   
   
   }
@@ -67,9 +63,9 @@ class com_baidu_mapapi_cloud_CloudSearchResult extends com_baidu_mapapi_cloud_Ba
 extension com_baidu_mapapi_cloud_CloudSearchResult_Batch on List<com_baidu_mapapi_cloud_CloudSearchResult> {
   //region getters
   Future<List<List<com_baidu_mapapi_cloud_CloudPoiInfo>>> get_poiList_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudSearchResult::get_poiList_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudSearchResult::get_poiList_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     return typedResult;
   }
   
@@ -77,7 +73,7 @@ extension com_baidu_mapapi_cloud_CloudSearchResult_Batch on List<com_baidu_mapap
 
   //region setters
   Future<void> set_poiList_batch(List<List<com_baidu_mapapi_cloud_CloudPoiInfo>> poiList) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudSearchResult::set_poiList_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "poiList": poiList[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudSearchResult::set_poiList_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "poiList": poiList[__i__]}]);
   
   
   }

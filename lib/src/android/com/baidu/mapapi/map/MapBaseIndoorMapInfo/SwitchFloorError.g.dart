@@ -19,6 +19,7 @@ extension com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorErrorToX on com_b
       case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FLOOR_OVERLFLOW: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FLOOR_OVERLFLOW.index + 0;
       case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FOCUSED_ID_ERROR: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.FOCUSED_ID_ERROR.index + 0;
       case com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.SWITCH_ERROR: return com_baidu_mapapi_map_MapBaseIndoorMapInfo_SwitchFloorError.SWITCH_ERROR.index + 0;
+      default: return 0;
     }
   }
 }

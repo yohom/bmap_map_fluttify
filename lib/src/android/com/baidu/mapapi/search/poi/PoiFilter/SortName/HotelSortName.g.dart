@@ -21,6 +21,7 @@ extension com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortNameToX on com
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_TOTAL_SCORE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_TOTAL_SCORE.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_LEVEL: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_LEVEL.index + 0;
       case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_HEALTH_SCORE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_HEALTH_SCORE.index + 0;
+      default: return 0;
     }
   }
 }

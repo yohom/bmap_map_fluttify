@@ -21,10 +21,8 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
 
   //region creators
   static Future<com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode__', );
     final object = com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode__', {'length': length});
   
     final List<com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNode()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,7 +55,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getName', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getName', {"__this__": this});
   
   
     // handle native call
@@ -69,7 +66,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -82,7 +78,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setName', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setName', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -93,7 +89,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -106,7 +101,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getType', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getType', {"__this__": this});
   
   
     // handle native call
@@ -117,7 +112,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -130,7 +124,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setType', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setType', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -141,7 +135,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -154,7 +147,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getDetail', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getDetail', {"__this__": this});
   
   
     // handle native call
@@ -165,7 +158,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -178,7 +170,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setDetail', {"var1": var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setDetail', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -189,7 +181,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -202,7 +193,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getLocation', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getLocation', {"__this__": this});
   
   
     // handle native call
@@ -213,7 +204,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__return__ is Ref) kNativeObjectPool.add(__return__);
       return __return__;
     }
   }
@@ -226,7 +216,7 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setLocation', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setLocation', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -237,7 +227,6 @@ class com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorStepNo
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -262,7 +251,7 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -270,7 +259,6 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -282,7 +270,7 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -290,7 +278,6 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -302,7 +289,7 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -310,7 +297,6 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -322,7 +308,7 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -330,7 +316,6 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -342,7 +327,7 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getDetail_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getDetail_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -350,7 +335,6 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -362,7 +346,7 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setDetail_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setDetail_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -370,7 +354,6 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -382,15 +365,14 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::getLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
       return typedResult;
     }
   }
@@ -402,7 +384,7 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRouteLine.IndoorRouteStep.IndoorStepNode::setLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -410,7 +392,6 @@ extension com_baidu_mapapi_search_route_IndoorRouteLine_IndoorRouteStep_IndoorSt
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

@@ -11,6 +11,7 @@ extension com_baidu_mapapi_ModuleNameToX on com_baidu_mapapi_ModuleName {
   int toValue() {
     switch (this) {
       case com_baidu_mapapi_ModuleName.TILE_OVERLAY_MODULE: return com_baidu_mapapi_ModuleName.TILE_OVERLAY_MODULE.index + 0;
+      default: return 0;
     }
   }
 }

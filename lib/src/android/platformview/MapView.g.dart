@@ -24,13 +24,14 @@ class com_baidu_mapapi_map_MapView_Android extends StatefulWidget {
     Key key,
     this.onViewCreated,
     this.onDispose,
-    this.var2,
+    this.params = const <String, dynamic>{},
+    this.gestureRecognizers,
   }) : super(key: key);
 
   final MapViewCreatedCallback onViewCreated;
   final _OnAndroidViewDispose onDispose;
-
-  final com_baidu_mapapi_map_BaiduMapOptions var2;
+  final Map<String, dynamic> params;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _com_baidu_mapapi_map_MapView_AndroidState createState() => _com_baidu_mapapi_map_MapView_AndroidState();
@@ -41,9 +42,9 @@ class _com_baidu_mapapi_map_MapView_AndroidState extends State<com_baidu_mapapi_
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
     final messageCodec = StandardMessageCodec();
     return AndroidView(
@@ -51,13 +52,15 @@ class _com_baidu_mapapi_map_MapView_AndroidState extends State<com_baidu_mapapi_
       gestureRecognizers: gestureRecognizers,
       onPlatformViewCreated: _onViewCreated,
       creationParamsCodec: messageCodec,
-      creationParams: {"var2": widget.var2?.refId ?? -1},
+      creationParams: widget.params,
     );
   }
 
-  void _onViewCreated(int id) {
+  void _onViewCreated(int id) async {
     // 碰到一个对象返回的hashCode为0的情况, 造成和这个id冲突了, 这里用一个magic number避免一下
-    _controller = com_baidu_mapapi_map_MapView()..refId = 2147483647 - id;
+    // 把viewId转换为refId再使用, 使其与其他对象统一
+    final refId = await viewId2RefId((2147483647 - id).toString());
+    _controller = com_baidu_mapapi_map_MapView()..refId = refId..tag__ = 'bmap_map_fluttify';
     if (widget.onViewCreated != null) {
       widget.onViewCreated(_controller);
     }

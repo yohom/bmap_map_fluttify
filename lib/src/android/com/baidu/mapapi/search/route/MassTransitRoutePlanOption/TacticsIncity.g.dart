@@ -21,6 +21,7 @@ extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity
       case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_NO_SUBWAY: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_NO_SUBWAY.index + 0;
       case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_TIME: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_TIME.index + 0;
       case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_SUBWAY_FIRST: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_SUBWAY_FIRST.index + 0;
+      default: return 0;
     }
   }
 }

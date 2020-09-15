@@ -25,6 +25,7 @@ extension BMKLocationErrorCodeToX on BMKLocationErrorCode {
       case BMKLocationErrorCode.BMKLocationErrorGetExtraNetworkFailed: return 5;
       case BMKLocationErrorCode.BMKLocationErrorGetExtraParseFailed: return 6;
       case BMKLocationErrorCode.BMKLocationErrorFailureAuth: return 7;
+      default: return 0;
     }
   }
 }

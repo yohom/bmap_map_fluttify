@@ -40,7 +40,7 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::searchDistrict', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::searchDistrict', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -51,7 +51,6 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -64,25 +63,30 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::setOnDistrictSearchListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::setOnDistrictSearchListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.district.DistrictSearch::setOnDistrictSearchListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.district.DistrictSearch::setOnDistrictSearchListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.search.district.OnGetDistricSearchResultListener::onGetDistrictResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetDistrictResult([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetDistrictResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_search_district_DistrictResult>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.search.district.OnGetDistricSearchResultListener::onGetDistrictResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetDistrictResult([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onGetDistrictResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_search_district_DistrictResult>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -91,7 +95,6 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -104,7 +107,7 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::destroy', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::destroy', {"__this__": this});
   
   
     // handle native call
@@ -115,7 +118,6 @@ class com_baidu_mapapi_search_district_DistrictSearch extends java_lang_Object  
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -140,7 +142,7 @@ extension com_baidu_mapapi_search_district_DistrictSearch_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::searchDistrict_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::searchDistrict_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -148,7 +150,6 @@ extension com_baidu_mapapi_search_district_DistrictSearch_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -160,7 +161,7 @@ extension com_baidu_mapapi_search_district_DistrictSearch_Batch on List<com_baid
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.district.DistrictSearch::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -168,7 +169,6 @@ extension com_baidu_mapapi_search_district_DistrictSearch_Batch on List<com_baid
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

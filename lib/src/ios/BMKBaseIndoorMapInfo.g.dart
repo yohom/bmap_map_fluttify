@@ -20,22 +20,19 @@ class BMKBaseIndoorMapInfo extends NSObject  {
   //endregion
 
   //region creators
-  static Future<BMKBaseIndoorMapInfo> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKBaseIndoorMapInfo');
+  static Future<BMKBaseIndoorMapInfo> create__({ bool init = true /* ios only */ }) async {
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKBaseIndoorMapInfo', {'init': init});
     final object = BMKBaseIndoorMapInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
-  static Future<List<BMKBaseIndoorMapInfo>> create_batch__(int length) async {
+  static Future<List<BMKBaseIndoorMapInfo>> create_batch__(int length, { bool init = true /* ios only */ }) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKBaseIndoorMapInfo', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKBaseIndoorMapInfo', {'length': length, 'init': init});
   
     final List<BMKBaseIndoorMapInfo> typedResult = resultBatch.map((result) => BMKBaseIndoorMapInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,40 +40,37 @@ class BMKBaseIndoorMapInfo extends NSObject  {
 
   //region getters
   Future<String> get_strID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKBaseIndoorMapInfo::get_strID", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_strID", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_strFloor() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKBaseIndoorMapInfo::get_strFloor", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_strFloor", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<List<NSObject>> get_arrStrFloors() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKBaseIndoorMapInfo::get_arrStrFloors", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_arrStrFloors", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
   }
   
   //endregion
 
   //region setters
   Future<void> set_strID(String strID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKBaseIndoorMapInfo::set_strID', {'refId': refId, "strID": strID});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKBaseIndoorMapInfo::set_strID', <String, dynamic>{'__this__': this, "strID": strID});
   
   
   }
   
   Future<void> set_strFloor(String strFloor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKBaseIndoorMapInfo::set_strFloor', {'refId': refId, "strFloor": strFloor});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKBaseIndoorMapInfo::set_strFloor', <String, dynamic>{'__this__': this, "strFloor": strFloor});
   
   
   }
   
   Future<void> set_arrStrFloors(List<NSObject> arrStrFloors) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKBaseIndoorMapInfo::set_arrStrFloors', {'refId': refId, "arrStrFloors": arrStrFloors.map((it) => it.refId).toList()});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKBaseIndoorMapInfo::set_arrStrFloors', <String, dynamic>{'__this__': this, "arrStrFloors": arrStrFloors});
   
   
   }
@@ -91,23 +85,23 @@ class BMKBaseIndoorMapInfo extends NSObject  {
 extension BMKBaseIndoorMapInfo_Batch on List<BMKBaseIndoorMapInfo> {
   //region getters
   Future<List<String>> get_strID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKBaseIndoorMapInfo::get_strID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_strID_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_strFloor_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKBaseIndoorMapInfo::get_strFloor_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_strFloor_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<List<NSObject>>> get_arrStrFloors_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKBaseIndoorMapInfo::get_arrStrFloors_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_arrStrFloors_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     return typedResult;
   }
   
@@ -115,19 +109,19 @@ extension BMKBaseIndoorMapInfo_Batch on List<BMKBaseIndoorMapInfo> {
 
   //region setters
   Future<void> set_strID_batch(List<String> strID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKBaseIndoorMapInfo::set_strID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "strID": strID[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKBaseIndoorMapInfo::set_strID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "strID": strID[__i__]}]);
   
   
   }
   
   Future<void> set_strFloor_batch(List<String> strFloor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKBaseIndoorMapInfo::set_strFloor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "strFloor": strFloor[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKBaseIndoorMapInfo::set_strFloor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "strFloor": strFloor[__i__]}]);
   
   
   }
   
   Future<void> set_arrStrFloors_batch(List<List<NSObject>> arrStrFloors) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKBaseIndoorMapInfo::set_arrStrFloors_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "arrStrFloors": arrStrFloors[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKBaseIndoorMapInfo::set_arrStrFloors_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "arrStrFloors": arrStrFloors[__i__]}]);
   
   
   }

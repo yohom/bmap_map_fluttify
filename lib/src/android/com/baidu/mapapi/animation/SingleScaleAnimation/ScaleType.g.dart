@@ -13,6 +13,7 @@ extension com_baidu_mapapi_animation_SingleScaleAnimation_ScaleTypeToX on com_ba
     switch (this) {
       case com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_X: return com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_X.index + 0;
       case com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_Y: return com_baidu_mapapi_animation_SingleScaleAnimation_ScaleType.SCALE_Y.index + 0;
+      default: return 0;
     }
   }
 }

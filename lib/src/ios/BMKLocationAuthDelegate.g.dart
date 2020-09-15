@@ -24,13 +24,7 @@ mixin BMKLocationAuthDelegate on NSObject {
   
 
   @mustCallSuper
-  Future<void> onCheckPermissionState(BMKLocationAuthErrorCode iError) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onCheckPermissionState::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onCheckPermissionState(BMKLocationAuthErrorCode iError) {}
   
 }
 

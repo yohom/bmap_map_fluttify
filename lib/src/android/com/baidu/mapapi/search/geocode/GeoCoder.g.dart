@@ -40,7 +40,7 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::geocode', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::geocode', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -51,7 +51,6 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -64,7 +63,7 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::reverseGeoCode', {"var1": var1 is Ref ? (var1 as Ref)?.refId : var1, "refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::reverseGeoCode', {"var1": var1, "__this__": this});
   
   
     // handle native call
@@ -75,7 +74,6 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -88,34 +86,39 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener', {"__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.geocode.GeoCoder::setOnGetGeoCodeResultListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::onGetGeoCodeResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetGeoCodeResult([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetGeoCodeResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_search_geocode_GeoCodeResult>());
-              break;
-            case 'Callback::com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::onGetReverseGeoCodeResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetReverseGeoCodeResult([\'var1\':${args['var1']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetReverseGeoCodeResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::onGetGeoCodeResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetGeoCodeResult([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onGetGeoCodeResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_search_geocode_GeoCodeResult>());
+                break;
+              case 'Callback::com.baidu.mapapi.search.geocode.OnGetGeoCoderResultListener::onGetReverseGeoCodeResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetReverseGeoCodeResult([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                var1?.onGetReverseGeoCodeResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_search_geocode_ReverseGeoCodeResult>());
+                break;
+              default:
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            throw e;
           }
         });
   
@@ -124,7 +127,6 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -137,7 +139,7 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::destroy', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::destroy', {"__this__": this});
   
   
     // handle native call
@@ -148,7 +150,6 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -173,7 +174,7 @@ extension com_baidu_mapapi_search_geocode_GeoCoder_Batch on List<com_baidu_mapap
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::geocode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::geocode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -181,7 +182,6 @@ extension com_baidu_mapapi_search_geocode_GeoCoder_Batch on List<com_baidu_mapap
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -193,7 +193,7 @@ extension com_baidu_mapapi_search_geocode_GeoCoder_Batch on List<com_baidu_mapap
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::reverseGeoCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::reverseGeoCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -201,7 +201,6 @@ extension com_baidu_mapapi_search_geocode_GeoCoder_Batch on List<com_baidu_mapap
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }
@@ -213,7 +212,7 @@ extension com_baidu_mapapi_search_geocode_GeoCoder_Batch on List<com_baidu_mapap
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -221,7 +220,6 @@ extension com_baidu_mapapi_search_geocode_GeoCoder_Batch on List<com_baidu_mapap
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

@@ -21,10 +21,8 @@ class com_baidu_mapapi_cloud_CloudRgcResult extends java_lang_Object  {
 
   //region creators
   static Future<com_baidu_mapapi_cloud_CloudRgcResult> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_cloud_CloudRgcResult__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_cloud_CloudRgcResult__', );
     final object = com_baidu_mapapi_cloud_CloudRgcResult()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_cloud_CloudRgcResult extends java_lang_Object  {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_cloud_CloudRgcResult__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_cloud_CloudRgcResult__', {'length': length});
   
     final List<com_baidu_mapapi_cloud_CloudRgcResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_cloud_CloudRgcResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -43,112 +40,103 @@ class com_baidu_mapapi_cloud_CloudRgcResult extends java_lang_Object  {
 
   //region getters
   Future<int> get_status() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_status", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_status", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_message() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_message", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_message", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<com_baidu_mapapi_model_LatLng> get_location() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_location", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_location", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents> get_addressCompents() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_addressCompents", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_addressCompents", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<String> get_formattedAddress() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_formattedAddress", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_formattedAddress", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<List<com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo>> get_pois() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_pois", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_pois", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
   }
   
   Future<List<com_baidu_mapapi_cloud_CloudPoiInfo>> get_customPois() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customPois", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customPois", {'__this__': this});
+    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
   }
   
   Future<String> get_customLocationDescription() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customLocationDescription", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customLocationDescription", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_recommendedLocationDescription() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_recommendedLocationDescription", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_recommendedLocationDescription", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_status(int status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_status', {'refId': refId, "status": status});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_status', <String, dynamic>{'__this__': this, "status": status});
   
   
   }
   
   Future<void> set_message(String message) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_message', {'refId': refId, "message": message});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_message', <String, dynamic>{'__this__': this, "message": message});
   
   
   }
   
   Future<void> set_location(com_baidu_mapapi_model_LatLng location) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_location', {'refId': refId, "location": location.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_location', <String, dynamic>{'__this__': this, "location": location});
   
   
   }
   
   Future<void> set_addressCompents(com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents addressCompents) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_addressCompents', {'refId': refId, "addressCompents": addressCompents.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_addressCompents', <String, dynamic>{'__this__': this, "addressCompents": addressCompents});
   
   
   }
   
   Future<void> set_formattedAddress(String formattedAddress) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_formattedAddress', {'refId': refId, "formattedAddress": formattedAddress});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_formattedAddress', <String, dynamic>{'__this__': this, "formattedAddress": formattedAddress});
   
   
   }
   
   Future<void> set_pois(List<com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo> pois) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_pois', {'refId': refId, "pois": pois.map((it) => it.refId).toList()});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_pois', <String, dynamic>{'__this__': this, "pois": pois});
   
   
   }
   
   Future<void> set_customPois(List<com_baidu_mapapi_cloud_CloudPoiInfo> customPois) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customPois', {'refId': refId, "customPois": customPois.map((it) => it.refId).toList()});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customPois', <String, dynamic>{'__this__': this, "customPois": customPois});
   
   
   }
   
   Future<void> set_customLocationDescription(String customLocationDescription) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customLocationDescription', {'refId': refId, "customLocationDescription": customLocationDescription});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customLocationDescription', <String, dynamic>{'__this__': this, "customLocationDescription": customLocationDescription});
   
   
   }
   
   Future<void> set_recommendedLocationDescription(String recommendedLocationDescription) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_recommendedLocationDescription', {'refId': refId, "recommendedLocationDescription": recommendedLocationDescription});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_recommendedLocationDescription', <String, dynamic>{'__this__': this, "recommendedLocationDescription": recommendedLocationDescription});
   
   
   }
@@ -163,65 +151,65 @@ class com_baidu_mapapi_cloud_CloudRgcResult extends java_lang_Object  {
 extension com_baidu_mapapi_cloud_CloudRgcResult_Batch on List<com_baidu_mapapi_cloud_CloudRgcResult> {
   //region getters
   Future<List<int>> get_status_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_status_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_message_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_message_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_message_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_model_LatLng>> get_location_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_location_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_location_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents>> get_addressCompents_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_addressCompents_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_addressCompents_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<String>> get_formattedAddress_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_formattedAddress_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_formattedAddress_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<List<com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo>>> get_pois_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_pois_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_pois_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     return typedResult;
   }
   
   Future<List<List<com_baidu_mapapi_cloud_CloudPoiInfo>>> get_customPois_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customPois_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customPois_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => com_baidu_mapapi_cloud_CloudPoiInfo()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
     return typedResult;
   }
   
   Future<List<String>> get_customLocationDescription_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customLocationDescription_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_customLocationDescription_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_recommendedLocationDescription_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_recommendedLocationDescription_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult::get_recommendedLocationDescription_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -229,55 +217,55 @@ extension com_baidu_mapapi_cloud_CloudRgcResult_Batch on List<com_baidu_mapapi_c
 
   //region setters
   Future<void> set_status_batch(List<int> status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "status": status[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
   
   
   }
   
   Future<void> set_message_batch(List<String> message) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_message_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "message": message[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_message_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "message": message[__i__]}]);
   
   
   }
   
   Future<void> set_location_batch(List<com_baidu_mapapi_model_LatLng> location) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_location_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "location": location[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_location_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "location": location[__i__]}]);
   
   
   }
   
   Future<void> set_addressCompents_batch(List<com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents> addressCompents) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_addressCompents_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "addressCompents": addressCompents[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_addressCompents_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "addressCompents": addressCompents[__i__]}]);
   
   
   }
   
   Future<void> set_formattedAddress_batch(List<String> formattedAddress) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_formattedAddress_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "formattedAddress": formattedAddress[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_formattedAddress_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "formattedAddress": formattedAddress[__i__]}]);
   
   
   }
   
   Future<void> set_pois_batch(List<List<com_baidu_mapapi_cloud_CloudRgcResult_PoiInfo>> pois) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_pois_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "pois": pois[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_pois_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pois": pois[__i__]}]);
   
   
   }
   
   Future<void> set_customPois_batch(List<List<com_baidu_mapapi_cloud_CloudPoiInfo>> customPois) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customPois_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "customPois": customPois[__i__].map((it) => it.refId).toList()}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customPois_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "customPois": customPois[__i__]}]);
   
   
   }
   
   Future<void> set_customLocationDescription_batch(List<String> customLocationDescription) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customLocationDescription_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "customLocationDescription": customLocationDescription[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_customLocationDescription_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "customLocationDescription": customLocationDescription[__i__]}]);
   
   
   }
   
   Future<void> set_recommendedLocationDescription_batch(List<String> recommendedLocationDescription) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_recommendedLocationDescription_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "recommendedLocationDescription": recommendedLocationDescription[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult::set_recommendedLocationDescription_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "recommendedLocationDescription": recommendedLocationDescription[__i__]}]);
   
   
   }

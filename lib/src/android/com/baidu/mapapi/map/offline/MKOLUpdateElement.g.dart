@@ -31,10 +31,8 @@ class com_baidu_mapapi_map_offline_MKOLUpdateElement extends java_lang_Object  {
 
   //region creators
   static Future<com_baidu_mapapi_map_offline_MKOLUpdateElement> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLUpdateElement__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLUpdateElement__', );
     final object = com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -42,10 +40,9 @@ class com_baidu_mapapi_map_offline_MKOLUpdateElement extends java_lang_Object  {
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_offline_MKOLUpdateElement__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_offline_MKOLUpdateElement__', {'length': length});
   
     final List<com_baidu_mapapi_map_offline_MKOLUpdateElement> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_offline_MKOLUpdateElement()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -53,112 +50,103 @@ class com_baidu_mapapi_map_offline_MKOLUpdateElement extends java_lang_Object  {
 
   //region getters
   Future<int> get_cityID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityID", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityID", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<String> get_cityName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityName", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityName", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_ratio() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_ratio", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_ratio", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_status() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_status", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_status", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<com_baidu_mapapi_model_LatLng> get_geoPt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_geoPt", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_geoPt", {'__this__': this});
+    return __result__ == null ? null : (com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
   }
   
   Future<int> get_size() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_size", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_size", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_serversize() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_serversize", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_serversize", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<int> get_level() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_level", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_level", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   Future<bool> get_update() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_update", {'refId': refId});
-  
-    return __result__;
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_update", {'__this__': this});
+    return __result__ == null ? null : (__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_cityID(int cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityID', {'refId': refId, "cityID": cityID});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityID', <String, dynamic>{'__this__': this, "cityID": cityID});
   
   
   }
   
   Future<void> set_cityName(String cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityName', {'refId': refId, "cityName": cityName});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityName', <String, dynamic>{'__this__': this, "cityName": cityName});
   
   
   }
   
   Future<void> set_ratio(int ratio) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_ratio', {'refId': refId, "ratio": ratio});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_ratio', <String, dynamic>{'__this__': this, "ratio": ratio});
   
   
   }
   
   Future<void> set_status(int status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_status', {'refId': refId, "status": status});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_status', <String, dynamic>{'__this__': this, "status": status});
   
   
   }
   
   Future<void> set_geoPt(com_baidu_mapapi_model_LatLng geoPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_geoPt', {'refId': refId, "geoPt": geoPt.refId});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_geoPt', <String, dynamic>{'__this__': this, "geoPt": geoPt});
   
   
   }
   
   Future<void> set_size(int size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_size', {'refId': refId, "size": size});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_size', <String, dynamic>{'__this__': this, "size": size});
   
   
   }
   
   Future<void> set_serversize(int serversize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_serversize', {'refId': refId, "serversize": serversize});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_serversize', <String, dynamic>{'__this__': this, "serversize": serversize});
   
   
   }
   
   Future<void> set_level(int level) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_level', {'refId': refId, "level": level});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_level', <String, dynamic>{'__this__': this, "level": level});
   
   
   }
   
   Future<void> set_update(bool update) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_update', {'refId': refId, "update": update});
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_update', <String, dynamic>{'__this__': this, "update": update});
   
   
   }
@@ -173,65 +161,65 @@ class com_baidu_mapapi_map_offline_MKOLUpdateElement extends java_lang_Object  {
 extension com_baidu_mapapi_map_offline_MKOLUpdateElement_Batch on List<com_baidu_mapapi_map_offline_MKOLUpdateElement> {
   //region getters
   Future<List<int>> get_cityID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityID_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<String>> get_cityName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityName_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_cityName_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_ratio_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_ratio_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_ratio_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_status_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_status_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<com_baidu_mapapi_model_LatLng>> get_geoPt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_geoPt_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_geoPt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+  
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
     return typedResult;
   }
   
   Future<List<int>> get_size_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_size_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_serversize_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_serversize_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_serversize_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<int>> get_level_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_level_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_level_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
   Future<List<bool>> get_update_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_update_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.offline.MKOLUpdateElement::get_update_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
+    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
     return typedResult;
   }
   
@@ -239,55 +227,55 @@ extension com_baidu_mapapi_map_offline_MKOLUpdateElement_Batch on List<com_baidu
 
   //region setters
   Future<void> set_cityID_batch(List<int> cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityID": cityID[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityID": cityID[__i__]}]);
   
   
   }
   
   Future<void> set_cityName_batch(List<String> cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityName": cityName[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityName": cityName[__i__]}]);
   
   
   }
   
   Future<void> set_ratio_batch(List<int> ratio) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_ratio_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "ratio": ratio[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_ratio_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ratio": ratio[__i__]}]);
   
   
   }
   
   Future<void> set_status_batch(List<int> status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "status": status[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
   
   
   }
   
   Future<void> set_geoPt_batch(List<com_baidu_mapapi_model_LatLng> geoPt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_geoPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "geoPt": geoPt[__i__].refId}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_geoPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "geoPt": geoPt[__i__]}]);
   
   
   }
   
   Future<void> set_size_batch(List<int> size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "size": size[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
   
   
   }
   
   Future<void> set_serversize_batch(List<int> serversize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_serversize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "serversize": serversize[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_serversize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "serversize": serversize[__i__]}]);
   
   
   }
   
   Future<void> set_level_batch(List<int> level) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_level_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "level": level[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_level_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "level": level[__i__]}]);
   
   
   }
   
   Future<void> set_update_batch(List<bool> update) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_update_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "update": update[__i__]}]);
+    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.offline.MKOLUpdateElement::set_update_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "update": update[__i__]}]);
   
   
   }

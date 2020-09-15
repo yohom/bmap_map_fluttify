@@ -15,6 +15,7 @@ extension com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRout
       case com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.BUSLINE: return com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.BUSLINE.index + 0;
       case com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.SUBWAY: return com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.SUBWAY.index + 0;
       case com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.WAKLING: return com_baidu_mapapi_search_route_TransitRouteLine_TransitStep_TransitRouteStepType.WAKLING.index + 0;
+      default: return 0;
     }
   }
 }

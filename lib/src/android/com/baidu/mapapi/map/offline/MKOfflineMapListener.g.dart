@@ -24,13 +24,7 @@ mixin com_baidu_mapapi_map_offline_MKOfflineMapListener on java_lang_Object {
   
 
   @mustCallSuper
-  Future<void> onGetOfflineMapState(int var1, int var2) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetOfflineMapState::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  Future<void> onGetOfflineMapState(int var1, int var2) {}
   
 }
 

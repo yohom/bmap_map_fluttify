@@ -21,6 +21,7 @@ extension com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVeh
       case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_DRIVING: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_DRIVING.index + 0;
       case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_WALK: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_WALK.index + 0;
       case com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_COACH: return com_baidu_mapapi_search_route_MassTransitRouteLine_TransitStep_StepVehicleInfoType.ESTEP_COACH.index + 0;
+      default: return 0;
     }
   }
 }

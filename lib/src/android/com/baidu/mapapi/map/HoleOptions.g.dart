@@ -21,10 +21,8 @@ class com_baidu_mapapi_map_HoleOptions extends com_baidu_mapapi_map_OverlayOptio
 
   //region creators
   static Future<com_baidu_mapapi_map_HoleOptions> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_HoleOptions__');
+    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_HoleOptions__', );
     final object = com_baidu_mapapi_map_HoleOptions()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
     return object;
   }
   
@@ -32,10 +30,9 @@ class com_baidu_mapapi_map_HoleOptions extends com_baidu_mapapi_map_OverlayOptio
     if (false) {
       return Future.error('all args must have same length!');
     }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_HoleOptions__', {'length': length});
+    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_HoleOptions__', {'length': length});
   
     final List<com_baidu_mapapi_map_HoleOptions> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_HoleOptions()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
     return typedResult;
   }
   
@@ -58,7 +55,7 @@ class com_baidu_mapapi_map_HoleOptions extends com_baidu_mapapi_map_OverlayOptio
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.HoleOptions::getHoleType', {"refId": refId});
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.HoleOptions::getHoleType', {"__this__": this});
   
   
     // handle native call
@@ -69,7 +66,6 @@ class com_baidu_mapapi_map_HoleOptions extends com_baidu_mapapi_map_OverlayOptio
       return null;
     } else {
       final __return__ = __result__;
-    
       return __return__;
     }
   }
@@ -94,7 +90,7 @@ extension com_baidu_mapapi_map_HoleOptions_Batch on List<com_baidu_mapapi_map_Ho
     }
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.HoleOptions::getHoleType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.HoleOptions::getHoleType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
     // convert native result to dart side object
@@ -102,7 +98,6 @@ extension com_baidu_mapapi_map_HoleOptions_Batch on List<com_baidu_mapapi_map_Ho
       return null;
     } else {
       final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
       return typedResult;
     }
   }

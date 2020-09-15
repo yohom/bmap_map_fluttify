@@ -19,6 +19,7 @@ extension com_baidu_mapapi_search_core_PoiInfo_POITYPEToX on com_baidu_mapapi_se
       case com_baidu_mapapi_search_core_PoiInfo_POITYPE.BUS_LINE: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.BUS_LINE.index + 0;
       case com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_STATION: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_STATION.index + 0;
       case com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_LINE: return com_baidu_mapapi_search_core_PoiInfo_POITYPE.SUBWAY_LINE.index + 0;
+      default: return 0;
     }
   }
 }
