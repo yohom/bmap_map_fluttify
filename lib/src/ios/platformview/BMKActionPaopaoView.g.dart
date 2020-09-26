@@ -46,7 +46,7 @@ class _BMKActionPaopaoView_iOSState extends State<BMKActionPaopaoView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKActionPaopaoView',
       gestureRecognizers: gestureRecognizers,

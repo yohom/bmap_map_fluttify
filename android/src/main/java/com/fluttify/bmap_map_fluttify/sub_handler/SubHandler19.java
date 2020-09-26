@@ -33,6 +33,258 @@ public class SubHandler19 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition::getTrafficGeoCnt_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition __this__ = (com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Integer __result__ = null;
+                    try {
+                        __result__ = __this__.getTrafficGeoCnt();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition::setTrafficGeoCnt_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition __this__ = (com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.TrafficCondition) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setTrafficGeoCnt(var1.intValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.StepVehicleInfoType::getInt_batch", (__argsBatch__, __methodResult__) -> {
+                List<Integer> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.StepVehicleInfoType __this__ = (com.baidu.mapapi.search.route.MassTransitRouteLine.TransitStep.StepVehicleInfoType) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Integer __result__ = null;
+                    try {
+                        __result__ = __this__.getInt();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.TransitRouteLine::getTaxitInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.search.core.TaxiInfo> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.search.route.TransitRouteLine __this__ = (com.baidu.mapapi.search.route.TransitRouteLine) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.search.core.TaxiInfo __result__ = null;
+                    try {
+                        __result__ = __this__.getTaxitInfo();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.TransitRouteLine::setTaxitInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    com.baidu.mapapi.search.core.TaxiInfo var1 = (com.baidu.mapapi.search.core.TaxiInfo) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.search.route.TransitRouteLine __this__ = (com.baidu.mapapi.search.route.TransitRouteLine) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setTaxitInfo(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::getInstructions_batch", (__argsBatch__, __methodResult__) -> {
+                List<String> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __this__ = (com.baidu.mapapi.search.route.TransitRouteLine.TransitStep) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    String __result__ = null;
+                    try {
+                        __result__ = __this__.getInstructions();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::setVehicleInfo_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    com.baidu.mapapi.search.core.VehicleInfo var1 = (com.baidu.mapapi.search.core.VehicleInfo) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __this__ = (com.baidu.mapapi.search.route.TransitRouteLine.TransitStep) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setVehicleInfo(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::setInstructions_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __this__ = (com.baidu.mapapi.search.route.TransitRouteLine.TransitStep) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setInstructions(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
             put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::getStepType_batch", (__argsBatch__, __methodResult__) -> {
                 List<com.baidu.mapapi.search.route.TransitRouteLine.TransitStep.TransitRouteStepType> __resultList__ = new ArrayList<>();
             
@@ -6079,262 +6331,6 @@ public class SubHandler19 {
                     Integer __result__ = null;
                     try {
                         __result__ = __this__.getToll();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.route.DrivingRouteLine::setToll_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.route.DrivingRouteLine __this__ = (com.baidu.mapapi.search.route.DrivingRouteLine) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setToll(var1.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::city_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.search.poi.PoiCitySearchOption> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                    try {
-                        __result__ = __this__.city(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::keyword_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.search.poi.PoiCitySearchOption> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                    try {
-                        __result__ = __this__.keyword(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::pageNum_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.search.poi.PoiCitySearchOption> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                    try {
-                        __result__ = __this__.pageNum(var1.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::pageCapacity_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.search.poi.PoiCitySearchOption> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                    try {
-                        __result__ = __this__.pageCapacity(var1.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::isReturnAddr_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.search.poi.PoiCitySearchOption> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                    try {
-                        __result__ = __this__.isReturnAddr(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::tag_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.search.poi.PoiCitySearchOption> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                    try {
-                        __result__ = __this__.tag(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::scope_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.search.poi.PoiCitySearchOption> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                    try {
-                        __result__ = __this__.scope(var1.intValue());
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {

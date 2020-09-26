@@ -46,7 +46,7 @@ class _BMKOverlayPathView_iOSState extends State<BMKOverlayPathView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKOverlayPathView',
       gestureRecognizers: gestureRecognizers,

@@ -16,6 +16,82 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler5 {
     __weak __typeof(self)weakSelf = self;
     return @{
+        @"BMKAnnotationView::set_image_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIImage* image = (UIImage*) args[@"image"];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.image = image;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_centerOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
+                CGPoint centerOffset;
+                [centerOffsetValue getValue:&centerOffset];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.centerOffset = centerOffset;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_calloutOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
+                CGPoint calloutOffset;
+                [calloutOffsetValue getValue:&calloutOffset];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.calloutOffset = calloutOffset;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_enabled3D_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL enabled3D = [args[@"enabled3D"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.enabled3D = enabled3D;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
         @"BMKAnnotationView::set_enabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];

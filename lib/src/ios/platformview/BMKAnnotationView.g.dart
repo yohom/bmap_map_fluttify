@@ -46,7 +46,7 @@ class _BMKAnnotationView_iOSState extends State<BMKAnnotationView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKAnnotationView',
       gestureRecognizers: gestureRecognizers,

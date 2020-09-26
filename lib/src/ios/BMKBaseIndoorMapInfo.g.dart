@@ -49,9 +49,9 @@ class BMKBaseIndoorMapInfo extends NSObject  {
     return __result__ == null ? null : (__result__);
   }
   
-  Future<List<NSObject>> get_arrStrFloors() async {
+  Future<List<dynamic>> get_arrStrFloors() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_arrStrFloors", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
   //endregion
@@ -69,7 +69,7 @@ class BMKBaseIndoorMapInfo extends NSObject  {
   
   }
   
-  Future<void> set_arrStrFloors(List<NSObject> arrStrFloors) async {
+  Future<void> set_arrStrFloors(List<dynamic> arrStrFloors) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKBaseIndoorMapInfo::set_arrStrFloors', <String, dynamic>{'__this__': this, "arrStrFloors": arrStrFloors});
   
   
@@ -98,10 +98,10 @@ extension BMKBaseIndoorMapInfo_Batch on List<BMKBaseIndoorMapInfo> {
     return typedResult;
   }
   
-  Future<List<List<NSObject>>> get_arrStrFloors_batch() async {
+  Future<List<List<dynamic>>> get_arrStrFloors_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKBaseIndoorMapInfo::get_arrStrFloors_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
@@ -120,7 +120,7 @@ extension BMKBaseIndoorMapInfo_Batch on List<BMKBaseIndoorMapInfo> {
   
   }
   
-  Future<void> set_arrStrFloors_batch(List<List<NSObject>> arrStrFloors) async {
+  Future<void> set_arrStrFloors_batch(List<List<dynamic>> arrStrFloors) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKBaseIndoorMapInfo::set_arrStrFloors_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "arrStrFloors": arrStrFloors[__i__]}]);
   
   

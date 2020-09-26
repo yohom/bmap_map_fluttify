@@ -189,7 +189,7 @@ class BMKOfflineMap extends NSObject  {
   }
   
   
-  Future<List<NSObject>> getHotCityList() async {
+  Future<List<dynamic>> getHotCityList() async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::getHotCityList([])');
@@ -206,13 +206,13 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<dynamic>();
       return __return__;
     }
   }
   
   
-  Future<List<NSObject>> getOfflineCityList() async {
+  Future<List<dynamic>> getOfflineCityList() async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::getOfflineCityList([])');
@@ -229,13 +229,13 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<dynamic>();
       return __return__;
     }
   }
   
   
-  Future<List<NSObject>> searchCity(String cityName) async {
+  Future<List<dynamic>> searchCity(String cityName) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::searchCity([\'cityName\':$cityName])');
@@ -252,13 +252,13 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<dynamic>();
       return __return__;
     }
   }
   
   
-  Future<List<NSObject>> getAllUpdateInfo() async {
+  Future<List<dynamic>> getAllUpdateInfo() async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::getAllUpdateInfo([])');
@@ -275,7 +275,7 @@ class BMKOfflineMap extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<dynamic>();
       return __return__;
     }
   }
@@ -412,7 +412,7 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
   }
   
   
-  Future<List<List<NSObject>>> getHotCityList_batch() async {
+  Future<List<List<dynamic>>> getHotCityList_batch() async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -425,13 +425,13 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
       return typedResult;
     }
   }
   
   
-  Future<List<List<NSObject>>> getOfflineCityList_batch() async {
+  Future<List<List<dynamic>>> getOfflineCityList_batch() async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -444,13 +444,13 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
       return typedResult;
     }
   }
   
   
-  Future<List<List<NSObject>>> searchCity_batch(List<String> cityName) async {
+  Future<List<List<dynamic>>> searchCity_batch(List<String> cityName) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -463,13 +463,13 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
       return typedResult;
     }
   }
   
   
-  Future<List<List<NSObject>>> getAllUpdateInfo_batch() async {
+  Future<List<List<dynamic>>> getAllUpdateInfo_batch() async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -482,7 +482,7 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
       return typedResult;
     }
   }

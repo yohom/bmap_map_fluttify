@@ -33,6 +33,182 @@ public class SubHandler15 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.map.MapView::setLogoPosition", (__args__, __methodResult__) -> {
+                // args
+                // enum arg
+                com.baidu.mapapi.map.LogoPosition var1 = com.baidu.mapapi.map.LogoPosition.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setLogoPosition(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setLogoPosition(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::getLogoPosition", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::getLogoPosition(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.map.LogoPosition __result__ = null;
+                try {
+                    __result__ = __this__.getLogoPosition();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::getMapLevel", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::getMapLevel(" + "" + ")");
+                }
+            
+                // invoke native method
+                Integer __result__ = null;
+                try {
+                    __result__ = __this__.getMapLevel();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::onPause", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::onPause(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.onPause();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::onResume", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::onResume(" + "" + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.onResume();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MapView::setPadding", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+                // ref arg
+                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
+                // ref arg
+                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
+                // ref arg
+                Number var4 = (Number) ((Map<String, Object>) __args__).get("var4");
+            
+                // ref
+                com.baidu.mapapi.map.MapView __this__ = (com.baidu.mapapi.map.MapView) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MapView@" + __this__ + "::setPadding(" + var1 + var2 + var3 + var4 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setPadding(var1.intValue(), var2.intValue(), var3.intValue(), var4.intValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
             put("com.baidu.mapapi.map.MapView::showZoomControls", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
@@ -5818,195 +5994,6 @@ public class SubHandler15 {
                     Double __result__ = null;
                     try {
                         __result__ = __this__.getRank();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.location.Poi::getTags_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.baidu.location.Poi __this__ = (com.baidu.location.Poi) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    String __result__ = null;
-                    try {
-                        __result__ = __this__.getTags();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.location.Poi::getAddr_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.baidu.location.Poi __this__ = (com.baidu.location.Poi) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    String __result__ = null;
-                    try {
-                        __result__ = __this__.getAddr();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.location.Poi::getName_batch", (__argsBatch__, __methodResult__) -> {
-                List<String> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.baidu.location.Poi __this__ = (com.baidu.location.Poi) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    String __result__ = null;
-                    try {
-                        __result__ = __this__.getName();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.location.Address.Builder::country_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.location.Address.Builder> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.location.Address.Builder __this__ = (com.baidu.location.Address.Builder) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.location.Address.Builder __result__ = null;
-                    try {
-                        __result__ = __this__.country(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.location.Address.Builder::adcode_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.location.Address.Builder> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.location.Address.Builder __this__ = (com.baidu.location.Address.Builder) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.location.Address.Builder __result__ = null;
-                    try {
-                        __result__ = __this__.adcode(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.location.Address.Builder::countryCode_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.location.Address.Builder> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.location.Address.Builder __this__ = (com.baidu.location.Address.Builder) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.location.Address.Builder __result__ = null;
-                    try {
-                        __result__ = __this__.countryCode(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {

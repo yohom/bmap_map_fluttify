@@ -46,7 +46,7 @@ class _BMKCircleView_iOSState extends State<BMKCircleView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKCircleView',
       gestureRecognizers: gestureRecognizers,

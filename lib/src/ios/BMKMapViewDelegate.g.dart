@@ -51,7 +51,7 @@ mixin BMKMapViewDelegate on NSObject {
   Future<BMKAnnotationView> mapView_viewForAnnotation(BMKMapView mapView, BMKAnnotation annotation) {}
   
   @mustCallSuper
-  Future<void> mapView_didAddAnnotationViews(BMKMapView mapView, List<NSObject> views) {}
+  Future<void> mapView_didAddAnnotationViews(BMKMapView mapView, List<dynamic> views) {}
   
   @mustCallSuper
   Future<void> mapView_clickAnnotationView(BMKMapView mapView, BMKAnnotationView view) {}
@@ -72,7 +72,7 @@ mixin BMKMapViewDelegate on NSObject {
   Future<BMKOverlayView> mapView_viewForOverlay(BMKMapView mapView, BMKOverlay overlay) {}
   
   @mustCallSuper
-  Future<void> mapView_didAddOverlayViews(BMKMapView mapView, List<NSObject> overlayViews) {}
+  Future<void> mapView_didAddOverlayViews(BMKMapView mapView, List<dynamic> overlayViews) {}
   
   @mustCallSuper
   Future<void> mapView_onClickedBMKOverlayView(BMKMapView mapView, BMKOverlayView overlayView) {}

@@ -288,7 +288,7 @@ class BMKAnnotationView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = __result__;
       return __return__;
     }
   }
@@ -631,7 +631,7 @@ extension BMKAnnotationView_Batch on List<BMKAnnotationView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
       return typedResult;
     }
   }

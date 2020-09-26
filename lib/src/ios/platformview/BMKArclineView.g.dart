@@ -46,7 +46,7 @@ class _BMKArclineView_iOSState extends State<BMKArclineView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKArclineView',
       gestureRecognizers: gestureRecognizers,

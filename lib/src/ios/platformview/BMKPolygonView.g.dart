@@ -46,7 +46,7 @@ class _BMKPolygonView_iOSState extends State<BMKPolygonView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKPolygonView',
       gestureRecognizers: gestureRecognizers,

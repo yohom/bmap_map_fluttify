@@ -64,9 +64,9 @@ class BMKOverlayPathView extends BMKOverlayView  {
     return __result__ == null ? null : (__result__);
   }
   
-  Future<List<NSObject>> get_lineDashPattern({bool viewChannel = true}) async {
+  Future<List<dynamic>> get_lineDashPattern({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineDashPattern", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
   //endregion
@@ -102,7 +102,7 @@ class BMKOverlayPathView extends BMKOverlayView  {
   
   }
   
-  Future<void> set_lineDashPattern(List<NSObject> lineDashPattern, {bool viewChannel = true}) async {
+  Future<void> set_lineDashPattern(List<dynamic> lineDashPattern, {bool viewChannel = true}) async {
     await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOverlayPathView::set_lineDashPattern', <String, dynamic>{'__this__': this, "lineDashPattern": lineDashPattern});
   
   
@@ -197,10 +197,10 @@ extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
     return typedResult;
   }
   
-  Future<List<List<NSObject>>> get_lineDashPattern_batch({bool viewChannel = true}) async {
+  Future<List<List<dynamic>>> get_lineDashPattern_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOverlayPathView::get_lineDashPattern_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
@@ -237,7 +237,7 @@ extension BMKOverlayPathView_Batch on List<BMKOverlayPathView> {
   
   }
   
-  Future<void> set_lineDashPattern_batch(List<List<NSObject>> lineDashPattern, {bool viewChannel = true}) async {
+  Future<void> set_lineDashPattern_batch(List<List<dynamic>> lineDashPattern, {bool viewChannel = true}) async {
     await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKOverlayPathView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOverlayPathView::set_lineDashPattern_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "lineDashPattern": lineDashPattern[__i__]}]);
   
   

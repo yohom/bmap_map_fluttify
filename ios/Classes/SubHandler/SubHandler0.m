@@ -745,11 +745,9 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // ref callback arg
-                NSObject* argtileImage = tileImage;
-        
+                UIImage* argtileImage = tileImage;
                 // ref callback arg
-                NSObject* argerror = error;
-        
+                NSError* argerror = error;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                   [channel invokeMethod:@"Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error" arguments:@{@"tileImage": argtileImage == nil ? [NSNull null] : argtileImage, @"error": argerror == nil ? [NSNull null] : argerror}];
@@ -1026,7 +1024,7 @@ extern BOOL enableLog;
                 }
         
                 // 构造可以直接传输的参数
-                // jsonable callback arg
+                // ref callback arg
                 NSString* argpath = path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -1045,7 +1043,7 @@ extern BOOL enableLog;
                 }
         
                 // 构造可以直接传输的参数
-                // jsonable callback arg
+                // ref callback arg
                 NSString* argpath = path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -1065,9 +1063,8 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // ref callback arg
-                NSObject* argerror = error;
-        
-                // jsonable callback arg
+                NSError* argerror = error;
+                // ref callback arg
                 NSString* argpath = path;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -3846,13 +3843,11 @@ extern BOOL enableLog;
         
                 // 构造可以直接传输的参数
                 // ref callback arg
-                NSObject* arglocation = location;
-        
+                BMKLocation* arglocation = location;
                 // enum callback arg
                 NSNumber* argstate = @((NSInteger) state);
                 // ref callback arg
-                NSObject* argerror = error;
-        
+                NSError* argerror = error;
         
                 dispatch_async(dispatch_get_main_queue(), ^{
                   [channel invokeMethod:@"Callback::BMKLocatingCompletionBlock::BMKLocatingCompletionBlock" arguments:@{@"location": arglocation == nil ? [NSNull null] : arglocation, @"state": argstate == nil ? [NSNull null] : argstate, @"error": argerror == nil ? [NSNull null] : argerror}];
@@ -4192,6 +4187,62 @@ extern BOOL enableLog;
         
             // invoke native method
             id result = [ref initWithTwoDictionary: dictionary];
+        
+            // result
+            // return a ref
+            id __result__ = result;
+        
+            methodResult(__result__);
+        },
+        @"BMKLocation::initWithLocation_withRgcData": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // ref arg
+            CLLocation* loc = (CLLocation*) args[@"loc"];
+            // ref arg
+            BMKLocationReGeocode* rgc = (BMKLocationReGeocode*) args[@"rgc"];
+        
+            // ref
+            BMKLocation* ref = (BMKLocation*) args[@"__this__"];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocation@%@::initWithLocation(%@, %@)", args[@"refId"], args[@"loc"], args[@"rgc"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithLocation: loc withRgcData: rgc];
+        
+            // result
+            // return a ref
+            id __result__ = result;
+        
+            methodResult(__result__);
+        },
+        @"BMKLocation::initWithLocation_floorString_buildingID_buildingName_extraInfo_withRgcData": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // args
+            // ref arg
+            CLLocation* location = (CLLocation*) args[@"location"];
+            // jsonable arg
+            NSString* floorString = (NSString*) args[@"floorString"];
+            // jsonable arg
+            NSString* buildingID = (NSString*) args[@"buildingID"];
+            // jsonable arg
+            NSString* buildingName = (NSString*) args[@"buildingName"];
+            // jsonable arg
+            NSDictionary* info = (NSDictionary*) args[@"info"];
+            // ref arg
+            BMKLocationReGeocode* rgc = (BMKLocationReGeocode*) args[@"rgc"];
+        
+            // ref
+            BMKLocation* ref = (BMKLocation*) args[@"__this__"];
+        
+            // print log
+            if (enableLog) {
+                NSLog(@"fluttify-objc: BMKLocation@%@::initWithLocation(%@, %@, %@, %@, %@, %@)", args[@"refId"], args[@"location"], args[@"floorString"], args[@"buildingID"], args[@"buildingName"], args[@"info"], args[@"rgc"]);
+            }
+        
+            // invoke native method
+            id result = [ref initWithLocation: location floorString: floorString buildingID: buildingID buildingName: buildingName extraInfo: info withRgcData: rgc];
         
             // result
             // return a ref
@@ -5238,62 +5289,6 @@ extern BOOL enableLog;
         
                 // invoke native method
                 id result = [ref initWithPolyline: polyline];
-        
-                // result
-                // return a ref
-                id __result__ = result;
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKCircle::circleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* coordValue = (NSValue*) args[@"coord"];
-                CLLocationCoordinate2D coord;
-                [coordValue getValue:&coord];
-                // jsonable arg
-                CLLocationDistance radius = [args[@"radius"] doubleValue];
-        
-                // ref
-        
-        
-                // invoke native method
-                BMKCircle* result = [BMKCircle circleWithCenterCoordinate: coord radius: radius];
-        
-                // result
-                // return a ref
-                id __result__ = result;
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        @"BMKCircle::circleWithMapRect_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // struct arg
-                NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
-                BMKMapRect mapRect;
-                [mapRectValue getValue:&mapRect];
-        
-                // ref
-        
-        
-                // invoke native method
-                BMKCircle* result = [BMKCircle circleWithMapRect: mapRect];
         
                 // result
                 // return a ref

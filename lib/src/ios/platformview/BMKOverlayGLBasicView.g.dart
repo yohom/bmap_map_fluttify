@@ -46,7 +46,7 @@ class _BMKOverlayGLBasicView_iOSState extends State<BMKOverlayGLBasicView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKOverlayGLBasicView',
       gestureRecognizers: gestureRecognizers,

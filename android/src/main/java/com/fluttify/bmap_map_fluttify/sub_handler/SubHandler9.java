@@ -33,6 +33,63 @@ public class SubHandler9 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo::setParentPoiDirection", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo __this__ = (com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo@" + __this__ + "::setParentPoiDirection(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setParentPoiDirection(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo::getParentPoiDistance", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo __this__ = (com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo@" + __this__ + "::getParentPoiDistance(" + "" + ")");
+                }
+            
+                // invoke native method
+                Integer __result__ = null;
+                try {
+                    __result__ = __this__.getParentPoiDistance();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
             put("com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo::setParentPoiDistance", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
@@ -5668,63 +5725,6 @@ public class SubHandler9 {
                 Void __result__ = null;
                 try {
                     __this__.setStepType(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::setPathString", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __this__ = (com.baidu.mapapi.search.route.TransitRouteLine.TransitStep) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.route.TransitRouteLine.TransitStep@" + __this__ + "::setPathString(" + var1 + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.setPathString(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::getEntrance", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __this__ = (com.baidu.mapapi.search.route.TransitRouteLine.TransitStep) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.route.TransitRouteLine.TransitStep@" + __this__ + "::getEntrance(" + "" + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.search.core.RouteNode __result__ = null;
-                try {
-                    __result__ = __this__.getEntrance();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {

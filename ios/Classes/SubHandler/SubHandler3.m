@@ -16,6 +16,86 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler3 {
     __weak __typeof(self)weakSelf = self;
     return @{
+        @"BMKMapView::get_showMapPoi_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+                BOOL result = ref.showMapPoi;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"BMKMapView::get_isTrafficEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+                BOOL result = ref.trafficEnabled;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"BMKMapView::get_isBaiduHeatMapEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+                BOOL result = ref.baiduHeatMapEnabled;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
+        @"BMKMapView::get_gesturesEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // ref object
+                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+                BOOL result = ref.gesturesEnabled;
+        
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        
         @"BMKMapView::get_isZoomEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
         
@@ -3848,74 +3928,6 @@ extern BOOL enableLog;
             BMKMapView* ref = (BMKMapView*) args[@"__this__"];
         
             ref.showMapPoi = showMapPoi;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_trafficEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_trafficEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL trafficEnabled = [args[@"trafficEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.trafficEnabled = trafficEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_baiduHeatMapEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_baiduHeatMapEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL baiduHeatMapEnabled = [args[@"baiduHeatMapEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.baiduHeatMapEnabled = baiduHeatMapEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_gesturesEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_gesturesEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL gesturesEnabled = [args[@"gesturesEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.gesturesEnabled = gesturesEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_zoomEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_zoomEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL zoomEnabled = [args[@"zoomEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.zoomEnabled = zoomEnabled;
             methodResult(@"success");
         },
         

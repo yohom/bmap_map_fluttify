@@ -46,7 +46,7 @@ class _BMKPolylineView_iOSState extends State<BMKPolylineView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKPolylineView',
       gestureRecognizers: gestureRecognizers,

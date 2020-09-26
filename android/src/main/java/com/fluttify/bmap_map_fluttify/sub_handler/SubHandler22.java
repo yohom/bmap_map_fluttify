@@ -33,6 +33,385 @@ public class SubHandler22 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.map.GroundOverlay::setPositionFromBounds_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    com.baidu.mapapi.model.LatLngBounds var1 = (com.baidu.mapapi.model.LatLngBounds) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.map.GroundOverlay __this__ = (com.baidu.mapapi.map.GroundOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setPositionFromBounds(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.GroundOverlay::getBounds_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.model.LatLngBounds> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.map.GroundOverlay __this__ = (com.baidu.mapapi.map.GroundOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.model.LatLngBounds __result__ = null;
+                    try {
+                        __result__ = __this__.getBounds();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.GroundOverlay::setTransparency_batch", (__argsBatch__, __methodResult__) -> {
+                List<Void> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.map.GroundOverlay __this__ = (com.baidu.mapapi.map.GroundOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Void __result__ = null;
+                    try {
+                        __this__.setTransparency(var1.floatValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.GroundOverlay::getTransparency_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.map.GroundOverlay __this__ = (com.baidu.mapapi.map.GroundOverlay) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Float __result__ = null;
+                    try {
+                        __result__ = __this__.getTransparency();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::icon_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.map.MarkerOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    com.baidu.mapapi.map.BitmapDescriptor var1 = (com.baidu.mapapi.map.BitmapDescriptor) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.MarkerOptions __result__ = null;
+                    try {
+                        __result__ = __this__.icon(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::animateType_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.map.MarkerOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // enum arg
+                    com.baidu.mapapi.map.MarkerOptions.MarkerAnimateType var1 = com.baidu.mapapi.map.MarkerOptions.MarkerAnimateType.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.MarkerOptions __result__ = null;
+                    try {
+                        __result__ = __this__.animateType(var1);
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::getAnimateType_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.map.MarkerOptions.MarkerAnimateType> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.MarkerOptions.MarkerAnimateType __result__ = null;
+                    try {
+                        __result__ = __this__.getAnimateType();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::alpha_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.map.MarkerOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.MarkerOptions __result__ = null;
+                    try {
+                        __result__ = __this__.alpha(var1.floatValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::scaleX_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.map.MarkerOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.MarkerOptions __result__ = null;
+                    try {
+                        __result__ = __this__.scaleX(var1.floatValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::scaleY_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.map.MarkerOptions> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+                    // ref arg
+                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.MarkerOptions __result__ = null;
+                    try {
+                        __result__ = __this__.scaleY(var1.floatValue());
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::getAlpha_batch", (__argsBatch__, __methodResult__) -> {
+                List<Float> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    Float __result__ = null;
+                    try {
+                        __result__ = __this__.getAlpha();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
+            put("com.baidu.mapapi.map.MarkerOptions::getIcon_batch", (__argsBatch__, __methodResult__) -> {
+                List<com.baidu.mapapi.map.BitmapDescriptor> __resultList__ = new ArrayList<>();
+            
+                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
+                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
+            
+                    // args
+            
+            
+                    // ref
+                    com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
+            
+                    // invoke native method
+                    com.baidu.mapapi.map.BitmapDescriptor __result__ = null;
+                    try {
+                        __result__ = __this__.getIcon();
+                    } catch (Throwable throwable) {
+                        throwable.printStackTrace();
+                        if (getEnableLog()) {
+                            Log.d("Current HEAP: ", getHEAP().toString());
+                        }
+                        __methodResult__.error(throwable.getMessage(), null, null);
+                        return;
+                    }
+            
+                    __resultList__.add(__result__);
+                }
+            
+                __methodResult__.success(__resultList__);
+            });
+            // method
             put("com.baidu.mapapi.map.MarkerOptions::icons_batch", (__argsBatch__, __methodResult__) -> {
                 List<com.baidu.mapapi.map.MarkerOptions> __resultList__ = new ArrayList<>();
             
@@ -5999,394 +6378,6 @@ public class SubHandler22 {
                     Void __result__ = null;
                     try {
                         __this__.setCompassEnable(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::getProjectionMatrix_batch", (__argsBatch__, __methodResult__) -> {
-                List<float[]> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    float[] __result__ = null;
-                    try {
-                        __result__ = __this__.getProjectionMatrix();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::getViewMatrix_batch", (__argsBatch__, __methodResult__) -> {
-                List<float[]> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    float[] __result__ = null;
-                    try {
-                        __result__ = __this__.getViewMatrix();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setOverlayUnderPoi_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setOverlayUnderPoi(var1);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::switchLayerOrder_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // enum arg
-                    com.baidu.mapapi.map.MapLayer var1 = com.baidu.mapapi.map.MapLayer.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                    // enum arg
-                    com.baidu.mapapi.map.MapLayer var2 = com.baidu.mapapi.map.MapLayer.values()[(int) ((Map<String, Object>) __args__).get("var2")];
-            
-                    // ref
-                    com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.switchLayerOrder(var1, var2);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::setLayerClickable_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // enum arg
-                    com.baidu.mapapi.map.MapLayer var1 = com.baidu.mapapi.map.MapLayer.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-                    // ref arg
-                    boolean var2 = (boolean) ((Map<String, Object>) __args__).get("var2");
-            
-                    // ref
-                    com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setLayerClickable(var1, var2);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.BaiduMap::cleanCache_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.map.BaiduMap __this__ = (com.baidu.mapapi.map.BaiduMap) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.cleanCache(var1.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var0 = (String) ((Map<String, Object>) __args__).get("var0");
-            
-                    // ref
-            
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        com.baidu.mapapi.map.TextureMapView.setCustomMapStylePath(var0);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.TextureMapView::setIconCustom_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
-            
-                    // ref
-            
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        com.baidu.mapapi.map.TextureMapView.setIconCustom(var0.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    Number var0 = (Number) ((Map<String, Object>) __args__).get("var0");
-            
-                    // ref
-            
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        com.baidu.mapapi.map.TextureMapView.setLoadCustomMapStyleFileMode(var0.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.TextureMapView::setMapCustomEnable_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    boolean var0 = (boolean) ((Map<String, Object>) __args__).get("var0");
-            
-                    // ref
-            
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        com.baidu.mapapi.map.TextureMapView.setMapCustomEnable(var0);
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.TextureMapView::setCustomStyleFilePathAndMode_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-                    // ref arg
-                    Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
-            
-                    // ref
-                    com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setCustomStyleFilePathAndMode(var1, var2.intValue());
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
-            put("com.baidu.mapapi.map.TextureMapView::setMapCustomStylePath_batch", (__argsBatch__, __methodResult__) -> {
-                List<Void> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-                    // ref arg
-                    String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                    // ref
-                    com.baidu.mapapi.map.TextureMapView __this__ = (com.baidu.mapapi.map.TextureMapView) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    Void __result__ = null;
-                    try {
-                        __this__.setMapCustomStylePath(var1);
                     } catch (Throwable throwable) {
                         throwable.printStackTrace();
                         if (getEnableLog()) {

@@ -3451,6 +3451,34 @@ public class SubHandler8 {
                 __methodResult__.success(__result__);
             });
             // method
+            put("com.baidu.mapapi.search.sug.SuggestionSearch::newInstance", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+            
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.sug.SuggestionSearch::newInstance(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.search.sug.SuggestionSearch __result__ = null;
+                try {
+                    __result__ = com.baidu.mapapi.search.sug.SuggestionSearch.newInstance();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
             put("com.baidu.mapapi.search.sug.SuggestionSearch::requestSuggestion", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
@@ -4241,6 +4269,34 @@ public class SubHandler8 {
                 com.baidu.mapapi.search.busline.BusLineSearchOption __result__ = null;
                 try {
                     __result__ = __this__.uid(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.search.busline.BusLineSearch::newInstance", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+            
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.busline.BusLineSearch::newInstance(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.search.busline.BusLineSearch __result__ = null;
+                try {
+                    __result__ = com.baidu.mapapi.search.busline.BusLineSearch.newInstance();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {
@@ -5892,63 +5948,6 @@ public class SubHandler8 {
                 String __result__ = null;
                 try {
                     __result__ = __this__.getParentPoiDirection();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo::setParentPoiDirection", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo __this__ = (com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo@" + __this__ + "::setParentPoiDirection(" + var1 + ")");
-                }
-            
-                // invoke native method
-                Void __result__ = null;
-                try {
-                    __this__.setParentPoiDirection(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo::getParentPoiDistance", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo __this__ = (com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.core.PoiInfo.ParentPoiInfo@" + __this__ + "::getParentPoiDistance(" + "" + ")");
-                }
-            
-                // invoke native method
-                Integer __result__ = null;
-                try {
-                    __result__ = __this__.getParentPoiDistance();
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {

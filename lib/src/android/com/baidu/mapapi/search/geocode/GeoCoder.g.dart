@@ -33,6 +33,29 @@ class com_baidu_mapapi_search_geocode_GeoCoder extends java_lang_Object  {
 
   //region methods
   
+  static Future<com_baidu_mapapi_search_geocode_GeoCoder> newInstance() async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: com.baidu.mapapi.search.geocode.GeoCoder::newInstance([])');
+    }
+  
+    // invoke native method
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::newInstance', );
+  
+  
+    // handle native call
+  
+  
+    // convert native result to dart side object
+    if (__result__ == null) {
+      return null;
+    } else {
+      final __return__ = com_baidu_mapapi_search_geocode_GeoCoder()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      return __return__;
+    }
+  }
+  
+  
   Future<bool> geocode(com_baidu_mapapi_search_geocode_GeoCodeOption var1) async {
     // print log
     if (fluttifyLogEnabled) {
@@ -167,6 +190,25 @@ extension com_baidu_mapapi_search_geocode_GeoCoder_Batch on List<com_baidu_mapap
   //endregion
 
   //region methods
+  
+  static Future<List<com_baidu_mapapi_search_geocode_GeoCoder>> newInstance_batch() async {
+    if (false) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.geocode.GeoCoder::newInstance_batch', );
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_geocode_GeoCoder()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      return typedResult;
+    }
+  }
+  
   
   Future<List<bool>> geocode_batch(List<com_baidu_mapapi_search_geocode_GeoCodeOption> var1) async {
     if (false) {

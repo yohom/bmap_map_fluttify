@@ -33,6 +33,180 @@ public class SubHandler12 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.search.share.RouteShareURLOption::from", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                com.baidu.mapapi.search.route.PlanNode var1 = (com.baidu.mapapi.search.route.PlanNode) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.share.RouteShareURLOption@" + __this__ + "::from(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.search.share.RouteShareURLOption __result__ = null;
+                try {
+                    __result__ = __this__.from(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.search.share.RouteShareURLOption::cityCode", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.share.RouteShareURLOption@" + __this__ + "::cityCode(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.search.share.RouteShareURLOption __result__ = null;
+                try {
+                    __result__ = __this__.cityCode(var1.intValue());
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.search.share.RouteShareURLOption::routMode", (__args__, __methodResult__) -> {
+                // args
+                // enum arg
+                com.baidu.mapapi.search.share.RouteShareURLOption.RouteShareMode var1 = com.baidu.mapapi.search.share.RouteShareURLOption.RouteShareMode.values()[(int) ((Map<String, Object>) __args__).get("var1")];
+            
+                // ref
+                com.baidu.mapapi.search.share.RouteShareURLOption __this__ = (com.baidu.mapapi.search.share.RouteShareURLOption) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.share.RouteShareURLOption@" + __this__ + "::routMode(" + var1 + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.search.share.RouteShareURLOption __result__ = null;
+                try {
+                    __result__ = __this__.routMode(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.OpenLogUtil::setModuleLogEnable", (__args__, __methodResult__) -> {
+                // args
+                // enum arg
+                com.baidu.mapapi.ModuleName var0 = com.baidu.mapapi.ModuleName.values()[(int) ((Map<String, Object>) __args__).get("var0")];
+                // ref arg
+                boolean var1 = (boolean) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+            
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.OpenLogUtil::setModuleLogEnable(" + var0 + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    com.baidu.mapapi.OpenLogUtil.setModuleLogEnable(var0, var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.common.SysOSUtil::getDensityDpi", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+            
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.common.SysOSUtil::getDensityDpi(" + "" + ")");
+                }
+            
+                // invoke native method
+                Integer __result__ = null;
+                try {
+                    __result__ = com.baidu.mapapi.common.SysOSUtil.getDensityDpi();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.common.SysOSUtil::getDensity", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+            
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.common.SysOSUtil::getDensity(" + "" + ")");
+                }
+            
+                // invoke native method
+                Float __result__ = null;
+                try {
+                    __result__ = com.baidu.mapapi.common.SysOSUtil.getDensity();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
             put("com.baidu.mapapi.common.SysOSUtil::getModuleFileName", (__args__, __methodResult__) -> {
                 // args
             
@@ -5625,179 +5799,6 @@ public class SubHandler12 {
                 Float __result__ = null;
                 try {
                     __result__ = __this__.getTransparency();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.map.MarkerOptions::icon", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                com.baidu.mapapi.map.BitmapDescriptor var1 = (com.baidu.mapapi.map.BitmapDescriptor) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MarkerOptions@" + __this__ + "::icon(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MarkerOptions __result__ = null;
-                try {
-                    __result__ = __this__.icon(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.map.MarkerOptions::animateType", (__args__, __methodResult__) -> {
-                // args
-                // enum arg
-                com.baidu.mapapi.map.MarkerOptions.MarkerAnimateType var1 = com.baidu.mapapi.map.MarkerOptions.MarkerAnimateType.values()[(int) ((Map<String, Object>) __args__).get("var1")];
-            
-                // ref
-                com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MarkerOptions@" + __this__ + "::animateType(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MarkerOptions __result__ = null;
-                try {
-                    __result__ = __this__.animateType(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.map.MarkerOptions::getAnimateType", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MarkerOptions@" + __this__ + "::getAnimateType(" + "" + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MarkerOptions.MarkerAnimateType __result__ = null;
-                try {
-                    __result__ = __this__.getAnimateType();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.map.MarkerOptions::alpha", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MarkerOptions@" + __this__ + "::alpha(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MarkerOptions __result__ = null;
-                try {
-                    __result__ = __this__.alpha(var1.floatValue());
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.map.MarkerOptions::scaleX", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MarkerOptions@" + __this__ + "::scaleX(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MarkerOptions __result__ = null;
-                try {
-                    __result__ = __this__.scaleX(var1.floatValue());
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.map.MarkerOptions::scaleY", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.map.MarkerOptions __this__ = (com.baidu.mapapi.map.MarkerOptions) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.MarkerOptions@" + __this__ + "::scaleY(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MarkerOptions __result__ = null;
-                try {
-                    __result__ = __this__.scaleY(var1.floatValue());
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {

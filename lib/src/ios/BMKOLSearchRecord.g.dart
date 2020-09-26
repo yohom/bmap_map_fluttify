@@ -59,9 +59,9 @@ class BMKOLSearchRecord extends NSObject  {
     return __result__ == null ? null : (__result__);
   }
   
-  Future<List<NSObject>> get_childCities() async {
+  Future<List<dynamic>> get_childCities() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_childCities", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
   //endregion
@@ -91,7 +91,7 @@ class BMKOLSearchRecord extends NSObject  {
   
   }
   
-  Future<void> set_childCities(List<NSObject> childCities) async {
+  Future<void> set_childCities(List<dynamic> childCities) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLSearchRecord::set_childCities', <String, dynamic>{'__this__': this, "childCities": childCities});
   
   
@@ -134,10 +134,10 @@ extension BMKOLSearchRecord_Batch on List<BMKOLSearchRecord> {
     return typedResult;
   }
   
-  Future<List<List<NSObject>>> get_childCities_batch() async {
+  Future<List<List<dynamic>>> get_childCities_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_childCities_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
@@ -168,7 +168,7 @@ extension BMKOLSearchRecord_Batch on List<BMKOLSearchRecord> {
   
   }
   
-  Future<void> set_childCities_batch(List<List<NSObject>> childCities) async {
+  Future<void> set_childCities_batch(List<List<dynamic>> childCities) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLSearchRecord::set_childCities_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "childCities": childCities[__i__]}]);
   
   

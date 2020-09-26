@@ -32,6 +32,78 @@ import static me.yohom.foundation_fluttify.FoundationFluttifyPluginKt.getHEAP;
 public class SubHandler25 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
+            put("RefClass::isKindOfcom_baidu_mapapi_animation_ScaleAnimation", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.animation.ScaleAnimation);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapAppNotSupportNaviException", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.navi.BaiduMapAppNotSupportNaviException);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_NaviParaOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.navi.NaviParaOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_BaiduMapNavigation", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.navi.BaiduMapNavigation);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_navi_IllegalNaviArgumentException", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.navi.IllegalNaviArgumentException);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_favorite_FavoriteManager", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.favorite.FavoriteManager);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_favorite_FavoritePoiInfo", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.favorite.FavoritePoiInfo);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_BaiduMapRoutePlan", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.route.BaiduMapRoutePlan);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_IllegalRoutePlanArgumentException", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.route.IllegalRoutePlanArgumentException);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_route_RouteParaOption", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.route.RouteParaOption);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_DistanceUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.DistanceUtil);
+            });
+            put("RefClass::isKindOfcom_baidu_mapapi_utils_SpatialRelationUtil", (__args__, __methodResult__) -> {
+                // 引用对象
+                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
+            
+                __methodResult__.success(__this__ instanceof com.baidu.mapapi.utils.SpatialRelationUtil);
+            });
             put("RefClass::isKindOfcom_baidu_mapapi_utils_CoordinateConverter", (__args__, __methodResult__) -> {
                 // 引用对象
                 Object __this__ = ((Map<String, Object>) __args__).get("__this__");
@@ -1159,78 +1231,6 @@ public class SubHandler25 {
                 Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
                 __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.Point);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_MapBound", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.MapBound);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_GeoPoint", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.GeoPoint);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.LatLngBounds);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_LatLng", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.LatLng);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_CoordUtil", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.CoordUtil);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_ParcelItem", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.ParcelItem);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_VersionInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.VersionInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_JNIInitializer", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.JNIInitializer);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_UIMsg_l_ErrorNo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.l_ErrorNo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_PermissionUtils", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.PermissionUtils);
-            });
-            put("RefClass::isKindOfcom_baidu_geofence_GeoFenceClient", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.geofence.GeoFenceClient);
-            });
-            put("RefClass::isKindOfcom_baidu_geofence_model_DistrictItem", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.geofence.model.DistrictItem);
             });
         }};
     }

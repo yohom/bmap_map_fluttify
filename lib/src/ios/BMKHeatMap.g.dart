@@ -54,9 +54,9 @@ class BMKHeatMap extends NSObject  {
     return __result__ == null ? null : (__result__);
   }
   
-  Future<List<NSObject>> get_mData() async {
+  Future<List<dynamic>> get_mData() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mData", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
   //endregion
@@ -80,7 +80,7 @@ class BMKHeatMap extends NSObject  {
   
   }
   
-  Future<void> set_mData(List<NSObject> mData) async {
+  Future<void> set_mData(List<dynamic> mData) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKHeatMap::set_mData', <String, dynamic>{'__this__': this, "mData": mData});
   
   
@@ -116,10 +116,10 @@ extension BMKHeatMap_Batch on List<BMKHeatMap> {
     return typedResult;
   }
   
-  Future<List<List<NSObject>>> get_mData_batch() async {
+  Future<List<List<dynamic>>> get_mData_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKHeatMap::get_mData_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
@@ -144,7 +144,7 @@ extension BMKHeatMap_Batch on List<BMKHeatMap> {
   
   }
   
-  Future<void> set_mData_batch(List<List<NSObject>> mData) async {
+  Future<void> set_mData_batch(List<List<dynamic>> mData) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKHeatMap::set_mData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mData": mData[__i__]}]);
   
   

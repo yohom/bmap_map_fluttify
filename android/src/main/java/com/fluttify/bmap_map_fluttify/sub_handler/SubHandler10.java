@@ -33,6 +33,63 @@ public class SubHandler10 {
     public static Map<String, Handler> getSubHandler(BinaryMessenger messenger) {
         return new HashMap<String, Handler>() {{
             // method
+            put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::setPathString", (__args__, __methodResult__) -> {
+                // args
+                // ref arg
+                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
+            
+                // ref
+                com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __this__ = (com.baidu.mapapi.search.route.TransitRouteLine.TransitStep) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.route.TransitRouteLine.TransitStep@" + __this__ + "::setPathString(" + var1 + ")");
+                }
+            
+                // invoke native method
+                Void __result__ = null;
+                try {
+                    __this__.setPathString(var1);
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
+            put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::getEntrance", (__args__, __methodResult__) -> {
+                // args
+            
+            
+                // ref
+                com.baidu.mapapi.search.route.TransitRouteLine.TransitStep __this__ = (com.baidu.mapapi.search.route.TransitRouteLine.TransitStep) ((Map<String, Object>) __args__).get("__this__");
+            
+                // print log
+                if (getEnableLog()) {
+                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.route.TransitRouteLine.TransitStep@" + __this__ + "::getEntrance(" + "" + ")");
+                }
+            
+                // invoke native method
+                com.baidu.mapapi.search.core.RouteNode __result__ = null;
+                try {
+                    __result__ = __this__.getEntrance();
+                } catch (Throwable throwable) {
+                    throwable.printStackTrace();
+                    if (getEnableLog()) {
+                        Log.d("Current HEAP: ", getHEAP().toString());
+                    }
+                    __methodResult__.error(throwable.getMessage(), null, null);
+                    return;
+                }
+            
+                __methodResult__.success(__result__);
+            });
+            // method
             put("com.baidu.mapapi.search.route.TransitRouteLine.TransitStep::setEntrace", (__args__, __methodResult__) -> {
                 // args
                 // ref arg
@@ -5831,64 +5888,6 @@ public class SubHandler10 {
                 com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
                 try {
                     __result__ = __this__.cityLimit(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiCitySearchOption::poiFilter", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                com.baidu.mapapi.search.poi.PoiFilter var1 = (com.baidu.mapapi.search.poi.PoiFilter) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.search.poi.PoiCitySearchOption __this__ = (com.baidu.mapapi.search.poi.PoiCitySearchOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.poi.PoiCitySearchOption@" + __this__ + "::poiFilter(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.search.poi.PoiCitySearchOption __result__ = null;
-                try {
-                    __result__ = __this__.poiFilter(var1);
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
-            put("com.baidu.mapapi.search.poi.PoiIndoorOption::poiIndoorBid", (__args__, __methodResult__) -> {
-                // args
-                // ref arg
-                String var1 = (String) ((Map<String, Object>) __args__).get("var1");
-            
-                // ref
-                com.baidu.mapapi.search.poi.PoiIndoorOption __this__ = (com.baidu.mapapi.search.poi.PoiIndoorOption) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.search.poi.PoiIndoorOption@" + __this__ + "::poiIndoorBid(" + var1 + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.search.poi.PoiIndoorOption __result__ = null;
-                try {
-                    __result__ = __this__.poiIndoorBid(var1);
                 } catch (Throwable throwable) {
                     throwable.printStackTrace();
                     if (getEnableLog()) {

@@ -39,26 +39,26 @@ class BMKGradient extends NSObject  {
   //endregion
 
   //region getters
-  Future<List<NSObject>> get_mColors() async {
+  Future<List<dynamic>> get_mColors() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGradient::get_mColors", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
-  Future<List<NSObject>> get_mStartPoints() async {
+  Future<List<dynamic>> get_mStartPoints() async {
     final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGradient::get_mStartPoints", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
   //endregion
 
   //region setters
-  Future<void> set_mColors(List<NSObject> mColors) async {
+  Future<void> set_mColors(List<dynamic> mColors) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGradient::set_mColors', <String, dynamic>{'__this__': this, "mColors": mColors});
   
   
   }
   
-  Future<void> set_mStartPoints(List<NSObject> mStartPoints) async {
+  Future<void> set_mStartPoints(List<dynamic> mStartPoints) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGradient::set_mStartPoints', <String, dynamic>{'__this__': this, "mStartPoints": mStartPoints});
   
   
@@ -68,7 +68,7 @@ class BMKGradient extends NSObject  {
 
   //region methods
   
-  Future<dynamic> initWithColors_startPoints(List<NSObject> colors, List<NSObject> startPoints) async {
+  Future<dynamic> initWithColors_startPoints(List<dynamic> colors, List<dynamic> startPoints) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKGradient@$refId::initWithColors([])');
@@ -85,7 +85,7 @@ class BMKGradient extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = __result__;
       return __return__;
     }
   }
@@ -95,30 +95,30 @@ class BMKGradient extends NSObject  {
 
 extension BMKGradient_Batch on List<BMKGradient> {
   //region getters
-  Future<List<List<NSObject>>> get_mColors_batch() async {
+  Future<List<List<dynamic>>> get_mColors_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGradient::get_mColors_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
-  Future<List<List<NSObject>>> get_mStartPoints_batch() async {
+  Future<List<List<dynamic>>> get_mStartPoints_batch() async {
     final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGradient::get_mStartPoints_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
   //endregion
 
   //region setters
-  Future<void> set_mColors_batch(List<List<NSObject>> mColors) async {
+  Future<void> set_mColors_batch(List<List<dynamic>> mColors) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKGradient::set_mColors_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mColors": mColors[__i__]}]);
   
   
   }
   
-  Future<void> set_mStartPoints_batch(List<List<NSObject>> mStartPoints) async {
+  Future<void> set_mStartPoints_batch(List<List<dynamic>> mStartPoints) async {
     await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKGradient::set_mStartPoints_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mStartPoints": mStartPoints[__i__]}]);
   
   
@@ -128,7 +128,7 @@ extension BMKGradient_Batch on List<BMKGradient> {
 
   //region methods
   
-  Future<List<dynamic>> initWithColors_startPoints_batch(List<List<NSObject>> colors, List<List<NSObject>> startPoints) async {
+  Future<List<dynamic>> initWithColors_startPoints_batch(List<List<dynamic>> colors, List<List<dynamic>> startPoints) async {
     if (colors.length != startPoints.length) {
       return Future.error('all args must have same length!');
     }
@@ -141,7 +141,7 @@ extension BMKGradient_Batch on List<BMKGradient> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
       return typedResult;
     }
   }

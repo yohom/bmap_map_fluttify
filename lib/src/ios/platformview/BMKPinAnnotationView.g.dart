@@ -46,7 +46,7 @@ class _BMKPinAnnotationView_iOSState extends State<BMKPinAnnotationView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKPinAnnotationView',
       gestureRecognizers: gestureRecognizers,

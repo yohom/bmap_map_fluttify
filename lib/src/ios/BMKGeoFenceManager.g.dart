@@ -170,7 +170,7 @@ class BMKGeoFenceManager extends NSObject  {
   }
   
   
-  Future<List<NSObject>> geoFenceRegionsWithCustomID(String customID) async {
+  Future<List<dynamic>> geoFenceRegionsWithCustomID(String customID) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKGeoFenceManager@$refId::geoFenceRegionsWithCustomID([\'customID\':$customID])');
@@ -187,7 +187,7 @@ class BMKGeoFenceManager extends NSObject  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<dynamic>();
       return __return__;
     }
   }
@@ -350,7 +350,7 @@ extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
   }
   
   
-  Future<List<List<NSObject>>> geoFenceRegionsWithCustomID_batch(List<String> customID) async {
+  Future<List<List<dynamic>>> geoFenceRegionsWithCustomID_batch(List<String> customID) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -363,7 +363,7 @@ extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
       return typedResult;
     }
   }

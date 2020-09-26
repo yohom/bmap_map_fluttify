@@ -224,9 +224,9 @@ class BMKMapView extends UIView  {
     return __result__ == null ? null : (__result__);
   }
   
-  Future<List<NSObject>> get_annotations({bool viewChannel = true}) async {
+  Future<List<dynamic>> get_annotations({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_annotations", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
   Future<bool> get_isSelectedAnnotationViewFront({bool viewChannel = true}) async {
@@ -234,9 +234,9 @@ class BMKMapView extends UIView  {
     return __result__ == null ? null : (__result__);
   }
   
-  Future<List<NSObject>> get_overlays({bool viewChannel = true}) async {
+  Future<List<dynamic>> get_overlays({bool viewChannel = true}) async {
     final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_overlays", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
   }
   
   //endregion
@@ -1845,7 +1845,7 @@ class BMKMapView extends UIView  {
   }
   
   
-  Future<void> addAnnotations(List<NSObject> annotations, {bool viewChannel = true}) async {
+  Future<void> addAnnotations(List<dynamic> annotations, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKMapView@$refId::addAnnotations([])');
@@ -1891,7 +1891,7 @@ class BMKMapView extends UIView  {
   }
   
   
-  Future<void> removeAnnotations(List<NSObject> annotations, {bool viewChannel = true}) async {
+  Future<void> removeAnnotations(List<dynamic> annotations, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKMapView@$refId::removeAnnotations([])');
@@ -2006,7 +2006,7 @@ class BMKMapView extends UIView  {
   }
   
   
-  Future<void> showAnnotations_animated(List<NSObject> annotations, bool animated, {bool viewChannel = true}) async {
+  Future<void> showAnnotations_animated(List<dynamic> annotations, bool animated, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKMapView@$refId::showAnnotations([\'animated\':$animated])');
@@ -2029,7 +2029,7 @@ class BMKMapView extends UIView  {
   }
   
   
-  Future<List<NSObject>> annotationsInCoordinateBounds(BMKCoordinateBounds bounds, {bool viewChannel = true}) async {
+  Future<List<dynamic>> annotationsInCoordinateBounds(BMKCoordinateBounds bounds, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKMapView@$refId::annotationsInCoordinateBounds([])');
@@ -2046,7 +2046,7 @@ class BMKMapView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+      final __return__ = (__result__ as List).cast<dynamic>();
       return __return__;
     }
   }
@@ -2075,7 +2075,7 @@ class BMKMapView extends UIView  {
   }
   
   
-  Future<void> addOverlays(List<NSObject> overlays, {bool viewChannel = true}) async {
+  Future<void> addOverlays(List<dynamic> overlays, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKMapView@$refId::addOverlays([])');
@@ -2121,7 +2121,7 @@ class BMKMapView extends UIView  {
   }
   
   
-  Future<void> removeOverlays(List<NSObject> overlays, {bool viewChannel = true}) async {
+  Future<void> removeOverlays(List<dynamic> overlays, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKMapView@$refId::removeOverlays([])');
@@ -2568,10 +2568,10 @@ extension BMKMapView_Batch on List<BMKMapView> {
     return typedResult;
   }
   
-  Future<List<List<NSObject>>> get_annotations_batch({bool viewChannel = true}) async {
+  Future<List<List<dynamic>>> get_annotations_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_annotations_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
@@ -2582,10 +2582,10 @@ extension BMKMapView_Batch on List<BMKMapView> {
     return typedResult;
   }
   
-  Future<List<List<NSObject>>> get_overlays_batch({bool viewChannel = true}) async {
+  Future<List<List<dynamic>>> get_overlays_batch({bool viewChannel = true}) async {
     final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_overlays_batch", [for (final __item__ in this) {'__this__': __item__}]);
   
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
     return typedResult;
   }
   
@@ -3680,7 +3680,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   
-  Future<List<void>> addAnnotations_batch(List<List<NSObject>> annotations, {bool viewChannel = true}) async {
+  Future<List<void>> addAnnotations_batch(List<List<dynamic>> annotations, {bool viewChannel = true}) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -3718,7 +3718,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   
-  Future<List<void>> removeAnnotations_batch(List<List<NSObject>> annotations, {bool viewChannel = true}) async {
+  Future<List<void>> removeAnnotations_batch(List<List<dynamic>> annotations, {bool viewChannel = true}) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -3813,7 +3813,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   
-  Future<List<void>> showAnnotations_animated_batch(List<List<NSObject>> annotations, List<bool> animated, {bool viewChannel = true}) async {
+  Future<List<void>> showAnnotations_animated_batch(List<List<dynamic>> annotations, List<bool> animated, {bool viewChannel = true}) async {
     if (annotations.length != animated.length) {
       return Future.error('all args must have same length!');
     }
@@ -3832,7 +3832,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   
-  Future<List<List<NSObject>>> annotationsInCoordinateBounds_batch(List<BMKCoordinateBounds> bounds, {bool viewChannel = true}) async {
+  Future<List<List<dynamic>>> annotationsInCoordinateBounds_batch(List<BMKCoordinateBounds> bounds, {bool viewChannel = true}) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -3845,7 +3845,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
       return typedResult;
     }
   }
@@ -3870,7 +3870,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   
-  Future<List<void>> addOverlays_batch(List<List<NSObject>> overlays, {bool viewChannel = true}) async {
+  Future<List<void>> addOverlays_batch(List<List<dynamic>> overlays, {bool viewChannel = true}) async {
     if (false) {
       return Future.error('all args must have same length!');
     }
@@ -3908,7 +3908,7 @@ extension BMKMapView_Batch on List<BMKMapView> {
   }
   
   
-  Future<List<void>> removeOverlays_batch(List<List<NSObject>> overlays, {bool viewChannel = true}) async {
+  Future<List<void>> removeOverlays_batch(List<List<dynamic>> overlays, {bool viewChannel = true}) async {
     if (false) {
       return Future.error('all args must have same length!');
     }

@@ -104,6 +104,51 @@ class BMKLocation extends NSObject  {
 
   //region methods
   
+  Future<dynamic> initWithLocation_withRgcData(CLLocation loc, BMKLocationReGeocode rgc) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: BMKLocation@$refId::initWithLocation([])');
+    }
+  
+    // invoke native method
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocation::initWithLocation_withRgcData', {"loc": loc, "rgc": rgc, "__this__": this});
+  
+  
+    // handle native call
+  
+  
+    // convert native result to dart side object
+    if (__result__ == null) {
+      return null;
+    } else {
+      final __return__ = __result__;
+      return __return__;
+    }
+  }
+  
+  
+  Future<dynamic> initWithLocation_floorString_buildingID_buildingName_extraInfo_withRgcData(CLLocation location, String floorString, String buildingID, String buildingName, Map info, BMKLocationReGeocode rgc) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: BMKLocation@$refId::initWithLocation([\'floorString\':$floorString, \'buildingID\':$buildingID, \'buildingName\':$buildingName, \'info\':$info])');
+    }
+  
+    // invoke native method
+    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocation::initWithLocation_floorString_buildingID_buildingName_extraInfo_withRgcData', {"location": location, "floorString": floorString, "buildingID": buildingID, "buildingName": buildingName, "info": info, "rgc": rgc, "__this__": this});
+  
+  
+    // handle native call
+  
+  
+    // convert native result to dart side object
+    if (__result__ == null) {
+      return null;
+    } else {
+      final __return__ = __result__;
+      return __return__;
+    }
+  }
+  
   //endregion
 }
 
@@ -189,6 +234,43 @@ extension BMKLocation_Batch on List<BMKLocation> {
   //endregion
 
   //region methods
+  
+  Future<List<dynamic>> initWithLocation_withRgcData_batch(List<CLLocation> loc, List<BMKLocationReGeocode> rgc) async {
+    if (loc.length != rgc.length) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocation::initWithLocation_withRgcData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"loc": loc[__i__], "rgc": rgc[__i__], "__this__": this[__i__]}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+      return typedResult;
+    }
+  }
+  
+  
+  Future<List<dynamic>> initWithLocation_floorString_buildingID_buildingName_extraInfo_withRgcData_batch(List<CLLocation> location, List<String> floorString, List<String> buildingID, List<String> buildingName, List<Map> info, List<BMKLocationReGeocode> rgc) async {
+    if (location.length != floorString.length || floorString.length != buildingID.length || buildingID.length != buildingName.length || buildingName.length != info.length || info.length != rgc.length) {
+      return Future.error('all args must have same length!');
+    }
+  
+    // invoke native method
+    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocation::initWithLocation_floorString_buildingID_buildingName_extraInfo_withRgcData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"location": location[__i__], "floorString": floorString[__i__], "buildingID": buildingID[__i__], "buildingName": buildingName[__i__], "info": info[__i__], "rgc": rgc[__i__], "__this__": this[__i__]}]);
+  
+  
+    // convert native result to dart side object
+    if (resultBatch == null) {
+      return null;
+    } else {
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
+      return typedResult;
+    }
+  }
   
   //endregion
 }

@@ -46,7 +46,7 @@ class _com_baidu_mapapi_map_MapView_AndroidState extends State<com_baidu_mapapi_
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return AndroidView(
       viewType: 'com.fluttify/com.baidu.mapapi.map.MapView',
       gestureRecognizers: gestureRecognizers,

@@ -16,6 +16,78 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler2 {
     __weak __typeof(self)weakSelf = self;
     return @{
+        @"BMKMapView::get_isOverlookEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"BMKMapView::get_isOverlookEnabled");
+            }
+        
+            // ref object
+            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.overlookEnabled;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"BMKMapView::get_isRotateEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"BMKMapView::get_isRotateEnabled");
+            }
+        
+            // ref object
+            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.rotateEnabled;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"BMKMapView::get_forceTouchEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"BMKMapView::get_forceTouchEnabled");
+            }
+        
+            // ref object
+            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.forceTouchEnabled;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
+        @"BMKMapView::get_showMapScaleBar": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+            // print log
+            if (enableLog) {
+                NSLog(@"BMKMapView::get_showMapScaleBar");
+            }
+        
+            // ref object
+            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+        
+            // invoke native method
+            BOOL result = ref.showMapScaleBar;
+        
+            // 返回值: Value
+            NSObject* __result__ = @(result);
+        
+            methodResult(__result__);
+        },
+        
         @"BMKMapView::get_mapScaleBarPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -3676,86 +3748,6 @@ extern BOOL enableLog;
                 BMKMapView* ref = (BMKMapView*) args[@"__this__"];
         
                 BOOL result = ref.buildingsEnabled;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"BMKMapView::get_showMapPoi_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-                BOOL result = ref.showMapPoi;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"BMKMapView::get_isTrafficEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-                BOOL result = ref.trafficEnabled;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"BMKMapView::get_isBaiduHeatMapEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-                BOOL result = ref.baiduHeatMapEnabled;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"BMKMapView::get_gesturesEnabled_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-                BOOL result = ref.gesturesEnabled;
         
                 // 返回值: Value
                 NSObject* __result__ = @(result);

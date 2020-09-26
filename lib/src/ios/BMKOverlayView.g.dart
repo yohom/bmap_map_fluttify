@@ -107,7 +107,7 @@ class BMKOverlayView extends UIView  {
     if (__result__ == null) {
       return null;
     } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
+      final __return__ = __result__;
       return __return__;
     }
   }
@@ -343,7 +343,7 @@ class BMKOverlayView extends UIView  {
   }
   
   
-  Future<void> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus(List<NSObject> partPt, double lineWidth, List<NSObject> textureIndexs, bool isFoucs, {bool viewChannel = true}) async {
+  Future<void> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus(List<dynamic> partPt, double lineWidth, List<dynamic> textureIndexs, bool isFoucs, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPartPoints([\'lineWidth\':$lineWidth, \'isFoucs\':$isFoucs])');
@@ -366,7 +366,7 @@ class BMKOverlayView extends UIView  {
   }
   
   
-  Future<void> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale(List<NSObject> partPt, double lineWidth, List<NSObject> textureIndexs, bool isFoucs, bool tileTexture, bool keepscale, {bool viewChannel = true}) async {
+  Future<void> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale(List<dynamic> partPt, double lineWidth, List<dynamic> textureIndexs, bool isFoucs, bool tileTexture, bool keepscale, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOverlayView@$refId::renderTexturedLinesWithPartPoints([\'lineWidth\':$lineWidth, \'isFoucs\':$isFoucs, \'tileTexture\':$tileTexture, \'keepscale\':$keepscale])');
@@ -412,7 +412,7 @@ class BMKOverlayView extends UIView  {
   }
   
   
-  Future<void> renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType(List<NSObject> partPt, double lineWidth, List<num> textureIndexs, bool isFoucs, bool keepScale, BMKLineJoinType lineJoinType, BMKLineCapType lineCapType, {bool viewChannel = true}) async {
+  Future<void> renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType(List<dynamic> partPt, double lineWidth, List<num> textureIndexs, bool isFoucs, bool keepScale, BMKLineJoinType lineJoinType, BMKLineCapType lineCapType, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOverlayView@$refId::renderMultiTexturedPolyLineWithPartPoints([\'lineWidth\':$lineWidth, \'textureIndexs\':$textureIndexs, \'isFoucs\':$isFoucs, \'keepScale\':$keepScale])');
@@ -435,7 +435,7 @@ class BMKOverlayView extends UIView  {
   }
   
   
-  Future<void> renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType(List<NSObject> partPt, double lineWidth, List<num> textureIndexs, BMKLineDashType lineDashType, {bool viewChannel = true}) async {
+  Future<void> renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType(List<dynamic> partPt, double lineWidth, List<num> textureIndexs, BMKLineDashType lineDashType, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOverlayView@$refId::renderMultiDashPolyLineWithPartPoints([\'lineWidth\':$lineWidth, \'textureIndexs\':$textureIndexs])');
@@ -689,7 +689,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
     if (resultBatch == null) {
       return null;
     } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
+      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
       return typedResult;
     }
   }
@@ -885,7 +885,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
   }
   
   
-  Future<List<void>> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_batch(List<List<NSObject>> partPt, List<double> lineWidth, List<List<NSObject>> textureIndexs, List<bool> isFoucs, {bool viewChannel = true}) async {
+  Future<List<void>> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_batch(List<List<dynamic>> partPt, List<double> lineWidth, List<List<dynamic>> textureIndexs, List<bool> isFoucs, {bool viewChannel = true}) async {
     if (partPt.length != lineWidth.length || lineWidth.length != textureIndexs.length || textureIndexs.length != isFoucs.length) {
       return Future.error('all args must have same length!');
     }
@@ -904,7 +904,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
   }
   
   
-  Future<List<void>> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale_batch(List<List<NSObject>> partPt, List<double> lineWidth, List<List<NSObject>> textureIndexs, List<bool> isFoucs, List<bool> tileTexture, List<bool> keepscale, {bool viewChannel = true}) async {
+  Future<List<void>> renderTexturedLinesWithPartPoints_lineWidth_textureIndexs_isFocus_tileTexture_keepScale_batch(List<List<dynamic>> partPt, List<double> lineWidth, List<List<dynamic>> textureIndexs, List<bool> isFoucs, List<bool> tileTexture, List<bool> keepscale, {bool viewChannel = true}) async {
     if (partPt.length != lineWidth.length || lineWidth.length != textureIndexs.length || textureIndexs.length != isFoucs.length || isFoucs.length != tileTexture.length || tileTexture.length != keepscale.length) {
       return Future.error('all args must have same length!');
     }
@@ -942,7 +942,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
   }
   
   
-  Future<List<void>> renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType_batch(List<List<NSObject>> partPt, List<double> lineWidth, List<List<num>> textureIndexs, List<bool> isFoucs, List<bool> keepScale, List<BMKLineJoinType> lineJoinType, List<BMKLineCapType> lineCapType, {bool viewChannel = true}) async {
+  Future<List<void>> renderMultiTexturedPolyLineWithPartPoints_lineWidth_textureIndexs_isFoucs_keepScale_lineJoinType_lineCapType_batch(List<List<dynamic>> partPt, List<double> lineWidth, List<List<num>> textureIndexs, List<bool> isFoucs, List<bool> keepScale, List<BMKLineJoinType> lineJoinType, List<BMKLineCapType> lineCapType, {bool viewChannel = true}) async {
     if (partPt.length != lineWidth.length || lineWidth.length != textureIndexs.length || textureIndexs.length != isFoucs.length || isFoucs.length != keepScale.length || keepScale.length != lineJoinType.length || lineJoinType.length != lineCapType.length) {
       return Future.error('all args must have same length!');
     }
@@ -961,7 +961,7 @@ extension BMKOverlayView_Batch on List<BMKOverlayView> {
   }
   
   
-  Future<List<void>> renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType_batch(List<List<NSObject>> partPt, List<double> lineWidth, List<List<num>> textureIndexs, List<BMKLineDashType> lineDashType, {bool viewChannel = true}) async {
+  Future<List<void>> renderMultiDashPolyLineWithPartPoints_lineWidth_textureIndexs_lineDashType_batch(List<List<dynamic>> partPt, List<double> lineWidth, List<List<num>> textureIndexs, List<BMKLineDashType> lineDashType, {bool viewChannel = true}) async {
     if (partPt.length != lineWidth.length || lineWidth.length != textureIndexs.length || textureIndexs.length != lineDashType.length) {
       return Future.error('all args must have same length!');
     }

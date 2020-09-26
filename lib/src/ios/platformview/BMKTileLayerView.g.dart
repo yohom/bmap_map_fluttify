@@ -46,7 +46,7 @@ class _BMKTileLayerView_iOSState extends State<BMKTileLayerView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = StandardMessageCodec();
+    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
       viewType: 'com.fluttify/BMKTileLayerView',
       gestureRecognizers: gestureRecognizers,
