@@ -16,645 +16,6 @@ extern BOOL enableLog;
 - (NSDictionary<NSString*, Handler>*) getSubHandler4 {
     __weak __typeof(self)weakSelf = self;
     return @{
-        @"BMKMapView::set_trafficEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_trafficEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL trafficEnabled = [args[@"trafficEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.trafficEnabled = trafficEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_baiduHeatMapEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_baiduHeatMapEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL baiduHeatMapEnabled = [args[@"baiduHeatMapEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.baiduHeatMapEnabled = baiduHeatMapEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_gesturesEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_gesturesEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL gesturesEnabled = [args[@"gesturesEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.gesturesEnabled = gesturesEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_zoomEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_zoomEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL zoomEnabled = [args[@"zoomEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.zoomEnabled = zoomEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_zoomEnabledWithTap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_zoomEnabledWithTap");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL zoomEnabledWithTap = [args[@"zoomEnabledWithTap"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.zoomEnabledWithTap = zoomEnabledWithTap;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_scrollEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_scrollEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL scrollEnabled = [args[@"scrollEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.scrollEnabled = scrollEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_overlookEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_overlookEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL overlookEnabled = [args[@"overlookEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.overlookEnabled = overlookEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_rotateEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_rotateEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL rotateEnabled = [args[@"rotateEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.rotateEnabled = rotateEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_forceTouchEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_forceTouchEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL forceTouchEnabled = [args[@"forceTouchEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.forceTouchEnabled = forceTouchEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_showMapScaleBar": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_showMapScaleBar");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL showMapScaleBar = [args[@"showMapScaleBar"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.showMapScaleBar = showMapScaleBar;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_mapScaleBarPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_mapScaleBarPosition");
-            }
-        
-            // args
-            // struct arg
-            NSValue* mapScaleBarPositionValue = (NSValue*) args[@"mapScaleBarPosition"];
-            CGPoint mapScaleBarPosition;
-            [mapScaleBarPositionValue getValue:&mapScaleBarPosition];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.mapScaleBarPosition = mapScaleBarPosition;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_logoPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_logoPosition");
-            }
-        
-            // args
-            // enum arg
-            BMKLogoPosition logoPosition = (BMKLogoPosition) [args[@"logoPosition"] integerValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.logoPosition = logoPosition;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_visibleMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_visibleMapRect");
-            }
-        
-            // args
-            // struct arg
-            NSValue* visibleMapRectValue = (NSValue*) args[@"visibleMapRect"];
-            BMKMapRect visibleMapRect;
-            [visibleMapRectValue getValue:&visibleMapRect];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.visibleMapRect = visibleMapRect;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_mapPadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_mapPadding");
-            }
-        
-            // args
-            // struct arg
-            NSValue* mapPaddingValue = (NSValue*) args[@"mapPadding"];
-            UIEdgeInsets mapPadding;
-            [mapPaddingValue getValue:&mapPadding];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.mapPadding = mapPadding;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_updateTargetScreenPtWhenMapPaddingChanged": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_updateTargetScreenPtWhenMapPaddingChanged");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL updateTargetScreenPtWhenMapPaddingChanged = [args[@"updateTargetScreenPtWhenMapPaddingChanged"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.updateTargetScreenPtWhenMapPaddingChanged = updateTargetScreenPtWhenMapPaddingChanged;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_ChangeWithTouchPointCenterEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_ChangeWithTouchPointCenterEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL ChangeWithTouchPointCenterEnabled = [args[@"ChangeWithTouchPointCenterEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.ChangeWithTouchPointCenterEnabled = ChangeWithTouchPointCenterEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_ChangeCenterWithDoubleTouchPointEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_ChangeCenterWithDoubleTouchPointEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL ChangeCenterWithDoubleTouchPointEnabled = [args[@"ChangeCenterWithDoubleTouchPointEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.ChangeCenterWithDoubleTouchPointEnabled = ChangeCenterWithDoubleTouchPointEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_baseIndoorMapEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_baseIndoorMapEnabled");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL baseIndoorMapEnabled = [args[@"baseIndoorMapEnabled"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.baseIndoorMapEnabled = baseIndoorMapEnabled;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_showIndoorMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_showIndoorMapPoi");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL showIndoorMapPoi = [args[@"showIndoorMapPoi"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.showIndoorMapPoi = showIndoorMapPoi;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_showsUserLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_showsUserLocation");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL showsUserLocation = [args[@"showsUserLocation"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.showsUserLocation = showsUserLocation;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_userTrackingMode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_userTrackingMode");
-            }
-        
-            // args
-            // enum arg
-            BMKUserTrackingMode userTrackingMode = (BMKUserTrackingMode) [args[@"userTrackingMode"] integerValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.userTrackingMode = userTrackingMode;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapView::set_isSelectedAnnotationViewFront": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapView::set_isSelectedAnnotationViewFront");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL isSelectedAnnotationViewFront = [args[@"isSelectedAnnotationViewFront"] boolValue];
-        
-            // ref
-            BMKMapView* ref = (BMKMapView*) args[@"__this__"];
-        
-            ref.isSelectedAnnotationViewFront = isSelectedAnnotationViewFront;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_locationViewOffsetX": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_locationViewOffsetX");
-            }
-        
-            // args
-            // jsonable arg
-            CGFloat locationViewOffsetX = [args[@"locationViewOffsetX"] floatValue];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.locationViewOffsetX = locationViewOffsetX;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_locationViewOffsetY": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_locationViewOffsetY");
-            }
-        
-            // args
-            // jsonable arg
-            CGFloat locationViewOffsetY = [args[@"locationViewOffsetY"] floatValue];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.locationViewOffsetY = locationViewOffsetY;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_isAccuracyCircleShow": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_isAccuracyCircleShow");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL isAccuracyCircleShow = [args[@"isAccuracyCircleShow"] boolValue];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.isAccuracyCircleShow = isAccuracyCircleShow;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_accuracyCircleFillColor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_accuracyCircleFillColor");
-            }
-        
-            // args
-            // ref arg
-            UIColor* accuracyCircleFillColor = (UIColor*) args[@"accuracyCircleFillColor"];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.accuracyCircleFillColor = accuracyCircleFillColor;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_accuracyCircleStrokeColor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_accuracyCircleStrokeColor");
-            }
-        
-            // args
-            // ref arg
-            UIColor* accuracyCircleStrokeColor = (UIColor*) args[@"accuracyCircleStrokeColor"];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.accuracyCircleStrokeColor = accuracyCircleStrokeColor;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_isRotateAngleValid": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_isRotateAngleValid");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL isRotateAngleValid = [args[@"isRotateAngleValid"] boolValue];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.isRotateAngleValid = isRotateAngleValid;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_locationViewImgName": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_locationViewImgName");
-            }
-        
-            // args
-            // jsonable arg
-            NSString* locationViewImgName = (NSString*) args[@"locationViewImgName"];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.locationViewImgName = locationViewImgName;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_locationViewImage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_locationViewImage");
-            }
-        
-            // args
-            // ref arg
-            UIImage* locationViewImage = (UIImage*) args[@"locationViewImage"];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.locationViewImage = locationViewImage;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_canShowCallOut": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_canShowCallOut");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL canShowCallOut = [args[@"canShowCallOut"] boolValue];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.canShowCallOut = canShowCallOut;
-            methodResult(@"success");
-        },
-        
-        @"BMKLocationViewDisplayParam::set_locationViewHierarchy": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKLocationViewDisplayParam::set_locationViewHierarchy");
-            }
-        
-            // args
-            // enum arg
-            LocationViewHierarchy locationViewHierarchy = (LocationViewHierarchy) [args[@"locationViewHierarchy"] integerValue];
-        
-            // ref
-            BMKLocationViewDisplayParam* ref = (BMKLocationViewDisplayParam*) args[@"__this__"];
-        
-            ref.locationViewHierarchy = locationViewHierarchy;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapStatus::set_fLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapStatus::set_fLevel");
-            }
-        
-            // args
-            // jsonable arg
-            float fLevel = [args[@"fLevel"] floatValue];
-        
-            // ref
-            BMKMapStatus* ref = (BMKMapStatus*) args[@"__this__"];
-        
-            ref.fLevel = fLevel;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapStatus::set_fRotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapStatus::set_fRotation");
-            }
-        
-            // args
-            // jsonable arg
-            float fRotation = [args[@"fRotation"] floatValue];
-        
-            // ref
-            BMKMapStatus* ref = (BMKMapStatus*) args[@"__this__"];
-        
-            ref.fRotation = fRotation;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapStatus::set_fOverlooking": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapStatus::set_fOverlooking");
-            }
-        
-            // args
-            // jsonable arg
-            float fOverlooking = [args[@"fOverlooking"] floatValue];
-        
-            // ref
-            BMKMapStatus* ref = (BMKMapStatus*) args[@"__this__"];
-        
-            ref.fOverlooking = fOverlooking;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapStatus::set_targetScreenPt": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapStatus::set_targetScreenPt");
-            }
-        
-            // args
-            // struct arg
-            NSValue* targetScreenPtValue = (NSValue*) args[@"targetScreenPt"];
-            CGPoint targetScreenPt;
-            [targetScreenPtValue getValue:&targetScreenPt];
-        
-            // ref
-            BMKMapStatus* ref = (BMKMapStatus*) args[@"__this__"];
-        
-            ref.targetScreenPt = targetScreenPt;
-            methodResult(@"success");
-        },
-        
-        @"BMKMapStatus::set_targetGeoPt": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKMapStatus::set_targetGeoPt");
-            }
-        
-            // args
-            // struct arg
-            NSValue* targetGeoPtValue = (NSValue*) args[@"targetGeoPt"];
-            CLLocationCoordinate2D targetGeoPt;
-            [targetGeoPtValue getValue:&targetGeoPt];
-        
-            // ref
-            BMKMapStatus* ref = (BMKMapStatus*) args[@"__this__"];
-        
-            ref.targetGeoPt = targetGeoPt;
-            methodResult(@"success");
-        },
-        
         @"BMKHeatMapNode::set_intensity": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -1117,159 +478,6 @@ extern BOOL enableLog;
             BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
             ref.displayPriority = displayPriority;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_fillColor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_fillColor");
-            }
-        
-            // args
-            // ref arg
-            UIColor* fillColor = (UIColor*) args[@"fillColor"];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.fillColor = fillColor;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_strokeColor": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_strokeColor");
-            }
-        
-            // args
-            // ref arg
-            UIColor* strokeColor = (UIColor*) args[@"strokeColor"];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.strokeColor = strokeColor;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_lineWidth": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_lineWidth");
-            }
-        
-            // args
-            // jsonable arg
-            CGFloat lineWidth = [args[@"lineWidth"] floatValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.lineWidth = lineWidth;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_lineDash": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_lineDash");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL lineDash = [args[@"lineDash"] boolValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.lineDash = lineDash;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_tileTexture": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_tileTexture");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL tileTexture = [args[@"tileTexture"] boolValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.tileTexture = tileTexture;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_keepScale": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_keepScale");
-            }
-        
-            // args
-            // jsonable arg
-            BOOL keepScale = [args[@"keepScale"] boolValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.keepScale = keepScale;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_lineJoinType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_lineJoinType");
-            }
-        
-            // args
-            // enum arg
-            BMKLineJoinType lineJoinType = (BMKLineJoinType) [args[@"lineJoinType"] integerValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.lineJoinType = lineJoinType;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_lineCapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_lineCapType");
-            }
-        
-            // args
-            // enum arg
-            BMKLineCapType lineCapType = (BMKLineCapType) [args[@"lineCapType"] integerValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.lineCapType = lineCapType;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_lineDashType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_lineDashType");
-            }
-        
-            // args
-            // enum arg
-            BMKLineDashType lineDashType = (BMKLineDashType) [args[@"lineDashType"] integerValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-        
-            ref.lineDashType = lineDashType;
             methodResult(@"success");
         },
         
@@ -2320,24 +1528,6 @@ extern BOOL enableLog;
                 BMKTileLayer* ref = (BMKTileLayer*) args[@"__this__"];
         
                 ref.visibleMapRect = visibleMapRect;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
-        
-        @"BMKPolylineView::set_isFocus_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // jsonable arg
-                BOOL isFocus = [args[@"isFocus"] boolValue];
-        
-                // ref
-                BMKPolylineView* ref = (BMKPolylineView*) args[@"__this__"];
-        
-                ref.isFocus = isFocus;
                 methodResult(@"success");
             }
         
@@ -3550,6 +2740,858 @@ extern BOOL enableLog;
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
         
                 ref.annotation = annotation;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_image_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIImage* image = (UIImage*) args[@"image"];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.image = image;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_centerOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
+                CGPoint centerOffset;
+                [centerOffsetValue getValue:&centerOffset];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.centerOffset = centerOffset;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_calloutOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
+                CGPoint calloutOffset;
+                [calloutOffsetValue getValue:&calloutOffset];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.calloutOffset = calloutOffset;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_enabled3D_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL enabled3D = [args[@"enabled3D"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.enabled3D = enabled3D;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_enabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL enabled = [args[@"enabled"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.enabled = enabled;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_selected_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL selected = [args[@"selected"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.selected = selected;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_canShowCallout_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL canShowCallout = [args[@"canShowCallout"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.canShowCallout = canShowCallout;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_leftCalloutAccessoryView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIView* leftCalloutAccessoryView = (UIView*) args[@"leftCalloutAccessoryView"];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.leftCalloutAccessoryView = leftCalloutAccessoryView;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_rightCalloutAccessoryView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                UIView* rightCalloutAccessoryView = (UIView*) args[@"rightCalloutAccessoryView"];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.rightCalloutAccessoryView = rightCalloutAccessoryView;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_draggable_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL draggable = [args[@"draggable"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.draggable = draggable;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_dragState_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSUInteger dragState = [args[@"dragState"] unsignedIntegerValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.dragState = dragState;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_hidePaopaoWhenSingleTapOnMap_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL hidePaopaoWhenSingleTapOnMap = [args[@"hidePaopaoWhenSingleTapOnMap"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.hidePaopaoWhenSingleTapOnMap = hidePaopaoWhenSingleTapOnMap;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_hidePaopaoWhenDoubleTapOnMap_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL hidePaopaoWhenDoubleTapOnMap = [args[@"hidePaopaoWhenDoubleTapOnMap"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.hidePaopaoWhenDoubleTapOnMap = hidePaopaoWhenDoubleTapOnMap;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_hidePaopaoWhenTwoFingersTapOnMap_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL hidePaopaoWhenTwoFingersTapOnMap = [args[@"hidePaopaoWhenTwoFingersTapOnMap"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.hidePaopaoWhenTwoFingersTapOnMap = hidePaopaoWhenTwoFingersTapOnMap;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_hidePaopaoWhenSelectOthers_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL hidePaopaoWhenSelectOthers = [args[@"hidePaopaoWhenSelectOthers"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.hidePaopaoWhenSelectOthers = hidePaopaoWhenSelectOthers;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_hidePaopaoWhenDrag_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL hidePaopaoWhenDrag = [args[@"hidePaopaoWhenDrag"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.hidePaopaoWhenDrag = hidePaopaoWhenDrag;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_hidePaopaoWhenDragOthers_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL hidePaopaoWhenDragOthers = [args[@"hidePaopaoWhenDragOthers"] boolValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.hidePaopaoWhenDragOthers = hidePaopaoWhenDragOthers;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKAnnotationView::set_displayPriority_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                float displayPriority = [args[@"displayPriority"] floatValue];
+        
+                // ref
+                BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+        
+                ref.displayPriority = displayPriority;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKShape::set_title_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* title = (NSString*) args[@"title"];
+        
+                // ref
+                BMKShape* ref = (BMKShape*) args[@"__this__"];
+        
+                ref.title = title;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKShape::set_subtitle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* subtitle = (NSString*) args[@"subtitle"];
+        
+                // ref
+                BMKShape* ref = (BMKShape*) args[@"__this__"];
+        
+                ref.subtitle = subtitle;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLSearchRecord::set_cityName_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* cityName = (NSString*) args[@"cityName"];
+        
+                // ref
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+        
+                ref.cityName = cityName;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLSearchRecord::set_size_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int64_t size = [args[@"size"] longLongValue];
+        
+                // ref
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+        
+                ref.size = size;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLSearchRecord::set_cityID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int cityID = [args[@"cityID"] intValue];
+        
+                // ref
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+        
+                ref.cityID = cityID;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLSearchRecord::set_cityType_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int cityType = [args[@"cityType"] intValue];
+        
+                // ref
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+        
+                ref.cityType = cityType;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLSearchRecord::set_childCities_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // list arg
+                NSArray<NSObject*>* childCities = (NSArray<NSObject*>*) args[@"childCities"];
+        
+                // ref
+                BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+        
+                ref.childCities = childCities;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_cityName_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* cityName = (NSString*) args[@"cityName"];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.cityName = cityName;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_cityID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int cityID = [args[@"cityID"] intValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.cityID = cityID;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_size_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int64_t size = [args[@"size"] longLongValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.size = size;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_serversize_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int64_t serversize = [args[@"serversize"] longLongValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.serversize = serversize;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_ratio_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int ratio = [args[@"ratio"] intValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.ratio = ratio;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_status_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                int status = [args[@"status"] intValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.status = status;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_update_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL update = [args[@"update"] boolValue];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.update = update;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKOLUpdateElement::set_pt_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* ptValue = (NSValue*) args[@"pt"];
+                CLLocationCoordinate2D pt;
+                [ptValue getValue:&pt];
+        
+                // ref
+                BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+        
+                ref.pt = pt;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKCustomMapStyleOption::set_customMapStyleID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* customMapStyleID = (NSString*) args[@"customMapStyleID"];
+        
+                // ref
+                BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) args[@"__this__"];
+        
+                ref.customMapStyleID = customMapStyleID;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKCustomMapStyleOption::set_customMapStyleFilePath_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* customMapStyleFilePath = (NSString*) args[@"customMapStyleFilePath"];
+        
+                // ref
+                BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) args[@"__this__"];
+        
+                ref.customMapStyleFilePath = customMapStyleFilePath;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_distanceFilter_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                CLLocationDistance distanceFilter = [args[@"distanceFilter"] doubleValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.distanceFilter = distanceFilter;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_desiredAccuracy_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                CLLocationAccuracy desiredAccuracy = [args[@"desiredAccuracy"] doubleValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.desiredAccuracy = desiredAccuracy;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_coordinateType_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // enum arg
+                BMKLocationCoordinateType coordinateType = (BMKLocationCoordinateType) [args[@"coordinateType"] integerValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.coordinateType = coordinateType;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_pausesLocationUpdatesAutomatically_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL pausesLocationUpdatesAutomatically = [args[@"pausesLocationUpdatesAutomatically"] boolValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.pausesLocationUpdatesAutomatically = pausesLocationUpdatesAutomatically;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_allowsBackgroundLocationUpdates_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL allowsBackgroundLocationUpdates = [args[@"allowsBackgroundLocationUpdates"] boolValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_locationTimeout_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSInteger locationTimeout = [args[@"locationTimeout"] longValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.locationTimeout = locationTimeout;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_reGeocodeTimeout_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSInteger reGeocodeTimeout = [args[@"reGeocodeTimeout"] longValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.reGeocodeTimeout = reGeocodeTimeout;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_locatingWithReGeocode_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL locatingWithReGeocode = [args[@"locatingWithReGeocode"] boolValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.locatingWithReGeocode = locatingWithReGeocode;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_isNeedNewVersionReGeocode_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL isNeedNewVersionReGeocode = [args[@"isNeedNewVersionReGeocode"] boolValue];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.isNeedNewVersionReGeocode = isNeedNewVersionReGeocode;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocationManager::set_userID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* userID = (NSString*) args[@"userID"];
+        
+                // ref
+                BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+        
+                ref.userID = userID;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocation::set_rgcData_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // ref arg
+                BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) args[@"rgcData"];
+        
+                // ref
+                BMKLocation* ref = (BMKLocation*) args[@"__this__"];
+        
+                ref.rgcData = rgcData;
+                methodResult(@"success");
+            }
+        
+            methodResult(@"success");
+        },
+        
+        @"BMKLocation::set_provider_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // enum arg
+                BMKLocationProvider provider = (BMKLocationProvider) [args[@"provider"] integerValue];
+        
+                // ref
+                BMKLocation* ref = (BMKLocation*) args[@"__this__"];
+        
+                ref.provider = provider;
                 methodResult(@"success");
             }
         

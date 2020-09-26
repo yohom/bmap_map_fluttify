@@ -482,28 +482,6 @@ extern BOOL enableLog;
         
             methodResult(__result__);
         },
-        @"BMKCircleView::initWithCircle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // args
-            // ref arg
-            BMKCircle* circle = (BMKCircle*) args[@"circle"];
-        
-            // ref
-            BMKCircleView* ref = (BMKCircleView*) args[@"__this__"];
-        
-            // print log
-            if (enableLog) {
-                NSLog(@"fluttify-objc: BMKCircleView@%@::initWithCircle(%@)", args[@"refId"], args[@"circle"]);
-            }
-        
-            // invoke native method
-            id result = [ref initWithCircle: circle];
-        
-            // result
-            // return a ref
-            id __result__ = result;
-        
-            methodResult(__result__);
-        },
         @"BMKGradient::initWithColors_startPoints": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // list arg
@@ -758,28 +736,6 @@ extern BOOL enableLog;
             // result
             // 无返回值
             NSString* __result__ = @"success";
-        
-            methodResult(__result__);
-        },
-        @"BMKPolylineView::initWithPolyline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // args
-            // ref arg
-            BMKPolyline* polyline = (BMKPolyline*) args[@"polyline"];
-        
-            // ref
-            BMKPolylineView* ref = (BMKPolylineView*) args[@"__this__"];
-        
-            // print log
-            if (enableLog) {
-                NSLog(@"fluttify-objc: BMKPolylineView@%@::initWithPolyline(%@)", args[@"refId"], args[@"polyline"]);
-            }
-        
-            // invoke native method
-            id result = [ref initWithPolyline: polyline];
-        
-            // result
-            // return a ref
-            id __result__ = result;
         
             methodResult(__result__);
         },
@@ -2524,28 +2480,6 @@ extern BOOL enableLog;
         
             methodResult(__result__);
         },
-        @"BMKArclineView::initWithArcline": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // args
-            // ref arg
-            BMKArcline* arcline = (BMKArcline*) args[@"arcline"];
-        
-            // ref
-            BMKArclineView* ref = (BMKArclineView*) args[@"__this__"];
-        
-            // print log
-            if (enableLog) {
-                NSLog(@"fluttify-objc: BMKArclineView@%@::initWithArcline(%@)", args[@"refId"], args[@"arcline"]);
-            }
-        
-            // invoke native method
-            id result = [ref initWithArcline: arcline];
-        
-            // result
-            // return a ref
-            id __result__ = result;
-        
-            methodResult(__result__);
-        },
         @"BMKPolygon::polygonWithPoints_count": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // args
             // list arg struct
@@ -2667,28 +2601,6 @@ extern BOOL enableLog;
             // result
             // 返回值: Value
             NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
-        @"BMKPolygonView::initWithPolygon": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // args
-            // ref arg
-            BMKPolygon* polygon = (BMKPolygon*) args[@"polygon"];
-        
-            // ref
-            BMKPolygonView* ref = (BMKPolygonView*) args[@"__this__"];
-        
-            // print log
-            if (enableLog) {
-                NSLog(@"fluttify-objc: BMKPolygonView@%@::initWithPolygon(%@)", args[@"refId"], args[@"polygon"]);
-            }
-        
-            // invoke native method
-            id result = [ref initWithPolygon: polygon];
-        
-            // result
-            // return a ref
-            id __result__ = result;
         
             methodResult(__result__);
         },
@@ -5016,31 +4928,6 @@ extern BOOL enableLog;
         
             methodResult(resultList);
         },
-        @"BMKCircleView::initWithCircle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // ref arg
-                BMKCircle* circle = (BMKCircle*) args[@"circle"];
-        
-                // ref
-                BMKCircleView* ref = (BMKCircleView*) args[@"__this__"];
-        
-                // invoke native method
-                id result = [ref initWithCircle: circle];
-        
-                // result
-                // return a ref
-                id __result__ = result;
-        
-                [resultList addObject:__result__];
-            }
-        
-            methodResult(resultList);
-        },
         @"BMKGradient::initWithColors_startPoints_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
         
@@ -5274,25 +5161,162 @@ extern BOOL enableLog;
         
             methodResult(resultList);
         },
-        @"BMKPolylineView::initWithPolyline_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+        @"BMKCircle::circleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
         
             for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
-                // ref arg
-                BMKPolyline* polyline = (BMKPolyline*) args[@"polyline"];
+                // struct arg
+                NSValue* coordValue = (NSValue*) args[@"coord"];
+                CLLocationCoordinate2D coord;
+                [coordValue getValue:&coord];
+                // jsonable arg
+                CLLocationDistance radius = [args[@"radius"] doubleValue];
         
                 // ref
-                BMKPolylineView* ref = (BMKPolylineView*) args[@"__this__"];
+        
         
                 // invoke native method
-                id result = [ref initWithPolyline: polyline];
+                BMKCircle* result = [BMKCircle circleWithCenterCoordinate: coord radius: radius];
         
                 // result
                 // return a ref
                 id __result__ = result;
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        @"BMKCircle::circleWithMapRect_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
+                BMKMapRect mapRect;
+                [mapRectValue getValue:&mapRect];
+        
+                // ref
+        
+        
+                // invoke native method
+                BMKCircle* result = [BMKCircle circleWithMapRect: mapRect];
+        
+                // result
+                // return a ref
+                id __result__ = result;
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        @"BMKCircle::setCircleWithCenterCoordinate_radius_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* coordValue = (NSValue*) args[@"coord"];
+                CLLocationCoordinate2D coord;
+                [coordValue getValue:&coord];
+                // jsonable arg
+                CLLocationDistance radius = [args[@"radius"] doubleValue];
+        
+                // ref
+                BMKCircle* ref = (BMKCircle*) args[@"__this__"];
+        
+                // invoke native method
+                BOOL result = [ref setCircleWithCenterCoordinate: coord radius: radius];
+        
+                // result
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        @"BMKCircle::setCircleWithMapRect_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // struct arg
+                NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
+                BMKMapRect mapRect;
+                [mapRectValue getValue:&mapRect];
+        
+                // ref
+                BMKCircle* ref = (BMKCircle*) args[@"__this__"];
+        
+                // invoke native method
+                BOOL result = [ref setCircleWithMapRect: mapRect];
+        
+                // result
+                // 返回值: Value
+                NSObject* __result__ = @(result);
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        @"BMKMapView::customMapStyle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                NSString* customMapStyleJsonFilePath = (NSString*) args[@"customMapStyleJsonFilePath"];
+        
+                // ref
+        
+        
+                // invoke native method
+                [BMKMapView customMapStyle: customMapStyleJsonFilePath];
+        
+                // result
+                // 无返回值
+                NSString* __result__ = @"success";
+        
+                [resultList addObject:__result__];
+            }
+        
+            methodResult(resultList);
+        },
+        @"BMKMapView::enableCustomMapStyle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
+            NSMutableArray* resultList = [NSMutableArray array];
+        
+            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
+        
+                // args
+                // jsonable arg
+                BOOL enable = [args[@"enable"] boolValue];
+        
+                // ref
+        
+        
+                // invoke native method
+                [BMKMapView enableCustomMapStyle: enable];
+        
+                // result
+                // 无返回值
+                NSString* __result__ = @"success";
         
                 [resultList addObject:__result__];
             }

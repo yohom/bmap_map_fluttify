@@ -56,16 +56,11 @@ extern BOOL enableLog;
   [registrar registerViewFactory: [[BMKActionPaopaoViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKActionPaopaoView"];
   [registrar registerViewFactory: [[BMKTileLayerViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKTileLayerView"];
   [registrar registerViewFactory: [[BMKOverlayPathViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKOverlayPathView"];
-  [registrar registerViewFactory: [[BMKCircleViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKCircleView"];
-  [registrar registerViewFactory: [[BMKPolylineViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKPolylineView"];
   [registrar registerViewFactory: [[BMKPinAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKPinAnnotationView"];
   [registrar registerViewFactory: [[BMKMapViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKMapView"];
-  [registrar registerViewFactory: [[BMKArclineViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKArclineView"];
-  [registrar registerViewFactory: [[BMKPolygonViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKPolygonView"];
   [registrar registerViewFactory: [[BMKOverlayViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKOverlayView"];
   [registrar registerViewFactory: [[BMKGroundOverlayViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKGroundOverlayView"];
   [registrar registerViewFactory: [[BMKAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKAnnotationView"];
-  [registrar registerViewFactory: [[BMKOverlayGLBasicViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKOverlayGLBasicView"];
 }
 
 // Method Handlers

@@ -8,16 +8,11 @@
 #import "BMKActionPaopaoViewFactory.h"
 #import "BMKTileLayerViewFactory.h"
 #import "BMKOverlayPathViewFactory.h"
-#import "BMKCircleViewFactory.h"
-#import "BMKPolylineViewFactory.h"
 #import "BMKPinAnnotationViewFactory.h"
 #import "BMKMapViewFactory.h"
-#import "BMKArclineViewFactory.h"
-#import "BMKPolygonViewFactory.h"
 #import "BMKOverlayViewFactory.h"
 #import "BMKGroundOverlayViewFactory.h"
 #import "BMKAnnotationViewFactory.h"
-#import "BMKOverlayGLBasicViewFactory.h"
 
 typedef void (^Handler)(NSObject <FlutterPluginRegistrar> *, id, FlutterResult);
 

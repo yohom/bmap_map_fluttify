@@ -27,7 +27,7 @@ extern BOOL enableLog;
 }
 
 - (NSObject<FlutterMessageCodec>*)createArgsCodec {
-  return [FlutterStandardMessageCodec sharedInstance];
+  return [FlutterStandardMessageCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]];
 }
 
 - (NSObject <FlutterPlatformView> *)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id _Nullable)args {
