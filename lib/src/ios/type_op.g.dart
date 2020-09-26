@@ -44,6 +44,10 @@ extension TypeOpBmapMapFluttifyIOS on Object {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKPolyline', {'__this__': this});
       return result;
     }
+    else if (T == BMKCircleView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKCircleView', {'__this__': this});
+      return result;
+    }
     else if (T == BMKPointAnnotation) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKPointAnnotation', {'__this__': this});
       return result;
@@ -80,6 +84,10 @@ extension TypeOpBmapMapFluttifyIOS on Object {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKAsyncTileLayer', {'__this__': this});
       return result;
     }
+    else if (T == BMKPolylineView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKPolylineView', {'__this__': this});
+      return result;
+    }
     else if (T == BMKPinAnnotationView) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKPinAnnotationView', {'__this__': this});
       return result;
@@ -104,6 +112,10 @@ extension TypeOpBmapMapFluttifyIOS on Object {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKMapStatus', {'__this__': this});
       return result;
     }
+    else if (T == BMKArclineView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKArclineView', {'__this__': this});
+      return result;
+    }
     else if (T == BMKHeatMapNode) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKHeatMapNode', {'__this__': this});
       return result;
@@ -116,6 +128,10 @@ extension TypeOpBmapMapFluttifyIOS on Object {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKPolygon', {'__this__': this});
       return result;
     }
+    else if (T == BMKPolygonView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKPolygonView', {'__this__': this});
+      return result;
+    }
     else if (T == BMKOverlayView) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKOverlayView', {'__this__': this});
       return result;
@@ -126,6 +142,10 @@ extension TypeOpBmapMapFluttifyIOS on Object {
     }
     else if (T == BMKAnnotationView) {
       final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKAnnotationView', {'__this__': this});
+      return result;
+    }
+    else if (T == BMKOverlayGLBasicView) {
+      final result = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('RefClass::isKindOfBMKOverlayGLBasicView', {'__this__': this});
       return result;
     }
     else if (T == BMKShape) {
@@ -288,6 +308,9 @@ extension TypeOpBmapMapFluttifyIOS on Object {
     else if (T == BMKPolyline) {
       return (BMKPolyline()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
+    else if (T == BMKCircleView) {
+      return (BMKCircleView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
+    }
     else if (T == BMKPointAnnotation) {
       return (BMKPointAnnotation()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
@@ -315,6 +338,9 @@ extension TypeOpBmapMapFluttifyIOS on Object {
     else if (T == BMKAsyncTileLayer) {
       return (BMKAsyncTileLayer()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
+    else if (T == BMKPolylineView) {
+      return (BMKPolylineView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
+    }
     else if (T == BMKPinAnnotationView) {
       return (BMKPinAnnotationView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
@@ -333,6 +359,9 @@ extension TypeOpBmapMapFluttifyIOS on Object {
     else if (T == BMKMapStatus) {
       return (BMKMapStatus()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
+    else if (T == BMKArclineView) {
+      return (BMKArclineView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
+    }
     else if (T == BMKHeatMapNode) {
       return (BMKHeatMapNode()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
@@ -342,6 +371,9 @@ extension TypeOpBmapMapFluttifyIOS on Object {
     else if (T == BMKPolygon) {
       return (BMKPolygon()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
+    else if (T == BMKPolygonView) {
+      return (BMKPolygonView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
+    }
     else if (T == BMKOverlayView) {
       return (BMKOverlayView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
@@ -350,6 +382,9 @@ extension TypeOpBmapMapFluttifyIOS on Object {
     }
     else if (T == BMKAnnotationView) {
       return (BMKAnnotationView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
+    }
+    else if (T == BMKOverlayGLBasicView) {
+      return (BMKOverlayGLBasicView()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
     }
     else if (T == BMKShape) {
       return (BMKShape()..refId = (this is Ref ? (this as Ref).refId : this as String)..tag__ = 'bmap_map_fluttify') as T;
