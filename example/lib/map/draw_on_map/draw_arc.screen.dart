@@ -32,7 +32,7 @@ class _DrawArcScreenState extends State<DrawArcScreen> with NextLatLng {
           ),
           Flexible(
             child: DecoratedColumn(
-              divider: kDividerTiny,
+              divider: kDivider1,
               children: <Widget>[
                 ListTile(
                   title: Center(child: Text('添加弧线')),

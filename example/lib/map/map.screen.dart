@@ -28,7 +28,7 @@ class MapDemo extends StatelessWidget {
             ),
           ],
         ),
-        SPACE_BIG,
+        SPACE_16,
         FunctionGroup(
           headLabel: '与地图交互',
           children: <Widget>[
@@ -49,7 +49,7 @@ class MapDemo extends StatelessWidget {
             ),
           ],
         ),
-        SPACE_BIG,
+        SPACE_16,
         FunctionGroup(
           headLabel: '在地图上绘制',
           children: <Widget>[
@@ -80,12 +80,12 @@ class MapDemo extends StatelessWidget {
             ),
           ],
         ),
-        SPACE_BIG,
+        SPACE_16,
         FunctionGroup(
           headLabel: "工具",
           children: <Widget>[],
         ),
-        SPACE_BIG,
+        SPACE_16,
         FunctionGroup(
           headLabel: "定位",
           children: <Widget>[

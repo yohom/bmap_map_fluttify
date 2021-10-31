@@ -31,7 +31,7 @@ class _CreateMapScreenState extends State<CreateMapScreen> {
           Flexible(
             child: DecoratedColumn(
               scrollable: true,
-              divider: kDividerZero,
+              divider: kDivider0,
               children: <Widget>[
                 BooleanSetting(
                   head: '是否显示定位',

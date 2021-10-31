@@ -36,7 +36,7 @@ class _CodeInteractionScreenState extends State<CodeInteractionScreen> {
           Flexible(
             child: DecoratedColumn(
               scrollable: true,
-              divider: kDividerZero,
+              divider: kDivider0,
               children: <Widget>[
                 DiscreteSetting(
                   head: '设置地图中心点',

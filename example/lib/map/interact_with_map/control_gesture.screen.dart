@@ -30,7 +30,7 @@ class _ControlGestureScreenState extends State<ControlGestureScreen> {
           Flexible(
             child: DecoratedColumn(
               scrollable: true,
-              divider: kDividerZero,
+              divider: kDivider0,
               children: <Widget>[
                 BooleanSetting(
                   selected: true,
