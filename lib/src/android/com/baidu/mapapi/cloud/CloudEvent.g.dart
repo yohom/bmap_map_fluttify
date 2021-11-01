@@ -16,27 +16,30 @@ class com_baidu_mapapi_cloud_CloudEvent extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.cloud.CloudEvent';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_cloud_CloudEvent> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_cloud_CloudEvent__');
-    final object = com_baidu_mapapi_cloud_CloudEvent()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_cloud_CloudEvent__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_cloud_CloudEvent>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_cloud_CloudEvent>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_cloud_CloudEvent__', {'length': length});
-  
-    final List<com_baidu_mapapi_cloud_CloudEvent> typedResult = resultBatch.map((result) => com_baidu_mapapi_cloud_CloudEvent()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_cloud_CloudEvent__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_cloud_CloudEvent>(it))
+        .toList();
   }
   
   //endregion
@@ -52,6 +55,11 @@ class com_baidu_mapapi_cloud_CloudEvent extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_cloud_CloudEvent{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_cloud_CloudEvent_Batch on List<com_baidu_mapapi_cloud_CloudEvent> {

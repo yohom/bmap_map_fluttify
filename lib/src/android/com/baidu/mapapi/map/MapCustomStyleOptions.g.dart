@@ -16,27 +16,30 @@ class com_baidu_mapapi_map_MapCustomStyleOptions extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.MapCustomStyleOptions';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_map_MapCustomStyleOptions> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MapCustomStyleOptions__');
-    final object = com_baidu_mapapi_map_MapCustomStyleOptions()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_MapCustomStyleOptions__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapCustomStyleOptions>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_map_MapCustomStyleOptions>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MapCustomStyleOptions__', {'length': length});
-  
-    final List<com_baidu_mapapi_map_MapCustomStyleOptions> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MapCustomStyleOptions()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_MapCustomStyleOptions__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapCustomStyleOptions>(it))
+        .toList();
   }
   
   //endregion
@@ -58,20 +61,13 @@ class com_baidu_mapapi_map_MapCustomStyleOptions extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::localCustomStylePath', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::localCustomStylePath', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_map_MapCustomStyleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapCustomStyleOptions>(__result__);
   }
   
   
@@ -82,20 +78,13 @@ class com_baidu_mapapi_map_MapCustomStyleOptions extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::customStyleId', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::customStyleId', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_map_MapCustomStyleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapCustomStyleOptions>(__result__);
   }
   
   
@@ -106,20 +95,13 @@ class com_baidu_mapapi_map_MapCustomStyleOptions extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getLocalCustomStyleFilePath', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getLocalCustomStyleFilePath', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -130,23 +112,21 @@ class com_baidu_mapapi_map_MapCustomStyleOptions extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getCustomMapStyleId', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getCustomMapStyleId', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_MapCustomStyleOptions{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_MapCustomStyleOptions_Batch on List<com_baidu_mapapi_map_MapCustomStyleOptions> {
@@ -161,82 +141,46 @@ extension com_baidu_mapapi_map_MapCustomStyleOptions_Batch on List<com_baidu_map
   //region methods
   
   Future<List<com_baidu_mapapi_map_MapCustomStyleOptions>> localCustomStylePath_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::localCustomStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::localCustomStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MapCustomStyleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapCustomStyleOptions>(__result__)).cast<com_baidu_mapapi_map_MapCustomStyleOptions>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_map_MapCustomStyleOptions>> customStyleId_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::customStyleId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::customStyleId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_map_MapCustomStyleOptions()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapCustomStyleOptions>(__result__)).cast<com_baidu_mapapi_map_MapCustomStyleOptions>().toList();
   }
   
   
   Future<List<String>> getLocalCustomStyleFilePath_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getLocalCustomStyleFilePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getLocalCustomStyleFilePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<String>> getCustomMapStyleId_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getCustomMapStyleId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapCustomStyleOptions::getCustomMapStyleId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   //endregion

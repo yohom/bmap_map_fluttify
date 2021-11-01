@@ -16,35 +16,37 @@ class com_baidu_mapapi_search_share_PoiDetailShareURLOption extends java_lang_Ob
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.share.PoiDetailShareURLOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_share_PoiDetailShareURLOption> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_share_PoiDetailShareURLOption__');
-    final object = com_baidu_mapapi_search_share_PoiDetailShareURLOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_share_PoiDetailShareURLOption__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_PoiDetailShareURLOption>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_share_PoiDetailShareURLOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_share_PoiDetailShareURLOption__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_share_PoiDetailShareURLOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_share_PoiDetailShareURLOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_share_PoiDetailShareURLOption__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_PoiDetailShareURLOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_mUid() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.share.PoiDetailShareURLOption::get_mUid", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.PoiDetailShareURLOption::get_mUid", {'__this__': this});
     return __result__;
   }
   
@@ -52,7 +54,7 @@ class com_baidu_mapapi_search_share_PoiDetailShareURLOption extends java_lang_Ob
 
   //region setters
   Future<void> set_mUid(String mUid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::set_mUid', {'refId': refId, "mUid": mUid});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::set_mUid', <String, dynamic>{'__this__': this, "mUid": mUid});
   
   
   }
@@ -68,39 +70,35 @@ class com_baidu_mapapi_search_share_PoiDetailShareURLOption extends java_lang_Ob
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::poiUid', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::poiUid', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_share_PoiDetailShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_PoiDetailShareURLOption>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_share_PoiDetailShareURLOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_share_PoiDetailShareURLOption_Batch on List<com_baidu_mapapi_search_share_PoiDetailShareURLOption> {
   //region getters
   Future<List<String>> get_mUid_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.share.PoiDetailShareURLOption::get_mUid_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.PoiDetailShareURLOption::get_mUid_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mUid_batch(List<String> mUid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::set_mUid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mUid": mUid[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::set_mUid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mUid": mUid[__i__]}]);
   
   
   }
@@ -110,22 +108,13 @@ extension com_baidu_mapapi_search_share_PoiDetailShareURLOption_Batch on List<co
   //region methods
   
   Future<List<com_baidu_mapapi_search_share_PoiDetailShareURLOption>> poiUid_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::poiUid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.PoiDetailShareURLOption::poiUid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_share_PoiDetailShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_PoiDetailShareURLOption>(__result__)).cast<com_baidu_mapapi_search_share_PoiDetailShareURLOption>().toList();
   }
   
   //endregion

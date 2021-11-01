@@ -16,79 +16,78 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   //region constants
   static const String name__ = 'BMKGroundOverlay';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKGroundOverlay> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKGroundOverlay');
-    final object = BMKGroundOverlay()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKGroundOverlay> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKGroundOverlay',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKGroundOverlay>(__result__);
   }
   
-  static Future<List<BMKGroundOverlay>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKGroundOverlay', {'length': length});
-  
-    final List<BMKGroundOverlay> typedResult = resultBatch.map((result) => BMKGroundOverlay()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKGroundOverlay>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKGroundOverlay',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKGroundOverlay>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<CLLocationCoordinate2D> get_pt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_pt", {'refId': refId});
-    kNativeObjectPool.add(CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_pt", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
   Future<CGPoint> get_anchor() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_anchor", {'refId': refId});
-    kNativeObjectPool.add(CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_anchor", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CGPoint>(__result__);
   }
   
   Future<BMKCoordinateBounds> get_bound() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_bound", {'refId': refId});
-    kNativeObjectPool.add(BMKCoordinateBounds()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKCoordinateBounds()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_bound", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKCoordinateBounds>(__result__);
   }
   
   Future<UIImage> get_icon() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_icon", {'refId': refId});
-    kNativeObjectPool.add(UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_icon", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIImage>(__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_pt(CLLocationCoordinate2D pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_pt', {'refId': refId, "pt": pt.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_pt', <String, dynamic>{'__this__': this, "pt": pt});
   
   
   }
   
   Future<void> set_anchor(CGPoint anchor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_anchor', {'refId': refId, "anchor": anchor.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_anchor', <String, dynamic>{'__this__': this, "anchor": anchor});
   
   
   }
   
   Future<void> set_bound(BMKCoordinateBounds bound) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_bound', {'refId': refId, "bound": bound.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_bound', <String, dynamic>{'__this__': this, "bound": bound});
   
   
   }
   
   Future<void> set_icon(UIImage icon) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_icon', {'refId': refId, "icon": icon.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_icon', <String, dynamic>{'__this__': this, "icon": icon});
   
   
   }
@@ -104,20 +103,13 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position?.refId, "zoomLevel": zoomLevel, "anchor": anchor?.refId, "icon": icon?.refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon', {"position": position, "zoomLevel": zoomLevel, "anchor": anchor, "icon": icon});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKGroundOverlay>(__result__);
   }
   
   
@@ -128,78 +120,68 @@ class BMKGroundOverlay extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds?.refId, "icon": icon?.refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon', {"bounds": bounds, "icon": icon});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKGroundOverlay>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKGroundOverlay{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKGroundOverlay_Batch on List<BMKGroundOverlay> {
   //region getters
   Future<List<CLLocationCoordinate2D>> get_pt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_pt_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_pt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }
   
   Future<List<CGPoint>> get_anchor_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_anchor_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_anchor_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CGPoint>(__result__))?.cast<CGPoint>()?.toList();
   }
   
   Future<List<BMKCoordinateBounds>> get_bound_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_bound_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKCoordinateBounds()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_bound_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKCoordinateBounds>(__result__))?.cast<BMKCoordinateBounds>()?.toList();
   }
   
   Future<List<UIImage>> get_icon_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKGroundOverlay::get_icon_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGroundOverlay::get_icon_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIImage>(__result__))?.cast<UIImage>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_pt_batch(List<CLLocationCoordinate2D> pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "pt": pt[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pt": pt[__i__]}]);
   
   
   }
   
   Future<void> set_anchor_batch(List<CGPoint> anchor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_anchor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "anchor": anchor[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_anchor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "anchor": anchor[__i__]}]);
   
   
   }
   
   Future<void> set_bound_batch(List<BMKCoordinateBounds> bound) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_bound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "bound": bound[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_bound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "bound": bound[__i__]}]);
   
   
   }
   
   Future<void> set_icon_batch(List<UIImage> icon) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::set_icon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "icon": icon[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::set_icon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "icon": icon[__i__]}]);
   
   
   }
@@ -209,42 +191,24 @@ extension BMKGroundOverlay_Batch on List<BMKGroundOverlay> {
   //region methods
   
   static Future<List<BMKGroundOverlay>> groundOverlayWithPosition_zoomLevel_anchor_icon_batch(List<CLLocationCoordinate2D> position, List<double> zoomLevel, List<CGPoint> anchor, List<UIImage> icon) async {
-    if (position.length != zoomLevel.length || zoomLevel.length != anchor.length || anchor.length != icon.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(position.length == zoomLevel.length && zoomLevel.length == anchor.length && anchor.length == icon.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon_batch', [for (int __i__ = 0; __i__ < position.length; __i__++) {"position": position[__i__].refId, "zoomLevel": zoomLevel[__i__], "anchor": anchor[__i__].refId, "icon": icon[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::groundOverlayWithPosition_zoomLevel_anchor_icon_batch', [for (int __i__ = 0; __i__ < position.length; __i__++) {"position": position[__i__], "zoomLevel": zoomLevel[__i__], "anchor": anchor[__i__], "icon": icon[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKGroundOverlay>(__result__)).cast<BMKGroundOverlay>().toList();
   }
   
   
   static Future<List<BMKGroundOverlay>> groundOverlayWithBounds_icon_batch(List<BMKCoordinateBounds> bounds, List<UIImage> icon) async {
-    if (bounds.length != icon.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(bounds.length == icon.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon_batch', [for (int __i__ = 0; __i__ < bounds.length; __i__++) {"bounds": bounds[__i__].refId, "icon": icon[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGroundOverlay::groundOverlayWithBounds_icon_batch', [for (int __i__ = 0; __i__ < bounds.length; __i__++) {"bounds": bounds[__i__], "icon": icon[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKGroundOverlay>(__result__)).cast<BMKGroundOverlay>().toList();
   }
   
   //endregion

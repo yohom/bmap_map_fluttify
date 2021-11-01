@@ -16,27 +16,30 @@ class com_baidu_location_Poi extends java_lang_Object with android_os_Parcelable
   //region constants
   static const String name__ = 'com.baidu.location.Poi';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_location_Poi> create__String__String__double__String__String(String var1, String var2, double var3, String var5, String var6) async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_location_Poi__String__String__double__String__String', {"var1": var1, "var2": var2, "var3": var3, "var5": var5, "var6": var6});
-    final object = com_baidu_location_Poi()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_location_Poi__String__String__double__String__String',
+      {"var1": var1, "var2": var2, "var3": var3, "var5": var5, "var6": var6}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_location_Poi>(__result__);
   }
   
   static Future<List<com_baidu_location_Poi>> create_batch__String__String__double__String__String(List<String> var1, List<String> var2, List<double> var3, List<String> var5, List<String> var6) async {
-    if (var1.length != var2.length || var2.length != var3.length || var3.length != var5.length || var5.length != var6.length) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_location_Poi__String__String__double__String__String', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var5": var5[__i__], "var6": var6[__i__]}]);
-  
-    final List<com_baidu_location_Poi> typedResult = resultBatch.map((result) => com_baidu_location_Poi()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(var1.length == var2.length && var2.length == var3.length && var3.length == var5.length && var5.length == var6.length);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_location_Poi__String__String__double__String__String',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var5": var5[__i__], "var6": var6[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_location_Poi>(it))
+        .toList();
   }
   
   //endregion
@@ -58,20 +61,13 @@ class com_baidu_location_Poi extends java_lang_Object with android_os_Parcelable
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getId', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getId', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -82,20 +78,13 @@ class com_baidu_location_Poi extends java_lang_Object with android_os_Parcelable
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getRank', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getRank', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -106,20 +95,13 @@ class com_baidu_location_Poi extends java_lang_Object with android_os_Parcelable
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getTags', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getTags', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -130,20 +112,13 @@ class com_baidu_location_Poi extends java_lang_Object with android_os_Parcelable
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getAddr', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getAddr', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -154,23 +129,21 @@ class com_baidu_location_Poi extends java_lang_Object with android_os_Parcelable
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getName', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getName', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_location_Poi{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_location_Poi_Batch on List<com_baidu_location_Poi> {
@@ -185,102 +158,57 @@ extension com_baidu_location_Poi_Batch on List<com_baidu_location_Poi> {
   //region methods
   
   Future<List<String>> getId_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getId_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<double>> getRank_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getRank_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getRank_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<double>().toList();
   }
   
   
   Future<List<String>> getTags_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getTags_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getTags_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<String>> getAddr_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getAddr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getAddr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<String>> getName_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.Poi::getName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.Poi::getName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   //endregion

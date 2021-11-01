@@ -16,27 +16,30 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   //region constants
   static const String name__ = 'BMKArcline';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKArcline> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKArcline');
-    final object = BMKArcline()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKArcline> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKArcline',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKArcline>(__result__);
   }
   
-  static Future<List<BMKArcline>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKArcline', {'length': length});
-  
-    final List<BMKArcline> typedResult = resultBatch.map((result) => BMKArcline()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKArcline>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKArcline',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKArcline>(it))
+        .toList();
   }
   
   //endregion
@@ -58,20 +61,13 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::arclineWithPoints', {"points": points.map((__it__) => __it__?.refId).toList()});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::arclineWithPoints', {"points": points});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKArcline>(__result__);
   }
   
   
@@ -82,20 +78,13 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::arclineWithCoordinates', {"coords": coords.map((__it__) => __it__?.refId).toList()});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::arclineWithCoordinates', {"coords": coords});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKArcline>(__result__);
   }
   
   
@@ -106,20 +95,13 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::setArclineWithPoints', {"points": points.map((__it__) => __it__?.refId).toList(), "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::setArclineWithPoints', {"points": points, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -130,23 +112,21 @@ class BMKArcline extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::setArclineWithCoordinates', {"coords": coords.map((__it__) => __it__?.refId).toList(), "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::setArclineWithCoordinates', {"coords": coords, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKArcline{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKArcline_Batch on List<BMKArcline> {
@@ -161,82 +141,46 @@ extension BMKArcline_Batch on List<BMKArcline> {
   //region methods
   
   static Future<List<BMKArcline>> arclineWithPoints_batch(List<List<BMKMapPoint>> points) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::arclineWithPoints_batch', [for (int __i__ = 0; __i__ < points.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList()}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::arclineWithPoints_batch', [for (int __i__ = 0; __i__ < points.length; __i__++) {"points": points[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKArcline>(__result__)).cast<BMKArcline>().toList();
   }
   
   
   static Future<List<BMKArcline>> arclineWithCoordinates_batch(List<List<CLLocationCoordinate2D>> coords) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::arclineWithCoordinates_batch', [for (int __i__ = 0; __i__ < coords.length; __i__++) {"coords": coords[__i__].map((it) => it.refId).toList()}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::arclineWithCoordinates_batch', [for (int __i__ = 0; __i__ < coords.length; __i__++) {"coords": coords[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKArcline()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKArcline>(__result__)).cast<BMKArcline>().toList();
   }
   
   
   Future<List<bool>> setArclineWithPoints_batch(List<List<BMKMapPoint>> points) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::setArclineWithPoints_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::setArclineWithPoints_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> setArclineWithCoordinates_batch(List<List<CLLocationCoordinate2D>> coords) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKArcline::setArclineWithCoordinates_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coords": coords[__i__].map((it) => it.refId).toList(), "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKArcline::setArclineWithCoordinates_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coords": coords[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   //endregion

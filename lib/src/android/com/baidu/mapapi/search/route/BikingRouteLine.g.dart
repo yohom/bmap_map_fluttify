@@ -16,27 +16,30 @@ class com_baidu_mapapi_search_route_BikingRouteLine extends java_lang_Object wit
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.route.BikingRouteLine';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_route_BikingRouteLine> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteLine__');
-    final object = com_baidu_mapapi_search_route_BikingRouteLine()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_route_BikingRouteLine__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRouteLine>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_route_BikingRouteLine>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_BikingRouteLine__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_route_BikingRouteLine> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_route_BikingRouteLine()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_route_BikingRouteLine__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRouteLine>(it))
+        .toList();
   }
   
   //endregion
@@ -58,23 +61,21 @@ class com_baidu_mapapi_search_route_BikingRouteLine extends java_lang_Object wit
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.BikingRouteLine::getAllStep', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRouteLine::getAllStep', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_search_route_BikingRouteLine_BikingStep()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
-      return __return__;
-    }
+    return (__result__ as List)?.map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRouteLine_BikingStep>(it))?.toList();
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_route_BikingRouteLine{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_route_BikingRouteLine_Batch on List<com_baidu_mapapi_search_route_BikingRouteLine> {
@@ -89,22 +90,13 @@ extension com_baidu_mapapi_search_route_BikingRouteLine_Batch on List<com_baidu_
   //region methods
   
   Future<List<List<com_baidu_mapapi_search_route_BikingRouteLine_BikingStep>>> getAllStep_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.route.BikingRouteLine::getAllStep_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRouteLine::getAllStep_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_search_route_BikingRouteLine_BikingStep()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRouteLine_BikingStep>(it))?.toList()).cast<List<com_baidu_mapapi_search_route_BikingRouteLine_BikingStep>>().toList();
   }
   
   //endregion

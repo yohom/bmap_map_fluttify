@@ -19,18 +19,15 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapDoubleClickListener on java_lang_Object
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onMapDoubleClick(com_baidu_mapapi_model_LatLng var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapDoubleClick::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onMapDoubleClick(com_baidu_mapapi_model_LatLng var1) {}
   
 }
 

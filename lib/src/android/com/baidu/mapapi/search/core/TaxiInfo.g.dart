@@ -16,27 +16,30 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.core.TaxiInfo';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_core_TaxiInfo> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_core_TaxiInfo__');
-    final object = com_baidu_mapapi_search_core_TaxiInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_core_TaxiInfo__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_TaxiInfo>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_core_TaxiInfo>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_core_TaxiInfo__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_core_TaxiInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_core_TaxiInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_core_TaxiInfo__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_TaxiInfo>(it))
+        .toList();
   }
   
   //endregion
@@ -58,20 +61,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getTotalPrice', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getTotalPrice', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -82,20 +78,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setTotalPrice', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setTotalPrice', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -106,20 +95,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDesc', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDesc', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -130,20 +112,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDesc', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDesc', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -154,20 +129,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDistance', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDistance', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -178,20 +146,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDistance', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDistance', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -202,20 +163,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDuration', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDuration', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -226,20 +180,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDuration', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDuration', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -250,20 +197,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getPerKMPrice', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getPerKMPrice', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -274,20 +214,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setPerKMPrice', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setPerKMPrice', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -298,20 +231,13 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getStartPrice', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getStartPrice', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -322,23 +248,21 @@ class com_baidu_mapapi_search_core_TaxiInfo extends java_lang_Object with androi
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setStartPrice', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setStartPrice', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_core_TaxiInfo{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_core_TaxiInfo_Batch on List<com_baidu_mapapi_search_core_TaxiInfo> {
@@ -353,242 +277,134 @@ extension com_baidu_mapapi_search_core_TaxiInfo_Batch on List<com_baidu_mapapi_s
   //region methods
   
   Future<List<double>> getTotalPrice_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getTotalPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getTotalPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<double>().toList();
   }
   
   
   Future<List<void>> setTotalPrice_batch(List<double> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setTotalPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setTotalPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<String>> getDesc_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   Future<List<void>> setDesc_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDesc_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<int>> getDistance_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<int>().toList();
   }
   
   
   Future<List<void>> setDistance_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDistance_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<int>> getDuration_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDuration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getDuration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<int>().toList();
   }
   
   
   Future<List<void>> setDuration_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDuration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setDuration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<double>> getPerKMPrice_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getPerKMPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getPerKMPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<double>().toList();
   }
   
   
   Future<List<void>> setPerKMPrice_batch(List<double> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setPerKMPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setPerKMPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<double>> getStartPrice_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getStartPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::getStartPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<double>().toList();
   }
   
   
   Future<List<void>> setStartPrice_batch(List<double> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setStartPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.TaxiInfo::setStartPrice_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

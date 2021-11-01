@@ -19,36 +19,21 @@ mixin com_baidu_mapapi_map_CustomMapStyleCallBack on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<bool> onPreLoadLastCustomMapStyle(String var1) {
   
+
+  /* @mustCallSuper */
+  Future<bool> onPreLoadLastCustomMapStyle(String var1) {}
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onPreLoadLastCustomMapStyle::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<bool> onCustomMapStyleLoadSuccess(bool var1, String var2) {}
   
-  @mustCallSuper
-  Future<bool> onCustomMapStyleLoadSuccess(bool var1, String var2) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onCustomMapStyleLoadSuccess::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<bool> onCustomMapStyleLoadFailed(int var1, String var2, String var3) {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onCustomMapStyleLoadFailed::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<bool> onCustomMapStyleLoadFailed(int var1, String var2, String var3) {}
   
 }
 

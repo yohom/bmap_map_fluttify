@@ -16,18 +16,22 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-typedef void BMKPolylineViewCreatedCallback(BMKPolylineView controller);
-typedef Future<void> _OnUiKitViewDispose();
+typedef BMKPolylineViewCreatedCallback = void Function(BMKPolylineView controller);
+typedef _OnUiKitViewDispose = Future<void> Function();
 
 class BMKPolylineView_iOS extends StatefulWidget {
   const BMKPolylineView_iOS({
     Key key,
     this.onViewCreated,
     this.onDispose,
+    this.params = const <String, dynamic>{},
+    this.gestureRecognizers,
   }) : super(key: key);
 
   final BMKPolylineViewCreatedCallback onViewCreated;
   final _OnUiKitViewDispose onDispose;
+  final Map<String, dynamic> params;
+  final Set<Factory<OneSequenceGestureRecognizer>> gestureRecognizers;
 
   @override
   _BMKPolylineView_iOSState createState() => _BMKPolylineView_iOSState();
@@ -38,22 +42,24 @@ class _BMKPolylineView_iOSState extends State<BMKPolylineView_iOS> {
 
   @override
   Widget build(BuildContext context) {
-    final gestureRecognizers = <Factory<OneSequenceGestureRecognizer>>[
+    final gestureRecognizers = widget.gestureRecognizers ?? <Factory<OneSequenceGestureRecognizer>>{
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
-    ].toSet();
+    };
 
-    final messageCodec = StandardMessageCodec();
     return UiKitView(
-      viewType: 'com.fluttify/BMKPolylineView',
+      viewType: 'me.yohom/BMKPolylineView',
       gestureRecognizers: gestureRecognizers,
       onPlatformViewCreated: _onViewCreated,
-      creationParamsCodec: messageCodec,
+      creationParamsCodec: kBmapMapFluttifyMessageCodec,
+      creationParams: widget.params,
     );
   }
 
-  void _onViewCreated(int id) {
+  void _onViewCreated(int id) async {
     // 碰到一个对象返回的hashCode为0的情况, 造成和这个id冲突了, 这里用一个magic number避免一下
-    _controller = BMKPolylineView()..refId = 2147483647 - id;
+    // 把viewId转换为refId再使用, 使其与其他对象统一
+    final refId = await viewId2RefId((2147483647 - id).toString());
+    _controller = BMKPolylineView()..refId = 'BMKPolylineView:$refId';
     if (widget.onViewCreated != null) {
       widget.onViewCreated(_controller);
     }
@@ -62,7 +68,9 @@ class _BMKPolylineView_iOSState extends State<BMKPolylineView_iOS> {
   @override
   void dispose() {
     if (widget.onDispose != null) {
-      widget.onDispose().then((_) => _controller.release__());
+      widget.onDispose().whenComplete(() => _controller.release__());
+    } else {
+      _controller.release__();
     }
     super.dispose();
   }

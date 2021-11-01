@@ -16,35 +16,37 @@ class com_baidu_mapapi_cloud_BoundSearchInfo extends com_baidu_mapapi_cloud_Base
   //region constants
   static const String name__ = 'com.baidu.mapapi.cloud.BoundSearchInfo';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_cloud_BoundSearchInfo> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_cloud_BoundSearchInfo__');
-    final object = com_baidu_mapapi_cloud_BoundSearchInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_cloud_BoundSearchInfo__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_cloud_BoundSearchInfo>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_cloud_BoundSearchInfo>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_cloud_BoundSearchInfo__', {'length': length});
-  
-    final List<com_baidu_mapapi_cloud_BoundSearchInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_cloud_BoundSearchInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_cloud_BoundSearchInfo__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_cloud_BoundSearchInfo>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_bound() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BoundSearchInfo::get_bound", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BoundSearchInfo::get_bound", {'__this__': this});
     return __result__;
   }
   
@@ -52,7 +54,7 @@ class com_baidu_mapapi_cloud_BoundSearchInfo extends com_baidu_mapapi_cloud_Base
 
   //region setters
   Future<void> set_bound(String bound) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BoundSearchInfo::set_bound', {'refId': refId, "bound": bound});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BoundSearchInfo::set_bound', <String, dynamic>{'__this__': this, "bound": bound});
   
   
   }
@@ -62,22 +64,25 @@ class com_baidu_mapapi_cloud_BoundSearchInfo extends com_baidu_mapapi_cloud_Base
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_cloud_BoundSearchInfo{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_cloud_BoundSearchInfo_Batch on List<com_baidu_mapapi_cloud_BoundSearchInfo> {
   //region getters
   Future<List<String>> get_bound_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.cloud.BoundSearchInfo::get_bound_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BoundSearchInfo::get_bound_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_bound_batch(List<String> bound) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.BoundSearchInfo::set_bound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "bound": bound[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BoundSearchInfo::set_bound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "bound": bound[__i__]}]);
   
   
   }

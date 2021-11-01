@@ -16,6 +16,9 @@ class com_baidu_mapapi_search_sug_SuggestionSearch extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.sug.SuggestionSearch';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -40,20 +43,13 @@ class com_baidu_mapapi_search_sug_SuggestionSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::newInstance', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::newInstance', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_sug_SuggestionSearch()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearch>(__result__);
   }
   
   
@@ -64,20 +60,13 @@ class com_baidu_mapapi_search_sug_SuggestionSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::requestSuggestion', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::requestSuggestion', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -88,36 +77,35 @@ class com_baidu_mapapi_search_sug_SuggestionSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::setOnGetSuggestionResultListener', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::setOnGetSuggestionResultListener', {"var1": var1, "__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.search.sug.SuggestionSearch::setOnGetSuggestionResultListener::Callback')
+    MethodChannel('com.baidu.mapapi.search.sug.SuggestionSearch::setOnGetSuggestionResultListener::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.search.sug.OnGetSuggestionResultListener::onGetSuggestionResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetSuggestionResult([])');
-              }
-        
-              // handle the native call
-              var1?.onGetSuggestionResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_search_sug_SuggestionResult>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.search.sug.OnGetSuggestionResultListener::onGetSuggestionResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetSuggestionResult([\'var1\':${args['var1']}])');
+                }
+          
+                // handle the native call
+                await var1?.onGetSuggestionResult(BmapMapFluttifyAndroidAs(args['var1']));
+                break;
+              default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -128,23 +116,21 @@ class com_baidu_mapapi_search_sug_SuggestionSearch extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::destroy', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::destroy', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_sug_SuggestionSearch{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_sug_SuggestionSearch_Batch on List<com_baidu_mapapi_search_sug_SuggestionSearch> {
@@ -159,62 +145,35 @@ extension com_baidu_mapapi_search_sug_SuggestionSearch_Batch on List<com_baidu_m
   //region methods
   
   static Future<List<com_baidu_mapapi_search_sug_SuggestionSearch>> newInstance_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::newInstance_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::newInstance_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_sug_SuggestionSearch()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearch>(__result__)).cast<com_baidu_mapapi_search_sug_SuggestionSearch>().toList();
   }
   
   
   Future<List<bool>> requestSuggestion_batch(List<com_baidu_mapapi_search_sug_SuggestionSearchOption> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::requestSuggestion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::requestSuggestion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<void>> destroy_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearch::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

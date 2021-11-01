@@ -19,27 +19,18 @@ mixin com_baidu_mapapi_map_WearMapView_OnDismissCallback on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onDismiss() {
   
+
+  /* @mustCallSuper */
+  Future<void> onDismiss() {}
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onDismiss::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> onNotify() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onNotify::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onNotify() {}
   
 }
 

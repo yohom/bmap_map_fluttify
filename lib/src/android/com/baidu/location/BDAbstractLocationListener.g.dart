@@ -16,6 +16,9 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
   //region constants
   static const String name__ = 'com.baidu.location.BDAbstractLocationListener';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -40,20 +43,13 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -64,20 +60,13 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage', {"var1": var1, "var2": var2, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -88,23 +77,21 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage', {"var1": var1, "var2": var2, "var3": var3, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage', {"var1": var1, "var2": var2, "var3": var3, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_location_BDAbstractLocationListener{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_location_BDAbstractLocationListener> {
@@ -119,62 +106,35 @@ extension com_baidu_location_BDAbstractLocationListener_Batch on List<com_baidu_
   //region methods
   
   Future<List<void>> onReceiveLocation_batch(List<com_baidu_location_BDLocation> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.BDAbstractLocationListener::onReceiveLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> onConnectHotSpotMessage_batch(List<String> var1, List<int> var2) async {
-    if (var1.length != var2.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var1.length == var2.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.BDAbstractLocationListener::onConnectHotSpotMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> onLocDiagnosticMessage_batch(List<int> var1, List<int> var2, List<String> var3) async {
-    if (var1.length != var2.length || var2.length != var3.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var1.length == var2.length && var2.length == var3.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.BDAbstractLocationListener::onLocDiagnosticMessage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

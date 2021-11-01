@@ -16,6 +16,9 @@ class com_baidu_mapapi_map_MyLocationData extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.MyLocationData';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -25,38 +28,32 @@ class com_baidu_mapapi_map_MyLocationData extends java_lang_Object  {
 
   //region getters
   Future<double> get_latitude() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_latitude", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_latitude", {'__this__': this});
     return __result__;
   }
   
   Future<double> get_longitude() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_longitude", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_longitude", {'__this__': this});
     return __result__;
   }
   
   Future<double> get_speed() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_speed", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_speed", {'__this__': this});
     return __result__;
   }
   
   Future<double> get_direction() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_direction", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_direction", {'__this__': this});
     return __result__;
   }
   
   Future<double> get_accuracy() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_accuracy", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_accuracy", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_satellitesNum() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_satellitesNum", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_satellitesNum", {'__this__': this});
     return __result__;
   }
   
@@ -69,50 +66,43 @@ class com_baidu_mapapi_map_MyLocationData extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_MyLocationData{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_MyLocationData_Batch on List<com_baidu_mapapi_map_MyLocationData> {
   //region getters
   Future<List<double>> get_latitude_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_latitude_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_latitude_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_longitude_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_longitude_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_longitude_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_speed_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_speed_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_speed_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_direction_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_direction_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_direction_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_accuracy_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_accuracy_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_accuracy_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<int>> get_satellitesNum_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.MyLocationData::get_satellitesNum_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationData::get_satellitesNum_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion

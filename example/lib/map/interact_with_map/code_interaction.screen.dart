@@ -1,6 +1,6 @@
 import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
-import 'package:bmap_map_fluttify_example/widgets/setting.widget.dart';
 import 'package:decorated_flutter/decorated_flutter.dart';
+import 'package:demo_widgets/demo_widgets.dart';
 import 'package:flutter/material.dart';
 
 //const beijing = LatLng(39.90960, 116.397228);
@@ -36,7 +36,7 @@ class _CodeInteractionScreenState extends State<CodeInteractionScreen> {
           Flexible(
             child: DecoratedColumn(
               scrollable: true,
-              divider: kDividerZero,
+              divider: kDivider0,
               children: <Widget>[
                 DiscreteSetting(
                   head: '设置地图中心点',

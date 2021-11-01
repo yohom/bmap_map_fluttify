@@ -16,27 +16,30 @@ class BMKSyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   //region constants
   static const String name__ = 'BMKSyncTileLayer';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKSyncTileLayer> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKSyncTileLayer');
-    final object = BMKSyncTileLayer()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKSyncTileLayer> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKSyncTileLayer',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKSyncTileLayer>(__result__);
   }
   
-  static Future<List<BMKSyncTileLayer>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKSyncTileLayer', {'length': length});
-  
-    final List<BMKSyncTileLayer> typedResult = resultBatch.map((result) => BMKSyncTileLayer()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKSyncTileLayer>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKSyncTileLayer',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKSyncTileLayer>(it))
+        .toList();
   }
   
   //endregion
@@ -58,23 +61,21 @@ class BMKSyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKSyncTileLayer::tileForX_y_zoom', {"x": x, "y": y, "zoom": zoom, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKSyncTileLayer::tileForX_y_zoom', {"x": x, "y": y, "zoom": zoom, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<UIImage>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKSyncTileLayer{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKSyncTileLayer_Batch on List<BMKSyncTileLayer> {
@@ -89,22 +90,13 @@ extension BMKSyncTileLayer_Batch on List<BMKSyncTileLayer> {
   //region methods
   
   Future<List<UIImage>> tileForX_y_zoom_batch(List<int> x, List<int> y, List<int> zoom) async {
-    if (x.length != y.length || y.length != zoom.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(x.length == y.length && y.length == zoom.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKSyncTileLayer::tileForX_y_zoom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"x": x[__i__], "y": y[__i__], "zoom": zoom[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKSyncTileLayer::tileForX_y_zoom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"x": x[__i__], "y": y[__i__], "zoom": zoom[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<UIImage>(__result__)).cast<UIImage>().toList();
   }
   
   //endregion

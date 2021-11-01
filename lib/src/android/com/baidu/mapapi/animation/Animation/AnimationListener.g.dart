@@ -19,45 +19,24 @@ mixin com_baidu_mapapi_animation_Animation_AnimationListener on java_lang_Object
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onAnimationStart() {
   
+
+  /* @mustCallSuper */
+  Future<void> onAnimationStart() {}
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onAnimationStart::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onAnimationEnd() {}
   
-  @mustCallSuper
-  Future<void> onAnimationEnd() {
+  /* @mustCallSuper */
+  Future<void> onAnimationCancel() {}
   
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onAnimationEnd::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> onAnimationCancel() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onAnimationCancel::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> onAnimationRepeat() {
-  
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onAnimationRepeat::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onAnimationRepeat() {}
   
 }
 

@@ -16,27 +16,30 @@ class com_baidu_mapapi_search_core_TrainInfo extends com_baidu_mapapi_search_cor
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.core.TrainInfo';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_core_TrainInfo> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_core_TrainInfo__');
-    final object = com_baidu_mapapi_search_core_TrainInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_core_TrainInfo__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_TrainInfo>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_core_TrainInfo>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_core_TrainInfo__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_core_TrainInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_core_TrainInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_core_TrainInfo__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_TrainInfo>(it))
+        .toList();
   }
   
   //endregion
@@ -51,54 +54,12 @@ class com_baidu_mapapi_search_core_TrainInfo extends com_baidu_mapapi_search_cor
 
   //region methods
   
-  Future<void> a__double(double var1) async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.search.core.TrainInfo@$refId::a([\'var1\':$var1])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TrainInfo::a__double', {"var1": var1, "refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
-  }
-  
-  
-  Future<void> a__String(String var1) async {
-    // print log
-    if (fluttifyLogEnabled) {
-      debugPrint('fluttify-dart: com.baidu.mapapi.search.core.TrainInfo@$refId::a([\'var1\':$var1])');
-    }
-  
-    // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TrainInfo::a__String', {"var1": var1, "refId": refId});
-  
-  
-    // handle native call
-  
-  
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
-  }
-  
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_core_TrainInfo{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_core_TrainInfo_Batch on List<com_baidu_mapapi_search_core_TrainInfo> {
@@ -111,45 +72,6 @@ extension com_baidu_mapapi_search_core_TrainInfo_Batch on List<com_baidu_mapapi_
   //endregion
 
   //region methods
-  
-  Future<List<void>> a__double_batch(List<double> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TrainInfo::a__double_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
-  }
-  
-  
-  Future<List<void>> a__String_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-  
-    // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.TrainInfo::a__String_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
-  
-  
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
-  }
   
   //endregion
 }

@@ -21,6 +21,15 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
   List<Marker> _markers = [];
 
   @override
+  void initState() {
+    super.initState();
+    // 缓存图片
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      precacheImage(AssetImage('images/test_icon.png'), context);
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('绘制点标记')),
@@ -29,6 +38,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
           Flexible(
             flex: 1,
             child: BmapView(
+              zoomLevel: 3,
               onMapCreated: (controller) async {
                 _controller = controller;
               },
@@ -37,7 +47,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
           Flexible(
             child: DecoratedColumn(
               scrollable: true,
-              divider: kDividerTiny,
+              divider: kDivider1,
               children: <Widget>[
                 ListTile(
                   title: Center(child: Text('批量添加Marker')),
@@ -48,13 +58,11 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                           MarkerOption(
                             latLng: getNextLatLng(),
                             object: '自定义数据:$i',
-//                            iconUri: i % 2 == 0 ? _assetsIcon1 : _assetsIcon2,
-//                            imageConfig: createLocalImageConfiguration(context),
                             widget: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
+                                Text('test marker $i'),
                                 Image.asset('images/test_icon.png'),
-                                Text('testhahahahahahahhahahahaah'),
                               ],
                             ),
                           ),
@@ -72,7 +80,22 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                       return false;
                     });
                   },
-                )
+                ),
+                ListTile(
+                  title: Center(child: Text('将地图缩放至可以显示所有Marker')),
+                  onTap: () async {
+                    Stream.fromIterable(_markers)
+                        .asyncMap((marker) => marker.location)
+                        .toList()
+                        .then((boundary) {
+                      debugPrint('boundary: $boundary');
+                      return _controller?.zoomToSpan(
+                        boundary,
+                        padding: EdgeInsets.only(top: 100),
+                      );
+                    });
+                  },
+                ),
               ],
             ),
           ),

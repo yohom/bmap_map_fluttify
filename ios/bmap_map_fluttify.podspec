@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
   s.name             = 'bmap_map_fluttify'
   s.version          = '0.0.1'
-  s.summary          = 'An `BaiduMap` Map Component, Powered By `Fluttify` Engine, Which Generates Dart Binding For Native SDK.'
+  s.summary          = 'An `BaiduMap` Map Component, Powered By `Fluttify`, A Compiler Generating Dart Bindings For Native SDK.'
   s.description      = <<-DESC
 A new flutter plugin project.
                        DESC
@@ -13,11 +13,13 @@ A new flutter plugin project.
   s.author           = { 'yohom' => 'yohombao@qq.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-  s.public_header_files = ['Classes/**/*.h']
+  s.public_header_files = ['Classes/**/*.h', 'Vendors/*.h'] # 只接收顶层的.h文件, 防止framework下面的.h文件被包含
   s.dependency 'Flutter'
   s.dependency 'foundation_fluttify'
   # flutter plugin dependency
   s.dependency 'bmap_core_fluttify'
+  s.dependency 'bmap_utils_fluttify'
+  s.dependency 'path_provider'
   # sdk dependency
   
 
@@ -29,11 +31,11 @@ A new flutter plugin project.
   s.vendored_libraries = 'Vendors/*.a'
   # ios system framework
   s.frameworks = [
-        "CoreGraphics", "CoreLocation", "OpenGLES", "QuartzCore", "Security", "SystemConfiguration", "AdSupport"
+        "CoreGraphics", "CoreLocation", "OpenGLES", "QuartzCore", "Security", "SystemConfiguration", "Accelerate", "AdSupport"
   ]
   # ios system library
   s.libraries = [
-        "c++", "sqlite3.0", "z"
+        "z", "c++", "sqlite3.0"
   ]
   # resources
   s.resources = 'Vendors/**/*.bundle'

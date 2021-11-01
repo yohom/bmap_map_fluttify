@@ -16,10 +16,50 @@ class com_baidu_mapapi_map_MapStatus_Builder extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.MapStatus.Builder';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
+  static Future<com_baidu_mapapi_map_MapStatus_Builder> create__() async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_MapStatus_Builder__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__);
+  }
+  
+  static Future<com_baidu_mapapi_map_MapStatus_Builder> create__com_baidu_mapapi_map_MapStatus(com_baidu_mapapi_map_MapStatus var1) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_MapStatus_Builder__com_baidu_mapapi_map_MapStatus',
+      {"var1": var1}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__);
+  }
+  
+  static Future<List<com_baidu_mapapi_map_MapStatus_Builder>> create_batch__(int length) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_MapStatus_Builder__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(it))
+        .toList();
+  }
+  
+  static Future<List<com_baidu_mapapi_map_MapStatus_Builder>> create_batch__com_baidu_mapapi_map_MapStatus(List<com_baidu_mapapi_map_MapStatus> var1) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_MapStatus_Builder__com_baidu_mapapi_map_MapStatus',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(it))
+        .toList();
+  }
   
   //endregion
 
@@ -33,7 +73,113 @@ class com_baidu_mapapi_map_MapStatus_Builder extends java_lang_Object  {
 
   //region methods
   
+  Future<com_baidu_mapapi_map_MapStatus_Builder> rotate(double var1) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatus.Builder@$refId::rotate([\'var1\':$var1])');
+    }
+  
+    // invoke native method
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::rotate', {"var1": var1, "__this__": this});
+  
+  
+    // handle native call
+  
+  
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__);
+  }
+  
+  
+  Future<com_baidu_mapapi_map_MapStatus_Builder> target(com_baidu_mapapi_model_LatLng var1) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatus.Builder@$refId::target([])');
+    }
+  
+    // invoke native method
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::target', {"var1": var1, "__this__": this});
+  
+  
+    // handle native call
+  
+  
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__);
+  }
+  
+  
+  Future<com_baidu_mapapi_map_MapStatus_Builder> overlook(double var1) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatus.Builder@$refId::overlook([\'var1\':$var1])');
+    }
+  
+    // invoke native method
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::overlook', {"var1": var1, "__this__": this});
+  
+  
+    // handle native call
+  
+  
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__);
+  }
+  
+  
+  Future<com_baidu_mapapi_map_MapStatus_Builder> zoom(double var1) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatus.Builder@$refId::zoom([\'var1\':$var1])');
+    }
+  
+    // invoke native method
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::zoom', {"var1": var1, "__this__": this});
+  
+  
+    // handle native call
+  
+  
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__);
+  }
+  
+  
+  Future<com_baidu_mapapi_map_MapStatus_Builder> targetScreen(android_graphics_Point var1) async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatus.Builder@$refId::targetScreen([])');
+    }
+  
+    // invoke native method
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::targetScreen', {"var1": var1, "__this__": this});
+  
+  
+    // handle native call
+  
+  
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__);
+  }
+  
+  
+  Future<com_baidu_mapapi_map_MapStatus> build() async {
+    // print log
+    if (fluttifyLogEnabled) {
+      debugPrint('fluttify-dart: com.baidu.mapapi.map.MapStatus.Builder@$refId::build([])');
+    }
+  
+    // invoke native method
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::build', {"__this__": this});
+  
+  
+    // handle native call
+  
+  
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus>(__result__);
+  }
+  
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_MapStatus_Builder{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_MapStatus_Builder_Batch on List<com_baidu_mapapi_map_MapStatus_Builder> {
@@ -46,6 +192,71 @@ extension com_baidu_mapapi_map_MapStatus_Builder_Batch on List<com_baidu_mapapi_
   //endregion
 
   //region methods
+  
+  Future<List<com_baidu_mapapi_map_MapStatus_Builder>> rotate_batch(List<double> var1) async {
+    assert(true);
+  
+    // invoke native method
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::rotate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+  
+  
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__)).cast<com_baidu_mapapi_map_MapStatus_Builder>().toList();
+  }
+  
+  
+  Future<List<com_baidu_mapapi_map_MapStatus_Builder>> target_batch(List<com_baidu_mapapi_model_LatLng> var1) async {
+    assert(true);
+  
+    // invoke native method
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::target_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+  
+  
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__)).cast<com_baidu_mapapi_map_MapStatus_Builder>().toList();
+  }
+  
+  
+  Future<List<com_baidu_mapapi_map_MapStatus_Builder>> overlook_batch(List<double> var1) async {
+    assert(true);
+  
+    // invoke native method
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::overlook_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+  
+  
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__)).cast<com_baidu_mapapi_map_MapStatus_Builder>().toList();
+  }
+  
+  
+  Future<List<com_baidu_mapapi_map_MapStatus_Builder>> zoom_batch(List<double> var1) async {
+    assert(true);
+  
+    // invoke native method
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::zoom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+  
+  
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__)).cast<com_baidu_mapapi_map_MapStatus_Builder>().toList();
+  }
+  
+  
+  Future<List<com_baidu_mapapi_map_MapStatus_Builder>> targetScreen_batch(List<android_graphics_Point> var1) async {
+    assert(true);
+  
+    // invoke native method
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::targetScreen_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+  
+  
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus_Builder>(__result__)).cast<com_baidu_mapapi_map_MapStatus_Builder>().toList();
+  }
+  
+  
+  Future<List<com_baidu_mapapi_map_MapStatus>> build_batch() async {
+    assert(true);
+  
+    // invoke native method
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MapStatus.Builder::build_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+  
+  
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MapStatus>(__result__)).cast<com_baidu_mapapi_map_MapStatus>().toList();
+  }
   
   //endregion
 }

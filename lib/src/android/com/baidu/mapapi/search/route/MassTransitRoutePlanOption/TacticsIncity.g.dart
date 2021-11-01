@@ -4,10 +4,33 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity {
-  ETRANS_SUGGEST /* 0 */,
-  ETRANS_LEAST_TRANSFER /* 0 */,
-  ETRANS_LEAST_WALK /* 0 */,
-  ETRANS_NO_SUBWAY /* 0 */,
-  ETRANS_LEAST_TIME /* 0 */,
-  ETRANS_SUBWAY_FIRST /* 0 */
+  ETRANS_SUGGEST /* null */,
+  ETRANS_LEAST_TRANSFER /* null */,
+  ETRANS_LEAST_WALK /* null */,
+  ETRANS_NO_SUBWAY /* null */,
+  ETRANS_LEAST_TIME /* null */,
+  ETRANS_SUBWAY_FIRST /* null */
+}
+
+extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncityToX on com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_SUGGEST: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_SUGGEST.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_TRANSFER: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_TRANSFER.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_WALK: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_WALK.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_NO_SUBWAY: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_NO_SUBWAY.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_TIME: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_LEAST_TIME.index + 0;
+      case com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_SUBWAY_FIRST: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.ETRANS_SUBWAY_FIRST.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncityFromX on int {
+  com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity tocom_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_route_MassTransitRoutePlanOption_TacticsIncity.values[this + 0];
+    }
+  }
 }

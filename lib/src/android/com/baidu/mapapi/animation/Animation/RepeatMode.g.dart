@@ -4,6 +4,25 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_animation_Animation_RepeatMode {
-  RESTART /* 0 */,
-  REVERSE /* 0 */
+  RESTART /* null */,
+  REVERSE /* null */
+}
+
+extension com_baidu_mapapi_animation_Animation_RepeatModeToX on com_baidu_mapapi_animation_Animation_RepeatMode {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_animation_Animation_RepeatMode.RESTART: return com_baidu_mapapi_animation_Animation_RepeatMode.RESTART.index + 0;
+      case com_baidu_mapapi_animation_Animation_RepeatMode.REVERSE: return com_baidu_mapapi_animation_Animation_RepeatMode.REVERSE.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_animation_Animation_RepeatModeFromX on int {
+  com_baidu_mapapi_animation_Animation_RepeatMode tocom_baidu_mapapi_animation_Animation_RepeatMode() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_animation_Animation_RepeatMode.values[this + 0];
+    }
+  }
 }

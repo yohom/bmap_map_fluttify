@@ -16,36 +16,38 @@ class BMKCircleView extends BMKOverlayGLBasicView  {
   //region constants
   static const String name__ = 'BMKCircleView';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKCircleView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKCircleView');
-    final object = BMKCircleView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKCircleView> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKCircleView',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKCircleView>(__result__);
   }
   
-  static Future<List<BMKCircleView>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKCircleView', {'length': length});
-  
-    final List<BMKCircleView> typedResult = resultBatch.map((result) => BMKCircleView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKCircleView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKCircleView',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKCircleView>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<BMKCircle> get_circle({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKCircleView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircleView::get_circle", {'refId': refId});
-    kNativeObjectPool.add(BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKCircleView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKCircleView::get_circle", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKCircle>(__result__);
   }
   
   //endregion
@@ -63,32 +65,28 @@ class BMKCircleView extends BMKOverlayGLBasicView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKCircleView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircleView::initWithCircle', {"circle": circle?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKCircleView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKCircleView::initWithCircle', {"circle": circle, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKCircleView{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKCircleView_Batch on List<BMKCircleView> {
   //region getters
   Future<List<BMKCircle>> get_circle_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKCircleView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKCircleView::get_circle_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKCircle()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKCircleView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKCircleView::get_circle_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKCircle>(__result__))?.cast<BMKCircle>()?.toList();
   }
   
   //endregion
@@ -100,22 +98,13 @@ extension BMKCircleView_Batch on List<BMKCircleView> {
   //region methods
   
   Future<List<dynamic>> initWithCircle_batch(List<BMKCircle> circle, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKCircleView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKCircleView::initWithCircle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"circle": circle[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKCircleView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKCircleView::initWithCircle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"circle": circle[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   //endregion

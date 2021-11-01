@@ -19,36 +19,21 @@ mixin com_baidu_mapapi_search_share_OnGetShareUrlResultListener on java_lang_Obj
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onGetPoiDetailShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetPoiDetailShareUrlResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onGetPoiDetailShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
-  @mustCallSuper
-  Future<void> onGetLocationShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
+  /* @mustCallSuper */
+  Future<void> onGetLocationShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetLocationShareUrlResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> onGetRouteShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetRouteShareUrlResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onGetRouteShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
 }
 

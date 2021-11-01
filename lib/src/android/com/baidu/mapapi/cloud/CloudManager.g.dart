@@ -16,6 +16,9 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.cloud.CloudManager';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -40,20 +43,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::getInstance', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::getInstance', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_cloud_CloudManager()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_cloud_CloudManager>(__result__);
   }
   
   
@@ -64,54 +60,44 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::init__com_baidu_mapapi_cloud_CloudListener', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::init__com_baidu_mapapi_cloud_CloudListener', {"var1": var1, "__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.cloud.CloudManager::init__com_baidu_mapapi_cloud_CloudListener::Callback')
+    MethodChannel('com.baidu.mapapi.cloud.CloudManager::init__com_baidu_mapapi_cloud_CloudListener::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetSearchResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetSearchResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_cloud_CloudSearchResult>(), args['var2']);
-              break;
-            case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetDetailSearchResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetDetailSearchResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_cloud_DetailSearchResult>(), args['var2']);
-              break;
-            case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetCloudRgcResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetCloudRgcResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_cloud_CloudRgcResult>(), args['var2']);
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetSearchResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                }
+          
+                // handle the native call
+                await var1?.onGetSearchResult(BmapMapFluttifyAndroidAs(args['var1']), args['var2']);
+                break;
+              case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetDetailSearchResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                }
+          
+                // handle the native call
+                await var1?.onGetDetailSearchResult(BmapMapFluttifyAndroidAs(args['var1']), args['var2']);
+                break;
+              default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -122,20 +108,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::init', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::init', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -146,54 +125,44 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::registerListener', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::registerListener', {"var1": var1, "__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.cloud.CloudManager::registerListener::Callback')
+    MethodChannel('com.baidu.mapapi.cloud.CloudManager::registerListener::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetSearchResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetSearchResult([\'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetSearchResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_cloud_CloudSearchResult>(), args['var2']);
-              break;
-            case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetDetailSearchResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetDetailSearchResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_cloud_DetailSearchResult>(), args['var2']);
-              break;
-            case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetCloudRgcResult':
-              // print log
-              if (fluttifyLogEnabled) {
-                debugPrint('fluttify-dart-callback: onGetCloudRgcResult([\'var2\':${args['var2']}])');
-              }
-        
-              // handle the native call
-              var1?.onGetCloudRgcResult(TypeOpBmapMapFluttifyAndroid((args['var1'] as Object))?.as__<com_baidu_mapapi_cloud_CloudRgcResult>(), args['var2']);
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetSearchResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                }
+          
+                // handle the native call
+                await var1?.onGetSearchResult(BmapMapFluttifyAndroidAs(args['var1']), args['var2']);
+                break;
+              case 'Callback::com.baidu.mapapi.cloud.CloudListener::onGetDetailSearchResult':
+                // print log
+                if (fluttifyLogEnabled) {
+                  debugPrint('fluttify-dart-callback: onGetDetailSearchResult([\'var1\':${args['var1']}, \'var2\':${args['var2']}])');
+                }
+          
+                // handle the native call
+                await var1?.onGetDetailSearchResult(BmapMapFluttifyAndroidAs(args['var1']), args['var2']);
+                break;
+              default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -204,20 +173,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::unregisterListener', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::unregisterListener', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -228,20 +190,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::destroy', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::destroy', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -252,20 +207,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::localSearch', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::localSearch', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -276,20 +224,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::nearbySearch', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::nearbySearch', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -300,20 +241,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::boundSearch', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::boundSearch', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -324,20 +258,13 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::detailSearch', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::detailSearch', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -348,23 +275,21 @@ class com_baidu_mapapi_cloud_CloudManager extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::rgcSearch', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::rgcSearch', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_cloud_CloudManager{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_cloud_CloudManager_Batch on List<com_baidu_mapapi_cloud_CloudManager> {
@@ -379,182 +304,101 @@ extension com_baidu_mapapi_cloud_CloudManager_Batch on List<com_baidu_mapapi_clo
   //region methods
   
   static Future<List<com_baidu_mapapi_cloud_CloudManager>> getInstance_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::getInstance_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::getInstance_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_cloud_CloudManager()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_cloud_CloudManager>(__result__)).cast<com_baidu_mapapi_cloud_CloudManager>().toList();
   }
   
   
   Future<List<void>> init_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::init_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::init_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> unregisterListener_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::unregisterListener_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::unregisterListener_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> destroy_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::destroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<bool>> localSearch_batch(List<com_baidu_mapapi_cloud_LocalSearchInfo> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::localSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::localSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> nearbySearch_batch(List<com_baidu_mapapi_cloud_NearbySearchInfo> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::nearbySearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::nearbySearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> boundSearch_batch(List<com_baidu_mapapi_cloud_BoundSearchInfo> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::boundSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::boundSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> detailSearch_batch(List<com_baidu_mapapi_cloud_DetailSearchInfo> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::detailSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::detailSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> rgcSearch_batch(List<com_baidu_mapapi_cloud_CloudRgcInfo> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.cloud.CloudManager::rgcSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudManager::rgcSearch_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   //endregion

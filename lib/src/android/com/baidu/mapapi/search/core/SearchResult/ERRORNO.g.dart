@@ -4,26 +4,65 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_core_SearchResult_ERRORNO {
-  NO_ERROR /* 0 */,
-  RESULT_NOT_FOUND /* 0 */,
-  AMBIGUOUS_KEYWORD /* 0 */,
-  AMBIGUOUS_ROURE_ADDR /* 0 */,
-  NOT_SUPPORT_BUS /* 0 */,
-  NOT_SUPPORT_BUS_2CITY /* 0 */,
-  ST_EN_TOO_NEAR /* 0 */,
-  KEY_ERROR /* 0 */,
-  PERMISSION_UNFINISHED /* 0 */,
-  NETWORK_TIME_OUT /* 0 */,
-  NETWORK_ERROR /* 0 */,
-  POIINDOOR_BID_ERROR /* 0 */,
-  POIINDOOR_FLOOR_ERROR /* 0 */,
-  POIINDOOR_SERVER_ERROR /* 0 */,
-  INDOOR_ROUTE_NO_IN_BUILDING /* 0 */,
-  INDOOR_ROUTE_NO_IN_SAME_BUILDING /* 0 */,
-  MASS_TRANSIT_SERVER_ERROR /* 0 */,
-  MASS_TRANSIT_OPTION_ERROR /* 0 */,
-  MASS_TRANSIT_NO_POI_ERROR /* 0 */,
-  SEARCH_SERVER_INTERNAL_ERROR /* 0 */,
-  SEARCH_OPTION_ERROR /* 0 */,
-  REQUEST_ERROR /* 0 */
+  NO_ERROR /* null */,
+  RESULT_NOT_FOUND /* null */,
+  AMBIGUOUS_KEYWORD /* null */,
+  AMBIGUOUS_ROURE_ADDR /* null */,
+  NOT_SUPPORT_BUS /* null */,
+  NOT_SUPPORT_BUS_2CITY /* null */,
+  ST_EN_TOO_NEAR /* null */,
+  KEY_ERROR /* null */,
+  PERMISSION_UNFINISHED /* null */,
+  NETWORK_TIME_OUT /* null */,
+  NETWORK_ERROR /* null */,
+  POIINDOOR_BID_ERROR /* null */,
+  POIINDOOR_FLOOR_ERROR /* null */,
+  POIINDOOR_SERVER_ERROR /* null */,
+  INDOOR_ROUTE_NO_IN_BUILDING /* null */,
+  INDOOR_ROUTE_NO_IN_SAME_BUILDING /* null */,
+  MASS_TRANSIT_SERVER_ERROR /* null */,
+  MASS_TRANSIT_OPTION_ERROR /* null */,
+  MASS_TRANSIT_NO_POI_ERROR /* null */,
+  SEARCH_SERVER_INTERNAL_ERROR /* null */,
+  SEARCH_OPTION_ERROR /* null */,
+  REQUEST_ERROR /* null */
+}
+
+extension com_baidu_mapapi_search_core_SearchResult_ERRORNOToX on com_baidu_mapapi_search_core_SearchResult_ERRORNO {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.NO_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.NO_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.RESULT_NOT_FOUND: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.RESULT_NOT_FOUND.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.AMBIGUOUS_KEYWORD: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.AMBIGUOUS_KEYWORD.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.AMBIGUOUS_ROURE_ADDR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.AMBIGUOUS_ROURE_ADDR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.NOT_SUPPORT_BUS: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.NOT_SUPPORT_BUS.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.NOT_SUPPORT_BUS_2CITY: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.NOT_SUPPORT_BUS_2CITY.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.ST_EN_TOO_NEAR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.ST_EN_TOO_NEAR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.KEY_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.KEY_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.PERMISSION_UNFINISHED: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.PERMISSION_UNFINISHED.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.NETWORK_TIME_OUT: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.NETWORK_TIME_OUT.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.NETWORK_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.NETWORK_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.POIINDOOR_BID_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.POIINDOOR_BID_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.POIINDOOR_FLOOR_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.POIINDOOR_FLOOR_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.POIINDOOR_SERVER_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.POIINDOOR_SERVER_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.INDOOR_ROUTE_NO_IN_BUILDING: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.INDOOR_ROUTE_NO_IN_BUILDING.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.INDOOR_ROUTE_NO_IN_SAME_BUILDING: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.INDOOR_ROUTE_NO_IN_SAME_BUILDING.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.MASS_TRANSIT_SERVER_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.MASS_TRANSIT_SERVER_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.MASS_TRANSIT_OPTION_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.MASS_TRANSIT_OPTION_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.MASS_TRANSIT_NO_POI_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.MASS_TRANSIT_NO_POI_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_SERVER_INTERNAL_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_SERVER_INTERNAL_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_OPTION_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.SEARCH_OPTION_ERROR.index + 0;
+      case com_baidu_mapapi_search_core_SearchResult_ERRORNO.REQUEST_ERROR: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.REQUEST_ERROR.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_core_SearchResult_ERRORNOFromX on int {
+  com_baidu_mapapi_search_core_SearchResult_ERRORNO tocom_baidu_mapapi_search_core_SearchResult_ERRORNO() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_core_SearchResult_ERRORNO.values[this + 0];
+    }
+  }
 }

@@ -16,27 +16,30 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   //region constants
   static const String name__ = 'BMKAsyncTileLayer';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKAsyncTileLayer> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKAsyncTileLayer');
-    final object = BMKAsyncTileLayer()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKAsyncTileLayer> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKAsyncTileLayer',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKAsyncTileLayer>(__result__);
   }
   
-  static Future<List<BMKAsyncTileLayer>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKAsyncTileLayer', {'length': length});
-  
-    final List<BMKAsyncTileLayer> typedResult = resultBatch.map((result) => BMKAsyncTileLayer()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKAsyncTileLayer>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKAsyncTileLayer',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKAsyncTileLayer>(it))
+        .toList();
   }
   
   //endregion
@@ -51,46 +54,50 @@ class BMKAsyncTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
 
   //region methods
   
-  Future<void> loadTileForX_y_zoom_result(int x, int y, int zoom, void result(UIImage tileImage, NSError error)) async {
+  Future<void> loadTileForX_y_zoom_result(int x, int y, int zoom, void Function(UIImage tileImage, NSError error) result) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKAsyncTileLayer@$refId::loadTileForX([\'x\':$x, \'y\':$y, \'zoom\':$zoom])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKAsyncTileLayer::loadTileForX_y_zoom_result', {"x": x, "y": y, "zoom": zoom, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKAsyncTileLayer::loadTileForX_y_zoom_result', {"x": x, "y": y, "zoom": zoom, "__this__": this});
   
   
     // handle native call
-    MethodChannel('BMKAsyncTileLayer::loadTileForX_y_zoom_result::Callback')
+    MethodChannel('void|UIImage*#tileImage,NSError*#error::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
-          final args = methodCall.arguments as Map;
-          switch (methodCall.method) {
-            case 'Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error':
-              // print log
-              if (fluttifyLogEnabled) {
-        
-              }
-        
-              // handle the native call
-              result(TypeOpBmapMapFluttifyIOS((args['tileImage'] as Object))?.as__<UIImage>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
-              break;
-            default:
-              break;
+          try {
+            final args = methodCall.arguments as Map;
+            switch (methodCall.method) {
+              case 'Callback::void|UIImage*#tileImage,NSError*#error::void|UIImage*#tileImage,NSError*#error':
+                // print log
+                if (fluttifyLogEnabled) {
+          
+                }
+          
+                // handle the native call
+                if (result != null) await result(BmapMapFluttifyIOSAs(args['tileImage']), BmapMapFluttifyIOSAs(args['error']));
+                break;
+              default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
+                break;
+            }
+          } catch (e) {
+            debugPrint(e);
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKAsyncTileLayer{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKAsyncTileLayer_Batch on List<BMKAsyncTileLayer> {

@@ -8,89 +8,97 @@ import 'package:foundation_fluttify/foundation_fluttify.dart';
 
 import 'enums.dart';
 
+/// 我的位置选项
+@immutable
+class MyLocationOption {
+  MyLocationOption({
+    this.myLocationType = MyLocationType.Follow,
+    this.interval = Duration.zero,
+    this.iconProvider,
+    this.strokeColor,
+    this.strokeWidth,
+    this.fillColor,
+  });
+
+  /// 定位类型
+  final MyLocationType myLocationType;
+
+  /// 定位间隔
+  final Duration interval;
+
+  /// 我的位置图标
+  final ImageProvider iconProvider;
+
+  /// 边框颜色
+  final Color strokeColor;
+
+  /// 边框宽度
+  final double strokeWidth;
+
+  /// 填充颜色
+  final Color fillColor;
+
+  @override
+  String toString() {
+    return 'MyLocationOption{myLocationType: $myLocationType, interval: $interval, iconProvider: $iconProvider, strokeColor: $strokeColor, strokeWidth: $strokeWidth, fillColor: $fillColor}';
+  }
+}
+
 /// Marker创建参数
 @immutable
 class MarkerOption {
   MarkerOption({
     @required this.latLng,
-    this.iconUri,
-    this.imageConfig,
     this.widget,
     this.object,
-  })  : assert(
-          (iconUri != null && imageConfig != null) || iconUri == null,
-          'iconUri和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
-        ),
-        assert(!(widget != null && iconUri != null), 'widget和iconUri不能同时设置! ');
+    this.iconProvider,
+  }) : assert(!(widget != null && iconProvider != null),
+            'widget和iconProvider不能同时设置! ');
 
   /// 经纬度
   final LatLng latLng;
 
-  /// 图片uri 可以是url, asset路径或者文件路径
-  ///
-  /// 如果设置了[iconUri], 那么必须同时设置[imageConfig], 否则图片大小会不一致, 这是flutter
-  /// 的bug
-  final Uri iconUri;
-
-  /// 图片参数
-  ///
-  /// 目前利用到的信息只有[devicePixelRatio], 使用[devicePixelRatio]获取当前设备
-  /// 对应分辨率的图片(Android), iOS使用1.0x的图片. 所以[size]设置了是没用的, 这是flutter
-  /// 的PlatformView的bug, 参考https://github.com/flutter/flutter/issues/24865.
-  /// 这个bug彻底解决之后才能保证marker是完美的.
-  final ImageConfiguration imageConfig;
-
   /// Widget形式的Marker
   ///
-  /// 不能和[iconUri]一起用.
   /// 注意控制Widget的大小, 比如Column默认是max, 会使用地图的高度, 那么此时需要设置成min.
   final Widget widget;
 
   /// 自定义数据
   final String object;
 
+  /// 图标
+  final ImageProvider iconProvider;
+
   @override
   String toString() {
-    return 'MarkerOption{latLng: $latLng, iconUri: $iconUri, imageConfig: $imageConfig, widget: $widget, object: $object}';
+    return 'MarkerOption{latLng: $latLng, widget: $widget, object: $object, iconProvider: $iconProvider}';
   }
 }
 
 /// 平滑移动Marker创建参数
 @immutable
 class SmoothMoveMarkerOption {
+  SmoothMoveMarkerOption({
+    @required this.path,
+    @required this.iconProvider,
+    @required this.duration,
+  });
+
   /// 轨迹经纬度列表
   final List<LatLng> path;
 
   /// 图片uri 可以是url, asset路径或者文件路径
   ///
-  /// 如果设置了[iconUri], 那么必须同时设置[imageConfig], 否则图片大小会不一致, 这是flutter
+  /// 如果设置了[iconProvider], 那么必须同时设置[imageConfig], 否则图片大小会不一致, 这是flutter
   /// 的bug
-  final Uri iconUri;
-
-  /// 图片参数
-  ///
-  /// 目前利用到的信息只有[devicePixelRatio], 使用[devicePixelRatio]获取当前设备
-  /// 对应分辨率的图片(Android), iOS使用1.0x的图片. 所以[size]设置了是没用的, 这是flutter
-  /// 的PlatformView的bug, 参考https://github.com/flutter/flutter/issues/24865.
-  /// 这个bug彻底解决之后才能保证marker是完美的.
-  final ImageConfiguration imageConfig;
+  final ImageProvider iconProvider;
 
   /// 动画时长
   final Duration duration;
 
-  SmoothMoveMarkerOption({
-    @required this.path,
-    @required this.iconUri,
-    @required this.imageConfig,
-    @required this.duration,
-  }) : assert(
-          (iconUri != null && imageConfig != null) || iconUri == null,
-          'iconUri和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
-        );
-
   @override
   String toString() {
-    return 'SmoothMoveMarkerOption{path: $path, iconUri: $iconUri, imageConfig: $imageConfig, duration: $duration}';
+    return 'SmoothMoveMarkerOption{path: $path, iconProvider: $iconProvider, duration: $duration}';
   }
 }
 
@@ -107,10 +115,7 @@ class PolylineOption {
   final Color strokeColor;
 
   /// 自定义纹理
-  final Uri customTexture;
-
-  /// 图片参数
-  final ImageConfiguration imageConfig;
+  final ImageProvider textureProvider;
 
   /// 线段末端样式
   final LineCapType lineCapType;
@@ -125,20 +130,43 @@ class PolylineOption {
     @required this.latLngList,
     this.width = 5,
     this.strokeColor = Colors.green,
-    this.customTexture,
-    this.imageConfig,
+    this.textureProvider,
     this.lineCapType,
     this.lineJoinType,
     this.dashType,
-  }) : assert(
-          (customTexture != null && imageConfig != null) ||
-              customTexture == null,
-          'customTexture和imageConfig必须同时设置! 如果想要一个默认的imageConfig, 那么就直接调用[createLocalImageConfiguration]方法来创建!',
-        );
+  });
 
   @override
   String toString() {
-    return 'PolylineOption{latLngList: $latLngList, width: $width, strokeColor: $strokeColor, customTexture: $customTexture, imageConfig: $imageConfig, lineCapType: $lineCapType, lineJoinType: $lineJoinType, dotted: $dashType}';
+    return 'PolylineOption{latLngList: $latLngList, width: $width, strokeColor: $strokeColor, customTexture: $textureProvider, lineCapType: $lineCapType, lineJoinType: $lineJoinType, dashType: $dashType}';
+  }
+}
+
+/// 弧线创建参数
+@immutable
+class ArcOption {
+  /// 经纬度列表
+  final LatLng startPoint;
+  final LatLng middlePoint;
+  final LatLng endPoint;
+
+  /// 宽度
+  final double width;
+
+  /// 颜色
+  final Color strokeColor;
+
+  ArcOption({
+    this.startPoint,
+    this.middlePoint,
+    this.endPoint,
+    this.width,
+    this.strokeColor,
+  });
+
+  @override
+  String toString() {
+    return 'ArcOption{startPoint: $startPoint, middlePoint: $middlePoint, endPoint: $endPoint, width: $width, strokeColor: $strokeColor}';
   }
 }
 
@@ -200,6 +228,21 @@ class CircleOption {
   @override
   String toString() {
     return 'CircleOption{center: $center, radius: $radius, width: $width, strokeColor: $strokeColor, fillColor: $fillColor}';
+  }
+}
+
+/// 地图移动
+@immutable
+class MapMove {
+  final LatLng latLng;
+  final double zoom;
+  final double tilt;
+
+  MapMove({this.latLng, this.zoom, this.tilt});
+
+  @override
+  String toString() {
+    return 'MapDrag{latitude: ${latLng.latitude}, longitude: ${latLng.longitude}, zoom: $zoom, tilt: $tilt}';
   }
 }
 
@@ -284,6 +327,24 @@ class Polyline {
   }
 }
 
+/// 折线
+class Arc {
+  Arc.android(this._androidModel);
+
+  Arc.ios(this._iosModel, this._iosController);
+
+  com_baidu_mapapi_map_Arc _androidModel;
+  BMKArcline _iosModel;
+  BMKMapView _iosController;
+
+  Future<void> remove() {
+    return platform(
+      android: (_) => _androidModel.remove(),
+      ios: (_) => _iosController?.removeOverlay(_iosModel),
+    );
+  }
+}
+
 /// 多边形
 class Polygon {
   Polygon.android(this._androidModel);
@@ -338,13 +399,14 @@ class Circle {
   }
 }
 
-
 /// 定位结果 model
 class Location {
   Location({
     @required this.address,
     @required this.latLng,
     @required this.altitude,
+    @required this.accuracy,
+    @required this.direction,
     @required this.country,
     @required this.province,
     @required this.city,
@@ -364,6 +426,12 @@ class Location {
 
   /// 海拔
   double altitude;
+
+  /// 精度
+  double accuracy;
+
+  /// 方向
+  double direction;
 
   /// 国家
   String country;
@@ -393,6 +461,6 @@ class Location {
 
   @override
   String toString() {
-    return 'Location{\naddress: $address, \nlatLng: $latLng, \naltitude: $altitude, \ncountry: $country, \nprovince: $province, \ncity: $city, \ncityCode: $cityCode, \nadCode: $adCode, \ndistrict: $district, \nstreet: $street, \nstreetNumber: $streetNumber\n}';
+    return 'Location{\naddress: $address, \nlatLng: $latLng, \naltitude: $altitude, \naccuracy: $accuracy, \ndirection: $direction, \ncountry: $country, \nprovince: $province, \ncity: $city, \ncityCode: $cityCode, \nadCode: $adCode, \ndistrict: $district, \nstreet: $street, \nstreetNumber: $streetNumber\n}';
   }
 }

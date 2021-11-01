@@ -19,18 +19,15 @@ mixin com_baidu_mapapi_search_district_OnGetDistricSearchResultListener on java_
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onGetDistrictResult(com_baidu_mapapi_search_district_DistrictResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetDistrictResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onGetDistrictResult(com_baidu_mapapi_search_district_DistrictResult var1) {}
   
 }
 

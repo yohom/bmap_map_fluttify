@@ -19,36 +19,21 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onMarkerDrag(com_baidu_mapapi_map_Marker var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onMarkerDrag::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onMarkerDrag(com_baidu_mapapi_map_Marker var1) {}
   
-  @mustCallSuper
-  Future<void> onMarkerDragEnd(com_baidu_mapapi_map_Marker var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
+  /* @mustCallSuper */
+  Future<void> onMarkerDragEnd(com_baidu_mapapi_map_Marker var1) {}
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onMarkerDragEnd::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> onMarkerDragStart(com_baidu_mapapi_map_Marker var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMarkerDragStart::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onMarkerDragStart(com_baidu_mapapi_map_Marker var1) {}
   
 }
 

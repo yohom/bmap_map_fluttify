@@ -16,27 +16,30 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
   //region constants
   static const String name__ = 'BMKPolygon';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKPolygon> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKPolygon');
-    final object = BMKPolygon()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKPolygon> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKPolygon',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKPolygon>(__result__);
   }
   
-  static Future<List<BMKPolygon>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKPolygon', {'length': length});
-  
-    final List<BMKPolygon> typedResult = resultBatch.map((result) => BMKPolygon()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKPolygon>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKPolygon',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKPolygon>(it))
+        .toList();
   }
   
   //endregion
@@ -58,20 +61,13 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithPoints_count', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::polygonWithPoints_count', {"points": points, "count": count});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKPolygon>(__result__);
   }
   
   
@@ -82,20 +78,13 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithCoordinates_count', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::polygonWithCoordinates_count', {"coords": coords, "count": count});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKPolygon>(__result__);
   }
   
   
@@ -106,20 +95,13 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithPoints_count', {"points": points.map((__it__) => __it__?.refId).toList(), "count": count, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::setPolygonWithPoints_count', {"points": points, "count": count, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -130,23 +112,21 @@ class BMKPolygon extends BMKMultiPoint with BMKOverlay, BMKAnnotation {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithCoordinates_count', {"coords": coords.map((__it__) => __it__?.refId).toList(), "count": count, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::setPolygonWithCoordinates_count', {"coords": coords, "count": count, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKPolygon{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKPolygon_Batch on List<BMKPolygon> {
@@ -161,82 +141,46 @@ extension BMKPolygon_Batch on List<BMKPolygon> {
   //region methods
   
   static Future<List<BMKPolygon>> polygonWithPoints_count_batch(List<List<BMKMapPoint>> points, List<int> count) async {
-    if (points.length != count.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(points.length == count.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithPoints_count_batch', [for (int __i__ = 0; __i__ < points.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "count": count[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::polygonWithPoints_count_batch', [for (int __i__ = 0; __i__ < points.length; __i__++) {"points": points[__i__], "count": count[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKPolygon>(__result__)).cast<BMKPolygon>().toList();
   }
   
   
   static Future<List<BMKPolygon>> polygonWithCoordinates_count_batch(List<List<CLLocationCoordinate2D>> coords, List<int> count) async {
-    if (coords.length != count.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coords.length == count.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::polygonWithCoordinates_count_batch', [for (int __i__ = 0; __i__ < coords.length; __i__++) {"coords": coords[__i__].map((it) => it.refId).toList(), "count": count[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::polygonWithCoordinates_count_batch', [for (int __i__ = 0; __i__ < coords.length; __i__++) {"coords": coords[__i__], "count": count[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKPolygon>(__result__)).cast<BMKPolygon>().toList();
   }
   
   
   Future<List<bool>> setPolygonWithPoints_count_batch(List<List<BMKMapPoint>> points, List<int> count) async {
-    if (points.length != count.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(points.length == count.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithPoints_count_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__].map((it) => it.refId).toList(), "count": count[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::setPolygonWithPoints_count_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"points": points[__i__], "count": count[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> setPolygonWithCoordinates_count_batch(List<List<CLLocationCoordinate2D>> coords, List<int> count) async {
-    if (coords.length != count.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coords.length == count.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygon::setPolygonWithCoordinates_count_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coords": coords[__i__].map((it) => it.refId).toList(), "count": count[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKPolygon::setPolygonWithCoordinates_count_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coords": coords[__i__], "count": count[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   //endregion

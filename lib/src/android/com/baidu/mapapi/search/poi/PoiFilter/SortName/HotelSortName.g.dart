@@ -4,10 +4,33 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName {
-  DEFAULT /* 0 */,
-  HOTEL_PRICE /* 0 */,
-  HOTEL_DISTANCE /* 0 */,
-  HOTEL_TOTAL_SCORE /* 0 */,
-  HOTEL_LEVEL /* 0 */,
-  HOTEL_HEALTH_SCORE /* 0 */
+  DEFAULT /* null */,
+  HOTEL_PRICE /* null */,
+  HOTEL_DISTANCE /* null */,
+  HOTEL_TOTAL_SCORE /* null */,
+  HOTEL_LEVEL /* null */,
+  HOTEL_HEALTH_SCORE /* null */
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortNameToX on com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.DEFAULT: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.DEFAULT.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_PRICE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_PRICE.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_DISTANCE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_DISTANCE.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_TOTAL_SCORE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_TOTAL_SCORE.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_LEVEL: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_LEVEL.index + 0;
+      case com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_HEALTH_SCORE: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.HOTEL_HEALTH_SCORE.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortNameFromX on int {
+  com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName tocom_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_poi_PoiFilter_SortName_HotelSortName.values[this + 0];
+    }
+  }
 }

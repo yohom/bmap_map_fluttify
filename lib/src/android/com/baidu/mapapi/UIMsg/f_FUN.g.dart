@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_f_FUN extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.f_FUN';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int FUN_ID_MAP = 10;
   static final int FUN_ID_MAP_ACTION = 1001;
   static final int FUN_ID_MAP_ACTION_ZOOM_IN = 10010100;
@@ -187,6 +190,11 @@ class com_baidu_mapapi_UIMsg_f_FUN extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_f_FUN{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_f_FUN_Batch on List<com_baidu_mapapi_UIMsg_f_FUN> {

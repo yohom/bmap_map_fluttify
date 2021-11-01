@@ -19,18 +19,15 @@ mixin com_baidu_geofence_GeoFenceListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onGeoFenceCreateFinished(List<com_baidu_geofence_GeoFence> var1, int var2, String var3) {
-    kNativeObjectPool.addAll(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onGeoFenceCreateFinished::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onGeoFenceCreateFinished(List<com_baidu_geofence_GeoFence> var1, int var2, String var3) {}
   
 }
 

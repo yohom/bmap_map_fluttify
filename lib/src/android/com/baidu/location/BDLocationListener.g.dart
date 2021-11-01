@@ -19,18 +19,15 @@ mixin com_baidu_location_BDLocationListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onReceiveLocation(com_baidu_location_BDLocation var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onReceiveLocation::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onReceiveLocation(com_baidu_location_BDLocation var1) {}
   
 }
 

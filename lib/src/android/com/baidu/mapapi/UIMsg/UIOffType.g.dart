@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_UIOffType extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.UIOffType';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int MSG_OFFLINE_WIFICONNECT = -2;
   static final int MSG_DATARUN_EXCEPTION = -1;
   static final int MSG_OFFLINE_UPDATE = 0;
@@ -48,6 +51,11 @@ class com_baidu_mapapi_UIMsg_UIOffType extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_UIOffType{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_UIOffType_Batch on List<com_baidu_mapapi_UIMsg_UIOffType> {

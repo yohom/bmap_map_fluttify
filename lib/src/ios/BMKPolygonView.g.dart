@@ -16,36 +16,38 @@ class BMKPolygonView extends BMKOverlayGLBasicView  {
   //region constants
   static const String name__ = 'BMKPolygonView';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKPolygonView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKPolygonView');
-    final object = BMKPolygonView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKPolygonView> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKPolygonView',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKPolygonView>(__result__);
   }
   
-  static Future<List<BMKPolygonView>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKPolygonView', {'length': length});
-  
-    final List<BMKPolygonView> typedResult = resultBatch.map((result) => BMKPolygonView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKPolygonView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKPolygonView',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKPolygonView>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<BMKPolygon> get_polygon({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolygonView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKPolygonView::get_polygon", {'refId': refId});
-    kNativeObjectPool.add(BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKPolygonView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKPolygonView::get_polygon", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKPolygon>(__result__);
   }
   
   //endregion
@@ -63,32 +65,28 @@ class BMKPolygonView extends BMKOverlayGLBasicView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolygonView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygonView::initWithPolygon', {"polygon": polygon?.refId, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKPolygonView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKPolygonView::initWithPolygon', {"polygon": polygon, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKPolygonView{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKPolygonView_Batch on List<BMKPolygonView> {
   //region getters
   Future<List<BMKPolygon>> get_polygon_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolygonView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKPolygonView::get_polygon_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKPolygon()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKPolygonView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKPolygonView::get_polygon_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKPolygon>(__result__))?.cast<BMKPolygon>()?.toList();
   }
   
   //endregion
@@ -100,22 +98,13 @@ extension BMKPolygonView_Batch on List<BMKPolygonView> {
   //region methods
   
   Future<List<dynamic>> initWithPolygon_batch(List<BMKPolygon> polygon, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKPolygonView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKPolygonView::initWithPolygon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"polygon": polygon[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKPolygonView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKPolygonView::initWithPolygon_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"polygon": polygon[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   //endregion

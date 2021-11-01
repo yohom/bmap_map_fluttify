@@ -16,27 +16,30 @@ class BMKOfflineMap extends NSObject  {
   //region constants
   static const String name__ = 'BMKOfflineMap';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKOfflineMap> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKOfflineMap');
-    final object = BMKOfflineMap()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKOfflineMap> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKOfflineMap',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKOfflineMap>(__result__);
   }
   
-  static Future<List<BMKOfflineMap>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKOfflineMap', {'length': length});
-  
-    final List<BMKOfflineMap> typedResult = resultBatch.map((result) => BMKOfflineMap()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKOfflineMap>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKOfflineMap',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKOfflineMap>(it))
+        .toList();
   }
   
   //endregion
@@ -47,23 +50,29 @@ class BMKOfflineMap extends NSObject  {
 
   //region setters
   Future<void> set_delegate(BMKOfflineMapDelegate delegate) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::set_delegate', {'refId': refId, "delegate": delegate.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::set_delegate', <String, dynamic>{'__this__': this, });
   
-    MethodChannel('BMKOfflineMapDelegate::Callback')
+    MethodChannel('BMKOfflineMapDelegate::Callback', kBmapMapFluttifyMethodCodec)
       .setMethodCallHandler((methodCall) async {
-        final args = methodCall.arguments as Map;
-        switch (methodCall.method) {
-          case 'Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState':
-            // print log
-            if (fluttifyLogEnabled) {
-              debugPrint('fluttify-dart-callback: onGetOfflineMapState_withState([\'type\':${args['type']}, \'state\':${args['state']}])');
-            }
-        
-            // handle the native call
-            delegate?.onGetOfflineMapState_withState(args['type'], args['state']);
-            break;
-          default:
-            break;
+        try {
+          final args = methodCall.arguments as Map;
+          switch (methodCall.method) {
+            case 'Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState':
+              // print log
+              if (fluttifyLogEnabled) {
+                debugPrint('fluttify-dart-callback: onGetOfflineMapState_withState([\'type\':${args['type']}, \'state\':${args['state']}])');
+              }
+          
+              // handle the native call
+              await delegate?.onGetOfflineMapState_withState(args['type'], args['state']);
+              break;
+            default:
+              throw MissingPluginException('方法${methodCall.method}未实现');
+              break;
+          }
+        } catch (e) {
+          debugPrint(e);
+          rethrow;
         }
       });
   }
@@ -79,20 +88,13 @@ class BMKOfflineMap extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::scan', {"deleteFailedr": deleteFailedr, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::scan', {"deleteFailedr": deleteFailedr, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -103,20 +105,13 @@ class BMKOfflineMap extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::start', {"cityID": cityID, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::start', {"cityID": cityID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -127,20 +122,13 @@ class BMKOfflineMap extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::update', {"cityID": cityID, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::update', {"cityID": cityID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -151,20 +139,13 @@ class BMKOfflineMap extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::pause', {"cityID": cityID, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::pause', {"cityID": cityID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -175,116 +156,81 @@ class BMKOfflineMap extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::remove', {"cityID": cityID, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::remove', {"cityID": cityID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
-  Future<List<NSObject>> getHotCityList() async {
+  Future<List<dynamic>> getHotCityList() async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::getHotCityList([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getHotCityList', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getHotCityList', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
-      return __return__;
-    }
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   
-  Future<List<NSObject>> getOfflineCityList() async {
+  Future<List<dynamic>> getOfflineCityList() async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::getOfflineCityList([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getOfflineCityList', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getOfflineCityList', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
-      return __return__;
-    }
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   
-  Future<List<NSObject>> searchCity(String cityName) async {
+  Future<List<dynamic>> searchCity(String cityName) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::searchCity([\'cityName\':$cityName])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::searchCity', {"cityName": cityName, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::searchCity', {"cityName": cityName, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
-      return __return__;
-    }
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   
-  Future<List<NSObject>> getAllUpdateInfo() async {
+  Future<List<dynamic>> getAllUpdateInfo() async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKOfflineMap@$refId::getAllUpdateInfo([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getAllUpdateInfo', {"refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getAllUpdateInfo', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(__return__);
-      return __return__;
-    }
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   
@@ -295,23 +241,21 @@ class BMKOfflineMap extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getUpdateInfo', {"cityID": cityID, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getUpdateInfo', {"cityID": cityID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKOLUpdateElement>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKOfflineMap{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
@@ -326,202 +270,112 @@ extension BMKOfflineMap_Batch on List<BMKOfflineMap> {
   //region methods
   
   Future<List<bool>> scan_batch(List<bool> deleteFailedr) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::scan_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"deleteFailedr": deleteFailedr[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::scan_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"deleteFailedr": deleteFailedr[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> start_batch(List<int> cityID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::start_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::start_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> update_batch(List<int> cityID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::update_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::update_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> pause_batch(List<int> cityID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::pause_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::pause_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> remove_batch(List<int> cityID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::remove_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::remove_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
-  Future<List<List<NSObject>>> getHotCityList_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+  Future<List<List<dynamic>>> getHotCityList_batch() async {
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getHotCityList_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getHotCityList_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
-  Future<List<List<NSObject>>> getOfflineCityList_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+  Future<List<List<dynamic>>> getOfflineCityList_batch() async {
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getOfflineCityList_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getOfflineCityList_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
-  Future<List<List<NSObject>>> searchCity_batch(List<String> cityName) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+  Future<List<List<dynamic>>> searchCity_batch(List<String> cityName) async {
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::searchCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityName": cityName[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::searchCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityName": cityName[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
-  Future<List<List<NSObject>>> getAllUpdateInfo_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+  Future<List<List<dynamic>>> getAllUpdateInfo_batch() async {
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getAllUpdateInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getAllUpdateInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => NSObject()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      kNativeObjectPool.addAll(typedResult.expand((e) => e));
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<BMKOLUpdateElement>> getUpdateInfo_batch(List<int> cityID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKOfflineMap::getUpdateInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKOfflineMap::getUpdateInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"cityID": cityID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKOLUpdateElement()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKOLUpdateElement>(__result__)).cast<BMKOLUpdateElement>().toList();
   }
   
   //endregion

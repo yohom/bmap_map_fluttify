@@ -5,6 +5,26 @@
 
 enum BMKLineJoinType {
   kBMKLineJoinBevel /* 0 */,
-  kBMKLineJoinMiter /* 0 */,
-  kBMKLineJoinRound /* 0 */
+  kBMKLineJoinMiter /* null */,
+  kBMKLineJoinRound /* null */
+}
+
+extension BMKLineJoinTypeToX on BMKLineJoinType {
+  int toValue() {
+    switch (this) {
+      case BMKLineJoinType.kBMKLineJoinBevel: return 0;
+      case BMKLineJoinType.kBMKLineJoinMiter: return BMKLineJoinType.kBMKLineJoinMiter.index + 0;
+      case BMKLineJoinType.kBMKLineJoinRound: return BMKLineJoinType.kBMKLineJoinRound.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension BMKLineJoinTypeFromX on int {
+  BMKLineJoinType toBMKLineJoinType() {
+    switch (this) {
+      case 0: return BMKLineJoinType.kBMKLineJoinBevel;
+      default: return BMKLineJoinType.values[this + 0];
+    }
+  }
 }

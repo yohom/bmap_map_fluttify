@@ -16,7 +16,7 @@ class _LocationScreenState extends State<LocationScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Plugin example app')),
       body: DecoratedColumn(
-        padding: EdgeInsets.symmetric(horizontal: kSpaceLarge),
+        padding: EdgeInsets.symmetric(horizontal: kSpace16),
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -32,11 +32,13 @@ class _LocationScreenState extends State<LocationScreen> {
           RaisedButton(
             child: Text('获取连续定位'),
             onPressed: () async {
-//                if (await requestPermission()) {
-//                  await for (final location in BmapLocation.listenLocation()) {
-//                    setState(() => _location = location);
-//                  }
-//                }
+              if (await requestPermission()) {
+                await for (final location
+                    in BmapLocation.instance.listenLocation()) {
+                  debugPrint('获取到定位: $location');
+                  setState(() => _location = location);
+                }
+              }
             },
           ),
           RaisedButton(

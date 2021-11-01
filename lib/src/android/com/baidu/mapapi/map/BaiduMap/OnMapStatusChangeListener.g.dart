@@ -19,45 +19,24 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener on java_lang_Objec
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus(com_baidu_mapapi_map_MapStatus var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus(com_baidu_mapapi_map_MapStatus var1) {}
   
-  @mustCallSuper
-  Future<void> onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int(com_baidu_mapapi_map_MapStatus var1, int var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
+  /* @mustCallSuper */
+  Future<void> onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int(com_baidu_mapapi_map_MapStatus var1, int var2) {}
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onMapStatusChange(com_baidu_mapapi_map_MapStatus var1) {}
   
-  @mustCallSuper
-  Future<void> onMapStatusChange(com_baidu_mapapi_map_MapStatus var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapStatusChange::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> onMapStatusChangeFinish(com_baidu_mapapi_map_MapStatus var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapStatusChangeFinish::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onMapStatusChangeFinish(com_baidu_mapapi_map_MapStatus var1) {}
   
 }
 

@@ -16,53 +16,52 @@ class com_baidu_mapapi_search_sug_SuggestionSearchOption extends java_lang_Objec
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.sug.SuggestionSearchOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_sug_SuggestionSearchOption> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionSearchOption__');
-    final object = com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_sug_SuggestionSearchOption__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_sug_SuggestionSearchOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_sug_SuggestionSearchOption__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_sug_SuggestionSearchOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_sug_SuggestionSearchOption__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_mCity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCity", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCity", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_mKeyword() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mKeyword", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mKeyword", {'__this__': this});
     return __result__;
   }
   
   Future<com_baidu_mapapi_model_LatLng> get_mLocation() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mLocation", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mLocation", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_model_LatLng>(__result__);
   }
   
   Future<bool> get_mCityLimit() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCityLimit", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCityLimit", {'__this__': this});
     return __result__;
   }
   
@@ -70,25 +69,25 @@ class com_baidu_mapapi_search_sug_SuggestionSearchOption extends java_lang_Objec
 
   //region setters
   Future<void> set_mCity(String mCity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCity', {'refId': refId, "mCity": mCity});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCity', <String, dynamic>{'__this__': this, "mCity": mCity});
   
   
   }
   
   Future<void> set_mKeyword(String mKeyword) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mKeyword', {'refId': refId, "mKeyword": mKeyword});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mKeyword', <String, dynamic>{'__this__': this, "mKeyword": mKeyword});
   
   
   }
   
   Future<void> set_mLocation(com_baidu_mapapi_model_LatLng mLocation) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mLocation', {'refId': refId, "mLocation": mLocation.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mLocation', <String, dynamic>{'__this__': this, "mLocation": mLocation});
   
   
   }
   
   Future<void> set_mCityLimit(bool mCityLimit) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCityLimit', {'refId': refId, "mCityLimit": mCityLimit});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCityLimit', <String, dynamic>{'__this__': this, "mCityLimit": mCityLimit});
   
   
   }
@@ -104,20 +103,13 @@ class com_baidu_mapapi_search_sug_SuggestionSearchOption extends java_lang_Objec
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::city', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::city', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__);
   }
   
   
@@ -128,20 +120,13 @@ class com_baidu_mapapi_search_sug_SuggestionSearchOption extends java_lang_Objec
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::keyword', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::keyword', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__);
   }
   
   
@@ -152,20 +137,13 @@ class com_baidu_mapapi_search_sug_SuggestionSearchOption extends java_lang_Objec
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::location', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::location', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__);
   }
   
   
@@ -176,78 +154,68 @@ class com_baidu_mapapi_search_sug_SuggestionSearchOption extends java_lang_Objec
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::citylimit', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::citylimit', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_sug_SuggestionSearchOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_sug_SuggestionSearchOption_Batch on List<com_baidu_mapapi_search_sug_SuggestionSearchOption> {
   //region getters
   Future<List<String>> get_mCity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCity_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_mKeyword_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mKeyword_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mKeyword_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_model_LatLng>> get_mLocation_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mLocation_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mLocation_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_model_LatLng>(__result__))?.cast<com_baidu_mapapi_model_LatLng>()?.toList();
   }
   
   Future<List<bool>> get_mCityLimit_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCityLimit_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.sug.SuggestionSearchOption::get_mCityLimit_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mCity_batch(List<String> mCity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mCity": mCity[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCity": mCity[__i__]}]);
   
   
   }
   
   Future<void> set_mKeyword_batch(List<String> mKeyword) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mKeyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mKeyword": mKeyword[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mKeyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mKeyword": mKeyword[__i__]}]);
   
   
   }
   
   Future<void> set_mLocation_batch(List<com_baidu_mapapi_model_LatLng> mLocation) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mLocation": mLocation[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mLocation": mLocation[__i__]}]);
   
   
   }
   
   Future<void> set_mCityLimit_batch(List<bool> mCityLimit) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCityLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mCityLimit": mCityLimit[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::set_mCityLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCityLimit": mCityLimit[__i__]}]);
   
   
   }
@@ -257,82 +225,46 @@ extension com_baidu_mapapi_search_sug_SuggestionSearchOption_Batch on List<com_b
   //region methods
   
   Future<List<com_baidu_mapapi_search_sug_SuggestionSearchOption>> city_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__)).cast<com_baidu_mapapi_search_sug_SuggestionSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_sug_SuggestionSearchOption>> keyword_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::keyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::keyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__)).cast<com_baidu_mapapi_search_sug_SuggestionSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_sug_SuggestionSearchOption>> location_batch(List<com_baidu_mapapi_model_LatLng> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::location_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::location_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__)).cast<com_baidu_mapapi_search_sug_SuggestionSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_sug_SuggestionSearchOption>> citylimit_batch(List<bool> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::citylimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.sug.SuggestionSearchOption::citylimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_sug_SuggestionSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_sug_SuggestionSearchOption>(__result__)).cast<com_baidu_mapapi_search_sug_SuggestionSearchOption>().toList();
   }
   
   //endregion

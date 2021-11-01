@@ -1,6 +1,6 @@
 import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 import 'package:bmap_map_fluttify_example/utils/next_latlng.dart';
-import 'package:decorated_flutter/decorated_flutter.dart';
+import 'package:decorated_flutter/decorated_flutter.dart' hide Circle;
 import 'package:flutter/material.dart';
 
 class DrawCircleScreen extends StatefulWidget {
@@ -32,7 +32,7 @@ class _DrawCircleScreenState extends State<DrawCircleScreen> with NextLatLng {
           ),
           Flexible(
             child: DecoratedColumn(
-              divider: kDividerTiny,
+              divider: kDivider1,
               children: <Widget>[
                 ListTile(
                   title: Center(child: Text('添加圆')),

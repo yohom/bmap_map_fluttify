@@ -16,41 +16,42 @@ class com_baidu_mapapi_search_core_CityInfo extends java_lang_Object with androi
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.core.CityInfo';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_core_CityInfo> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_core_CityInfo__');
-    final object = com_baidu_mapapi_search_core_CityInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_core_CityInfo__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_CityInfo>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_core_CityInfo>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_core_CityInfo__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_core_CityInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_core_CityInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_core_CityInfo__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_CityInfo>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_city() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_city", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_city", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_num() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_num", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_num", {'__this__': this});
     return __result__;
   }
   
@@ -58,13 +59,13 @@ class com_baidu_mapapi_search_core_CityInfo extends java_lang_Object with androi
 
   //region setters
   Future<void> set_city(String city) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_city', {'refId': refId, "city": city});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_city', <String, dynamic>{'__this__': this, "city": city});
   
   
   }
   
   Future<void> set_num(int num) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_num', {'refId': refId, "num": num});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_num', <String, dynamic>{'__this__': this, "num": num});
   
   
   }
@@ -74,35 +75,36 @@ class com_baidu_mapapi_search_core_CityInfo extends java_lang_Object with androi
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_core_CityInfo{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_core_CityInfo_Batch on List<com_baidu_mapapi_search_core_CityInfo> {
   //region getters
   Future<List<String>> get_city_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_city_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_city_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_num_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_num_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.CityInfo::get_num_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_city_batch(List<String> city) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "city": city[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "city": city[__i__]}]);
   
   
   }
   
   Future<void> set_num_batch(List<int> num) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_num_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "num": num[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.CityInfo::set_num_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "num": num[__i__]}]);
   
   
   }

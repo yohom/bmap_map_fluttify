@@ -19,41 +19,21 @@ mixin BMKGeoFenceManagerDelegate on NSObject {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> BMKGeoFenceManager_doRequestAlwaysAuthorization(BMKGeoFenceManager manager, CLLocationManager locationManager) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    if (locationManager is Ref) kNativeObjectPool.add(locationManager);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKGeoFenceManager_doRequestAlwaysAuthorization::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> BMKGeoFenceManager_doRequestAlwaysAuthorization(BMKGeoFenceManager manager, CLLocationManager locationManager) {}
   
-  @mustCallSuper
-  Future<void> BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error(BMKGeoFenceManager manager, List<BMKGeoFenceRegion> regions, String customID, NSError error) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    kNativeObjectPool.addAll(regions);
-    if (error is Ref) kNativeObjectPool.add(error);
+  /* @mustCallSuper */
+  Future<void> BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error(BMKGeoFenceManager manager, List<BMKGeoFenceRegion> regions, String customID, NSError error) {}
   
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error(BMKGeoFenceManager manager, BMKGeoFenceRegion region, String customID, NSError error) {
-    if (manager is Ref) kNativeObjectPool.add(manager);
-    if (region is Ref) kNativeObjectPool.add(region);
-    if (error is Ref) kNativeObjectPool.add(error);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error(BMKGeoFenceManager manager, BMKGeoFenceRegion region, String customID, NSError error) {}
   
 }
 

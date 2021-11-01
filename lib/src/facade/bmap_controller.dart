@@ -7,26 +7,66 @@ typedef Future<bool> OnMarkerClicked(Marker marker);
 /// Marker拖动回调签名
 typedef Future<void> OnMarkerDrag(Marker marker);
 
+/// 地图移动事件回调签名
+typedef Future<void> OnMapMove(MapMove move);
+
+/// 地图截屏回调签名
+typedef Future<void> OnScreenShot(Uint8List imageData);
+
 /// 地图控制类
-class BmapController with WidgetsBindingObserver {
+class BmapController extends _Holder
+    with WidgetsBindingObserver, _Community, _Pro {
   /// Android构造器
-  BmapController.android(this.androidController, this._state) {
+  BmapController.android(
+    com_baidu_mapapi_map_TextureMapView androidController,
+    _BmapViewState state,
+  ) {
     WidgetsBinding.instance.addObserver(this);
+    this.androidController = androidController;
+    this._state = state;
   }
 
   /// iOS构造器
-  BmapController.ios(this.iosController, this._state) {
+  BmapController.ios(BMKMapView iosController, _BmapViewState state) {
     WidgetsBinding.instance.addObserver(this);
+    this.iosController = iosController;
+    this._state = state;
   }
 
-  com_baidu_mapapi_map_TextureMapView androidController;
-  BMKMapView iosController;
+  /// 释放资源
+  Future<void> dispose() async {
+    await androidController?.onPause();
+    await androidController?.onDestroy();
 
-  _BmapViewState _state;
+    await iosController?.viewWillDisappear();
 
-  final _iosMapDelegate = _IOSMapDelegate();
-  final _androidMapDelegate = _AndroidMapDelegate();
+    WidgetsBinding.instance.removeObserver(this);
+  }
 
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    debugPrint('didChangeAppLifecycleState: $state');
+    // 因为这里的生命周期其实已经是App的生命周期了, 所以除了这里还需要在dispose里释放资源
+    switch (state) {
+      case AppLifecycleState.resumed:
+        androidController?.onResume();
+        iosController?.viewWillAppear();
+        break;
+      case AppLifecycleState.inactive:
+        break;
+      case AppLifecycleState.paused:
+        androidController?.onPause();
+        iosController?.viewWillDisappear();
+        break;
+      case AppLifecycleState.detached:
+        androidController?.onDestroy();
+        break;
+    }
+  }
+}
+
+mixin _Community on _Holder {
   /// 设置地图中心点
   ///
   /// [coordinate] 经纬度
@@ -35,10 +75,6 @@ class BmapController with WidgetsBindingObserver {
     LatLng coordinate, {
     bool animated = true,
   }) async {
-//    assert(
-//      zoomLevel == null || (zoomLevel >= 3 && zoomLevel <= 19),
-//      '缩放范围为3-19',
-//    );
     final lat = coordinate.latitude;
     final lng = coordinate.longitude;
     await platform(
@@ -58,7 +94,10 @@ class BmapController with WidgetsBindingObserver {
           await map.setMapStatus(mapStatus);
         }
 
-        pool..add(map)..add(latLng)..add(mapStatus);
+        pool
+          ..add(map)
+          ..add(latLng)
+          ..add(mapStatus);
       },
       ios: (pool) async {
         final latLng = await CLLocationCoordinate2D.create(lat, lng);
@@ -70,39 +109,66 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
-//  /// 设置我的位置数据
-//  Future<void> setMyLocationData(LatLng coordinate) async {
-//    final lat = coordinate.latitude;
-//    final lng = coordinate.longitude;
-//    await platform(
-//      android: (pool) async {
-//        final map = await androidController.getMap();
-//
-//        await map.setMyLocationEnabled(true);
-//
-//        final builder =
-//        await com_baidu_mapapi_map_MyLocationData_Builder.create__();
-//        await builder.latitude(lat);
-//        await builder.longitude(lng);
-//
-//        await map.setMyLocationData(await builder.build());
-//
-//        pool..add(map)..add(builder);
-//      },
-//      ios: (pool) async {
-//        final latLng = await CLLocationCoordinate2D.create(lat, lng);
-//
-//        await iosController.set_showsUserLocation(true);
-//
-//        final data = await BMKUserLocation.create__();
-//        final location = CLLocation
-//        await data.set_location(location);
-//
-//        await iosController.updateLocationData(data);
-//        pool..add(latLng);
-//      },
-//    );
-//  }
+  /// 设置我的位置数据
+  Future<void> showMyLocation(MyLocationOption option) async {
+    final locationStream = BmapLocation.instance.listenLocation();
+
+    final iconData = await option.iconProvider
+        ?.toImageData(createLocalImageConfiguration(_state.context));
+
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.setMyLocationEnabled(true);
+
+        // 我的位置除定位之外的配置信息
+        final bitmap = await android_graphics_Bitmap.create(iconData);
+        final config = await com_baidu_mapapi_map_MyLocationConfiguration
+            .create__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor(
+          option.myLocationType.androidModel(),
+          true,
+          await com_baidu_mapapi_map_BitmapDescriptorFactory.fromBitmap(bitmap),
+        );
+        await map.setMyLocationConfiguration(config);
+
+        // 我的位置信息
+        final builder =
+            await com_baidu_mapapi_map_MyLocationData_Builder.create__();
+        // 监听定位流, 刷新位置
+        locationStream.listen((location) async {
+          await builder.latitude(location.latLng.latitude);
+          await builder.longitude(location.latLng.longitude);
+          await builder.accuracy(location.accuracy);
+          await builder.direction(location.direction);
+
+          await map.setMyLocationData(await builder.build());
+        });
+
+        pool
+          ..add(config)
+          ..add(bitmap);
+      },
+      ios: (pool) async {
+        await iosController.set_showsUserLocation(true);
+        await iosController
+            .set_userTrackingMode(option.myLocationType.iosModel());
+
+        final displayParam = await BMKLocationViewDisplayParam.create__();
+        final image = await UIImage.create(iconData);
+        await displayParam.set_locationViewImage(image);
+
+        final data = await BMKUserLocation.create__();
+
+        locationStream.listen((location) async {
+          await data.set_location(await location.iosModel.get_location());
+          await iosController.updateLocationViewWithParam(displayParam);
+          await iosController.updateLocationData(data);
+        });
+      },
+    );
+  }
+
   /// 批量添加marker
   ///
   /// 根据[options]批量创建Marker
@@ -114,11 +180,16 @@ class BmapController with WidgetsBindingObserver {
     final latBatch = options.map((it) => it.latLng.latitude).toList();
     final lngBatch = options.map((it) => it.latLng.longitude).toList();
     final iconDataBatch = <Uint8List>[
-      for (final option in options)
-        if (option.iconUri != null && option.imageConfig != null)
-          await uri2ImageData(option.imageConfig, option.iconUri)
-        else if (option.widget != null)
-          await _state.widgetToImageData(option.widget)
+      ...await Future.wait([
+        for (final option in options)
+          if (option.iconProvider != null)
+            option.iconProvider
+                .toImageData(createLocalImageConfiguration(_state.context))
+      ]),
+      ...await _state.widgetToImageData(options
+          .where((element) => element.widget != null)
+          .map((e) => e.widget)
+          .toList()),
     ];
     final objectBatch = options.map((it) => it.object).toList();
 
@@ -141,7 +212,9 @@ class BmapController with WidgetsBindingObserver {
               await com_baidu_mapapi_map_BitmapDescriptorFactory_Batch
                   .fromBitmap_batch(bitmapBatch);
           await markerOptionBatch.icon_batch(iconBatch);
-          pool..addAll(bitmapBatch)..addAll(iconBatch);
+          pool
+            ..addAll(bitmapBatch)
+            ..addAll(iconBatch);
         }
         // 设置自定义数据
         await markerOptionBatch.title_batch(objectBatch);
@@ -150,7 +223,8 @@ class BmapController with WidgetsBindingObserver {
         final overlays = await map.addOverlays(markerOptionBatch);
         // 由于返回类型被重置为Polygon(因为是第一个子类的关系), 这里转换一下
         final markers = overlays
-            .map((it) => com_baidu_mapapi_map_Marker()..refId = it.refId)
+            .map((it) => BmapMapFluttifyAndroidAs(it)
+                .as__<com_baidu_mapapi_map_Marker>())
             .toList();
 
         // marker不释放, 还有用
@@ -241,7 +315,9 @@ class BmapController with WidgetsBindingObserver {
         await iosController.removeAnnotations(markers);
         await iosController.removeOverlays(overlays);
 
-        pool..addAll(markers.cast<Ref>())..addAll(overlays.cast<Ref>());
+        pool
+          ..addAll(markers.cast<Ref>())
+          ..addAll(overlays.cast<Ref>());
       },
     );
   }
@@ -249,11 +325,13 @@ class BmapController with WidgetsBindingObserver {
   /// 添加折线
   ///
   /// 可配置参数详见[PolylineOption]
-  Future<Polyline> addPolyline(PolylineOption option) {
+  Future<Polyline> addPolyline(PolylineOption option) async {
     assert(option != null);
 
     final latitudeBatch = option.latLngList.map((e) => e.latitude).toList();
     final longitudeBatch = option.latLngList.map((e) => e.longitude).toList();
+    Uint8List textureData = await option.textureProvider
+        ?.toImageData(createLocalImageConfiguration(_state.context));
 
     return platform(
       android: (pool) async {
@@ -281,15 +359,16 @@ class BmapController with WidgetsBindingObserver {
               .color(Int32List.fromList([option.strokeColor.value])[0]);
         }
         // 自定义贴图
-        if (option.customTexture != null && option.imageConfig != null) {
-          Uint8List iconData =
-              await uri2ImageData(option.imageConfig, option.customTexture);
-          final bitmap = await android_graphics_Bitmap.create(iconData);
+        if (textureData != null) {
+          final bitmap = await android_graphics_Bitmap.create(textureData);
           final texture = await com_baidu_mapapi_map_BitmapDescriptorFactory
               .fromBitmap(bitmap);
           await polylineOptions.customTexture(texture);
-
-          pool..add(bitmap)..add(texture);
+          // 释放图片
+          await bitmap.recycle();
+          pool
+            ..add(bitmap)
+            ..add(texture);
         }
         // 是否虚线
         if (option.dashType != null) {
@@ -316,7 +395,7 @@ class BmapController with WidgetsBindingObserver {
           ..addAll(latLngList);
 
         return Polyline.android(
-          TypeOpBmapMapFluttifyAndroid(polyline)
+          BmapMapFluttifyAndroidAs(polyline)
               .as__<com_baidu_mapapi_map_Polyline>(),
         );
       },
@@ -342,10 +421,7 @@ class BmapController with WidgetsBindingObserver {
           polyline.addJsonableProperty__(2, option.strokeColor.value);
         }
         // 设置图片
-        if (option.customTexture != null && option.imageConfig != null) {
-          Uint8List textureData =
-              await uri2ImageData(option.imageConfig, option.customTexture);
-
+        if (textureData != null) {
           final texture = await UIImage.create(textureData);
 
           polyline.addProperty__(3, texture);
@@ -416,7 +492,7 @@ class BmapController with WidgetsBindingObserver {
           ..addAll(latLngList);
 
         return Polygon.android(
-          TypeOpBmapMapFluttifyAndroid(polygon)
+          BmapMapFluttifyAndroidAs(polygon)
               .as__<com_baidu_mapapi_map_Polygon>(),
         );
       },
@@ -493,11 +569,13 @@ class BmapController with WidgetsBindingObserver {
         // 设置参数
         final circle = await map.addOverlay(circleOptions);
 
-        pool..add(map)..add(circleOptions)..add(latLng);
+        pool
+          ..add(map)
+          ..add(circleOptions)
+          ..add(latLng);
 
         return Circle.android(
-          TypeOpBmapMapFluttifyAndroid(circle)
-              .as__<com_baidu_mapapi_map_Circle>(),
+          BmapMapFluttifyAndroidAs(circle).as__<com_baidu_mapapi_map_Circle>(),
         );
       },
       ios: (pool) async {
@@ -544,7 +622,9 @@ class BmapController with WidgetsBindingObserver {
           cameraUpdate,
         );
 
-        pool..add(map)..add(cameraUpdate);
+        pool
+          ..add(map)
+          ..add(cameraUpdate);
       },
       ios: (pool) async {
         final currentLevel = await iosController.get_zoomLevel();
@@ -553,7 +633,7 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
-  /// 放大一个等级
+  /// 缩小一个等级
   Future<void> zoomOut({bool animated = true}) async {
     await platform(
       android: (pool) async {
@@ -564,7 +644,9 @@ class BmapController with WidgetsBindingObserver {
           cameraUpdate,
         );
 
-        pool..add(map)..add(cameraUpdate);
+        pool
+          ..add(map)
+          ..add(cameraUpdate);
       },
       ios: (pool) async {
         final currentLevel = await iosController.get_zoomLevel();
@@ -626,7 +708,9 @@ class BmapController with WidgetsBindingObserver {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setZoomGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_zoomEnabled(enable);
@@ -642,7 +726,9 @@ class BmapController with WidgetsBindingObserver {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setScrollGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_scrollEnabled(enable);
@@ -658,7 +744,9 @@ class BmapController with WidgetsBindingObserver {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setRotateGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_rotateEnabled(enable);
@@ -666,7 +754,7 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
-  /// 旋转手势使能
+  /// 倾斜手势使能
   Future<void> setOverlookingGesturesEnabled(bool enable) async {
     await platform(
       android: (pool) async {
@@ -674,7 +762,9 @@ class BmapController with WidgetsBindingObserver {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setOverlookingGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_overlookEnabled(enable);
@@ -690,7 +780,9 @@ class BmapController with WidgetsBindingObserver {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setAllGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_zoomEnabled(enable);
@@ -714,7 +806,9 @@ class BmapController with WidgetsBindingObserver {
         await map.animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate(
             cameraUpdate);
 
-        pool..add(map)..add(cameraUpdate);
+        pool
+          ..add(map)
+          ..add(cameraUpdate);
       },
       ios: (pool) async {
         await iosController.set_zoomLevel(level);
@@ -729,7 +823,9 @@ class BmapController with WidgetsBindingObserver {
         final map = await androidController.getMap();
         final camera = await map.getMapStatus();
 
-        pool..add(map)..add(camera);
+        pool
+          ..add(map)
+          ..add(camera);
         return camera.get_zoom();
       },
       ios: (pool) async {
@@ -747,7 +843,9 @@ class BmapController with WidgetsBindingObserver {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setEnlargeCenterWithDoubleClickEnable(byCenter);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController
@@ -765,8 +863,10 @@ class BmapController with WidgetsBindingObserver {
         final position = await map.getMapStatus();
         final target = await position.get_target();
 
-        // target不能马上释放, 因为跟返回对象有联系
-        pool..add(map)..add(position);
+        pool
+          ..add(map)
+          ..add(position)
+          ..add(target);
 
         return LatLng(
           await target.get_latitude(),
@@ -775,7 +875,7 @@ class BmapController with WidgetsBindingObserver {
       },
       ios: (pool) async {
         final target = await iosController.get_centerCoordinate();
-        // target不能马上释放, 因为跟返回对象有联系
+        pool.add(target);
         return LatLng(await target.latitude, await target.longitude);
       },
     );
@@ -811,147 +911,473 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
-  Future<void> dispose() async {
-    await androidController?.onPause();
-    await androidController?.onDestroy();
-    await iosController?.viewWillDisappear();
+  /// 设置地图移动监听事件
+  Future<void> setMapMoveListener({OnMapMove onMapMoveEnd}) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
 
-    WidgetsBinding.instance.removeObserver(this);
-  }
+        await map.setOnMapStatusChangeListener(
+          _androidMapDelegate.._onMapMoveEnd = onMapMoveEnd,
+        );
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    super.didChangeAppLifecycleState(state);
-    debugPrint('didChangeAppLifecycleState: $state');
-    // 因为这里的生命周期其实已经是App的生命周期了, 所以除了这里还需要在dispose里释放资源
-    switch (state) {
-      case AppLifecycleState.resumed:
-        androidController?.onResume();
-        iosController?.viewWillAppear();
-        break;
-      case AppLifecycleState.inactive:
-        break;
-      case AppLifecycleState.paused:
-        androidController?.onPause();
-        iosController?.viewWillDisappear();
-        break;
-      case AppLifecycleState.detached:
-        androidController?.onDestroy();
-        break;
-    }
-  }
-}
-
-class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
-  OnMarkerClicked _onMarkerClicked;
-  OnMarkerDrag _onMarkerDragStart;
-  OnMarkerDrag _onMarkerDragging;
-  OnMarkerDrag _onMarkerDragEnd;
-
-  BMKMapView _iosController;
-
-  @override
-  Future<void> mapView_clickAnnotationView(
-    BMKMapView mapView,
-    BMKAnnotationView view,
-  ) async {
-    super.mapView_clickAnnotationView(mapView, view);
-    if (_onMarkerClicked != null) {
-      await _onMarkerClicked(
-        Marker.ios(
-          BMKPointAnnotation()
-            ..refId = (await view.get_annotation(viewChannel: false)).refId,
-//          view,
-          _iosController,
-        ),
-      );
-    }
-  }
-
-  @override
-  Future<void> mapView_annotationView_didChangeDragState_fromOldState(
-    BMKMapView mapView,
-    BMKAnnotationView view,
-    int newState,
-    int oldState,
-  ) async {
-    super.mapView_annotationView_didChangeDragState_fromOldState(
-      mapView,
-      view,
-      newState,
-      oldState,
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(
+          _iosMapDelegate.._onMapMoveEnd = onMapMoveEnd,
+        );
+      },
     );
-    if (_onMarkerDragStart != null && newState == 0) {
-      await _onMarkerDragStart(
-        Marker.ios(
-          await view.get_annotation(viewChannel: false),
-//          view,
-          _iosController,
-        ),
-      );
-    }
-
-    if (_onMarkerDragging != null && newState == 1) {
-      await _onMarkerDragging(
-        Marker.ios(
-          await view.get_annotation(viewChannel: false),
-//          view,
-          _iosController,
-        ),
-      );
-    }
-
-    if (_onMarkerDragEnd != null && newState == 2) {
-      await _onMarkerDragEnd(
-        Marker.ios(
-          await view.get_annotation(viewChannel: false),
-//          view,
-          _iosController,
-        ),
-      );
-    }
   }
 }
 
-class _AndroidMapDelegate extends java_lang_Object
-    with
-        com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener,
-        com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener {
-  OnMarkerClicked _onMarkerClicked;
-  OnMarkerDrag _onMarkerDragStart;
-  OnMarkerDrag _onMarkerDragging;
-  OnMarkerDrag _onMarkerDragEnd;
+mixin _Pro on _Holder {
+  /// 自定义地图
+  ///
+  /// [androidStyleAsset] android端样式文件路径, 即在pubspec.yaml下注册的asset路径
+  /// [iosJsonStyle] ios端样式文件路径, 即在pubspec.yaml下注册的asset路径
+  ///
+  /// 这里的一个坑, 官方说明中, 不管是文档里, 还是创建自定义地图的提示中, 都指明了android和
+  /// ios两端用的是同一种二进制文件, 但是ios端实际操作过程中, 却发现总是报json格式错误, 后来
+  /// 使用了用于web端的json样式文件到ios端后, 发现是有用的, 所以这里要区分一下两端的文件! 哎!
+  /// 花了半天的时间趟这个坑, 简直是坑爹!
+  Future<void> setCustomMapStyle({
+    String androidBinaryStyle,
+    String iosJsonStyle,
+  }) async {
+    await platform(
+      android: (pool) async {
+        Uint8List styleData = await rootBundle
+            .load(androidBinaryStyle)
+            .then((byteData) => byteData.buffer.asUint8List());
 
-  @override
-  Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerClick(var1);
-    if (_onMarkerClicked != null) {
-      await _onMarkerClicked(Marker.android(var1));
-    }
-    return true;
+        final dir = await getApplicationSupportDirectory();
+        final file = File('${dir.path}/$androidBinaryStyle');
+        if (!file.existsSync()) file.createSync(recursive: true);
+
+        await file.writeAsBytes(styleData, flush: true);
+
+        await androidController.setMapCustomStylePath(file.path);
+        await androidController.setMapCustomStyleEnable(true);
+      },
+      ios: (pool) async {
+        Uint8List styleData = await rootBundle
+            .load(iosJsonStyle)
+            .then((byteData) => byteData.buffer.asUint8List());
+
+        final dir = await getApplicationSupportDirectory();
+        final file = File('${dir.path}/$iosJsonStyle');
+        if (!file.existsSync()) file.createSync(recursive: true);
+
+        await file.writeAsBytes(styleData, flush: true);
+
+        await iosController.setCustomMapStylePath(file.path);
+        await iosController.setCustomMapStyleEnable(true);
+      },
+    );
   }
 
-  @override
-  Future<void> onMarkerDragStart(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDragStart(var1);
-    if (_onMarkerDragStart != null) {
-      await _onMarkerDragStart(Marker.android(var1));
-    }
+  /// 截图
+  Future<void> screenShot(OnScreenShot onScreenShot) async {
+    assert(onScreenShot != null);
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        await map.snapshot(
+          _androidMapDelegate.._onScreenShot = onScreenShot,
+        );
+
+        pool.add(map);
+      },
+      ios: (pool) async {
+        final rect = await iosController.frame;
+        final image = await iosController.takeSnapshot();
+
+        if (onScreenShot != null) onScreenShot(await image.data);
+
+        pool
+          ..add(rect)
+          ..add(image);
+      },
+    );
   }
 
-  @override
-  Future<void> onMarkerDrag(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDrag(var1);
-    if (_onMarkerDragging != null) {
-      await _onMarkerDragging(Marker.android(var1));
-    }
+  /// 设置logo位置
+  Future<void> setLogoPosition(Alignment position) async {
+    await platform(
+      android: (pool) async {
+        com_baidu_mapapi_map_LogoPosition logoPosition =
+            com_baidu_mapapi_map_LogoPosition.logoPostionleftBottom;
+        if (position == Alignment.bottomLeft) {
+          logoPosition =
+              com_baidu_mapapi_map_LogoPosition.logoPostionleftBottom;
+        } else if (position == Alignment.bottomCenter) {
+          logoPosition =
+              com_baidu_mapapi_map_LogoPosition.logoPostionCenterBottom;
+        } else if (position == Alignment.topCenter) {
+          logoPosition = com_baidu_mapapi_map_LogoPosition.logoPostionCenterTop;
+        } else if (position == Alignment.topLeft) {
+          logoPosition = com_baidu_mapapi_map_LogoPosition.logoPostionleftTop;
+        } else if (position == Alignment.topRight) {
+          logoPosition = com_baidu_mapapi_map_LogoPosition.logoPostionRightTop;
+        } else if (position == Alignment.bottomRight) {
+          logoPosition =
+              com_baidu_mapapi_map_LogoPosition.logoPostionRightBottom;
+        } else {
+          debugPrint('不支持的位置');
+        }
+
+        await androidController.setLogoPosition(logoPosition);
+      },
+      ios: (pool) async {
+        BMKLogoPosition logoPosition =
+            BMKLogoPosition.BMKLogoPositionLeftBottom;
+        if (position == Alignment.bottomLeft) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionLeftBottom;
+        } else if (position == Alignment.bottomCenter) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionCenterBottom;
+        } else if (position == Alignment.topCenter) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionCenterTop;
+        } else if (position == Alignment.topLeft) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionLeftTop;
+        } else if (position == Alignment.topRight) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionRightTop;
+        } else if (position == Alignment.bottomRight) {
+          logoPosition = BMKLogoPosition.BMKLogoPositionRightBottom;
+        } else {
+          debugPrint('不支持的位置');
+        }
+
+        await iosController.set_logoPosition(logoPosition);
+      },
+    );
   }
 
-  @override
-  Future<void> onMarkerDragEnd(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDragEnd(var1);
-    if (_onMarkerDragEnd != null) {
-      await _onMarkerDragEnd(Marker.android(var1));
-    }
+  /// 设置地图内间距
+  Future<void> setPadding(EdgeInsets padding) async {
+    assert(padding != null);
+    final ratio = MediaQuery.of(_state.context).devicePixelRatio;
+    await platform(
+      android: (pool) async {
+        await androidController.setPadding(
+          (ratio * padding.left)?.toInt() ?? 0,
+          (ratio * padding.top)?.toInt() ?? 0,
+          (ratio * padding.right)?.toInt() ?? 0,
+          (ratio * padding.bottom)?.toInt() ?? 0,
+        );
+      },
+      ios: (pool) async {
+        final insets = await UIEdgeInsets.create(
+          padding.top ?? 0.0,
+          padding.left ?? 0.0,
+          padding.bottom ?? 0.0,
+          padding.right ?? 0.0,
+        );
+        await iosController.set_mapPadding(insets);
+      },
+    );
   }
+
+  /// 是否显示指南针 (true还是false都不显示, 两端问题一样)
+  Future<void> showCompass(bool enable) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final uiSettings = await map.getUiSettings();
+
+        await uiSettings.setCompassEnabled(enable);
+
+        pool
+          ..add(map)
+          ..add(uiSettings);
+      },
+      ios: (pool) async {
+        await iosController.setCompassImage(null);
+      },
+    );
+  }
+
+  /// 限制地图的显示范围
+  ///
+  /// [southWest]西南角, [northEast]东北角
+  Future<void> setMapRegionLimits(LatLng southWest, LatLng northEast) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        final southWestPoint = await com_baidu_mapapi_model_LatLng
+            .create__double__double(southWest.latitude, southWest.longitude);
+        final northEastPoint = await com_baidu_mapapi_model_LatLng
+            .create__double__double(northEast.latitude, northEast.longitude);
+
+        final latLngBoundsBuilder =
+            await com_baidu_mapapi_model_LatLngBounds_Builder.create__();
+        await latLngBoundsBuilder
+            .include__com_baidu_mapapi_model_LatLng(southWestPoint);
+        await latLngBoundsBuilder
+            .include__com_baidu_mapapi_model_LatLng(northEastPoint);
+
+        await map.setMapStatusLimits(await latLngBoundsBuilder.build());
+
+        pool
+          ..add(map)
+          ..add(southWestPoint)
+          ..add(northEastPoint)
+          ..add(latLngBoundsBuilder);
+      },
+      ios: (pool) async {
+        final center = await CLLocationCoordinate2D.create(
+          (southWest.latitude + northEast.latitude) / 2,
+          (southWest.longitude + northEast.longitude) / 2,
+        );
+        final span = await BMKCoordinateSpanMake(
+          northEast.latitude - southWest.latitude,
+          northEast.longitude - southWest.longitude,
+        );
+        final region = await BMKCoordinateRegionMake(center, span);
+        iosController.set_limitMapRegion(region);
+
+        pool
+          ..add(center)
+          ..add(span)
+          ..add(region);
+      },
+    );
+  }
+
+  /// 控制底图标注
+  ///
+  /// 百度地图SDK支持设置底图POI的是否显示，用户可以通过BMKMapView的showMapPoi属性来控制
+  /// 地图标注是否显示，默认显示底图标注。利用此属性可得到仅显示道路信息的地图。
+  Future<void> showMapPoi(bool show) async {
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        await map.showMapPoi(show);
+
+        pool..add(map);
+      },
+      ios: (pool) async {
+        await iosController.set_showMapPoi(show);
+      },
+    );
+  }
+
+  /// 将指定的经纬度列表(包括但不限于marker, polyline, polygon等)调整至同一屏幕中显示
+  ///
+  /// [bounds]边界点形成的边界, [padding]地图内边距
+  Future<void> zoomToSpan(
+    List<LatLng> bounds, {
+    EdgeInsets padding = EdgeInsets.zero,
+    bool animated = true,
+  }) async {
+    final double minLat = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.latitude < cur.latitude ? pre : cur)
+        .then((bottom) => bottom.latitude);
+    final double minLng = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.longitude < cur.longitude ? pre : cur)
+        .then((left) => left.longitude);
+    final double maxLat = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.latitude > cur.latitude ? pre : cur)
+        .then((top) => top.latitude);
+    final double maxLng = await Stream.fromIterable(bounds)
+        .reduce((pre, cur) => pre.longitude > cur.longitude ? pre : cur)
+        .then((right) => right.longitude);
+    final devicePixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // 西南角
+        final southWest = await com_baidu_mapapi_model_LatLng
+            .create__double__double(minLat, minLng);
+        // 东北角
+        final northEast = await com_baidu_mapapi_model_LatLng
+            .create__double__double(maxLat, maxLng);
+
+        // 可视区域矩形
+        final builder =
+            await com_baidu_mapapi_model_LatLngBounds_Builder.create__();
+        await builder.include__com_baidu_mapapi_model_LatLng(southWest);
+        await builder.include__com_baidu_mapapi_model_LatLng(northEast);
+
+        // 更新对象 android端由于单位是像素, 所以这里要乘以当前设备的像素密度
+        final cameraUpdate = await com_baidu_mapapi_map_MapStatusUpdateFactory
+            .newLatLngBounds__com_baidu_mapapi_model_LatLngBounds__int__int__int__int(
+          await builder.build(),
+          (padding.left.toInt() * devicePixelRatio).toInt(),
+          (padding.top.toInt() * devicePixelRatio).toInt(),
+          (padding.right.toInt() * devicePixelRatio).toInt(),
+          (padding.bottom.toInt() * devicePixelRatio).toInt(),
+        );
+
+        if (animated) {
+          await map.animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate(
+              cameraUpdate);
+        } else {
+          await map.setMapStatus(cameraUpdate);
+        }
+
+        pool
+          ..add(map)
+          ..add(southWest)
+          ..add(northEast)
+          ..add(builder)
+          ..add(cameraUpdate);
+      },
+      ios: (pool) async {
+        // 由于屏幕坐标的(0, 0)左上角, 所以需要西北角和东南角
+        // 西北角
+        final northWest = await CLLocationCoordinate2D.create(maxLat, minLng);
+        // 东南角
+        final southEast = await CLLocationCoordinate2D.create(minLat, maxLng);
+
+        // 西北角屏幕坐标
+        final northWestPoint = await BMKMapPointForCoordinate(northWest);
+        // 东南角屏幕坐标
+        final southEastPoint = await BMKMapPointForCoordinate(southEast);
+
+        // 矩形原点x
+        final x = await northWestPoint.get_x();
+        // 矩形原点y
+        final y = await northWestPoint.get_y();
+        // 矩形宽度
+        final width =
+            (await southEastPoint.get_x() - await northWestPoint.get_x()).abs();
+        // 矩形高度
+        final height =
+            (await southEastPoint.get_y() - await northWestPoint.get_y()).abs();
+
+        // 矩形
+        final rect = await BMKMapRectMake(x, y, width, height);
+
+        await iosController.fitVisibleMapRect_edgePadding_withAnimated(
+          rect,
+          await UIEdgeInsets.create(
+            padding.top,
+            padding.left,
+            padding.bottom,
+            padding.right,
+          ),
+          animated,
+        );
+
+        pool
+          ..add(northWest)
+          ..add(southEast)
+          ..add(northWestPoint)
+          ..add(southEastPoint)
+          ..add(rect);
+      },
+    );
+  }
+
+  /// 添加弧线
+  Future<Arc> addArc(ArcOption option) async {
+    assert(option != null);
+
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // 构造折线点
+        com_baidu_mapapi_model_LatLng start =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          option.startPoint.latitude,
+          option.startPoint.longitude,
+        );
+        com_baidu_mapapi_model_LatLng middle =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          option.middlePoint.latitude,
+          option.middlePoint.longitude,
+        );
+        com_baidu_mapapi_model_LatLng end =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          option.endPoint.latitude,
+          option.endPoint.longitude,
+        );
+
+        // 构造折线参数
+        final arcOptions = await com_baidu_mapapi_map_ArcOptions.create__();
+
+        // 添加经纬度列表
+        await arcOptions.points(start, middle, end);
+        if (option.width != null) {
+          await arcOptions.width(option.width.toInt());
+        }
+        // 颜色
+        if (option.strokeColor != null) {
+          await arcOptions
+              .color(Int32List.fromList([option.strokeColor.value])[0]);
+        }
+        // 设置参数
+        final arc = await map.addOverlay(arcOptions);
+
+        pool
+          ..add(map)
+          ..add(arcOptions)
+          ..add(start)
+          ..add(middle)
+          ..add(end);
+
+        return Arc.android(
+          BmapMapFluttifyAndroidAs(arc).as__<com_baidu_mapapi_map_Arc>(),
+        );
+      },
+      ios: (pool) async {
+        await iosController.set_delegate(_iosMapDelegate);
+
+        // 构造折线点
+        CLLocationCoordinate2D start = await CLLocationCoordinate2D.create(
+          option.startPoint.latitude,
+          option.startPoint.longitude,
+        );
+        CLLocationCoordinate2D middle = await CLLocationCoordinate2D.create(
+          option.middlePoint.latitude,
+          option.middlePoint.longitude,
+        );
+        CLLocationCoordinate2D end = await CLLocationCoordinate2D.create(
+          option.endPoint.latitude,
+          option.endPoint.longitude,
+        );
+
+        // 构造折线参数
+        final arc =
+            await BMKArcline.arclineWithCoordinates([start, middle, end]);
+
+        // 宽度和颜色需要设置到STACK里去
+        if (option.width != null) {
+          final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
+          arc.addJsonableProperty__(1, option.width / pixelRatio);
+        }
+        // 颜色
+        if (option.strokeColor != null) {
+          arc.addJsonableProperty__(2, option.strokeColor.value);
+        }
+
+        // 设置参数
+        await iosController.addOverlay(arc);
+
+        pool
+          ..add(start)
+          ..add(middle)
+          ..add(end);
+
+        return Arc.ios(arc, iosController);
+      },
+    );
+  }
+}
+
+class _Holder {
+  com_baidu_mapapi_map_TextureMapView androidController;
+  BMKMapView iosController;
+
+  _BmapViewState _state;
+
+  final _iosMapDelegate = _IOSMapDelegate();
+  final _androidMapDelegate = _AndroidMapDelegate();
 }

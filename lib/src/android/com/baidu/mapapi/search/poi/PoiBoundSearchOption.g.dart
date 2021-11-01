@@ -16,115 +16,111 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.poi.PoiBoundSearchOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_poi_PoiBoundSearchOption> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_poi_PoiBoundSearchOption__');
-    final object = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_poi_PoiBoundSearchOption__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_poi_PoiBoundSearchOption__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_poi_PoiBoundSearchOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_poi_PoiBoundSearchOption__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<com_baidu_mapapi_model_LatLngBounds> get_mBound() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mBound", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mBound", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_model_LatLngBounds>(__result__);
   }
   
   Future<String> get_mKeyword() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mKeyword", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mKeyword", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_mPageNum() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageNum", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageNum", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_mPageCapacity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageCapacity", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageCapacity", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_mTag() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mTag", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mTag", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_mScope() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mScope", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mScope", {'__this__': this});
     return __result__;
   }
   
   Future<com_baidu_mapapi_search_poi_PoiFilter> get_mPoiFilter() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPoiFilter", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_search_poi_PoiFilter()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_search_poi_PoiFilter()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPoiFilter", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiFilter>(__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_mBound(com_baidu_mapapi_model_LatLngBounds mBound) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mBound', {'refId': refId, "mBound": mBound.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mBound', <String, dynamic>{'__this__': this, "mBound": mBound});
   
   
   }
   
   Future<void> set_mKeyword(String mKeyword) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mKeyword', {'refId': refId, "mKeyword": mKeyword});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mKeyword', <String, dynamic>{'__this__': this, "mKeyword": mKeyword});
   
   
   }
   
   Future<void> set_mPageNum(int mPageNum) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageNum', {'refId': refId, "mPageNum": mPageNum});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageNum', <String, dynamic>{'__this__': this, "mPageNum": mPageNum});
   
   
   }
   
   Future<void> set_mPageCapacity(int mPageCapacity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageCapacity', {'refId': refId, "mPageCapacity": mPageCapacity});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageCapacity', <String, dynamic>{'__this__': this, "mPageCapacity": mPageCapacity});
   
   
   }
   
   Future<void> set_mTag(String mTag) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mTag', {'refId': refId, "mTag": mTag});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mTag', <String, dynamic>{'__this__': this, "mTag": mTag});
   
   
   }
   
   Future<void> set_mScope(int mScope) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mScope', {'refId': refId, "mScope": mScope});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mScope', <String, dynamic>{'__this__': this, "mScope": mScope});
   
   
   }
   
   Future<void> set_mPoiFilter(com_baidu_mapapi_search_poi_PoiFilter mPoiFilter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPoiFilter', {'refId': refId, "mPoiFilter": mPoiFilter.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPoiFilter', <String, dynamic>{'__this__': this, "mPoiFilter": mPoiFilter});
   
   
   }
@@ -140,20 +136,13 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::keyword', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::keyword', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   
@@ -164,20 +153,13 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::bound', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::bound', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   
@@ -188,20 +170,13 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageNum', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageNum', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   
@@ -212,20 +187,13 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageCapacity', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageCapacity', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   
@@ -236,20 +204,13 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::tag', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::tag', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   
@@ -260,20 +221,13 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::scope', {"var1": var1, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::scope', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   
@@ -284,117 +238,101 @@ class com_baidu_mapapi_search_poi_PoiBoundSearchOption extends java_lang_Object 
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::poiFilter', {"var1": var1?.refId, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::poiFilter', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_poi_PoiBoundSearchOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_poi_PoiBoundSearchOption_Batch on List<com_baidu_mapapi_search_poi_PoiBoundSearchOption> {
   //region getters
   Future<List<com_baidu_mapapi_model_LatLngBounds>> get_mBound_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mBound_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLngBounds()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mBound_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_model_LatLngBounds>(__result__))?.cast<com_baidu_mapapi_model_LatLngBounds>()?.toList();
   }
   
   Future<List<String>> get_mKeyword_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mKeyword_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mKeyword_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_mPageNum_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageNum_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageNum_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_mPageCapacity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageCapacity_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPageCapacity_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<String>> get_mTag_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mTag_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mTag_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_mScope_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mScope_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mScope_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_search_poi_PoiFilter>> get_mPoiFilter_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPoiFilter_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiFilter()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiBoundSearchOption::get_mPoiFilter_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiFilter>(__result__))?.cast<com_baidu_mapapi_search_poi_PoiFilter>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mBound_batch(List<com_baidu_mapapi_model_LatLngBounds> mBound) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mBound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mBound": mBound[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mBound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mBound": mBound[__i__]}]);
   
   
   }
   
   Future<void> set_mKeyword_batch(List<String> mKeyword) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mKeyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mKeyword": mKeyword[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mKeyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mKeyword": mKeyword[__i__]}]);
   
   
   }
   
   Future<void> set_mPageNum_batch(List<int> mPageNum) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mPageNum": mPageNum[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageNum": mPageNum[__i__]}]);
   
   
   }
   
   Future<void> set_mPageCapacity_batch(List<int> mPageCapacity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mPageCapacity": mPageCapacity[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageCapacity": mPageCapacity[__i__]}]);
   
   
   }
   
   Future<void> set_mTag_batch(List<String> mTag) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mTag": mTag[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTag": mTag[__i__]}]);
   
   
   }
   
   Future<void> set_mScope_batch(List<int> mScope) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mScope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mScope": mScope[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mScope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mScope": mScope[__i__]}]);
   
   
   }
   
   Future<void> set_mPoiFilter_batch(List<com_baidu_mapapi_search_poi_PoiFilter> mPoiFilter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPoiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "mPoiFilter": mPoiFilter[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::set_mPoiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPoiFilter": mPoiFilter[__i__]}]);
   
   
   }
@@ -404,142 +342,79 @@ extension com_baidu_mapapi_search_poi_PoiBoundSearchOption_Batch on List<com_bai
   //region methods
   
   Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> keyword_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::keyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::keyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiBoundSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> bound_batch(List<com_baidu_mapapi_model_LatLngBounds> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::bound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::bound_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiBoundSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> pageNum_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiBoundSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> pageCapacity_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::pageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiBoundSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> tag_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::tag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::tag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiBoundSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> scope_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::scope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::scope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiBoundSearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiBoundSearchOption>> poiFilter_batch(List<com_baidu_mapapi_search_poi_PoiFilter> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::poiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].refId, "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiBoundSearchOption::poiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_search_poi_PoiBoundSearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiBoundSearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiBoundSearchOption>().toList();
   }
   
   //endregion

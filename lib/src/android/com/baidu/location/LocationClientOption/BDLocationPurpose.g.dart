@@ -4,7 +4,27 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_location_LocationClientOption_BDLocationPurpose {
-  SignIn /* 0 */,
-  Sport /* 0 */,
-  Transport /* 0 */
+  SignIn /* null */,
+  Sport /* null */,
+  Transport /* null */
+}
+
+extension com_baidu_location_LocationClientOption_BDLocationPurposeToX on com_baidu_location_LocationClientOption_BDLocationPurpose {
+  int toValue() {
+    switch (this) {
+      case com_baidu_location_LocationClientOption_BDLocationPurpose.SignIn: return com_baidu_location_LocationClientOption_BDLocationPurpose.SignIn.index + 0;
+      case com_baidu_location_LocationClientOption_BDLocationPurpose.Sport: return com_baidu_location_LocationClientOption_BDLocationPurpose.Sport.index + 0;
+      case com_baidu_location_LocationClientOption_BDLocationPurpose.Transport: return com_baidu_location_LocationClientOption_BDLocationPurpose.Transport.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_location_LocationClientOption_BDLocationPurposeFromX on int {
+  com_baidu_location_LocationClientOption_BDLocationPurpose tocom_baidu_location_LocationClientOption_BDLocationPurpose() {
+    switch (this) {
+      
+      default: return com_baidu_location_LocationClientOption_BDLocationPurpose.values[this + 0];
+    }
+  }
 }

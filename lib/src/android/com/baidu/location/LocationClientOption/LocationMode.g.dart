@@ -4,7 +4,27 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_location_LocationClientOption_LocationMode {
-  Hight_Accuracy /* 0 */,
-  Battery_Saving /* 0 */,
-  Device_Sensors /* 0 */
+  Hight_Accuracy /* null */,
+  Battery_Saving /* null */,
+  Device_Sensors /* null */
+}
+
+extension com_baidu_location_LocationClientOption_LocationModeToX on com_baidu_location_LocationClientOption_LocationMode {
+  int toValue() {
+    switch (this) {
+      case com_baidu_location_LocationClientOption_LocationMode.Hight_Accuracy: return com_baidu_location_LocationClientOption_LocationMode.Hight_Accuracy.index + 0;
+      case com_baidu_location_LocationClientOption_LocationMode.Battery_Saving: return com_baidu_location_LocationClientOption_LocationMode.Battery_Saving.index + 0;
+      case com_baidu_location_LocationClientOption_LocationMode.Device_Sensors: return com_baidu_location_LocationClientOption_LocationMode.Device_Sensors.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_location_LocationClientOption_LocationModeFromX on int {
+  com_baidu_location_LocationClientOption_LocationMode tocom_baidu_location_LocationClientOption_LocationMode() {
+    switch (this) {
+      
+      default: return com_baidu_location_LocationClientOption_LocationMode.values[this + 0];
+    }
+  }
 }

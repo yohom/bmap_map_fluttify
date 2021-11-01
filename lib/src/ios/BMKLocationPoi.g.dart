@@ -16,59 +16,57 @@ class BMKLocationPoi extends NSObject  {
   //region constants
   static const String name__ = 'BMKLocationPoi';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKLocationPoi> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKLocationPoi');
-    final object = BMKLocationPoi()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKLocationPoi> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKLocationPoi',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKLocationPoi>(__result__);
   }
   
-  static Future<List<BMKLocationPoi>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKLocationPoi', {'length': length});
-  
-    final List<BMKLocationPoi> typedResult = resultBatch.map((result) => BMKLocationPoi()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKLocationPoi>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKLocationPoi',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKLocationPoi>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_uid() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_uid", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_uid", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_name() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_name", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_name", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_tags() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_tags", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_tags", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_addr() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_addr", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_addr", {'__this__': this});
     return __result__;
   }
   
   Future<double> get_relaiability() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_relaiability", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_relaiability", {'__this__': this});
     return __result__;
   }
   
@@ -87,20 +85,13 @@ class BMKLocationPoi extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationPoi::initWithDictionary', {"dictionary": dictionary, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationPoi::initWithDictionary', {"dictionary": dictionary, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -111,60 +102,48 @@ class BMKLocationPoi extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationPoi::initWithTwoDictionary', {"dictionary": dictionary, "refId": refId});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationPoi::initWithTwoDictionary', {"dictionary": dictionary, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKLocationPoi{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKLocationPoi_Batch on List<BMKLocationPoi> {
   //region getters
   Future<List<String>> get_uid_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_uid_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_uid_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_name_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_name_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_name_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_tags_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_tags_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_tags_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_addr_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_addr_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_addr_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<double>> get_relaiability_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKLocationPoi::get_relaiability_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationPoi::get_relaiability_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   //endregion
@@ -176,42 +155,24 @@ extension BMKLocationPoi_Batch on List<BMKLocationPoi> {
   //region methods
   
   Future<List<dynamic>> initWithDictionary_batch(List<Map> dictionary) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationPoi::initWithDictionary_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"dictionary": dictionary[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationPoi::initWithDictionary_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"dictionary": dictionary[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   
   Future<List<dynamic>> initWithTwoDictionary_batch(List<Map> dictionary) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKLocationPoi::initWithTwoDictionary_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"dictionary": dictionary[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationPoi::initWithTwoDictionary_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"dictionary": dictionary[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   //endregion

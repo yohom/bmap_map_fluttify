@@ -5,5 +5,24 @@
 
 enum BMKLineCapType {
   kBMKLineCapButt /* 0 */,
-  kBMKLineCapRound /* 0 */
+  kBMKLineCapRound /* null */
+}
+
+extension BMKLineCapTypeToX on BMKLineCapType {
+  int toValue() {
+    switch (this) {
+      case BMKLineCapType.kBMKLineCapButt: return 0;
+      case BMKLineCapType.kBMKLineCapRound: return BMKLineCapType.kBMKLineCapRound.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension BMKLineCapTypeFromX on int {
+  BMKLineCapType toBMKLineCapType() {
+    switch (this) {
+      case 0: return BMKLineCapType.kBMKLineCapButt;
+      default: return BMKLineCapType.values[this + 0];
+    }
+  }
 }

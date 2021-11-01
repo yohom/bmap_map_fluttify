@@ -19,6 +19,9 @@ mixin com_baidu_mapapi_search_poi_PoiFilter_SortName on java_lang_Object {
 
   
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
 
   

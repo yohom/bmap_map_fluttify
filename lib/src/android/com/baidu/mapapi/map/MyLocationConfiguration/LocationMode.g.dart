@@ -4,7 +4,27 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_map_MyLocationConfiguration_LocationMode {
-  NORMAL /* 0 */,
-  FOLLOWING /* 0 */,
-  COMPASS /* 0 */
+  NORMAL /* null */,
+  FOLLOWING /* null */,
+  COMPASS /* null */
+}
+
+extension com_baidu_mapapi_map_MyLocationConfiguration_LocationModeToX on com_baidu_mapapi_map_MyLocationConfiguration_LocationMode {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.NORMAL: return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.NORMAL.index + 0;
+      case com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.FOLLOWING: return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.FOLLOWING.index + 0;
+      case com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.COMPASS: return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.COMPASS.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_map_MyLocationConfiguration_LocationModeFromX on int {
+  com_baidu_mapapi_map_MyLocationConfiguration_LocationMode tocom_baidu_mapapi_map_MyLocationConfiguration_LocationMode() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_map_MyLocationConfiguration_LocationMode.values[this + 0];
+    }
+  }
 }

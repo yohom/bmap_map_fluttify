@@ -16,155 +16,137 @@ class BMKAnnotationView extends UIView  {
   //region constants
   static const String name__ = 'BMKAnnotationView';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKAnnotationView> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKAnnotationView');
-    final object = BMKAnnotationView()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKAnnotationView> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKAnnotationView',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKAnnotationView>(__result__);
   }
   
-  static Future<List<BMKAnnotationView>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKAnnotationView', {'length': length});
-  
-    final List<BMKAnnotationView> typedResult = resultBatch.map((result) => BMKAnnotationView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKAnnotationView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKAnnotationView',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKAnnotationView>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_reuseIdentifier({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_reuseIdentifier", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_reuseIdentifier", {'__this__': this});
     return __result__;
   }
   
   Future<BMKActionPaopaoView> get_paopaoView({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_paopaoView", {'refId': refId});
-    kNativeObjectPool.add(BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_paopaoView", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKActionPaopaoView>(__result__);
   }
   
   Future<BMKAnnotation> get_annotation({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_annotation", {'refId': refId});
-    kNativeObjectPool.add(BMKAnnotation.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return BMKAnnotation.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_annotation", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKAnnotation>(__result__);
   }
   
   Future<UIImage> get_image({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_image", {'refId': refId});
-    kNativeObjectPool.add(UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_image", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIImage>(__result__);
   }
   
   Future<CGPoint> get_centerOffset({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_centerOffset", {'refId': refId});
-    kNativeObjectPool.add(CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_centerOffset", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CGPoint>(__result__);
   }
   
   Future<CGPoint> get_calloutOffset({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_calloutOffset", {'refId': refId});
-    kNativeObjectPool.add(CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_calloutOffset", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CGPoint>(__result__);
   }
   
   Future<bool> get_enabled3D({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_enabled3D", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_enabled3D", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_enabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_isEnabled", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_isEnabled", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_selected({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_isSelected", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_isSelected", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_canShowCallout({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_canShowCallout", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_canShowCallout", {'__this__': this});
     return __result__;
   }
   
   Future<UIView> get_leftCalloutAccessoryView({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_leftCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(UIView()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return UIView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_leftCalloutAccessoryView", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIView>(__result__);
   }
   
   Future<UIView> get_rightCalloutAccessoryView({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_rightCalloutAccessoryView", {'refId': refId});
-    kNativeObjectPool.add(UIView()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return UIView()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_rightCalloutAccessoryView", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIView>(__result__);
   }
   
   Future<bool> get_draggable({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_isDraggable", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_isDraggable", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_dragState({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_dragState", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_dragState", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_hidePaopaoWhenSingleTapOnMap({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSingleTapOnMap", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSingleTapOnMap", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_hidePaopaoWhenDoubleTapOnMap({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDoubleTapOnMap", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDoubleTapOnMap", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_hidePaopaoWhenTwoFingersTapOnMap({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenTwoFingersTapOnMap", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenTwoFingersTapOnMap", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_hidePaopaoWhenSelectOthers({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSelectOthers", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSelectOthers", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_hidePaopaoWhenDrag({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDrag", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDrag", {'__this__': this});
     return __result__;
   }
   
   Future<bool> get_hidePaopaoWhenDragOthers({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDragOthers", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDragOthers", {'__this__': this});
     return __result__;
   }
   
   Future<double> get_displayPriority({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_displayPriority", {'refId': refId});
-  
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_displayPriority", {'__this__': this});
     return __result__;
   }
   
@@ -172,121 +154,121 @@ class BMKAnnotationView extends UIView  {
 
   //region setters
   Future<void> set_paopaoView(BMKActionPaopaoView paopaoView, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_paopaoView', {'refId': refId, "paopaoView": paopaoView.refId});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_paopaoView', <String, dynamic>{'__this__': this, "paopaoView": paopaoView});
   
   
   }
   
   Future<void> set_annotation(BMKAnnotation annotation, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_annotation', {'refId': refId, "annotation": annotation.refId});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_annotation', <String, dynamic>{'__this__': this, "annotation": annotation});
   
   
   }
   
   Future<void> set_image(UIImage image, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_image', {'refId': refId, "image": image.refId});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_image', <String, dynamic>{'__this__': this, "image": image});
   
   
   }
   
   Future<void> set_centerOffset(CGPoint centerOffset, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_centerOffset', {'refId': refId, "centerOffset": centerOffset.refId});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_centerOffset', <String, dynamic>{'__this__': this, "centerOffset": centerOffset});
   
   
   }
   
   Future<void> set_calloutOffset(CGPoint calloutOffset, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_calloutOffset', {'refId': refId, "calloutOffset": calloutOffset.refId});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_calloutOffset', <String, dynamic>{'__this__': this, "calloutOffset": calloutOffset});
   
   
   }
   
   Future<void> set_enabled3D(bool enabled3D, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_enabled3D', {'refId': refId, "enabled3D": enabled3D});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_enabled3D', <String, dynamic>{'__this__': this, "enabled3D": enabled3D});
   
   
   }
   
   Future<void> set_enabled(bool enabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_enabled', {'refId': refId, "enabled": enabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_enabled', <String, dynamic>{'__this__': this, "enabled": enabled});
   
   
   }
   
   Future<void> set_selected(bool selected, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_selected', {'refId': refId, "selected": selected});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_selected', <String, dynamic>{'__this__': this, "selected": selected});
   
   
   }
   
   Future<void> set_canShowCallout(bool canShowCallout, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_canShowCallout', {'refId': refId, "canShowCallout": canShowCallout});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_canShowCallout', <String, dynamic>{'__this__': this, "canShowCallout": canShowCallout});
   
   
   }
   
   Future<void> set_leftCalloutAccessoryView(UIView leftCalloutAccessoryView, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_leftCalloutAccessoryView', {'refId': refId, "leftCalloutAccessoryView": leftCalloutAccessoryView.refId});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_leftCalloutAccessoryView', <String, dynamic>{'__this__': this, "leftCalloutAccessoryView": leftCalloutAccessoryView});
   
   
   }
   
   Future<void> set_rightCalloutAccessoryView(UIView rightCalloutAccessoryView, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_rightCalloutAccessoryView', {'refId': refId, "rightCalloutAccessoryView": rightCalloutAccessoryView.refId});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_rightCalloutAccessoryView', <String, dynamic>{'__this__': this, "rightCalloutAccessoryView": rightCalloutAccessoryView});
   
   
   }
   
   Future<void> set_draggable(bool draggable, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_draggable', {'refId': refId, "draggable": draggable});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_draggable', <String, dynamic>{'__this__': this, "draggable": draggable});
   
   
   }
   
   Future<void> set_dragState(int dragState, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_dragState', {'refId': refId, "dragState": dragState});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_dragState', <String, dynamic>{'__this__': this, "dragState": dragState});
   
   
   }
   
   Future<void> set_hidePaopaoWhenSingleTapOnMap(bool hidePaopaoWhenSingleTapOnMap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSingleTapOnMap', {'refId': refId, "hidePaopaoWhenSingleTapOnMap": hidePaopaoWhenSingleTapOnMap});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSingleTapOnMap', <String, dynamic>{'__this__': this, "hidePaopaoWhenSingleTapOnMap": hidePaopaoWhenSingleTapOnMap});
   
   
   }
   
   Future<void> set_hidePaopaoWhenDoubleTapOnMap(bool hidePaopaoWhenDoubleTapOnMap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDoubleTapOnMap', {'refId': refId, "hidePaopaoWhenDoubleTapOnMap": hidePaopaoWhenDoubleTapOnMap});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDoubleTapOnMap', <String, dynamic>{'__this__': this, "hidePaopaoWhenDoubleTapOnMap": hidePaopaoWhenDoubleTapOnMap});
   
   
   }
   
   Future<void> set_hidePaopaoWhenTwoFingersTapOnMap(bool hidePaopaoWhenTwoFingersTapOnMap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenTwoFingersTapOnMap', {'refId': refId, "hidePaopaoWhenTwoFingersTapOnMap": hidePaopaoWhenTwoFingersTapOnMap});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenTwoFingersTapOnMap', <String, dynamic>{'__this__': this, "hidePaopaoWhenTwoFingersTapOnMap": hidePaopaoWhenTwoFingersTapOnMap});
   
   
   }
   
   Future<void> set_hidePaopaoWhenSelectOthers(bool hidePaopaoWhenSelectOthers, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSelectOthers', {'refId': refId, "hidePaopaoWhenSelectOthers": hidePaopaoWhenSelectOthers});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSelectOthers', <String, dynamic>{'__this__': this, "hidePaopaoWhenSelectOthers": hidePaopaoWhenSelectOthers});
   
   
   }
   
   Future<void> set_hidePaopaoWhenDrag(bool hidePaopaoWhenDrag, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDrag', {'refId': refId, "hidePaopaoWhenDrag": hidePaopaoWhenDrag});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDrag', <String, dynamic>{'__this__': this, "hidePaopaoWhenDrag": hidePaopaoWhenDrag});
   
   
   }
   
   Future<void> set_hidePaopaoWhenDragOthers(bool hidePaopaoWhenDragOthers, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDragOthers', {'refId': refId, "hidePaopaoWhenDragOthers": hidePaopaoWhenDragOthers});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDragOthers', <String, dynamic>{'__this__': this, "hidePaopaoWhenDragOthers": hidePaopaoWhenDragOthers});
   
   
   }
   
   Future<void> set_displayPriority(double displayPriority, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_displayPriority', {'refId': refId, "displayPriority": displayPriority});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_displayPriority', <String, dynamic>{'__this__': this, "displayPriority": displayPriority});
   
   
   }
@@ -302,20 +284,13 @@ class BMKAnnotationView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation?.refId, "reuseIdentifier": reuseIdentifier, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier', {"annotation": annotation, "reuseIdentifier": reuseIdentifier, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = Ref()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      if (__result__ is Ref) kNativeObjectPool.add(__return__ as Ref);
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -326,20 +301,13 @@ class BMKAnnotationView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::prepareForReuse', {"refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::prepareForReuse', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -350,293 +318,249 @@ class BMKAnnotationView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::setSelected_animated', {"selected": selected, "animated": animated, "refId": refId});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::setSelected_animated', {"selected": selected, "animated": animated, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKAnnotationView{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKAnnotationView_Batch on List<BMKAnnotationView> {
   //region getters
   Future<List<String>> get_reuseIdentifier_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_reuseIdentifier_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_reuseIdentifier_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<BMKActionPaopaoView>> get_paopaoView_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_paopaoView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKActionPaopaoView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_paopaoView_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKActionPaopaoView>(__result__))?.cast<BMKActionPaopaoView>()?.toList();
   }
   
   Future<List<BMKAnnotation>> get_annotation_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_annotation_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => BMKAnnotation.subInstance()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_annotation_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKAnnotation>(__result__))?.cast<BMKAnnotation>()?.toList();
   }
   
   Future<List<UIImage>> get_image_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_image_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_image_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIImage>(__result__))?.cast<UIImage>()?.toList();
   }
   
   Future<List<CGPoint>> get_centerOffset_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_centerOffset_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_centerOffset_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CGPoint>(__result__))?.cast<CGPoint>()?.toList();
   }
   
   Future<List<CGPoint>> get_calloutOffset_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_calloutOffset_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_calloutOffset_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CGPoint>(__result__))?.cast<CGPoint>()?.toList();
   }
   
   Future<List<bool>> get_enabled3D_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_enabled3D_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_enabled3D_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_enabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_isEnabled_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_isEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_selected_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_isSelected_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_isSelected_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_canShowCallout_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_canShowCallout_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_canShowCallout_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<UIView>> get_leftCalloutAccessoryView_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_leftCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_leftCalloutAccessoryView_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIView>(__result__))?.cast<UIView>()?.toList();
   }
   
   Future<List<UIView>> get_rightCalloutAccessoryView_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_rightCalloutAccessoryView_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => UIView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_rightCalloutAccessoryView_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIView>(__result__))?.cast<UIView>()?.toList();
   }
   
   Future<List<bool>> get_draggable_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_isDraggable_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_isDraggable_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<int>> get_dragState_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_dragState_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_dragState_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<bool>> get_hidePaopaoWhenSingleTapOnMap_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSingleTapOnMap_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSingleTapOnMap_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_hidePaopaoWhenDoubleTapOnMap_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDoubleTapOnMap_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDoubleTapOnMap_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_hidePaopaoWhenTwoFingersTapOnMap_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenTwoFingersTapOnMap_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenTwoFingersTapOnMap_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_hidePaopaoWhenSelectOthers_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSelectOthers_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenSelectOthers_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_hidePaopaoWhenDrag_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDrag_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDrag_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_hidePaopaoWhenDragOthers_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDragOthers_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_hidePaopaoWhenDragOthers_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<double>> get_displayPriority_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod("BMKAnnotationView::get_displayPriority_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKAnnotationView::get_displayPriority_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_paopaoView_batch(List<BMKActionPaopaoView> paopaoView, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_paopaoView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "paopaoView": paopaoView[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_paopaoView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "paopaoView": paopaoView[__i__]}]);
   
   
   }
   
   Future<void> set_annotation_batch(List<BMKAnnotation> annotation, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_annotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "annotation": annotation[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_annotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "annotation": annotation[__i__]}]);
   
   
   }
   
   Future<void> set_image_batch(List<UIImage> image, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_image_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "image": image[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_image_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "image": image[__i__]}]);
   
   
   }
   
   Future<void> set_centerOffset_batch(List<CGPoint> centerOffset, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_centerOffset_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "centerOffset": centerOffset[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_centerOffset_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "centerOffset": centerOffset[__i__]}]);
   
   
   }
   
   Future<void> set_calloutOffset_batch(List<CGPoint> calloutOffset, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_calloutOffset_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "calloutOffset": calloutOffset[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_calloutOffset_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "calloutOffset": calloutOffset[__i__]}]);
   
   
   }
   
   Future<void> set_enabled3D_batch(List<bool> enabled3D, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_enabled3D_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "enabled3D": enabled3D[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_enabled3D_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "enabled3D": enabled3D[__i__]}]);
   
   
   }
   
   Future<void> set_enabled_batch(List<bool> enabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_enabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "enabled": enabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_enabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "enabled": enabled[__i__]}]);
   
   
   }
   
   Future<void> set_selected_batch(List<bool> selected, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_selected_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "selected": selected[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_selected_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "selected": selected[__i__]}]);
   
   
   }
   
   Future<void> set_canShowCallout_batch(List<bool> canShowCallout, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_canShowCallout_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "canShowCallout": canShowCallout[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_canShowCallout_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "canShowCallout": canShowCallout[__i__]}]);
   
   
   }
   
   Future<void> set_leftCalloutAccessoryView_batch(List<UIView> leftCalloutAccessoryView, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_leftCalloutAccessoryView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "leftCalloutAccessoryView": leftCalloutAccessoryView[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_leftCalloutAccessoryView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "leftCalloutAccessoryView": leftCalloutAccessoryView[__i__]}]);
   
   
   }
   
   Future<void> set_rightCalloutAccessoryView_batch(List<UIView> rightCalloutAccessoryView, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_rightCalloutAccessoryView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "rightCalloutAccessoryView": rightCalloutAccessoryView[__i__].refId}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_rightCalloutAccessoryView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "rightCalloutAccessoryView": rightCalloutAccessoryView[__i__]}]);
   
   
   }
   
   Future<void> set_draggable_batch(List<bool> draggable, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_draggable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "draggable": draggable[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_draggable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "draggable": draggable[__i__]}]);
   
   
   }
   
   Future<void> set_dragState_batch(List<int> dragState, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_dragState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "dragState": dragState[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_dragState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "dragState": dragState[__i__]}]);
   
   
   }
   
   Future<void> set_hidePaopaoWhenSingleTapOnMap_batch(List<bool> hidePaopaoWhenSingleTapOnMap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSingleTapOnMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "hidePaopaoWhenSingleTapOnMap": hidePaopaoWhenSingleTapOnMap[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSingleTapOnMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "hidePaopaoWhenSingleTapOnMap": hidePaopaoWhenSingleTapOnMap[__i__]}]);
   
   
   }
   
   Future<void> set_hidePaopaoWhenDoubleTapOnMap_batch(List<bool> hidePaopaoWhenDoubleTapOnMap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDoubleTapOnMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "hidePaopaoWhenDoubleTapOnMap": hidePaopaoWhenDoubleTapOnMap[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDoubleTapOnMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "hidePaopaoWhenDoubleTapOnMap": hidePaopaoWhenDoubleTapOnMap[__i__]}]);
   
   
   }
   
   Future<void> set_hidePaopaoWhenTwoFingersTapOnMap_batch(List<bool> hidePaopaoWhenTwoFingersTapOnMap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenTwoFingersTapOnMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "hidePaopaoWhenTwoFingersTapOnMap": hidePaopaoWhenTwoFingersTapOnMap[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenTwoFingersTapOnMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "hidePaopaoWhenTwoFingersTapOnMap": hidePaopaoWhenTwoFingersTapOnMap[__i__]}]);
   
   
   }
   
   Future<void> set_hidePaopaoWhenSelectOthers_batch(List<bool> hidePaopaoWhenSelectOthers, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSelectOthers_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "hidePaopaoWhenSelectOthers": hidePaopaoWhenSelectOthers[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenSelectOthers_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "hidePaopaoWhenSelectOthers": hidePaopaoWhenSelectOthers[__i__]}]);
   
   
   }
   
   Future<void> set_hidePaopaoWhenDrag_batch(List<bool> hidePaopaoWhenDrag, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDrag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "hidePaopaoWhenDrag": hidePaopaoWhenDrag[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDrag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "hidePaopaoWhenDrag": hidePaopaoWhenDrag[__i__]}]);
   
   
   }
   
   Future<void> set_hidePaopaoWhenDragOthers_batch(List<bool> hidePaopaoWhenDragOthers, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDragOthers_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "hidePaopaoWhenDragOthers": hidePaopaoWhenDragOthers[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_hidePaopaoWhenDragOthers_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "hidePaopaoWhenDragOthers": hidePaopaoWhenDragOthers[__i__]}]);
   
   
   }
   
   Future<void> set_displayPriority_batch(List<double> displayPriority, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::set_displayPriority_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "displayPriority": displayPriority[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::set_displayPriority_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "displayPriority": displayPriority[__i__]}]);
   
   
   }
@@ -646,62 +570,35 @@ extension BMKAnnotationView_Batch on List<BMKAnnotationView> {
   //region methods
   
   Future<List<dynamic>> initWithAnnotation_reuseIdentifier_batch(List<BMKAnnotation> annotation, List<String> reuseIdentifier, {bool viewChannel = true}) async {
-    if (annotation.length != reuseIdentifier.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(annotation.length == reuseIdentifier.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__].refId, "reuseIdentifier": reuseIdentifier[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::initWithAnnotation_reuseIdentifier_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "reuseIdentifier": reuseIdentifier[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => Ref()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      kNativeObjectPool.addAll(typedResult);
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   
   Future<List<void>> prepareForReuse_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::prepareForReuse_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::prepareForReuse_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setSelected_animated_batch(List<bool> selected, List<bool> animated, {bool viewChannel = true}) async {
-    if (selected.length != animated.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(selected.length == animated.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKAnnotationView' : 'com.fluttify/bmap_map_fluttify').invokeMethod('BMKAnnotationView::setSelected_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"selected": selected[__i__], "animated": animated[__i__], "refId": this[__i__].refId}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKAnnotationView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKAnnotationView::setSelected_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"selected": selected[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

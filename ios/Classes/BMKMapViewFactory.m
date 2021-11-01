@@ -5,11 +5,12 @@
 #import "BMKMapViewFactory.h"
 #import "BmapMapFluttifyPlugin.h"
 #import <objc/runtime.h>
+#import "FluttifyMessageCodec.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
 extern NSMutableDictionary<NSString*, NSObject*>* STACK;
 // Dart端随机存取对象的容器
-extern NSMutableDictionary<NSNumber*, NSObject*>* HEAP;
+extern NSMutableDictionary<NSString*, NSObject*>* HEAP;
 // 日志打印开关
 extern BOOL enableLog;
 
@@ -25,8 +26,12 @@ extern BOOL enableLog;
   return self;
 }
 
+- (NSObject<FlutterMessageCodec>*)createArgsCodec {
+  return [FlutterStandardMessageCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]];
+}
+
 - (NSObject <FlutterPlatformView> *)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id _Nullable)args {
-  return [[BMKMapViewPlatformView alloc] initWithViewId:viewId frame: frame registrar:_registrar];
+  return [[BMKMapViewPlatformView alloc] initWithViewId:viewId frame: frame registrar:_registrar arguments: args];
 }
 
 @end
@@ -36,29 +41,69 @@ extern BOOL enableLog;
   CGRect _frame;
   NSDictionary<NSString *, Handler>* _handlerMap;
   BMKMapView* _view;
+  id _args;
 }
 
-- (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar {
+- (instancetype)initWithViewId:(int64_t)viewId frame:(CGRect)frame registrar:(NSObject <FlutterPluginRegistrar> *)registrar arguments:(id _Nullable)args {
   self = [super init];
   if (self) {
     _viewId = viewId;
     _registrar = registrar;
     _frame = frame;
+    _args = args;
   }
 
   return self;
 }
 
 - (UIView *)view {
+  __weak __typeof(self)weakSelf = self;
   if (_view == nil) {
+    NSDictionary<NSString*, id>* params = (NSDictionary<NSString*, id>*) _args;
+
     _view = [[BMKMapView alloc] initWithFrame:_frame];
+
+    ////////////////////////////////初始化UiKitView////////////////////////////////////////
+
+    ////////////////////////////////初始化UiKitView////////////////////////////////////////
+
     // 这里用一个magic number调整一下id
-    HEAP[@(2147483647 - _viewId)] = _view;
+    // 同时存放viewId和refId的对象, 供后续viewId转refId使用
+    HEAP[[NSString stringWithFormat:@"%@", @(2147483647 - _viewId)]] = _view;
+    HEAP[[NSString stringWithFormat:@"%@:%@", @"BMKMapView", @(_view.hash)]] = _view;
   }
+
+  //region method call handler
+  FlutterMethodChannel *channel = [FlutterMethodChannel
+        methodChannelWithName:@"me.yohom/bmap_map_fluttify/BMKMapView"
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+
+  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
+    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
+
+    __strong __typeof(weakSelf) strongSelf = weakSelf;
+    if (strongSelf != nil) {
+      if (strongSelf->_handlerMap[methodCall.method] != nil) {
+        strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
+      } else {
+        methodResult(FlutterMethodNotImplemented);
+      }
+    } else {
+      methodResult([FlutterError errorWithCode:@"当前PlatformView为nil"
+                                       message: @"当前PlatformView为nil"
+                                       details:[NSString stringWithFormat:@"请不要在 %@ 释放后继续调用其对象的方法", NSStringFromClass([BMKMapView class])]]);
+    }
+  }];
+  //endregion
 
   //region handlers
   _handlerMap = @{
       @"BMKMapView::customMapStyle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::customMapStyle(%@)", args);
+          }
+      
           // args
           // jsonable arg
           NSString* customMapStyleJsonFilePath = (NSString*) args[@"customMapStyleJsonFilePath"];
@@ -66,21 +111,20 @@ extern BOOL enableLog;
           // ref
       
       
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView::customMapStyle(%@)", args[@"customMapStyleJsonFilePath"]);
-          }
-      
           // invoke native method
           [BMKMapView customMapStyle: customMapStyleJsonFilePath];
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::enableCustomMapStyle": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::enableCustomMapStyle(%@)", args);
+          }
+      
           // args
           // jsonable arg
           BOOL enable = [args[@"enable"] boolValue];
@@ -88,31 +132,29 @@ extern BOOL enableLog;
           // ref
       
       
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView::enableCustomMapStyle(%@)", args[@"enable"]);
-          }
-      
           // invoke native method
           [BMKMapView enableCustomMapStyle: enable];
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setCustomMapStylePath": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setCustomMapStylePath(%@)", args);
+          }
+      
           // args
           // jsonable arg
           NSString* customMapStyleJsonFilePath = (NSString*) args[@"customMapStyleJsonFilePath"];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setCustomMapStylePath(%@)", args[@"refId"], args[@"customMapStyleJsonFilePath"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -120,11 +162,15 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setCustomMapStylePath_mode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setCustomMapStylePath_mode(%@)", args);
+          }
+      
           // args
           // jsonable arg
           NSString* customMapStyleJsonFilePath = (NSString*) args[@"customMapStyleJsonFilePath"];
@@ -132,11 +178,10 @@ extern BOOL enableLog;
           int mode = [args[@"mode"] intValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setCustomMapStylePath(%@, %@)", args[@"refId"], args[@"customMapStyleJsonFilePath"], args[@"mode"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -144,21 +189,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setCustomMapStyleEnable": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setCustomMapStyleEnable(%@)", args);
+          }
+      
           // args
           // jsonable arg
           BOOL enable = [args[@"enable"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setCustomMapStyleEnable(%@)", args[@"refId"], args[@"enable"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -166,63 +214,35 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure(%@)", args);
+          }
+      
           // args
           // ref arg
-          BMKCustomMapStyleOption* option = (BMKCustomMapStyleOption*) HEAP[@([args[@"option"] integerValue])];
+          BMKCustomMapStyleOption* option = (BMKCustomMapStyleOption*) (args[@"option"] == [NSNull null] ? nil : args[@"option"]);
       
       
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setCustomMapStyleWithOption(%@, %@, %@, %@)", args[@"refId"], args[@"option"], args[@"preLoad"], args[@"success"], args[@"failure"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
           [ref setCustomMapStyleWithOption : option preLoad: ^(NSString* path) {
               FlutterMethodChannel *channel = [FlutterMethodChannel
-                  methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
-                        binaryMessenger:[[self registrar] messenger]];
-      
-              // print log
-              if (enableLog) {
-                  NSLog(@"");
-              }
-      
-              // 构造可以直接传输的参数
-              // jsonable callback arg
-              NSString* argpath = path;
-      
-              [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
-      
-          } success: ^(NSString* path) {
-              FlutterMethodChannel *channel = [FlutterMethodChannel
-                  methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
-                        binaryMessenger:[[self registrar] messenger]];
-      
-              // print log
-              if (enableLog) {
-                  NSLog(@"");
-              }
-      
-              // 构造可以直接传输的参数
-              // jsonable callback arg
-              NSString* argpath = path;
-      
-              [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath}];
-      
-          } failure: ^(NSError* error, NSString* path) {
-              FlutterMethodChannel *channel = [FlutterMethodChannel
-                  methodChannelWithName:@"BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure::Callback"
-                        binaryMessenger:[[self registrar] messenger]];
+                    methodChannelWithName:[NSString stringWithFormat:@"void|NSString*#path::Callback@%@:%@", NSStringFromClass([ref class]), @(ref.hash)]
+                          binaryMessenger:[[weakSelf registrar] messenger]
+                                    codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
       
               // print log
               if (enableLog) {
@@ -231,42 +251,80 @@ extern BOOL enableLog;
       
               // 构造可以直接传输的参数
               // ref callback arg
-              NSNumber* argerror = [NSNull null];
-              if (error != nil) {
-                  argerror = @(error.hash);
-                  HEAP[argerror] = error;
-              }
-      
-              // jsonable callback arg
               NSString* argpath = path;
       
-              [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror, @"path": argpath}];
+              dispatch_async(dispatch_get_main_queue(), ^{
+                [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath == nil ? [NSNull null] : argpath}];
+              });
+      
+          } success: ^(NSString* path) {
+              FlutterMethodChannel *channel = [FlutterMethodChannel
+                    methodChannelWithName:[NSString stringWithFormat:@"void|NSString*#path::Callback@%@:%@", NSStringFromClass([ref class]), @(ref.hash)]
+                          binaryMessenger:[[weakSelf registrar] messenger]
+                                    codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+      
+              // print log
+              if (enableLog) {
+                  NSLog(@"");
+              }
+      
+              // 构造可以直接传输的参数
+              // ref callback arg
+              NSString* argpath = path;
+      
+              dispatch_async(dispatch_get_main_queue(), ^{
+                [channel invokeMethod:@"Callback::void|NSString*#path::void|NSString*#path" arguments:@{@"path": argpath == nil ? [NSNull null] : argpath}];
+              });
+      
+          } failure: ^(NSError* error, NSString* path) {
+              FlutterMethodChannel *channel = [FlutterMethodChannel
+                    methodChannelWithName:[NSString stringWithFormat:@"void|NSError*#error,NSString*#path::Callback@%@:%@", NSStringFromClass([ref class]), @(ref.hash)]
+                          binaryMessenger:[[weakSelf registrar] messenger]
+                                    codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
+      
+              // print log
+              if (enableLog) {
+                  NSLog(@"");
+              }
+      
+              // 构造可以直接传输的参数
+              // ref callback arg
+              NSError* argerror = error;
+              // ref callback arg
+              NSString* argpath = path;
+      
+              dispatch_async(dispatch_get_main_queue(), ^{
+                [channel invokeMethod:@"Callback::void|NSError*#error,NSString*#path::void|NSError*#error,NSString*#path" arguments:@{@"error": argerror == nil ? [NSNull null] : argerror, @"path": argpath == nil ? [NSNull null] : argpath}];
+              });
       
           }];
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion(%@)", args);
+          }
+      
           // args
           // ref arg
-          UIColor* smooth = (UIColor*) HEAP[@([args[@"smooth"] integerValue])];
+          UIColor* smooth = (UIColor*) (args[@"smooth"] == [NSNull null] ? nil : args[@"smooth"]);
           // ref arg
-          UIColor* slow = (UIColor*) HEAP[@([args[@"slow"] integerValue])];
+          UIColor* slow = (UIColor*) (args[@"slow"] == [NSNull null] ? nil : args[@"slow"]);
           // ref arg
-          UIColor* congestion = (UIColor*) HEAP[@([args[@"congestion"] integerValue])];
+          UIColor* congestion = (UIColor*) (args[@"congestion"] == [NSNull null] ? nil : args[@"congestion"]);
           // ref arg
-          UIColor* severeCongestion = (UIColor*) HEAP[@([args[@"severeCongestion"] integerValue])];
+          UIColor* severeCongestion = (UIColor*) (args[@"severeCongestion"] == [NSNull null] ? nil : args[@"severeCongestion"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setCustomTrafficColorForSmooth(%@, %@, %@, %@)", args[@"refId"], args[@"smooth"], args[@"slow"], args[@"congestion"], args[@"severeCongestion"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -274,62 +332,63 @@ extern BOOL enableLog;
       
           // result
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::willBackGround": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::willBackGround(%@)", args);
+          }
+      
           // args
       
       
           // ref
       
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView::willBackGround()");
-          }
       
           // invoke native method
           [BMKMapView willBackGround];
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::didForeGround": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::didForeGround(%@)", args);
+          }
+      
           // args
       
       
           // ref
       
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView::didForeGround()");
-          }
       
           // invoke native method
           [BMKMapView didForeGround];
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::viewWillAppear": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::viewWillAppear(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::viewWillAppear()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -337,20 +396,23 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::viewWillDisappear": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::viewWillDisappear(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::viewWillDisappear()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -358,20 +420,23 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::mapForceRefresh": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::mapForceRefresh(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::mapForceRefresh()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -379,20 +444,23 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::zoomIn": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::zoomIn(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::zoomIn()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -400,20 +468,23 @@ extern BOOL enableLog;
       
           // result
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::zoomOut": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::zoomOut(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::zoomOut()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -421,23 +492,34 @@ extern BOOL enableLog;
       
           // result
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::regionThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::regionThatFits(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           BMKCoordinateRegion region;
-          [regionValue getValue:&region];
+          if (regionValue != nil && (NSNull*) regionValue != [NSNull null]) {
+            [regionValue getValue:&region];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"region不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::regionThatFits(%@)", args[@"refId"], args[@"region"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -445,27 +527,36 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setRegion_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setRegion_animated(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           BMKCoordinateRegion region;
-          [regionValue getValue:&region];
+          if (regionValue != nil && (NSNull*) regionValue != [NSNull null]) {
+            [regionValue getValue:&region];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"region不能为null"]);
+            return;
+          }
+      
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setRegion(%@, %@)", args[@"refId"], args[@"region"], args[@"animated"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -473,25 +564,36 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setCenterCoordinate_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setCenterCoordinate_animated(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+          NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
           CLLocationCoordinate2D coordinate;
-          [coordinateValue getValue:&coordinate];
+          if (coordinateValue != nil && (NSNull*) coordinateValue != [NSNull null]) {
+            [coordinateValue getValue:&coordinate];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"coordinate不能为null"]);
+            return;
+          }
+      
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setCenterCoordinate(%@, %@)", args[@"refId"], args[@"coordinate"], args[@"animated"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -499,20 +601,23 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::takeSnapshot": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::takeSnapshot(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::takeSnapshot()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -520,24 +625,34 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::takeSnapshot__CGRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::takeSnapshot__CGRect(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+          NSValue* rectValue = (NSValue*) args[@"rect"];
           CGRect rect;
-          [rectValue getValue:&rect];
+          if (rectValue != nil && (NSNull*) rectValue != [NSNull null]) {
+            [rectValue getValue:&rect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"rect不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::takeSnapshot(%@)", args[@"refId"], args[@"rect"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -545,22 +660,24 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setCompassImage": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setCompassImage(%@)", args);
+          }
+      
           // args
           // ref arg
-          UIImage* image = (UIImage*) HEAP[@([args[@"image"] integerValue])];
+          UIImage* image = (UIImage*) (args[@"image"] == [NSNull null] ? nil : args[@"image"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setCompassImage(%@)", args[@"refId"], args[@"image"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -568,25 +685,36 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setVisibleMapRect_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setVisibleMapRect_animated(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           BMKMapRect mapRect;
-          [mapRectValue getValue:&mapRect];
+          if (mapRectValue != nil && (NSNull*) mapRectValue != [NSNull null]) {
+            [mapRectValue getValue:&mapRect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapRect不能为null"]);
+            return;
+          }
+      
           // jsonable arg
           BOOL animate = [args[@"animate"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setVisibleMapRect(%@, %@)", args[@"refId"], args[@"mapRect"], args[@"animate"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -594,23 +722,34 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::mapRectThatFits": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::mapRectThatFits(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           BMKMapRect mapRect;
-          [mapRectValue getValue:&mapRect];
+          if (mapRectValue != nil && (NSNull*) mapRectValue != [NSNull null]) {
+            [mapRectValue getValue:&mapRect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapRect不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::mapRectThatFits(%@)", args[@"refId"], args[@"mapRect"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -618,31 +757,48 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setVisibleMapRect_edgePadding_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setVisibleMapRect_edgePadding_animated(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           BMKMapRect mapRect;
-          [mapRectValue getValue:&mapRect];
+          if (mapRectValue != nil && (NSNull*) mapRectValue != [NSNull null]) {
+            [mapRectValue getValue:&mapRect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapRect不能为null"]);
+            return;
+          }
+      
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
-          [insetsValue getValue:&insets];
+          if (insetsValue != nil && (NSNull*) insetsValue != [NSNull null]) {
+            [insetsValue getValue:&insets];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"insets不能为null"]);
+            return;
+          }
+      
           // jsonable arg
           BOOL animate = [args[@"animate"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setVisibleMapRect(%@, %@, %@)", args[@"refId"], args[@"mapRect"], args[@"insets"], args[@"animate"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -650,29 +806,48 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::fitVisibleMapRect_edgePadding_withAnimated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::fitVisibleMapRect_edgePadding_withAnimated(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           BMKMapRect mapRect;
-          [mapRectValue getValue:&mapRect];
+          if (mapRectValue != nil && (NSNull*) mapRectValue != [NSNull null]) {
+            [mapRectValue getValue:&mapRect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapRect不能为null"]);
+            return;
+          }
+      
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
-          [insetsValue getValue:&insets];
+          if (insetsValue != nil && (NSNull*) insetsValue != [NSNull null]) {
+            [insetsValue getValue:&insets];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"insets不能为null"]);
+            return;
+          }
+      
           // jsonable arg
           BOOL animate = [args[@"animate"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::fitVisibleMapRect(%@, %@, %@)", args[@"refId"], args[@"mapRect"], args[@"insets"], args[@"animate"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -680,27 +855,46 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::mapRectThatFits_edgePadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::mapRectThatFits_edgePadding(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           BMKMapRect mapRect;
-          [mapRectValue getValue:&mapRect];
+          if (mapRectValue != nil && (NSNull*) mapRectValue != [NSNull null]) {
+            [mapRectValue getValue:&mapRect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapRect不能为null"]);
+            return;
+          }
+      
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
-          [insetsValue getValue:&insets];
+          if (insetsValue != nil && (NSNull*) insetsValue != [NSNull null]) {
+            [insetsValue getValue:&insets];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"insets不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::mapRectThatFits(%@, %@)", args[@"refId"], args[@"mapRect"], args[@"insets"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -708,27 +902,36 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::convertCoordinate_toPointToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::convertCoordinate_toPointToView(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* coordinateValue = (NSValue*) HEAP[@([args[@"coordinate"] integerValue])];
+          NSValue* coordinateValue = (NSValue*) args[@"coordinate"];
           CLLocationCoordinate2D coordinate;
-          [coordinateValue getValue:&coordinate];
+          if (coordinateValue != nil && (NSNull*) coordinateValue != [NSNull null]) {
+            [coordinateValue getValue:&coordinate];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"coordinate不能为null"]);
+            return;
+          }
+      
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) (args[@"view"] == [NSNull null] ? nil : args[@"view"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::convertCoordinate(%@, %@)", args[@"refId"], args[@"coordinate"], args[@"view"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -736,27 +939,36 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGPoint)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::convertPoint_toCoordinateFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::convertPoint_toCoordinateFromView(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* pointValue = (NSValue*) HEAP[@([args[@"point"] integerValue])];
+          NSValue* pointValue = (NSValue*) args[@"point"];
           CGPoint point;
-          [pointValue getValue:&point];
+          if (pointValue != nil && (NSNull*) pointValue != [NSNull null]) {
+            [pointValue getValue:&point];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"point不能为null"]);
+            return;
+          }
+      
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) (args[@"view"] == [NSNull null] ? nil : args[@"view"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::convertPoint(%@, %@)", args[@"refId"], args[@"point"], args[@"view"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -764,27 +976,36 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::convertRegion_toRectToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::convertRegion_toRectToView(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           BMKCoordinateRegion region;
-          [regionValue getValue:&region];
+          if (regionValue != nil && (NSNull*) regionValue != [NSNull null]) {
+            [regionValue getValue:&region];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"region不能为null"]);
+            return;
+          }
+      
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) (args[@"view"] == [NSNull null] ? nil : args[@"view"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::convertRegion(%@, %@)", args[@"refId"], args[@"region"], args[@"view"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -792,27 +1013,36 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGRect)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::convertRect_toRegionFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::convertRect_toRegionFromView(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+          NSValue* rectValue = (NSValue*) args[@"rect"];
           CGRect rect;
-          [rectValue getValue:&rect];
+          if (rectValue != nil && (NSNull*) rectValue != [NSNull null]) {
+            [rectValue getValue:&rect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"rect不能为null"]);
+            return;
+          }
+      
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) (args[@"view"] == [NSNull null] ? nil : args[@"view"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::convertRect(%@, %@)", args[@"refId"], args[@"rect"], args[@"view"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -820,27 +1050,36 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::convertMapRect_toRectToView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::convertMapRect_toRectToView(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* mapRectValue = (NSValue*) HEAP[@([args[@"mapRect"] integerValue])];
+          NSValue* mapRectValue = (NSValue*) args[@"mapRect"];
           BMKMapRect mapRect;
-          [mapRectValue getValue:&mapRect];
+          if (mapRectValue != nil && (NSNull*) mapRectValue != [NSNull null]) {
+            [mapRectValue getValue:&mapRect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapRect不能为null"]);
+            return;
+          }
+      
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) (args[@"view"] == [NSNull null] ? nil : args[@"view"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::convertMapRect(%@, %@)", args[@"refId"], args[@"mapRect"], args[@"view"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -848,27 +1087,36 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGRect)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::convertRect_toMapRectFromView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::convertRect_toMapRectFromView(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* rectValue = (NSValue*) HEAP[@([args[@"rect"] integerValue])];
+          NSValue* rectValue = (NSValue*) args[@"rect"];
           CGRect rect;
-          [rectValue getValue:&rect];
+          if (rectValue != nil && (NSNull*) rectValue != [NSNull null]) {
+            [rectValue getValue:&rect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"rect不能为null"]);
+            return;
+          }
+      
           // ref arg
-          UIView* view = (UIView*) HEAP[@([args[@"view"] integerValue])];
+          UIView* view = (UIView*) (args[@"view"] == [NSNull null] ? nil : args[@"view"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::convertRect(%@, %@)", args[@"refId"], args[@"rect"], args[@"view"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -876,25 +1124,34 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::glPointForMapPoint": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::glPointForMapPoint(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* mapPointValue = (NSValue*) HEAP[@([args[@"mapPoint"] integerValue])];
+          NSValue* mapPointValue = (NSValue*) args[@"mapPoint"];
           BMKMapPoint mapPoint;
-          [mapPointValue getValue:&mapPoint];
+          if (mapPointValue != nil && (NSNull*) mapPointValue != [NSNull null]) {
+            [mapPointValue getValue:&mapPoint];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapPoint不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::glPointForMapPoint(%@)", args[@"refId"], args[@"mapPoint"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -902,20 +1159,21 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGPoint)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::glPointsForMapPoints_count": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::glPointsForMapPoints_count(%@)", args);
+          }
+      
           // args
           // list arg struct
-          NSArray* mapPointsRefIdArray = (NSArray*) args[@"mapPoints"];
-          BMKMapPoint mapPoints[mapPointsRefIdArray.count];
-      
-          for (int __i__ = 0; __i__ < mapPointsRefIdArray.count; __i__++) {
-              NSValue* mapPointsValue = (NSValue*) HEAP[[mapPointsRefIdArray objectAtIndex:__i__]];
+          NSArray<NSValue*>* mapPointsValueList = (NSArray<NSValue*>*) args[@"mapPoints"];
+          BMKMapPoint mapPoints[mapPointsValueList.count];
+          for (NSUInteger __i__ = 0; __i__ < mapPointsValueList.count; __i__++) {
+              NSValue* mapPointsValue = (NSValue*) [mapPointsValueList objectAtIndex:__i__];
               BMKMapPoint mapPointsItem;
               [mapPointsValue getValue:&mapPointsItem];
               mapPoints[__i__] = mapPointsItem;
@@ -924,11 +1182,10 @@ extern BOOL enableLog;
           NSUInteger count = [args[@"count"] unsignedIntegerValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::glPointsForMapPoints(%@, %@)", args[@"refId"], args[@"mapPoints"], args[@"count"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -936,25 +1193,34 @@ extern BOOL enableLog;
       
           // result
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint*)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGPoint*)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setMapCenterToScreenPt": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setMapCenterToScreenPt(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* ptInScreenValue = (NSValue*) HEAP[@([args[@"ptInScreen"] integerValue])];
+          NSValue* ptInScreenValue = (NSValue*) args[@"ptInScreen"];
           CGPoint ptInScreen;
-          [ptInScreenValue getValue:&ptInScreen];
+          if (ptInScreenValue != nil && (NSNull*) ptInScreenValue != [NSNull null]) {
+            [ptInScreenValue getValue:&ptInScreen];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"ptInScreen不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setMapCenterToScreenPt(%@)", args[@"refId"], args[@"ptInScreen"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -962,27 +1228,46 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::getMapStatusFromCoordinateRegion_edgePadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::getMapStatusFromCoordinateRegion_edgePadding(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           BMKCoordinateRegion region;
-          [regionValue getValue:&region];
+          if (regionValue != nil && (NSNull*) regionValue != [NSNull null]) {
+            [regionValue getValue:&region];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"region不能为null"]);
+            return;
+          }
+      
           // struct arg
-          NSValue* insetsValue = (NSValue*) HEAP[@([args[@"insets"] integerValue])];
+          NSValue* insetsValue = (NSValue*) args[@"insets"];
           UIEdgeInsets insets;
-          [insetsValue getValue:&insets];
+          if (insetsValue != nil && (NSNull*) insetsValue != [NSNull null]) {
+            [insetsValue getValue:&insets];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"insets不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::getMapStatusFromCoordinateRegion(%@, %@)", args[@"refId"], args[@"region"], args[@"insets"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -990,21 +1275,23 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::getMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::getMapStatus(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::getMapStatus()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1012,22 +1299,24 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setMapStatus": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setMapStatus(%@)", args);
+          }
+      
           // args
           // ref arg
-          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+          BMKMapStatus* mapStatus = (BMKMapStatus*) (args[@"mapStatus"] == [NSNull null] ? nil : args[@"mapStatus"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setMapStatus(%@)", args[@"refId"], args[@"mapStatus"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1035,23 +1324,26 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setMapStatus_withAnimation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setMapStatus_withAnimation(%@)", args);
+          }
+      
           // args
           // ref arg
-          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+          BMKMapStatus* mapStatus = (BMKMapStatus*) (args[@"mapStatus"] == [NSNull null] ? nil : args[@"mapStatus"]);
           // jsonable arg
           BOOL bAnimation = [args[@"bAnimation"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setMapStatus(%@, %@)", args[@"refId"], args[@"mapStatus"], args[@"bAnimation"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1059,25 +1351,28 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::setMapStatus_withAnimation_withAnimationTime": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::setMapStatus_withAnimation_withAnimationTime(%@)", args);
+          }
+      
           // args
           // ref arg
-          BMKMapStatus* mapStatus = (BMKMapStatus*) HEAP[@([args[@"mapStatus"] integerValue])];
+          BMKMapStatus* mapStatus = (BMKMapStatus*) (args[@"mapStatus"] == [NSNull null] ? nil : args[@"mapStatus"]);
           // jsonable arg
           BOOL bAnimation = [args[@"bAnimation"] boolValue];
           // jsonable arg
           int ulDuration = [args[@"ulDuration"] intValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::setMapStatus(%@, %@, %@)", args[@"refId"], args[@"mapStatus"], args[@"bAnimation"], args[@"ulDuration"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1085,20 +1380,23 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::isSurpportBaiduHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::isSurpportBaiduHeatMap(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::isSurpportBaiduHeatMap()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1106,20 +1404,23 @@ extern BOOL enableLog;
       
           // result
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::getProjectionMatrix": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::getProjectionMatrix(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::getProjectionMatrix()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1127,22 +1428,23 @@ extern BOOL enableLog;
       
           // result
           // return a (value)*
-          NSValue* resultValue = [NSValue valueWithPointer:result];
-          HEAP[@((resultValue).hash)] = resultValue;
-          NSNumber* jsonableResult = @((resultValue).hash);
+          NSValue* __result__ = [NSValue valueWithPointer:result];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::getViewMatrix": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::getViewMatrix(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::getViewMatrix()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1150,13 +1452,15 @@ extern BOOL enableLog;
       
           // result
           // return a (value)*
-          NSValue* resultValue = [NSValue valueWithPointer:result];
-          HEAP[@((resultValue).hash)] = resultValue;
-          NSNumber* jsonableResult = @((resultValue).hash);
+          NSValue* __result__ = [NSValue valueWithPointer:result];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::switchBaseIndoorMapFloor_withID": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::switchBaseIndoorMapFloor_withID(%@)", args);
+          }
+      
           // args
           // jsonable arg
           NSString* strFloor = (NSString*) args[@"strFloor"];
@@ -1164,11 +1468,10 @@ extern BOOL enableLog;
           NSString* strID = (NSString*) args[@"strID"];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::switchBaseIndoorMapFloor(%@, %@)", args[@"refId"], args[@"strFloor"], args[@"strID"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1176,20 +1479,23 @@ extern BOOL enableLog;
       
           // result
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::getFocusedBaseIndoorMapInfo": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::getFocusedBaseIndoorMapInfo(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::getFocusedBaseIndoorMapInfo()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1197,22 +1503,24 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::updateLocationViewWithParam": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::updateLocationViewWithParam(%@)", args);
+          }
+      
           // args
           // ref arg
-          BMKLocationViewDisplayParam* locationViewDisplayParam = (BMKLocationViewDisplayParam*) HEAP[@([args[@"locationViewDisplayParam"] integerValue])];
+          BMKLocationViewDisplayParam* locationViewDisplayParam = (BMKLocationViewDisplayParam*) (args[@"locationViewDisplayParam"] == [NSNull null] ? nil : args[@"locationViewDisplayParam"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::updateLocationViewWithParam(%@)", args[@"refId"], args[@"locationViewDisplayParam"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1220,21 +1528,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::updateLocationData": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::updateLocationData(%@)", args);
+          }
+      
           // args
           // ref arg
-          BMKUserLocation* userLocation = (BMKUserLocation*) HEAP[@([args[@"userLocation"] integerValue])];
+          BMKUserLocation* userLocation = (BMKUserLocation*) (args[@"userLocation"] == [NSNull null] ? nil : args[@"userLocation"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::updateLocationData(%@)", args[@"refId"], args[@"userLocation"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1242,21 +1553,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::addAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::addAnnotation(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) (args[@"annotation"] == [NSNull null] ? nil : args[@"annotation"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::addAnnotation(%@)", args[@"refId"], args[@"annotation"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1264,26 +1578,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::addAnnotations": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-          // args
-          // list arg
-          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
-          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
-              [annotations addObject:item];
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::addAnnotations(%@)", args);
           }
       
-          // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          // args
+          // list arg
+          NSArray<NSObject*>* annotations = (NSArray<NSObject*>*) args[@"annotations"];
       
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::addAnnotations(%@)", args[@"refId"], args[@"annotations"]);
+          // ref
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1291,21 +1603,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::removeAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::removeAnnotation(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) (args[@"annotation"] == [NSNull null] ? nil : args[@"annotation"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::removeAnnotation(%@)", args[@"refId"], args[@"annotation"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1313,26 +1628,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::removeAnnotations": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-          // args
-          // list arg
-          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
-          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
-              [annotations addObject:item];
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::removeAnnotations(%@)", args);
           }
       
-          // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          // args
+          // list arg
+          NSArray<NSObject*>* annotations = (NSArray<NSObject*>*) args[@"annotations"];
       
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::removeAnnotations(%@)", args[@"refId"], args[@"annotations"]);
+          // ref
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1340,21 +1653,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::viewForAnnotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::viewForAnnotation(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) (args[@"annotation"] == [NSNull null] ? nil : args[@"annotation"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::viewForAnnotation(%@)", args[@"refId"], args[@"annotation"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1362,22 +1678,24 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::dequeueReusableAnnotationViewWithIdentifier": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::dequeueReusableAnnotationViewWithIdentifier(%@)", args);
+          }
+      
           // args
           // jsonable arg
           NSString* identifier = (NSString*) args[@"identifier"];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::dequeueReusableAnnotationViewWithIdentifier(%@)", args[@"refId"], args[@"identifier"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1385,24 +1703,26 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::selectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::selectAnnotation_animated(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) (args[@"annotation"] == [NSNull null] ? nil : args[@"annotation"]);
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::selectAnnotation(%@, %@)", args[@"refId"], args[@"annotation"], args[@"animated"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1410,23 +1730,26 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::deselectAnnotation_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::deselectAnnotation_animated(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKAnnotation> annotation = (id<BMKAnnotation>) HEAP[@([args[@"annotation"] integerValue])];
+          id<BMKAnnotation> annotation = (id<BMKAnnotation>) (args[@"annotation"] == [NSNull null] ? nil : args[@"annotation"]);
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::deselectAnnotation(%@, %@)", args[@"refId"], args[@"annotation"], args[@"animated"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1434,28 +1757,26 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::showAnnotations_animated": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::showAnnotations_animated(%@)", args);
+          }
+      
           // args
           // list arg
-          NSArray<NSNumber*>* annotationsRefArray = (NSArray<NSNumber*> *) args[@"annotations"];
-          NSMutableArray<NSArray*>* annotations = [NSMutableArray arrayWithCapacity:annotationsRefArray.count];
-          for (int __i__ = 0; __i__ < annotationsRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[annotationsRefArray objectAtIndex:__i__]];
-              [annotations addObject:item];
-          }
+          NSArray<NSObject*>* annotations = (NSArray<NSObject*>*) args[@"annotations"];
           // jsonable arg
           BOOL animated = [args[@"animated"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::showAnnotations(%@, %@)", args[@"refId"], args[@"annotations"], args[@"animated"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1463,50 +1784,59 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::annotationsInCoordinateBounds": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::annotationsInCoordinateBounds(%@)", args);
+          }
+      
           // args
           // struct arg
-          NSValue* boundsValue = (NSValue*) HEAP[@([args[@"bounds"] integerValue])];
+          NSValue* boundsValue = (NSValue*) args[@"bounds"];
           BMKCoordinateBounds bounds;
-          [boundsValue getValue:&bounds];
+          if (boundsValue != nil && (NSNull*) boundsValue != [NSNull null]) {
+            [boundsValue getValue:&bounds];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"bounds不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::annotationsInCoordinateBounds(%@)", args[@"refId"], args[@"bounds"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
           NSArray* result = [ref annotationsInCoordinateBounds: bounds];
       
           // result
-          // 返回值: 列表
-          NSMutableArray* jsonableResult = [NSMutableArray array];
-          for (int __i__ = 0; __i__ < result.count; __i__++) {
-              NSObject* object = [result objectAtIndex:__i__];
-              [jsonableResult addObject: @(object.hash)];
-              HEAP[@([object hash])] = object;
-          }
+          // return a ref
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::addOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::addOverlay(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) (args[@"overlay"] == [NSNull null] ? nil : args[@"overlay"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::addOverlay(%@)", args[@"refId"], args[@"overlay"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1514,26 +1844,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::addOverlays": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-          // args
-          // list arg
-          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
-          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
-              [overlays addObject:item];
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::addOverlays(%@)", args);
           }
       
-          // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          // args
+          // list arg
+          NSArray<NSObject*>* overlays = (NSArray<NSObject*>*) args[@"overlays"];
       
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::addOverlays(%@)", args[@"refId"], args[@"overlays"]);
+          // ref
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1541,21 +1869,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::removeOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::removeOverlay(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) (args[@"overlay"] == [NSNull null] ? nil : args[@"overlay"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::removeOverlay(%@)", args[@"refId"], args[@"overlay"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1563,26 +1894,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::removeOverlays": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-          // args
-          // list arg
-          NSArray<NSNumber*>* overlaysRefArray = (NSArray<NSNumber*> *) args[@"overlays"];
-          NSMutableArray<NSArray*>* overlays = [NSMutableArray arrayWithCapacity:overlaysRefArray.count];
-          for (int __i__ = 0; __i__ < overlaysRefArray.count; __i__++) {
-              NSArray* item = (NSArray*) HEAP[[overlaysRefArray objectAtIndex:__i__]];
-              [overlays addObject:item];
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::removeOverlays(%@)", args);
           }
       
-          // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          // args
+          // list arg
+          NSArray<NSObject*>* overlays = (NSArray<NSObject*>*) args[@"overlays"];
       
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::removeOverlays(%@)", args[@"refId"], args[@"overlays"]);
+          // ref
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1590,23 +1919,26 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::insertOverlay_atIndex": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::insertOverlay_atIndex(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) (args[@"overlay"] == [NSNull null] ? nil : args[@"overlay"]);
           // jsonable arg
           NSUInteger index = [args[@"index"] unsignedIntegerValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::insertOverlay(%@, %@)", args[@"refId"], args[@"overlay"], args[@"index"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1614,11 +1946,15 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::exchangeOverlayAtIndex_withOverlayAtIndex": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::exchangeOverlayAtIndex_withOverlayAtIndex(%@)", args);
+          }
+      
           // args
           // jsonable arg
           NSUInteger index1 = [args[@"index1"] unsignedIntegerValue];
@@ -1626,11 +1962,10 @@ extern BOOL enableLog;
           NSUInteger index2 = [args[@"index2"] unsignedIntegerValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::exchangeOverlayAtIndex(%@, %@)", args[@"refId"], args[@"index1"], args[@"index2"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1638,23 +1973,26 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::insertOverlay_aboveOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::insertOverlay_aboveOverlay(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) (args[@"overlay"] == [NSNull null] ? nil : args[@"overlay"]);
           // ref arg
-          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+          id<BMKOverlay> sibling = (id<BMKOverlay>) (args[@"sibling"] == [NSNull null] ? nil : args[@"sibling"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::insertOverlay(%@, %@)", args[@"refId"], args[@"overlay"], args[@"sibling"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1662,23 +2000,26 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::insertOverlay_belowOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::insertOverlay_belowOverlay(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) (args[@"overlay"] == [NSNull null] ? nil : args[@"overlay"]);
           // ref arg
-          id<BMKOverlay> sibling = (id<BMKOverlay>) HEAP[@([args[@"sibling"] integerValue])];
+          id<BMKOverlay> sibling = (id<BMKOverlay>) (args[@"sibling"] == [NSNull null] ? nil : args[@"sibling"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::insertOverlay(%@, %@)", args[@"refId"], args[@"overlay"], args[@"sibling"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1686,21 +2027,24 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::viewForOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::viewForOverlay(%@)", args);
+          }
+      
           // args
           // ref arg
-          id<BMKOverlay> overlay = (id<BMKOverlay>) HEAP[@([args[@"overlay"] integerValue])];
+          id<BMKOverlay> overlay = (id<BMKOverlay>) (args[@"overlay"] == [NSNull null] ? nil : args[@"overlay"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::viewForOverlay(%@)", args[@"refId"], args[@"overlay"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1708,22 +2052,24 @@ extern BOOL enableLog;
       
           // result
           // return a ref
-          HEAP[@((result).hash)] = result;
-          NSNumber* jsonableResult = @((result).hash);
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::addHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::addHeatMap(%@)", args);
+          }
+      
           // args
           // ref arg
-          BMKHeatMap* heatMap = (BMKHeatMap*) HEAP[@([args[@"heatMap"] integerValue])];
+          BMKHeatMap* heatMap = (BMKHeatMap*) (args[@"heatMap"] == [NSNull null] ? nil : args[@"heatMap"]);
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::addHeatMap(%@)", args[@"refId"], args[@"heatMap"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1731,20 +2077,23 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::removeHeatMap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+          if (enableLog) {
+              NSLog(@"fluttify-objc: BMKMapView::removeHeatMap(%@)", args);
+          }
+      
           // args
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
-      
-          // print log
-          if (enableLog) {
-              NSLog(@"fluttify-objc: BMKMapView@%@::removeHeatMap()", args[@"refId"]);
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
           }
       
           // invoke native method
@@ -1752,9 +2101,9 @@ extern BOOL enableLog;
       
           // result
           // 无返回值
-          NSString* jsonableResult = @"success";
+          NSString* __result__ = @"success";
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       @"BMKMapView::get_mapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
           // print log
@@ -1763,15 +2112,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BMKMapType result = ref.mapType;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_region": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1781,17 +2134,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BMKCoordinateRegion result = ref.region;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_limitMapRegion": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1801,17 +2156,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BMKCoordinateRegion result = ref.limitMapRegion;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKCoordinateRegion)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_compassPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1821,17 +2178,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           CGPoint result = ref.compassPosition;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGPoint)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_compassSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1841,17 +2200,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           CGSize result = ref.compassSize;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGSize)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGSize)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_centerCoordinate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1861,17 +2222,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           CLLocationCoordinate2D result = ref.centerCoordinate;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CLLocationCoordinate2D)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_zoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1881,15 +2244,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           float result = ref.zoomLevel;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_minZoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1899,15 +2266,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           float result = ref.minZoomLevel;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_maxZoomLevel": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1917,15 +2288,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           float result = ref.maxZoomLevel;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_rotation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1935,15 +2310,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           int result = ref.rotation;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_overlooking": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1953,15 +2332,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           int result = ref.overlooking;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_minOverlooking": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1971,15 +2354,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           int result = ref.minOverlooking;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isBuildingsEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -1989,15 +2376,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.buildingsEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_showMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2007,15 +2398,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.showMapPoi;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isTrafficEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2025,15 +2420,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.trafficEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isBaiduHeatMapEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2043,15 +2442,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.baiduHeatMapEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_gesturesEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2061,15 +2464,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.gesturesEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isZoomEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2079,15 +2486,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.zoomEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isZoomEnabledWithTap": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2097,15 +2508,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.zoomEnabledWithTap;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isScrollEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2115,15 +2530,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.scrollEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isOverlookEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2133,15 +2552,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.overlookEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isRotateEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2151,15 +2574,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.rotateEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_forceTouchEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2169,15 +2596,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.forceTouchEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_showMapScaleBar": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2187,15 +2618,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.showMapScaleBar;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_mapScaleBarPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2205,17 +2640,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           CGPoint result = ref.mapScaleBarPosition;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGPoint)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGPoint)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_mapScaleBarSize": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2225,17 +2662,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           CGSize result = ref.mapScaleBarSize;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(CGSize)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(CGSize)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_logoPosition": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2245,15 +2684,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BMKLogoPosition result = ref.logoPosition;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_visibleMapRect": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2263,17 +2706,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BMKMapRect result = ref.visibleMapRect;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(BMKMapRect)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_mapPadding": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2283,17 +2728,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           UIEdgeInsets result = ref.mapPadding;
       
           // 返回值: 结构体
-          NSValue* resultValue = [NSValue value:&result withObjCType:@encode(UIEdgeInsets)];
-          HEAP[@(resultValue.hash)] = resultValue;
-          NSNumber* jsonableResult = @(resultValue.hash);
+          NSValue* __result__ = [NSValue value:&result withObjCType:@encode(UIEdgeInsets)];
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_updateTargetScreenPtWhenMapPaddingChanged": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2303,15 +2750,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.updateTargetScreenPtWhenMapPaddingChanged;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isChangeWithTouchPointCenterEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2321,15 +2772,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.ChangeWithTouchPointCenterEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isChangeCenterWithDoubleTouchPointEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2339,15 +2794,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.ChangeCenterWithDoubleTouchPointEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_baseIndoorMapEnabled": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2357,15 +2816,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.baseIndoorMapEnabled;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_showIndoorMapPoi": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2375,15 +2838,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.showIndoorMapPoi;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_showsUserLocation": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2393,15 +2860,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.showsUserLocation;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_userTrackingMode": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2411,15 +2882,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BMKUserTrackingMode result = ref.userTrackingMode;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isUserLocationVisible": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2429,15 +2904,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.userLocationVisible;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_annotations": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2447,20 +2926,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           NSArray* result = ref.annotations;
       
-          // 返回值: 列表
-          NSMutableArray* jsonableResult = [NSMutableArray array];
-          for (int __i__ = 0; __i__ < result.count; __i__++) {
-              NSObject* object = [result objectAtIndex:__i__];
-              [jsonableResult addObject: @(object.hash)];
-              HEAP[@([object hash])] = object;
-          }
+          // return a ref
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_isSelectedAnnotationViewFront": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2470,15 +2948,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           BOOL result = ref.isSelectedAnnotationViewFront;
       
           // 返回值: Value
-          id jsonableResult = @(result);
+          NSObject* __result__ = @(result);
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::get_overlays": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2488,20 +2970,19 @@ extern BOOL enableLog;
           }
       
           // ref object
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           // invoke native method
           NSArray* result = ref.overlays;
       
-          // 返回值: 列表
-          NSMutableArray* jsonableResult = [NSMutableArray array];
-          for (int __i__ = 0; __i__ < result.count; __i__++) {
-              NSObject* object = [result objectAtIndex:__i__];
-              [jsonableResult addObject: @(object.hash)];
-              HEAP[@([object hash])] = object;
-          }
+          // return a ref
+          NSObject* __result__ = result;
       
-          methodResult(jsonableResult);
+          methodResult(__result__);
       },
       
       @"BMKMapView::set_delegate": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
@@ -2514,9 +2995,13 @@ extern BOOL enableLog;
       
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
-          ref.delegate = self;
+          ref.delegate = weakSelf;
           methodResult(@"success");
       },
       
@@ -2531,7 +3016,11 @@ extern BOOL enableLog;
           BMKMapType mapType = (BMKMapType) [args[@"mapType"] integerValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.mapType = mapType;
           methodResult(@"success");
@@ -2545,12 +3034,24 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* regionValue = (NSValue*) HEAP[@([args[@"region"] integerValue])];
+          NSValue* regionValue = (NSValue*) args[@"region"];
           BMKCoordinateRegion region;
-          [regionValue getValue:&region];
+          if (regionValue != nil && (NSNull*) regionValue != [NSNull null]) {
+            [regionValue getValue:&region];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"region不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.region = region;
           methodResult(@"success");
@@ -2564,12 +3065,24 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* limitMapRegionValue = (NSValue*) HEAP[@([args[@"limitMapRegion"] integerValue])];
+          NSValue* limitMapRegionValue = (NSValue*) args[@"limitMapRegion"];
           BMKCoordinateRegion limitMapRegion;
-          [limitMapRegionValue getValue:&limitMapRegion];
+          if (limitMapRegionValue != nil && (NSNull*) limitMapRegionValue != [NSNull null]) {
+            [limitMapRegionValue getValue:&limitMapRegion];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"limitMapRegion不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.limitMapRegion = limitMapRegion;
           methodResult(@"success");
@@ -2583,12 +3096,24 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* compassPositionValue = (NSValue*) HEAP[@([args[@"compassPosition"] integerValue])];
+          NSValue* compassPositionValue = (NSValue*) args[@"compassPosition"];
           CGPoint compassPosition;
-          [compassPositionValue getValue:&compassPosition];
+          if (compassPositionValue != nil && (NSNull*) compassPositionValue != [NSNull null]) {
+            [compassPositionValue getValue:&compassPosition];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"compassPosition不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.compassPosition = compassPosition;
           methodResult(@"success");
@@ -2602,12 +3127,24 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* centerCoordinateValue = (NSValue*) HEAP[@([args[@"centerCoordinate"] integerValue])];
+          NSValue* centerCoordinateValue = (NSValue*) args[@"centerCoordinate"];
           CLLocationCoordinate2D centerCoordinate;
-          [centerCoordinateValue getValue:&centerCoordinate];
+          if (centerCoordinateValue != nil && (NSNull*) centerCoordinateValue != [NSNull null]) {
+            [centerCoordinateValue getValue:&centerCoordinate];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"centerCoordinate不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.centerCoordinate = centerCoordinate;
           methodResult(@"success");
@@ -2624,7 +3161,11 @@ extern BOOL enableLog;
           float zoomLevel = [args[@"zoomLevel"] floatValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.zoomLevel = zoomLevel;
           methodResult(@"success");
@@ -2641,7 +3182,11 @@ extern BOOL enableLog;
           float minZoomLevel = [args[@"minZoomLevel"] floatValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.minZoomLevel = minZoomLevel;
           methodResult(@"success");
@@ -2658,7 +3203,11 @@ extern BOOL enableLog;
           float maxZoomLevel = [args[@"maxZoomLevel"] floatValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.maxZoomLevel = maxZoomLevel;
           methodResult(@"success");
@@ -2675,7 +3224,11 @@ extern BOOL enableLog;
           int rotation = [args[@"rotation"] intValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.rotation = rotation;
           methodResult(@"success");
@@ -2692,7 +3245,11 @@ extern BOOL enableLog;
           int overlooking = [args[@"overlooking"] intValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.overlooking = overlooking;
           methodResult(@"success");
@@ -2709,7 +3266,11 @@ extern BOOL enableLog;
           int minOverlooking = [args[@"minOverlooking"] intValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.minOverlooking = minOverlooking;
           methodResult(@"success");
@@ -2726,7 +3287,11 @@ extern BOOL enableLog;
           BOOL buildingsEnabled = [args[@"buildingsEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.buildingsEnabled = buildingsEnabled;
           methodResult(@"success");
@@ -2743,7 +3308,11 @@ extern BOOL enableLog;
           BOOL showMapPoi = [args[@"showMapPoi"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.showMapPoi = showMapPoi;
           methodResult(@"success");
@@ -2760,7 +3329,11 @@ extern BOOL enableLog;
           BOOL trafficEnabled = [args[@"trafficEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.trafficEnabled = trafficEnabled;
           methodResult(@"success");
@@ -2777,7 +3350,11 @@ extern BOOL enableLog;
           BOOL baiduHeatMapEnabled = [args[@"baiduHeatMapEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.baiduHeatMapEnabled = baiduHeatMapEnabled;
           methodResult(@"success");
@@ -2794,7 +3371,11 @@ extern BOOL enableLog;
           BOOL gesturesEnabled = [args[@"gesturesEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.gesturesEnabled = gesturesEnabled;
           methodResult(@"success");
@@ -2811,7 +3392,11 @@ extern BOOL enableLog;
           BOOL zoomEnabled = [args[@"zoomEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.zoomEnabled = zoomEnabled;
           methodResult(@"success");
@@ -2828,7 +3413,11 @@ extern BOOL enableLog;
           BOOL zoomEnabledWithTap = [args[@"zoomEnabledWithTap"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.zoomEnabledWithTap = zoomEnabledWithTap;
           methodResult(@"success");
@@ -2845,7 +3434,11 @@ extern BOOL enableLog;
           BOOL scrollEnabled = [args[@"scrollEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.scrollEnabled = scrollEnabled;
           methodResult(@"success");
@@ -2862,7 +3455,11 @@ extern BOOL enableLog;
           BOOL overlookEnabled = [args[@"overlookEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.overlookEnabled = overlookEnabled;
           methodResult(@"success");
@@ -2879,7 +3476,11 @@ extern BOOL enableLog;
           BOOL rotateEnabled = [args[@"rotateEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.rotateEnabled = rotateEnabled;
           methodResult(@"success");
@@ -2896,7 +3497,11 @@ extern BOOL enableLog;
           BOOL forceTouchEnabled = [args[@"forceTouchEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.forceTouchEnabled = forceTouchEnabled;
           methodResult(@"success");
@@ -2913,7 +3518,11 @@ extern BOOL enableLog;
           BOOL showMapScaleBar = [args[@"showMapScaleBar"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.showMapScaleBar = showMapScaleBar;
           methodResult(@"success");
@@ -2927,12 +3536,24 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* mapScaleBarPositionValue = (NSValue*) HEAP[@([args[@"mapScaleBarPosition"] integerValue])];
+          NSValue* mapScaleBarPositionValue = (NSValue*) args[@"mapScaleBarPosition"];
           CGPoint mapScaleBarPosition;
-          [mapScaleBarPositionValue getValue:&mapScaleBarPosition];
+          if (mapScaleBarPositionValue != nil && (NSNull*) mapScaleBarPositionValue != [NSNull null]) {
+            [mapScaleBarPositionValue getValue:&mapScaleBarPosition];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapScaleBarPosition不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.mapScaleBarPosition = mapScaleBarPosition;
           methodResult(@"success");
@@ -2949,7 +3570,11 @@ extern BOOL enableLog;
           BMKLogoPosition logoPosition = (BMKLogoPosition) [args[@"logoPosition"] integerValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.logoPosition = logoPosition;
           methodResult(@"success");
@@ -2963,12 +3588,24 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* visibleMapRectValue = (NSValue*) HEAP[@([args[@"visibleMapRect"] integerValue])];
+          NSValue* visibleMapRectValue = (NSValue*) args[@"visibleMapRect"];
           BMKMapRect visibleMapRect;
-          [visibleMapRectValue getValue:&visibleMapRect];
+          if (visibleMapRectValue != nil && (NSNull*) visibleMapRectValue != [NSNull null]) {
+            [visibleMapRectValue getValue:&visibleMapRect];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"visibleMapRect不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.visibleMapRect = visibleMapRect;
           methodResult(@"success");
@@ -2982,12 +3619,24 @@ extern BOOL enableLog;
       
           // args
           // struct arg
-          NSValue* mapPaddingValue = (NSValue*) HEAP[@([args[@"mapPadding"] integerValue])];
+          NSValue* mapPaddingValue = (NSValue*) args[@"mapPadding"];
           UIEdgeInsets mapPadding;
-          [mapPaddingValue getValue:&mapPadding];
+          if (mapPaddingValue != nil && (NSNull*) mapPaddingValue != [NSNull null]) {
+            [mapPaddingValue getValue:&mapPadding];
+          } else {
+            methodResult([FlutterError errorWithCode:@"参数非法"
+                                             message:@"参数非法"
+                                             details:@"mapPadding不能为null"]);
+            return;
+          }
+      
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.mapPadding = mapPadding;
           methodResult(@"success");
@@ -3004,7 +3653,11 @@ extern BOOL enableLog;
           BOOL updateTargetScreenPtWhenMapPaddingChanged = [args[@"updateTargetScreenPtWhenMapPaddingChanged"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.updateTargetScreenPtWhenMapPaddingChanged = updateTargetScreenPtWhenMapPaddingChanged;
           methodResult(@"success");
@@ -3021,7 +3674,11 @@ extern BOOL enableLog;
           BOOL ChangeWithTouchPointCenterEnabled = [args[@"ChangeWithTouchPointCenterEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.ChangeWithTouchPointCenterEnabled = ChangeWithTouchPointCenterEnabled;
           methodResult(@"success");
@@ -3038,7 +3695,11 @@ extern BOOL enableLog;
           BOOL ChangeCenterWithDoubleTouchPointEnabled = [args[@"ChangeCenterWithDoubleTouchPointEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.ChangeCenterWithDoubleTouchPointEnabled = ChangeCenterWithDoubleTouchPointEnabled;
           methodResult(@"success");
@@ -3055,7 +3716,11 @@ extern BOOL enableLog;
           BOOL baseIndoorMapEnabled = [args[@"baseIndoorMapEnabled"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.baseIndoorMapEnabled = baseIndoorMapEnabled;
           methodResult(@"success");
@@ -3072,7 +3737,11 @@ extern BOOL enableLog;
           BOOL showIndoorMapPoi = [args[@"showIndoorMapPoi"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.showIndoorMapPoi = showIndoorMapPoi;
           methodResult(@"success");
@@ -3089,7 +3758,11 @@ extern BOOL enableLog;
           BOOL showsUserLocation = [args[@"showsUserLocation"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.showsUserLocation = showsUserLocation;
           methodResult(@"success");
@@ -3106,7 +3779,11 @@ extern BOOL enableLog;
           BMKUserTrackingMode userTrackingMode = (BMKUserTrackingMode) [args[@"userTrackingMode"] integerValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.userTrackingMode = userTrackingMode;
           methodResult(@"success");
@@ -3123,31 +3800,17 @@ extern BOOL enableLog;
           BOOL isSelectedAnnotationViewFront = [args[@"isSelectedAnnotationViewFront"] boolValue];
       
           // ref
-          BMKMapView* ref = (BMKMapView*) HEAP[(NSNumber*) ((NSDictionary<NSString*, NSObject*>*) args)[@"refId"]];
+          BMKMapView* ref = (BMKMapView*) args[@"__this__"];
+          if ((NSNull *) ref == [NSNull null] || ref == nil) {
+              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+              return;
+          }
       
           ref.isSelectedAnnotationViewFront = isSelectedAnnotationViewFront;
           methodResult(@"success");
       },
       
   };
-  //endregion
-
-  //region method call handler
-  FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.fluttify/bmap_map_fluttify/BMKMapView"
-            binaryMessenger:[_registrar messenger]];
-
-  __weak __typeof(self)weakSelf = self;
-  [channel setMethodCallHandler:^(FlutterMethodCall *methodCall, FlutterResult methodResult) {
-    NSDictionary<NSString *, id> *args = (NSDictionary<NSString *, id> *) [methodCall arguments];
-
-    __strong __typeof(weakSelf)strongSelf = weakSelf;
-    if (strongSelf->_handlerMap[methodCall.method] != nil) {
-      strongSelf->_handlerMap[methodCall.method](strongSelf->_registrar, args, methodResult);
-    } else {
-      methodResult(FlutterMethodNotImplemented);
-    }
-  }];
   //endregion
   return _view;
 }
@@ -3156,8 +3819,9 @@ extern BOOL enableLog;
 - (void)mapViewDidFinishLoading : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapViewDidFinishLoading");
@@ -3165,22 +3829,20 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishLoading" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
+  });
   
 }
 
 - (void)mapViewDidRenderValidData : (BMKMapView*)mapView withError: (NSError*)error
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapViewDidRenderValidData_withError");
@@ -3188,29 +3850,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argerror = [NSNull null];
-  if (error != nil) {
-      argerror = @(error.hash);
-      HEAP[argerror] = error;
-  }
-  
+  NSError* argerror = error;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView, @"error": argerror}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"error": argerror == nil ? [NSNull null] : argerror}];
+  });
   
 }
 
 - (void)mapViewDidFinishRendering : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapViewDidFinishRendering");
@@ -3218,22 +3873,20 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapViewDidFinishRendering" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView onDrawMapFrame: (BMKMapStatus*)status
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onDrawMapFrame");
@@ -3241,29 +3894,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argstatus = [NSNull null];
-  if (status != nil) {
-      argstatus = @(status.hash);
-      HEAP[argstatus] = status;
-  }
-  
+  BMKMapStatus* argstatus = status;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView, @"status": argstatus}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onDrawMapFrame" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"status": argstatus == nil ? [NSNull null] : argstatus}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionWillChangeAnimated: (BOOL)animated
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionWillChangeAnimated");
@@ -3271,24 +3917,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionWillChangeAnimated: (BOOL)animated reason: (BMKRegionChangeReason)reason
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason");
@@ -3296,26 +3940,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // primitive callback arg
   NSNumber* arganimated = @(animated);
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated, @"reason": argreason == nil ? [NSNull null] : argreason}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionDidChangeAnimated: (BOOL)animated
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionDidChangeAnimated");
@@ -3323,24 +3965,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // primitive callback arg
   NSNumber* arganimated = @(animated);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView, @"animated": arganimated}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView regionDidChangeAnimated: (BOOL)animated reason: (BMKRegionChangeReason)reason
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason");
@@ -3348,26 +3988,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // primitive callback arg
   NSNumber* arganimated = @(animated);
   // enum callback arg
   NSNumber* argreason = @((NSInteger) reason);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView, @"animated": arganimated, @"reason": argreason}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"animated": arganimated == nil ? [NSNull null] : arganimated, @"reason": argreason == nil ? [NSNull null] : argreason}];
+  });
   
 }
 
 - (BMKAnnotationView*)mapView : (BMKMapView*)mapView viewForAnnotation: (id<BMKAnnotation>)annotation
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_viewForAnnotation");
@@ -3375,85 +4013,33 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argannotation = [NSNull null];
-  if (annotation != nil) {
-      argannotation = @(annotation.hash);
-      HEAP[argannotation] = annotation;
-  }
-  
+  id<BMKAnnotation> argannotation = annotation;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
-              arguments:@{}
-                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForAnnotation"
+                arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"annotation": argannotation == nil ? [NSNull null] : argannotation}
+                   result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
   // 相关issue https://github.com/flutter/flutter/issues/28310
   NSLog(@"暂不支持有返回值的回调方法");
   
   ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
-  UIImage* icon = (UIImage *) objc_getAssociatedObject(annotation, (const void *) 1);
-  NSNumber* draggable = objc_getAssociatedObject(annotation, (const void *) 2);
-  NSNumber* rotateAngle = objc_getAssociatedObject(annotation, (const void *) 3);
-  NSNumber* infoWindowEnabled = objc_getAssociatedObject(annotation, (const void *) 4);
-  NSNumber* anchorU = objc_getAssociatedObject(annotation, (const void *) 5);
-  NSNumber* anchorV = objc_getAssociatedObject(annotation, (const void *) 6);
-  // 7上绑的是自定义数据, 这里不需要
-  NSNumber* visible = objc_getAssociatedObject(annotation, (const void *) 10);
-
-  //用户当前位置大头针
-  if ([annotation isKindOfClass:[BMKUserLocation class]]) {
-    return nil;
-  }
-
-  if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
-      BMKAnnotationView* annotationView;
-      // 如果没有指定icon就使用m自带的annotation
-      if (icon == nil) {
-          annotationView = (BMKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"pinAnnotationReuseIndentifier"];
-          if (annotationView == nil) {
-              annotationView = [[BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinAnnotationReuseIndentifier"];
-          }
-      } else {
-          annotationView = (BMKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"customAnnotationReuseIndentifier"];
-          if (annotationView == nil) {
-              annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"customAnnotationReuseIndentifier"];
-          }
-      }
-      if (icon != nil && (NSNull*) icon != [NSNull null]) annotationView.image = icon;
-      if (draggable != nil) annotationView.draggable = [draggable boolValue];
-      if (infoWindowEnabled != nil) annotationView.canShowCallout = [infoWindowEnabled boolValue];
-      // 旋转角度
-      if (rotateAngle != nil) {
-          annotationView.transform = CGAffineTransformRotate(CGAffineTransformIdentity, -[rotateAngle doubleValue] / 180.0 * M_PI);
-      }
-      // 锚点
-      if (anchorU != nil && anchorV != nil
-          && (NSNull*) anchorU != [NSNull null] && (NSNull*) anchorV != [NSNull null]) {
-          annotationView.layer.anchorPoint = CGPointMake([anchorU doubleValue], [anchorV doubleValue]);
-      }
-      // 是否可见
-      if (visible != nil && (NSNull*) visible != [NSNull null]) {
-          annotationView.hidden = ![visible boolValue];
-      }
-      return annotationView;
-  }
+  
   ////////////////////////////////////////////////////////////////////////////////
   
-  return nil;
+  return (BMKAnnotationView*) nil;
 }
 
 - (void)mapView : (BMKMapView*)mapView didAddAnnotationViews: (NSArray*)views
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didAddAnnotationViews");
@@ -3461,31 +4047,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
-  // list callback arg
-  NSMutableArray<NSNumber*>* argviews = [NSMutableArray arrayWithCapacity:views.count];
-  for (int __i__ = 0; __i__ < views.count; __i__++) {
-      NSObject* item = ((NSObject*) [views objectAtIndex:__i__]);
-      // return to dart side data
-      argviews[__i__] = @(item.hash);
-      // add to HEAP
-      HEAP[@(item.hash)] = item;
-  }
+  BMKMapView* argmapView = mapView;
+  // ref callback arg
+  NSArray* argviews = views;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView, @"views": argviews}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"views": argviews == nil ? [NSNull null] : argviews}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView clickAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_clickAnnotationView");
@@ -3493,29 +4070,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = @(view.hash);
-      HEAP[argview] = view;
-  }
-  
+  BMKAnnotationView* argview = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_clickAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView didSelectAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didSelectAnnotationView");
@@ -3523,29 +4093,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = @(view.hash);
-      HEAP[argview] = view;
-  }
-  
+  BMKAnnotationView* argview = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView didDeselectAnnotationView: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didDeselectAnnotationView");
@@ -3553,29 +4116,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = @(view.hash);
-      HEAP[argview] = view;
-  }
-  
+  BMKAnnotationView* argview = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView annotationView: (BMKAnnotationView*)view didChangeDragState: (NSUInteger)newState fromOldState: (NSUInteger)oldState
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState");
@@ -3583,33 +4139,26 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = @(view.hash);
-      HEAP[argview] = view;
-  }
-  
+  BMKAnnotationView* argview = view;
   // primitive callback arg
   NSNumber* argnewState = @(newState);
   // primitive callback arg
   NSNumber* argoldState = @(oldState);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView, @"view": argview, @"newState": argnewState, @"oldState": argoldState}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview, @"newState": argnewState == nil ? [NSNull null] : argnewState, @"oldState": argoldState == nil ? [NSNull null] : argoldState}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView annotationViewForBubble: (BMKAnnotationView*)view
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_annotationViewForBubble");
@@ -3617,29 +4166,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argview = [NSNull null];
-  if (view != nil) {
-      argview = @(view.hash);
-      HEAP[argview] = view;
-  }
-  
+  BMKAnnotationView* argview = view;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView, @"view": argview}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_annotationViewForBubble" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"view": argview == nil ? [NSNull null] : argview}];
+  });
   
 }
 
 - (BMKOverlayView*)mapView : (BMKMapView*)mapView viewForOverlay: (id<BMKOverlay>)overlay
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_viewForOverlay");
@@ -3647,166 +4189,33 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argoverlay = [NSNull null];
-  if (overlay != nil) {
-      argoverlay = @(overlay.hash);
-      HEAP[argoverlay] = overlay;
-  }
-  
+  id<BMKOverlay> argoverlay = overlay;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
-              arguments:@{}
-                 result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_viewForOverlay"
+                arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"overlay": argoverlay == nil ? [NSNull null] : argoverlay}
+                   result:^(id result) {}]; // 由于结果是异步返回, 这里用不上, 所以就不生成代码了
+  });
   
   // 由于flutter无法同步调用method channel, 所以暂不支持有返回值的回调方法
   // 相关issue https://github.com/flutter/flutter/issues/28310
   NSLog(@"暂不支持有返回值的回调方法");
   
   ////////////////////////////如果需要手写代码, 请写在这里/////////////////////////////
-  // 线
-  if ([overlay isKindOfClass:[BMKPolyline class]])
-  {
-      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
-      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
-      UIImage* texture = (UIImage *) objc_getAssociatedObject(overlay, (const void *) 3);
-      NSNumber* lineCapType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 4);
-      NSNumber* lineJoinType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 5);
-      NSNumber* dashType = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 6);
-
-      BMKPolylineView *polylineRenderer = [[BMKPolylineView alloc] initWithPolyline:overlay];
-
-      polylineRenderer.lineWidth = [width doubleValue];
-      // 描边颜色
-      NSUInteger rgba = [strokeColor unsignedIntegerValue];
-      float components[4];
-      for (int i = 3; i >= 0; i--) {
-          components[i] = (rgba & 0xff) / 255.0;
-          rgba >>= 8;
-      }
-      polylineRenderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
-//      if (texture != nil) polylineRenderer.strokeImage = texture;
-//      if (lineCapType != nil) polylineRenderer.lineCapType = (MALineCapType) [lineCapType integerValue];
-//      if (lineJoinType != nil) polylineRenderer.lineJoinType = (MALineJoinType) [lineJoinType integerValue];
-      if (dashType != nil) polylineRenderer.lineDashType = (BMKLineDashType) [dashType integerValue];
-
-      // 这次调用完成后 清空栈
-      [STACK removeAllObjects];
-      return polylineRenderer;
-  }
-
-  // 多边形
-  if ([overlay isKindOfClass:[BMKPolygon class]])
-  {
-      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
-      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
-      NSNumber* fillColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
-
-      BMKPolygonView *polygonRenderer = [[BMKPolygonView alloc] initWithPolygon:overlay];
-
-      if (width != nil) polygonRenderer.lineWidth = [width doubleValue];
-      // 描边颜色
-      NSUInteger rgba = [strokeColor unsignedIntegerValue];
-      float components[4];
-      for (int i = 3; i >= 0; i--) {
-          components[i] = (rgba & 0xff) / 255.0;
-          rgba >>= 8;
-      }
-      polygonRenderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
-
-      // 填充颜色
-      rgba = [fillColor unsignedIntegerValue];
-      for (int i = 3; i >= 0; i--) {
-          components[i] = (rgba & 0xff) / 255.0;
-          rgba >>= 8;
-      }
-      polygonRenderer.fillColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
-
-      // 这次调用完成后 清空栈
-      [STACK removeAllObjects];
-      return polygonRenderer;
-  }
-
-  // 圆
-  if ([overlay isKindOfClass:[BMKCircle class]])
-  {
-      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 1);
-      NSNumber* strokeColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
-      NSNumber* fillColor = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
-
-      BMKCircleView *circleRenderer = [[BMKCircleView alloc] initWithCircle:overlay];
-
-      // 宽度
-      if (width != nil) circleRenderer.lineWidth = [width doubleValue];
-
-      // 描边颜色
-      NSUInteger rgba = [strokeColor unsignedIntegerValue];
-      float components[4];
-      for (int i = 3; i >= 0; i--) {
-          components[i] = (rgba & 0xff) / 255.0;
-          rgba >>= 8;
-      }
-      circleRenderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
-
-      // 填充颜色
-      rgba = [fillColor unsignedIntegerValue];
-      for (int i = 3; i >= 0; i--) {
-          components[i] = (rgba & 0xff) / 255.0;
-          rgba >>= 8;
-      }
-      circleRenderer.fillColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
-
-      // 这次调用完成后 清空栈
-      [STACK removeAllObjects];
-      return circleRenderer;
-  }
-
-//  // 瓦片图
-//  if ([overlay isKindOfClass:[BMKTileOverlay class]])
-//  {
-//      BMKTileOverlayRenderer *tileOverlayRenderer = [[BMKTileOverlayRenderer alloc] initWithTileOverlay:overlay];
-//      return tileOverlayRenderer;
-//  }
-//
-//  // 海量点
-//  if ([overlay isKindOfClass:[MAMultiPointOverlay class]])
-//  {
-//      UIImage* icon = (UIImage *) objc_getAssociatedObject(overlay, (const void *) 1);
-//      NSNumber* width = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 2);
-//      NSNumber* height = (NSNumber *) objc_getAssociatedObject(overlay, (const void *) 3);
-//
-//      MAMultiPointOverlayRenderer *multiPointOverlayRenderer = [[MAMultiPointOverlayRenderer alloc] initWithMultiPointOverlay: overlay];
-//      if (icon != nil) {
-//          multiPointOverlayRenderer.icon = icon;
-//      }
-//      if (width != nil && height != nil) {
-//          multiPointOverlayRenderer.pointSize = CGSizeMake([width doubleValue], [height doubleValue]);
-//      }
-//      return multiPointOverlayRenderer;
-//  }
-
-  // 图片
-  if ([overlay isKindOfClass:[BMKGroundOverlay class]])
-  {
-      BMKGroundOverlayView *groundPverlayRenderer = [[BMKGroundOverlayView alloc] initWithGroundOverlay: overlay];
-      return groundPverlayRenderer;
-  }
+  
   ////////////////////////////////////////////////////////////////////////////////
   
-  return nil;
+  return (BMKOverlayView*) nil;
 }
 
 - (void)mapView : (BMKMapView*)mapView didAddOverlayViews: (NSArray*)overlayViews
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_didAddOverlayViews");
@@ -3814,31 +4223,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
-  // list callback arg
-  NSMutableArray<NSNumber*>* argoverlayViews = [NSMutableArray arrayWithCapacity:overlayViews.count];
-  for (int __i__ = 0; __i__ < overlayViews.count; __i__++) {
-      NSObject* item = ((NSObject*) [overlayViews objectAtIndex:__i__]);
-      // return to dart side data
-      argoverlayViews[__i__] = @(item.hash);
-      // add to HEAP
-      HEAP[@(item.hash)] = item;
-  }
+  BMKMapView* argmapView = mapView;
+  // ref callback arg
+  NSArray* argoverlayViews = overlayViews;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView, @"overlayViews": argoverlayViews}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_didAddOverlayViews" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"overlayViews": argoverlayViews == nil ? [NSNull null] : argoverlayViews}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView onClickedBMKOverlayView: (BMKOverlayView*)overlayView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onClickedBMKOverlayView");
@@ -3846,29 +4246,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argoverlayView = [NSNull null];
-  if (overlayView != nil) {
-      argoverlayView = @(overlayView.hash);
-      HEAP[argoverlayView] = overlayView;
-  }
-  
+  BMKOverlayView* argoverlayView = overlayView;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView, @"overlayView": argoverlayView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"overlayView": argoverlayView == nil ? [NSNull null] : argoverlayView}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView onClickedMapPoi: (BMKMapPoi*)mapPoi
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onClickedMapPoi");
@@ -3876,29 +4269,22 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // ref callback arg
-  NSNumber* argmapPoi = [NSNull null];
-  if (mapPoi != nil) {
-      argmapPoi = @(mapPoi.hash);
-      HEAP[argmapPoi] = mapPoi;
-  }
-  
+  BMKMapPoi* argmapPoi = mapPoi;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView, @"mapPoi": argmapPoi}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapPoi" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"mapPoi": argmapPoi == nil ? [NSNull null] : argmapPoi}];
+  });
   
 }
 
 - (void)mapView : (BMKMapView*)mapView onClickedMapBlank: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapView_onClickedMapBlank");
@@ -3906,27 +4292,23 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapView_onClickedMapBlank" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
+  });
   
 }
 
 - (void)mapview : (BMKMapView*)mapView onDoubleClick: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_onDoubleClick");
@@ -3934,27 +4316,23 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onDoubleClick" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
+  });
   
 }
 
 - (void)mapview : (BMKMapView*)mapView onLongClick: (CLLocationCoordinate2D)coordinate
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_onLongClick");
@@ -3962,27 +4340,23 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onLongClick" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate}];
+  });
   
 }
 
 - (void)mapview : (BMKMapView*)mapView onForceTouch: (CLLocationCoordinate2D)coordinate force: (CGFloat)force maximumPossibleForce: (CGFloat)maximumPossibleForce
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce");
@@ -3990,31 +4364,27 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // struct callback arg
-  NSValue* coordinateValue = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
-  NSNumber* argcoordinate = @(coordinateValue.hash);
-  HEAP[argcoordinate] = coordinateValue;
+  NSValue* argcoordinate = [NSValue value:&coordinate withObjCType:@encode(CLLocationCoordinate2D)];
   
   // primitive callback arg
   NSNumber* argforce = @(force);
   // primitive callback arg
   NSNumber* argmaximumPossibleForce = @(maximumPossibleForce);
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView, @"coordinate": argcoordinate, @"force": argforce, @"maximumPossibleForce": argmaximumPossibleForce}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"coordinate": argcoordinate == nil ? [NSNull null] : argcoordinate, @"force": argforce == nil ? [NSNull null] : argforce, @"maximumPossibleForce": argmaximumPossibleForce == nil ? [NSNull null] : argmaximumPossibleForce}];
+  });
   
 }
 
 - (void)mapStatusDidChanged : (BMKMapView*)mapView
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapStatusDidChanged");
@@ -4022,22 +4392,20 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapStatusDidChanged" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView}];
+  });
   
 }
 
 - (void)mapview : (BMKMapView*)mapView baseIndoorMapWithIn: (BOOL)flag baseIndoorMapInfo: (BMKBaseIndoorMapInfo*)info
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKMapViewDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo");
@@ -4045,31 +4413,24 @@ extern BOOL enableLog;
 
   // convert to jsonable arg
   // ref callback arg
-  NSNumber* argmapView = [NSNull null];
-  if (mapView != nil) {
-      argmapView = @(mapView.hash);
-      HEAP[argmapView] = mapView;
-  }
-  
+  BMKMapView* argmapView = mapView;
   // primitive callback arg
   NSNumber* argflag = @(flag);
   // ref callback arg
-  NSNumber* arginfo = [NSNull null];
-  if (info != nil) {
-      arginfo = @(info.hash);
-      HEAP[arginfo] = info;
-  }
-  
+  BMKBaseIndoorMapInfo* arginfo = info;
 
-  [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView, @"flag": argflag, @"info": arginfo}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo" arguments:@{@"mapView": argmapView == nil ? [NSNull null] : argmapView, @"flag": argflag == nil ? [NSNull null] : argflag, @"info": arginfo == nil ? [NSNull null] : arginfo}];
+  });
   
 }
 
 - (void)onGetOfflineMapState : (int)type withState: (int)state
 {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:[NSString stringWithFormat:@"BMKOfflineMapDelegate::Callback@%@", @(2147483647 - _viewId)]
-            binaryMessenger:[_registrar messenger]];
+        methodChannelWithName:[NSString stringWithFormat:@"BMKOfflineMapDelegate::Callback@%@:%@", NSStringFromClass([_view class]), @(_view.hash)]
+              binaryMessenger:[_registrar messenger]
+                        codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
   // print log
   if (enableLog) {
     NSLog(@"BMKOfflineMapDelegate::onGetOfflineMapState_withState");
@@ -4081,7 +4442,9 @@ extern BOOL enableLog;
   // primitive callback arg
   NSNumber* argstate = @(state);
 
-  [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype, @"state": argstate}];
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [channel invokeMethod:@"Callback::BMKOfflineMapDelegate::onGetOfflineMapState_withState" arguments:@{@"type": argtype == nil ? [NSNull null] : argtype, @"state": argstate == nil ? [NSNull null] : argstate}];
+  });
   
 }
 

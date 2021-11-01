@@ -4,8 +4,29 @@
 //////////////////////////////////////////////////////////
 
 enum com_baidu_mapapi_search_core_RouteLine_TYPE {
-  DRIVESTEP /* 0 */,
-  TRANSITSTEP /* 0 */,
-  WALKSTEP /* 0 */,
-  BIKINGSTEP /* 0 */
+  DRIVESTEP /* null */,
+  TRANSITSTEP /* null */,
+  WALKSTEP /* null */,
+  BIKINGSTEP /* null */
+}
+
+extension com_baidu_mapapi_search_core_RouteLine_TYPEToX on com_baidu_mapapi_search_core_RouteLine_TYPE {
+  int toValue() {
+    switch (this) {
+      case com_baidu_mapapi_search_core_RouteLine_TYPE.DRIVESTEP: return com_baidu_mapapi_search_core_RouteLine_TYPE.DRIVESTEP.index + 0;
+      case com_baidu_mapapi_search_core_RouteLine_TYPE.TRANSITSTEP: return com_baidu_mapapi_search_core_RouteLine_TYPE.TRANSITSTEP.index + 0;
+      case com_baidu_mapapi_search_core_RouteLine_TYPE.WALKSTEP: return com_baidu_mapapi_search_core_RouteLine_TYPE.WALKSTEP.index + 0;
+      case com_baidu_mapapi_search_core_RouteLine_TYPE.BIKINGSTEP: return com_baidu_mapapi_search_core_RouteLine_TYPE.BIKINGSTEP.index + 0;
+      default: return 0;
+    }
+  }
+}
+
+extension com_baidu_mapapi_search_core_RouteLine_TYPEFromX on int {
+  com_baidu_mapapi_search_core_RouteLine_TYPE tocom_baidu_mapapi_search_core_RouteLine_TYPE() {
+    switch (this) {
+      
+      default: return com_baidu_mapapi_search_core_RouteLine_TYPE.values[this + 0];
+    }
+  }
 }

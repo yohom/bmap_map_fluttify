@@ -19,27 +19,18 @@ mixin com_baidu_mapapi_search_geocode_OnGetGeoCoderResultListener on java_lang_O
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onGetGeoCodeResult(com_baidu_mapapi_search_geocode_GeoCodeResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetGeoCodeResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onGetGeoCodeResult(com_baidu_mapapi_search_geocode_GeoCodeResult var1) {}
   
-  @mustCallSuper
-  Future<void> onGetReverseGeoCodeResult(com_baidu_mapapi_search_geocode_ReverseGeoCodeResult var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetReverseGeoCodeResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onGetReverseGeoCodeResult(com_baidu_mapapi_search_geocode_ReverseGeoCodeResult var1) {}
   
 }
 

@@ -19,27 +19,18 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapClickListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onMapClick(com_baidu_mapapi_model_LatLng var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapClick::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onMapClick(com_baidu_mapapi_model_LatLng var1) {}
   
-  @mustCallSuper
-  Future<void> onMapPoiClick(com_baidu_mapapi_map_MapPoi var1) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMapPoiClick::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onMapPoiClick(com_baidu_mapapi_map_MapPoi var1) {}
   
 }
 

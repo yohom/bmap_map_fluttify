@@ -16,103 +16,100 @@ class com_baidu_mapapi_map_offline_MKOLSearchRecord extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.offline.MKOLSearchRecord';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_map_offline_MKOLSearchRecord> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLSearchRecord__');
-    final object = com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_offline_MKOLSearchRecord__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_offline_MKOLSearchRecord>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_offline_MKOLSearchRecord__', {'length': length});
-  
-    final List<com_baidu_mapapi_map_offline_MKOLSearchRecord> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_offline_MKOLSearchRecord__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_offline_MKOLSearchRecord>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<int> get_cityID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityID", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityID", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_size() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_size", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_size", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_dataSize() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_dataSize", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_dataSize", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_cityName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityName", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityName", {'__this__': this});
     return __result__;
   }
   
   Future<int> get_cityType() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityType", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityType", {'__this__': this});
     return __result__;
   }
   
   Future<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>> get_childCities() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_childCities", {'refId': refId});
-    kNativeObjectPool.addAll((__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
-    return (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_childCities", {'__this__': this});
+    return (__result__ as List)?.map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_offline_MKOLSearchRecord>(it))?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_cityID(int cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityID', {'refId': refId, "cityID": cityID});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityID', <String, dynamic>{'__this__': this, "cityID": cityID});
   
   
   }
   
   Future<void> set_size(int size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_size', {'refId': refId, "size": size});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_size', <String, dynamic>{'__this__': this, "size": size});
   
   
   }
   
   Future<void> set_dataSize(int dataSize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_dataSize', {'refId': refId, "dataSize": dataSize});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_dataSize', <String, dynamic>{'__this__': this, "dataSize": dataSize});
   
   
   }
   
   Future<void> set_cityName(String cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityName', {'refId': refId, "cityName": cityName});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityName', <String, dynamic>{'__this__': this, "cityName": cityName});
   
   
   }
   
   Future<void> set_cityType(int cityType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityType', {'refId': refId, "cityType": cityType});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityType', <String, dynamic>{'__this__': this, "cityType": cityType});
   
   
   }
   
   Future<void> set_childCities(List<com_baidu_mapapi_map_offline_MKOLSearchRecord> childCities) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_childCities', {'refId': refId, "childCities": childCities.map((it) => it.refId).toList()});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_childCities', <String, dynamic>{'__this__': this, "childCities": childCities});
   
   
   }
@@ -122,87 +119,80 @@ class com_baidu_mapapi_map_offline_MKOLSearchRecord extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_offline_MKOLSearchRecord{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_offline_MKOLSearchRecord_Batch on List<com_baidu_mapapi_map_offline_MKOLSearchRecord> {
   //region getters
   Future<List<int>> get_cityID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityID_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_size_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_size_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_dataSize_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_dataSize_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_dataSize_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<String>> get_cityName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityName_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityName_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_cityType_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityType_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_cityType_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>>> get_childCities_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_childCities_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => (__result__ as List).cast<int>().map((__it__) => com_baidu_mapapi_map_offline_MKOLSearchRecord()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    kNativeObjectPool.addAll(typedResult.expand((e) => e));
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.offline.MKOLSearchRecord::get_childCities_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as List)?.map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_offline_MKOLSearchRecord>(it))?.toList())?.cast<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_cityID_batch(List<int> cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityID": cityID[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityID": cityID[__i__]}]);
   
   
   }
   
   Future<void> set_size_batch(List<int> size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "size": size[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
   
   
   }
   
   Future<void> set_dataSize_batch(List<int> dataSize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_dataSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "dataSize": dataSize[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_dataSize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "dataSize": dataSize[__i__]}]);
   
   
   }
   
   Future<void> set_cityName_batch(List<String> cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityName": cityName[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityName": cityName[__i__]}]);
   
   
   }
   
   Future<void> set_cityType_batch(List<int> cityType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "cityType": cityType[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_cityType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityType": cityType[__i__]}]);
   
   
   }
   
   Future<void> set_childCities_batch(List<List<com_baidu_mapapi_map_offline_MKOLSearchRecord>> childCities) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_childCities_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "childCities": childCities[__i__].map((it) => it.refId).toList()}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.offline.MKOLSearchRecord::set_childCities_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "childCities": childCities[__i__]}]);
   
   
   }

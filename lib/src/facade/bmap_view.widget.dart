@@ -11,12 +11,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
+import 'package:path_provider/path_provider.dart';
 
+import 'bmap_location.dart';
 import 'enums.dart';
+import 'extensions.dart';
 import 'models.dart';
 
 part 'bmap_controller.dart';
+part 'map_delagates.dart';
 
 typedef Future<void> _OnMapCreated(BmapController controller);
 
@@ -47,87 +52,96 @@ class BmapView extends StatefulWidget {
 class _BmapViewState extends State<BmapView> {
   BmapController _controller;
   Widget _mask = Container();
-  Widget _widgetLayer = Container();
-  final _markerKey = GlobalKey();
+  Widget _widgetLayer;
 
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
-      return Stack(
-        children: <Widget>[
-          RepaintBoundary(key: _markerKey, child: _widgetLayer),
-          com_baidu_mapapi_map_TextureMapView_Android(
-            onDispose: _onPlatformViewDispose,
-            onViewCreated: (controller) async {
-              _controller = BmapController.android(controller, this);
+      return ScopedReleasePool(
+        child: Stack(
+          children: <Widget>[
+            if (_widgetLayer != null) _widgetLayer,
+            com_baidu_mapapi_map_TextureMapView_Android(
+              onDispose: _onPlatformViewDispose,
+              onViewCreated: (controller) async {
+                _controller = BmapController.android(controller, this);
 
-              final bundle = await android_os_Bundle.create();
-              final context = await android_app_Activity.get();
-              await controller.onCreate(context, bundle);
+                // 调用onCreate方法会造成内存泄露! 且官方文档的例子中也没有调用onCreate了
+                await controller.onResume();
 
-              if (widget.onMapCreated != null) {
-                await widget.onMapCreated(_controller);
-              }
-              await bundle.release__();
-            },
-          ),
-        ],
+                if (widget.onMapCreated != null) {
+                  await widget.onMapCreated(_controller);
+                }
+              },
+            ),
+          ],
+        ),
       );
     } else if (Platform.isIOS) {
-      return Stack(
-        children: <Widget>[
-          RepaintBoundary(key: _markerKey, child: _widgetLayer),
-          // 经测试如果不延迟加载会有1/2左右的概率奔溃 看日志是metal的奔溃
-          BMKMapView_iOS(
-            onDispose: _onPlatformViewDispose,
-            onViewCreated: (controller) async {
-              _controller = BmapController.ios(controller, this);
-              await controller.viewWillAppear();
+      return ScopedReleasePool(
+        child: Stack(
+          children: <Widget>[
+            if (_widgetLayer != null) _widgetLayer,
+            BMKMapView_iOS(
+              onDispose: _onPlatformViewDispose,
+              onViewCreated: (controller) async {
+                _controller = BmapController.ios(controller, this);
+                await controller.viewWillAppear();
 
-              if (widget.onMapCreated != null) {
-                await widget.onMapCreated(_controller);
-              }
-            },
-          ),
-        ],
+                if (widget.onMapCreated != null) {
+                  await widget.onMapCreated(_controller);
+                }
+              },
+            ),
+          ],
+        ),
       );
     } else {
       return Center(child: Text('未实现的平台'));
     }
   }
 
-  Future<Uint8List> widgetToImageData(Widget marker) {
-    final completer = Completer<Uint8List>();
+  Future<List<Uint8List>> widgetToImageData(List<Widget> markerList) async {
+    final completer = Completer<List<Uint8List>>();
+    final ratio = MediaQuery.of(context).devicePixelRatio;
+
+    final globalKeyList = <GlobalKey>[];
+    for (int i = 0; i < markerList.length; i++) globalKeyList.add(GlobalKey());
+
     setState(() {
-      _widgetLayer = marker;
+      _widgetLayer = Stack(
+        children: [
+          for (int i = 0; i < markerList.length; i++)
+            RepaintBoundary(key: globalKeyList[i], child: markerList[i])
+        ],
+      );
     });
 
     // 等待一帧结束再获取图片数据
-    WidgetsBinding.instance.addPostFrameCallback((duration) {
-      RenderRepaintBoundary boundary =
-          _markerKey.currentContext.findRenderObject();
+    WidgetsBinding.instance.addPostFrameCallback((duration) async {
+      final result = <Uint8List>[];
 
-      boundary
-          .toImage(pixelRatio: MediaQuery.of(context).devicePixelRatio)
-          .then((image) => image.toByteData(format: ImageByteFormat.png))
-          .then((byteData) => byteData.buffer.asUint8List())
-          .then((data) => completer.complete(data));
+      await Future.wait([
+        for (final key in globalKeyList)
+          (key.currentContext.findRenderObject() as RenderRepaintBoundary)
+              .toImage(pixelRatio: ratio)
+              .then((image) => image.toByteData(format: ImageByteFormat.png))
+              .then((byteData) => byteData.buffer.asUint8List())
+              .then((data) => result.add(data))
+      ]);
+
+      completer.complete(result);
+
+      // 清空
+      setState(() {
+        _widgetLayer = null;
+      });
     });
 
     return completer.future;
   }
 
-  @override
-  void dispose() {
-    final isCurrentPlugin = (Ref it) => it.tag__ == 'bmap_map_fluttify';
-    kNativeObjectPool
-        .where(isCurrentPlugin)
-        .release_batch()
-        .then((_) => kNativeObjectPool.removeWhere(isCurrentPlugin));
-    super.dispose();
-  }
-
   Future<void> _onPlatformViewDispose() async {
-    await _controller.dispose();
+    await _controller?.dispose();
   }
 }

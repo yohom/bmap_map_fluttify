@@ -16,53 +16,52 @@ class com_baidu_mapapi_utils_poi_DispathcPoiData extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.utils.poi.DispathcPoiData';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_utils_poi_DispathcPoiData> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_utils_poi_DispathcPoiData__');
-    final object = com_baidu_mapapi_utils_poi_DispathcPoiData()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_utils_poi_DispathcPoiData__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_utils_poi_DispathcPoiData>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_utils_poi_DispathcPoiData>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_utils_poi_DispathcPoiData__', {'length': length});
-  
-    final List<com_baidu_mapapi_utils_poi_DispathcPoiData> typedResult = resultBatch.map((result) => com_baidu_mapapi_utils_poi_DispathcPoiData()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_utils_poi_DispathcPoiData__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_utils_poi_DispathcPoiData>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_name() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_name", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_name", {'__this__': this});
     return __result__;
   }
   
   Future<com_baidu_mapapi_model_LatLng> get_pt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_pt", {'refId': refId});
-    kNativeObjectPool.add(com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify');
-    return com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify';
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_pt", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_model_LatLng>(__result__);
   }
   
   Future<String> get_addr() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_addr", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_addr", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_uid() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_uid", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_uid", {'__this__': this});
     return __result__;
   }
   
@@ -70,25 +69,25 @@ class com_baidu_mapapi_utils_poi_DispathcPoiData extends java_lang_Object  {
 
   //region setters
   Future<void> set_name(String name) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_name', {'refId': refId, "name": name});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_name', <String, dynamic>{'__this__': this, "name": name});
   
   
   }
   
   Future<void> set_pt(com_baidu_mapapi_model_LatLng pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_pt', {'refId': refId, "pt": pt.refId});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_pt', <String, dynamic>{'__this__': this, "pt": pt});
   
   
   }
   
   Future<void> set_addr(String addr) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_addr', {'refId': refId, "addr": addr});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_addr', <String, dynamic>{'__this__': this, "addr": addr});
   
   
   }
   
   Future<void> set_uid(String uid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_uid', {'refId': refId, "uid": uid});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_uid', <String, dynamic>{'__this__': this, "uid": uid});
   
   
   }
@@ -98,61 +97,58 @@ class com_baidu_mapapi_utils_poi_DispathcPoiData extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_utils_poi_DispathcPoiData{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_utils_poi_DispathcPoiData_Batch on List<com_baidu_mapapi_utils_poi_DispathcPoiData> {
   //region getters
   Future<List<String>> get_name_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_name_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_name_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_model_LatLng>> get_pt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_pt_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => com_baidu_mapapi_model_LatLng()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_pt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_model_LatLng>(__result__))?.cast<com_baidu_mapapi_model_LatLng>()?.toList();
   }
   
   Future<List<String>> get_addr_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_addr_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_addr_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_uid_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_uid_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.utils.poi.DispathcPoiData::get_uid_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_name_batch(List<String> name) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_name_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "name": name[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_name_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "name": name[__i__]}]);
   
   
   }
   
   Future<void> set_pt_batch(List<com_baidu_mapapi_model_LatLng> pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "pt": pt[__i__].refId}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pt": pt[__i__]}]);
   
   
   }
   
   Future<void> set_addr_batch(List<String> addr) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_addr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "addr": addr[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_addr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "addr": addr[__i__]}]);
   
   
   }
   
   Future<void> set_uid_batch(List<String> uid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_uid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "uid": uid[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.poi.DispathcPoiData::set_uid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "uid": uid[__i__]}]);
   
   
   }

@@ -7,7 +7,7 @@ import 'map/map.screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await enableFluttifyLog(false);
+  await enableFluttifyLog(true);
   await BmapService.instance.init(iosKey: 'KryNE2jVLpf3tCYxpxnnc5wEjGyztvEf');
   runApp(MyApp());
 }

@@ -16,6 +16,9 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.VersionInfo';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final String VERSION_INFO = "6_3_0";
   static final String VERSION_DESC = "baidumapapi_base";
   static final String KIT_NAME = "BaiduMapSDK_base_v6_3_0";
@@ -23,22 +26,22 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
 
   //region creators
   static Future<com_baidu_mapapi_VersionInfo> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createcom_baidu_mapapi_VersionInfo__');
-    final object = com_baidu_mapapi_VersionInfo()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_VersionInfo__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_VersionInfo>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_VersionInfo>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_VersionInfo__', {'length': length});
-  
-    final List<com_baidu_mapapi_VersionInfo> typedResult = resultBatch.map((result) => com_baidu_mapapi_VersionInfo()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_VersionInfo__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_VersionInfo>(it))
+        .toList();
   }
   
   //endregion
@@ -60,20 +63,13 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.VersionInfo::getApiVersion', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.VersionInfo::getApiVersion', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -84,20 +80,13 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.VersionInfo::getVersionDesc', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.VersionInfo::getVersionDesc', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -108,23 +97,21 @@ class com_baidu_mapapi_VersionInfo extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.VersionInfo::getKitName', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.VersionInfo::getKitName', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-    
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_VersionInfo{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_VersionInfo_Batch on List<com_baidu_mapapi_VersionInfo> {
@@ -139,62 +126,35 @@ extension com_baidu_mapapi_VersionInfo_Batch on List<com_baidu_mapapi_VersionInf
   //region methods
   
   static Future<List<String>> getApiVersion_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.VersionInfo::getApiVersion_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.VersionInfo::getApiVersion_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   static Future<List<String>> getVersionDesc_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.VersionInfo::getVersionDesc_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.VersionInfo::getVersionDesc_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   
   static Future<List<String>> getKitName_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('com.baidu.mapapi.VersionInfo::getKitName_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.VersionInfo::getKitName_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<String>().toList();
   }
   
   //endregion

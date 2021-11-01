@@ -16,41 +16,42 @@ class BMKCustomMapStyleOption extends NSObject  {
   //region constants
   static const String name__ = 'BMKCustomMapStyleOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
-  static Future<BMKCustomMapStyleOption> create__() async {
-    final int refId = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::createBMKCustomMapStyleOption');
-    final object = BMKCustomMapStyleOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-  
-    kNativeObjectPool.add(object);
-    return object;
+  static Future<BMKCustomMapStyleOption> create__({ bool init = true /* ios only */ }) async {
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKCustomMapStyleOption',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKCustomMapStyleOption>(__result__);
   }
   
-  static Future<List<BMKCustomMapStyleOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('ObjectFactory::create_batchBMKCustomMapStyleOption', {'length': length});
-  
-    final List<BMKCustomMapStyleOption> typedResult = resultBatch.map((result) => BMKCustomMapStyleOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    kNativeObjectPool.addAll(typedResult);
-    return typedResult;
+  static Future<List<BMKCustomMapStyleOption>> create_batch__(int length, { bool init = true /* ios only */ }) async {
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKCustomMapStyleOption',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKCustomMapStyleOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_customMapStyleID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCustomMapStyleOption::get_customMapStyleID", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKCustomMapStyleOption::get_customMapStyleID", {'__this__': this});
     return __result__;
   }
   
   Future<String> get_customMapStyleFilePath() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCustomMapStyleOption::get_customMapStyleFilePath", {'refId': refId});
-  
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKCustomMapStyleOption::get_customMapStyleFilePath", {'__this__': this});
     return __result__;
   }
   
@@ -58,13 +59,13 @@ class BMKCustomMapStyleOption extends NSObject  {
 
   //region setters
   Future<void> set_customMapStyleID(String customMapStyleID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCustomMapStyleOption::set_customMapStyleID', {'refId': refId, "customMapStyleID": customMapStyleID});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKCustomMapStyleOption::set_customMapStyleID', <String, dynamic>{'__this__': this, "customMapStyleID": customMapStyleID});
   
   
   }
   
   Future<void> set_customMapStyleFilePath(String customMapStyleFilePath) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCustomMapStyleOption::set_customMapStyleFilePath', {'refId': refId, "customMapStyleFilePath": customMapStyleFilePath});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKCustomMapStyleOption::set_customMapStyleFilePath', <String, dynamic>{'__this__': this, "customMapStyleFilePath": customMapStyleFilePath});
   
   
   }
@@ -74,35 +75,36 @@ class BMKCustomMapStyleOption extends NSObject  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKCustomMapStyleOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKCustomMapStyleOption_Batch on List<BMKCustomMapStyleOption> {
   //region getters
   Future<List<String>> get_customMapStyleID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCustomMapStyleOption::get_customMapStyleID_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKCustomMapStyleOption::get_customMapStyleID_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_customMapStyleFilePath_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod("BMKCustomMapStyleOption::get_customMapStyleFilePath_batch", [for (final __item__ in this) {'refId': __item__.refId}]);
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-  
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKCustomMapStyleOption::get_customMapStyleFilePath_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_customMapStyleID_batch(List<String> customMapStyleID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCustomMapStyleOption::set_customMapStyleID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "customMapStyleID": customMapStyleID[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKCustomMapStyleOption::set_customMapStyleID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "customMapStyleID": customMapStyleID[__i__]}]);
   
   
   }
   
   Future<void> set_customMapStyleFilePath_batch(List<String> customMapStyleFilePath) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify').invokeMethod('BMKCustomMapStyleOption::set_customMapStyleFilePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'refId': this[__i__].refId, "customMapStyleFilePath": customMapStyleFilePath[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKCustomMapStyleOption::set_customMapStyleFilePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "customMapStyleFilePath": customMapStyleFilePath[__i__]}]);
   
   
   }

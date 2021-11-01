@@ -19,18 +19,15 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMyLocationClickListener on java_lang_Objec
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<bool> onMyLocationClick() {
   
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onMyLocationClick::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<bool> onMyLocationClick() {}
   
 }
 

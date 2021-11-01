@@ -19,36 +19,18 @@ mixin com_baidu_mapapi_cloud_CloudListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onGetSearchResult(com_baidu_mapapi_cloud_CloudSearchResult var1, int var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetSearchResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onGetSearchResult(com_baidu_mapapi_cloud_CloudSearchResult var1, int var2) {}
   
-  @mustCallSuper
-  Future<void> onGetDetailSearchResult(com_baidu_mapapi_cloud_DetailSearchResult var1, int var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetDetailSearchResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
-  
-  @mustCallSuper
-  Future<void> onGetCloudRgcResult(com_baidu_mapapi_cloud_CloudRgcResult var1, int var2) {
-    if (var1 is Ref) kNativeObjectPool.add(var1);
-  
-    if (fluttifyLogEnabled) {
-      debugPrint('onGetCloudRgcResult::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+  /* @mustCallSuper */
+  Future<void> onGetDetailSearchResult(com_baidu_mapapi_cloud_DetailSearchResult var1, int var2) {}
   
 }
 

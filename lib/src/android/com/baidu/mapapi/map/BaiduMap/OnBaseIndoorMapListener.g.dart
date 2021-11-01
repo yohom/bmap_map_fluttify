@@ -19,18 +19,15 @@ mixin com_baidu_mapapi_map_BaiduMap_OnBaseIndoorMapListener on java_lang_Object 
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
-  Future<void> onBaseIndoorMapMode(bool var1, com_baidu_mapapi_map_MapBaseIndoorMapInfo var2) {
-    if (var2 is Ref) kNativeObjectPool.add(var2);
   
-    if (fluttifyLogEnabled) {
-      debugPrint('onBaseIndoorMapMode::kNativeObjectPool: $kNativeObjectPool');
-    }
-  }
+
+  /* @mustCallSuper */
+  Future<void> onBaseIndoorMapMode(bool var1, com_baidu_mapapi_map_MapBaseIndoorMapInfo var2) {}
   
 }
 
