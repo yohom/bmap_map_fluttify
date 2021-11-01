@@ -16,6 +16,9 @@ class com_baidu_mapapi_search_poi_PoiFilter extends java_lang_Object with androi
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.poi.PoiFilter';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -34,6 +37,11 @@ class com_baidu_mapapi_search_poi_PoiFilter extends java_lang_Object with androi
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_poi_PoiFilter{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_poi_PoiFilter_Batch on List<com_baidu_mapapi_search_poi_PoiFilter> {

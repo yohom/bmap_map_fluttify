@@ -16,61 +16,67 @@ class BMKMapPoi extends NSObject  {
   //region constants
   static const String name__ = 'BMKMapPoi';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKMapPoi> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKMapPoi', {'init': init});
-    final object = BMKMapPoi()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKMapPoi',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKMapPoi>(__result__);
   }
   
   static Future<List<BMKMapPoi>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKMapPoi', {'length': length, 'init': init});
-  
-    final List<BMKMapPoi> typedResult = resultBatch.map((result) => BMKMapPoi()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKMapPoi',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKMapPoi>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_text() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapPoi::get_text", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKMapPoi::get_text", {'__this__': this});
+    return __result__;
   }
   
   Future<CLLocationCoordinate2D> get_pt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapPoi::get_pt", {'__this__': this});
-    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKMapPoi::get_pt", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
   Future<String> get_uid() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapPoi::get_uid", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKMapPoi::get_uid", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_text(String text) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapPoi::set_text', <String, dynamic>{'__this__': this, "text": text});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKMapPoi::set_text', <String, dynamic>{'__this__': this, "text": text});
   
   
   }
   
   Future<void> set_pt(CLLocationCoordinate2D pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapPoi::set_pt', <String, dynamic>{'__this__': this, "pt": pt});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKMapPoi::set_pt', <String, dynamic>{'__this__': this, "pt": pt});
   
   
   }
   
   Future<void> set_uid(String uid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapPoi::set_uid', <String, dynamic>{'__this__': this, "uid": uid});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKMapPoi::set_uid', <String, dynamic>{'__this__': this, "uid": uid});
   
   
   }
@@ -80,48 +86,47 @@ class BMKMapPoi extends NSObject  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKMapPoi{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKMapPoi_Batch on List<BMKMapPoi> {
   //region getters
   Future<List<String>> get_text_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapPoi::get_text_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKMapPoi::get_text_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<CLLocationCoordinate2D>> get_pt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapPoi::get_pt_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKMapPoi::get_pt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }
   
   Future<List<String>> get_uid_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapPoi::get_uid_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKMapPoi::get_uid_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_text_batch(List<String> text) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapPoi::set_text_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "text": text[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKMapPoi::set_text_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "text": text[__i__]}]);
   
   
   }
   
   Future<void> set_pt_batch(List<CLLocationCoordinate2D> pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapPoi::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pt": pt[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKMapPoi::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pt": pt[__i__]}]);
   
   
   }
   
   Future<void> set_uid_batch(List<String> uid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapPoi::set_uid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "uid": uid[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKMapPoi::set_uid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "uid": uid[__i__]}]);
   
   
   }

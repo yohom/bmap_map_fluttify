@@ -19,83 +19,86 @@ mixin BMKMapViewDelegate on NSObject {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> mapViewDidFinishLoading(BMKMapView mapView) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapViewDidRenderValidData_withError(BMKMapView mapView, NSError error) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapViewDidFinishRendering(BMKMapView mapView) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_onDrawMapFrame(BMKMapView mapView, BMKMapStatus status) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_regionWillChangeAnimated(BMKMapView mapView, bool animated) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_regionWillChangeAnimated_reason(BMKMapView mapView, bool animated, BMKRegionChangeReason reason) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_regionDidChangeAnimated(BMKMapView mapView, bool animated) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_regionDidChangeAnimated_reason(BMKMapView mapView, bool animated, BMKRegionChangeReason reason) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<BMKAnnotationView> mapView_viewForAnnotation(BMKMapView mapView, BMKAnnotation annotation) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_didAddAnnotationViews(BMKMapView mapView, List<dynamic> views) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_clickAnnotationView(BMKMapView mapView, BMKAnnotationView view) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_didSelectAnnotationView(BMKMapView mapView, BMKAnnotationView view) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_didDeselectAnnotationView(BMKMapView mapView, BMKAnnotationView view) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_annotationView_didChangeDragState_fromOldState(BMKMapView mapView, BMKAnnotationView view, int newState, int oldState) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_annotationViewForBubble(BMKMapView mapView, BMKAnnotationView view) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<BMKOverlayView> mapView_viewForOverlay(BMKMapView mapView, BMKOverlay overlay) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_didAddOverlayViews(BMKMapView mapView, List<dynamic> overlayViews) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_onClickedBMKOverlayView(BMKMapView mapView, BMKOverlayView overlayView) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_onClickedMapPoi(BMKMapView mapView, BMKMapPoi mapPoi) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapView_onClickedMapBlank(BMKMapView mapView, CLLocationCoordinate2D coordinate) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapview_onDoubleClick(BMKMapView mapView, CLLocationCoordinate2D coordinate) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapview_onLongClick(BMKMapView mapView, CLLocationCoordinate2D coordinate) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapview_onForceTouch_force_maximumPossibleForce(BMKMapView mapView, CLLocationCoordinate2D coordinate, double force, double maximumPossibleForce) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapStatusDidChanged(BMKMapView mapView) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> mapview_baseIndoorMapWithIn_baseIndoorMapInfo(BMKMapView mapView, bool flag, BMKBaseIndoorMapInfo info) {}
   
 }

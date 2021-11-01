@@ -19,11 +19,14 @@ mixin BMKOfflineMapDelegate on NSObject {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetOfflineMapState_withState(int type, int state) {}
   
 }

@@ -16,6 +16,9 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.FileTileProvider';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -40,22 +43,21 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.FileTileProvider::getTile', {"var1": var1, "var2": var2, "var3": var3, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.FileTileProvider::getTile', {"var1": var1, "var2": var2, "var3": var3, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_map_Tile()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Tile>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_FileTileProvider{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_FileTileProvider_Batch on List<com_baidu_mapapi_map_FileTileProvider> {
@@ -70,21 +72,13 @@ extension com_baidu_mapapi_map_FileTileProvider_Batch on List<com_baidu_mapapi_m
   //region methods
   
   Future<List<com_baidu_mapapi_map_Tile>> getTile_batch(List<int> var1, List<int> var2, List<int> var3) async {
-    if (var1.length != var2.length || var2.length != var3.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var1.length == var2.length && var2.length == var3.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.FileTileProvider::getTile_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.FileTileProvider::getTile_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_Tile()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Tile>(__result__)).cast<com_baidu_mapapi_map_Tile>().toList();
   }
   
   //endregion

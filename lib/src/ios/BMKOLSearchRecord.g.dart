@@ -16,83 +16,89 @@ class BMKOLSearchRecord extends NSObject  {
   //region constants
   static const String name__ = 'BMKOLSearchRecord';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKOLSearchRecord> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKOLSearchRecord', {'init': init});
-    final object = BMKOLSearchRecord()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKOLSearchRecord',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKOLSearchRecord>(__result__);
   }
   
   static Future<List<BMKOLSearchRecord>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKOLSearchRecord', {'length': length, 'init': init});
-  
-    final List<BMKOLSearchRecord> typedResult = resultBatch.map((result) => BMKOLSearchRecord()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKOLSearchRecord',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKOLSearchRecord>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_cityName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_cityName", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_cityName", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_size() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_size", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_size", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_cityID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_cityID", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_cityID", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_cityType() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_cityType", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_cityType", {'__this__': this});
+    return __result__;
   }
   
   Future<List<dynamic>> get_childCities() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_childCities", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_childCities", {'__this__': this});
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   //endregion
 
   //region setters
   Future<void> set_cityName(String cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLSearchRecord::set_cityName', <String, dynamic>{'__this__': this, "cityName": cityName});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_cityName', <String, dynamic>{'__this__': this, "cityName": cityName});
   
   
   }
   
   Future<void> set_size(int size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLSearchRecord::set_size', <String, dynamic>{'__this__': this, "size": size});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_size', <String, dynamic>{'__this__': this, "size": size});
   
   
   }
   
   Future<void> set_cityID(int cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLSearchRecord::set_cityID', <String, dynamic>{'__this__': this, "cityID": cityID});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_cityID', <String, dynamic>{'__this__': this, "cityID": cityID});
   
   
   }
   
   Future<void> set_cityType(int cityType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLSearchRecord::set_cityType', <String, dynamic>{'__this__': this, "cityType": cityType});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_cityType', <String, dynamic>{'__this__': this, "cityType": cityType});
   
   
   }
   
   Future<void> set_childCities(List<dynamic> childCities) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLSearchRecord::set_childCities', <String, dynamic>{'__this__': this, "childCities": childCities});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_childCities', <String, dynamic>{'__this__': this, "childCities": childCities});
   
   
   }
@@ -102,74 +108,69 @@ class BMKOLSearchRecord extends NSObject  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKOLSearchRecord{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKOLSearchRecord_Batch on List<BMKOLSearchRecord> {
   //region getters
   Future<List<String>> get_cityName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_cityName_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_cityName_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_size_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_cityID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_cityID_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_cityID_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_cityType_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_cityType_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_cityType_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<List<dynamic>>> get_childCities_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLSearchRecord::get_childCities_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLSearchRecord::get_childCities_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as List)?.cast<dynamic>())?.cast<List<dynamic>>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_cityName_batch(List<String> cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLSearchRecord::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityName": cityName[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityName": cityName[__i__]}]);
   
   
   }
   
   Future<void> set_size_batch(List<int> size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLSearchRecord::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
   
   
   }
   
   Future<void> set_cityID_batch(List<int> cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLSearchRecord::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityID": cityID[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityID": cityID[__i__]}]);
   
   
   }
   
   Future<void> set_cityType_batch(List<int> cityType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLSearchRecord::set_cityType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityType": cityType[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_cityType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityType": cityType[__i__]}]);
   
   
   }
   
   Future<void> set_childCities_batch(List<List<dynamic>> childCities) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLSearchRecord::set_childCities_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "childCities": childCities[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLSearchRecord::set_childCities_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "childCities": childCities[__i__]}]);
   
   
   }

@@ -16,8 +16,8 @@ import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:core_location_fluttify/core_location_fluttify.dart';
 
-typedef void BMKActionPaopaoViewCreatedCallback(BMKActionPaopaoView controller);
-typedef Future<void> _OnUiKitViewDispose();
+typedef BMKActionPaopaoViewCreatedCallback = void Function(BMKActionPaopaoView controller);
+typedef _OnUiKitViewDispose = Future<void> Function();
 
 class BMKActionPaopaoView_iOS extends StatefulWidget {
   const BMKActionPaopaoView_iOS({
@@ -46,12 +46,11 @@ class _BMKActionPaopaoView_iOSState extends State<BMKActionPaopaoView_iOS> {
       Factory<OneSequenceGestureRecognizer>(() => EagerGestureRecognizer()),
     };
 
-    final messageCodec = FluttifyMessageCodec('bmap_map_fluttify');
     return UiKitView(
-      viewType: 'com.fluttify/BMKActionPaopaoView',
+      viewType: 'me.yohom/BMKActionPaopaoView',
       gestureRecognizers: gestureRecognizers,
       onPlatformViewCreated: _onViewCreated,
-      creationParamsCodec: messageCodec,
+      creationParamsCodec: kBmapMapFluttifyMessageCodec,
       creationParams: widget.params,
     );
   }
@@ -60,7 +59,7 @@ class _BMKActionPaopaoView_iOSState extends State<BMKActionPaopaoView_iOS> {
     // 碰到一个对象返回的hashCode为0的情况, 造成和这个id冲突了, 这里用一个magic number避免一下
     // 把viewId转换为refId再使用, 使其与其他对象统一
     final refId = await viewId2RefId((2147483647 - id).toString());
-    _controller = BMKActionPaopaoView()..refId = refId..tag__ = 'bmap_map_fluttify';
+    _controller = BMKActionPaopaoView()..refId = 'BMKActionPaopaoView:$refId';
     if (widget.onViewCreated != null) {
       widget.onViewCreated(_controller);
     }
@@ -69,7 +68,7 @@ class _BMKActionPaopaoView_iOSState extends State<BMKActionPaopaoView_iOS> {
   @override
   void dispose() {
     if (widget.onDispose != null) {
-      widget.onDispose().then((_) => _controller.release__());
+      widget.onDispose().whenComplete(() => _controller.release__());
     } else {
       _controller.release__();
     }

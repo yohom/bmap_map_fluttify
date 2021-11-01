@@ -16,6 +16,9 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
   //region constants
   static const String name__ = 'com.baidu.mapapi.animation.Animation';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -40,11 +43,11 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.Animation::setAnimationListener', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.animation.Animation::setAnimationListener', {"var1": var1, "__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.animation.Animation::setAnimationListener::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('com.baidu.mapapi.animation.Animation::setAnimationListener::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -56,7 +59,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
                 }
           
                 // handle the native call
-                var1?.onAnimationStart();
+                await var1?.onAnimationStart();
                 break;
               case 'Callback::com.baidu.mapapi.animation.Animation.AnimationListener::onAnimationEnd':
                 // print log
@@ -65,7 +68,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
                 }
           
                 // handle the native call
-                var1?.onAnimationEnd();
+                await var1?.onAnimationEnd();
                 break;
               case 'Callback::com.baidu.mapapi.animation.Animation.AnimationListener::onAnimationCancel':
                 // print log
@@ -74,7 +77,7 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
                 }
           
                 // handle the native call
-                var1?.onAnimationCancel();
+                await var1?.onAnimationCancel();
                 break;
               case 'Callback::com.baidu.mapapi.animation.Animation.AnimationListener::onAnimationRepeat':
                 // print log
@@ -83,24 +86,19 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
                 }
           
                 // handle the native call
-                var1?.onAnimationRepeat();
+                await var1?.onAnimationRepeat();
                 break;
               default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
                 break;
             }
           } catch (e) {
             debugPrint(e);
-            throw e;
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -111,19 +109,13 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.Animation::setDuration', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.animation.Animation::setDuration', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -134,22 +126,21 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.Animation::cancel', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.animation.Animation::cancel', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_animation_Animation{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_animation_Animation_Batch on List<com_baidu_mapapi_animation_Animation> {
@@ -164,40 +155,24 @@ extension com_baidu_mapapi_animation_Animation_Batch on List<com_baidu_mapapi_an
   //region methods
   
   Future<List<void>> setDuration_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.Animation::setDuration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.animation.Animation::setDuration_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> cancel_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.animation.Animation::cancel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.animation.Animation::cancel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

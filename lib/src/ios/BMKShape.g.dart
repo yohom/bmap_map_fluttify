@@ -16,50 +16,56 @@ class BMKShape extends NSObject with BMKAnnotation {
   //region constants
   static const String name__ = 'BMKShape';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKShape> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKShape', {'init': init});
-    final object = BMKShape()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKShape',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKShape>(__result__);
   }
   
   static Future<List<BMKShape>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKShape', {'length': length, 'init': init});
-  
-    final List<BMKShape> typedResult = resultBatch.map((result) => BMKShape()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKShape',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKShape>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_title() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKShape::get_title", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKShape::get_title", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_subtitle() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKShape::get_subtitle", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKShape::get_subtitle", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_title(String title) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKShape::set_title', <String, dynamic>{'__this__': this, "title": title});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKShape::set_title', <String, dynamic>{'__this__': this, "title": title});
   
   
   }
   
   Future<void> set_subtitle(String subtitle) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKShape::set_subtitle', <String, dynamic>{'__this__': this, "subtitle": subtitle});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKShape::set_subtitle', <String, dynamic>{'__this__': this, "subtitle": subtitle});
   
   
   }
@@ -69,35 +75,36 @@ class BMKShape extends NSObject with BMKAnnotation {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKShape{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKShape_Batch on List<BMKShape> {
   //region getters
   Future<List<String>> get_title_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKShape::get_title_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKShape::get_title_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_subtitle_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKShape::get_subtitle_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKShape::get_subtitle_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_title_batch(List<String> title) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKShape::set_title_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "title": title[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKShape::set_title_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "title": title[__i__]}]);
   
   
   }
   
   Future<void> set_subtitle_batch(List<String> subtitle) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKShape::set_subtitle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "subtitle": subtitle[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKShape::set_subtitle_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "subtitle": subtitle[__i__]}]);
   
   
   }

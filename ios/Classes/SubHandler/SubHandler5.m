@@ -4,11 +4,13 @@
 
 #import "SubHandler5.h"
 #import "FluttifyMessageCodec.h"
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BMKLocationKit/BMKLocationComponent.h>
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
 extern NSMutableDictionary<NSString*, NSObject*>* STACK;
 // Dart端随机存取对象的容器
-extern NSMutableDictionary<NSNumber*, NSObject*>* HEAP;
+extern NSMutableDictionary<NSString*, NSObject*>* HEAP;
 // 日志打印开关
 extern BOOL enableLog;
 
@@ -17,17 +19,21 @@ extern BOOL enableLog;
     __weak __typeof(self)weakSelf = self;
     return @{
         @"BMKAnnotationView::set_image_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // ref arg
-                UIImage* image = (UIImage*) args[@"image"];
+                UIImage* image = (UIImage*) (args[@"image"] == [NSNull null] ? nil : args[@"image"]);
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.image = image;
+                ref.image = image;;
                 methodResult(@"success");
             }
         
@@ -35,19 +41,31 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_centerOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // struct arg
                 NSValue* centerOffsetValue = (NSValue*) args[@"centerOffset"];
                 CGPoint centerOffset;
-                [centerOffsetValue getValue:&centerOffset];
+                if (centerOffsetValue != nil && (NSNull*) centerOffsetValue != [NSNull null]) {
+                  [centerOffsetValue getValue:&centerOffset];
+                } else {
+                  methodResult([FlutterError errorWithCode:@"参数非法"
+                                                   message:@"参数非法"
+                                                   details:@"centerOffset不能为null"]);
+                  return;
+                }
+        
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.centerOffset = centerOffset;
+                ref.centerOffset = centerOffset;;
                 methodResult(@"success");
             }
         
@@ -55,19 +73,31 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_calloutOffset_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // struct arg
                 NSValue* calloutOffsetValue = (NSValue*) args[@"calloutOffset"];
                 CGPoint calloutOffset;
-                [calloutOffsetValue getValue:&calloutOffset];
+                if (calloutOffsetValue != nil && (NSNull*) calloutOffsetValue != [NSNull null]) {
+                  [calloutOffsetValue getValue:&calloutOffset];
+                } else {
+                  methodResult([FlutterError errorWithCode:@"参数非法"
+                                                   message:@"参数非法"
+                                                   details:@"calloutOffset不能为null"]);
+                  return;
+                }
+        
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.calloutOffset = calloutOffset;
+                ref.calloutOffset = calloutOffset;;
                 methodResult(@"success");
             }
         
@@ -75,7 +105,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_enabled3D_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -84,8 +114,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.enabled3D = enabled3D;
+                ref.enabled3D = enabled3D;;
                 methodResult(@"success");
             }
         
@@ -93,7 +127,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_enabled_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -102,8 +136,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.enabled = enabled;
+                ref.enabled = enabled;;
                 methodResult(@"success");
             }
         
@@ -111,7 +149,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_selected_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -120,8 +158,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.selected = selected;
+                ref.selected = selected;;
                 methodResult(@"success");
             }
         
@@ -129,7 +171,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_canShowCallout_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -138,8 +180,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.canShowCallout = canShowCallout;
+                ref.canShowCallout = canShowCallout;;
                 methodResult(@"success");
             }
         
@@ -147,17 +193,21 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_leftCalloutAccessoryView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // ref arg
-                UIView* leftCalloutAccessoryView = (UIView*) args[@"leftCalloutAccessoryView"];
+                UIView* leftCalloutAccessoryView = (UIView*) (args[@"leftCalloutAccessoryView"] == [NSNull null] ? nil : args[@"leftCalloutAccessoryView"]);
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.leftCalloutAccessoryView = leftCalloutAccessoryView;
+                ref.leftCalloutAccessoryView = leftCalloutAccessoryView;;
                 methodResult(@"success");
             }
         
@@ -165,17 +215,21 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_rightCalloutAccessoryView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // ref arg
-                UIView* rightCalloutAccessoryView = (UIView*) args[@"rightCalloutAccessoryView"];
+                UIView* rightCalloutAccessoryView = (UIView*) (args[@"rightCalloutAccessoryView"] == [NSNull null] ? nil : args[@"rightCalloutAccessoryView"]);
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.rightCalloutAccessoryView = rightCalloutAccessoryView;
+                ref.rightCalloutAccessoryView = rightCalloutAccessoryView;;
                 methodResult(@"success");
             }
         
@@ -183,7 +237,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_draggable_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -192,8 +246,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.draggable = draggable;
+                ref.draggable = draggable;;
                 methodResult(@"success");
             }
         
@@ -201,7 +259,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_dragState_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -210,8 +268,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.dragState = dragState;
+                ref.dragState = dragState;;
                 methodResult(@"success");
             }
         
@@ -219,7 +281,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_hidePaopaoWhenSingleTapOnMap_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -228,8 +290,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.hidePaopaoWhenSingleTapOnMap = hidePaopaoWhenSingleTapOnMap;
+                ref.hidePaopaoWhenSingleTapOnMap = hidePaopaoWhenSingleTapOnMap;;
                 methodResult(@"success");
             }
         
@@ -237,7 +303,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_hidePaopaoWhenDoubleTapOnMap_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -246,8 +312,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.hidePaopaoWhenDoubleTapOnMap = hidePaopaoWhenDoubleTapOnMap;
+                ref.hidePaopaoWhenDoubleTapOnMap = hidePaopaoWhenDoubleTapOnMap;;
                 methodResult(@"success");
             }
         
@@ -255,7 +325,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_hidePaopaoWhenTwoFingersTapOnMap_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -264,8 +334,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.hidePaopaoWhenTwoFingersTapOnMap = hidePaopaoWhenTwoFingersTapOnMap;
+                ref.hidePaopaoWhenTwoFingersTapOnMap = hidePaopaoWhenTwoFingersTapOnMap;;
                 methodResult(@"success");
             }
         
@@ -273,7 +347,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_hidePaopaoWhenSelectOthers_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -282,8 +356,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.hidePaopaoWhenSelectOthers = hidePaopaoWhenSelectOthers;
+                ref.hidePaopaoWhenSelectOthers = hidePaopaoWhenSelectOthers;;
                 methodResult(@"success");
             }
         
@@ -291,7 +369,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_hidePaopaoWhenDrag_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -300,8 +378,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.hidePaopaoWhenDrag = hidePaopaoWhenDrag;
+                ref.hidePaopaoWhenDrag = hidePaopaoWhenDrag;;
                 methodResult(@"success");
             }
         
@@ -309,7 +391,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_hidePaopaoWhenDragOthers_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -318,8 +400,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.hidePaopaoWhenDragOthers = hidePaopaoWhenDragOthers;
+                ref.hidePaopaoWhenDragOthers = hidePaopaoWhenDragOthers;;
                 methodResult(@"success");
             }
         
@@ -327,7 +413,7 @@ extern BOOL enableLog;
         },
         
         @"BMKAnnotationView::set_displayPriority_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -336,8 +422,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKAnnotationView* ref = (BMKAnnotationView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.displayPriority = displayPriority;
+                ref.displayPriority = displayPriority;;
                 methodResult(@"success");
             }
         
@@ -345,17 +435,21 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_fillColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // ref arg
-                UIColor* fillColor = (UIColor*) args[@"fillColor"];
+                UIColor* fillColor = (UIColor*) (args[@"fillColor"] == [NSNull null] ? nil : args[@"fillColor"]);
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.fillColor = fillColor;
+                ref.fillColor = fillColor;;
                 methodResult(@"success");
             }
         
@@ -363,17 +457,21 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_strokeColor_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // ref arg
-                UIColor* strokeColor = (UIColor*) args[@"strokeColor"];
+                UIColor* strokeColor = (UIColor*) (args[@"strokeColor"] == [NSNull null] ? nil : args[@"strokeColor"]);
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.strokeColor = strokeColor;
+                ref.strokeColor = strokeColor;;
                 methodResult(@"success");
             }
         
@@ -381,7 +479,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_lineWidth_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -390,8 +488,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.lineWidth = lineWidth;
+                ref.lineWidth = lineWidth;;
                 methodResult(@"success");
             }
         
@@ -399,7 +501,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_lineDash_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -408,8 +510,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.lineDash = lineDash;
+                ref.lineDash = lineDash;;
                 methodResult(@"success");
             }
         
@@ -417,7 +523,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_tileTexture_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -426,8 +532,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.tileTexture = tileTexture;
+                ref.tileTexture = tileTexture;;
                 methodResult(@"success");
             }
         
@@ -435,7 +545,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_keepScale_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -444,8 +554,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.keepScale = keepScale;
+                ref.keepScale = keepScale;;
                 methodResult(@"success");
             }
         
@@ -453,7 +567,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_lineJoinType_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -462,8 +576,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.lineJoinType = lineJoinType;
+                ref.lineJoinType = lineJoinType;;
                 methodResult(@"success");
             }
         
@@ -471,7 +589,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_lineCapType_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -480,8 +598,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.lineCapType = lineCapType;
+                ref.lineCapType = lineCapType;;
                 methodResult(@"success");
             }
         
@@ -489,7 +611,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOverlayGLBasicView::set_lineDashType_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -498,8 +620,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.lineDashType = lineDashType;
+                ref.lineDashType = lineDashType;;
                 methodResult(@"success");
             }
         
@@ -507,7 +633,7 @@ extern BOOL enableLog;
         },
         
         @"BMKShape::set_title_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -516,8 +642,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKShape* ref = (BMKShape*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.title = title;
+                ref.title = title;;
                 methodResult(@"success");
             }
         
@@ -525,7 +655,7 @@ extern BOOL enableLog;
         },
         
         @"BMKShape::set_subtitle_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -534,8 +664,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKShape* ref = (BMKShape*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.subtitle = subtitle;
+                ref.subtitle = subtitle;;
                 methodResult(@"success");
             }
         
@@ -543,7 +677,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLSearchRecord::set_cityName_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -552,8 +686,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.cityName = cityName;
+                ref.cityName = cityName;;
                 methodResult(@"success");
             }
         
@@ -561,7 +699,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLSearchRecord::set_size_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -570,8 +708,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.size = size;
+                ref.size = size;;
                 methodResult(@"success");
             }
         
@@ -579,7 +721,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLSearchRecord::set_cityID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -588,8 +730,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.cityID = cityID;
+                ref.cityID = cityID;;
                 methodResult(@"success");
             }
         
@@ -597,7 +743,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLSearchRecord::set_cityType_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -606,8 +752,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.cityType = cityType;
+                ref.cityType = cityType;;
                 methodResult(@"success");
             }
         
@@ -615,7 +765,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLSearchRecord::set_childCities_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -624,8 +774,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLSearchRecord* ref = (BMKOLSearchRecord*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.childCities = childCities;
+                ref.childCities = childCities;;
                 methodResult(@"success");
             }
         
@@ -633,7 +787,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_cityName_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -642,8 +796,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.cityName = cityName;
+                ref.cityName = cityName;;
                 methodResult(@"success");
             }
         
@@ -651,7 +809,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_cityID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -660,8 +818,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.cityID = cityID;
+                ref.cityID = cityID;;
                 methodResult(@"success");
             }
         
@@ -669,7 +831,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_size_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -678,8 +840,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.size = size;
+                ref.size = size;;
                 methodResult(@"success");
             }
         
@@ -687,7 +853,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_serversize_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -696,8 +862,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.serversize = serversize;
+                ref.serversize = serversize;;
                 methodResult(@"success");
             }
         
@@ -705,7 +875,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_ratio_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -714,8 +884,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.ratio = ratio;
+                ref.ratio = ratio;;
                 methodResult(@"success");
             }
         
@@ -723,7 +897,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_status_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -732,8 +906,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.status = status;
+                ref.status = status;;
                 methodResult(@"success");
             }
         
@@ -741,7 +919,7 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_update_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -750,8 +928,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.update = update;
+                ref.update = update;;
                 methodResult(@"success");
             }
         
@@ -759,19 +941,31 @@ extern BOOL enableLog;
         },
         
         @"BMKOLUpdateElement::set_pt_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // struct arg
                 NSValue* ptValue = (NSValue*) args[@"pt"];
                 CLLocationCoordinate2D pt;
-                [ptValue getValue:&pt];
+                if (ptValue != nil && (NSNull*) ptValue != [NSNull null]) {
+                  [ptValue getValue:&pt];
+                } else {
+                  methodResult([FlutterError errorWithCode:@"参数非法"
+                                                   message:@"参数非法"
+                                                   details:@"pt不能为null"]);
+                  return;
+                }
+        
         
                 // ref
                 BMKOLUpdateElement* ref = (BMKOLUpdateElement*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.pt = pt;
+                ref.pt = pt;;
                 methodResult(@"success");
             }
         
@@ -779,7 +973,7 @@ extern BOOL enableLog;
         },
         
         @"BMKCustomMapStyleOption::set_customMapStyleID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -788,8 +982,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.customMapStyleID = customMapStyleID;
+                ref.customMapStyleID = customMapStyleID;;
                 methodResult(@"success");
             }
         
@@ -797,7 +995,7 @@ extern BOOL enableLog;
         },
         
         @"BMKCustomMapStyleOption::set_customMapStyleFilePath_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -806,8 +1004,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKCustomMapStyleOption* ref = (BMKCustomMapStyleOption*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.customMapStyleFilePath = customMapStyleFilePath;
+                ref.customMapStyleFilePath = customMapStyleFilePath;;
                 methodResult(@"success");
             }
         
@@ -815,7 +1017,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_distanceFilter_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -824,8 +1026,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.distanceFilter = distanceFilter;
+                ref.distanceFilter = distanceFilter;;
                 methodResult(@"success");
             }
         
@@ -833,7 +1039,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_desiredAccuracy_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -842,8 +1048,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.desiredAccuracy = desiredAccuracy;
+                ref.desiredAccuracy = desiredAccuracy;;
                 methodResult(@"success");
             }
         
@@ -851,7 +1061,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_coordinateType_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -860,8 +1070,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.coordinateType = coordinateType;
+                ref.coordinateType = coordinateType;;
                 methodResult(@"success");
             }
         
@@ -869,7 +1083,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_pausesLocationUpdatesAutomatically_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -878,8 +1092,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.pausesLocationUpdatesAutomatically = pausesLocationUpdatesAutomatically;
+                ref.pausesLocationUpdatesAutomatically = pausesLocationUpdatesAutomatically;;
                 methodResult(@"success");
             }
         
@@ -887,7 +1105,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_allowsBackgroundLocationUpdates_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -896,8 +1114,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;
+                ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;;
                 methodResult(@"success");
             }
         
@@ -905,7 +1127,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_locationTimeout_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -914,8 +1136,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.locationTimeout = locationTimeout;
+                ref.locationTimeout = locationTimeout;;
                 methodResult(@"success");
             }
         
@@ -923,7 +1149,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_reGeocodeTimeout_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -932,8 +1158,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.reGeocodeTimeout = reGeocodeTimeout;
+                ref.reGeocodeTimeout = reGeocodeTimeout;;
                 methodResult(@"success");
             }
         
@@ -941,7 +1171,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_locatingWithReGeocode_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -950,8 +1180,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.locatingWithReGeocode = locatingWithReGeocode;
+                ref.locatingWithReGeocode = locatingWithReGeocode;;
                 methodResult(@"success");
             }
         
@@ -959,7 +1193,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_isNeedNewVersionReGeocode_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -968,8 +1202,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.isNeedNewVersionReGeocode = isNeedNewVersionReGeocode;
+                ref.isNeedNewVersionReGeocode = isNeedNewVersionReGeocode;;
                 methodResult(@"success");
             }
         
@@ -977,7 +1215,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocationManager::set_userID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -986,8 +1224,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocationManager* ref = (BMKLocationManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.userID = userID;
+                ref.userID = userID;;
                 methodResult(@"success");
             }
         
@@ -995,17 +1237,21 @@ extern BOOL enableLog;
         },
         
         @"BMKLocation::set_rgcData_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
                 // ref arg
-                BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) args[@"rgcData"];
+                BMKLocationReGeocode* rgcData = (BMKLocationReGeocode*) (args[@"rgcData"] == [NSNull null] ? nil : args[@"rgcData"]);
         
                 // ref
                 BMKLocation* ref = (BMKLocation*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.rgcData = rgcData;
+                ref.rgcData = rgcData;;
                 methodResult(@"success");
             }
         
@@ -1013,7 +1259,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocation::set_provider_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -1022,8 +1268,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocation* ref = (BMKLocation*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.provider = provider;
+                ref.provider = provider;;
                 methodResult(@"success");
             }
         
@@ -1031,7 +1281,7 @@ extern BOOL enableLog;
         },
         
         @"BMKLocation::set_locationID_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -1040,8 +1290,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKLocation* ref = (BMKLocation*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.locationID = locationID;
+                ref.locationID = locationID;;
                 methodResult(@"success");
             }
         
@@ -1049,7 +1303,7 @@ extern BOOL enableLog;
         },
         
         @"BMKGeoFenceRegion::set_fenceStatus_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -1058,8 +1312,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKGeoFenceRegion* ref = (BMKGeoFenceRegion*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.fenceStatus = fenceStatus;
+                ref.fenceStatus = fenceStatus;;
                 methodResult(@"success");
             }
         
@@ -1067,7 +1325,7 @@ extern BOOL enableLog;
         },
         
         @"BMKGeoFenceRegion::set_lastEventTime_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -1076,8 +1334,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKGeoFenceRegion* ref = (BMKGeoFenceRegion*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.lastEventTime = lastEventTime;
+                ref.lastEventTime = lastEventTime;;
                 methodResult(@"success");
             }
         
@@ -1085,7 +1347,7 @@ extern BOOL enableLog;
         },
         
         @"BMKGeoFenceManager::set_activeAction_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -1094,8 +1356,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKGeoFenceManager* ref = (BMKGeoFenceManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.activeAction = activeAction;
+                ref.activeAction = activeAction;;
                 methodResult(@"success");
             }
         
@@ -1103,7 +1369,7 @@ extern BOOL enableLog;
         },
         
         @"BMKGeoFenceManager::set_pausesLocationUpdatesAutomatically_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -1112,8 +1378,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKGeoFenceManager* ref = (BMKGeoFenceManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.pausesLocationUpdatesAutomatically = pausesLocationUpdatesAutomatically;
+                ref.pausesLocationUpdatesAutomatically = pausesLocationUpdatesAutomatically;;
                 methodResult(@"success");
             }
         
@@ -1121,7 +1391,7 @@ extern BOOL enableLog;
         },
         
         @"BMKGeoFenceManager::set_allowsBackgroundLocationUpdates_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (int __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
                 NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
         
                 // args
@@ -1130,8 +1400,12 @@ extern BOOL enableLog;
         
                 // ref
                 BMKGeoFenceManager* ref = (BMKGeoFenceManager*) args[@"__this__"];
+                if ((NSNull *) ref == [NSNull null] || ref == nil) {
+                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+                    return;
+                }
         
-                ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;
+                ref.allowsBackgroundLocationUpdates = allowsBackgroundLocationUpdates;;
                 methodResult(@"success");
             }
         
@@ -2339,7 +2613,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKActionPaopaoView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKActionPaopaoView alloc] init];
@@ -2359,7 +2633,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKTileLayerView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKTileLayerView alloc] init];
@@ -2379,7 +2653,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKOverlayPathView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKOverlayPathView alloc] init];
@@ -2399,7 +2673,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKGroundOverlay* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKGroundOverlay alloc] init];
@@ -2419,7 +2693,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKPolyline* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKPolyline alloc] init];
@@ -2439,7 +2713,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKCircleView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKCircleView alloc] init];
@@ -2459,7 +2733,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKPointAnnotation* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKPointAnnotation alloc] init];
@@ -2479,7 +2753,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKGradient* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKGradient alloc] init];
@@ -2499,7 +2773,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKArcline* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKArcline alloc] init];
@@ -2519,7 +2793,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKMultiPoint* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKMultiPoint alloc] init];
@@ -2539,7 +2813,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKBaseIndoorMapInfo* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKBaseIndoorMapInfo alloc] init];
@@ -2559,7 +2833,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKTileLayer* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKTileLayer alloc] init];
@@ -2579,7 +2853,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKURLTileLayer* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKURLTileLayer alloc] init];
@@ -2599,7 +2873,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKSyncTileLayer* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKSyncTileLayer alloc] init];
@@ -2619,7 +2893,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKAsyncTileLayer* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKAsyncTileLayer alloc] init];
@@ -2639,7 +2913,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKPolylineView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKPolylineView alloc] init];
@@ -2659,7 +2933,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKPinAnnotationView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKPinAnnotationView alloc] init];
@@ -2679,7 +2953,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKCircle* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKCircle alloc] init];
@@ -2699,7 +2973,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKMapPoi* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKMapPoi alloc] init];
@@ -2719,7 +2993,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKMapView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKMapView alloc] init];
@@ -2739,7 +3013,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKLocationViewDisplayParam* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKLocationViewDisplayParam alloc] init];
@@ -2759,7 +3033,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKMapStatus* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKMapStatus alloc] init];
@@ -2779,7 +3053,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKArclineView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKArclineView alloc] init];
@@ -2799,7 +3073,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKHeatMapNode* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKHeatMapNode alloc] init];
@@ -2819,7 +3093,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKHeatMap* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKHeatMap alloc] init];
@@ -2839,7 +3113,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKPolygon* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKPolygon alloc] init];
@@ -2859,7 +3133,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKPolygonView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKPolygonView alloc] init];
@@ -2879,7 +3153,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKOverlayView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKOverlayView alloc] init];
@@ -2899,7 +3173,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKGroundOverlayView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKGroundOverlayView alloc] init];
@@ -2919,7 +3193,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKAnnotationView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKAnnotationView alloc] init];
@@ -2939,7 +3213,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKOverlayGLBasicView* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKOverlayGLBasicView alloc] init];
@@ -2959,7 +3233,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKShape* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKShape alloc] init];
@@ -2979,7 +3253,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKOLSearchRecord* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKOLSearchRecord alloc] init];
@@ -2999,7 +3273,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKOLUpdateElement* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKOLUpdateElement alloc] init];
@@ -3019,7 +3293,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKCustomMapStyleOption* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKCustomMapStyleOption alloc] init];
@@ -3039,7 +3313,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKOfflineMap* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKOfflineMap alloc] init];
@@ -3059,7 +3333,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKLocationReGeocode* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKLocationReGeocode alloc] init];
@@ -3079,7 +3353,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKLocationManager* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKLocationManager alloc] init];
@@ -3099,7 +3373,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKLocationAuth* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKLocationAuth alloc] init];
@@ -3119,7 +3393,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKLocationPoiRegion* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKLocationPoiRegion alloc] init];
@@ -3139,7 +3413,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKLocationPoi* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKLocationPoi alloc] init];
@@ -3159,7 +3433,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKLocation* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKLocation alloc] init];
@@ -3179,7 +3453,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKGeoFenceRegion* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKGeoFenceRegion alloc] init];
@@ -3199,7 +3473,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKGeoFenceCircleRegion* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKGeoFenceCircleRegion alloc] init];
@@ -3219,7 +3493,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKGeoFencePolygonRegion* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKGeoFencePolygonRegion alloc] init];
@@ -3239,7 +3513,7 @@ extern BOOL enableLog;
         
             NSNumber* length = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"length"];
             NSNumber* init = (NSNumber*) ((NSDictionary<NSString*, NSObject*>*) argsBatch)[@"init"];
-            for (int __i__ = 0; __i__ < [length integerValue]; __i__++) {
+            for (NSUInteger __i__ = 0; __i__ < [length integerValue]; __i__++) {
                 BMKGeoFenceManager* __this__;
                 if ([init boolValue]) {
                     __this__ = [[BMKGeoFenceManager alloc] init];

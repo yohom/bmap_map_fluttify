@@ -16,24 +16,30 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.utils.AreaUtil';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_utils_AreaUtil> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_utils_AreaUtil__', );
-    final object = com_baidu_mapapi_utils_AreaUtil()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_utils_AreaUtil__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_utils_AreaUtil>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_utils_AreaUtil>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_utils_AreaUtil__', {'length': length});
-  
-    final List<com_baidu_mapapi_utils_AreaUtil> typedResult = resultBatch.map((result) => com_baidu_mapapi_utils_AreaUtil()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_utils_AreaUtil__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_utils_AreaUtil>(it))
+        .toList();
   }
   
   //endregion
@@ -55,19 +61,13 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng', {"var0": var0, "var1": var1});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng', {"var0": var0, "var1": var1});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -78,22 +78,21 @@ class com_baidu_mapapi_utils_AreaUtil extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__List_com_baidu_mapapi_model_LatLng_', {"var0": var0});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__List_com_baidu_mapapi_model_LatLng_', {"var0": var0});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_utils_AreaUtil{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_utils_AreaUtil_Batch on List<com_baidu_mapapi_utils_AreaUtil> {
@@ -108,40 +107,24 @@ extension com_baidu_mapapi_utils_AreaUtil_Batch on List<com_baidu_mapapi_utils_A
   //region methods
   
   static Future<List<double>> calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng_batch(List<com_baidu_mapapi_model_LatLng> var0, List<com_baidu_mapapi_model_LatLng> var1) async {
-    if (var0.length != var1.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var1.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var1": var1[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__com_baidu_mapapi_model_LatLng__com_baidu_mapapi_model_LatLng_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var1": var1[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<double>().toList();
   }
   
   
   static Future<List<double>> calculateArea__List_com_baidu_mapapi_model_LatLng__batch(List<List<com_baidu_mapapi_model_LatLng>> var0) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__List_com_baidu_mapapi_model_LatLng__batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.utils.AreaUtil::calculateArea__List_com_baidu_mapapi_model_LatLng__batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<double>().toList();
   }
   
   //endregion

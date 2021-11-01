@@ -16,50 +16,56 @@ class com_baidu_mapapi_search_route_IndoorRoutePlanOption extends java_lang_Obje
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.route.IndoorRoutePlanOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_route_IndoorRoutePlanOption> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRoutePlanOption__', );
-    final object = com_baidu_mapapi_search_route_IndoorRoutePlanOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_route_IndoorRoutePlanOption__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorRoutePlanOption>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_route_IndoorRoutePlanOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_IndoorRoutePlanOption__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_route_IndoorRoutePlanOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_route_IndoorRoutePlanOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_route_IndoorRoutePlanOption__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorRoutePlanOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<com_baidu_mapapi_search_route_IndoorPlanNode> get_mFrom() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mFrom", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_search_route_IndoorPlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mFrom", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorPlanNode>(__result__);
   }
   
   Future<com_baidu_mapapi_search_route_IndoorPlanNode> get_mTo() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mTo", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_search_route_IndoorPlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mTo", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorPlanNode>(__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_mFrom(com_baidu_mapapi_search_route_IndoorPlanNode mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mFrom', <String, dynamic>{'__this__': this, "mFrom": mFrom});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mFrom', <String, dynamic>{'__this__': this, "mFrom": mFrom});
   
   
   }
   
   Future<void> set_mTo(com_baidu_mapapi_search_route_IndoorPlanNode mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mTo', <String, dynamic>{'__this__': this, "mTo": mTo});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mTo', <String, dynamic>{'__this__': this, "mTo": mTo});
   
   
   }
@@ -75,51 +81,46 @@ class com_baidu_mapapi_search_route_IndoorRoutePlanOption extends java_lang_Obje
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::from', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::from', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_route_IndoorRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorRoutePlanOption>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_route_IndoorRoutePlanOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_route_IndoorRoutePlanOption_Batch on List<com_baidu_mapapi_search_route_IndoorRoutePlanOption> {
   //region getters
   Future<List<com_baidu_mapapi_search_route_IndoorPlanNode>> get_mFrom_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mFrom_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_IndoorPlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mFrom_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorPlanNode>(__result__))?.cast<com_baidu_mapapi_search_route_IndoorPlanNode>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_search_route_IndoorPlanNode>> get_mTo_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mTo_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_IndoorPlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.IndoorRoutePlanOption::get_mTo_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorPlanNode>(__result__))?.cast<com_baidu_mapapi_search_route_IndoorPlanNode>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mFrom_batch(List<com_baidu_mapapi_search_route_IndoorPlanNode> mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mFrom": mFrom[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mFrom": mFrom[__i__]}]);
   
   
   }
   
   Future<void> set_mTo_batch(List<com_baidu_mapapi_search_route_IndoorPlanNode> mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTo": mTo[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTo": mTo[__i__]}]);
   
   
   }
@@ -129,21 +130,13 @@ extension com_baidu_mapapi_search_route_IndoorRoutePlanOption_Batch on List<com_
   //region methods
   
   Future<List<com_baidu_mapapi_search_route_IndoorRoutePlanOption>> from_batch(List<com_baidu_mapapi_search_route_IndoorPlanNode> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.IndoorRoutePlanOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_IndoorRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_IndoorRoutePlanOption>(__result__)).cast<com_baidu_mapapi_search_route_IndoorRoutePlanOption>().toList();
   }
   
   //endregion

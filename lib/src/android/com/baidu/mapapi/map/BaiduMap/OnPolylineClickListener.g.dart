@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_BaiduMap_OnPolylineClickListener on java_lang_Object 
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<bool> onPolylineClick(com_baidu_mapapi_map_Polyline var1) {}
   
 }

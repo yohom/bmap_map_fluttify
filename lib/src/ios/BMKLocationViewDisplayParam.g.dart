@@ -16,138 +16,144 @@ class BMKLocationViewDisplayParam extends NSObject with NSCopying {
   //region constants
   static const String name__ = 'BMKLocationViewDisplayParam';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKLocationViewDisplayParam> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKLocationViewDisplayParam', {'init': init});
-    final object = BMKLocationViewDisplayParam()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKLocationViewDisplayParam',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKLocationViewDisplayParam>(__result__);
   }
   
   static Future<List<BMKLocationViewDisplayParam>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKLocationViewDisplayParam', {'length': length, 'init': init});
-  
-    final List<BMKLocationViewDisplayParam> typedResult = resultBatch.map((result) => BMKLocationViewDisplayParam()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKLocationViewDisplayParam',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKLocationViewDisplayParam>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<double> get_locationViewOffsetX() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetX", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetX", {'__this__': this});
+    return __result__;
   }
   
   Future<double> get_locationViewOffsetY() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetY", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetY", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_isAccuracyCircleShow() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_isAccuracyCircleShow", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_isAccuracyCircleShow", {'__this__': this});
+    return __result__;
   }
   
   Future<UIColor> get_accuracyCircleFillColor() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleFillColor", {'__this__': this});
-    return __result__ == null ? null : (UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleFillColor", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIColor>(__result__);
   }
   
   Future<UIColor> get_accuracyCircleStrokeColor() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleStrokeColor", {'__this__': this});
-    return __result__ == null ? null : (UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleStrokeColor", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIColor>(__result__);
   }
   
   Future<bool> get_isRotateAngleValid() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_isRotateAngleValid", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_isRotateAngleValid", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_locationViewImgName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewImgName", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewImgName", {'__this__': this});
+    return __result__;
   }
   
   Future<UIImage> get_locationViewImage() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewImage", {'__this__': this});
-    return __result__ == null ? null : (UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewImage", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIImage>(__result__);
   }
   
   Future<bool> get_canShowCallOut() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_canShowCallOut", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_canShowCallOut", {'__this__': this});
+    return __result__;
   }
   
   Future<LocationViewHierarchy> get_locationViewHierarchy() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewHierarchy", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toLocationViewHierarchy());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewHierarchy", {'__this__': this});
+    return (__result__ as int).toLocationViewHierarchy();
   }
   
   //endregion
 
   //region setters
   Future<void> set_locationViewOffsetX(double locationViewOffsetX) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetX', <String, dynamic>{'__this__': this, "locationViewOffsetX": locationViewOffsetX});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetX', <String, dynamic>{'__this__': this, "locationViewOffsetX": locationViewOffsetX});
   
   
   }
   
   Future<void> set_locationViewOffsetY(double locationViewOffsetY) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetY', <String, dynamic>{'__this__': this, "locationViewOffsetY": locationViewOffsetY});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetY', <String, dynamic>{'__this__': this, "locationViewOffsetY": locationViewOffsetY});
   
   
   }
   
   Future<void> set_isAccuracyCircleShow(bool isAccuracyCircleShow) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_isAccuracyCircleShow', <String, dynamic>{'__this__': this, "isAccuracyCircleShow": isAccuracyCircleShow});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_isAccuracyCircleShow', <String, dynamic>{'__this__': this, "isAccuracyCircleShow": isAccuracyCircleShow});
   
   
   }
   
   Future<void> set_accuracyCircleFillColor(UIColor accuracyCircleFillColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleFillColor', <String, dynamic>{'__this__': this, "accuracyCircleFillColor": accuracyCircleFillColor});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleFillColor', <String, dynamic>{'__this__': this, "accuracyCircleFillColor": accuracyCircleFillColor});
   
   
   }
   
   Future<void> set_accuracyCircleStrokeColor(UIColor accuracyCircleStrokeColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleStrokeColor', <String, dynamic>{'__this__': this, "accuracyCircleStrokeColor": accuracyCircleStrokeColor});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleStrokeColor', <String, dynamic>{'__this__': this, "accuracyCircleStrokeColor": accuracyCircleStrokeColor});
   
   
   }
   
   Future<void> set_isRotateAngleValid(bool isRotateAngleValid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_isRotateAngleValid', <String, dynamic>{'__this__': this, "isRotateAngleValid": isRotateAngleValid});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_isRotateAngleValid', <String, dynamic>{'__this__': this, "isRotateAngleValid": isRotateAngleValid});
   
   
   }
   
   Future<void> set_locationViewImgName(String locationViewImgName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_locationViewImgName', <String, dynamic>{'__this__': this, "locationViewImgName": locationViewImgName});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewImgName', <String, dynamic>{'__this__': this, "locationViewImgName": locationViewImgName});
   
   
   }
   
   Future<void> set_locationViewImage(UIImage locationViewImage) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_locationViewImage', <String, dynamic>{'__this__': this, "locationViewImage": locationViewImage});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewImage', <String, dynamic>{'__this__': this, "locationViewImage": locationViewImage});
   
   
   }
   
   Future<void> set_canShowCallOut(bool canShowCallOut) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_canShowCallOut', <String, dynamic>{'__this__': this, "canShowCallOut": canShowCallOut});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_canShowCallOut', <String, dynamic>{'__this__': this, "canShowCallOut": canShowCallOut});
   
   
   }
   
   Future<void> set_locationViewHierarchy(LocationViewHierarchy locationViewHierarchy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy', <String, dynamic>{'__this__': this, "locationViewHierarchy": locationViewHierarchy.toValue()});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy', <String, dynamic>{'__this__': this, "locationViewHierarchy": locationViewHierarchy.toValue()});
   
   
   }
@@ -157,139 +163,124 @@ class BMKLocationViewDisplayParam extends NSObject with NSCopying {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKLocationViewDisplayParam{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKLocationViewDisplayParam_Batch on List<BMKLocationViewDisplayParam> {
   //region getters
   Future<List<double>> get_locationViewOffsetX_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetX_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetX_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_locationViewOffsetY_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetY_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewOffsetY_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<bool>> get_isAccuracyCircleShow_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_isAccuracyCircleShow_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_isAccuracyCircleShow_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<UIColor>> get_accuracyCircleFillColor_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleFillColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleFillColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIColor>(__result__))?.cast<UIColor>()?.toList();
   }
   
   Future<List<UIColor>> get_accuracyCircleStrokeColor_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleStrokeColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIColor()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_accuracyCircleStrokeColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIColor>(__result__))?.cast<UIColor>()?.toList();
   }
   
   Future<List<bool>> get_isRotateAngleValid_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_isRotateAngleValid_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_isRotateAngleValid_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<String>> get_locationViewImgName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewImgName_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewImgName_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<UIImage>> get_locationViewImage_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewImage_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewImage_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIImage>(__result__))?.cast<UIImage>()?.toList();
   }
   
   Future<List<bool>> get_canShowCallOut_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_canShowCallOut_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_canShowCallOut_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<LocationViewHierarchy>> get_locationViewHierarchy_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationViewDisplayParam::get_locationViewHierarchy_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toLocationViewHierarchy()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationViewDisplayParam::get_locationViewHierarchy_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toLocationViewHierarchy())?.cast<LocationViewHierarchy>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_locationViewOffsetX_batch(List<double> locationViewOffsetX) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetX_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewOffsetX": locationViewOffsetX[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetX_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewOffsetX": locationViewOffsetX[__i__]}]);
   
   
   }
   
   Future<void> set_locationViewOffsetY_batch(List<double> locationViewOffsetY) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetY_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewOffsetY": locationViewOffsetY[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewOffsetY_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewOffsetY": locationViewOffsetY[__i__]}]);
   
   
   }
   
   Future<void> set_isAccuracyCircleShow_batch(List<bool> isAccuracyCircleShow) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_isAccuracyCircleShow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isAccuracyCircleShow": isAccuracyCircleShow[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_isAccuracyCircleShow_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isAccuracyCircleShow": isAccuracyCircleShow[__i__]}]);
   
   
   }
   
   Future<void> set_accuracyCircleFillColor_batch(List<UIColor> accuracyCircleFillColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleFillColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleFillColor": accuracyCircleFillColor[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleFillColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleFillColor": accuracyCircleFillColor[__i__]}]);
   
   
   }
   
   Future<void> set_accuracyCircleStrokeColor_batch(List<UIColor> accuracyCircleStrokeColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleStrokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleStrokeColor": accuracyCircleStrokeColor[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_accuracyCircleStrokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleStrokeColor": accuracyCircleStrokeColor[__i__]}]);
   
   
   }
   
   Future<void> set_isRotateAngleValid_batch(List<bool> isRotateAngleValid) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_isRotateAngleValid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isRotateAngleValid": isRotateAngleValid[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_isRotateAngleValid_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isRotateAngleValid": isRotateAngleValid[__i__]}]);
   
   
   }
   
   Future<void> set_locationViewImgName_batch(List<String> locationViewImgName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_locationViewImgName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewImgName": locationViewImgName[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewImgName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewImgName": locationViewImgName[__i__]}]);
   
   
   }
   
   Future<void> set_locationViewImage_batch(List<UIImage> locationViewImage) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_locationViewImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewImage": locationViewImage[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewImage": locationViewImage[__i__]}]);
   
   
   }
   
   Future<void> set_canShowCallOut_batch(List<bool> canShowCallOut) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_canShowCallOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "canShowCallOut": canShowCallOut[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_canShowCallOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "canShowCallOut": canShowCallOut[__i__]}]);
   
   
   }
   
   Future<void> set_locationViewHierarchy_batch(List<LocationViewHierarchy> locationViewHierarchy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewHierarchy": locationViewHierarchy[__i__].toValue()}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationViewDisplayParam::set_locationViewHierarchy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationViewHierarchy": locationViewHierarchy[__i__].toValue()}]);
   
   
   }

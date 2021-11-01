@@ -19,26 +19,29 @@ mixin com_baidu_location_LLSInterface on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onCreate(android_content_Context var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<int> onStartCommand(android_content_Intent var1, int var2, int var3) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<bool> onUnBind(android_content_Intent var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onDestroy() {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onTaskRemoved(android_content_Intent var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<double> getVersion() {}
   
 }

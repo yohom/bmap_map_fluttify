@@ -19,20 +19,23 @@ mixin com_baidu_mapapi_animation_Animation_AnimationListener on java_lang_Object
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onAnimationStart() {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onAnimationEnd() {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onAnimationCancel() {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onAnimationRepeat() {}
   
 }

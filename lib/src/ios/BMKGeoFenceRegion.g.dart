@@ -16,65 +16,71 @@ class BMKGeoFenceRegion extends NSObject with NSCopying {
   //region constants
   static const String name__ = 'BMKGeoFenceRegion';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKGeoFenceRegion> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKGeoFenceRegion', {'init': init});
-    final object = BMKGeoFenceRegion()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKGeoFenceRegion',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKGeoFenceRegion>(__result__);
   }
   
   static Future<List<BMKGeoFenceRegion>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKGeoFenceRegion', {'length': length, 'init': init});
-  
-    final List<BMKGeoFenceRegion> typedResult = resultBatch.map((result) => BMKGeoFenceRegion()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKGeoFenceRegion',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKGeoFenceRegion>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_identifier() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_identifier", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_identifier", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_customID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_customID", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_customID", {'__this__': this});
+    return __result__;
   }
   
   Future<BMKGeoFenceRegionStatus> get_fenceStatus() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_fenceStatus", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKGeoFenceRegionStatus());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_fenceStatus", {'__this__': this});
+    return (__result__ as int).toBMKGeoFenceRegionStatus();
   }
   
   Future<BMKLocationCoordinateType> get_coordinateType() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_coordinateType", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKLocationCoordinateType());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_coordinateType", {'__this__': this});
+    return (__result__ as int).toBMKLocationCoordinateType();
   }
   
   Future<double> get_lastEventTime() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_lastEventTime", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_lastEventTime", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_fenceStatus(BMKGeoFenceRegionStatus fenceStatus) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceRegion::set_fenceStatus', <String, dynamic>{'__this__': this, "fenceStatus": fenceStatus.toValue()});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceRegion::set_fenceStatus', <String, dynamic>{'__this__': this, "fenceStatus": fenceStatus.toValue()});
   
   
   }
   
   Future<void> set_lastEventTime(double lastEventTime) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceRegion::set_lastEventTime', <String, dynamic>{'__this__': this, "lastEventTime": lastEventTime});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceRegion::set_lastEventTime', <String, dynamic>{'__this__': this, "lastEventTime": lastEventTime});
   
   
   }
@@ -90,72 +96,61 @@ class BMKGeoFenceRegion extends NSObject with NSCopying {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceRegion::judgeStatusWithCoor', {"coor": coor, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceRegion::judgeStatusWithCoor', {"coor": coor, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as int).toBMKGeoFenceRegionStatus();
-      return __return__;
-    }
+    return (__result__ as int).toBMKGeoFenceRegionStatus();
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKGeoFenceRegion{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKGeoFenceRegion_Batch on List<BMKGeoFenceRegion> {
   //region getters
   Future<List<String>> get_identifier_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_identifier_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_identifier_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_customID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_customID_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_customID_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<BMKGeoFenceRegionStatus>> get_fenceStatus_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_fenceStatus_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKGeoFenceRegionStatus()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_fenceStatus_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKGeoFenceRegionStatus())?.cast<BMKGeoFenceRegionStatus>()?.toList();
   }
   
   Future<List<BMKLocationCoordinateType>> get_coordinateType_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_coordinateType_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKLocationCoordinateType()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_coordinateType_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKLocationCoordinateType())?.cast<BMKLocationCoordinateType>()?.toList();
   }
   
   Future<List<double>> get_lastEventTime_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceRegion::get_lastEventTime_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceRegion::get_lastEventTime_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_fenceStatus_batch(List<BMKGeoFenceRegionStatus> fenceStatus) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKGeoFenceRegion::set_fenceStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "fenceStatus": fenceStatus[__i__].toValue()}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceRegion::set_fenceStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "fenceStatus": fenceStatus[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_lastEventTime_batch(List<double> lastEventTime) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKGeoFenceRegion::set_lastEventTime_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "lastEventTime": lastEventTime[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceRegion::set_lastEventTime_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "lastEventTime": lastEventTime[__i__]}]);
   
   
   }
@@ -165,21 +160,13 @@ extension BMKGeoFenceRegion_Batch on List<BMKGeoFenceRegion> {
   //region methods
   
   Future<List<BMKGeoFenceRegionStatus>> judgeStatusWithCoor_batch(List<CLLocationCoordinate2D> coor) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceRegion::judgeStatusWithCoor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coor": coor[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceRegion::judgeStatusWithCoor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coor": coor[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKGeoFenceRegionStatus()).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as int).toBMKGeoFenceRegionStatus()).cast<BMKGeoFenceRegionStatus>().toList();
   }
   
   //endregion

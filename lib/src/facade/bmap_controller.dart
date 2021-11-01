@@ -94,7 +94,10 @@ mixin _Community on _Holder {
           await map.setMapStatus(mapStatus);
         }
 
-        pool..add(map)..add(latLng)..add(mapStatus);
+        pool
+          ..add(map)
+          ..add(latLng)
+          ..add(mapStatus);
       },
       ios: (pool) async {
         final latLng = await CLLocationCoordinate2D.create(lat, lng);
@@ -142,7 +145,9 @@ mixin _Community on _Holder {
           await map.setMyLocationData(await builder.build());
         });
 
-        pool..add(config)..add(bitmap);
+        pool
+          ..add(config)
+          ..add(bitmap);
       },
       ios: (pool) async {
         await iosController.set_showsUserLocation(true);
@@ -207,7 +212,9 @@ mixin _Community on _Holder {
               await com_baidu_mapapi_map_BitmapDescriptorFactory_Batch
                   .fromBitmap_batch(bitmapBatch);
           await markerOptionBatch.icon_batch(iconBatch);
-          pool..addAll(bitmapBatch)..addAll(iconBatch);
+          pool
+            ..addAll(bitmapBatch)
+            ..addAll(iconBatch);
         }
         // 设置自定义数据
         await markerOptionBatch.title_batch(objectBatch);
@@ -216,7 +223,7 @@ mixin _Community on _Holder {
         final overlays = await map.addOverlays(markerOptionBatch);
         // 由于返回类型被重置为Polygon(因为是第一个子类的关系), 这里转换一下
         final markers = overlays
-            .map((it) => TypeOpBmapMapFluttifyAndroid(it)
+            .map((it) => BmapMapFluttifyAndroidAs(it)
                 .as__<com_baidu_mapapi_map_Marker>())
             .toList();
 
@@ -308,7 +315,9 @@ mixin _Community on _Holder {
         await iosController.removeAnnotations(markers);
         await iosController.removeOverlays(overlays);
 
-        pool..addAll(markers.cast<Ref>())..addAll(overlays.cast<Ref>());
+        pool
+          ..addAll(markers.cast<Ref>())
+          ..addAll(overlays.cast<Ref>());
       },
     );
   }
@@ -357,7 +366,9 @@ mixin _Community on _Holder {
           await polylineOptions.customTexture(texture);
           // 释放图片
           await bitmap.recycle();
-          pool..add(bitmap)..add(texture);
+          pool
+            ..add(bitmap)
+            ..add(texture);
         }
         // 是否虚线
         if (option.dashType != null) {
@@ -384,7 +395,7 @@ mixin _Community on _Holder {
           ..addAll(latLngList);
 
         return Polyline.android(
-          TypeOpBmapMapFluttifyAndroid(polyline)
+          BmapMapFluttifyAndroidAs(polyline)
               .as__<com_baidu_mapapi_map_Polyline>(),
         );
       },
@@ -481,7 +492,7 @@ mixin _Community on _Holder {
           ..addAll(latLngList);
 
         return Polygon.android(
-          TypeOpBmapMapFluttifyAndroid(polygon)
+          BmapMapFluttifyAndroidAs(polygon)
               .as__<com_baidu_mapapi_map_Polygon>(),
         );
       },
@@ -558,11 +569,13 @@ mixin _Community on _Holder {
         // 设置参数
         final circle = await map.addOverlay(circleOptions);
 
-        pool..add(map)..add(circleOptions)..add(latLng);
+        pool
+          ..add(map)
+          ..add(circleOptions)
+          ..add(latLng);
 
         return Circle.android(
-          TypeOpBmapMapFluttifyAndroid(circle)
-              .as__<com_baidu_mapapi_map_Circle>(),
+          BmapMapFluttifyAndroidAs(circle).as__<com_baidu_mapapi_map_Circle>(),
         );
       },
       ios: (pool) async {
@@ -609,7 +622,9 @@ mixin _Community on _Holder {
           cameraUpdate,
         );
 
-        pool..add(map)..add(cameraUpdate);
+        pool
+          ..add(map)
+          ..add(cameraUpdate);
       },
       ios: (pool) async {
         final currentLevel = await iosController.get_zoomLevel();
@@ -629,7 +644,9 @@ mixin _Community on _Holder {
           cameraUpdate,
         );
 
-        pool..add(map)..add(cameraUpdate);
+        pool
+          ..add(map)
+          ..add(cameraUpdate);
       },
       ios: (pool) async {
         final currentLevel = await iosController.get_zoomLevel();
@@ -691,7 +708,9 @@ mixin _Community on _Holder {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setZoomGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_zoomEnabled(enable);
@@ -707,7 +726,9 @@ mixin _Community on _Holder {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setScrollGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_scrollEnabled(enable);
@@ -723,7 +744,9 @@ mixin _Community on _Holder {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setRotateGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_rotateEnabled(enable);
@@ -739,7 +762,9 @@ mixin _Community on _Holder {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setOverlookingGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_overlookEnabled(enable);
@@ -755,7 +780,9 @@ mixin _Community on _Holder {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setAllGesturesEnabled(enable);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController.set_zoomEnabled(enable);
@@ -779,7 +806,9 @@ mixin _Community on _Holder {
         await map.animateMapStatus__com_baidu_mapapi_map_MapStatusUpdate(
             cameraUpdate);
 
-        pool..add(map)..add(cameraUpdate);
+        pool
+          ..add(map)
+          ..add(cameraUpdate);
       },
       ios: (pool) async {
         await iosController.set_zoomLevel(level);
@@ -794,7 +823,9 @@ mixin _Community on _Holder {
         final map = await androidController.getMap();
         final camera = await map.getMapStatus();
 
-        pool..add(map)..add(camera);
+        pool
+          ..add(map)
+          ..add(camera);
         return camera.get_zoom();
       },
       ios: (pool) async {
@@ -812,7 +843,9 @@ mixin _Community on _Holder {
         final uiSetting = await map.getUiSettings();
         await uiSetting.setEnlargeCenterWithDoubleClickEnable(byCenter);
 
-        pool..add(map)..add(uiSetting);
+        pool
+          ..add(map)
+          ..add(uiSetting);
       },
       ios: (pool) async {
         await iosController
@@ -830,7 +863,10 @@ mixin _Community on _Holder {
         final position = await map.getMapStatus();
         final target = await position.get_target();
 
-        pool..add(map)..add(position)..add(target);
+        pool
+          ..add(map)
+          ..add(position)
+          ..add(target);
 
         return LatLng(
           await target.get_latitude(),
@@ -960,7 +996,9 @@ mixin _Pro on _Holder {
 
         if (onScreenShot != null) onScreenShot(await image.data);
 
-        pool..add(rect)..add(image);
+        pool
+          ..add(rect)
+          ..add(image);
       },
     );
   }
@@ -1050,7 +1088,9 @@ mixin _Pro on _Holder {
 
         await uiSettings.setCompassEnabled(enable);
 
-        pool..add(map)..add(uiSettings);
+        pool
+          ..add(map)
+          ..add(uiSettings);
       },
       ios: (pool) async {
         await iosController.setCompassImage(null);
@@ -1098,7 +1138,10 @@ mixin _Pro on _Holder {
         final region = await BMKCoordinateRegionMake(center, span);
         iosController.set_limitMapRegion(region);
 
-        pool..add(center)..add(span)..add(region);
+        pool
+          ..add(center)
+          ..add(span)
+          ..add(region);
       },
     );
   }
@@ -1273,10 +1316,15 @@ mixin _Pro on _Holder {
         // 设置参数
         final arc = await map.addOverlay(arcOptions);
 
-        pool..add(map)..add(arcOptions)..add(start)..add(middle)..add(end);
+        pool
+          ..add(map)
+          ..add(arcOptions)
+          ..add(start)
+          ..add(middle)
+          ..add(end);
 
         return Arc.android(
-          TypeOpBmapMapFluttifyAndroid(arc).as__<com_baidu_mapapi_map_Arc>(),
+          BmapMapFluttifyAndroidAs(arc).as__<com_baidu_mapapi_map_Arc>(),
         );
       },
       ios: (pool) async {
@@ -1313,7 +1361,10 @@ mixin _Pro on _Holder {
         // 设置参数
         await iosController.addOverlay(arc);
 
-        pool..add(start)..add(middle)..add(end);
+        pool
+          ..add(start)
+          ..add(middle)
+          ..add(end);
 
         return Arc.ios(arc, iosController);
       },

@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_d_ResultType extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.d_ResultType';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int TYPE_ERROR = -1;
   static final int CITY_QUERY = 2;
   static final int CENTER_CITY = 4;
@@ -67,6 +70,11 @@ class com_baidu_mapapi_UIMsg_d_ResultType extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_d_ResultType{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_d_ResultType_Batch on List<com_baidu_mapapi_UIMsg_d_ResultType> {

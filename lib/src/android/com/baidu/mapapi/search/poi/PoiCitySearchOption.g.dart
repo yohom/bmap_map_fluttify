@@ -16,127 +16,133 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.poi.PoiCitySearchOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_poi_PoiCitySearchOption> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_poi_PoiCitySearchOption__', );
-    final object = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_poi_PoiCitySearchOption__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_poi_PoiCitySearchOption__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_poi_PoiCitySearchOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_poi_PoiCitySearchOption__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_mCity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mCity", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mCity", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_mKeyword() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mKeyword", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mKeyword", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_mPageNum() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageNum", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageNum", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_mPageCapacity() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageCapacity", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageCapacity", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_mIsReturnAddr() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsReturnAddr", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsReturnAddr", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_mTag() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mTag", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mTag", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_mScope() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mScope", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mScope", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_mIsCityLimit() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsCityLimit", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsCityLimit", {'__this__': this});
+    return __result__;
   }
   
   Future<com_baidu_mapapi_search_poi_PoiFilter> get_mPoiFilter() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPoiFilter", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_search_poi_PoiFilter()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPoiFilter", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiFilter>(__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_mCity(String mCity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mCity', <String, dynamic>{'__this__': this, "mCity": mCity});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mCity', <String, dynamic>{'__this__': this, "mCity": mCity});
   
   
   }
   
   Future<void> set_mKeyword(String mKeyword) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mKeyword', <String, dynamic>{'__this__': this, "mKeyword": mKeyword});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mKeyword', <String, dynamic>{'__this__': this, "mKeyword": mKeyword});
   
   
   }
   
   Future<void> set_mPageNum(int mPageNum) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageNum', <String, dynamic>{'__this__': this, "mPageNum": mPageNum});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageNum', <String, dynamic>{'__this__': this, "mPageNum": mPageNum});
   
   
   }
   
   Future<void> set_mPageCapacity(int mPageCapacity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageCapacity', <String, dynamic>{'__this__': this, "mPageCapacity": mPageCapacity});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageCapacity', <String, dynamic>{'__this__': this, "mPageCapacity": mPageCapacity});
   
   
   }
   
   Future<void> set_mIsReturnAddr(bool mIsReturnAddr) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsReturnAddr', <String, dynamic>{'__this__': this, "mIsReturnAddr": mIsReturnAddr});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsReturnAddr', <String, dynamic>{'__this__': this, "mIsReturnAddr": mIsReturnAddr});
   
   
   }
   
   Future<void> set_mTag(String mTag) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mTag', <String, dynamic>{'__this__': this, "mTag": mTag});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mTag', <String, dynamic>{'__this__': this, "mTag": mTag});
   
   
   }
   
   Future<void> set_mScope(int mScope) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mScope', <String, dynamic>{'__this__': this, "mScope": mScope});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mScope', <String, dynamic>{'__this__': this, "mScope": mScope});
   
   
   }
   
   Future<void> set_mIsCityLimit(bool mIsCityLimit) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsCityLimit', <String, dynamic>{'__this__': this, "mIsCityLimit": mIsCityLimit});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsCityLimit', <String, dynamic>{'__this__': this, "mIsCityLimit": mIsCityLimit});
   
   
   }
   
   Future<void> set_mPoiFilter(com_baidu_mapapi_search_poi_PoiFilter mPoiFilter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPoiFilter', <String, dynamic>{'__this__': this, "mPoiFilter": mPoiFilter});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPoiFilter', <String, dynamic>{'__this__': this, "mPoiFilter": mPoiFilter});
   
   
   }
@@ -152,19 +158,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::city', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::city', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -175,19 +175,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::keyword', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::keyword', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -198,19 +192,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageNum', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageNum', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -221,19 +209,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageCapacity', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageCapacity', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -244,19 +226,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::isReturnAddr', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::isReturnAddr', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -267,19 +243,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::tag', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::tag', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -290,19 +260,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::scope', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::scope', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -313,19 +277,13 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::cityLimit', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::cityLimit', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   
@@ -336,142 +294,123 @@ class com_baidu_mapapi_search_poi_PoiCitySearchOption extends java_lang_Object  
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::poiFilter', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::poiFilter', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_poi_PoiCitySearchOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_poi_PoiCitySearchOption_Batch on List<com_baidu_mapapi_search_poi_PoiCitySearchOption> {
   //region getters
   Future<List<String>> get_mCity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mCity_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mCity_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_mKeyword_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mKeyword_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mKeyword_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_mPageNum_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageNum_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageNum_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_mPageCapacity_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageCapacity_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPageCapacity_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<bool>> get_mIsReturnAddr_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsReturnAddr_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsReturnAddr_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<String>> get_mTag_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mTag_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mTag_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_mScope_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mScope_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mScope_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<bool>> get_mIsCityLimit_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsCityLimit_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mIsCityLimit_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_search_poi_PoiFilter>> get_mPoiFilter_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPoiFilter_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiFilter()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.poi.PoiCitySearchOption::get_mPoiFilter_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiFilter>(__result__))?.cast<com_baidu_mapapi_search_poi_PoiFilter>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mCity_batch(List<String> mCity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCity": mCity[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mCity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCity": mCity[__i__]}]);
   
   
   }
   
   Future<void> set_mKeyword_batch(List<String> mKeyword) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mKeyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mKeyword": mKeyword[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mKeyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mKeyword": mKeyword[__i__]}]);
   
   
   }
   
   Future<void> set_mPageNum_batch(List<int> mPageNum) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageNum": mPageNum[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageNum": mPageNum[__i__]}]);
   
   
   }
   
   Future<void> set_mPageCapacity_batch(List<int> mPageCapacity) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageCapacity": mPageCapacity[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPageCapacity": mPageCapacity[__i__]}]);
   
   
   }
   
   Future<void> set_mIsReturnAddr_batch(List<bool> mIsReturnAddr) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsReturnAddr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mIsReturnAddr": mIsReturnAddr[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsReturnAddr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mIsReturnAddr": mIsReturnAddr[__i__]}]);
   
   
   }
   
   Future<void> set_mTag_batch(List<String> mTag) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTag": mTag[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mTag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTag": mTag[__i__]}]);
   
   
   }
   
   Future<void> set_mScope_batch(List<int> mScope) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mScope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mScope": mScope[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mScope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mScope": mScope[__i__]}]);
   
   
   }
   
   Future<void> set_mIsCityLimit_batch(List<bool> mIsCityLimit) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsCityLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mIsCityLimit": mIsCityLimit[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mIsCityLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mIsCityLimit": mIsCityLimit[__i__]}]);
   
   
   }
   
   Future<void> set_mPoiFilter_batch(List<com_baidu_mapapi_search_poi_PoiFilter> mPoiFilter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPoiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPoiFilter": mPoiFilter[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::set_mPoiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPoiFilter": mPoiFilter[__i__]}]);
   
   
   }
@@ -481,173 +420,101 @@ extension com_baidu_mapapi_search_poi_PoiCitySearchOption_Batch on List<com_baid
   //region methods
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> city_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> keyword_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::keyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::keyword_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> pageNum_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageNum_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> pageCapacity_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::pageCapacity_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> isReturnAddr_batch(List<bool> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::isReturnAddr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::isReturnAddr_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> tag_batch(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::tag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::tag_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> scope_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::scope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::scope_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> cityLimit_batch(List<bool> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::cityLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::cityLimit_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_poi_PoiCitySearchOption>> poiFilter_batch(List<com_baidu_mapapi_search_poi_PoiFilter> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::poiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.poi.PoiCitySearchOption::poiFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_poi_PoiCitySearchOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_poi_PoiCitySearchOption>(__result__)).cast<com_baidu_mapapi_search_poi_PoiCitySearchOption>().toList();
   }
   
   //endregion

@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapLongClickListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onMapLongClick(com_baidu_mapapi_model_LatLng var1) {}
   
 }

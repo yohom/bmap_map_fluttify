@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_WalkNaviMsg extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.WalkNaviMsg';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int MSG_APP_PB_DATA_OK = 2008;
   static final int VM_USER_ID = 4096;
   static final int NL_UI_MESSAGE_TYPE_INVALID = 4096;
@@ -38,19 +41,22 @@ class com_baidu_mapapi_UIMsg_WalkNaviMsg extends java_lang_Object  {
 
   //region creators
   static Future<com_baidu_mapapi_UIMsg_WalkNaviMsg> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__', );
-    final object = com_baidu_mapapi_UIMsg_WalkNaviMsg()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_UIMsg_WalkNaviMsg__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_UIMsg_WalkNaviMsg>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_UIMsg_WalkNaviMsg>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_UIMsg_WalkNaviMsg__', {'length': length});
-  
-    final List<com_baidu_mapapi_UIMsg_WalkNaviMsg> typedResult = resultBatch.map((result) => com_baidu_mapapi_UIMsg_WalkNaviMsg()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_UIMsg_WalkNaviMsg__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_UIMsg_WalkNaviMsg>(it))
+        .toList();
   }
   
   //endregion
@@ -66,6 +72,11 @@ class com_baidu_mapapi_UIMsg_WalkNaviMsg extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_WalkNaviMsg{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_WalkNaviMsg_Batch on List<com_baidu_mapapi_UIMsg_WalkNaviMsg> {

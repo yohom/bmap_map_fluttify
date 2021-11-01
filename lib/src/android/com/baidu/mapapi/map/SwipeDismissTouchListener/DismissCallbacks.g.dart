@@ -19,17 +19,20 @@ mixin com_baidu_mapapi_map_SwipeDismissTouchListener_DismissCallbacks on java_la
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<bool> canDismiss(Object var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onDismiss(android_view_View var1, Object var2) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onNotify() {}
   
 }

@@ -16,116 +16,122 @@ class BMKOLUpdateElement extends NSObject  {
   //region constants
   static const String name__ = 'BMKOLUpdateElement';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKOLUpdateElement> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKOLUpdateElement', {'init': init});
-    final object = BMKOLUpdateElement()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKOLUpdateElement',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKOLUpdateElement>(__result__);
   }
   
   static Future<List<BMKOLUpdateElement>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKOLUpdateElement', {'length': length, 'init': init});
-  
-    final List<BMKOLUpdateElement> typedResult = resultBatch.map((result) => BMKOLUpdateElement()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKOLUpdateElement',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKOLUpdateElement>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_cityName() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_cityName", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_cityName", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_cityID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_cityID", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_cityID", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_size() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_size", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_size", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_serversize() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_serversize", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_serversize", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_ratio() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_ratio", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_ratio", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_status() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_status", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_status", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_update() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_update", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_update", {'__this__': this});
+    return __result__;
   }
   
   Future<CLLocationCoordinate2D> get_pt() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_pt", {'__this__': this});
-    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_pt", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_cityName(String cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_cityName', <String, dynamic>{'__this__': this, "cityName": cityName});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_cityName', <String, dynamic>{'__this__': this, "cityName": cityName});
   
   
   }
   
   Future<void> set_cityID(int cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_cityID', <String, dynamic>{'__this__': this, "cityID": cityID});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_cityID', <String, dynamic>{'__this__': this, "cityID": cityID});
   
   
   }
   
   Future<void> set_size(int size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_size', <String, dynamic>{'__this__': this, "size": size});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_size', <String, dynamic>{'__this__': this, "size": size});
   
   
   }
   
   Future<void> set_serversize(int serversize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_serversize', <String, dynamic>{'__this__': this, "serversize": serversize});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_serversize', <String, dynamic>{'__this__': this, "serversize": serversize});
   
   
   }
   
   Future<void> set_ratio(int ratio) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_ratio', <String, dynamic>{'__this__': this, "ratio": ratio});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_ratio', <String, dynamic>{'__this__': this, "ratio": ratio});
   
   
   }
   
   Future<void> set_status(int status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_status', <String, dynamic>{'__this__': this, "status": status});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_status', <String, dynamic>{'__this__': this, "status": status});
   
   
   }
   
   Future<void> set_update(bool update) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_update', <String, dynamic>{'__this__': this, "update": update});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_update', <String, dynamic>{'__this__': this, "update": update});
   
   
   }
   
   Future<void> set_pt(CLLocationCoordinate2D pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKOLUpdateElement::set_pt', <String, dynamic>{'__this__': this, "pt": pt});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_pt', <String, dynamic>{'__this__': this, "pt": pt});
   
   
   }
@@ -135,113 +141,102 @@ class BMKOLUpdateElement extends NSObject  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKOLUpdateElement{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKOLUpdateElement_Batch on List<BMKOLUpdateElement> {
   //region getters
   Future<List<String>> get_cityName_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_cityName_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_cityName_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_cityID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_cityID_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_cityID_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_size_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_serversize_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_serversize_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_serversize_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_ratio_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_ratio_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_ratio_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_status_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<bool>> get_update_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_update_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_update_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<CLLocationCoordinate2D>> get_pt_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKOLUpdateElement::get_pt_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKOLUpdateElement::get_pt_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_cityName_batch(List<String> cityName) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityName": cityName[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_cityName_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityName": cityName[__i__]}]);
   
   
   }
   
   Future<void> set_cityID_batch(List<int> cityID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityID": cityID[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_cityID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "cityID": cityID[__i__]}]);
   
   
   }
   
   Future<void> set_size_batch(List<int> size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
   
   
   }
   
   Future<void> set_serversize_batch(List<int> serversize) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_serversize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "serversize": serversize[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_serversize_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "serversize": serversize[__i__]}]);
   
   
   }
   
   Future<void> set_ratio_batch(List<int> ratio) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_ratio_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ratio": ratio[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_ratio_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ratio": ratio[__i__]}]);
   
   
   }
   
   Future<void> set_status_batch(List<int> status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
   
   
   }
   
   Future<void> set_update_batch(List<bool> update) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_update_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "update": update[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_update_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "update": update[__i__]}]);
   
   
   }
   
   Future<void> set_pt_batch(List<CLLocationCoordinate2D> pt) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKOLUpdateElement::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pt": pt[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKOLUpdateElement::set_pt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pt": pt[__i__]}]);
   
   
   }

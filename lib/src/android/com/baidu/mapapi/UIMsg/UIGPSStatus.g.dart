@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_UIGPSStatus extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.UIGPSStatus';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int GPS_DEVICE_DISABLED = 0;
   static final int GPS_DEVICE_ENABLED = 1;
   static final int GPS_SIGNAL_CONNECTED = 2;
@@ -38,6 +41,11 @@ class com_baidu_mapapi_UIMsg_UIGPSStatus extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_UIGPSStatus{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_UIGPSStatus_Batch on List<com_baidu_mapapi_UIMsg_UIGPSStatus> {

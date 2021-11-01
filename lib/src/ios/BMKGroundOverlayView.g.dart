@@ -16,32 +16,38 @@ class BMKGroundOverlayView extends BMKOverlayView  {
   //region constants
   static const String name__ = 'BMKGroundOverlayView';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKGroundOverlayView> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKGroundOverlayView', {'init': init});
-    final object = BMKGroundOverlayView()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKGroundOverlayView',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKGroundOverlayView>(__result__);
   }
   
   static Future<List<BMKGroundOverlayView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKGroundOverlayView', {'length': length, 'init': init});
-  
-    final List<BMKGroundOverlayView> typedResult = resultBatch.map((result) => BMKGroundOverlayView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKGroundOverlayView',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKGroundOverlayView>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<BMKGroundOverlay> get_groundOverlay({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKGroundOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGroundOverlayView::get_groundOverlay", {'__this__': this});
-    return __result__ == null ? null : (BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKGroundOverlayView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKGroundOverlayView::get_groundOverlay", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKGroundOverlay>(__result__);
   }
   
   //endregion
@@ -59,31 +65,28 @@ class BMKGroundOverlayView extends BMKOverlayView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKGroundOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGroundOverlayView::initWithGroundOverlay', {"groundOverlay": groundOverlay, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKGroundOverlayView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKGroundOverlayView::initWithGroundOverlay', {"groundOverlay": groundOverlay, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKGroundOverlayView{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKGroundOverlayView_Batch on List<BMKGroundOverlayView> {
   //region getters
   Future<List<BMKGroundOverlay>> get_groundOverlay_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKGroundOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGroundOverlayView::get_groundOverlay_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKGroundOverlay()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKGroundOverlayView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKGroundOverlayView::get_groundOverlay_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKGroundOverlay>(__result__))?.cast<BMKGroundOverlay>()?.toList();
   }
   
   //endregion
@@ -95,21 +98,13 @@ extension BMKGroundOverlayView_Batch on List<BMKGroundOverlayView> {
   //region methods
   
   Future<List<dynamic>> initWithGroundOverlay_batch(List<BMKGroundOverlay> groundOverlay, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKGroundOverlayView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGroundOverlayView::initWithGroundOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"groundOverlay": groundOverlay[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKGroundOverlayView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKGroundOverlayView::initWithGroundOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"groundOverlay": groundOverlay[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   //endregion

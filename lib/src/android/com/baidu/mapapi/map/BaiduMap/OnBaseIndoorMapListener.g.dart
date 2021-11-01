@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_BaiduMap_OnBaseIndoorMapListener on java_lang_Object 
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onBaseIndoorMapMode(bool var1, com_baidu_mapapi_map_MapBaseIndoorMapInfo var2) {}
   
 }

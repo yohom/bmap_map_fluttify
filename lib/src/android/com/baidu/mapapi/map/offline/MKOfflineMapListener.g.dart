@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_offline_MKOfflineMapListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetOfflineMapState(int var1, int var2) {}
   
 }

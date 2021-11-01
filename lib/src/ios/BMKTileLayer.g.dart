@@ -16,61 +16,67 @@ class BMKTileLayer extends NSObject with BMKAnnotation, BMKOverlay {
   //region constants
   static const String name__ = 'BMKTileLayer';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKTileLayer> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKTileLayer', {'init': init});
-    final object = BMKTileLayer()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKTileLayer',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKTileLayer>(__result__);
   }
   
   static Future<List<BMKTileLayer>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKTileLayer', {'length': length, 'init': init});
-  
-    final List<BMKTileLayer> typedResult = resultBatch.map((result) => BMKTileLayer()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKTileLayer',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKTileLayer>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<int> get_minZoom() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKTileLayer::get_minZoom", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKTileLayer::get_minZoom", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_maxZoom() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKTileLayer::get_maxZoom", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKTileLayer::get_maxZoom", {'__this__': this});
+    return __result__;
   }
   
   Future<BMKMapRect> get_visibleMapRect() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKTileLayer::get_visibleMapRect", {'__this__': this});
-    return __result__ == null ? null : (BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKTileLayer::get_visibleMapRect", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKMapRect>(__result__);
   }
   
   //endregion
 
   //region setters
   Future<void> set_minZoom(int minZoom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKTileLayer::set_minZoom', <String, dynamic>{'__this__': this, "minZoom": minZoom});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKTileLayer::set_minZoom', <String, dynamic>{'__this__': this, "minZoom": minZoom});
   
   
   }
   
   Future<void> set_maxZoom(int maxZoom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKTileLayer::set_maxZoom', <String, dynamic>{'__this__': this, "maxZoom": maxZoom});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKTileLayer::set_maxZoom', <String, dynamic>{'__this__': this, "maxZoom": maxZoom});
   
   
   }
   
   Future<void> set_visibleMapRect(BMKMapRect visibleMapRect) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKTileLayer::set_visibleMapRect', <String, dynamic>{'__this__': this, "visibleMapRect": visibleMapRect});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKTileLayer::set_visibleMapRect', <String, dynamic>{'__this__': this, "visibleMapRect": visibleMapRect});
   
   
   }
@@ -80,48 +86,47 @@ class BMKTileLayer extends NSObject with BMKAnnotation, BMKOverlay {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKTileLayer{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKTileLayer_Batch on List<BMKTileLayer> {
   //region getters
   Future<List<int>> get_minZoom_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKTileLayer::get_minZoom_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKTileLayer::get_minZoom_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_maxZoom_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKTileLayer::get_maxZoom_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKTileLayer::get_maxZoom_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<BMKMapRect>> get_visibleMapRect_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKTileLayer::get_visibleMapRect_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKTileLayer::get_visibleMapRect_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKMapRect>(__result__))?.cast<BMKMapRect>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_minZoom_batch(List<int> minZoom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKTileLayer::set_minZoom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "minZoom": minZoom[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKTileLayer::set_minZoom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "minZoom": minZoom[__i__]}]);
   
   
   }
   
   Future<void> set_maxZoom_batch(List<int> maxZoom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKTileLayer::set_maxZoom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "maxZoom": maxZoom[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKTileLayer::set_maxZoom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "maxZoom": maxZoom[__i__]}]);
   
   
   }
   
   Future<void> set_visibleMapRect_batch(List<BMKMapRect> visibleMapRect) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKTileLayer::set_visibleMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "visibleMapRect": visibleMapRect[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKTileLayer::set_visibleMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "visibleMapRect": visibleMapRect[__i__]}]);
   
   
   }

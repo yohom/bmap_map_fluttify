@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_search_district_OnGetDistricSearchResultListener on java_
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetDistrictResult(com_baidu_mapapi_search_district_DistrictResult var1) {}
   
 }

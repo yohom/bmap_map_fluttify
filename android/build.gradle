@@ -1,4 +1,4 @@
-group 'com.fluttify.bmap_map_fluttify'
+group 'me.yohom.bmap_map_fluttify'
 version '1.0-SNAPSHOT'
 
 buildscript {
@@ -10,6 +10,7 @@ buildscript {
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url "https://dl.bintray.com/aweme-open-sdk-team/public" }
         maven { url 'http://developer.huawei.com/repo/' }
+        maven { url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/" }
     }
 
     dependencies {
@@ -26,20 +27,21 @@ rootProject.allprojects {
         maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         maven { url "https://dl.bintray.com/aweme-open-sdk-team/public" }
         maven { url 'http://developer.huawei.com/repo/' }
+        maven { url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/" }
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 28
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
         main.jniLibs.srcDir 'libs'
     }
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 16
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {

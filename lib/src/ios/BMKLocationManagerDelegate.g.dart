@@ -19,29 +19,32 @@ mixin BMKLocationManagerDelegate on NSObject {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> BMKLocationManager_doRequestAlwaysAuthorization(BMKLocationManager manager, CLLocationManager locationManager) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> BMKLocationManager_didFailWithError(BMKLocationManager manager, NSError error) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> BMKLocationManager_didUpdateLocation_orError(BMKLocationManager manager, BMKLocation location, NSError error) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> BMKLocationManager_didChangeAuthorizationStatus(BMKLocationManager manager, CLAuthorizationStatus status) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<bool> BMKLocationManagerShouldDisplayHeadingCalibration(BMKLocationManager manager) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> BMKLocationManager_didUpdateHeading(BMKLocationManager manager, CLHeading heading) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> BMKLocationManager_didUpdateNetworkState_orError(BMKLocationManager manager, BMKLocationNetworkState state, NSError error) {}
   
 }

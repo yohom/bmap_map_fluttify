@@ -19,14 +19,17 @@ mixin com_baidu_mapapi_map_WearMapView_OnDismissCallback on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onDismiss() {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onNotify() {}
   
 }

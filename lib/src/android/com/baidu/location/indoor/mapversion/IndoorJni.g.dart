@@ -16,6 +16,9 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.location.indoor.mapversion.IndoorJni';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -24,10 +27,6 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
   //endregion
 
   //region getters
-  static Future<bool> get_static_a() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.indoor.mapversion.IndoorJni::get_a", );
-    return __result__ == null ? null : (__result__);
-  }
   
   //endregion
 
@@ -44,19 +43,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGeomag', {"var0": var0});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGeomag', {"var0": var0});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -67,19 +60,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfWf', {"var0": var0, "var2": var2, "var4": var4, "var6": var6});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfWf', {"var0": var0, "var2": var2, "var4": var4, "var6": var6});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__ as Float64List;
-      return __return__;
-    }
+    return __result__ as Float64List;
   }
   
   
@@ -90,19 +77,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfDr', {"var0": var0, "var2": var2, "var4": var4});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfDr', {"var0": var0, "var2": var2, "var4": var4});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__ as Float64List;
-      return __return__;
-    }
+    return __result__ as Float64List;
   }
   
   
@@ -113,19 +94,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGps', {"var0": var0, "var2": var2, "var4": var4, "var6": var6, "var8": var8, "var10": var10});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGps', {"var0": var0, "var2": var2, "var4": var4, "var6": var6, "var8": var8, "var10": var10});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__ as Float64List;
-      return __return__;
-    }
+    return __result__ as Float64List;
   }
   
   
@@ -136,19 +111,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::initPf', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::initPf', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -159,19 +128,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::resetPf', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::resetPf', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -182,19 +145,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::phs', {"var0": var0, "var1": var1, "var2": var2, "var3": var3, "var4": var4});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::phs', {"var0": var0, "var1": var1, "var2": var2, "var3": var3, "var4": var4});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -205,19 +162,13 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::pgo', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::pgo', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__ as Float64List;
-      return __return__;
-    }
+    return __result__ as Float64List;
   }
   
   
@@ -228,32 +179,25 @@ class com_baidu_location_indoor_mapversion_IndoorJni extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::stopPdr', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::stopPdr', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_location_indoor_mapversion_IndoorJni{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_location_indoor_mapversion_IndoorJni_Batch on List<com_baidu_location_indoor_mapversion_IndoorJni> {
   //region getters
-  Future<List<bool>> get_static_a_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.location.indoor.mapversion.IndoorJni::get_a_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
-  }
   
   //endregion
 
@@ -264,173 +208,101 @@ extension com_baidu_location_indoor_mapversion_IndoorJni_Batch on List<com_baidu
   //region methods
   
   static Future<List<void>> setPfGeomag_batch(List<double> var0) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGeomag_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGeomag_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<Float64List>> setPfWf_batch(List<double> var0, List<double> var2, List<double> var4, List<int> var6) async {
-    if (var0.length != var2.length || var2.length != var4.length || var4.length != var6.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var2.length && var2.length == var4.length && var4.length == var6.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfWf_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var2": var2[__i__], "var4": var4[__i__], "var6": var6[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfWf_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var2": var2[__i__], "var4": var4[__i__], "var6": var6[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<Float64List>().map((__result__) => __result__ as Float64List).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__ as Float64List).cast<Float64List>().toList();
   }
   
   
   static Future<List<Float64List>> setPfDr_batch(List<double> var0, List<double> var2, List<int> var4) async {
-    if (var0.length != var2.length || var2.length != var4.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var2.length && var2.length == var4.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfDr_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var2": var2[__i__], "var4": var4[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfDr_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var2": var2[__i__], "var4": var4[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<Float64List>().map((__result__) => __result__ as Float64List).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__ as Float64List).cast<Float64List>().toList();
   }
   
   
   static Future<List<Float64List>> setPfGps_batch(List<double> var0, List<double> var2, List<double> var4, List<double> var6, List<double> var8, List<int> var10) async {
-    if (var0.length != var2.length || var2.length != var4.length || var4.length != var6.length || var6.length != var8.length || var8.length != var10.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var2.length && var2.length == var4.length && var4.length == var6.length && var6.length == var8.length && var8.length == var10.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGps_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var2": var2[__i__], "var4": var4[__i__], "var6": var6[__i__], "var8": var8[__i__], "var10": var10[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::setPfGps_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var2": var2[__i__], "var4": var4[__i__], "var6": var6[__i__], "var8": var8[__i__], "var10": var10[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<Float64List>().map((__result__) => __result__ as Float64List).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__ as Float64List).cast<Float64List>().toList();
   }
   
   
   static Future<List<void>> initPf_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::initPf_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::initPf_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<void>> resetPf_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::resetPf_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::resetPf_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<void>> phs_batch(List<int> var0, List<double> var1, List<double> var2, List<double> var3, List<int> var4) async {
-    if (var0.length != var1.length || var1.length != var2.length || var2.length != var3.length || var3.length != var4.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var0.length == var1.length && var1.length == var2.length && var2.length == var3.length && var3.length == var4.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::phs_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::phs_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__], "var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<Float64List>> pgo_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::pgo_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::pgo_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<Float64List>().map((__result__) => __result__ as Float64List).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__ as Float64List).cast<Float64List>().toList();
   }
   
   
   static Future<List<void>> stopPdr_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::stopPdr_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.location.indoor.mapversion.IndoorJni::stopPdr_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

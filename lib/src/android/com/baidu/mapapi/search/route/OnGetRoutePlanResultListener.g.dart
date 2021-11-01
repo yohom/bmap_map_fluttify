@@ -19,26 +19,29 @@ mixin com_baidu_mapapi_search_route_OnGetRoutePlanResultListener on java_lang_Ob
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetWalkingRouteResult(com_baidu_mapapi_search_route_WalkingRouteResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetTransitRouteResult(com_baidu_mapapi_search_route_TransitRouteResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetMassTransitRouteResult(com_baidu_mapapi_search_route_MassTransitRouteResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetDrivingRouteResult(com_baidu_mapapi_search_route_DrivingRouteResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetIndoorRouteResult(com_baidu_mapapi_search_route_IndoorRouteResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetBikingRouteResult(com_baidu_mapapi_search_route_BikingRouteResult var1) {}
   
 }

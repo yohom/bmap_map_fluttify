@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_l_ErrorNo extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.l_ErrorNo';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int REQUEST_OK = 0;
   static final int USER_CANCEL = 1;
   static final int NETWORK_CONNECT_ERROR = 2;
@@ -48,6 +51,11 @@ class com_baidu_mapapi_UIMsg_l_ErrorNo extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_l_ErrorNo{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_l_ErrorNo_Batch on List<com_baidu_mapapi_UIMsg_l_ErrorNo> {

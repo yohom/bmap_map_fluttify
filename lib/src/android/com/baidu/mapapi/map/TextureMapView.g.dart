@@ -16,40 +16,49 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.TextureMapView';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_map_TextureMapView> create__android_content_Context(android_content_Context var1) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context', {"var1": var1});
-    final object = com_baidu_mapapi_map_TextureMapView()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context',
+      {"var1": var1}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_TextureMapView>(__result__);
   }
   
   static Future<com_baidu_mapapi_map_TextureMapView> create__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions(android_content_Context var1, com_baidu_mapapi_map_BaiduMapOptions var2) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions', {"var1": var1, "var2": var2});
-    final object = com_baidu_mapapi_map_TextureMapView()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions',
+      {"var1": var1, "var2": var2}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_TextureMapView>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_map_TextureMapView>> create_batch__android_content_Context(List<android_content_Context> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_TextureMapView__android_content_Context', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
-  
-    final List<com_baidu_mapapi_map_TextureMapView> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_TextureMapView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_TextureMapView__android_content_Context',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_TextureMapView>(it))
+        .toList();
   }
   
   static Future<List<com_baidu_mapapi_map_TextureMapView>> create_batch__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions(List<android_content_Context> var1, List<com_baidu_mapapi_map_BaiduMapOptions> var2) async {
-    if (var1.length != var2.length) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__]}]);
-  
-    final List<com_baidu_mapapi_map_TextureMapView> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_TextureMapView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(var1.length == var2.length);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_TextureMapView__android_content_Context__com_baidu_mapapi_map_BaiduMapOptions',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_TextureMapView>(it))
+        .toList();
   }
   
   //endregion
@@ -71,19 +80,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath', {"var0": var0});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   @deprecated
@@ -94,19 +97,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setIconCustom', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setIconCustom', {"var0": var0});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   @deprecated
@@ -117,19 +114,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode', {"var0": var0});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   @deprecated
@@ -140,19 +131,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomEnable', {"var0": var0});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomEnable', {"var0": var0});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   @deprecated
@@ -163,19 +148,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomStyleFilePathAndMode', {"var1": var1, "var2": var2, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomStyleFilePathAndMode', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -186,19 +165,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStylePath', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStylePath', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -209,11 +182,11 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStyle', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStyle', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
-    MethodChannel('com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('com.baidu.mapapi.map.TextureMapView::setMapCustomStyle::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -225,7 +198,7 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
                 }
           
                 // handle the native call
-                var2?.onPreLoadLastCustomMapStyle(args['var1']);
+                await var2?.onPreLoadLastCustomMapStyle(args['var1']);
                 break;
               case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadSuccess':
                 // print log
@@ -234,7 +207,7 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
                 }
           
                 // handle the native call
-                var2?.onCustomMapStyleLoadSuccess(args['var1'], args['var2']);
+                await var2?.onCustomMapStyleLoadSuccess(args['var1'], args['var2']);
                 break;
               case 'Callback::com.baidu.mapapi.map.CustomMapStyleCallBack::onCustomMapStyleLoadFailed':
                 // print log
@@ -243,24 +216,19 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
                 }
           
                 // handle the native call
-                var2?.onCustomMapStyleLoadFailed(args['var1'], args['var2'], args['var3']);
+                await var2?.onCustomMapStyleLoadFailed(args['var1'], args['var2'], args['var3']);
                 break;
               default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
                 break;
             }
           } catch (e) {
             debugPrint(e);
-            throw e;
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -271,19 +239,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStyleEnable', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStyleEnable', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -294,19 +256,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setPadding', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -317,19 +273,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMap', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMap', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_BaiduMap>(__result__);
   }
   
   
@@ -340,19 +290,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onDestroy', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onDestroy', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -363,19 +307,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLogoPosition', {"var1": var1.toValue(), "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLogoPosition', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -386,19 +324,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getLogoPosition', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getLogoPosition', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as int).tocom_baidu_mapapi_map_LogoPosition();
-      return __return__;
-    }
+    return (__result__ as int).tocom_baidu_mapapi_map_LogoPosition();
   }
   
   
@@ -409,19 +341,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onPause', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onPause', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -432,19 +358,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onResume', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onResume', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -455,19 +375,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::showZoomControls', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::showZoomControls', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -478,19 +392,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setZoomControlsPosition', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setZoomControlsPosition', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -501,19 +409,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::showScaleControl', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::showScaleControl', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -524,19 +426,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setScaleControlPosition', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setScaleControlPosition', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -547,19 +443,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewWidth', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewWidth', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -570,19 +460,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewHeight', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewHeight', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -593,19 +477,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMapLevel', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMapLevel', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -616,19 +494,13 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onSaveInstanceState', {"var1": var1, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onSaveInstanceState', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -639,22 +511,21 @@ class com_baidu_mapapi_map_TextureMapView extends android_view_ViewGroup  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onCreate', {"var1": var1, "var2": var2, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onCreate', {"var1": var1, "var2": var2, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_TextureMapView{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_TextureMapView_Batch on List<com_baidu_mapapi_map_TextureMapView> {
@@ -669,439 +540,255 @@ extension com_baidu_mapapi_map_TextureMapView_Batch on List<com_baidu_mapapi_map
   //region methods
   @deprecated
   static Future<List<void>> setCustomMapStylePath_batch(List<String> var0, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomMapStylePath_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   @deprecated
   static Future<List<void>> setIconCustom_batch(List<int> var0, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setIconCustom_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setIconCustom_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   @deprecated
   static Future<List<void>> setLoadCustomMapStyleFileMode_batch(List<int> var0, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLoadCustomMapStyleFileMode_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   @deprecated
   static Future<List<void>> setMapCustomEnable_batch(List<bool> var0, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomEnable_batch', [for (int __i__ = 0; __i__ < var0.length; __i__++) {"var0": var0[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   @deprecated
   Future<List<void>> setCustomStyleFilePathAndMode_batch(List<String> var1, List<int> var2, {bool viewChannel = true}) async {
-    if (var1.length != var2.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var1.length == var2.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomStyleFilePathAndMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setCustomStyleFilePathAndMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setMapCustomStylePath_batch(List<String> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setMapCustomStyleEnable_batch(List<bool> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStyleEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setMapCustomStyleEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setPadding_batch(List<int> var1, List<int> var2, List<int> var3, List<int> var4, {bool viewChannel = true}) async {
-    if (var1.length != var2.length || var2.length != var3.length || var3.length != var4.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var1.length == var2.length && var2.length == var3.length && var3.length == var4.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_map_BaiduMap>> getMap_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_BaiduMap()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_BaiduMap>(__result__)).cast<com_baidu_mapapi_map_BaiduMap>().toList();
   }
   
   
   Future<List<void>> onDestroy_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onDestroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onDestroy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setLogoPosition_batch(List<com_baidu_mapapi_map_LogoPosition> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLogoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setLogoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_map_LogoPosition>> getLogoPosition_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getLogoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getLogoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_LogoPosition()).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_LogoPosition()).cast<com_baidu_mapapi_map_LogoPosition>().toList();
   }
   
   
   Future<List<void>> onPause_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onPause_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onPause_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> onResume_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onResume_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onResume_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> showZoomControls_batch(List<bool> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::showZoomControls_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::showZoomControls_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setZoomControlsPosition_batch(List<android_graphics_Point> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setZoomControlsPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setZoomControlsPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> showScaleControl_batch(List<bool> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::showScaleControl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::showScaleControl_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setScaleControlPosition_batch(List<android_graphics_Point> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::setScaleControlPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::setScaleControlPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<int>> getScaleControlViewWidth_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewWidth_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewWidth_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<int>().toList();
   }
   
   
   Future<List<int>> getScaleControlViewHeight_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewHeight_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getScaleControlViewHeight_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<int>().toList();
   }
   
   
   Future<List<int>> getMapLevel_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMapLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::getMapLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<int>().toList();
   }
   
   
   Future<List<void>> onSaveInstanceState_batch(List<android_os_Bundle> var1, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onSaveInstanceState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onSaveInstanceState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> onCreate_batch(List<android_content_Context> var1, List<android_os_Bundle> var2, {bool viewChannel = true}) async {
-    if (var1.length != var2.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(var1.length == var2.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.TextureMapView::onCreate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/com_baidu_mapapi_map_TextureMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('com.baidu.mapapi.map.TextureMapView::onCreate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion
