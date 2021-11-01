@@ -19,17 +19,20 @@ mixin com_baidu_mapapi_search_share_OnGetShareUrlResultListener on java_lang_Obj
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetPoiDetailShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetLocationShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetRouteShareUrlResult(com_baidu_mapapi_search_share_ShareUrlResult var1) {}
   
 }

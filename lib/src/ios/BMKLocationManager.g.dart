@@ -16,86 +16,92 @@ class BMKLocationManager extends NSObject  {
   //region constants
   static const String name__ = 'BMKLocationManager';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKLocationManager> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKLocationManager', {'init': init});
-    final object = BMKLocationManager()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKLocationManager',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKLocationManager>(__result__);
   }
   
   static Future<List<BMKLocationManager>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKLocationManager', {'length': length, 'init': init});
-  
-    final List<BMKLocationManager> typedResult = resultBatch.map((result) => BMKLocationManager()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKLocationManager',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKLocationManager>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<double> get_distanceFilter() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_distanceFilter", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_distanceFilter", {'__this__': this});
+    return __result__;
   }
   
   Future<double> get_desiredAccuracy() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_desiredAccuracy", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_desiredAccuracy", {'__this__': this});
+    return __result__;
   }
   
   Future<BMKLocationCoordinateType> get_coordinateType() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_coordinateType", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKLocationCoordinateType());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_coordinateType", {'__this__': this});
+    return (__result__ as int).toBMKLocationCoordinateType();
   }
   
   Future<bool> get_pausesLocationUpdatesAutomatically() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_pausesLocationUpdatesAutomatically", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_pausesLocationUpdatesAutomatically", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_allowsBackgroundLocationUpdates() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_allowsBackgroundLocationUpdates", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_allowsBackgroundLocationUpdates", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_locationTimeout() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_locationTimeout", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_locationTimeout", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_reGeocodeTimeout() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_reGeocodeTimeout", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_reGeocodeTimeout", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_locatingWithReGeocode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_locatingWithReGeocode", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_locatingWithReGeocode", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_isNeedNewVersionReGeocode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_isNeedNewVersionReGeocode", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_isNeedNewVersionReGeocode", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_userID() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_userID", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_userID", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_delegate(BMKLocationManagerDelegate delegate) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_delegate', <String, dynamic>{'__this__': this, });
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_delegate', <String, dynamic>{'__this__': this, });
   
-    MethodChannel('BMKLocationManagerDelegate::Callback', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('BMKLocationManagerDelegate::Callback', kBmapMapFluttifyMethodCodec)
       .setMethodCallHandler((methodCall) async {
         try {
           final args = methodCall.arguments as Map;
@@ -107,7 +113,7 @@ class BMKLocationManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKLocationManager_doRequestAlwaysAuthorization(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), TypeOpBmapMapFluttifyIOS((args['locationManager'] as Object))?.as__<CLLocationManager>());
+              await delegate?.BMKLocationManager_doRequestAlwaysAuthorization(BmapMapFluttifyIOSAs(args['manager']), BmapMapFluttifyIOSAs(args['locationManager']));
               break;
             case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didFailWithError':
               // print log
@@ -116,7 +122,7 @@ class BMKLocationManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKLocationManager_didFailWithError(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              await delegate?.BMKLocationManager_didFailWithError(BmapMapFluttifyIOSAs(args['manager']), BmapMapFluttifyIOSAs(args['error']));
               break;
             case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateLocation_orError':
               // print log
@@ -125,7 +131,7 @@ class BMKLocationManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKLocationManager_didUpdateLocation_orError(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), TypeOpBmapMapFluttifyIOS((args['location'] as Object))?.as__<BMKLocation>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              await delegate?.BMKLocationManager_didUpdateLocation_orError(BmapMapFluttifyIOSAs(args['manager']), BmapMapFluttifyIOSAs(args['location']), BmapMapFluttifyIOSAs(args['error']));
               break;
             case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didChangeAuthorizationStatus':
               // print log
@@ -134,7 +140,7 @@ class BMKLocationManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKLocationManager_didChangeAuthorizationStatus(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), (args['status'] as int).toCLAuthorizationStatus());
+              await delegate?.BMKLocationManager_didChangeAuthorizationStatus(BmapMapFluttifyIOSAs(args['manager']), (args['status'] as int).toCLAuthorizationStatus());
               break;
             case 'Callback::BMKLocationManagerDelegate::BMKLocationManagerShouldDisplayHeadingCalibration':
               // print log
@@ -143,7 +149,7 @@ class BMKLocationManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKLocationManagerShouldDisplayHeadingCalibration(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>());
+              await delegate?.BMKLocationManagerShouldDisplayHeadingCalibration(BmapMapFluttifyIOSAs(args['manager']));
               break;
             case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateHeading':
               // print log
@@ -152,7 +158,7 @@ class BMKLocationManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKLocationManager_didUpdateHeading(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), TypeOpBmapMapFluttifyIOS((args['heading'] as Object))?.as__<CLHeading>());
+              await delegate?.BMKLocationManager_didUpdateHeading(BmapMapFluttifyIOSAs(args['manager']), BmapMapFluttifyIOSAs(args['heading']));
               break;
             case 'Callback::BMKLocationManagerDelegate::BMKLocationManager_didUpdateNetworkState_orError':
               // print log
@@ -161,74 +167,75 @@ class BMKLocationManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKLocationManager_didUpdateNetworkState_orError(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKLocationManager>(), (args['state'] as int).toBMKLocationNetworkState(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              await delegate?.BMKLocationManager_didUpdateNetworkState_orError(BmapMapFluttifyIOSAs(args['manager']), (args['state'] as int).toBMKLocationNetworkState(), BmapMapFluttifyIOSAs(args['error']));
               break;
             default:
+              throw MissingPluginException('方法${methodCall.method}未实现');
               break;
           }
         } catch (e) {
           debugPrint(e);
-          throw e;
+          rethrow;
         }
       });
   }
   
   Future<void> set_distanceFilter(double distanceFilter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_distanceFilter', <String, dynamic>{'__this__': this, "distanceFilter": distanceFilter});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_distanceFilter', <String, dynamic>{'__this__': this, "distanceFilter": distanceFilter});
   
   
   }
   
   Future<void> set_desiredAccuracy(double desiredAccuracy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_desiredAccuracy', <String, dynamic>{'__this__': this, "desiredAccuracy": desiredAccuracy});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_desiredAccuracy', <String, dynamic>{'__this__': this, "desiredAccuracy": desiredAccuracy});
   
   
   }
   
   Future<void> set_coordinateType(BMKLocationCoordinateType coordinateType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_coordinateType', <String, dynamic>{'__this__': this, "coordinateType": coordinateType.toValue()});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_coordinateType', <String, dynamic>{'__this__': this, "coordinateType": coordinateType.toValue()});
   
   
   }
   
   Future<void> set_pausesLocationUpdatesAutomatically(bool pausesLocationUpdatesAutomatically) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_pausesLocationUpdatesAutomatically', <String, dynamic>{'__this__': this, "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_pausesLocationUpdatesAutomatically', <String, dynamic>{'__this__': this, "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically});
   
   
   }
   
   Future<void> set_allowsBackgroundLocationUpdates(bool allowsBackgroundLocationUpdates) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_allowsBackgroundLocationUpdates', <String, dynamic>{'__this__': this, "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_allowsBackgroundLocationUpdates', <String, dynamic>{'__this__': this, "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates});
   
   
   }
   
   Future<void> set_locationTimeout(int locationTimeout) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_locationTimeout', <String, dynamic>{'__this__': this, "locationTimeout": locationTimeout});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_locationTimeout', <String, dynamic>{'__this__': this, "locationTimeout": locationTimeout});
   
   
   }
   
   Future<void> set_reGeocodeTimeout(int reGeocodeTimeout) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_reGeocodeTimeout', <String, dynamic>{'__this__': this, "reGeocodeTimeout": reGeocodeTimeout});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_reGeocodeTimeout', <String, dynamic>{'__this__': this, "reGeocodeTimeout": reGeocodeTimeout});
   
   
   }
   
   Future<void> set_locatingWithReGeocode(bool locatingWithReGeocode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_locatingWithReGeocode', <String, dynamic>{'__this__': this, "locatingWithReGeocode": locatingWithReGeocode});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_locatingWithReGeocode', <String, dynamic>{'__this__': this, "locatingWithReGeocode": locatingWithReGeocode});
   
   
   }
   
   Future<void> set_isNeedNewVersionReGeocode(bool isNeedNewVersionReGeocode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_isNeedNewVersionReGeocode', <String, dynamic>{'__this__': this, "isNeedNewVersionReGeocode": isNeedNewVersionReGeocode});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_isNeedNewVersionReGeocode', <String, dynamic>{'__this__': this, "isNeedNewVersionReGeocode": isNeedNewVersionReGeocode});
   
   
   }
   
   Future<void> set_userID(String userID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::set_userID', <String, dynamic>{'__this__': this, "userID": userID});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_userID', <String, dynamic>{'__this__': this, "userID": userID});
   
   
   }
@@ -237,18 +244,18 @@ class BMKLocationManager extends NSObject  {
 
   //region methods
   
-  Future<bool> requestLocationWithReGeocode_withNetworkState_completionBlock(bool withReGeocode, bool withNetWorkState, void completionBlock(BMKLocation location, BMKLocationNetworkState state, NSError error)) async {
+  Future<bool> requestLocationWithReGeocode_withNetworkState_completionBlock(bool withReGeocode, bool withNetWorkState, void Function(BMKLocation location, BMKLocationNetworkState state, NSError error) completionBlock) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKLocationManager@$refId::requestLocationWithReGeocode([\'withReGeocode\':$withReGeocode, \'withNetWorkState\':$withNetWorkState])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::requestLocationWithReGeocode_withNetworkState_completionBlock', {"withReGeocode": withReGeocode, "withNetWorkState": withNetWorkState, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::requestLocationWithReGeocode_withNetworkState_completionBlock', {"withReGeocode": withReGeocode, "withNetWorkState": withNetWorkState, "__this__": this});
   
   
     // handle native call
-    MethodChannel('BMKLocatingCompletionBlock::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('BMKLocatingCompletionBlock::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -260,24 +267,19 @@ class BMKLocationManager extends NSObject  {
                 }
           
                 // handle the native call
-                if (completionBlock != null) completionBlock(TypeOpBmapMapFluttifyIOS((args['location'] as Object))?.as__<BMKLocation>(), (args['state'] as int).toBMKLocationNetworkState(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+                if (completionBlock != null) await completionBlock(BmapMapFluttifyIOSAs(args['location']), (args['state'] as int).toBMKLocationNetworkState(), BmapMapFluttifyIOSAs(args['error']));
                 break;
               default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
                 break;
             }
           } catch (e) {
             debugPrint(e);
-            throw e;
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -288,19 +290,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::startUpdatingLocation', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::startUpdatingLocation', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -311,19 +307,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::stopUpdatingLocation', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::stopUpdatingLocation', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -334,19 +324,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::requestNetworkState', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::requestNetworkState', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -357,19 +341,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::headingAvailable', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::headingAvailable', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -380,19 +358,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::startUpdatingHeading', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::startUpdatingHeading', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -403,19 +375,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::stopUpdatingHeading', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::stopUpdatingHeading', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -426,19 +392,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::tryIndoorLocation', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::tryIndoorLocation', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -449,19 +409,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::stopIndoorLocation', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::stopIndoorLocation', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -472,19 +426,13 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType', {"coordinate": coordinate, "srctype": srctype.toValue(), "destype": destype.toValue()});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType', {"coordinate": coordinate, "srctype": srctype.toValue(), "destype": destype.toValue()});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
   
@@ -495,155 +443,134 @@ class BMKLocationManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType', {"coordinate": coordinate, "coortype": coortype.toValue()});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType', {"coordinate": coordinate, "coortype": coortype.toValue()});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKLocationManager{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKLocationManager_Batch on List<BMKLocationManager> {
   //region getters
   Future<List<double>> get_distanceFilter_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_distanceFilter_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_distanceFilter_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_desiredAccuracy_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_desiredAccuracy_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_desiredAccuracy_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<BMKLocationCoordinateType>> get_coordinateType_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_coordinateType_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKLocationCoordinateType()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_coordinateType_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKLocationCoordinateType())?.cast<BMKLocationCoordinateType>()?.toList();
   }
   
   Future<List<bool>> get_pausesLocationUpdatesAutomatically_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_pausesLocationUpdatesAutomatically_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_pausesLocationUpdatesAutomatically_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_allowsBackgroundLocationUpdates_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_allowsBackgroundLocationUpdates_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_allowsBackgroundLocationUpdates_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<int>> get_locationTimeout_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_locationTimeout_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_locationTimeout_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_reGeocodeTimeout_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_reGeocodeTimeout_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_reGeocodeTimeout_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<bool>> get_locatingWithReGeocode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_locatingWithReGeocode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_locatingWithReGeocode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_isNeedNewVersionReGeocode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_isNeedNewVersionReGeocode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_isNeedNewVersionReGeocode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<String>> get_userID_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationManager::get_userID_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationManager::get_userID_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_distanceFilter_batch(List<double> distanceFilter) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_distanceFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "distanceFilter": distanceFilter[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_distanceFilter_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "distanceFilter": distanceFilter[__i__]}]);
   
   
   }
   
   Future<void> set_desiredAccuracy_batch(List<double> desiredAccuracy) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_desiredAccuracy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "desiredAccuracy": desiredAccuracy[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_desiredAccuracy_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "desiredAccuracy": desiredAccuracy[__i__]}]);
   
   
   }
   
   Future<void> set_coordinateType_batch(List<BMKLocationCoordinateType> coordinateType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_coordinateType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "coordinateType": coordinateType[__i__].toValue()}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_coordinateType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "coordinateType": coordinateType[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_pausesLocationUpdatesAutomatically_batch(List<bool> pausesLocationUpdatesAutomatically) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_pausesLocationUpdatesAutomatically_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_pausesLocationUpdatesAutomatically_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically[__i__]}]);
   
   
   }
   
   Future<void> set_allowsBackgroundLocationUpdates_batch(List<bool> allowsBackgroundLocationUpdates) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_allowsBackgroundLocationUpdates_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_allowsBackgroundLocationUpdates_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates[__i__]}]);
   
   
   }
   
   Future<void> set_locationTimeout_batch(List<int> locationTimeout) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_locationTimeout_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationTimeout": locationTimeout[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_locationTimeout_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locationTimeout": locationTimeout[__i__]}]);
   
   
   }
   
   Future<void> set_reGeocodeTimeout_batch(List<int> reGeocodeTimeout) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_reGeocodeTimeout_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "reGeocodeTimeout": reGeocodeTimeout[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_reGeocodeTimeout_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "reGeocodeTimeout": reGeocodeTimeout[__i__]}]);
   
   
   }
   
   Future<void> set_locatingWithReGeocode_batch(List<bool> locatingWithReGeocode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_locatingWithReGeocode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locatingWithReGeocode": locatingWithReGeocode[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_locatingWithReGeocode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "locatingWithReGeocode": locatingWithReGeocode[__i__]}]);
   
   
   }
   
   Future<void> set_isNeedNewVersionReGeocode_batch(List<bool> isNeedNewVersionReGeocode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_isNeedNewVersionReGeocode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isNeedNewVersionReGeocode": isNeedNewVersionReGeocode[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_isNeedNewVersionReGeocode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isNeedNewVersionReGeocode": isNeedNewVersionReGeocode[__i__]}]);
   
   
   }
   
   Future<void> set_userID_batch(List<String> userID) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKLocationManager::set_userID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "userID": userID[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::set_userID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "userID": userID[__i__]}]);
   
   
   }
@@ -653,192 +580,112 @@ extension BMKLocationManager_Batch on List<BMKLocationManager> {
   //region methods
   
   Future<List<void>> startUpdatingLocation_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::startUpdatingLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::startUpdatingLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> stopUpdatingLocation_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::stopUpdatingLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::stopUpdatingLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> requestNetworkState_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::requestNetworkState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::requestNetworkState_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<bool>> headingAvailable_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::headingAvailable_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::headingAvailable_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<void>> startUpdatingHeading_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::startUpdatingHeading_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::startUpdatingHeading_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> stopUpdatingHeading_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::stopUpdatingHeading_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::stopUpdatingHeading_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> tryIndoorLocation_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::tryIndoorLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::tryIndoorLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> stopIndoorLocation_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::stopIndoorLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::stopIndoorLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<CLLocationCoordinate2D>> BMKLocationCoordinateConvert_SrcType_DesType_batch(List<CLLocationCoordinate2D> coordinate, List<BMKLocationCoordinateType> srctype, List<BMKLocationCoordinateType> destype) async {
-    if (coordinate.length != srctype.length || srctype.length != destype.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coordinate.length == srctype.length && srctype.length == destype.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__], "srctype": srctype[__i__].toValue(), "destype": destype[__i__].toValue()}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::BMKLocationCoordinateConvert_SrcType_DesType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__], "srctype": srctype[__i__].toValue(), "destype": destype[__i__].toValue()}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__)).cast<CLLocationCoordinate2D>().toList();
   }
   
   
   static Future<List<bool>> BMKLocationDataAvailableForCoordinate_withCoorType_batch(List<CLLocationCoordinate2D> coordinate, List<BMKLocationCoordinateType> coortype) async {
-    if (coordinate.length != coortype.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coordinate.length == coortype.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__], "coortype": coortype[__i__].toValue()}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationManager::BMKLocationDataAvailableForCoordinate_withCoorType_batch', [for (int __i__ = 0; __i__ < coordinate.length; __i__++) {"coordinate": coordinate[__i__], "coortype": coortype[__i__].toValue()}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   //endregion

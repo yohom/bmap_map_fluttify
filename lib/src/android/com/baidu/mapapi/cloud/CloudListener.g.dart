@@ -19,18 +19,18 @@ mixin com_baidu_mapapi_cloud_CloudListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetSearchResult(com_baidu_mapapi_cloud_CloudSearchResult var1, int var2) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetDetailSearchResult(com_baidu_mapapi_cloud_DetailSearchResult var1, int var2) {}
-  
-  @mustCallSuper
-  Future<void> onGetCloudRgcResult(com_baidu_mapapi_cloud_CloudRgcResult var1, int var2) {}
   
 }
 

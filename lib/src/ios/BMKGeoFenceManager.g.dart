@@ -16,51 +16,57 @@ class BMKGeoFenceManager extends NSObject  {
   //region constants
   static const String name__ = 'BMKGeoFenceManager';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKGeoFenceManager> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKGeoFenceManager', {'init': init});
-    final object = BMKGeoFenceManager()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKGeoFenceManager',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKGeoFenceManager>(__result__);
   }
   
   static Future<List<BMKGeoFenceManager>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKGeoFenceManager', {'length': length, 'init': init});
-  
-    final List<BMKGeoFenceManager> typedResult = resultBatch.map((result) => BMKGeoFenceManager()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKGeoFenceManager',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKGeoFenceManager>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<BMKGeoFenceActiveAction> get_activeAction() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceManager::get_activeAction", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKGeoFenceActiveAction());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceManager::get_activeAction", {'__this__': this});
+    return (__result__ as int).toBMKGeoFenceActiveAction();
   }
   
   Future<bool> get_pausesLocationUpdatesAutomatically() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceManager::get_pausesLocationUpdatesAutomatically", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceManager::get_pausesLocationUpdatesAutomatically", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_allowsBackgroundLocationUpdates() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceManager::get_allowsBackgroundLocationUpdates", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceManager::get_allowsBackgroundLocationUpdates", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_delegate(BMKGeoFenceManagerDelegate delegate) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::set_delegate', <String, dynamic>{'__this__': this, });
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::set_delegate', <String, dynamic>{'__this__': this, });
   
-    MethodChannel('BMKGeoFenceManagerDelegate::Callback', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('BMKGeoFenceManagerDelegate::Callback', kBmapMapFluttifyMethodCodec)
       .setMethodCallHandler((methodCall) async {
         try {
           final args = methodCall.arguments as Map;
@@ -72,7 +78,7 @@ class BMKGeoFenceManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKGeoFenceManager_doRequestAlwaysAuthorization(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKGeoFenceManager>(), TypeOpBmapMapFluttifyIOS((args['locationManager'] as Object))?.as__<CLLocationManager>());
+              await delegate?.BMKGeoFenceManager_doRequestAlwaysAuthorization(BmapMapFluttifyIOSAs(args['manager']), BmapMapFluttifyIOSAs(args['locationManager']));
               break;
             case 'Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error':
               // print log
@@ -81,7 +87,7 @@ class BMKGeoFenceManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKGeoFenceManager>(), (args['regions'] as List).cast<String>().map((__it__) => TypeOpBmapMapFluttifyIOS(__it__).as__<BMKGeoFenceRegion>()).toList(), args['customID'], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              await delegate?.BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error(BmapMapFluttifyIOSAs(args['manager']), (args['regions'] as List)?.map((it) => BmapMapFluttifyIOSAs<BMKGeoFenceRegion>(it))?.toList(), args['customID'], BmapMapFluttifyIOSAs(args['error']));
               break;
             case 'Callback::BMKGeoFenceManagerDelegate::BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error':
               // print log
@@ -90,32 +96,33 @@ class BMKGeoFenceManager extends NSObject  {
               }
           
               // handle the native call
-              delegate?.BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error(TypeOpBmapMapFluttifyIOS((args['manager'] as Object))?.as__<BMKGeoFenceManager>(), TypeOpBmapMapFluttifyIOS((args['region'] as Object))?.as__<BMKGeoFenceRegion>(), args['customID'], TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              await delegate?.BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error(BmapMapFluttifyIOSAs(args['manager']), BmapMapFluttifyIOSAs(args['region']), args['customID'], BmapMapFluttifyIOSAs(args['error']));
               break;
             default:
+              throw MissingPluginException('方法${methodCall.method}未实现');
               break;
           }
         } catch (e) {
           debugPrint(e);
-          throw e;
+          rethrow;
         }
       });
   }
   
   Future<void> set_activeAction(BMKGeoFenceActiveAction activeAction) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::set_activeAction', <String, dynamic>{'__this__': this, "activeAction": activeAction.toValue()});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::set_activeAction', <String, dynamic>{'__this__': this, "activeAction": activeAction.toValue()});
   
   
   }
   
   Future<void> set_pausesLocationUpdatesAutomatically(bool pausesLocationUpdatesAutomatically) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::set_pausesLocationUpdatesAutomatically', <String, dynamic>{'__this__': this, "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::set_pausesLocationUpdatesAutomatically', <String, dynamic>{'__this__': this, "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically});
   
   
   }
   
   Future<void> set_allowsBackgroundLocationUpdates(bool allowsBackgroundLocationUpdates) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::set_allowsBackgroundLocationUpdates', <String, dynamic>{'__this__': this, "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates});
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::set_allowsBackgroundLocationUpdates', <String, dynamic>{'__this__': this, "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates});
   
   
   }
@@ -131,19 +138,13 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID', {"center": center, "radius": radius, "type": type.toValue(), "customID": customID, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID', {"center": center, "radius": radius, "type": type.toValue(), "customID": customID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -154,19 +155,13 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID', {"coordinates": coordinates, "count": count, "type": type.toValue(), "customID": customID, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID', {"coordinates": coordinates, "count": count, "type": type.toValue(), "customID": customID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -177,19 +172,13 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::geoFenceRegionsWithCustomID', {"customID": customID, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::geoFenceRegionsWithCustomID', {"customID": customID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<dynamic>();
-      return __return__;
-    }
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   
@@ -200,19 +189,13 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::removeTheGeoFenceRegion', {"region": region, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::removeTheGeoFenceRegion', {"region": region, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -223,19 +206,13 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::removeGeoFenceRegionsWithCustomID', {"customID": customID, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::removeGeoFenceRegionsWithCustomID', {"customID": customID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -246,64 +223,57 @@ class BMKGeoFenceManager extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::removeAllGeoFenceRegions', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::removeAllGeoFenceRegions', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKGeoFenceManager{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
   //region getters
   Future<List<BMKGeoFenceActiveAction>> get_activeAction_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceManager::get_activeAction_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKGeoFenceActiveAction()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceManager::get_activeAction_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKGeoFenceActiveAction())?.cast<BMKGeoFenceActiveAction>()?.toList();
   }
   
   Future<List<bool>> get_pausesLocationUpdatesAutomatically_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceManager::get_pausesLocationUpdatesAutomatically_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceManager::get_pausesLocationUpdatesAutomatically_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_allowsBackgroundLocationUpdates_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFenceManager::get_allowsBackgroundLocationUpdates_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFenceManager::get_allowsBackgroundLocationUpdates_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_activeAction_batch(List<BMKGeoFenceActiveAction> activeAction) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKGeoFenceManager::set_activeAction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "activeAction": activeAction[__i__].toValue()}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::set_activeAction_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "activeAction": activeAction[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_pausesLocationUpdatesAutomatically_batch(List<bool> pausesLocationUpdatesAutomatically) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKGeoFenceManager::set_pausesLocationUpdatesAutomatically_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::set_pausesLocationUpdatesAutomatically_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "pausesLocationUpdatesAutomatically": pausesLocationUpdatesAutomatically[__i__]}]);
   
   
   }
   
   Future<void> set_allowsBackgroundLocationUpdates_batch(List<bool> allowsBackgroundLocationUpdates) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKGeoFenceManager::set_allowsBackgroundLocationUpdates_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::set_allowsBackgroundLocationUpdates_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "allowsBackgroundLocationUpdates": allowsBackgroundLocationUpdates[__i__]}]);
   
   
   }
@@ -313,116 +283,68 @@ extension BMKGeoFenceManager_Batch on List<BMKGeoFenceManager> {
   //region methods
   
   Future<List<void>> addCircleRegionForMonitoringWithCenter_radius_coorType_customID_batch(List<CLLocationCoordinate2D> center, List<double> radius, List<BMKLocationCoordinateType> type, List<String> customID) async {
-    if (center.length != radius.length || radius.length != type.length || type.length != customID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(center.length == radius.length && radius.length == type.length && type.length == customID.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"center": center[__i__], "radius": radius[__i__], "type": type[__i__].toValue(), "customID": customID[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::addCircleRegionForMonitoringWithCenter_radius_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"center": center[__i__], "radius": radius[__i__], "type": type[__i__].toValue(), "customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID_batch(List<List<CLLocationCoordinate2D>> coordinates, List<int> count, List<BMKLocationCoordinateType> type, List<String> customID) async {
-    if (coordinates.length != count.length || count.length != type.length || type.length != customID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coordinates.length == count.length && count.length == type.length && type.length == customID.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinates": coordinates[__i__], "count": count[__i__], "type": type[__i__].toValue(), "customID": customID[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::addPolygonRegionForMonitoringWithCoordinates_count_coorType_customID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinates": coordinates[__i__], "count": count[__i__], "type": type[__i__].toValue(), "customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<List<dynamic>>> geoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::geoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::geoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<void>> removeTheGeoFenceRegion_batch(List<BMKGeoFenceRegion> region) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::removeTheGeoFenceRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::removeTheGeoFenceRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeGeoFenceRegionsWithCustomID_batch(List<String> customID) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::removeGeoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::removeGeoFenceRegionsWithCustomID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customID": customID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeAllGeoFenceRegions_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFenceManager::removeAllGeoFenceRegions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFenceManager::removeAllGeoFenceRegions_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

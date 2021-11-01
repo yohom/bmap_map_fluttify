@@ -16,6 +16,9 @@ class com_baidu_mapapi_map_HeatMap extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.HeatMap';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int DEFAULT_RADIUS = 12;
   static final double DEFAULT_OPACITY = 0.6;
   //endregion
@@ -25,10 +28,6 @@ class com_baidu_mapapi_map_HeatMap extends java_lang_Object  {
   //endregion
 
   //region getters
-  static Future<com_baidu_mapapi_map_Gradient> get_static_DEFAULT_GRADIENT() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.HeatMap::get_DEFAULT_GRADIENT", );
-    return __result__ == null ? null : (com_baidu_mapapi_map_Gradient()..refId = __result__..tag__ = 'bmap_map_fluttify');
-  }
   
   //endregion
 
@@ -45,32 +44,25 @@ class com_baidu_mapapi_map_HeatMap extends java_lang_Object  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.HeatMap::removeHeatMap', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.HeatMap::removeHeatMap', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_HeatMap{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_HeatMap_Batch on List<com_baidu_mapapi_map_HeatMap> {
   //region getters
-  Future<List<com_baidu_mapapi_map_Gradient>> get_static_DEFAULT_GRADIENT_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.HeatMap::get_DEFAULT_GRADIENT_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_Gradient()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
-  }
   
   //endregion
 
@@ -81,21 +73,13 @@ extension com_baidu_mapapi_map_HeatMap_Batch on List<com_baidu_mapapi_map_HeatMa
   //region methods
   
   Future<List<void>> removeHeatMap_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.HeatMap::removeHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.HeatMap::removeHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

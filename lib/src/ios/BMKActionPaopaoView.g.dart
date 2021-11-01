@@ -16,24 +16,30 @@ class BMKActionPaopaoView extends UIView  {
   //region constants
   static const String name__ = 'BMKActionPaopaoView';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKActionPaopaoView> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKActionPaopaoView', {'init': init});
-    final object = BMKActionPaopaoView()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKActionPaopaoView',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKActionPaopaoView>(__result__);
   }
   
   static Future<List<BMKActionPaopaoView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKActionPaopaoView', {'length': length, 'init': init});
-  
-    final List<BMKActionPaopaoView> typedResult = resultBatch.map((result) => BMKActionPaopaoView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKActionPaopaoView',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKActionPaopaoView>(it))
+        .toList();
   }
   
   //endregion
@@ -55,22 +61,21 @@ class BMKActionPaopaoView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKActionPaopaoView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKActionPaopaoView::initWithCustomView', {"customView": customView, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKActionPaopaoView{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKActionPaopaoView_Batch on List<BMKActionPaopaoView> {
@@ -85,21 +90,13 @@ extension BMKActionPaopaoView_Batch on List<BMKActionPaopaoView> {
   //region methods
   
   Future<List<dynamic>> initWithCustomView_batch(List<UIView> customView, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKActionPaopaoView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKActionPaopaoView::initWithCustomView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customView": customView[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKActionPaopaoView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKActionPaopaoView::initWithCustomView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customView": customView[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   //endregion

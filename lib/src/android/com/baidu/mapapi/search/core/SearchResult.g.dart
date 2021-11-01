@@ -16,66 +16,75 @@ class com_baidu_mapapi_search_core_SearchResult extends java_lang_Object with an
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.core.SearchResult';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_core_SearchResult> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__', );
-    final object = com_baidu_mapapi_search_core_SearchResult()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_SearchResult>(__result__);
   }
   
   static Future<com_baidu_mapapi_search_core_SearchResult> create__com_baidu_mapapi_search_core_SearchResult_ERRORNO(com_baidu_mapapi_search_core_SearchResult_ERRORNO var1) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO', {"var1": var1});
-    final object = com_baidu_mapapi_search_core_SearchResult()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_core_SearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO',
+      {"var1": var1}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_SearchResult>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_core_SearchResult>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_core_SearchResult__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_core_SearchResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_core_SearchResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_core_SearchResult__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_SearchResult>(it))
+        .toList();
   }
   
   static Future<List<com_baidu_mapapi_search_core_SearchResult>> create_batch__com_baidu_mapapi_search_core_SearchResult_ERRORNO(List<com_baidu_mapapi_search_core_SearchResult_ERRORNO> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_core_SearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
-  
-    final List<com_baidu_mapapi_search_core_SearchResult> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_core_SearchResult()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_core_SearchResult__com_baidu_mapapi_search_core_SearchResult_ERRORNO',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_core_SearchResult>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<com_baidu_mapapi_search_core_SearchResult_ERRORNO> get_error() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_error", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).tocom_baidu_mapapi_search_core_SearchResult_ERRORNO());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_error", {'__this__': this});
+    return (__result__ as int).tocom_baidu_mapapi_search_core_SearchResult_ERRORNO();
   }
   
   Future<int> get_status() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_status", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_status", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_error(com_baidu_mapapi_search_core_SearchResult_ERRORNO error) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error', <String, dynamic>{'__this__': this, "error": error.toValue()});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error', <String, dynamic>{'__this__': this, "error": error.toValue()});
   
   
   }
   
   Future<void> set_status(int status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_status', <String, dynamic>{'__this__': this, "status": status});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_status', <String, dynamic>{'__this__': this, "status": status});
   
   
   }
@@ -85,35 +94,36 @@ class com_baidu_mapapi_search_core_SearchResult extends java_lang_Object with an
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_core_SearchResult{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_core_SearchResult_Batch on List<com_baidu_mapapi_search_core_SearchResult> {
   //region getters
   Future<List<com_baidu_mapapi_search_core_SearchResult_ERRORNO>> get_error_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_error_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_core_SearchResult_ERRORNO()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_error_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_core_SearchResult_ERRORNO())?.cast<com_baidu_mapapi_search_core_SearchResult_ERRORNO>()?.toList();
   }
   
   Future<List<int>> get_status_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.core.SearchResult::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_error_batch(List<com_baidu_mapapi_search_core_SearchResult_ERRORNO> error) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "error": error[__i__].toValue()}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_error_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "error": error[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_status_batch(List<int> status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.core.SearchResult::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
   
   
   }

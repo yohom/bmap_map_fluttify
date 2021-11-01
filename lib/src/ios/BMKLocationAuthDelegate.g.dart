@@ -19,11 +19,14 @@ mixin BMKLocationAuthDelegate on NSObject {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onCheckPermissionState(BMKLocationAuthErrorCode iError) {}
   
 }

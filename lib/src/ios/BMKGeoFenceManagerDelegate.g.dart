@@ -19,17 +19,20 @@ mixin BMKGeoFenceManagerDelegate on NSObject {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> BMKGeoFenceManager_doRequestAlwaysAuthorization(BMKGeoFenceManager manager, CLLocationManager locationManager) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> BMKGeoFenceManager_didAddRegionForMonitoringFinished_customID_error(BMKGeoFenceManager manager, List<BMKGeoFenceRegion> regions, String customID, NSError error) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> BMKGeoFenceManager_didGeoFencesStatusChangedForRegion_customID_error(BMKGeoFenceManager manager, BMKGeoFenceRegion region, String customID, NSError error) {}
   
 }

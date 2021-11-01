@@ -12,13 +12,30 @@
 #import "SubHandler/SubHandler5.h"
 #import "SubHandler/Custom/SubHandlerCustom.h"
 #import "FluttifyMessageCodec.h"
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BMKLocationKit/BMKLocationComponent.h>
+#import "BMKActionPaopaoViewFactory.h"
+#import "BMKTileLayerViewFactory.h"
+#import "BMKOverlayPathViewFactory.h"
+#import "BMKCircleViewFactory.h"
+#import "BMKPolylineViewFactory.h"
+#import "BMKPinAnnotationViewFactory.h"
+#import "BMKMapViewFactory.h"
+#import "BMKArclineViewFactory.h"
+#import "BMKPolygonViewFactory.h"
+#import "BMKOverlayViewFactory.h"
+#import "BMKGroundOverlayViewFactory.h"
+#import "BMKAnnotationViewFactory.h"
+#import "BMKOverlayGLBasicViewFactory.h"
 
 // Dart端一次方法调用所存在的栈, 只有当MethodChannel传递参数受限时, 再启用这个容器
 extern NSMutableDictionary<NSString*, NSObject*>* STACK;
 // Dart端随机存取对象的容器
-extern NSMutableDictionary<NSNumber*, NSObject*>* HEAP;
+extern NSMutableDictionary<NSString*, NSObject*>* HEAP;
 // 日志打印开关
 extern BOOL enableLog;
+
+@interface BmapMapFluttifyPlugin (_Delegate) <BMKMapViewDelegate, BMKOfflineMapDelegate, BMKLocationManagerDelegate, BMKLocationAuthDelegate, BMKGeoFenceManagerDelegate> @end
 
 @implementation BmapMapFluttifyPlugin {
   NSMutableDictionary<NSString*, Handler>* _handlerMap;
@@ -45,7 +62,7 @@ extern BOOL enableLog;
 
 + (void)registerWithRegistrar:(NSObject <FlutterPluginRegistrar> *)registrar {
   FlutterMethodChannel *channel = [FlutterMethodChannel
-      methodChannelWithName:@"com.fluttify/bmap_map_fluttify"
+      methodChannelWithName:@"me.yohom/bmap_map_fluttify"
             binaryMessenger:[registrar messenger]
                       codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
 
@@ -53,19 +70,19 @@ extern BOOL enableLog;
                            channel:channel];
 
   // 注册View
-  [registrar registerViewFactory: [[BMKActionPaopaoViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKActionPaopaoView"];
-  [registrar registerViewFactory: [[BMKTileLayerViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKTileLayerView"];
-  [registrar registerViewFactory: [[BMKOverlayPathViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKOverlayPathView"];
-  [registrar registerViewFactory: [[BMKCircleViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKCircleView"];
-  [registrar registerViewFactory: [[BMKPolylineViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKPolylineView"];
-  [registrar registerViewFactory: [[BMKPinAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKPinAnnotationView"];
-  [registrar registerViewFactory: [[BMKMapViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKMapView"];
-  [registrar registerViewFactory: [[BMKArclineViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKArclineView"];
-  [registrar registerViewFactory: [[BMKPolygonViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKPolygonView"];
-  [registrar registerViewFactory: [[BMKOverlayViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKOverlayView"];
-  [registrar registerViewFactory: [[BMKGroundOverlayViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKGroundOverlayView"];
-  [registrar registerViewFactory: [[BMKAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKAnnotationView"];
-  [registrar registerViewFactory: [[BMKOverlayGLBasicViewFactory alloc] initWithRegistrar:registrar] withId: @"com.fluttify/BMKOverlayGLBasicView"];
+  [registrar registerViewFactory: [[BMKActionPaopaoViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKActionPaopaoView"];
+  [registrar registerViewFactory: [[BMKTileLayerViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKTileLayerView"];
+  [registrar registerViewFactory: [[BMKOverlayPathViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKOverlayPathView"];
+  [registrar registerViewFactory: [[BMKCircleViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKCircleView"];
+  [registrar registerViewFactory: [[BMKPolylineViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKPolylineView"];
+  [registrar registerViewFactory: [[BMKPinAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKPinAnnotationView"];
+  [registrar registerViewFactory: [[BMKMapViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKMapView"];
+  [registrar registerViewFactory: [[BMKArclineViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKArclineView"];
+  [registrar registerViewFactory: [[BMKPolygonViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKPolygonView"];
+  [registrar registerViewFactory: [[BMKOverlayViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKOverlayView"];
+  [registrar registerViewFactory: [[BMKGroundOverlayViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKGroundOverlayView"];
+  [registrar registerViewFactory: [[BMKAnnotationViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKAnnotationView"];
+  [registrar registerViewFactory: [[BMKOverlayGLBasicViewFactory alloc] initWithRegistrar:registrar] withId: @"me.yohom/BMKOverlayGLBasicView"];
 }
 
 // Method Handlers

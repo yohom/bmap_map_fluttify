@@ -19,20 +19,23 @@ mixin com_baidu_mapapi_search_poi_OnGetPoiSearchResultListener on java_lang_Obje
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetPoiResult(com_baidu_mapapi_search_poi_PoiResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailResult(com_baidu_mapapi_search_poi_PoiDetailResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetPoiDetailResult__com_baidu_mapapi_search_poi_PoiDetailSearchResult(com_baidu_mapapi_search_poi_PoiDetailSearchResult var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onGetPoiIndoorResult(com_baidu_mapapi_search_poi_PoiIndoorResult var1) {}
   
 }

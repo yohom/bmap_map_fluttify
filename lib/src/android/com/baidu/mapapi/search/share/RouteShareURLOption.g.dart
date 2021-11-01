@@ -16,83 +16,89 @@ class com_baidu_mapapi_search_share_RouteShareURLOption extends java_lang_Object
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.share.RouteShareURLOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_share_RouteShareURLOption> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_share_RouteShareURLOption__', );
-    final object = com_baidu_mapapi_search_share_RouteShareURLOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_share_RouteShareURLOption__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_share_RouteShareURLOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_share_RouteShareURLOption__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_share_RouteShareURLOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_share_RouteShareURLOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_share_RouteShareURLOption__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<com_baidu_mapapi_search_route_PlanNode> get_mFrom() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mFrom", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mFrom", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__);
   }
   
   Future<com_baidu_mapapi_search_route_PlanNode> get_mTo() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mTo", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mTo", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__);
   }
   
   Future<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode> get_mMode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mMode", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mMode", {'__this__': this});
+    return (__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode();
   }
   
   Future<int> get_mPn() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mPn", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mPn", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_mCityCode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mCityCode", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mCityCode", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_mFrom(com_baidu_mapapi_search_route_PlanNode mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mFrom', <String, dynamic>{'__this__': this, "mFrom": mFrom});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mFrom', <String, dynamic>{'__this__': this, "mFrom": mFrom});
   
   
   }
   
   Future<void> set_mTo(com_baidu_mapapi_search_route_PlanNode mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mTo', <String, dynamic>{'__this__': this, "mTo": mTo});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mTo', <String, dynamic>{'__this__': this, "mTo": mTo});
   
   
   }
   
   Future<void> set_mMode(com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode mMode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode', <String, dynamic>{'__this__': this, "mMode": mMode.toValue()});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode', <String, dynamic>{'__this__': this, "mMode": mMode.toValue()});
   
   
   }
   
   Future<void> set_mPn(int mPn) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mPn', <String, dynamic>{'__this__': this, "mPn": mPn});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mPn', <String, dynamic>{'__this__': this, "mPn": mPn});
   
   
   }
   
   Future<void> set_mCityCode(int mCityCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mCityCode', <String, dynamic>{'__this__': this, "mCityCode": mCityCode});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mCityCode', <String, dynamic>{'__this__': this, "mCityCode": mCityCode});
   
   
   }
@@ -108,19 +114,13 @@ class com_baidu_mapapi_search_share_RouteShareURLOption extends java_lang_Object
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::getmMode', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::getmMode', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode();
-      return __return__;
-    }
+    return (__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode();
   }
   
   
@@ -131,19 +131,13 @@ class com_baidu_mapapi_search_share_RouteShareURLOption extends java_lang_Object
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::from', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::from', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_share_RouteShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(__result__);
   }
   
   
@@ -154,19 +148,13 @@ class com_baidu_mapapi_search_share_RouteShareURLOption extends java_lang_Object
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::cityCode', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::cityCode', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_share_RouteShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(__result__);
   }
   
   
@@ -177,90 +165,79 @@ class com_baidu_mapapi_search_share_RouteShareURLOption extends java_lang_Object
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::routMode', {"var1": var1.toValue(), "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::routMode', {"var1": var1.toValue(), "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_share_RouteShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_share_RouteShareURLOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_share_RouteShareURLOption_Batch on List<com_baidu_mapapi_search_share_RouteShareURLOption> {
   //region getters
   Future<List<com_baidu_mapapi_search_route_PlanNode>> get_mFrom_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mFrom_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mFrom_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__))?.cast<com_baidu_mapapi_search_route_PlanNode>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_search_route_PlanNode>> get_mTo_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mTo_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mTo_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__))?.cast<com_baidu_mapapi_search_route_PlanNode>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode>> get_mMode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mMode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mMode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode())?.cast<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode>()?.toList();
   }
   
   Future<List<int>> get_mPn_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mPn_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mPn_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_mCityCode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mCityCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.share.RouteShareURLOption::get_mCityCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mFrom_batch(List<com_baidu_mapapi_search_route_PlanNode> mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mFrom": mFrom[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mFrom": mFrom[__i__]}]);
   
   
   }
   
   Future<void> set_mTo_batch(List<com_baidu_mapapi_search_route_PlanNode> mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTo": mTo[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTo": mTo[__i__]}]);
   
   
   }
   
   Future<void> set_mMode_batch(List<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode> mMode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mMode": mMode[__i__].toValue()}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mMode": mMode[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_mPn_batch(List<int> mPn) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mPn_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPn": mPn[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mPn_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mPn": mPn[__i__]}]);
   
   
   }
   
   Future<void> set_mCityCode_batch(List<int> mCityCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mCityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCityCode": mCityCode[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::set_mCityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mCityCode": mCityCode[__i__]}]);
   
   
   }
@@ -270,78 +247,46 @@ extension com_baidu_mapapi_search_share_RouteShareURLOption_Batch on List<com_ba
   //region methods
   
   Future<List<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode>> getmMode_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::getmMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::getmMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode()).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as int).tocom_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode()).cast<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_share_RouteShareURLOption>> from_batch(List<com_baidu_mapapi_search_route_PlanNode> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_share_RouteShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(__result__)).cast<com_baidu_mapapi_search_share_RouteShareURLOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_share_RouteShareURLOption>> cityCode_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::cityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::cityCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_share_RouteShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(__result__)).cast<com_baidu_mapapi_search_share_RouteShareURLOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_share_RouteShareURLOption>> routMode_batch(List<com_baidu_mapapi_search_share_RouteShareURLOption_RouteShareMode> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::routMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.share.RouteShareURLOption::routMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__].toValue(), "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_share_RouteShareURLOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_share_RouteShareURLOption>(__result__)).cast<com_baidu_mapapi_search_share_RouteShareURLOption>().toList();
   }
   
   //endregion

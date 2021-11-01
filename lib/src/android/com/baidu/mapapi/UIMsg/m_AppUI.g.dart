@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_m_AppUI extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.m_AppUI';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int MSG_GET_GL_OK = 1020;
   static final int MSG_APP_DATA_OK = 2000;
   static final int MSG_APP_VERSION = 2004;
@@ -89,6 +92,11 @@ class com_baidu_mapapi_UIMsg_m_AppUI extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_m_AppUI{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_m_AppUI_Batch on List<com_baidu_mapapi_UIMsg_m_AppUI> {

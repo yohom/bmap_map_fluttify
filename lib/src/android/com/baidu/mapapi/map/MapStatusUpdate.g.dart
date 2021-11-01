@@ -16,6 +16,9 @@ class com_baidu_mapapi_map_MapStatusUpdate extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.MapStatusUpdate';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -34,6 +37,11 @@ class com_baidu_mapapi_map_MapStatusUpdate extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_MapStatusUpdate{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_MapStatusUpdate_Batch on List<com_baidu_mapapi_map_MapStatusUpdate> {

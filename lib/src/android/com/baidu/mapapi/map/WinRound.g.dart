@@ -16,72 +16,78 @@ class com_baidu_mapapi_map_WinRound extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.WinRound';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_map_WinRound> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_WinRound__', );
-    final object = com_baidu_mapapi_map_WinRound()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_WinRound__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_WinRound>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_map_WinRound>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_WinRound__', {'length': length});
-  
-    final List<com_baidu_mapapi_map_WinRound> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_WinRound()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_WinRound__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_WinRound>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<int> get_left() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_left", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_left", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_right() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_right", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_right", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_top() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_top", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_top", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_bottom() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_bottom", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_bottom", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_left(int left) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WinRound::set_left', <String, dynamic>{'__this__': this, "left": left});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_left', <String, dynamic>{'__this__': this, "left": left});
   
   
   }
   
   Future<void> set_right(int right) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WinRound::set_right', <String, dynamic>{'__this__': this, "right": right});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_right', <String, dynamic>{'__this__': this, "right": right});
   
   
   }
   
   Future<void> set_top(int top) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WinRound::set_top', <String, dynamic>{'__this__': this, "top": top});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_top', <String, dynamic>{'__this__': this, "top": top});
   
   
   }
   
   Future<void> set_bottom(int bottom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.WinRound::set_bottom', <String, dynamic>{'__this__': this, "bottom": bottom});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_bottom', <String, dynamic>{'__this__': this, "bottom": bottom});
   
   
   }
@@ -91,61 +97,58 @@ class com_baidu_mapapi_map_WinRound extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_WinRound{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_WinRound_Batch on List<com_baidu_mapapi_map_WinRound> {
   //region getters
   Future<List<int>> get_left_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_left_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_left_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_right_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_right_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_right_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_top_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_top_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_top_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_bottom_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.WinRound::get_bottom_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.WinRound::get_bottom_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_left_batch(List<int> left) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.WinRound::set_left_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "left": left[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_left_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "left": left[__i__]}]);
   
   
   }
   
   Future<void> set_right_batch(List<int> right) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.WinRound::set_right_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "right": right[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_right_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "right": right[__i__]}]);
   
   
   }
   
   Future<void> set_top_batch(List<int> top) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.WinRound::set_top_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "top": top[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_top_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "top": top[__i__]}]);
   
   
   }
   
   Future<void> set_bottom_batch(List<int> bottom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.WinRound::set_bottom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "bottom": bottom[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.WinRound::set_bottom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "bottom": bottom[__i__]}]);
   
   
   }

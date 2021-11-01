@@ -16,32 +16,38 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
   //region constants
   static const String name__ = 'BMKURLTileLayer';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKURLTileLayer> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKURLTileLayer', {'init': init});
-    final object = BMKURLTileLayer()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKURLTileLayer',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKURLTileLayer>(__result__);
   }
   
   static Future<List<BMKURLTileLayer>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKURLTileLayer', {'length': length, 'init': init});
-  
-    final List<BMKURLTileLayer> typedResult = resultBatch.map((result) => BMKURLTileLayer()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKURLTileLayer',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKURLTileLayer>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<String> get_URLTemplate() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKURLTileLayer::get_URLTemplate", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKURLTileLayer::get_URLTemplate", {'__this__': this});
+    return __result__;
   }
   
   //endregion
@@ -59,19 +65,13 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::initWithURLTemplate', {"URLTemplate": URLTemplate, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKURLTileLayer::initWithURLTemplate', {"URLTemplate": URLTemplate, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -82,31 +82,28 @@ class BMKURLTileLayer extends BMKTileLayer with BMKAnnotation, BMKOverlay {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::cleanTileDataCache', {"__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKURLTileLayer::cleanTileDataCache', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKURLTileLayer{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKURLTileLayer_Batch on List<BMKURLTileLayer> {
   //region getters
   Future<List<String>> get_URLTemplate_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKURLTileLayer::get_URLTemplate_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKURLTileLayer::get_URLTemplate_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
@@ -118,40 +115,24 @@ extension BMKURLTileLayer_Batch on List<BMKURLTileLayer> {
   //region methods
   
   Future<List<dynamic>> initWithURLTemplate_batch(List<String> URLTemplate) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::initWithURLTemplate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"URLTemplate": URLTemplate[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKURLTileLayer::initWithURLTemplate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"URLTemplate": URLTemplate[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   
   Future<List<bool>> cleanTileDataCache_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKURLTileLayer::cleanTileDataCache_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKURLTileLayer::cleanTileDataCache_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   //endregion

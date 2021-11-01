@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_search_sug_OnGetSuggestionResultListener on java_lang_Obj
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetSuggestionResult(com_baidu_mapapi_search_sug_SuggestionResult var1) {}
   
 }

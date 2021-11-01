@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_BaiduMap_OnSynchronizationListener on java_lang_Objec
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onMapStatusChangeReason(int var1) {}
   
 }

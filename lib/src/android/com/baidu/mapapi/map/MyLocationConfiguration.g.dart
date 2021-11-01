@@ -16,81 +16,90 @@ class com_baidu_mapapi_map_MyLocationConfiguration extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.map.MyLocationConfiguration';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_map_MyLocationConfiguration> create__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int(com_baidu_mapapi_map_MyLocationConfiguration_LocationMode var1, bool var2, com_baidu_mapapi_map_BitmapDescriptor var3, int var4, int var5) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int', {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "var5": var5});
-    final object = com_baidu_mapapi_map_MyLocationConfiguration()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int',
+      {"var1": var1, "var2": var2, "var3": var3, "var4": var4, "var5": var5}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MyLocationConfiguration>(__result__);
   }
   
   static Future<com_baidu_mapapi_map_MyLocationConfiguration> create__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor(com_baidu_mapapi_map_MyLocationConfiguration_LocationMode var1, bool var2, com_baidu_mapapi_map_BitmapDescriptor var3) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor', {"var1": var1, "var2": var2, "var3": var3});
-    final object = com_baidu_mapapi_map_MyLocationConfiguration()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor',
+      {"var1": var1, "var2": var2, "var3": var3}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MyLocationConfiguration>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_map_MyLocationConfiguration>> create_batch__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int(List<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode> var1, List<bool> var2, List<com_baidu_mapapi_map_BitmapDescriptor> var3, List<int> var4, List<int> var5) async {
-    if (var1.length != var2.length || var2.length != var3.length || var3.length != var4.length || var4.length != var5.length) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "var5": var5[__i__]}]);
-  
-    final List<com_baidu_mapapi_map_MyLocationConfiguration> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(var1.length == var2.length && var2.length == var3.length && var3.length == var4.length && var4.length == var5.length);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor__int__int',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__], "var4": var4[__i__], "var5": var5[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MyLocationConfiguration>(it))
+        .toList();
   }
   
   static Future<List<com_baidu_mapapi_map_MyLocationConfiguration>> create_batch__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor(List<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode> var1, List<bool> var2, List<com_baidu_mapapi_map_BitmapDescriptor> var3) async {
-    if (var1.length != var2.length || var2.length != var3.length) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__]}]);
-  
-    final List<com_baidu_mapapi_map_MyLocationConfiguration> typedResult = resultBatch.map((result) => com_baidu_mapapi_map_MyLocationConfiguration()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(var1.length == var2.length && var2.length == var3.length);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_map_MyLocationConfiguration__com_baidu_mapapi_map_MyLocationConfiguration_LocationMode__boolean__com_baidu_mapapi_map_BitmapDescriptor',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__], "var2": var2[__i__], "var3": var3[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_MyLocationConfiguration>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode> get_locationMode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_locationMode", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).tocom_baidu_mapapi_map_MyLocationConfiguration_LocationMode());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_locationMode", {'__this__': this});
+    return (__result__ as int).tocom_baidu_mapapi_map_MyLocationConfiguration_LocationMode();
   }
   
   Future<bool> get_enableDirection() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_enableDirection", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_enableDirection", {'__this__': this});
+    return __result__;
   }
   
   Future<com_baidu_mapapi_map_BitmapDescriptor> get_customMarker() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_customMarker", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_map_BitmapDescriptor()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_customMarker", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_BitmapDescriptor>(__result__);
   }
   
   Future<int> get_accuracyCircleFillColor() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleFillColor", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleFillColor", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_accuracyCircleStrokeColor() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleStrokeColor", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleStrokeColor", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_accuracyCircleFillColor(int accuracyCircleFillColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleFillColor', <String, dynamic>{'__this__': this, "accuracyCircleFillColor": accuracyCircleFillColor});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleFillColor', <String, dynamic>{'__this__': this, "accuracyCircleFillColor": accuracyCircleFillColor});
   
   
   }
   
   Future<void> set_accuracyCircleStrokeColor(int accuracyCircleStrokeColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleStrokeColor', <String, dynamic>{'__this__': this, "accuracyCircleStrokeColor": accuracyCircleStrokeColor});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleStrokeColor', <String, dynamic>{'__this__': this, "accuracyCircleStrokeColor": accuracyCircleStrokeColor});
   
   
   }
@@ -100,56 +109,51 @@ class com_baidu_mapapi_map_MyLocationConfiguration extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_map_MyLocationConfiguration{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_map_MyLocationConfiguration_Batch on List<com_baidu_mapapi_map_MyLocationConfiguration> {
   //region getters
   Future<List<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode>> get_locationMode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_locationMode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_MyLocationConfiguration_LocationMode()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_locationMode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).tocom_baidu_mapapi_map_MyLocationConfiguration_LocationMode())?.cast<com_baidu_mapapi_map_MyLocationConfiguration_LocationMode>()?.toList();
   }
   
   Future<List<bool>> get_enableDirection_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_enableDirection_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_enableDirection_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_map_BitmapDescriptor>> get_customMarker_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_customMarker_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_map_BitmapDescriptor()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_customMarker_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_BitmapDescriptor>(__result__))?.cast<com_baidu_mapapi_map_BitmapDescriptor>()?.toList();
   }
   
   Future<List<int>> get_accuracyCircleFillColor_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleFillColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleFillColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_accuracyCircleStrokeColor_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleStrokeColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.map.MyLocationConfiguration::get_accuracyCircleStrokeColor_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_accuracyCircleFillColor_batch(List<int> accuracyCircleFillColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleFillColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleFillColor": accuracyCircleFillColor[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleFillColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleFillColor": accuracyCircleFillColor[__i__]}]);
   
   
   }
   
   Future<void> set_accuracyCircleStrokeColor_batch(List<int> accuracyCircleStrokeColor) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleStrokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleStrokeColor": accuracyCircleStrokeColor[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.map.MyLocationConfiguration::set_accuracyCircleStrokeColor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "accuracyCircleStrokeColor": accuracyCircleStrokeColor[__i__]}]);
   
   
   }

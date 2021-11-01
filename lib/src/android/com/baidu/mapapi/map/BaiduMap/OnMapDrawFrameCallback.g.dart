@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapDrawFrameCallback on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onMapDrawFrame__com_baidu_mapapi_map_MapStatus(com_baidu_mapapi_map_MapStatus var1) {}
   
 }

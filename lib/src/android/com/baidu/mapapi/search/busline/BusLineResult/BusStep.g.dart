@@ -16,24 +16,30 @@ class com_baidu_mapapi_search_busline_BusLineResult_BusStep extends com_baidu_ma
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.busline.BusLineResult.BusStep';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_busline_BusLineResult_BusStep> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStep__', );
-    final object = com_baidu_mapapi_search_busline_BusLineResult_BusStep()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_busline_BusLineResult_BusStep__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_busline_BusLineResult_BusStep>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_busline_BusLineResult_BusStep>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_busline_BusLineResult_BusStep__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_busline_BusLineResult_BusStep> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_busline_BusLineResult_BusStep()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_busline_BusLineResult_BusStep__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_busline_BusLineResult_BusStep>(it))
+        .toList();
   }
   
   //endregion
@@ -49,6 +55,11 @@ class com_baidu_mapapi_search_busline_BusLineResult_BusStep extends com_baidu_ma
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_busline_BusLineResult_BusStep{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_busline_BusLineResult_BusStep_Batch on List<com_baidu_mapapi_search_busline_BusLineResult_BusStep> {

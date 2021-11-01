@@ -19,20 +19,23 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener on java_lang_Objec
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus(com_baidu_mapapi_map_MapStatus var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onMapStatusChangeStart__com_baidu_mapapi_map_MapStatus__int(com_baidu_mapapi_map_MapStatus var1, int var2) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onMapStatusChange(com_baidu_mapapi_map_MapStatus var1) {}
   
-  @mustCallSuper
+  /* @mustCallSuper */
   Future<void> onMapStatusChangeFinish(com_baidu_mapapi_map_MapStatus var1) {}
   
 }

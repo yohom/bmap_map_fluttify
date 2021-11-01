@@ -16,6 +16,9 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
   //region constants
   static const String name__ = 'com.baidu.mapapi.cloud.BaseSearchResult';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int STATUS_CODE_SUCCEED = 0;
   static final int STATUS_CODE_RESULT_NOTFOUND = -1;
   static final int STATUS_CODE_NETWORK_ERROR = -3;
@@ -31,37 +34,37 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
 
   //region getters
   Future<int> get_status() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_status", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_status", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_size() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_size", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_size", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_total() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_total", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_total", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_status(int status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_status', <String, dynamic>{'__this__': this, "status": status});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_status', <String, dynamic>{'__this__': this, "status": status});
   
   
   }
   
   Future<void> set_size(int size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_size', <String, dynamic>{'__this__': this, "size": size});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_size', <String, dynamic>{'__this__': this, "size": size});
   
   
   }
   
   Future<void> set_total(int total) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_total', <String, dynamic>{'__this__': this, "total": total});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_total', <String, dynamic>{'__this__': this, "total": total});
   
   
   }
@@ -71,48 +74,47 @@ import 'package:core_location_fluttify/core_location_fluttify.dart';
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_cloud_BaseSearchResult{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_cloud_BaseSearchResult_Batch on List<com_baidu_mapapi_cloud_BaseSearchResult> {
   //region getters
   Future<List<int>> get_status_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_status_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_size_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_size_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_total_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_total_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.BaseSearchResult::get_total_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_status_batch(List<int> status) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_status_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "status": status[__i__]}]);
   
   
   }
   
   Future<void> set_size_batch(List<int> size) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_size_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "size": size[__i__]}]);
   
   
   }
   
   Future<void> set_total_batch(List<int> total) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_total_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "total": total[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.BaseSearchResult::set_total_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "total": total[__i__]}]);
   
   
   }

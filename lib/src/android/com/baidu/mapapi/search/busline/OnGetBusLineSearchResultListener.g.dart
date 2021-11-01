@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_search_busline_OnGetBusLineSearchResultListener on java_l
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onGetBusLineResult(com_baidu_mapapi_search_busline_BusLineResult var1) {}
   
 }

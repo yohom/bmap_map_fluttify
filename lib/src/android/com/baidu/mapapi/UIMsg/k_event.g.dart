@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_k_event extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.k_event';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int V_WM_KEYDOWN = 1;
   static final int V_WM_KEYUP = 2;
   static final int V_WM_MOUSEMOVE = 3;
@@ -85,6 +88,11 @@ class com_baidu_mapapi_UIMsg_k_event extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_k_event{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_k_event_Batch on List<com_baidu_mapapi_UIMsg_k_event> {

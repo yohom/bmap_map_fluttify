@@ -16,236 +16,242 @@ class BMKMapView extends UIView  {
   //region constants
   static const String name__ = 'BMKMapView';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKMapView> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKMapView', {'init': init});
-    final object = BMKMapView()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKMapView',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKMapView>(__result__);
   }
   
   static Future<List<BMKMapView>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKMapView', {'length': length, 'init': init});
-  
-    final List<BMKMapView> typedResult = resultBatch.map((result) => BMKMapView()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKMapView',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKMapView>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<BMKMapType> get_mapType({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapType", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKMapType());
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapType", {'__this__': this});
+    return (__result__ as int).toBMKMapType();
   }
   
   Future<BMKCoordinateRegion> get_region({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_region", {'__this__': this});
-    return __result__ == null ? null : (BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_region", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__);
   }
   
   Future<BMKCoordinateRegion> get_limitMapRegion({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_limitMapRegion", {'__this__': this});
-    return __result__ == null ? null : (BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_limitMapRegion", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__);
   }
   
   Future<CGPoint> get_compassPosition({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_compassPosition", {'__this__': this});
-    return __result__ == null ? null : (CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_compassPosition", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CGPoint>(__result__);
   }
   
   Future<CGSize> get_compassSize({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_compassSize", {'__this__': this});
-    return __result__ == null ? null : (CGSize()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_compassSize", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CGSize>(__result__);
   }
   
   Future<CLLocationCoordinate2D> get_centerCoordinate({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_centerCoordinate", {'__this__': this});
-    return __result__ == null ? null : (CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_centerCoordinate", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
   Future<double> get_zoomLevel({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_zoomLevel", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_zoomLevel", {'__this__': this});
+    return __result__;
   }
   
   Future<double> get_minZoomLevel({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_minZoomLevel", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_minZoomLevel", {'__this__': this});
+    return __result__;
   }
   
   Future<double> get_maxZoomLevel({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_maxZoomLevel", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_maxZoomLevel", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_rotation({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_rotation", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_rotation", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_overlooking({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_overlooking", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_overlooking", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_minOverlooking({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_minOverlooking", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_minOverlooking", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_buildingsEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isBuildingsEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isBuildingsEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_showMapPoi({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showMapPoi", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showMapPoi", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_trafficEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isTrafficEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isTrafficEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_baiduHeatMapEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isBaiduHeatMapEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isBaiduHeatMapEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_gesturesEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_gesturesEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_gesturesEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_zoomEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isZoomEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isZoomEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_zoomEnabledWithTap({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isZoomEnabledWithTap", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isZoomEnabledWithTap", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_scrollEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isScrollEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isScrollEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_overlookEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isOverlookEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isOverlookEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_rotateEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isRotateEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isRotateEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_forceTouchEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_forceTouchEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_forceTouchEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_showMapScaleBar({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showMapScaleBar", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showMapScaleBar", {'__this__': this});
+    return __result__;
   }
   
   Future<CGPoint> get_mapScaleBarPosition({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapScaleBarPosition", {'__this__': this});
-    return __result__ == null ? null : (CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapScaleBarPosition", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CGPoint>(__result__);
   }
   
   Future<CGSize> get_mapScaleBarSize({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapScaleBarSize", {'__this__': this});
-    return __result__ == null ? null : (CGSize()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapScaleBarSize", {'__this__': this});
+    return BmapMapFluttifyIOSAs<CGSize>(__result__);
   }
   
   Future<BMKLogoPosition> get_logoPosition({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_logoPosition", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKLogoPosition());
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_logoPosition", {'__this__': this});
+    return (__result__ as int).toBMKLogoPosition();
   }
   
   Future<BMKMapRect> get_visibleMapRect({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_visibleMapRect", {'__this__': this});
-    return __result__ == null ? null : (BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_visibleMapRect", {'__this__': this});
+    return BmapMapFluttifyIOSAs<BMKMapRect>(__result__);
   }
   
   Future<UIEdgeInsets> get_mapPadding({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapPadding", {'__this__': this});
-    return __result__ == null ? null : (UIEdgeInsets()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapPadding", {'__this__': this});
+    return BmapMapFluttifyIOSAs<UIEdgeInsets>(__result__);
   }
   
   Future<bool> get_updateTargetScreenPtWhenMapPaddingChanged({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_updateTargetScreenPtWhenMapPaddingChanged", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_updateTargetScreenPtWhenMapPaddingChanged", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_ChangeWithTouchPointCenterEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isChangeWithTouchPointCenterEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isChangeWithTouchPointCenterEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_ChangeCenterWithDoubleTouchPointEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isChangeCenterWithDoubleTouchPointEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isChangeCenterWithDoubleTouchPointEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_baseIndoorMapEnabled({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_baseIndoorMapEnabled", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_baseIndoorMapEnabled", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_showIndoorMapPoi({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showIndoorMapPoi", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showIndoorMapPoi", {'__this__': this});
+    return __result__;
   }
   
   Future<bool> get_showsUserLocation({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showsUserLocation", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showsUserLocation", {'__this__': this});
+    return __result__;
   }
   
   Future<BMKUserTrackingMode> get_userTrackingMode({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_userTrackingMode", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKUserTrackingMode());
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_userTrackingMode", {'__this__': this});
+    return (__result__ as int).toBMKUserTrackingMode();
   }
   
   Future<bool> get_userLocationVisible({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isUserLocationVisible", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isUserLocationVisible", {'__this__': this});
+    return __result__;
   }
   
   Future<List<dynamic>> get_annotations({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_annotations", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_annotations", {'__this__': this});
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   Future<bool> get_isSelectedAnnotationViewFront({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isSelectedAnnotationViewFront", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isSelectedAnnotationViewFront", {'__this__': this});
+    return __result__;
   }
   
   Future<List<dynamic>> get_overlays({bool viewChannel = true}) async {
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_overlays", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<dynamic>());
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_overlays", {'__this__': this});
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   //endregion
 
   //region setters
   Future<void> set_delegate(BMKMapViewDelegate delegate, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_delegate', <String, dynamic>{'__this__': this, });
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_delegate', <String, dynamic>{'__this__': this, });
   
-    MethodChannel('BMKMapViewDelegate::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('BMKMapViewDelegate::Callback@$refId', kBmapMapFluttifyMethodCodec)
       .setMethodCallHandler((methodCall) async {
         try {
           final args = methodCall.arguments as Map;
@@ -257,7 +263,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapViewDidFinishLoading(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>());
+              await delegate?.mapViewDidFinishLoading(BmapMapFluttifyIOSAs(args['mapView']));
               break;
             case 'Callback::BMKMapViewDelegate::mapViewDidRenderValidData_withError':
               // print log
@@ -266,7 +272,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapViewDidRenderValidData_withError(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>());
+              await delegate?.mapViewDidRenderValidData_withError(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['error']));
               break;
             case 'Callback::BMKMapViewDelegate::mapViewDidFinishRendering':
               // print log
@@ -275,7 +281,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapViewDidFinishRendering(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>());
+              await delegate?.mapViewDidFinishRendering(BmapMapFluttifyIOSAs(args['mapView']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_onDrawMapFrame':
               // print log
@@ -284,7 +290,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_onDrawMapFrame(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['status'] as Object))?.as__<BMKMapStatus>());
+              await delegate?.mapView_onDrawMapFrame(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['status']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated':
               // print log
@@ -293,7 +299,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_regionWillChangeAnimated(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated']);
+              await delegate?.mapView_regionWillChangeAnimated(BmapMapFluttifyIOSAs(args['mapView']), args['animated']);
               break;
             case 'Callback::BMKMapViewDelegate::mapView_regionWillChangeAnimated_reason':
               // print log
@@ -302,7 +308,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_regionWillChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], (args['reason'] as int).toBMKRegionChangeReason());
+              await delegate?.mapView_regionWillChangeAnimated_reason(BmapMapFluttifyIOSAs(args['mapView']), args['animated'], (args['reason'] as int).toBMKRegionChangeReason());
               break;
             case 'Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated':
               // print log
@@ -311,7 +317,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_regionDidChangeAnimated(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated']);
+              await delegate?.mapView_regionDidChangeAnimated(BmapMapFluttifyIOSAs(args['mapView']), args['animated']);
               break;
             case 'Callback::BMKMapViewDelegate::mapView_regionDidChangeAnimated_reason':
               // print log
@@ -320,7 +326,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_regionDidChangeAnimated_reason(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['animated'], (args['reason'] as int).toBMKRegionChangeReason());
+              await delegate?.mapView_regionDidChangeAnimated_reason(BmapMapFluttifyIOSAs(args['mapView']), args['animated'], (args['reason'] as int).toBMKRegionChangeReason());
               break;
             case 'Callback::BMKMapViewDelegate::mapView_viewForAnnotation':
               // print log
@@ -329,7 +335,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_viewForAnnotation(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['annotation'] as Object))?.as__<BMKAnnotation>());
+              await delegate?.mapView_viewForAnnotation(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['annotation']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_didAddAnnotationViews':
               // print log
@@ -338,7 +344,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_didAddAnnotationViews(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), (args['views'] as List).cast<String>().map((__it__) => TypeOpBmapMapFluttifyIOS(__it__).as__<NSObject>()).toList());
+              await delegate?.mapView_didAddAnnotationViews(BmapMapFluttifyIOSAs(args['mapView']), (args['views'] as List)?.map((it) => BmapMapFluttifyIOSAs<NSObject>(it))?.toList());
               break;
             case 'Callback::BMKMapViewDelegate::mapView_clickAnnotationView':
               // print log
@@ -347,7 +353,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_clickAnnotationView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
+              await delegate?.mapView_clickAnnotationView(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['view']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_didSelectAnnotationView':
               // print log
@@ -356,7 +362,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_didSelectAnnotationView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
+              await delegate?.mapView_didSelectAnnotationView(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['view']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_didDeselectAnnotationView':
               // print log
@@ -365,7 +371,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_didDeselectAnnotationView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
+              await delegate?.mapView_didDeselectAnnotationView(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['view']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_annotationView_didChangeDragState_fromOldState':
               // print log
@@ -374,7 +380,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_annotationView_didChangeDragState_fromOldState(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>(), args['newState'], args['oldState']);
+              await delegate?.mapView_annotationView_didChangeDragState_fromOldState(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['view']), args['newState'], args['oldState']);
               break;
             case 'Callback::BMKMapViewDelegate::mapView_annotationViewForBubble':
               // print log
@@ -383,7 +389,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_annotationViewForBubble(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['view'] as Object))?.as__<BMKAnnotationView>());
+              await delegate?.mapView_annotationViewForBubble(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['view']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_viewForOverlay':
               // print log
@@ -392,7 +398,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_viewForOverlay(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['overlay'] as Object))?.as__<BMKOverlay>());
+              await delegate?.mapView_viewForOverlay(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['overlay']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_didAddOverlayViews':
               // print log
@@ -401,7 +407,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_didAddOverlayViews(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), (args['overlayViews'] as List).cast<String>().map((__it__) => TypeOpBmapMapFluttifyIOS(__it__).as__<NSObject>()).toList());
+              await delegate?.mapView_didAddOverlayViews(BmapMapFluttifyIOSAs(args['mapView']), (args['overlayViews'] as List)?.map((it) => BmapMapFluttifyIOSAs<NSObject>(it))?.toList());
               break;
             case 'Callback::BMKMapViewDelegate::mapView_onClickedBMKOverlayView':
               // print log
@@ -410,7 +416,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_onClickedBMKOverlayView(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['overlayView'] as Object))?.as__<BMKOverlayView>());
+              await delegate?.mapView_onClickedBMKOverlayView(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['overlayView']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_onClickedMapPoi':
               // print log
@@ -419,7 +425,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_onClickedMapPoi(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['mapPoi'] as Object))?.as__<BMKMapPoi>());
+              await delegate?.mapView_onClickedMapPoi(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['mapPoi']));
               break;
             case 'Callback::BMKMapViewDelegate::mapView_onClickedMapBlank':
               // print log
@@ -428,7 +434,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapView_onClickedMapBlank(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>());
+              await delegate?.mapView_onClickedMapBlank(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['coordinate']));
               break;
             case 'Callback::BMKMapViewDelegate::mapview_onDoubleClick':
               // print log
@@ -437,7 +443,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapview_onDoubleClick(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>());
+              await delegate?.mapview_onDoubleClick(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['coordinate']));
               break;
             case 'Callback::BMKMapViewDelegate::mapview_onLongClick':
               // print log
@@ -446,7 +452,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapview_onLongClick(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>());
+              await delegate?.mapview_onLongClick(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['coordinate']));
               break;
             case 'Callback::BMKMapViewDelegate::mapview_onForceTouch_force_maximumPossibleForce':
               // print log
@@ -455,7 +461,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapview_onForceTouch_force_maximumPossibleForce(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), TypeOpBmapMapFluttifyIOS((args['coordinate'] as Object))?.as__<CLLocationCoordinate2D>(), args['force'], args['maximumPossibleForce']);
+              await delegate?.mapview_onForceTouch_force_maximumPossibleForce(BmapMapFluttifyIOSAs(args['mapView']), BmapMapFluttifyIOSAs(args['coordinate']), args['force'], args['maximumPossibleForce']);
               break;
             case 'Callback::BMKMapViewDelegate::mapStatusDidChanged':
               // print log
@@ -464,7 +470,7 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapStatusDidChanged(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>());
+              await delegate?.mapStatusDidChanged(BmapMapFluttifyIOSAs(args['mapView']));
               break;
             case 'Callback::BMKMapViewDelegate::mapview_baseIndoorMapWithIn_baseIndoorMapInfo':
               // print log
@@ -473,224 +479,225 @@ class BMKMapView extends UIView  {
               }
           
               // handle the native call
-              delegate?.mapview_baseIndoorMapWithIn_baseIndoorMapInfo(TypeOpBmapMapFluttifyIOS((args['mapView'] as Object))?.as__<BMKMapView>(), args['flag'], TypeOpBmapMapFluttifyIOS((args['info'] as Object))?.as__<BMKBaseIndoorMapInfo>());
+              await delegate?.mapview_baseIndoorMapWithIn_baseIndoorMapInfo(BmapMapFluttifyIOSAs(args['mapView']), args['flag'], BmapMapFluttifyIOSAs(args['info']));
               break;
             default:
+              throw MissingPluginException('方法${methodCall.method}未实现');
               break;
           }
         } catch (e) {
           debugPrint(e);
-          throw e;
+          rethrow;
         }
       });
   }
   
   Future<void> set_mapType(BMKMapType mapType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_mapType', <String, dynamic>{'__this__': this, "mapType": mapType.toValue()});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_mapType', <String, dynamic>{'__this__': this, "mapType": mapType.toValue()});
   
   
   }
   
   Future<void> set_region(BMKCoordinateRegion region, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_region', <String, dynamic>{'__this__': this, "region": region});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_region', <String, dynamic>{'__this__': this, "region": region});
   
   
   }
   
   Future<void> set_limitMapRegion(BMKCoordinateRegion limitMapRegion, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_limitMapRegion', <String, dynamic>{'__this__': this, "limitMapRegion": limitMapRegion});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_limitMapRegion', <String, dynamic>{'__this__': this, "limitMapRegion": limitMapRegion});
   
   
   }
   
   Future<void> set_compassPosition(CGPoint compassPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_compassPosition', <String, dynamic>{'__this__': this, "compassPosition": compassPosition});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_compassPosition', <String, dynamic>{'__this__': this, "compassPosition": compassPosition});
   
   
   }
   
   Future<void> set_centerCoordinate(CLLocationCoordinate2D centerCoordinate, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_centerCoordinate', <String, dynamic>{'__this__': this, "centerCoordinate": centerCoordinate});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_centerCoordinate', <String, dynamic>{'__this__': this, "centerCoordinate": centerCoordinate});
   
   
   }
   
   Future<void> set_zoomLevel(double zoomLevel, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_zoomLevel', <String, dynamic>{'__this__': this, "zoomLevel": zoomLevel});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_zoomLevel', <String, dynamic>{'__this__': this, "zoomLevel": zoomLevel});
   
   
   }
   
   Future<void> set_minZoomLevel(double minZoomLevel, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_minZoomLevel', <String, dynamic>{'__this__': this, "minZoomLevel": minZoomLevel});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_minZoomLevel', <String, dynamic>{'__this__': this, "minZoomLevel": minZoomLevel});
   
   
   }
   
   Future<void> set_maxZoomLevel(double maxZoomLevel, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_maxZoomLevel', <String, dynamic>{'__this__': this, "maxZoomLevel": maxZoomLevel});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_maxZoomLevel', <String, dynamic>{'__this__': this, "maxZoomLevel": maxZoomLevel});
   
   
   }
   
   Future<void> set_rotation(int rotation, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_rotation', <String, dynamic>{'__this__': this, "rotation": rotation});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_rotation', <String, dynamic>{'__this__': this, "rotation": rotation});
   
   
   }
   
   Future<void> set_overlooking(int overlooking, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_overlooking', <String, dynamic>{'__this__': this, "overlooking": overlooking});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_overlooking', <String, dynamic>{'__this__': this, "overlooking": overlooking});
   
   
   }
   
   Future<void> set_minOverlooking(int minOverlooking, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_minOverlooking', <String, dynamic>{'__this__': this, "minOverlooking": minOverlooking});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_minOverlooking', <String, dynamic>{'__this__': this, "minOverlooking": minOverlooking});
   
   
   }
   
   Future<void> set_buildingsEnabled(bool buildingsEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_buildingsEnabled', <String, dynamic>{'__this__': this, "buildingsEnabled": buildingsEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_buildingsEnabled', <String, dynamic>{'__this__': this, "buildingsEnabled": buildingsEnabled});
   
   
   }
   
   Future<void> set_showMapPoi(bool showMapPoi, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_showMapPoi', <String, dynamic>{'__this__': this, "showMapPoi": showMapPoi});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showMapPoi', <String, dynamic>{'__this__': this, "showMapPoi": showMapPoi});
   
   
   }
   
   Future<void> set_trafficEnabled(bool trafficEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_trafficEnabled', <String, dynamic>{'__this__': this, "trafficEnabled": trafficEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_trafficEnabled', <String, dynamic>{'__this__': this, "trafficEnabled": trafficEnabled});
   
   
   }
   
   Future<void> set_baiduHeatMapEnabled(bool baiduHeatMapEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_baiduHeatMapEnabled', <String, dynamic>{'__this__': this, "baiduHeatMapEnabled": baiduHeatMapEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_baiduHeatMapEnabled', <String, dynamic>{'__this__': this, "baiduHeatMapEnabled": baiduHeatMapEnabled});
   
   
   }
   
   Future<void> set_gesturesEnabled(bool gesturesEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_gesturesEnabled', <String, dynamic>{'__this__': this, "gesturesEnabled": gesturesEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_gesturesEnabled', <String, dynamic>{'__this__': this, "gesturesEnabled": gesturesEnabled});
   
   
   }
   
   Future<void> set_zoomEnabled(bool zoomEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_zoomEnabled', <String, dynamic>{'__this__': this, "zoomEnabled": zoomEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_zoomEnabled', <String, dynamic>{'__this__': this, "zoomEnabled": zoomEnabled});
   
   
   }
   
   Future<void> set_zoomEnabledWithTap(bool zoomEnabledWithTap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_zoomEnabledWithTap', <String, dynamic>{'__this__': this, "zoomEnabledWithTap": zoomEnabledWithTap});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_zoomEnabledWithTap', <String, dynamic>{'__this__': this, "zoomEnabledWithTap": zoomEnabledWithTap});
   
   
   }
   
   Future<void> set_scrollEnabled(bool scrollEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_scrollEnabled', <String, dynamic>{'__this__': this, "scrollEnabled": scrollEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_scrollEnabled', <String, dynamic>{'__this__': this, "scrollEnabled": scrollEnabled});
   
   
   }
   
   Future<void> set_overlookEnabled(bool overlookEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_overlookEnabled', <String, dynamic>{'__this__': this, "overlookEnabled": overlookEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_overlookEnabled', <String, dynamic>{'__this__': this, "overlookEnabled": overlookEnabled});
   
   
   }
   
   Future<void> set_rotateEnabled(bool rotateEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_rotateEnabled', <String, dynamic>{'__this__': this, "rotateEnabled": rotateEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_rotateEnabled', <String, dynamic>{'__this__': this, "rotateEnabled": rotateEnabled});
   
   
   }
   
   Future<void> set_forceTouchEnabled(bool forceTouchEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_forceTouchEnabled', <String, dynamic>{'__this__': this, "forceTouchEnabled": forceTouchEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_forceTouchEnabled', <String, dynamic>{'__this__': this, "forceTouchEnabled": forceTouchEnabled});
   
   
   }
   
   Future<void> set_showMapScaleBar(bool showMapScaleBar, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_showMapScaleBar', <String, dynamic>{'__this__': this, "showMapScaleBar": showMapScaleBar});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showMapScaleBar', <String, dynamic>{'__this__': this, "showMapScaleBar": showMapScaleBar});
   
   
   }
   
   Future<void> set_mapScaleBarPosition(CGPoint mapScaleBarPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_mapScaleBarPosition', <String, dynamic>{'__this__': this, "mapScaleBarPosition": mapScaleBarPosition});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_mapScaleBarPosition', <String, dynamic>{'__this__': this, "mapScaleBarPosition": mapScaleBarPosition});
   
   
   }
   
   Future<void> set_logoPosition(BMKLogoPosition logoPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_logoPosition', <String, dynamic>{'__this__': this, "logoPosition": logoPosition.toValue()});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_logoPosition', <String, dynamic>{'__this__': this, "logoPosition": logoPosition.toValue()});
   
   
   }
   
   Future<void> set_visibleMapRect(BMKMapRect visibleMapRect, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_visibleMapRect', <String, dynamic>{'__this__': this, "visibleMapRect": visibleMapRect});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_visibleMapRect', <String, dynamic>{'__this__': this, "visibleMapRect": visibleMapRect});
   
   
   }
   
   Future<void> set_mapPadding(UIEdgeInsets mapPadding, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_mapPadding', <String, dynamic>{'__this__': this, "mapPadding": mapPadding});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_mapPadding', <String, dynamic>{'__this__': this, "mapPadding": mapPadding});
   
   
   }
   
   Future<void> set_updateTargetScreenPtWhenMapPaddingChanged(bool updateTargetScreenPtWhenMapPaddingChanged, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_updateTargetScreenPtWhenMapPaddingChanged', <String, dynamic>{'__this__': this, "updateTargetScreenPtWhenMapPaddingChanged": updateTargetScreenPtWhenMapPaddingChanged});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_updateTargetScreenPtWhenMapPaddingChanged', <String, dynamic>{'__this__': this, "updateTargetScreenPtWhenMapPaddingChanged": updateTargetScreenPtWhenMapPaddingChanged});
   
   
   }
   
   Future<void> set_ChangeWithTouchPointCenterEnabled(bool ChangeWithTouchPointCenterEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_ChangeWithTouchPointCenterEnabled', <String, dynamic>{'__this__': this, "ChangeWithTouchPointCenterEnabled": ChangeWithTouchPointCenterEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_ChangeWithTouchPointCenterEnabled', <String, dynamic>{'__this__': this, "ChangeWithTouchPointCenterEnabled": ChangeWithTouchPointCenterEnabled});
   
   
   }
   
   Future<void> set_ChangeCenterWithDoubleTouchPointEnabled(bool ChangeCenterWithDoubleTouchPointEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_ChangeCenterWithDoubleTouchPointEnabled', <String, dynamic>{'__this__': this, "ChangeCenterWithDoubleTouchPointEnabled": ChangeCenterWithDoubleTouchPointEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_ChangeCenterWithDoubleTouchPointEnabled', <String, dynamic>{'__this__': this, "ChangeCenterWithDoubleTouchPointEnabled": ChangeCenterWithDoubleTouchPointEnabled});
   
   
   }
   
   Future<void> set_baseIndoorMapEnabled(bool baseIndoorMapEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_baseIndoorMapEnabled', <String, dynamic>{'__this__': this, "baseIndoorMapEnabled": baseIndoorMapEnabled});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_baseIndoorMapEnabled', <String, dynamic>{'__this__': this, "baseIndoorMapEnabled": baseIndoorMapEnabled});
   
   
   }
   
   Future<void> set_showIndoorMapPoi(bool showIndoorMapPoi, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_showIndoorMapPoi', <String, dynamic>{'__this__': this, "showIndoorMapPoi": showIndoorMapPoi});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showIndoorMapPoi', <String, dynamic>{'__this__': this, "showIndoorMapPoi": showIndoorMapPoi});
   
   
   }
   
   Future<void> set_showsUserLocation(bool showsUserLocation, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_showsUserLocation', <String, dynamic>{'__this__': this, "showsUserLocation": showsUserLocation});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showsUserLocation', <String, dynamic>{'__this__': this, "showsUserLocation": showsUserLocation});
   
   
   }
   
   Future<void> set_userTrackingMode(BMKUserTrackingMode userTrackingMode, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_userTrackingMode', <String, dynamic>{'__this__': this, "userTrackingMode": userTrackingMode.toValue()});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_userTrackingMode', <String, dynamic>{'__this__': this, "userTrackingMode": userTrackingMode.toValue()});
   
   
   }
   
   Future<void> set_isSelectedAnnotationViewFront(bool isSelectedAnnotationViewFront, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::set_isSelectedAnnotationViewFront', <String, dynamic>{'__this__': this, "isSelectedAnnotationViewFront": isSelectedAnnotationViewFront});
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_isSelectedAnnotationViewFront', <String, dynamic>{'__this__': this, "isSelectedAnnotationViewFront": isSelectedAnnotationViewFront});
   
   
   }
@@ -706,19 +713,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::customMapStyle', {"customMapStyleJsonFilePath": customMapStyleJsonFilePath});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::customMapStyle', {"customMapStyleJsonFilePath": customMapStyleJsonFilePath});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -729,19 +730,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::enableCustomMapStyle', {"enable": enable});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::enableCustomMapStyle', {"enable": enable});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -752,19 +747,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomMapStylePath', {"customMapStyleJsonFilePath": customMapStyleJsonFilePath, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomMapStylePath', {"customMapStyleJsonFilePath": customMapStyleJsonFilePath, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -775,19 +764,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomMapStylePath_mode', {"customMapStyleJsonFilePath": customMapStyleJsonFilePath, "mode": mode, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomMapStylePath_mode', {"customMapStyleJsonFilePath": customMapStyleJsonFilePath, "mode": mode, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -798,34 +781,28 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomMapStyleEnable', {"enable": enable, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomMapStyleEnable', {"enable": enable, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
-  Future<void> setCustomMapStyleWithOption_preLoad_success_failure(BMKCustomMapStyleOption option, void preLoad(String path), void success(String path), void failure(NSError error, String path), {bool viewChannel = true}) async {
+  Future<void> setCustomMapStyleWithOption_preLoad_success_failure(BMKCustomMapStyleOption option, void Function(String path) preLoad, void Function(String path) success, void Function(NSError error, String path) failure, {bool viewChannel = true}) async {
     // print log
     if (fluttifyLogEnabled) {
       debugPrint('fluttify-dart: BMKMapView@$refId::setCustomMapStyleWithOption([])');
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure', {"option": option, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomMapStyleWithOption_preLoad_success_failure', {"option": option, "__this__": this});
   
   
     // handle native call
-    MethodChannel('void|NSString*#path::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('void|NSString*#path::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -837,17 +814,18 @@ class BMKMapView extends UIView  {
                 }
           
                 // handle the native call
-                if (preLoad != null) preLoad(args['path']);
+                if (preLoad != null) await preLoad(args['path']);
                 break;
               default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
                 break;
             }
           } catch (e) {
             debugPrint(e);
-            throw e;
+            rethrow;
           }
         });
-    MethodChannel('void|NSString*#path::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('void|NSString*#path::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -859,17 +837,18 @@ class BMKMapView extends UIView  {
                 }
           
                 // handle the native call
-                if (success != null) success(args['path']);
+                if (success != null) await success(args['path']);
                 break;
               default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
                 break;
             }
           } catch (e) {
             debugPrint(e);
-            throw e;
+            rethrow;
           }
         });
-    MethodChannel('void|NSError*#error,NSString*#path::Callback@$refId', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('void|NSError*#error,NSString*#path::Callback@$refId', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -881,24 +860,19 @@ class BMKMapView extends UIView  {
                 }
           
                 // handle the native call
-                if (failure != null) failure(TypeOpBmapMapFluttifyIOS((args['error'] as Object))?.as__<NSError>(), args['path']);
+                if (failure != null) await failure(BmapMapFluttifyIOSAs(args['error']), args['path']);
                 break;
               default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
                 break;
             }
           } catch (e) {
             debugPrint(e);
-            throw e;
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -909,19 +883,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion', {"smooth": smooth, "slow": slow, "congestion": congestion, "severeCongestion": severeCongestion, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion', {"smooth": smooth, "slow": slow, "congestion": congestion, "severeCongestion": severeCongestion, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -932,19 +900,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::willBackGround', );
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::willBackGround', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -955,19 +917,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::didForeGround', );
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::didForeGround', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -978,19 +934,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewWillAppear', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewWillAppear', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1001,19 +951,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewWillDisappear', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewWillDisappear', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1024,19 +968,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::mapForceRefresh', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::mapForceRefresh', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1047,19 +985,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::zoomIn', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::zoomIn', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1070,19 +1002,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::zoomOut', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::zoomOut', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1093,19 +1019,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::regionThatFits', {"region": region, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::regionThatFits', {"region": region, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__);
   }
   
   
@@ -1116,19 +1036,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setRegion_animated', {"region": region, "animated": animated, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setRegion_animated', {"region": region, "animated": animated, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1139,19 +1053,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCenterCoordinate_animated', {"coordinate": coordinate, "animated": animated, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCenterCoordinate_animated', {"coordinate": coordinate, "animated": animated, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1162,19 +1070,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::takeSnapshot', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::takeSnapshot', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<UIImage>(__result__);
   }
   
   
@@ -1185,19 +1087,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::takeSnapshot__CGRect', {"rect": rect, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::takeSnapshot__CGRect', {"rect": rect, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<UIImage>(__result__);
   }
   
   
@@ -1208,19 +1104,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCompassImage', {"image": image, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCompassImage', {"image": image, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1231,19 +1121,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setVisibleMapRect_animated', {"mapRect": mapRect, "animate": animate, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setVisibleMapRect_animated', {"mapRect": mapRect, "animate": animate, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1254,19 +1138,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::mapRectThatFits', {"mapRect": mapRect, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::mapRectThatFits', {"mapRect": mapRect, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKMapRect>(__result__);
   }
   
   
@@ -1277,19 +1155,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setVisibleMapRect_edgePadding_animated', {"mapRect": mapRect, "insets": insets, "animate": animate, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setVisibleMapRect_edgePadding_animated', {"mapRect": mapRect, "insets": insets, "animate": animate, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1300,19 +1172,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::fitVisibleMapRect_edgePadding_withAnimated', {"mapRect": mapRect, "insets": insets, "animate": animate, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::fitVisibleMapRect_edgePadding_withAnimated', {"mapRect": mapRect, "insets": insets, "animate": animate, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1323,19 +1189,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::mapRectThatFits_edgePadding', {"mapRect": mapRect, "insets": insets, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::mapRectThatFits_edgePadding', {"mapRect": mapRect, "insets": insets, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKMapRect>(__result__);
   }
   
   
@@ -1346,19 +1206,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertCoordinate_toPointToView', {"coordinate": coordinate, "view": view, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertCoordinate_toPointToView', {"coordinate": coordinate, "view": view, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<CGPoint>(__result__);
   }
   
   
@@ -1369,19 +1223,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertPoint_toCoordinateFromView', {"point": point, "view": view, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertPoint_toCoordinateFromView', {"point": point, "view": view, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__);
   }
   
   
@@ -1392,19 +1240,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertRegion_toRectToView', {"region": region, "view": view, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertRegion_toRectToView', {"region": region, "view": view, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<CGRect>(__result__);
   }
   
   
@@ -1415,19 +1257,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertRect_toRegionFromView', {"rect": rect, "view": view, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertRect_toRegionFromView', {"rect": rect, "view": view, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__);
   }
   
   
@@ -1438,19 +1274,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertMapRect_toRectToView', {"mapRect": mapRect, "view": view, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertMapRect_toRectToView', {"mapRect": mapRect, "view": view, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<CGRect>(__result__);
   }
   
   
@@ -1461,19 +1291,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertRect_toMapRectFromView', {"rect": rect, "view": view, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertRect_toMapRectFromView', {"rect": rect, "view": view, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKMapRect>(__result__);
   }
   
   
@@ -1484,19 +1308,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::glPointForMapPoint', {"mapPoint": mapPoint, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::glPointForMapPoint', {"mapPoint": mapPoint, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<CGPoint>(__result__);
   }
   
   
@@ -1507,19 +1325,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::glPointsForMapPoints_count', {"mapPoints": mapPoints, "count": count, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::glPointsForMapPoints_count', {"mapPoints": mapPoints, "count": count, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<String>().map((__it__) => CGPoint()..refId = __it__..tag__ = 'bmap_map_fluttify').toList();
-      return __return__;
-    }
+    return (__result__ as List)?.map((it) => BmapMapFluttifyIOSAs<CGPoint>(it))?.toList();
   }
   
   
@@ -1530,19 +1342,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapCenterToScreenPt', {"ptInScreen": ptInScreen, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapCenterToScreenPt', {"ptInScreen": ptInScreen, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1553,19 +1359,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getMapStatusFromCoordinateRegion_edgePadding', {"region": region, "insets": insets, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getMapStatusFromCoordinateRegion_edgePadding', {"region": region, "insets": insets, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKMapStatus>(__result__);
   }
   
   
@@ -1576,19 +1376,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getMapStatus', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getMapStatus', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKMapStatus>(__result__);
   }
   
   
@@ -1599,19 +1393,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapStatus', {"mapStatus": mapStatus, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapStatus', {"mapStatus": mapStatus, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1622,19 +1410,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapStatus_withAnimation', {"mapStatus": mapStatus, "bAnimation": bAnimation, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapStatus_withAnimation', {"mapStatus": mapStatus, "bAnimation": bAnimation, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1645,19 +1427,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapStatus_withAnimation_withAnimationTime', {"mapStatus": mapStatus, "bAnimation": bAnimation, "ulDuration": ulDuration, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapStatus_withAnimation_withAnimationTime', {"mapStatus": mapStatus, "bAnimation": bAnimation, "ulDuration": ulDuration, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1668,19 +1444,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::isSurpportBaiduHeatMap', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::isSurpportBaiduHeatMap', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1691,19 +1461,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getProjectionMatrix', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getProjectionMatrix', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<NSValue/* float* */>(__result__);
   }
   
   
@@ -1714,19 +1478,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getViewMatrix', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getViewMatrix', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<NSValue/* float* */>(__result__);
   }
   
   
@@ -1737,19 +1495,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::switchBaseIndoorMapFloor_withID', {"strFloor": strFloor, "strID": strID, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::switchBaseIndoorMapFloor_withID', {"strFloor": strFloor, "strID": strID, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as int).toBMKSwitchIndoorFloorError();
-      return __return__;
-    }
+    return (__result__ as int).toBMKSwitchIndoorFloorError();
   }
   
   
@@ -1760,19 +1512,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getFocusedBaseIndoorMapInfo', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getFocusedBaseIndoorMapInfo', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKBaseIndoorMapInfo()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKBaseIndoorMapInfo>(__result__);
   }
   
   
@@ -1783,19 +1529,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::updateLocationViewWithParam', {"locationViewDisplayParam": locationViewDisplayParam, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::updateLocationViewWithParam', {"locationViewDisplayParam": locationViewDisplayParam, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1806,19 +1546,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::updateLocationData', {"userLocation": userLocation, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::updateLocationData', {"userLocation": userLocation, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1829,19 +1563,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addAnnotation', {"annotation": annotation, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addAnnotation', {"annotation": annotation, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1852,19 +1580,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addAnnotations', {"annotations": annotations, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addAnnotations', {"annotations": annotations, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1875,19 +1597,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeAnnotation', {"annotation": annotation, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeAnnotation', {"annotation": annotation, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1898,19 +1614,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeAnnotations', {"annotations": annotations, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeAnnotations', {"annotations": annotations, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1921,19 +1631,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewForAnnotation', {"annotation": annotation, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewForAnnotation', {"annotation": annotation, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKAnnotationView>(__result__);
   }
   
   
@@ -1944,19 +1648,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::dequeueReusableAnnotationViewWithIdentifier', {"identifier": identifier, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::dequeueReusableAnnotationViewWithIdentifier', {"identifier": identifier, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKAnnotationView>(__result__);
   }
   
   
@@ -1967,19 +1665,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::selectAnnotation_animated', {"annotation": annotation, "animated": animated, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::selectAnnotation_animated', {"annotation": annotation, "animated": animated, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -1990,19 +1682,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::deselectAnnotation_animated', {"annotation": annotation, "animated": animated, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::deselectAnnotation_animated', {"annotation": annotation, "animated": animated, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2013,19 +1699,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::showAnnotations_animated', {"annotations": annotations, "animated": animated, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::showAnnotations_animated', {"annotations": annotations, "animated": animated, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2036,19 +1716,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::annotationsInCoordinateBounds', {"bounds": bounds, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::annotationsInCoordinateBounds', {"bounds": bounds, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = (__result__ as List).cast<dynamic>();
-      return __return__;
-    }
+    return (__result__ as List)?.cast<dynamic>();
   }
   
   
@@ -2059,19 +1733,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addOverlay', {"overlay": overlay, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addOverlay', {"overlay": overlay, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2082,19 +1750,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addOverlays', {"overlays": overlays, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addOverlays', {"overlays": overlays, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2105,19 +1767,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeOverlay', {"overlay": overlay, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeOverlay', {"overlay": overlay, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2128,19 +1784,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeOverlays', {"overlays": overlays, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeOverlays', {"overlays": overlays, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2151,19 +1801,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::insertOverlay_atIndex', {"overlay": overlay, "index": index, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::insertOverlay_atIndex', {"overlay": overlay, "index": index, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2174,19 +1818,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::exchangeOverlayAtIndex_withOverlayAtIndex', {"index1": index1, "index2": index2, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::exchangeOverlayAtIndex_withOverlayAtIndex', {"index1": index1, "index2": index2, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2197,19 +1835,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::insertOverlay_aboveOverlay', {"overlay": overlay, "sibling": sibling, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::insertOverlay_aboveOverlay', {"overlay": overlay, "sibling": sibling, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2220,19 +1852,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::insertOverlay_belowOverlay', {"overlay": overlay, "sibling": sibling, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::insertOverlay_belowOverlay', {"overlay": overlay, "sibling": sibling, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2243,19 +1869,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewForOverlay', {"overlay": overlay, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewForOverlay', {"overlay": overlay, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKOverlayView()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKOverlayView>(__result__);
   }
   
   
@@ -2266,19 +1886,13 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addHeatMap', {"heatMap": heatMap, "__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addHeatMap', {"heatMap": heatMap, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   
@@ -2289,515 +1903,434 @@ class BMKMapView extends UIView  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeHeatMap', {"__this__": this});
+    final __result__ = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeHeatMap', {"__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKMapView{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKMapView_Batch on List<BMKMapView> {
   //region getters
   Future<List<BMKMapType>> get_mapType_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapType_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKMapType()).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapType_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKMapType())?.cast<BMKMapType>()?.toList();
   }
   
   Future<List<BMKCoordinateRegion>> get_region_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_region_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_region_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__))?.cast<BMKCoordinateRegion>()?.toList();
   }
   
   Future<List<BMKCoordinateRegion>> get_limitMapRegion_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_limitMapRegion_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_limitMapRegion_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__))?.cast<BMKCoordinateRegion>()?.toList();
   }
   
   Future<List<CGPoint>> get_compassPosition_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_compassPosition_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_compassPosition_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CGPoint>(__result__))?.cast<CGPoint>()?.toList();
   }
   
   Future<List<CGSize>> get_compassSize_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_compassSize_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGSize()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_compassSize_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CGSize>(__result__))?.cast<CGSize>()?.toList();
   }
   
   Future<List<CLLocationCoordinate2D>> get_centerCoordinate_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_centerCoordinate_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_centerCoordinate_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__))?.cast<CLLocationCoordinate2D>()?.toList();
   }
   
   Future<List<double>> get_zoomLevel_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_zoomLevel_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_zoomLevel_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_minZoomLevel_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_minZoomLevel_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_minZoomLevel_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<double>> get_maxZoomLevel_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_maxZoomLevel_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<double>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_maxZoomLevel_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<double>()?.toList();
   }
   
   Future<List<int>> get_rotation_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_rotation_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_rotation_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_overlooking_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_overlooking_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_overlooking_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<int>> get_minOverlooking_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_minOverlooking_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_minOverlooking_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<bool>> get_buildingsEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isBuildingsEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isBuildingsEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_showMapPoi_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showMapPoi_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showMapPoi_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_trafficEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isTrafficEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isTrafficEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_baiduHeatMapEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isBaiduHeatMapEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isBaiduHeatMapEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_gesturesEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_gesturesEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_gesturesEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_zoomEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isZoomEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isZoomEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_zoomEnabledWithTap_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isZoomEnabledWithTap_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isZoomEnabledWithTap_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_scrollEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isScrollEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isScrollEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_overlookEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isOverlookEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isOverlookEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_rotateEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isRotateEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isRotateEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_forceTouchEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_forceTouchEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_forceTouchEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_showMapScaleBar_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showMapScaleBar_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showMapScaleBar_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<CGPoint>> get_mapScaleBarPosition_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapScaleBarPosition_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapScaleBarPosition_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CGPoint>(__result__))?.cast<CGPoint>()?.toList();
   }
   
   Future<List<CGSize>> get_mapScaleBarSize_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapScaleBarSize_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGSize()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapScaleBarSize_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<CGSize>(__result__))?.cast<CGSize>()?.toList();
   }
   
   Future<List<BMKLogoPosition>> get_logoPosition_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_logoPosition_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKLogoPosition()).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_logoPosition_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKLogoPosition())?.cast<BMKLogoPosition>()?.toList();
   }
   
   Future<List<BMKMapRect>> get_visibleMapRect_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_visibleMapRect_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_visibleMapRect_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<BMKMapRect>(__result__))?.cast<BMKMapRect>()?.toList();
   }
   
   Future<List<UIEdgeInsets>> get_mapPadding_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_mapPadding_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIEdgeInsets()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_mapPadding_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyIOSAs<UIEdgeInsets>(__result__))?.cast<UIEdgeInsets>()?.toList();
   }
   
   Future<List<bool>> get_updateTargetScreenPtWhenMapPaddingChanged_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_updateTargetScreenPtWhenMapPaddingChanged_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_updateTargetScreenPtWhenMapPaddingChanged_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_ChangeWithTouchPointCenterEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isChangeWithTouchPointCenterEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isChangeWithTouchPointCenterEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_ChangeCenterWithDoubleTouchPointEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isChangeCenterWithDoubleTouchPointEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isChangeCenterWithDoubleTouchPointEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_baseIndoorMapEnabled_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_baseIndoorMapEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_baseIndoorMapEnabled_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_showIndoorMapPoi_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showIndoorMapPoi_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showIndoorMapPoi_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<bool>> get_showsUserLocation_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_showsUserLocation_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_showsUserLocation_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<BMKUserTrackingMode>> get_userTrackingMode_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_userTrackingMode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKUserTrackingMode()).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_userTrackingMode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKUserTrackingMode())?.cast<BMKUserTrackingMode>()?.toList();
   }
   
   Future<List<bool>> get_userLocationVisible_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isUserLocationVisible_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isUserLocationVisible_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<List<dynamic>>> get_annotations_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_annotations_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_annotations_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as List)?.cast<dynamic>())?.cast<List<dynamic>>()?.toList();
   }
   
   Future<List<bool>> get_isSelectedAnnotationViewFront_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_isSelectedAnnotationViewFront_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_isSelectedAnnotationViewFront_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<bool>()?.toList();
   }
   
   Future<List<List<dynamic>>> get_overlays_batch({bool viewChannel = true}) async {
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMapView::get_overlays_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
-    return typedResult;
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod("BMKMapView::get_overlays_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as List)?.cast<dynamic>())?.cast<List<dynamic>>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mapType_batch(List<BMKMapType> mapType, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_mapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mapType": mapType[__i__].toValue()}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_mapType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mapType": mapType[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_region_batch(List<BMKCoordinateRegion> region, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_region_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "region": region[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_region_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "region": region[__i__]}]);
   
   
   }
   
   Future<void> set_limitMapRegion_batch(List<BMKCoordinateRegion> limitMapRegion, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_limitMapRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "limitMapRegion": limitMapRegion[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_limitMapRegion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "limitMapRegion": limitMapRegion[__i__]}]);
   
   
   }
   
   Future<void> set_compassPosition_batch(List<CGPoint> compassPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_compassPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "compassPosition": compassPosition[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_compassPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "compassPosition": compassPosition[__i__]}]);
   
   
   }
   
   Future<void> set_centerCoordinate_batch(List<CLLocationCoordinate2D> centerCoordinate, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_centerCoordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "centerCoordinate": centerCoordinate[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_centerCoordinate_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "centerCoordinate": centerCoordinate[__i__]}]);
   
   
   }
   
   Future<void> set_zoomLevel_batch(List<double> zoomLevel, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_zoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "zoomLevel": zoomLevel[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_zoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "zoomLevel": zoomLevel[__i__]}]);
   
   
   }
   
   Future<void> set_minZoomLevel_batch(List<double> minZoomLevel, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_minZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "minZoomLevel": minZoomLevel[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_minZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "minZoomLevel": minZoomLevel[__i__]}]);
   
   
   }
   
   Future<void> set_maxZoomLevel_batch(List<double> maxZoomLevel, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_maxZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "maxZoomLevel": maxZoomLevel[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_maxZoomLevel_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "maxZoomLevel": maxZoomLevel[__i__]}]);
   
   
   }
   
   Future<void> set_rotation_batch(List<int> rotation, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_rotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "rotation": rotation[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_rotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "rotation": rotation[__i__]}]);
   
   
   }
   
   Future<void> set_overlooking_batch(List<int> overlooking, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_overlooking_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "overlooking": overlooking[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_overlooking_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "overlooking": overlooking[__i__]}]);
   
   
   }
   
   Future<void> set_minOverlooking_batch(List<int> minOverlooking, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_minOverlooking_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "minOverlooking": minOverlooking[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_minOverlooking_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "minOverlooking": minOverlooking[__i__]}]);
   
   
   }
   
   Future<void> set_buildingsEnabled_batch(List<bool> buildingsEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_buildingsEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "buildingsEnabled": buildingsEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_buildingsEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "buildingsEnabled": buildingsEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_showMapPoi_batch(List<bool> showMapPoi, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_showMapPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showMapPoi": showMapPoi[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showMapPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showMapPoi": showMapPoi[__i__]}]);
   
   
   }
   
   Future<void> set_trafficEnabled_batch(List<bool> trafficEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_trafficEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "trafficEnabled": trafficEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_trafficEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "trafficEnabled": trafficEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_baiduHeatMapEnabled_batch(List<bool> baiduHeatMapEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_baiduHeatMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "baiduHeatMapEnabled": baiduHeatMapEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_baiduHeatMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "baiduHeatMapEnabled": baiduHeatMapEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_gesturesEnabled_batch(List<bool> gesturesEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_gesturesEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "gesturesEnabled": gesturesEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_gesturesEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "gesturesEnabled": gesturesEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_zoomEnabled_batch(List<bool> zoomEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_zoomEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "zoomEnabled": zoomEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_zoomEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "zoomEnabled": zoomEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_zoomEnabledWithTap_batch(List<bool> zoomEnabledWithTap, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_zoomEnabledWithTap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "zoomEnabledWithTap": zoomEnabledWithTap[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_zoomEnabledWithTap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "zoomEnabledWithTap": zoomEnabledWithTap[__i__]}]);
   
   
   }
   
   Future<void> set_scrollEnabled_batch(List<bool> scrollEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_scrollEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "scrollEnabled": scrollEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_scrollEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "scrollEnabled": scrollEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_overlookEnabled_batch(List<bool> overlookEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_overlookEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "overlookEnabled": overlookEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_overlookEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "overlookEnabled": overlookEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_rotateEnabled_batch(List<bool> rotateEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_rotateEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "rotateEnabled": rotateEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_rotateEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "rotateEnabled": rotateEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_forceTouchEnabled_batch(List<bool> forceTouchEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_forceTouchEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "forceTouchEnabled": forceTouchEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_forceTouchEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "forceTouchEnabled": forceTouchEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_showMapScaleBar_batch(List<bool> showMapScaleBar, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_showMapScaleBar_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showMapScaleBar": showMapScaleBar[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showMapScaleBar_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showMapScaleBar": showMapScaleBar[__i__]}]);
   
   
   }
   
   Future<void> set_mapScaleBarPosition_batch(List<CGPoint> mapScaleBarPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_mapScaleBarPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mapScaleBarPosition": mapScaleBarPosition[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_mapScaleBarPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mapScaleBarPosition": mapScaleBarPosition[__i__]}]);
   
   
   }
   
   Future<void> set_logoPosition_batch(List<BMKLogoPosition> logoPosition, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_logoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "logoPosition": logoPosition[__i__].toValue()}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_logoPosition_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "logoPosition": logoPosition[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_visibleMapRect_batch(List<BMKMapRect> visibleMapRect, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_visibleMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "visibleMapRect": visibleMapRect[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_visibleMapRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "visibleMapRect": visibleMapRect[__i__]}]);
   
   
   }
   
   Future<void> set_mapPadding_batch(List<UIEdgeInsets> mapPadding, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_mapPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mapPadding": mapPadding[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_mapPadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mapPadding": mapPadding[__i__]}]);
   
   
   }
   
   Future<void> set_updateTargetScreenPtWhenMapPaddingChanged_batch(List<bool> updateTargetScreenPtWhenMapPaddingChanged, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_updateTargetScreenPtWhenMapPaddingChanged_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "updateTargetScreenPtWhenMapPaddingChanged": updateTargetScreenPtWhenMapPaddingChanged[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_updateTargetScreenPtWhenMapPaddingChanged_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "updateTargetScreenPtWhenMapPaddingChanged": updateTargetScreenPtWhenMapPaddingChanged[__i__]}]);
   
   
   }
   
   Future<void> set_ChangeWithTouchPointCenterEnabled_batch(List<bool> ChangeWithTouchPointCenterEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_ChangeWithTouchPointCenterEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ChangeWithTouchPointCenterEnabled": ChangeWithTouchPointCenterEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_ChangeWithTouchPointCenterEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ChangeWithTouchPointCenterEnabled": ChangeWithTouchPointCenterEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_ChangeCenterWithDoubleTouchPointEnabled_batch(List<bool> ChangeCenterWithDoubleTouchPointEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_ChangeCenterWithDoubleTouchPointEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ChangeCenterWithDoubleTouchPointEnabled": ChangeCenterWithDoubleTouchPointEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_ChangeCenterWithDoubleTouchPointEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "ChangeCenterWithDoubleTouchPointEnabled": ChangeCenterWithDoubleTouchPointEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_baseIndoorMapEnabled_batch(List<bool> baseIndoorMapEnabled, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_baseIndoorMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "baseIndoorMapEnabled": baseIndoorMapEnabled[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_baseIndoorMapEnabled_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "baseIndoorMapEnabled": baseIndoorMapEnabled[__i__]}]);
   
   
   }
   
   Future<void> set_showIndoorMapPoi_batch(List<bool> showIndoorMapPoi, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_showIndoorMapPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showIndoorMapPoi": showIndoorMapPoi[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showIndoorMapPoi_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showIndoorMapPoi": showIndoorMapPoi[__i__]}]);
   
   
   }
   
   Future<void> set_showsUserLocation_batch(List<bool> showsUserLocation, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_showsUserLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showsUserLocation": showsUserLocation[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_showsUserLocation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "showsUserLocation": showsUserLocation[__i__]}]);
   
   
   }
   
   Future<void> set_userTrackingMode_batch(List<BMKUserTrackingMode> userTrackingMode, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_userTrackingMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "userTrackingMode": userTrackingMode[__i__].toValue()}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_userTrackingMode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "userTrackingMode": userTrackingMode[__i__].toValue()}]);
   
   
   }
   
   Future<void> set_isSelectedAnnotationViewFront_batch(List<bool> isSelectedAnnotationViewFront, {bool viewChannel = true}) async {
-    await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('BMKMapView::set_isSelectedAnnotationViewFront_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isSelectedAnnotationViewFront": isSelectedAnnotationViewFront[__i__]}]);
+    await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::set_isSelectedAnnotationViewFront_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "isSelectedAnnotationViewFront": isSelectedAnnotationViewFront[__i__]}]);
   
   
   }
@@ -2807,1256 +2340,728 @@ extension BMKMapView_Batch on List<BMKMapView> {
   //region methods
   
   static Future<List<void>> customMapStyle_batch(List<String> customMapStyleJsonFilePath, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::customMapStyle_batch', [for (int __i__ = 0; __i__ < customMapStyleJsonFilePath.length; __i__++) {"customMapStyleJsonFilePath": customMapStyleJsonFilePath[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::customMapStyle_batch', [for (int __i__ = 0; __i__ < customMapStyleJsonFilePath.length; __i__++) {"customMapStyleJsonFilePath": customMapStyleJsonFilePath[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<void>> enableCustomMapStyle_batch(List<bool> enable, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::enableCustomMapStyle_batch', [for (int __i__ = 0; __i__ < enable.length; __i__++) {"enable": enable[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::enableCustomMapStyle_batch', [for (int __i__ = 0; __i__ < enable.length; __i__++) {"enable": enable[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setCustomMapStylePath_batch(List<String> customMapStyleJsonFilePath, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomMapStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customMapStyleJsonFilePath": customMapStyleJsonFilePath[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomMapStylePath_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customMapStyleJsonFilePath": customMapStyleJsonFilePath[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setCustomMapStylePath_mode_batch(List<String> customMapStyleJsonFilePath, List<int> mode, {bool viewChannel = true}) async {
-    if (customMapStyleJsonFilePath.length != mode.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(customMapStyleJsonFilePath.length == mode.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomMapStylePath_mode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customMapStyleJsonFilePath": customMapStyleJsonFilePath[__i__], "mode": mode[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomMapStylePath_mode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customMapStyleJsonFilePath": customMapStyleJsonFilePath[__i__], "mode": mode[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setCustomMapStyleEnable_batch(List<bool> enable, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomMapStyleEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"enable": enable[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomMapStyleEnable_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"enable": enable[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<bool>> setCustomTrafficColorForSmooth_slow_congestion_severeCongestion_batch(List<UIColor> smooth, List<UIColor> slow, List<UIColor> congestion, List<UIColor> severeCongestion, {bool viewChannel = true}) async {
-    if (smooth.length != slow.length || slow.length != congestion.length || congestion.length != severeCongestion.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(smooth.length == slow.length && slow.length == congestion.length && congestion.length == severeCongestion.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"smooth": smooth[__i__], "slow": slow[__i__], "congestion": congestion[__i__], "severeCongestion": severeCongestion[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCustomTrafficColorForSmooth_slow_congestion_severeCongestion_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"smooth": smooth[__i__], "slow": slow[__i__], "congestion": congestion[__i__], "severeCongestion": severeCongestion[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   static Future<List<void>> willBackGround_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::willBackGround_batch', );
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::willBackGround_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   static Future<List<void>> didForeGround_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::didForeGround_batch', );
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::didForeGround_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> viewWillAppear_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewWillAppear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewWillAppear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> viewWillDisappear_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewWillDisappear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewWillDisappear_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> mapForceRefresh_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::mapForceRefresh_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::mapForceRefresh_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<bool>> zoomIn_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::zoomIn_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::zoomIn_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<bool>> zoomOut_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::zoomOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::zoomOut_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<BMKCoordinateRegion>> regionThatFits_batch(List<BMKCoordinateRegion> region, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::regionThatFits_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::regionThatFits_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__)).cast<BMKCoordinateRegion>().toList();
   }
   
   
   Future<List<void>> setRegion_animated_batch(List<BMKCoordinateRegion> region, List<bool> animated, {bool viewChannel = true}) async {
-    if (region.length != animated.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(region.length == animated.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setRegion_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setRegion_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setCenterCoordinate_animated_batch(List<CLLocationCoordinate2D> coordinate, List<bool> animated, {bool viewChannel = true}) async {
-    if (coordinate.length != animated.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coordinate.length == animated.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCenterCoordinate_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinate": coordinate[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCenterCoordinate_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinate": coordinate[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<UIImage>> takeSnapshot_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::takeSnapshot_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::takeSnapshot_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<UIImage>(__result__)).cast<UIImage>().toList();
   }
   
   
   Future<List<UIImage>> takeSnapshot__CGRect_batch(List<CGRect> rect, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::takeSnapshot__CGRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::takeSnapshot__CGRect_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => UIImage()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<UIImage>(__result__)).cast<UIImage>().toList();
   }
   
   
   Future<List<void>> setCompassImage_batch(List<UIImage> image, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setCompassImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"image": image[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setCompassImage_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"image": image[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setVisibleMapRect_animated_batch(List<BMKMapRect> mapRect, List<bool> animate, {bool viewChannel = true}) async {
-    if (mapRect.length != animate.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapRect.length == animate.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setVisibleMapRect_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "animate": animate[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setVisibleMapRect_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "animate": animate[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<BMKMapRect>> mapRectThatFits_batch(List<BMKMapRect> mapRect, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::mapRectThatFits_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::mapRectThatFits_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKMapRect>(__result__)).cast<BMKMapRect>().toList();
   }
   
   
   Future<List<void>> setVisibleMapRect_edgePadding_animated_batch(List<BMKMapRect> mapRect, List<UIEdgeInsets> insets, List<bool> animate, {bool viewChannel = true}) async {
-    if (mapRect.length != insets.length || insets.length != animate.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapRect.length == insets.length && insets.length == animate.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setVisibleMapRect_edgePadding_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "insets": insets[__i__], "animate": animate[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setVisibleMapRect_edgePadding_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "insets": insets[__i__], "animate": animate[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> fitVisibleMapRect_edgePadding_withAnimated_batch(List<BMKMapRect> mapRect, List<UIEdgeInsets> insets, List<bool> animate, {bool viewChannel = true}) async {
-    if (mapRect.length != insets.length || insets.length != animate.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapRect.length == insets.length && insets.length == animate.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::fitVisibleMapRect_edgePadding_withAnimated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "insets": insets[__i__], "animate": animate[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::fitVisibleMapRect_edgePadding_withAnimated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "insets": insets[__i__], "animate": animate[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<BMKMapRect>> mapRectThatFits_edgePadding_batch(List<BMKMapRect> mapRect, List<UIEdgeInsets> insets, {bool viewChannel = true}) async {
-    if (mapRect.length != insets.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapRect.length == insets.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::mapRectThatFits_edgePadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "insets": insets[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::mapRectThatFits_edgePadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "insets": insets[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKMapRect>(__result__)).cast<BMKMapRect>().toList();
   }
   
   
   Future<List<CGPoint>> convertCoordinate_toPointToView_batch(List<CLLocationCoordinate2D> coordinate, List<UIView> view, {bool viewChannel = true}) async {
-    if (coordinate.length != view.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(coordinate.length == view.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertCoordinate_toPointToView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinate": coordinate[__i__], "view": view[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertCoordinate_toPointToView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"coordinate": coordinate[__i__], "view": view[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<CGPoint>(__result__)).cast<CGPoint>().toList();
   }
   
   
   Future<List<CLLocationCoordinate2D>> convertPoint_toCoordinateFromView_batch(List<CGPoint> point, List<UIView> view, {bool viewChannel = true}) async {
-    if (point.length != view.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(point.length == view.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertPoint_toCoordinateFromView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"point": point[__i__], "view": view[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertPoint_toCoordinateFromView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"point": point[__i__], "view": view[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CLLocationCoordinate2D()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(__result__)).cast<CLLocationCoordinate2D>().toList();
   }
   
   
   Future<List<CGRect>> convertRegion_toRectToView_batch(List<BMKCoordinateRegion> region, List<UIView> view, {bool viewChannel = true}) async {
-    if (region.length != view.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(region.length == view.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertRegion_toRectToView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "view": view[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertRegion_toRectToView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "view": view[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<CGRect>(__result__)).cast<CGRect>().toList();
   }
   
   
   Future<List<BMKCoordinateRegion>> convertRect_toRegionFromView_batch(List<CGRect> rect, List<UIView> view, {bool viewChannel = true}) async {
-    if (rect.length != view.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(rect.length == view.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertRect_toRegionFromView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__], "view": view[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertRect_toRegionFromView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__], "view": view[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKCoordinateRegion()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKCoordinateRegion>(__result__)).cast<BMKCoordinateRegion>().toList();
   }
   
   
   Future<List<CGRect>> convertMapRect_toRectToView_batch(List<BMKMapRect> mapRect, List<UIView> view, {bool viewChannel = true}) async {
-    if (mapRect.length != view.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapRect.length == view.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertMapRect_toRectToView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "view": view[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertMapRect_toRectToView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapRect": mapRect[__i__], "view": view[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<CGRect>(__result__)).cast<CGRect>().toList();
   }
   
   
   Future<List<BMKMapRect>> convertRect_toMapRectFromView_batch(List<CGRect> rect, List<UIView> view, {bool viewChannel = true}) async {
-    if (rect.length != view.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(rect.length == view.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::convertRect_toMapRectFromView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__], "view": view[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::convertRect_toMapRectFromView_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"rect": rect[__i__], "view": view[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapRect()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKMapRect>(__result__)).cast<BMKMapRect>().toList();
   }
   
   
   Future<List<CGPoint>> glPointForMapPoint_batch(List<BMKMapPoint> mapPoint, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::glPointForMapPoint_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapPoint": mapPoint[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::glPointForMapPoint_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapPoint": mapPoint[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => CGPoint()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<CGPoint>(__result__)).cast<CGPoint>().toList();
   }
   
   
   Future<List<List<CGPoint>>> glPointsForMapPoints_count_batch(List<List<BMKMapPoint>> mapPoints, List<int> count, {bool viewChannel = true}) async {
-    if (mapPoints.length != count.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapPoints.length == count.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::glPointsForMapPoints_count_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapPoints": mapPoints[__i__], "count": count[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::glPointsForMapPoints_count_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapPoints": mapPoints[__i__], "count": count[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => CGPoint()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.map((it) => BmapMapFluttifyIOSAs<CGPoint>(it))?.toList()).cast<List<CGPoint>>().toList();
   }
   
   
   Future<List<void>> setMapCenterToScreenPt_batch(List<CGPoint> ptInScreen, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapCenterToScreenPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"ptInScreen": ptInScreen[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapCenterToScreenPt_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"ptInScreen": ptInScreen[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<BMKMapStatus>> getMapStatusFromCoordinateRegion_edgePadding_batch(List<BMKCoordinateRegion> region, List<UIEdgeInsets> insets, {bool viewChannel = true}) async {
-    if (region.length != insets.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(region.length == insets.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getMapStatusFromCoordinateRegion_edgePadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "insets": insets[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getMapStatusFromCoordinateRegion_edgePadding_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"region": region[__i__], "insets": insets[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKMapStatus>(__result__)).cast<BMKMapStatus>().toList();
   }
   
   
   Future<List<BMKMapStatus>> getMapStatus_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKMapStatus()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKMapStatus>(__result__)).cast<BMKMapStatus>().toList();
   }
   
   
   Future<List<void>> setMapStatus_batch(List<BMKMapStatus> mapStatus, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapStatus": mapStatus[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapStatus_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapStatus": mapStatus[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setMapStatus_withAnimation_batch(List<BMKMapStatus> mapStatus, List<bool> bAnimation, {bool viewChannel = true}) async {
-    if (mapStatus.length != bAnimation.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapStatus.length == bAnimation.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapStatus_withAnimation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapStatus": mapStatus[__i__], "bAnimation": bAnimation[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapStatus_withAnimation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapStatus": mapStatus[__i__], "bAnimation": bAnimation[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> setMapStatus_withAnimation_withAnimationTime_batch(List<BMKMapStatus> mapStatus, List<bool> bAnimation, List<int> ulDuration, {bool viewChannel = true}) async {
-    if (mapStatus.length != bAnimation.length || bAnimation.length != ulDuration.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(mapStatus.length == bAnimation.length && bAnimation.length == ulDuration.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::setMapStatus_withAnimation_withAnimationTime_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapStatus": mapStatus[__i__], "bAnimation": bAnimation[__i__], "ulDuration": ulDuration[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::setMapStatus_withAnimation_withAnimationTime_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"mapStatus": mapStatus[__i__], "bAnimation": bAnimation[__i__], "ulDuration": ulDuration[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<bool>> isSurpportBaiduHeatMap_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::isSurpportBaiduHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::isSurpportBaiduHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<bool>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<bool>().toList();
   }
   
   
   Future<List<NSValue/* float* */>> getProjectionMatrix_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getProjectionMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getProjectionMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<NSValue/* float* */>(__result__)).cast<NSValue/* float* */>().toList();
   }
   
   
   Future<List<NSValue/* float* */>> getViewMatrix_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getViewMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getViewMatrix_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => NSValue/* float* */()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<NSValue/* float* */>(__result__)).cast<NSValue/* float* */>().toList();
   }
   
   
   Future<List<BMKSwitchIndoorFloorError>> switchBaseIndoorMapFloor_withID_batch(List<String> strFloor, List<String> strID, {bool viewChannel = true}) async {
-    if (strFloor.length != strID.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(strFloor.length == strID.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::switchBaseIndoorMapFloor_withID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"strFloor": strFloor[__i__], "strID": strID[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::switchBaseIndoorMapFloor_withID_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"strFloor": strFloor[__i__], "strID": strID[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKSwitchIndoorFloorError()).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as int).toBMKSwitchIndoorFloorError()).cast<BMKSwitchIndoorFloorError>().toList();
   }
   
   
   Future<List<BMKBaseIndoorMapInfo>> getFocusedBaseIndoorMapInfo_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::getFocusedBaseIndoorMapInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::getFocusedBaseIndoorMapInfo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKBaseIndoorMapInfo()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKBaseIndoorMapInfo>(__result__)).cast<BMKBaseIndoorMapInfo>().toList();
   }
   
   
   Future<List<void>> updateLocationViewWithParam_batch(List<BMKLocationViewDisplayParam> locationViewDisplayParam, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::updateLocationViewWithParam_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"locationViewDisplayParam": locationViewDisplayParam[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::updateLocationViewWithParam_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"locationViewDisplayParam": locationViewDisplayParam[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> updateLocationData_batch(List<BMKUserLocation> userLocation, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::updateLocationData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"userLocation": userLocation[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::updateLocationData_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"userLocation": userLocation[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addAnnotation_batch(List<BMKAnnotation> annotation, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addAnnotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addAnnotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addAnnotations_batch(List<List<dynamic>> annotations, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addAnnotations_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotations": annotations[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addAnnotations_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotations": annotations[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeAnnotation_batch(List<BMKAnnotation> annotation, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeAnnotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeAnnotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeAnnotations_batch(List<List<dynamic>> annotations, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeAnnotations_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotations": annotations[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeAnnotations_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotations": annotations[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<BMKAnnotationView>> viewForAnnotation_batch(List<BMKAnnotation> annotation, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewForAnnotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewForAnnotation_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKAnnotationView>(__result__)).cast<BMKAnnotationView>().toList();
   }
   
   
   Future<List<BMKAnnotationView>> dequeueReusableAnnotationViewWithIdentifier_batch(List<String> identifier, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::dequeueReusableAnnotationViewWithIdentifier_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"identifier": identifier[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::dequeueReusableAnnotationViewWithIdentifier_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"identifier": identifier[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKAnnotationView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKAnnotationView>(__result__)).cast<BMKAnnotationView>().toList();
   }
   
   
   Future<List<void>> selectAnnotation_animated_batch(List<BMKAnnotation> annotation, List<bool> animated, {bool viewChannel = true}) async {
-    if (annotation.length != animated.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(annotation.length == animated.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::selectAnnotation_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::selectAnnotation_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> deselectAnnotation_animated_batch(List<BMKAnnotation> annotation, List<bool> animated, {bool viewChannel = true}) async {
-    if (annotation.length != animated.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(annotation.length == animated.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::deselectAnnotation_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::deselectAnnotation_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotation": annotation[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> showAnnotations_animated_batch(List<List<dynamic>> annotations, List<bool> animated, {bool viewChannel = true}) async {
-    if (annotations.length != animated.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(annotations.length == animated.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::showAnnotations_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotations": annotations[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::showAnnotations_animated_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"annotations": annotations[__i__], "animated": animated[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<List<dynamic>>> annotationsInCoordinateBounds_batch(List<BMKCoordinateBounds> bounds, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::annotationsInCoordinateBounds_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"bounds": bounds[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::annotationsInCoordinateBounds_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"bounds": bounds[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<dynamic>()).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => (__result__ as List)?.cast<dynamic>()).cast<List<dynamic>>().toList();
   }
   
   
   Future<List<void>> addOverlay_batch(List<BMKOverlay> overlay, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> addOverlays_batch(List<List<dynamic>> overlays, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addOverlays_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlays": overlays[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addOverlays_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlays": overlays[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeOverlay_batch(List<BMKOverlay> overlay, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeOverlays_batch(List<List<dynamic>> overlays, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeOverlays_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlays": overlays[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeOverlays_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlays": overlays[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> insertOverlay_atIndex_batch(List<BMKOverlay> overlay, List<int> index, {bool viewChannel = true}) async {
-    if (overlay.length != index.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(overlay.length == index.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::insertOverlay_atIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "index": index[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::insertOverlay_atIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "index": index[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> exchangeOverlayAtIndex_withOverlayAtIndex_batch(List<int> index1, List<int> index2, {bool viewChannel = true}) async {
-    if (index1.length != index2.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(index1.length == index2.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::exchangeOverlayAtIndex_withOverlayAtIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"index1": index1[__i__], "index2": index2[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::exchangeOverlayAtIndex_withOverlayAtIndex_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"index1": index1[__i__], "index2": index2[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> insertOverlay_aboveOverlay_batch(List<BMKOverlay> overlay, List<BMKOverlay> sibling, {bool viewChannel = true}) async {
-    if (overlay.length != sibling.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(overlay.length == sibling.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::insertOverlay_aboveOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "sibling": sibling[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::insertOverlay_aboveOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "sibling": sibling[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> insertOverlay_belowOverlay_batch(List<BMKOverlay> overlay, List<BMKOverlay> sibling, {bool viewChannel = true}) async {
-    if (overlay.length != sibling.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(overlay.length == sibling.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::insertOverlay_belowOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "sibling": sibling[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::insertOverlay_belowOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "sibling": sibling[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<BMKOverlayView>> viewForOverlay_batch(List<BMKOverlay> overlay, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::viewForOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::viewForOverlay_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"overlay": overlay[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKOverlayView()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKOverlayView>(__result__)).cast<BMKOverlayView>().toList();
   }
   
   
   Future<List<void>> addHeatMap_batch(List<BMKHeatMap> heatMap, {bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::addHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"heatMap": heatMap[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::addHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"heatMap": heatMap[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   
   Future<List<void>> removeHeatMap_batch({bool viewChannel = true}) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel(viewChannel ? 'com.fluttify/bmap_map_fluttify/BMKMapView' : 'com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKMapView::removeHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
+    final resultBatch = await MethodChannel(viewChannel ? 'me.yohom/bmap_map_fluttify/BMKMapView' : 'me.yohom/bmap_map_fluttify', kBmapMapFluttifyMethodCodec).invokeMethod('BMKMapView::removeHeatMap_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<void>().toList();
   }
   
   //endregion

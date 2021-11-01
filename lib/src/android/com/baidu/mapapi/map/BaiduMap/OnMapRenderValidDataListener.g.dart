@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_BaiduMap_OnMapRenderValidDataListener on java_lang_Ob
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onMapRenderValidData(bool var1, int var2, String var3) {}
   
 }

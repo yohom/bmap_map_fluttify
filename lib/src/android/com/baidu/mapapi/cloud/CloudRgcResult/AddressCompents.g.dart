@@ -16,6 +16,9 @@ class com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents extends java_lang_Ob
   //region constants
   static const String name__ = 'com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
@@ -25,92 +28,92 @@ class com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents extends java_lang_Ob
 
   //region getters
   Future<String> get_country() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_country", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_country", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_province() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_province", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_province", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_city() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_city", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_city", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_district() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_district", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_district", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_street() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_street", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_street", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_streetNumber() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_streetNumber", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_streetNumber", {'__this__': this});
+    return __result__;
   }
   
   Future<int> get_adminAreaCode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_adminAreaCode", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_adminAreaCode", {'__this__': this});
+    return __result__;
   }
   
   Future<String> get_countryCode() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_countryCode", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_countryCode", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_country(String country) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_country', <String, dynamic>{'__this__': this, "country": country});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_country', <String, dynamic>{'__this__': this, "country": country});
   
   
   }
   
   Future<void> set_province(String province) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_province', <String, dynamic>{'__this__': this, "province": province});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_province', <String, dynamic>{'__this__': this, "province": province});
   
   
   }
   
   Future<void> set_city(String city) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_city', <String, dynamic>{'__this__': this, "city": city});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_city', <String, dynamic>{'__this__': this, "city": city});
   
   
   }
   
   Future<void> set_district(String district) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_district', <String, dynamic>{'__this__': this, "district": district});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_district', <String, dynamic>{'__this__': this, "district": district});
   
   
   }
   
   Future<void> set_street(String street) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_street', <String, dynamic>{'__this__': this, "street": street});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_street', <String, dynamic>{'__this__': this, "street": street});
   
   
   }
   
   Future<void> set_streetNumber(String streetNumber) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_streetNumber', <String, dynamic>{'__this__': this, "streetNumber": streetNumber});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_streetNumber', <String, dynamic>{'__this__': this, "streetNumber": streetNumber});
   
   
   }
   
   Future<void> set_adminAreaCode(int adminAreaCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_adminAreaCode', <String, dynamic>{'__this__': this, "adminAreaCode": adminAreaCode});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_adminAreaCode', <String, dynamic>{'__this__': this, "adminAreaCode": adminAreaCode});
   
   
   }
   
   Future<void> set_countryCode(String countryCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_countryCode', <String, dynamic>{'__this__': this, "countryCode": countryCode});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_countryCode', <String, dynamic>{'__this__': this, "countryCode": countryCode});
   
   
   }
@@ -120,113 +123,102 @@ class com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents extends java_lang_Ob
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents_Batch on List<com_baidu_mapapi_cloud_CloudRgcResult_AddressCompents> {
   //region getters
   Future<List<String>> get_country_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_country_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_country_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_province_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_province_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_province_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_city_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_city_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_city_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_district_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_district_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_district_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_street_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_street_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_street_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<String>> get_streetNumber_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_streetNumber_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_streetNumber_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   Future<List<int>> get_adminAreaCode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_adminAreaCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_adminAreaCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   Future<List<String>> get_countryCode_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_countryCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::get_countryCode_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<String>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_country_batch(List<String> country) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_country_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "country": country[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_country_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "country": country[__i__]}]);
   
   
   }
   
   Future<void> set_province_batch(List<String> province) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_province_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "province": province[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_province_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "province": province[__i__]}]);
   
   
   }
   
   Future<void> set_city_batch(List<String> city) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "city": city[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_city_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "city": city[__i__]}]);
   
   
   }
   
   Future<void> set_district_batch(List<String> district) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_district_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "district": district[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_district_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "district": district[__i__]}]);
   
   
   }
   
   Future<void> set_street_batch(List<String> street) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_street_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "street": street[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_street_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "street": street[__i__]}]);
   
   
   }
   
   Future<void> set_streetNumber_batch(List<String> streetNumber) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_streetNumber_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "streetNumber": streetNumber[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_streetNumber_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "streetNumber": streetNumber[__i__]}]);
   
   
   }
   
   Future<void> set_adminAreaCode_batch(List<int> adminAreaCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_adminAreaCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "adminAreaCode": adminAreaCode[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_adminAreaCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "adminAreaCode": adminAreaCode[__i__]}]);
   
   
   }
   
   Future<void> set_countryCode_batch(List<String> countryCode) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_countryCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "countryCode": countryCode[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents::set_countryCode_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "countryCode": countryCode[__i__]}]);
   
   
   }

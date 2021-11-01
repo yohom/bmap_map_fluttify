@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final String UI_TIP_MAX_SCALE = "已放大到最大级别";
   static final String UI_TIP_MIN_SCALE = "已缩小到最小级别";
   static final String UI_TIP_GEO_ERROR = "暂时无法获取该点信息";
@@ -70,19 +73,22 @@ class com_baidu_mapapi_UIMsg extends java_lang_Object  {
 
   //region creators
   static Future<com_baidu_mapapi_UIMsg> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_UIMsg__', );
-    final object = com_baidu_mapapi_UIMsg()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_UIMsg__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_UIMsg>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_UIMsg>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_UIMsg__', {'length': length});
-  
-    final List<com_baidu_mapapi_UIMsg> typedResult = resultBatch.map((result) => com_baidu_mapapi_UIMsg()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_UIMsg__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_UIMsg>(it))
+        .toList();
   }
   
   //endregion
@@ -98,6 +104,11 @@ class com_baidu_mapapi_UIMsg extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_Batch on List<com_baidu_mapapi_UIMsg> {

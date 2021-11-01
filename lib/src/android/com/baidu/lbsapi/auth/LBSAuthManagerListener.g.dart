@@ -19,11 +19,14 @@ mixin com_baidu_lbsapi_auth_LBSAuthManagerListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onAuthResult(int var1, String var2) {}
   
 }

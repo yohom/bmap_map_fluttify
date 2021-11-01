@@ -16,6 +16,9 @@ class com_baidu_mapapi_cloud_CloudEvent_ErrorNo extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.cloud.CloudEvent.ErrorNo';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int STATUS_CODE_SERVER_ERROR_INTERVAL = 10000;
   static final int STATUS_CODE_PERMISSION_UNFINISHED = 107;
   static final int STATUS_CODE_NETWORK_ERROR = 2;
@@ -38,6 +41,11 @@ class com_baidu_mapapi_cloud_CloudEvent_ErrorNo extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_cloud_CloudEvent_ErrorNo{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_cloud_CloudEvent_ErrorNo_Batch on List<com_baidu_mapapi_cloud_CloudEvent_ErrorNo> {

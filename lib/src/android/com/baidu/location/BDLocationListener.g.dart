@@ -19,11 +19,14 @@ mixin com_baidu_location_BDLocationListener on java_lang_Object {
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onReceiveLocation(com_baidu_location_BDLocation var1) {}
   
 }

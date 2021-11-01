@@ -93,8 +93,7 @@ class BmapLocation {
       if (timeout != null) await option.setTimeOut(timeout.inMilliseconds);
 
       // 设置监听
-      await _androidClient
-          .registerLocationListener__com_baidu_location_BDLocationListener(
+      await _androidClient.registerLocationListener(
         _AndroidLocationCallback(
           onLocation: (location) async {
             _locationStream.add(Location(
@@ -198,7 +197,7 @@ class _AndroidLocationCallback extends java_lang_Object
 
   @override
   Future<void> onReceiveLocation(com_baidu_location_BDLocation var1) async {
-    super.onReceiveLocation(var1);
+    await super.onReceiveLocation(var1);
     if (onLocation != null) onLocation(var1);
   }
 }

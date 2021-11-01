@@ -16,6 +16,9 @@ class com_baidu_mapapi_UIMsg_UIHttpType extends java_lang_Object  {
   //region constants
   static const String name__ = 'com.baidu.mapapi.UIMsg.UIHttpType';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   static final int NET_HTTP_NONE = -1;
   static final int APP_SEARCH_REQ = 0;
   static final int MAP_IMAGE_REQ = 1;
@@ -43,6 +46,11 @@ class com_baidu_mapapi_UIMsg_UIHttpType extends java_lang_Object  {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_UIMsg_UIHttpType{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_UIMsg_UIHttpType_Batch on List<com_baidu_mapapi_UIMsg_UIHttpType> {

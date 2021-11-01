@@ -16,37 +16,43 @@ class BMKGeoFencePolygonRegion extends BMKGeoFenceRegion with NSCopying {
   //region constants
   static const String name__ = 'BMKGeoFencePolygonRegion';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKGeoFencePolygonRegion> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKGeoFencePolygonRegion', {'init': init});
-    final object = BMKGeoFencePolygonRegion()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKGeoFencePolygonRegion',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKGeoFencePolygonRegion>(__result__);
   }
   
   static Future<List<BMKGeoFencePolygonRegion>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKGeoFencePolygonRegion', {'length': length, 'init': init});
-  
-    final List<BMKGeoFencePolygonRegion> typedResult = resultBatch.map((result) => BMKGeoFencePolygonRegion()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKGeoFencePolygonRegion',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKGeoFencePolygonRegion>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<List<CLLocationCoordinate2D>> get_coordinates() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFencePolygonRegion::get_coordinates", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => CLLocationCoordinate2D()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFencePolygonRegion::get_coordinates", {'__this__': this});
+    return (__result__ as List)?.map((it) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(it))?.toList();
   }
   
   Future<int> get_count() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFencePolygonRegion::get_count", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFencePolygonRegion::get_count", {'__this__': this});
+    return __result__;
   }
   
   //endregion
@@ -64,38 +70,33 @@ class BMKGeoFencePolygonRegion extends BMKGeoFenceRegion with NSCopying {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor', {"customid": customid, "identityid": identityid, "coor": coor, "count": count, "type": type.toValue(), "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor', {"customid": customid, "identityid": identityid, "coor": coor, "count": count, "type": type.toValue(), "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKGeoFencePolygonRegion{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKGeoFencePolygonRegion_Batch on List<BMKGeoFencePolygonRegion> {
   //region getters
   Future<List<List<CLLocationCoordinate2D>>> get_coordinates_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFencePolygonRegion::get_coordinates_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => CLLocationCoordinate2D()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFencePolygonRegion::get_coordinates_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as List)?.map((it) => BmapMapFluttifyIOSAs<CLLocationCoordinate2D>(it))?.toList())?.cast<List<CLLocationCoordinate2D>>()?.toList();
   }
   
   Future<List<int>> get_count_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKGeoFencePolygonRegion::get_count_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKGeoFencePolygonRegion::get_count_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
@@ -107,21 +108,13 @@ extension BMKGeoFencePolygonRegion_Batch on List<BMKGeoFencePolygonRegion> {
   //region methods
   
   Future<List<dynamic>> initWithCustomID_identityID_coor_count_coor_batch(List<String> customid, List<String> identityid, List<List<CLLocationCoordinate2D>> coor, List<int> count, List<BMKLocationCoordinateType> type) async {
-    if (customid.length != identityid.length || identityid.length != coor.length || coor.length != count.length || count.length != type.length) {
-      return Future.error('all args must have same length!');
-    }
+    assert(customid.length == identityid.length && identityid.length == coor.length && coor.length == count.length && count.length == type.length);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customid": customid[__i__], "identityid": identityid[__i__], "coor": coor[__i__], "count": count[__i__], "type": type[__i__].toValue(), "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKGeoFencePolygonRegion::initWithCustomID_identityID_coor_count_coor_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"customid": customid[__i__], "identityid": identityid[__i__], "coor": coor[__i__], "count": count[__i__], "type": type[__i__].toValue(), "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => __result__).toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => __result__).cast<dynamic>().toList();
   }
   
   //endregion

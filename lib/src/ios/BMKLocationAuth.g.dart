@@ -16,32 +16,38 @@ class BMKLocationAuth extends NSObject  {
   //region constants
   static const String name__ = 'BMKLocationAuth';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKLocationAuth> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKLocationAuth', {'init': init});
-    final object = BMKLocationAuth()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKLocationAuth',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKLocationAuth>(__result__);
   }
   
   static Future<List<BMKLocationAuth>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKLocationAuth', {'length': length, 'init': init});
-  
-    final List<BMKLocationAuth> typedResult = resultBatch.map((result) => BMKLocationAuth()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKLocationAuth',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKLocationAuth>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<BMKLocationAuthErrorCode> get_permisionState() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationAuth::get_permisionState", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as int).toBMKLocationAuthErrorCode());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationAuth::get_permisionState", {'__this__': this});
+    return (__result__ as int).toBMKLocationAuthErrorCode();
   }
   
   //endregion
@@ -59,19 +65,13 @@ class BMKLocationAuth extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationAuth::sharedInstance', );
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationAuth::sharedInstance', );
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = BMKLocationAuth()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyIOSAs<BMKLocationAuth>(__result__);
   }
   
   
@@ -82,11 +82,11 @@ class BMKLocationAuth extends NSObject  {
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationAuth::checkPermisionWithKey_authDelegate', {"key": key, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationAuth::checkPermisionWithKey_authDelegate', {"key": key, "delegate": delegate, "__this__": this});
   
   
     // handle native call
-    MethodChannel('BMKLocationAuthDelegate::Callback', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify')))
+    MethodChannel('BMKLocationAuthDelegate::Callback', kBmapMapFluttifyMethodCodec)
         .setMethodCallHandler((methodCall) async {
           try {
             final args = methodCall.arguments as Map;
@@ -98,36 +98,34 @@ class BMKLocationAuth extends NSObject  {
                 }
           
                 // handle the native call
-                delegate?.onCheckPermissionState((args['iError'] as int).toBMKLocationAuthErrorCode());
+                await delegate?.onCheckPermissionState((args['iError'] as int).toBMKLocationAuthErrorCode());
                 break;
               default:
+                throw MissingPluginException('方法${methodCall.method}未实现');
                 break;
             }
           } catch (e) {
             debugPrint(e);
-            throw e;
+            rethrow;
           }
         });
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = __result__;
-      return __return__;
-    }
+    return __result__;
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKLocationAuth{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKLocationAuth_Batch on List<BMKLocationAuth> {
   //region getters
   Future<List<BMKLocationAuthErrorCode>> get_permisionState_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKLocationAuth::get_permisionState_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as int).toBMKLocationAuthErrorCode()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKLocationAuth::get_permisionState_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as int).toBMKLocationAuthErrorCode())?.cast<BMKLocationAuthErrorCode>()?.toList();
   }
   
   //endregion
@@ -139,21 +137,13 @@ extension BMKLocationAuth_Batch on List<BMKLocationAuth> {
   //region methods
   
   static Future<List<BMKLocationAuth>> sharedInstance_batch() async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('BMKLocationAuth::sharedInstance_batch', );
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('BMKLocationAuth::sharedInstance_batch', );
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => BMKLocationAuth()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyIOSAs<BMKLocationAuth>(__result__)).cast<BMKLocationAuth>().toList();
   }
   
   //endregion

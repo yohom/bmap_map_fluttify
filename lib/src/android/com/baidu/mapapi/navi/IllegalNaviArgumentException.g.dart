@@ -16,40 +16,49 @@ class com_baidu_mapapi_navi_IllegalNaviArgumentException extends java_lang_Objec
   //region constants
   static const String name__ = 'com.baidu.mapapi.navi.IllegalNaviArgumentException';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_navi_IllegalNaviArgumentException> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__', );
-    final object = com_baidu_mapapi_navi_IllegalNaviArgumentException()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_navi_IllegalNaviArgumentException>(__result__);
   }
   
   static Future<com_baidu_mapapi_navi_IllegalNaviArgumentException> create__String(String var1) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__String', {"var1": var1});
-    final object = com_baidu_mapapi_navi_IllegalNaviArgumentException()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_navi_IllegalNaviArgumentException__String',
+      {"var1": var1}
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_navi_IllegalNaviArgumentException>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_navi_IllegalNaviArgumentException>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_navi_IllegalNaviArgumentException__', {'length': length});
-  
-    final List<com_baidu_mapapi_navi_IllegalNaviArgumentException> typedResult = resultBatch.map((result) => com_baidu_mapapi_navi_IllegalNaviArgumentException()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_navi_IllegalNaviArgumentException__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_navi_IllegalNaviArgumentException>(it))
+        .toList();
   }
   
   static Future<List<com_baidu_mapapi_navi_IllegalNaviArgumentException>> create_batch__String(List<String> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_navi_IllegalNaviArgumentException__String', [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]);
-  
-    final List<com_baidu_mapapi_navi_IllegalNaviArgumentException> typedResult = resultBatch.map((result) => com_baidu_mapapi_navi_IllegalNaviArgumentException()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_navi_IllegalNaviArgumentException__String',
+      [for (int __i__ = 0; __i__ < var1.length; __i__++) {"var1": var1[__i__]}]
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_navi_IllegalNaviArgumentException>(it))
+        .toList();
   }
   
   //endregion
@@ -65,6 +74,11 @@ class com_baidu_mapapi_navi_IllegalNaviArgumentException extends java_lang_Objec
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_navi_IllegalNaviArgumentException{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_navi_IllegalNaviArgumentException_Batch on List<com_baidu_mapapi_navi_IllegalNaviArgumentException> {

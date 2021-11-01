@@ -19,11 +19,14 @@ mixin com_baidu_mapapi_map_InfoWindow_OnInfoWindowClickListener on java_lang_Obj
 
   
 
-  
+  @override
+  final String tag__ = 'bmap_map_fluttify';
 
   
 
-  @mustCallSuper
+  
+
+  /* @mustCallSuper */
   Future<void> onInfoWindowClick() {}
   
 }

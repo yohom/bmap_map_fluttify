@@ -16,61 +16,67 @@ class com_baidu_mapapi_search_route_BikingRoutePlanOption extends java_lang_Obje
   //region constants
   static const String name__ = 'com.baidu.mapapi.search.route.BikingRoutePlanOption';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<com_baidu_mapapi_search_route_BikingRoutePlanOption> create__() async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createcom_baidu_mapapi_search_route_BikingRoutePlanOption__', );
-    final object = com_baidu_mapapi_search_route_BikingRoutePlanOption()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createcom_baidu_mapapi_search_route_BikingRoutePlanOption__',
+    
+    );
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRoutePlanOption>(__result__);
   }
   
   static Future<List<com_baidu_mapapi_search_route_BikingRoutePlanOption>> create_batch__(int length) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchcom_baidu_mapapi_search_route_BikingRoutePlanOption__', {'length': length});
-  
-    final List<com_baidu_mapapi_search_route_BikingRoutePlanOption> typedResult = resultBatch.map((result) => com_baidu_mapapi_search_route_BikingRoutePlanOption()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchcom_baidu_mapapi_search_route_BikingRoutePlanOption__',
+      {'length': length}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRoutePlanOption>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<com_baidu_mapapi_search_route_PlanNode> get_mFrom() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mFrom", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mFrom", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__);
   }
   
   Future<com_baidu_mapapi_search_route_PlanNode> get_mTo() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mTo", {'__this__': this});
-    return __result__ == null ? null : (com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify');
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mTo", {'__this__': this});
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__);
   }
   
   Future<int> get_mRidingType() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mRidingType", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mRidingType", {'__this__': this});
+    return __result__;
   }
   
   //endregion
 
   //region setters
   Future<void> set_mFrom(com_baidu_mapapi_search_route_PlanNode mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mFrom', <String, dynamic>{'__this__': this, "mFrom": mFrom});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mFrom', <String, dynamic>{'__this__': this, "mFrom": mFrom});
   
   
   }
   
   Future<void> set_mTo(com_baidu_mapapi_search_route_PlanNode mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mTo', <String, dynamic>{'__this__': this, "mTo": mTo});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mTo', <String, dynamic>{'__this__': this, "mTo": mTo});
   
   
   }
   
   Future<void> set_mRidingType(int mRidingType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mRidingType', <String, dynamic>{'__this__': this, "mRidingType": mRidingType});
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mRidingType', <String, dynamic>{'__this__': this, "mRidingType": mRidingType});
   
   
   }
@@ -86,19 +92,13 @@ class com_baidu_mapapi_search_route_BikingRoutePlanOption extends java_lang_Obje
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::from', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::from', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_route_BikingRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRoutePlanOption>(__result__);
   }
   
   
@@ -109,64 +109,57 @@ class com_baidu_mapapi_search_route_BikingRoutePlanOption extends java_lang_Obje
     }
   
     // invoke native method
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::ridingType', {"var1": var1, "__this__": this});
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::ridingType', {"var1": var1, "__this__": this});
   
   
     // handle native call
   
   
-    // convert native result to dart side object
-    if (__result__ == null) {
-      return null;
-    } else {
-      final __return__ = com_baidu_mapapi_search_route_BikingRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify';
-      return __return__;
-    }
+    return BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRoutePlanOption>(__result__);
   }
   
   //endregion
+
+  @override
+  String toString() {
+    return 'com_baidu_mapapi_search_route_BikingRoutePlanOption{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension com_baidu_mapapi_search_route_BikingRoutePlanOption_Batch on List<com_baidu_mapapi_search_route_BikingRoutePlanOption> {
   //region getters
   Future<List<com_baidu_mapapi_search_route_PlanNode>> get_mFrom_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mFrom_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mFrom_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__))?.cast<com_baidu_mapapi_search_route_PlanNode>()?.toList();
   }
   
   Future<List<com_baidu_mapapi_search_route_PlanNode>> get_mTo_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mTo_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_PlanNode()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mTo_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_PlanNode>(__result__))?.cast<com_baidu_mapapi_search_route_PlanNode>()?.toList();
   }
   
   Future<List<int>> get_mRidingType_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mRidingType_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("com.baidu.mapapi.search.route.BikingRoutePlanOption::get_mRidingType_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
 
   //region setters
   Future<void> set_mFrom_batch(List<com_baidu_mapapi_search_route_PlanNode> mFrom) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mFrom": mFrom[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mFrom_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mFrom": mFrom[__i__]}]);
   
   
   }
   
   Future<void> set_mTo_batch(List<com_baidu_mapapi_search_route_PlanNode> mTo) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTo": mTo[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mTo_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mTo": mTo[__i__]}]);
   
   
   }
   
   Future<void> set_mRidingType_batch(List<int> mRidingType) async {
-    await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec())).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mRidingType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mRidingType": mRidingType[__i__]}]);
+    await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::set_mRidingType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {'__this__': this[__i__], "mRidingType": mRidingType[__i__]}]);
   
   
   }
@@ -176,40 +169,24 @@ extension com_baidu_mapapi_search_route_BikingRoutePlanOption_Batch on List<com_
   //region methods
   
   Future<List<com_baidu_mapapi_search_route_BikingRoutePlanOption>> from_batch(List<com_baidu_mapapi_search_route_PlanNode> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::from_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_BikingRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRoutePlanOption>(__result__)).cast<com_baidu_mapapi_search_route_BikingRoutePlanOption>().toList();
   }
   
   
   Future<List<com_baidu_mapapi_search_route_BikingRoutePlanOption>> ridingType_batch(List<int> var1) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
+    assert(true);
   
     // invoke native method
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::ridingType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod('com.baidu.mapapi.search.route.BikingRoutePlanOption::ridingType_batch', [for (int __i__ = 0; __i__ < this.length; __i__++) {"var1": var1[__i__], "__this__": this[__i__]}]);
   
   
-    // convert native result to dart side object
-    if (resultBatch == null) {
-      return null;
-    } else {
-      final typedResult = (resultBatch as List).cast<String>().map((__result__) => com_baidu_mapapi_search_route_BikingRoutePlanOption()..refId = __result__..tag__ = 'bmap_map_fluttify').toList();
-      return typedResult;
-    }
+    return (resultBatch as List).map((__result__) => BmapMapFluttifyAndroidAs<com_baidu_mapapi_search_route_BikingRoutePlanOption>(__result__)).cast<com_baidu_mapapi_search_route_BikingRoutePlanOption>().toList();
   }
   
   //endregion

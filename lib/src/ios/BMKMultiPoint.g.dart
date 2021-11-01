@@ -16,37 +16,43 @@ class BMKMultiPoint extends BMKShape with BMKAnnotation {
   //region constants
   static const String name__ = 'BMKMultiPoint';
 
+  @override
+  final String tag__ = 'bmap_map_fluttify';
+
   
   //endregion
 
   //region creators
   static Future<BMKMultiPoint> create__({ bool init = true /* ios only */ }) async {
-    final refId = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::createBMKMultiPoint', {'init': init});
-    final object = BMKMultiPoint()..refId = refId..tag__ = 'bmap_map_fluttify';
-    return object;
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod(
+      'ObjectFactory::createBMKMultiPoint',
+      {'init': init}
+    );
+    return BmapMapFluttifyIOSAs<BMKMultiPoint>(__result__);
   }
   
   static Future<List<BMKMultiPoint>> create_batch__(int length, { bool init = true /* ios only */ }) async {
-    if (false) {
-      return Future.error('all args must have same length!');
-    }
-    final List resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod('ObjectFactory::create_batchBMKMultiPoint', {'length': length, 'init': init});
-  
-    final List<BMKMultiPoint> typedResult = resultBatch.map((result) => BMKMultiPoint()..refId = result..tag__ = 'bmap_map_fluttify').toList();
-    return typedResult;
+    assert(true);
+    final __result_batch__ = await  kBmapMapFluttifyChannel.invokeListMethod(
+      'ObjectFactory::create_batchBMKMultiPoint',
+      {'length': length, 'init': init}
+    );
+    return __result_batch__
+        .map((it) => BmapMapFluttifyIOSAs<BMKMultiPoint>(it))
+        .toList();
   }
   
   //endregion
 
   //region getters
   Future<List<BMKMapPoint>> get_points() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMultiPoint::get_points", {'__this__': this});
-    return __result__ == null ? null : ((__result__ as List).cast<String>().map((__it__) => BMKMapPoint()..refId = __it__..tag__ = 'bmap_map_fluttify').toList());
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKMultiPoint::get_points", {'__this__': this});
+    return (__result__ as List)?.map((it) => BmapMapFluttifyIOSAs<BMKMapPoint>(it))?.toList();
   }
   
   Future<int> get_pointCount() async {
-    final __result__ = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMultiPoint::get_pointCount", {'__this__': this});
-    return __result__ == null ? null : (__result__);
+    final __result__ = await kBmapMapFluttifyChannel.invokeMethod("BMKMultiPoint::get_pointCount", {'__this__': this});
+    return __result__;
   }
   
   //endregion
@@ -58,22 +64,23 @@ class BMKMultiPoint extends BMKShape with BMKAnnotation {
   //region methods
   
   //endregion
+
+  @override
+  String toString() {
+    return 'BMKMultiPoint{refId: $refId, runtimeType: $runtimeType, tag__: $tag__}';
+  }
 }
 
 extension BMKMultiPoint_Batch on List<BMKMultiPoint> {
   //region getters
   Future<List<List<BMKMapPoint>>> get_points_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMultiPoint::get_points_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<String>().map((__result__) => (__result__ as List).cast<String>().map((__it__) => BMKMapPoint()..refId = __it__..tag__ = 'bmap_map_fluttify').toList()).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKMultiPoint::get_points_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => (__result__ as List)?.map((it) => BmapMapFluttifyIOSAs<BMKMapPoint>(it))?.toList())?.cast<List<BMKMapPoint>>()?.toList();
   }
   
   Future<List<int>> get_pointCount_batch() async {
-    final resultBatch = await MethodChannel('com.fluttify/bmap_map_fluttify', StandardMethodCodec(FluttifyMessageCodec('bmap_map_fluttify'))).invokeMethod("BMKMultiPoint::get_pointCount_batch", [for (final __item__ in this) {'__this__': __item__}]);
-  
-    final typedResult = (resultBatch as List).cast<int>().map((__result__) => __result__).toList();
-    return typedResult;
+    final resultBatch = await kBmapMapFluttifyChannel.invokeMethod("BMKMultiPoint::get_pointCount_batch", [for (final __item__ in this) {'__this__': __item__}]);
+    return (resultBatch as List)?.map((__result__) => __result__)?.cast<int>()?.toList();
   }
   
   //endregion
