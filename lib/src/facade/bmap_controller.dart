@@ -2,16 +2,16 @@
 part of 'bmap_view.widget.dart';
 
 /// marker点击事件回调签名 输入[Marker]对象, 返回`是否已消耗事件`, 如果true则不再弹窗, 如果false则继续弹窗
-typedef Future<bool> OnMarkerClicked(Marker marker);
+typedef OnMarkerClicked = Future<bool> Function(Marker marker);
 
 /// Marker拖动回调签名
-typedef Future<void> OnMarkerDrag(Marker marker);
+typedef OnMarkerDrag = Future<void> Function(Marker marker);
 
 /// 地图移动事件回调签名
-typedef Future<void> OnMapMove(MapMove move);
+typedef OnMapMove = Future<void> Function(MapMove move);
 
 /// 地图截屏回调签名
-typedef Future<void> OnScreenShot(Uint8List imageData);
+typedef OnScreenShot = Future<void> Function(Uint8List imageData);
 
 /// 地图控制类
 class BmapController extends _Holder
@@ -104,7 +104,7 @@ mixin _Community on _Holder {
 
         await iosController.setCenterCoordinate_animated(latLng, animated);
 
-        pool..add(latLng);
+        pool.add(latLng);
       },
     );
   }
@@ -223,8 +223,8 @@ mixin _Community on _Holder {
         final overlays = await map.addOverlays(markerOptionBatch);
         // 由于返回类型被重置为Polygon(因为是第一个子类的关系), 这里转换一下
         final markers = overlays
-            .map((it) => BmapMapFluttifyAndroidAs(it)
-                .as__<com_baidu_mapapi_map_Marker>())
+            .map((it) =>
+                BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Marker>(it))
             .toList();
 
         // marker不释放, 还有用
@@ -254,7 +254,7 @@ mixin _Community on _Holder {
           pool.addAll(iconBatch);
         }
         // 添加自定义数据
-        annotationBatch.addJsonableProperty_batch(7, objectBatch);
+        await annotationBatch.addJsonableProperty_batch(7, objectBatch);
 
         // 添加marker
         await iosController.addAnnotations(annotationBatch);
@@ -277,7 +277,7 @@ mixin _Community on _Holder {
         await map.setOnMarkerClickListener(
             _androidMapDelegate.._onMarkerClicked = onMarkerClicked);
 
-        pool..add(map);
+        pool.add(map);
       },
       ios: (pool) async {
         await iosController
@@ -395,8 +395,7 @@ mixin _Community on _Holder {
           ..addAll(latLngList);
 
         return Polyline.android(
-          BmapMapFluttifyAndroidAs(polyline)
-              .as__<com_baidu_mapapi_map_Polyline>(),
+          BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Polyline>(polyline),
         );
       },
       ios: (pool) async {
@@ -414,29 +413,29 @@ mixin _Community on _Holder {
         // 宽度和颜色需要设置到STACK里去
         if (option.width != null) {
           final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
-          polyline.addJsonableProperty__(1, option.width / pixelRatio);
+          await polyline.addJsonableProperty__(1, option.width / pixelRatio);
         }
         // 颜色
         if (option.strokeColor != null) {
-          polyline.addJsonableProperty__(2, option.strokeColor.value);
+          await polyline.addJsonableProperty__(2, option.strokeColor.value);
         }
         // 设置图片
         if (textureData != null) {
           final texture = await UIImage.create(textureData);
 
-          polyline.addProperty__(3, texture);
+          await polyline.addProperty__(3, texture);
 
-          pool..add(texture);
+          pool.add(texture);
         }
         // 是否虚线
         if (option.dashType != null) {
-          polyline.addJsonableProperty__(6, option.dashType.index + 1);
+          await polyline.addJsonableProperty__(6, option.dashType.index + 1);
         }
 
         // 设置参数
         await iosController.addOverlay(polyline);
 
-        pool..addAll(latLngList);
+        pool.addAll(latLngList);
 
         return Polyline.ios(polyline, iosController);
       },
@@ -492,9 +491,7 @@ mixin _Community on _Holder {
           ..addAll(latLngList);
 
         return Polygon.android(
-          BmapMapFluttifyAndroidAs(polygon)
-              .as__<com_baidu_mapapi_map_Polygon>(),
-        );
+            BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Polygon>(polygon));
       },
       ios: (pool) async {
         await iosController.set_delegate(_iosMapDelegate);
@@ -510,13 +507,13 @@ mixin _Community on _Holder {
 
         if (option.width != null) {
           final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
-          polygon.addJsonableProperty__(1, option.width / pixelRatio);
+          await polygon.addJsonableProperty__(1, option.width / pixelRatio);
         }
         if (option.strokeColor != null) {
-          polygon.addJsonableProperty__(2, option.strokeColor.value);
+          await polygon.addJsonableProperty__(2, option.strokeColor.value);
         }
         if (option.fillColor != null) {
-          polygon.addJsonableProperty__(3, option.fillColor.value);
+          await polygon.addJsonableProperty__(3, option.fillColor.value);
         }
 
         // 设置参数
@@ -575,8 +572,7 @@ mixin _Community on _Holder {
           ..add(latLng);
 
         return Circle.android(
-          BmapMapFluttifyAndroidAs(circle).as__<com_baidu_mapapi_map_Circle>(),
-        );
+            BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Circle>(circle));
       },
       ios: (pool) async {
         await iosController.set_delegate(_iosMapDelegate);
@@ -594,13 +590,13 @@ mixin _Community on _Holder {
 
         if (option.width != null) {
           final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
-          circle.addJsonableProperty__(1, option.width / pixelRatio);
+          await circle.addJsonableProperty__(1, option.width / pixelRatio);
         }
         if (option.strokeColor != null) {
-          circle.addJsonableProperty__(2, option.strokeColor.value);
+          await circle.addJsonableProperty__(2, option.strokeColor.value);
         }
         if (option.fillColor != null) {
-          circle.addJsonableProperty__(3, option.fillColor.value);
+          await circle.addJsonableProperty__(3, option.fillColor.value);
         }
 
         // 设置参数
@@ -670,7 +666,7 @@ mixin _Community on _Holder {
             break;
         }
 
-        pool..add(map);
+        pool.add(map);
       },
       ios: (pool) async {
         switch (mapType) {
@@ -692,7 +688,7 @@ mixin _Community on _Holder {
         final map = await androidController.getMap();
         await map.setTrafficEnabled(enable);
 
-        pool..add(map);
+        pool.add(map);
       },
       ios: (pool) async {
         await iosController.set_trafficEnabled(enable);
@@ -898,7 +894,7 @@ mixin _Community on _Holder {
             .._onMarkerDragEnd = onMarkerDragEnd,
         );
 
-        pool..add(map);
+        pool.add(map);
       },
       ios: (pool) async {
         await iosController.set_delegate(
@@ -921,7 +917,7 @@ mixin _Community on _Holder {
           _androidMapDelegate.._onMapMoveEnd = onMapMoveEnd,
         );
 
-        pool..add(map);
+        pool.add(map);
       },
       ios: (pool) async {
         await iosController.set_delegate(
@@ -994,7 +990,7 @@ mixin _Pro on _Holder {
         final rect = await iosController.frame;
         final image = await iosController.takeSnapshot();
 
-        if (onScreenShot != null) onScreenShot(await image.data);
+        if (onScreenShot != null) await onScreenShot(await image.data);
 
         pool
           ..add(rect)
@@ -1136,7 +1132,7 @@ mixin _Pro on _Holder {
           northEast.longitude - southWest.longitude,
         );
         final region = await BMKCoordinateRegionMake(center, span);
-        iosController.set_limitMapRegion(region);
+        await iosController.set_limitMapRegion(region);
 
         pool
           ..add(center)
@@ -1157,7 +1153,7 @@ mixin _Pro on _Holder {
 
         await map.showMapPoi(show);
 
-        pool..add(map);
+        pool.add(map);
       },
       ios: (pool) async {
         await iosController.set_showMapPoi(show);
@@ -1324,7 +1320,7 @@ mixin _Pro on _Holder {
           ..add(end);
 
         return Arc.android(
-          BmapMapFluttifyAndroidAs(arc).as__<com_baidu_mapapi_map_Arc>(),
+          BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Arc>(arc),
         );
       },
       ios: (pool) async {
@@ -1351,11 +1347,11 @@ mixin _Pro on _Holder {
         // 宽度和颜色需要设置到STACK里去
         if (option.width != null) {
           final pixelRatio = MediaQuery.of(_state.context).devicePixelRatio;
-          arc.addJsonableProperty__(1, option.width / pixelRatio);
+          await arc.addJsonableProperty__(1, option.width / pixelRatio);
         }
         // 颜色
         if (option.strokeColor != null) {
-          arc.addJsonableProperty__(2, option.strokeColor.value);
+          await arc.addJsonableProperty__(2, option.strokeColor.value);
         }
 
         // 设置参数
