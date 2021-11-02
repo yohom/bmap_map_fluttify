@@ -14,6 +14,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:uni_map_platform_interface/uni_map_platform_interface.dart';
 
 import 'bmap_location.dart';
 import 'enums.dart';
@@ -23,7 +24,7 @@ import 'models.dart';
 part 'bmap_controller.dart';
 part 'map_delagates.dart';
 
-typedef Future<void> _OnMapCreated(BmapController controller);
+typedef _OnMapCreated = Future<void> Function(BmapController controller);
 
 /// 百度地图 Widget
 class BmapView extends StatefulWidget {

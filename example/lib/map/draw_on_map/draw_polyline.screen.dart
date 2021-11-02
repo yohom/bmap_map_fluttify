@@ -61,7 +61,7 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                     ];
                     _currentPolyline =
                         await _controller?.addPolyline(PolylineOption(
-                      latLngList: _pointList,
+                      coordinateList: _pointList,
                       width: 10,
                       strokeColor: Colors.green,
                     ));
@@ -82,7 +82,7 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                     await _currentPolyline?.remove();
                     _currentPolyline =
                         await _controller?.addPolyline(PolylineOption(
-                      latLngList: [
+                      coordinateList: [
                         getNextLatLng(),
                         getNextLatLng(),
                         getNextLatLng(),
@@ -124,7 +124,7 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                     await _currentPolyline?.remove();
                     _currentPolyline =
                         await _controller?.addPolyline(PolylineOption(
-                      latLngList: [
+                      coordinateList: [
                         getNextLatLng(),
                         getNextLatLng(),
                         getNextLatLng(),
@@ -159,7 +159,7 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                     await _currentPolyline?.remove();
                     _currentPolyline =
                         await _controller?.addPolyline(PolylineOption(
-                      latLngList: [
+                      coordinateList: [
                         LatLng(39.999391, 116.135972),
                         LatLng(39.898323, 116.057694),
                         LatLng(39.900430, 116.265061),
@@ -194,7 +194,7 @@ class _DrawPolylineScreenState extends State<DrawPolylineScreen>
                     await _currentPolyline?.remove();
                     _currentPolyline =
                         await _controller?.addPolyline(PolylineOption(
-                      latLngList: [
+                      coordinateList: [
                         getNextLatLng(),
                         getNextLatLng(),
                         getNextLatLng(),

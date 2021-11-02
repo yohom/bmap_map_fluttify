@@ -1,15 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 part of 'bmap_view.widget.dart';
 
-/// marker点击事件回调签名 输入[Marker]对象, 返回`是否已消耗事件`, 如果true则不再弹窗, 如果false则继续弹窗
-typedef OnMarkerClicked = Future<bool> Function(Marker marker);
-
-/// Marker拖动回调签名
-typedef OnMarkerDrag = Future<void> Function(Marker marker);
-
-/// 地图移动事件回调签名
-typedef OnMapMove = Future<void> Function(MapMove move);
-
 /// 地图截屏回调签名
 typedef OnScreenShot = Future<void> Function(Uint8List imageData);
 
@@ -19,18 +10,18 @@ class BmapController extends _Holder
   /// Android构造器
   BmapController.android(
     com_baidu_mapapi_map_TextureMapView androidController,
-    _BmapViewState state,
+    _BmapViewState _state,
   ) {
     WidgetsBinding.instance.addObserver(this);
     this.androidController = androidController;
-    this._state = state;
+    this._state = _state;
   }
 
   /// iOS构造器
-  BmapController.ios(BMKMapView iosController, _BmapViewState state) {
+  BmapController.ios(BMKMapView iosController, _BmapViewState _state) {
     WidgetsBinding.instance.addObserver(this);
     this.iosController = iosController;
-    this._state = state;
+    this._state = _state;
   }
 
   /// 释放资源
@@ -174,24 +165,33 @@ mixin _Community on _Holder {
   /// 根据[options]批量创建Marker
   Future<List<Marker>> addMarkers(List<MarkerOption> options) async {
     assert(options != null);
+    if (!_state.mounted) return [];
 
     if (options.isEmpty) return Future.value([]);
 
-    final latBatch = options.map((it) => it.latLng.latitude).toList();
-    final lngBatch = options.map((it) => it.latLng.longitude).toList();
+    final latBatch = options.map((it) => it.coordinate.latitude).toList();
+    final lngBatch = options.map((it) => it.coordinate.longitude).toList();
+    final titleBatch = options.map((it) => it.title).toList();
+    final snippetBatch = options.map((it) => it.snippet).toList();
+    final draggableBatch = options.map((it) => it.draggable).toList();
+    final rotateAngleBatch = options.map((it) => it.rotateAngle).toList();
+    final anchorUBatch = options.map((it) => it.anchorU).toList();
+    final anchorVBatch = options.map((it) => it.anchorV).toList();
+    final visibleBatch = options.map((it) => it.visible).toList();
+    final infoWindowEnabledBatch =
+        options.map((it) => it.infoWindowEnabled).toList();
+    final objectBatch = options.map((it) => it.object).toList();
     final iconDataBatch = <Uint8List>[
       ...await Future.wait([
         for (final option in options)
           if (option.iconProvider != null)
-            option.iconProvider
-                .toImageData(createLocalImageConfiguration(_state.context))
+            option.iconProvider.toImageData(imageConfiguration)
       ]),
       ...await _state.widgetToImageData(options
           .where((element) => element.widget != null)
           .map((e) => e.widget)
           .toList()),
     ];
-    final objectBatch = options.map((it) => it.object).toList();
 
     return platform(
       android: (pool) async {
@@ -204,6 +204,14 @@ mixin _Community on _Holder {
             .create_batch__(options.length);
         // 添加经纬度
         await markerOptionBatch.position_batch(latLngBatch);
+        // 是否可拖动
+        await markerOptionBatch.draggable_batch(draggableBatch);
+        // 旋转角度
+        await markerOptionBatch.rotate_batch(rotateAngleBatch);
+        // 锚点
+        await markerOptionBatch.anchor_batch(anchorUBatch, anchorVBatch);
+        // 是否可见
+        await markerOptionBatch.visible_batch(visibleBatch);
         // 图片
         if (iconDataBatch.isNotEmpty) {
           final bitmapBatch =
@@ -242,19 +250,36 @@ mixin _Community on _Holder {
         // 创建marker
         final annotationBatch =
             await BMKPointAnnotation.create_batch__(options.length);
+
         // 经纬度列表
         final coordinateBatch =
             await CLLocationCoordinate2D.create_batch(latBatch, lngBatch);
         // 设置经纬度
         await annotationBatch.set_coordinate_batch(coordinateBatch);
+        // 设置标题
+        if (titleBatch.any((element) => element.isNotEmpty)) {
+          await annotationBatch.set_title_batch(titleBatch);
+        }
+        // 设置副标题
+        await annotationBatch.set_subtitle_batch(snippetBatch);
         // 设置图片
         if (iconDataBatch.isNotEmpty) {
           final iconBatch = await UIImage.create_batch(iconDataBatch);
-          await annotationBatch.addProperty_batch(1, iconBatch);
+          await annotationBatch.setIcon(iconBatch);
           pool.addAll(iconBatch);
         }
-        // 添加自定义数据
-        await annotationBatch.addJsonableProperty_batch(7, objectBatch);
+        // 是否可拖拽
+        await annotationBatch.setDraggable(draggableBatch);
+        // 旋转角度
+        await annotationBatch.setRotateAngle(rotateAngleBatch);
+        // 是否允许弹窗
+        await annotationBatch.setInfoWindowEnabled(infoWindowEnabledBatch);
+        // 锚点
+        await annotationBatch.setAnchor(anchorUBatch, anchorVBatch);
+        // 自定义数据
+        await annotationBatch.setObject(objectBatch);
+        // 是否可见
+        await annotationBatch.setVisible(visibleBatch);
 
         // 添加marker
         await iosController.addAnnotations(annotationBatch);
@@ -328,8 +353,9 @@ mixin _Community on _Holder {
   Future<Polyline> addPolyline(PolylineOption option) async {
     assert(option != null);
 
-    final latitudeBatch = option.latLngList.map((e) => e.latitude).toList();
-    final longitudeBatch = option.latLngList.map((e) => e.longitude).toList();
+    final latitudeBatch = option.coordinateList.map((e) => e.latitude).toList();
+    final longitudeBatch =
+        option.coordinateList.map((e) => e.longitude).toList();
     Uint8List textureData = await option.textureProvider
         ?.toImageData(createLocalImageConfiguration(_state.context));
 
@@ -448,8 +474,9 @@ mixin _Community on _Holder {
   Future<Polygon> addPolygon(PolygonOption option) {
     assert(option != null, 'option不能为null');
 
-    final latitudeBatch = option.latLngList.map((e) => e.latitude).toList();
-    final longitudeBatch = option.latLngList.map((e) => e.longitude).toList();
+    final latitudeBatch = option.coordinateList.map((e) => e.latitude).toList();
+    final longitudeBatch =
+        option.coordinateList.map((e) => e.longitude).toList();
 
     return platform(
       android: (pool) async {
@@ -1373,6 +1400,9 @@ class _Holder {
   BMKMapView iosController;
 
   _BmapViewState _state;
+
+  final imageConfiguration =
+      ImageConfiguration(devicePixelRatio: window.devicePixelRatio);
 
   final _iosMapDelegate = _IOSMapDelegate();
   final _androidMapDelegate = _AndroidMapDelegate();

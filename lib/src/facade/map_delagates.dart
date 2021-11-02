@@ -14,7 +14,6 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
     BMKMapView mapView,
     BMKAnnotationView view,
   ) async {
-    super.mapView_clickAnnotationView(mapView, view);
     if (_onMarkerClicked != null) {
       await _onMarkerClicked(
         Marker.ios(
@@ -34,12 +33,6 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
     int newState,
     int oldState,
   ) async {
-    super.mapView_annotationView_didChangeDragState_fromOldState(
-      mapView,
-      view,
-      newState,
-      oldState,
-    );
     if (_onMarkerDragStart != null && newState == 0) {
       await _onMarkerDragStart(
         Marker.ios(
@@ -73,11 +66,10 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
 
   @override
   Future<void> mapStatusDidChanged(BMKMapView mapView) async {
-    super.mapStatusDidChanged(mapView);
     if (_onMapMoveEnd != null) {
       final location = await mapView.get_centerCoordinate();
       await _onMapMoveEnd(MapMove(
-        latLng: LatLng(await location.latitude, await location.longitude),
+        coordinate: LatLng(await location.latitude, await location.longitude),
         zoom: await mapView.get_zoomLevel(),
         tilt: (await mapView.get_overlooking()).toDouble(),
       ));
@@ -100,7 +92,6 @@ class _AndroidMapDelegate extends java_lang_Object
 
   @override
   Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerClick(var1);
     if (_onMarkerClicked != null) {
       await _onMarkerClicked(Marker.android(var1));
     }
@@ -109,7 +100,6 @@ class _AndroidMapDelegate extends java_lang_Object
 
   @override
   Future<void> onMarkerDragStart(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDragStart(var1);
     if (_onMarkerDragStart != null) {
       await _onMarkerDragStart(Marker.android(var1));
     }
@@ -117,7 +107,6 @@ class _AndroidMapDelegate extends java_lang_Object
 
   @override
   Future<void> onMarkerDrag(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDrag(var1);
     if (_onMarkerDragging != null) {
       await _onMarkerDragging(Marker.android(var1));
     }
@@ -125,7 +114,6 @@ class _AndroidMapDelegate extends java_lang_Object
 
   @override
   Future<void> onMarkerDragEnd(com_baidu_mapapi_map_Marker var1) async {
-    super.onMarkerDragEnd(var1);
     if (_onMarkerDragEnd != null) {
       await _onMarkerDragEnd(Marker.android(var1));
     }
@@ -135,11 +123,10 @@ class _AndroidMapDelegate extends java_lang_Object
   Future<void> onMapStatusChangeFinish(
     com_baidu_mapapi_map_MapStatus var1,
   ) async {
-    super.onMapStatusChangeFinish(var1);
     if (_onMapMoveEnd != null) {
       final location = await var1.get_target();
       await _onMapMoveEnd(MapMove(
-        latLng: LatLng(
+        coordinate: LatLng(
           await location.get_latitude(),
           await location.get_longitude(),
         ),
@@ -151,9 +138,8 @@ class _AndroidMapDelegate extends java_lang_Object
 
   @override
   Future<void> onSnapshotReady(android_graphics_Bitmap var1) async {
-    super.onSnapshotReady(var1);
     if (_onScreenShot != null) {
-      _onScreenShot(await var1.data);
+      await _onScreenShot(await var1.data);
     }
   }
 }

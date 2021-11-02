@@ -4066,7 +4066,7 @@ extern BOOL enableLog;
       // 锚点
       if (anchorU != nil && anchorV != nil
           && (NSNull*) anchorU != [NSNull null] && (NSNull*) anchorV != [NSNull null]) {
-          annotationView.layer.anchorPoint = CGPointMake([anchorU doubleValue], [anchorV doubleValue]);
+          annotationView.layer.anchorPoint = CGPointMake([anchorU doubleValue], 1 - [anchorV doubleValue]);
       }
       // 是否可见
       if (visible != nil && (NSNull*) visible != [NSNull null]) {
