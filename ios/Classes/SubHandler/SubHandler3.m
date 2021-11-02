@@ -1342,31 +1342,7 @@ extern BOOL enableLog;
         
             methodResult(resultList);
         },
-        
-        @"BMKOverlayView::get_colors_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKOverlayView* ref = (BMKOverlayView*) args[@"__this__"];
-                // 批处理过程中出现nil引用则直接添加nil进结果列表, 然后进行下一次循环
-                if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                    [resultList addObject: [NSNull null]];
-                    continue;
-                }
-        
-                NSArray<UIColor*>* result = ref.colors;
-        
-                // return a ref
-                NSObject* __result__ = result;
-        
-                [resultList addObject:__result__ == nil ? [NSNull null] : __result__];
-            }
-        
-            methodResult(resultList);
-        },
+      
         
         @"BMKGroundOverlayView::get_groundOverlay_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];
@@ -2067,81 +2043,8 @@ extern BOOL enableLog;
         
             methodResult(resultList);
         },
-        
-        @"BMKOverlayGLBasicView::get_lineJoinType_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-                // 批处理过程中出现nil引用则直接添加nil进结果列表, 然后进行下一次循环
-                if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                    [resultList addObject: [NSNull null]];
-                    continue;
-                }
-        
-                BMKLineJoinType result = ref.lineJoinType;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__ == nil ? [NSNull null] : __result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"BMKOverlayGLBasicView::get_lineCapType_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-                // 批处理过程中出现nil引用则直接添加nil进结果列表, 然后进行下一次循环
-                if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                    [resultList addObject: [NSNull null]];
-                    continue;
-                }
-        
-                BMKLineCapType result = ref.lineCapType;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__ == nil ? [NSNull null] : __result__];
-            }
-        
-            methodResult(resultList);
-        },
-        
-        @"BMKOverlayGLBasicView::get_lineDashType_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
-            NSMutableArray* resultList = [NSMutableArray array];
-        
-            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // ref object
-                BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-                // 批处理过程中出现nil引用则直接添加nil进结果列表, 然后进行下一次循环
-                if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                    [resultList addObject: [NSNull null]];
-                    continue;
-                }
-        
-                BMKLineDashType result = ref.lineDashType;
-        
-                // 返回值: Value
-                NSObject* __result__ = @(result);
-        
-                [resultList addObject:__result__ == nil ? [NSNull null] : __result__];
-            }
-        
-            methodResult(resultList);
-        },
+       
+      
         
         @"BMKShape::get_title_batch": ^(NSObject <FlutterPluginRegistrar>* registrar, id argsBatch, FlutterResult methodResult) {
             NSMutableArray* resultList = [NSMutableArray array];

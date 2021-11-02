@@ -21,21 +21,21 @@ packages:
       name: bmap_core_fluttify
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.4.0"
+    version: "0.5.0"
   bmap_map_fluttify:
     dependency: "direct dev"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.3.1"
   bmap_utils_fluttify:
     dependency: transitive
     description:
       name: bmap_utils_fluttify
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.3.0"
+    version: "0.4.0"
   boolean_selector:
     dependency: transitive
     description:
