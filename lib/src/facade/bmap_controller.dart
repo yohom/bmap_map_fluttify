@@ -257,7 +257,9 @@ mixin _Community on _Holder {
         // 设置经纬度
         await annotationBatch.set_coordinate_batch(coordinateBatch);
         // 设置标题
-        await annotationBatch.set_title_batch(titleBatch);
+        if (titleBatch.any((element) => element.isNotEmpty)) {
+          await annotationBatch.set_title_batch(titleBatch);
+        }
         // 设置副标题
         await annotationBatch.set_subtitle_batch(snippetBatch);
         // 设置图片
