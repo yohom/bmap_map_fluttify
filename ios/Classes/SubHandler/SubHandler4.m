@@ -981,27 +981,6 @@ extern BOOL enableLog;
             methodResult(@"success");
         },
         
-        @"BMKOverlayView::set_colors": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayView::set_colors");
-            }
-        
-            // args
-            // list arg
-            NSArray<UIColor*>* colors = (NSArray<UIColor*>*) args[@"colors"];
-        
-            // ref
-            BMKOverlayView* ref = (BMKOverlayView*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.colors = colors;
-            methodResult(@"success");
-        },
-        
         @"BMKAnnotationView::set_paopaoView": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
             if (enableLog) {
@@ -1565,48 +1544,6 @@ extern BOOL enableLog;
             }
         
             ref.keepScale = keepScale;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_lineJoinType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_lineJoinType");
-            }
-        
-            // args
-            // enum arg
-            BMKLineJoinType lineJoinType = (BMKLineJoinType) [args[@"lineJoinType"] integerValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.lineJoinType = lineJoinType;
-            methodResult(@"success");
-        },
-        
-        @"BMKOverlayGLBasicView::set_lineCapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::set_lineCapType");
-            }
-        
-            // args
-            // enum arg
-            BMKLineCapType lineCapType = (BMKLineCapType) [args[@"lineCapType"] integerValue];
-        
-            // ref
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            ref.lineCapType = lineCapType;
             methodResult(@"success");
         },
         
@@ -4507,28 +4444,7 @@ extern BOOL enableLog;
         
             methodResult(@"success");
         },
-        
-        @"BMKOverlayView::set_colors_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
-            for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {
-                NSDictionary<NSString*, id>* args = [((NSArray<NSDictionary<NSString*, id>*>*) argsBatch) objectAtIndex:__i__];
-        
-                // args
-                // list arg
-                NSArray<UIColor*>* colors = (NSArray<UIColor*>*) args[@"colors"];
-        
-                // ref
-                BMKOverlayView* ref = (BMKOverlayView*) args[@"__this__"];
-                if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                    methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                    return;
-                }
-        
-                ref.colors = colors;;
-                methodResult(@"success");
-            }
-        
-            methodResult(@"success");
-        },
+     
         
         @"BMKAnnotationView::set_paopaoView_batch": ^(NSObject <FlutterPluginRegistrar> * registrar, id argsBatch, FlutterResult methodResult) {
             for (NSUInteger __i__ = 0; __i__ < ((NSArray<NSDictionary<NSString*, NSObject*>*>*) argsBatch).count; __i__++) {

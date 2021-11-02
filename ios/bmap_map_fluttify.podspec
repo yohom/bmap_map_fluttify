@@ -21,7 +21,8 @@ A new flutter plugin project.
   s.dependency 'bmap_utils_fluttify'
   s.dependency 'path_provider'
   # sdk dependency
-  
+  s.dependency 'BaiduMapKit/Map', '6.4'
+  s.dependency 'BMKLocationKit', '~> 2.0'
 
   s.static_framework = true
   s.ios.deployment_target = '8.0'

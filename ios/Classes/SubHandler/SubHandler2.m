@@ -1029,28 +1029,28 @@ extern BOOL enableLog;
         
             methodResult(__result__);
         },
-        
-        @"BMKOverlayView::get_colors": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayView::get_colors");
-            }
-        
-            // ref object
-            BMKOverlayView* ref = (BMKOverlayView*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            // invoke native method
-            NSArray<UIColor*>* result = ref.colors;
-        
-            // return a ref
-            NSObject* __result__ = result;
-        
-            methodResult(__result__);
-        },
+//
+//        @"BMKOverlayView::get_colors": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+//            // print log
+//            if (enableLog) {
+//                NSLog(@"BMKOverlayView::get_colors");
+//            }
+//
+//            // ref object
+//            BMKOverlayView* ref = (BMKOverlayView*) args[@"__this__"];
+//            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+//                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+//                return;
+//            }
+//
+//            // invoke native method
+//            NSArray<UIColor*>* result = ref.colors;
+//
+//            // return a ref
+//            NSObject* __result__ = result;
+//
+//            methodResult(__result__);
+//        },
         
         @"BMKGroundOverlayView::get_groundOverlay": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log
@@ -1682,7 +1682,7 @@ extern BOOL enableLog;
             }
         
             // invoke native method
-            BMKLineJoinType result = ref.lineJoinType;
+            BMKLineJoinType result = ref.lineDashType;
         
             // 返回值: Value
             NSObject* __result__ = @(result);
@@ -1690,27 +1690,27 @@ extern BOOL enableLog;
             methodResult(__result__);
         },
         
-        @"BMKOverlayGLBasicView::get_lineCapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-            // print log
-            if (enableLog) {
-                NSLog(@"BMKOverlayGLBasicView::get_lineCapType");
-            }
-        
-            // ref object
-            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
-            if ((NSNull *) ref == [NSNull null] || ref == nil) {
-                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-                return;
-            }
-        
-            // invoke native method
-            BMKLineCapType result = ref.lineCapType;
-        
-            // 返回值: Value
-            NSObject* __result__ = @(result);
-        
-            methodResult(__result__);
-        },
+//        @"BMKOverlayGLBasicView::get_lineCapType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
+//            // print log
+//            if (enableLog) {
+//                NSLog(@"BMKOverlayGLBasicView::get_lineCapType");
+//            }
+//
+//            // ref object
+//            BMKOverlayGLBasicView* ref = (BMKOverlayGLBasicView*) args[@"__this__"];
+//            if ((NSNull *) ref == [NSNull null] || ref == nil) {
+//                methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
+//                return;
+//            }
+//
+//            // invoke native method
+//            BMKLineCapType result = ref.lineCapType;
+//
+//            // 返回值: Value
+//            NSObject* __result__ = @(result);
+//
+//            methodResult(__result__);
+//        },
         
         @"BMKOverlayGLBasicView::get_lineDashType": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
             // print log

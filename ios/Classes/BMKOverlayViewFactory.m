@@ -989,50 +989,7 @@ extern BOOL enableLog;
       
           methodResult(__result__);
       },
-      
-      @"BMKOverlayView::get_colors": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-          // print log
-          if (enableLog) {
-              NSLog(@"BMKOverlayView::get_colors");
-          }
-      
-          // ref object
-          BMKOverlayView* ref = (BMKOverlayView*) args[@"__this__"];
-          if ((NSNull *) ref == [NSNull null] || ref == nil) {
-              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-              return;
-          }
-      
-          // invoke native method
-          NSArray<UIColor*>* result = ref.colors;
-      
-          // return a ref
-          NSObject* __result__ = result;
-      
-          methodResult(__result__);
-      },
-      
-      @"BMKOverlayView::set_colors": ^(NSObject <FlutterPluginRegistrar> * registrar, id args, FlutterResult methodResult) {
-          // print log
-          if (enableLog) {
-              NSLog(@"BMKOverlayView::set_colors");
-          }
-      
-          // args
-          // list arg
-          NSArray<UIColor*>* colors = (NSArray<UIColor*>*) args[@"colors"];
-      
-          // ref
-          BMKOverlayView* ref = (BMKOverlayView*) args[@"__this__"];
-          if ((NSNull *) ref == [NSNull null] || ref == nil) {
-              methodResult([FlutterError errorWithCode:@"目标对象为nil" message:@"目标对象为nil" details:@"目标对象为nil"]);
-              return;
-          }
-      
-          ref.colors = colors;
-          methodResult(@"success");
-      },
-      
+   
   };
   //endregion
   return _view;
