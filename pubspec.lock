@@ -240,6 +240,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.3.0"
+  uni_map_platform_interface:
+    dependency: "direct main"
+    description:
+      name: uni_map_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.0-dev.0"
   vector_math:
     dependency: transitive
     description:

@@ -56,7 +56,7 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                       [
                         for (int i = 0; i < 20; i++)
                           MarkerOption(
-                            latLng: getNextLatLng(),
+                            coordinate: getNextLatLng(),
                             object: '自定义数据:$i',
                             widget: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -74,9 +74,9 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   title: Center(child: Text('Marker添加点击事件')),
                   onTap: () {
                     _controller
-                        ?.setMarkerClickedListener((Marker marker) async {
+                        ?.setMarkerClickedListener((IMarker marker) async {
                       toast(
-                          '经纬度: ${await marker.location}, 自定义数据: ${await marker.object}');
+                          '经纬度: ${await marker.title}, 自定义数据: ${await marker.object}');
                       return false;
                     });
                   },

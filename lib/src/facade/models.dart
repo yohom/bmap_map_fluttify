@@ -5,142 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
-
-import 'enums.dart';
-
-/// 我的位置选项
-@immutable
-class MyLocationOption {
-  MyLocationOption({
-    this.myLocationType = MyLocationType.Follow,
-    this.interval = Duration.zero,
-    this.iconProvider,
-    this.strokeColor,
-    this.strokeWidth,
-    this.fillColor,
-  });
-
-  /// 定位类型
-  final MyLocationType myLocationType;
-
-  /// 定位间隔
-  final Duration interval;
-
-  /// 我的位置图标
-  final ImageProvider iconProvider;
-
-  /// 边框颜色
-  final Color strokeColor;
-
-  /// 边框宽度
-  final double strokeWidth;
-
-  /// 填充颜色
-  final Color fillColor;
-
-  @override
-  String toString() {
-    return 'MyLocationOption{myLocationType: $myLocationType, interval: $interval, iconProvider: $iconProvider, strokeColor: $strokeColor, strokeWidth: $strokeWidth, fillColor: $fillColor}';
-  }
-}
-
-/// Marker创建参数
-@immutable
-class MarkerOption {
-  MarkerOption({
-    @required this.latLng,
-    this.widget,
-    this.object,
-    this.iconProvider,
-  }) : assert(!(widget != null && iconProvider != null),
-            'widget和iconProvider不能同时设置! ');
-
-  /// 经纬度
-  final LatLng latLng;
-
-  /// Widget形式的Marker
-  ///
-  /// 注意控制Widget的大小, 比如Column默认是max, 会使用地图的高度, 那么此时需要设置成min.
-  final Widget widget;
-
-  /// 自定义数据
-  final String object;
-
-  /// 图标
-  final ImageProvider iconProvider;
-
-  @override
-  String toString() {
-    return 'MarkerOption{latLng: $latLng, widget: $widget, object: $object, iconProvider: $iconProvider}';
-  }
-}
-
-/// 平滑移动Marker创建参数
-@immutable
-class SmoothMoveMarkerOption {
-  SmoothMoveMarkerOption({
-    @required this.path,
-    @required this.iconProvider,
-    @required this.duration,
-  });
-
-  /// 轨迹经纬度列表
-  final List<LatLng> path;
-
-  /// 图片uri 可以是url, asset路径或者文件路径
-  ///
-  /// 如果设置了[iconProvider], 那么必须同时设置[imageConfig], 否则图片大小会不一致, 这是flutter
-  /// 的bug
-  final ImageProvider iconProvider;
-
-  /// 动画时长
-  final Duration duration;
-
-  @override
-  String toString() {
-    return 'SmoothMoveMarkerOption{path: $path, iconProvider: $iconProvider, duration: $duration}';
-  }
-}
-
-/// Polyline创建参数
-@immutable
-class PolylineOption {
-  /// 经纬度列表
-  final List<LatLng> latLngList;
-
-  /// 宽度
-  final double width;
-
-  /// 颜色
-  final Color strokeColor;
-
-  /// 自定义纹理
-  final ImageProvider textureProvider;
-
-  /// 线段末端样式
-  final LineCapType lineCapType;
-
-  /// 线段连接处样式
-  final LineJoinType lineJoinType;
-
-  /// 是否虚线
-  final DashType dashType;
-
-  PolylineOption({
-    @required this.latLngList,
-    this.width = 5,
-    this.strokeColor = Colors.green,
-    this.textureProvider,
-    this.lineCapType,
-    this.lineJoinType,
-    this.dashType,
-  });
-
-  @override
-  String toString() {
-    return 'PolylineOption{latLngList: $latLngList, width: $width, strokeColor: $strokeColor, customTexture: $textureProvider, lineCapType: $lineCapType, lineJoinType: $lineJoinType, dashType: $dashType}';
-  }
-}
+import 'package:uni_map_platform_interface/uni_map_platform_interface.dart';
 
 /// 弧线创建参数
 @immutable
@@ -170,84 +35,8 @@ class ArcOption {
   }
 }
 
-/// Polygon创建参数
-@immutable
-class PolygonOption {
-  /// 经纬度列表
-  final List<LatLng> latLngList;
-
-  /// 宽度
-  final double width;
-
-  /// 边框颜色
-  final Color strokeColor;
-
-  /// 填充颜色
-  final Color fillColor;
-
-  PolygonOption({
-    @required this.latLngList,
-    this.width = 5,
-    this.strokeColor = Colors.green,
-    this.fillColor = Colors.transparent,
-  });
-
-  @override
-  String toString() {
-    return 'PolygonOption{latLngList: $latLngList, width: $width, strokeColor: $strokeColor, fillColor: $fillColor}';
-  }
-}
-
-/// Circle创建参数
-@immutable
-class CircleOption {
-  /// 中心点经纬度
-  final LatLng center;
-
-  /// 宽度
-  final double radius;
-
-  /// 宽度
-  final double width;
-
-  /// 边框颜色
-  final Color strokeColor;
-
-  /// 填充颜色
-  final Color fillColor;
-
-  CircleOption({
-    @required this.center,
-    @required this.radius,
-    this.width = 5,
-    this.strokeColor = Colors.green,
-    this.fillColor = Colors.transparent,
-  })  : assert(center != null),
-        assert(radius != null);
-
-  @override
-  String toString() {
-    return 'CircleOption{center: $center, radius: $radius, width: $width, strokeColor: $strokeColor, fillColor: $fillColor}';
-  }
-}
-
-/// 地图移动
-@immutable
-class MapMove {
-  final LatLng latLng;
-  final double zoom;
-  final double tilt;
-
-  MapMove({this.latLng, this.zoom, this.tilt});
-
-  @override
-  String toString() {
-    return 'MapDrag{latitude: ${latLng.latitude}, longitude: ${latLng.longitude}, zoom: $zoom, tilt: $tilt}';
-  }
-}
-
 /// 地图标记
-class Marker {
+class Marker implements IMarker {
   Marker.android(this.androidModel);
 
   Marker.ios(this.iosModel, this.iosController);
@@ -273,6 +62,7 @@ class Marker {
     );
   }
 
+  @override
   Future<String> get object {
     return platform(
       android: (_) => androidModel.getTitle(),
@@ -283,6 +73,7 @@ class Marker {
     );
   }
 
+  @override
   Future<void> remove() async {
     return platform(
       android: (_) => androidModel.remove(),
@@ -290,6 +81,7 @@ class Marker {
     );
   }
 
+  @override
   Future<void> showInfoWindow() async {
     return platform(
       android: (_) async {
@@ -301,12 +93,68 @@ class Marker {
     );
   }
 
+  @override
   Future<void> hideInfoWindow() async {
     return platform(
       android: (_) => androidModel.hideInfoWindow(),
       ios: (_) => iosController?.deselectAnnotation_animated(iosModel, true),
     );
   }
+
+  @override
+  // TODO: implement coordinate
+  Future<LatLng> get coordinate => throw UnimplementedError();
+
+  @override
+  Future<void> setAngle(double angle) {
+    // TODO: implement setAngle
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setCoordinate(LatLng coordinate) {
+    // TODO: implement setCoordinate
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setIcon(
+      ImageProvider<Object> iconProvider, ImageConfiguration configuration) {
+    // TODO: implement setIcon
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setSnippet(String snippet) {
+    // TODO: implement setSnippet
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setTitle(String title) {
+    // TODO: implement setTitle
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setVisible(bool visible) {
+    // TODO: implement setVisible
+    throw UnimplementedError();
+  }
+
+  @override
+  // TODO: implement snippet
+  Future<String> get snippet => throw UnimplementedError();
+
+  @override
+  Future<void> startAnimation(MarkerAnimation animation) {
+    // TODO: implement startAnimation
+    throw UnimplementedError();
+  }
+
+  @override
+  // TODO: implement title
+  Future<String> get title => throw UnimplementedError();
 }
 
 /// 折线
