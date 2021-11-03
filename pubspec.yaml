@@ -1,12 +1,11 @@
 name: bmap_map_fluttify
 description: An `BaiduMap` Map Component, Powered By `Fluttify`, A Compiler Generating Dart Bindings For Native SDK.
-version: 0.4.1+1
-author: yohom <yohombao@qq.com>
+version: 0.4.1+2
 homepage: https://github.com/fluttify-project
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
-  flutter: ">=1.12.13 <2.0.0"
+  flutter: ">=1.12.13"
 
 dependencies:
   flutter:
