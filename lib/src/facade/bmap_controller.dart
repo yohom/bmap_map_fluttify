@@ -168,6 +168,228 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 添加marker
+  ///
+  /// 在纬度[lat], 经度[lng]的位置添加marker, 并设置标题[title]和副标题[snippet], [iconUri]
+  /// 可以是图片url, asset路径或者文件路径.
+  Future<IMarker> addMarker(MarkerOption option) {
+    assert(option != null);
+    if (!_state.mounted) return null;
+
+    final latitude = option.coordinate.latitude;
+    final longitude = option.coordinate.longitude;
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+
+        // marker经纬度
+        final latLng = await com_baidu_mapapi_model_LatLng
+            .create__double__double(latitude, longitude);
+
+        // marker配置
+        final markerOption =
+            await com_baidu_mapapi_map_MarkerOptions.create__();
+
+        // 设置marker经纬度
+        await markerOption.position(latLng);
+        // 设置marker标题
+        if (option.title != null) {
+          await markerOption.title(option.title);
+        }
+        // // 设置marker副标题
+        // if (option.snippet != null) {
+        //   await markerOption.snippet(option.snippet);
+        // }
+        // 设置marker图标
+        // 帧动画
+        if (option.iconsProvider != null && option.iconsProvider.isNotEmpty) {
+          List<Uint8List> iconData = [];
+          for (final item in option.iconsProvider) {
+            final data = await item.toImageData(imageConfiguration);
+            iconData.add(data);
+          }
+
+          final bitmap = await android_graphics_Bitmap.create_batch(iconData);
+          final icon = await com_baidu_mapapi_map_BitmapDescriptorFactory_Batch
+              .fromBitmap_batch(bitmap);
+          await markerOption.icons(icon);
+          await markerOption.period(240 ~/ (option.animationFps ?? 30));
+
+          pool
+            ..addAll(bitmap)
+            ..addAll(icon);
+        }
+        // 普通图片
+        else if (option.iconProvider != null) {
+          Uint8List iconData =
+              await option.iconProvider.toImageData(imageConfiguration);
+
+          final bitmap = await android_graphics_Bitmap.create(iconData);
+          final icon = await com_baidu_mapapi_map_BitmapDescriptorFactory
+              .fromBitmap(bitmap);
+          await markerOption.icon(icon);
+
+          pool
+            ..add(bitmap)
+            ..add(icon);
+        }
+        // widget as marker
+        else if (option.widget != null) {
+          List<Uint8List> iconData =
+              await _state.widgetToImageData([option.widget]);
+
+          if (iconData != null) {
+            final bitmap = await android_graphics_Bitmap.create(iconData[0]);
+            final icon = await com_baidu_mapapi_map_BitmapDescriptorFactory
+                .fromBitmap(bitmap);
+            await markerOption.icon(icon);
+
+            pool
+              ..add(bitmap)
+              ..add(icon);
+          }
+        }
+        // 是否可拖拽
+        if (option.draggable != null) {
+          await markerOption.draggable(option.draggable);
+        }
+        // 旋转角度
+        if (option.rotateAngle != null) {
+          await markerOption.rotate(option.rotateAngle);
+        }
+        // 锚点 默认在中间底部是最合理的
+        await markerOption.anchor(option.anchorU ?? 0.5, option.anchorV ?? 0);
+        // 是否可见
+        if (option.visible != null) await markerOption.visible(option.visible);
+        // 透明度
+        if (option.opacity != null) await markerOption.alpha(option.opacity);
+
+        final overlay = await map.addOverlay(markerOption);
+        final markers =
+            BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Marker>(overlay);
+        // 是否允许弹窗
+        if (option.infoWindowEnabled != null) {
+          await markers.setClickable(option.infoWindowEnabled);
+        }
+
+        // 自定义数据
+        if (option.object != null) {
+          final bundle = await android_os_Bundle.create();
+          bundle.putString('extraInfo', option.object);
+          await markers.setExtraInfo(bundle);
+        }
+
+        // marker不释放, 还有用
+        pool
+          ..add(latLng)
+          ..add(markerOption);
+
+        return Marker.android(overlay);
+      },
+      ios: (pool) async {
+        await iosController
+            .set_delegate(_iosMapDelegate.._iosController = iosController);
+
+        // 创建marker
+        final annotation = await BMKPointAnnotation.create__();
+
+        final coordinate =
+            await CLLocationCoordinate2D.create(latitude, longitude);
+
+        // 设置经纬度
+        await annotation.set_coordinate(coordinate);
+
+        // 设置标题
+        if (option.title != null) {
+          await annotation.set_title(option.title);
+        }
+        // 设置副标题
+        if (option.snippet != null) {
+          await annotation.set_subtitle(option.snippet);
+        }
+        // 设置图片
+        // 帧动画
+        if (option.iconsProvider != null && option.iconsProvider.isNotEmpty) {
+          List<Uint8List> iconData = [];
+          for (final item in option.iconsProvider) {
+            final data = await item.toImageData(imageConfiguration);
+            iconData.add(data);
+          }
+
+          final icons = await UIImage.create_batch(iconData);
+
+          await annotation.setIcons(icons);
+          await annotation.setFps(
+            (1 / (option.animationFps ?? 30) * icons.length).toInt(),
+          );
+
+          pool..addAll(icons);
+        }
+        // 普通图片
+        else if (option.iconProvider != null) {
+          Uint8List iconData =
+              await option.iconProvider.toImageData(imageConfiguration);
+
+          final icon = await UIImage.create(iconData);
+
+          // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
+          await annotation.setIcon(icon);
+
+          pool..add(icon);
+        }
+        // widget as marker
+        else if (option.widget != null) {
+          List<Uint8List> iconData =
+              await _state.widgetToImageData([option.widget]);
+
+          if (iconData != null) {
+            final icon = await UIImage.create(iconData[0]);
+
+            // 由于ios端的icon参数在回调中设置, 需要添加属性来实现
+            await annotation.setIcon(icon);
+
+            pool..add(icon);
+          }
+        }
+        // 是否可拖拽
+        if (option.draggable != null) {
+          await annotation.setDraggable(option.draggable);
+        }
+        // 旋转角度
+        if (option.rotateAngle != null) {
+          await annotation.setRotateAngle(option.rotateAngle);
+        }
+        // 是否允许弹窗
+        if (option.infoWindowEnabled != null) {
+          await annotation.setInfoWindowEnabled(option.infoWindowEnabled);
+        }
+        // 锚点
+        if (option.anchorU != null || option.anchorV != null) {
+          await annotation.setAnchor(option.anchorU, option.anchorV);
+        }
+        // 自定义数据
+        if (option.object != null) {
+          await annotation.setObject(option.object);
+        }
+        // 是否可见
+        if (option.visible != null) {
+          await annotation.setVisible(option.visible);
+        }
+        // 透明度
+        if (option.opacity != null) {
+          await annotation.setOpacity(option.opacity);
+        }
+
+        // 添加marker
+        await iosController.addAnnotation(annotation);
+
+        pool.add(coordinate);
+
+        return Marker.ios(annotation, iosController);
+      },
+    );
+  }
+
   /// 批量添加marker
   ///
   /// 根据[options]批量创建Marker
@@ -699,6 +921,8 @@ class BmapController with WidgetsBindingObserver {
             await map
                 .setMapType(com_baidu_mapapi_map_BaiduMap.MAP_TYPE_SATELLITE);
             break;
+          default:
+            break;
         }
 
         pool.add(map);
@@ -710,6 +934,8 @@ class BmapController with WidgetsBindingObserver {
             break;
           case MapType.Satellite:
             await iosController.set_mapType(BMKMapType.BMKMapTypeSatellite);
+            break;
+          default:
             break;
         }
       },
