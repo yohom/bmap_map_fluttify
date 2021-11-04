@@ -1,4 +1,5 @@
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
+import 'package:bmap_map_fluttify/src/facade/extensions.dart';
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
 import 'package:bmap_utils_fluttify/bmap_utils_fluttify.dart';
 import 'package:flutter/foundation.dart';
@@ -85,10 +86,10 @@ class Marker implements IMarker {
   Future<void> showInfoWindow() async {
     return platform(
       android: (_) async {
-        androidModel.showInfoWindow(await androidModel.getInfoWindow());
+        await androidModel.showInfoWindow(await androidModel.getInfoWindow());
       },
       ios: (_) async {
-        iosController?.selectAnnotation_animated(iosModel, true);
+        await iosController?.selectAnnotation_animated(iosModel, true);
       },
     );
   }
@@ -102,19 +103,60 @@ class Marker implements IMarker {
   }
 
   @override
-  // TODO: implement coordinate
-  Future<LatLng> get coordinate => throw UnimplementedError();
+  Future<LatLng> get coordinate {
+    return platform(
+      android: (_) async {
+        final position = await androidModel.getPosition();
+        return LatLng(
+          await position.get_latitude(),
+          await position.get_longitude(),
+        );
+      },
+      ios: (_) async {
+        final position = await iosModel.get_coordinate();
+        return LatLng(await position.latitude, await position.longitude);
+      },
+    );
+  }
 
   @override
   Future<void> setAngle(double angle) {
-    // TODO: implement setAngle
-    throw UnimplementedError();
+    return platform(
+      android: (pool) async {
+        await androidModel.setRotate(angle);
+      },
+      ios: (pool) async {
+        // TODO 可能会把文字也翻转, 但是没有类似高德地图的get_imageView方法
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        await annotationView.rotate(angle);
+      },
+    );
   }
 
   @override
   Future<void> setCoordinate(LatLng coordinate) {
-    // TODO: implement setCoordinate
-    throw UnimplementedError();
+    assert(coordinate != null);
+    return platform(
+      android: (_) async => androidModel.setPosition(
+        await com_baidu_mapapi_model_LatLng.create__double__double(
+          coordinate.latitude,
+          coordinate.longitude,
+        ),
+      ),
+      ios: (_) async {
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        if (annotationView != null) {
+          final _coordinate = await CLLocationCoordinate2D.create(
+            coordinate.latitude,
+            coordinate.longitude,
+          );
+          await iosModel.set_coordinate(_coordinate);
+          await annotationView.set_annotation(iosModel, viewChannel: false);
+        } else {
+          debugPrint('当前_annotationView为null, 无法设置经纬度!');
+        }
+      },
+    );
   }
 
   @override
@@ -138,8 +180,16 @@ class Marker implements IMarker {
 
   @override
   Future<void> setVisible(bool visible) {
-    // TODO: implement setVisible
-    throw UnimplementedError();
+    assert(visible != null);
+    return platform(
+      android: (_) => androidModel.setVisible(visible),
+      ios: (_) async {
+        await iosModel.setVisible(visible);
+
+        final annotationView = await iosController.viewForAnnotation(iosModel);
+        await annotationView?.setHidden(!visible);
+      },
+    );
   }
 
   @override
@@ -230,7 +280,7 @@ class Polygon {
 }
 
 /// 圆形
-class Circle {
+class Circle extends ICircle {
   Circle.android(this._androidModel);
 
   Circle.ios(this._iosModel, this._iosController);
@@ -243,6 +293,32 @@ class Circle {
     return platform(
       android: (_) => _androidModel.remove(),
       ios: (_) => _iosController?.removeOverlay(_iosModel),
+    );
+  }
+
+  @override
+  Future<void> setCoordinate(LatLng coordinate) {
+    return platform(
+      android: (_) async {
+        final latLng = await com_baidu_mapapi_model_LatLng
+            .create__double__double(coordinate.latitude, coordinate.longitude);
+        return _androidModel.setCenter(latLng);
+      },
+      ios: (_) async {
+        final _coordinate = await CLLocationCoordinate2D.create(
+          coordinate.latitude,
+          coordinate.longitude,
+        );
+        await _iosModel.set_coordinate(_coordinate);
+      },
+    );
+  }
+
+  @override
+  Future<void> setRadius(double radius) {
+    return platform(
+      android: (_) => _androidModel.setRadius(radius.toInt()),
+      ios: (_) => _iosModel.set_radius(radius),
     );
   }
 }

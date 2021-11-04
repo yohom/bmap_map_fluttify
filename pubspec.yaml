@@ -16,12 +16,12 @@ dependencies:
   
   foundation_fluttify: ^0.12.0-dev.1
   core_location_fluttify: ^0.7.0-dev.0
-  uni_map_platform_interface: ^0.6.0-dev.0
+  uni_map_platform_interface: ^0.6.0-dev.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: ^1.9.2
+  flutter_lints: ^1.0.4
 
 flutter:
   plugin:

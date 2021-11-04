@@ -1,8 +1,6 @@
 import 'package:bmap_map_fluttify/bmap_map_fluttify.dart';
 import 'package:uni_map_platform_interface/uni_map_platform_interface.dart';
 
-import 'enums.dart';
-
 extension MyLocationTypeX on MyLocationType {
   com_baidu_mapapi_map_MyLocationConfiguration_LocationMode androidModel() {
     switch (this) {
@@ -30,6 +28,49 @@ extension MyLocationTypeX on MyLocationType {
       default:
         return BMKUserTrackingMode.BMKUserTrackingModeNone;
     }
+  }
+}
+
+extension BMKPointAnnotationX on BMKPointAnnotation {
+  Future<void> setIcon(UIImage icon) async {
+    await addProperty__(1, icon);
+  }
+
+  Future<void> setDraggable(bool draggable) async {
+    await addJsonableProperty__(2, draggable);
+  }
+
+  Future<void> setRotateAngle(double rotateAngle) async {
+    await addJsonableProperty__(3, rotateAngle);
+  }
+
+  Future<void> setInfoWindowEnabled(bool enable) async {
+    await addJsonableProperty__(4, enable);
+  }
+
+  Future<void> setAnchor(double anchorU, double anchorV) async {
+    await addJsonableProperty__(5, anchorU);
+    await addJsonableProperty__(6, anchorV);
+  }
+
+  Future<void> setObject(String object) async {
+    await addJsonableProperty__(7, object);
+  }
+
+  Future<void> setVisible(bool visible) async {
+    await addJsonableProperty__(10, visible);
+  }
+
+  Future<void> setIcons(List<UIImage> icons) async {
+    await addListProperty__(11, icons);
+  }
+
+  Future<void> setFps(int fps) async {
+    await addJsonableProperty__(12, fps);
+  }
+
+  Future<void> setOpacity(double opacity) async {
+    await addJsonableProperty__(13, opacity);
   }
 }
 
