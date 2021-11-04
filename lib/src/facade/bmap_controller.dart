@@ -5,8 +5,7 @@ part of 'bmap_view.widget.dart';
 typedef OnScreenShot = Future<void> Function(Uint8List imageData);
 
 /// 地图控制类
-class BmapController extends _Holder
-    with WidgetsBindingObserver, _Community, _Pro {
+class BmapController with WidgetsBindingObserver {
   /// Android构造器
   BmapController.android(
     com_baidu_mapapi_map_TextureMapView androidController,
@@ -23,6 +22,17 @@ class BmapController extends _Holder
     this.iosController = iosController;
     this._state = _state;
   }
+
+  com_baidu_mapapi_map_TextureMapView androidController;
+  BMKMapView iosController;
+
+  _BmapViewState _state;
+
+  final imageConfiguration =
+      ImageConfiguration(devicePixelRatio: window.devicePixelRatio);
+
+  final _iosMapDelegate = _IOSMapDelegate();
+  final _androidMapDelegate = _AndroidMapDelegate();
 
   /// 释放资源
   Future<void> dispose() async {
@@ -55,9 +65,7 @@ class BmapController extends _Holder
         break;
     }
   }
-}
 
-mixin _Community on _Holder {
   /// 设置地图中心点
   ///
   /// [coordinate] 经纬度
@@ -953,9 +961,7 @@ mixin _Community on _Holder {
       },
     );
   }
-}
 
-mixin _Pro on _Holder {
   /// 自定义地图
   ///
   /// [androidStyleAsset] android端样式文件路径, 即在pubspec.yaml下注册的asset路径
@@ -1393,17 +1399,4 @@ mixin _Pro on _Holder {
       },
     );
   }
-}
-
-class _Holder {
-  com_baidu_mapapi_map_TextureMapView androidController;
-  BMKMapView iosController;
-
-  _BmapViewState _state;
-
-  final imageConfiguration =
-      ImageConfiguration(devicePixelRatio: window.devicePixelRatio);
-
-  final _iosMapDelegate = _IOSMapDelegate();
-  final _androidMapDelegate = _AndroidMapDelegate();
 }
