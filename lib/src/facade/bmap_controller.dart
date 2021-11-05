@@ -455,7 +455,26 @@ class BmapController with WidgetsBindingObserver {
             ..addAll(iconBatch);
         }
         // 设置自定义数据
-        await markerOptionBatch.title_batch(objectBatch);
+        await markerOptionBatch.title_batch(titleBatch);
+        await map.setOnMarkerClickListener(
+          _androidMapDelegate
+            .._onMarkerClicked = (marker) async {
+              final map = await androidController.getMap();
+              await map.hideInfoWindow();
+              await marker.showInfoWindow();
+
+              await map.release__();
+            },
+        );
+        await map.setOnMapClickListener(
+          _androidMapDelegate
+            .._onMapClicked = (coordinate) async {
+              final map = await androidController.getMap();
+              debugPrint('点击地图: $coordinate');
+              await map.hideInfoWindow();
+              await map.release__();
+            },
+        );
 
         // 添加marker
         final overlays = await map.addOverlays(markerOptionBatch);

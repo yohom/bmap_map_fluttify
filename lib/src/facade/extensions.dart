@@ -108,3 +108,12 @@ extension BMKPointAnnotationListX on List<BMKPointAnnotation> {
     await addJsonableProperty_batch(12, fps);
   }
 }
+
+extension com_baidu_mapapi_map_MarkerX on com_baidu_mapapi_map_Marker {
+  Future<void> showInfoWindowX(String title, String snippet) async {
+    await kBmapMapFluttifyChannel.invokeMethod(
+      'com.baidu.mapapi.map.Marker::showInfoWindowX',
+      {'__this__': this, 'title': title, 'snippet': snippet},
+    );
+  }
+}

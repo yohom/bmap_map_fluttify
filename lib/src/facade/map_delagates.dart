@@ -6,6 +6,7 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
   OnMarkerDrag _onMarkerDragging;
   OnMarkerDrag _onMarkerDragEnd;
   OnMapMove _onMapMoveEnd;
+  OnMapClicked _onMapClicked;
 
   BMKMapView _iosController;
 
@@ -19,7 +20,6 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
         Marker.ios(
           BMKPointAnnotation()
             ..refId = (await view.get_annotation(viewChannel: false)).refId,
-//          view,
           _iosController,
         ),
       );
@@ -37,7 +37,6 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
       await _onMarkerDragStart(
         Marker.ios(
           await view.get_annotation(viewChannel: false),
-//          view,
           _iosController,
         ),
       );
@@ -47,7 +46,6 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
       await _onMarkerDragging(
         Marker.ios(
           await view.get_annotation(viewChannel: false),
-//          view,
           _iosController,
         ),
       );
@@ -57,7 +55,6 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
       await _onMarkerDragEnd(
         Marker.ios(
           await view.get_annotation(viewChannel: false),
-//          view,
           _iosController,
         ),
       );
@@ -75,12 +72,26 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
       ));
     }
   }
+
+  @override
+  Future<void> mapView_onClickedMapBlank(
+    BMKMapView mapView,
+    CLLocationCoordinate2D coordinate,
+  ) async {
+    if (_onMapClicked != null) {
+      await _onMapClicked(LatLng(
+        await coordinate.latitude,
+        await coordinate.longitude,
+      ));
+    }
+  }
 }
 
 class _AndroidMapDelegate extends java_lang_Object
     with
         com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener,
         com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener,
+        com_baidu_mapapi_map_BaiduMap_OnMapClickListener,
         com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener,
         com_baidu_mapapi_map_BaiduMap_SnapshotReadyCallback {
   OnMarkerClicked _onMarkerClicked;
@@ -88,6 +99,7 @@ class _AndroidMapDelegate extends java_lang_Object
   OnMarkerDrag _onMarkerDragging;
   OnMarkerDrag _onMarkerDragEnd;
   OnMapMove _onMapMoveEnd;
+  OnMapClicked _onMapClicked;
   OnScreenShot _onScreenShot;
 
   @override
@@ -140,6 +152,16 @@ class _AndroidMapDelegate extends java_lang_Object
   Future<void> onSnapshotReady(android_graphics_Bitmap var1) async {
     if (_onScreenShot != null) {
       await _onScreenShot(await var1.data);
+    }
+  }
+
+  @override
+  Future<void> onMapClick(com_baidu_mapapi_model_LatLng var1) async {
+    if (_onMapClicked != null) {
+      await _onMapClicked(LatLng(
+        await var1.get_latitude(),
+        await var1.get_longitude(),
+      ));
     }
   }
 }
