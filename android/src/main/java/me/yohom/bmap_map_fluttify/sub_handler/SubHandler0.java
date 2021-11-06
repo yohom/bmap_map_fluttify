@@ -143,28 +143,6 @@ public class SubHandler0 {
                 __methodResult__.success(__result__);
             });
             // getter
-            put("com.baidu.location.LocationClientOption::get_judgeMockDisValue", (__rawArgs__, __methodResult__) -> {
-               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
-            
-               // ref object
-               com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
-            
-               Double __result__ = __this__.judgeMockDisValue;
-            
-                __methodResult__.success(__result__);
-            });
-            // getter
-            put("com.baidu.location.LocationClientOption::get_isNeedRealLocWhenIsMock", (__rawArgs__, __methodResult__) -> {
-               Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
-            
-               // ref object
-               com.baidu.location.LocationClientOption __this__ = (com.baidu.location.LocationClientOption) __args__.get("__this__");
-            
-               Boolean __result__ = __this__.isNeedRealLocWhenIsMock;
-            
-                __methodResult__.success(__result__);
-            });
-            // getter
             put("com.baidu.location.LocationClientOption::get_serviceName", (__rawArgs__, __methodResult__) -> {
                Map<String, Object> __args__ = (Map<String, Object>) __rawArgs__;
             

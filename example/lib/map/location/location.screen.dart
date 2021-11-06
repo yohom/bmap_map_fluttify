@@ -24,21 +24,21 @@ class _LocationScreenState extends State<LocationScreen> {
             child: Text('获取单次定位'),
             onPressed: () async {
               if (await requestPermission()) {
-                final location = await BmapLocation.instance.fetchLocation();
-                setState(() => _location = location);
+                // final location = await BmapLocation.instance.fetchLocation();
+                // setState(() => _location = location);
               }
             },
           ),
           RaisedButton(
             child: Text('获取连续定位'),
             onPressed: () async {
-              if (await requestPermission()) {
-                await for (final location
-                    in BmapLocation.instance.listenLocation()) {
-                  debugPrint('获取到定位: $location');
-                  setState(() => _location = location);
-                }
-              }
+              // if (await requestPermission()) {
+              //   await for (final location
+              //       in BmapLocation.instance.start()) {
+              //     debugPrint('获取到定位: $location');
+              //     setState(() => _location = location);
+              //   }
+              // }
             },
           ),
           RaisedButton(

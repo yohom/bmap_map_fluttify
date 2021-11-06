@@ -19,7 +19,8 @@ class BmapLocation {
   com_baidu_location_LocationClient _androidClient;
   BMKLocationManager _iosClient;
 
-  final _locationStream = StreamController<Location>();
+  final _androidCallback = _AndroidLocationCallback();
+  final _iosCallback = _IOSLocationCallback();
 
   /// 初始化
   Future<void> init({@required String iosKey}) async {
@@ -36,27 +37,15 @@ class BmapLocation {
     );
   }
 
-  /// 获取单次定位
-  Future<Location> fetchLocation({
-    LocationAccuracy mode = LocationAccuracy.Low,
-    bool needAddress = true,
-    Duration timeout,
-  }) async {
-    final location =
-        listenLocation(mode: mode, needAddress: needAddress, timeout: timeout)
-            .first;
-    await stop();
-    return location;
-  }
-
-  /// 连续获取定位信息
+  /// 设置选项
   ///
   /// 选择定位模式[mode], 设置定位同时是否需要返回地址描述[needAddress], 设置定位请求超时时间，默认为30秒[timeout]
-  Stream<Location> listenLocation({
+  Future<void> setupOptions({
     LocationAccuracy mode = LocationAccuracy.Low,
     bool needAddress = true,
     Duration timeout = const Duration(seconds: 30),
-  }) async* {
+    @required ValueChanged<Location> onLocation,
+  }) async {
     if (Platform.isAndroid) {
       // 创建Client
       final context = await android_app_Application.get();
@@ -94,9 +83,9 @@ class BmapLocation {
 
       // 设置监听
       await _androidClient.registerLocationListener(
-        _AndroidLocationCallback(
-          onLocation: (location) async {
-            _locationStream.add(Location(
+        _androidCallback
+          ..onLocation = (location) async {
+            onLocation(Location(
               address: await location.getAddrStr(),
               latLng: LatLng(
                 await location.getLatitude(),
@@ -115,15 +104,10 @@ class BmapLocation {
               accuracy: await location.getRadius(),
               iosModel: null,
             ));
-            await _androidClient.stop();
           },
-        ),
       );
 
       await _androidClient.setLocOption(option);
-      await _androidClient.start();
-
-      yield* _locationStream.stream;
     } else if (Platform.isIOS) {
       _iosClient ??= await BMKLocationManager.create__();
 
@@ -135,37 +119,42 @@ class BmapLocation {
         BMKLocationCoordinateType.BMKLocationCoordinateTypeBMK09LL,
       );
 
-      await _iosClient.set_delegate(_IOSLocationCallback());
-      await _iosClient
-          .requestLocationWithReGeocode_withNetworkState_completionBlock(
-        needAddress ?? true,
-        true,
-        (location, state, error) async {
-          final clLocation = await location.get_location();
-          final regeocode = await location.get_rgcData();
-          _locationStream.add(Location(
-            address: await regeocode.get_locationDescribe(),
-            latLng: LatLng(
-              await clLocation.coordinate.then((it) => it.latitude),
-              await clLocation.coordinate.then((it) => it.longitude),
-            ),
-            altitude: await clLocation.altitude,
-            country: await regeocode.get_country(),
-            province: await regeocode.get_province(),
-            city: await regeocode.get_city(),
-            direction: await clLocation.course,
-            cityCode: await regeocode.get_cityCode(),
-            adCode: await regeocode.get_adCode(),
-            district: await regeocode.get_district(),
-            street: await regeocode.get_street(),
-            streetNumber: await regeocode.get_streetNumber(),
-            accuracy: await clLocation.horizontalAccuracy,
-            iosModel: location,
-          ));
-        },
+      await _iosClient.set_delegate(
+        _iosCallback
+          ..onLocation = (location) async {
+            final regeocode = await location.get_rgcData();
+            final clLocation = await location.get_location();
+            onLocation(Location(
+              address: await regeocode.get_locationDescribe(),
+              latLng: LatLng(
+                await clLocation.coordinate.then((it) => it.latitude),
+                await clLocation.coordinate.then((it) => it.longitude),
+              ),
+              altitude: await clLocation.altitude,
+              country: await regeocode.get_country(),
+              province: await regeocode.get_province(),
+              city: await regeocode.get_city(),
+              direction: await clLocation.course,
+              cityCode: await regeocode.get_cityCode(),
+              adCode: await regeocode.get_adCode(),
+              district: await regeocode.get_district(),
+              street: await regeocode.get_street(),
+              streetNumber: await regeocode.get_streetNumber(),
+              accuracy: await clLocation.horizontalAccuracy,
+              iosModel: location,
+            ));
+          },
       );
+    }
+  }
 
-      yield* _locationStream.stream;
+  /// 连续获取定位信息
+  Future<void> start() async {
+    if (Platform.isAndroid) {
+      await _androidClient.start();
+      await _androidClient.requestLocation();
+    } else if (Platform.isIOS) {
+      await _iosClient.startUpdatingLocation();
     }
   }
 
@@ -180,24 +169,30 @@ class BmapLocation {
       },
     );
   }
+}
 
-  /// 释放资源
-  void dispose() {
-    _locationStream.close();
+class _IOSLocationCallback extends NSObject with BMKLocationManagerDelegate {
+  ValueChanged<BMKLocation> onLocation;
+
+  @override
+  Future<void> BMKLocationManager_didUpdateLocation_orError(
+    BMKLocationManager manager,
+    BMKLocation location,
+    NSError error,
+  ) async {
+    onLocation?.call(location);
   }
 }
 
-class _IOSLocationCallback extends NSObject with BMKLocationManagerDelegate {}
-
 class _AndroidLocationCallback extends java_lang_Object
     with com_baidu_location_BDLocationListener {
-  _AndroidLocationCallback({this.onLocation});
+  _AndroidLocationCallback();
 
   ValueChanged<com_baidu_location_BDLocation> onLocation;
 
   @override
   Future<void> onReceiveLocation(com_baidu_location_BDLocation var1) async {
-    await super.onReceiveLocation(var1);
+    debugPrint('收到定位: $var1');
     if (onLocation != null) onLocation(var1);
   }
 }

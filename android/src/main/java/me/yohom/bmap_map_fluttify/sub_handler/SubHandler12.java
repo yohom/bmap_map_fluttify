@@ -973,34 +973,6 @@ public class SubHandler12 {
                 __methodResult__.success(__result__);
             });
             // method
-            put("com.baidu.mapapi.map.SupportMapFragment::getMapView", (__args__, __methodResult__) -> {
-                // args
-            
-            
-                // ref
-                com.baidu.mapapi.map.SupportMapFragment __this__ = (com.baidu.mapapi.map.SupportMapFragment) ((Map<String, Object>) __args__).get("__this__");
-            
-                // print log
-                if (getEnableLog()) {
-                    Log.d("fluttify-java", "fluttify-java: com.baidu.mapapi.map.SupportMapFragment@" + __this__ + "::getMapView(" + "" + ")");
-                }
-            
-                // invoke native method
-                com.baidu.mapapi.map.MapView __result__ = null;
-                try {
-                    __result__ = __this__.getMapView();
-                } catch (Throwable throwable) {
-                    throwable.printStackTrace();
-                    if (getEnableLog()) {
-                        Log.d("Current HEAP: ", getHEAP().toString());
-                    }
-                    __methodResult__.error(throwable.getMessage(), null, null);
-                    return;
-                }
-            
-                __methodResult__.success(__result__);
-            });
-            // method
             put("com.baidu.mapapi.map.SupportMapFragment::onAttach", (__args__, __methodResult__) -> {
                 // args
                 // ref arg

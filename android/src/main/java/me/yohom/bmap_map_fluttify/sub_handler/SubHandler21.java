@@ -2975,37 +2975,6 @@ public class SubHandler21 {
                 __methodResult__.success(__resultList__);
             });
             // method
-            put("com.baidu.mapapi.map.SupportMapFragment::getMapView_batch", (__argsBatch__, __methodResult__) -> {
-                List<com.baidu.mapapi.map.MapView> __resultList__ = new ArrayList<>();
-            
-                for (int __i__ = 0; __i__ < ((List<Map<String, Object>>) __argsBatch__).size(); __i__++) {
-                    Map<String, Object> __args__ = ((List<Map<String, Object>>) __argsBatch__).get(__i__);
-            
-                    // args
-            
-            
-                    // ref
-                    com.baidu.mapapi.map.SupportMapFragment __this__ = (com.baidu.mapapi.map.SupportMapFragment) ((Map<String, Object>) __args__).get("__this__");
-            
-                    // invoke native method
-                    com.baidu.mapapi.map.MapView __result__ = null;
-                    try {
-                        __result__ = __this__.getMapView();
-                    } catch (Throwable throwable) {
-                        throwable.printStackTrace();
-                        if (getEnableLog()) {
-                            Log.d("Current HEAP: ", getHEAP().toString());
-                        }
-                        __methodResult__.error(throwable.getMessage(), null, null);
-                        return;
-                    }
-            
-                    __resultList__.add(__result__);
-                }
-            
-                __methodResult__.success(__resultList__);
-            });
-            // method
             put("com.baidu.mapapi.map.SupportMapFragment::onAttach_batch", (__argsBatch__, __methodResult__) -> {
                 List<Void> __resultList__ = new ArrayList<>();
             
