@@ -1085,20 +1085,6 @@ public class SubHandler27 {
                 __methodResult__.success(__obj__);
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_map_TextureSupportMapFragment__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_TextureSupportMapFragment__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.map.TextureSupportMapFragment __obj__ = new com.baidu.mapapi.map.TextureSupportMapFragment();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
             put("ObjectFactory::createcom_baidu_mapapi_map_MapCustomStyleOptions__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_map_MapCustomStyleOptions__");
@@ -1663,160 +1649,6 @@ public class SubHandler27 {
                 __methodResult__.success(__obj__);
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudEvent__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudEvent__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.CloudEvent __obj__ = new com.baidu.mapapi.cloud.CloudEvent();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_LocalSearchInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_LocalSearchInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.LocalSearchInfo __obj__ = new com.baidu.mapapi.cloud.LocalSearchInfo();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudPoiInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudPoiInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.CloudPoiInfo __obj__ = new com.baidu.mapapi.cloud.CloudPoiInfo();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudSearchResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudSearchResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.CloudSearchResult __obj__ = new com.baidu.mapapi.cloud.CloudSearchResult();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudRgcResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudRgcResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.CloudRgcResult __obj__ = new com.baidu.mapapi.cloud.CloudRgcResult();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_DetailSearchResult__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_DetailSearchResult__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.DetailSearchResult __obj__ = new com.baidu.mapapi.cloud.DetailSearchResult();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_DetailSearchInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_DetailSearchInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.DetailSearchInfo __obj__ = new com.baidu.mapapi.cloud.DetailSearchInfo();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_VersionInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_VersionInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.VersionInfo __obj__ = new com.baidu.mapapi.cloud.VersionInfo();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_CloudRgcInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_CloudRgcInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.CloudRgcInfo __obj__ = new com.baidu.mapapi.cloud.CloudRgcInfo();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_NearbySearchInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_NearbySearchInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.NearbySearchInfo __obj__ = new com.baidu.mapapi.cloud.NearbySearchInfo();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_cloud_BoundSearchInfo__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_cloud_BoundSearchInfo__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.cloud.BoundSearchInfo __obj__ = new com.baidu.mapapi.cloud.BoundSearchInfo();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
             put("ObjectFactory::createcom_baidu_mapapi_model_LatLngBounds_Builder__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_LatLngBounds_Builder__");
@@ -1831,37 +1663,6 @@ public class SubHandler27 {
                 __methodResult__.success(__obj__);
             });
             // factory
-            put("ObjectFactory::createcom_baidu_mapapi_model_inner_Point__", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_Point__");
-                }
-            
-                // args
-            
-            
-                // create target object
-                com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_model_inner_Point__int__int", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_Point__int__int");
-                }
-            
-                // args
-                // ref arg
-                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-                // ref arg
-                Number var2 = (Number) ((Map<String, Object>) __args__).get("var2");
-            
-                // create target object
-                com.baidu.mapapi.model.inner.Point __obj__ = new com.baidu.mapapi.model.inner.Point(var1.intValue(), var2.intValue());
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
             put("ObjectFactory::createcom_baidu_mapapi_model_inner_MapBound__", (__args__, __methodResult__) -> {
                 if (getEnableLog()) {
                     Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_MapBound__");
@@ -1872,23 +1673,6 @@ public class SubHandler27 {
             
                 // create target object
                 com.baidu.mapapi.model.inner.MapBound __obj__ = new com.baidu.mapapi.model.inner.MapBound();
-            
-                __methodResult__.success(__obj__);
-            });
-            // factory
-            put("ObjectFactory::createcom_baidu_mapapi_model_inner_GeoPoint__double__double", (__args__, __methodResult__) -> {
-                if (getEnableLog()) {
-                    Log.d("ObjectFactory", "创建对象: com_baidu_mapapi_model_inner_GeoPoint__double__double");
-                }
-            
-                // args
-                // ref arg
-                Number var1 = (Number) ((Map<String, Object>) __args__).get("var1");
-                // ref arg
-                Number var3 = (Number) ((Map<String, Object>) __args__).get("var3");
-            
-                // create target object
-                com.baidu.mapapi.model.inner.GeoPoint __obj__ = new com.baidu.mapapi.model.inner.GeoPoint(var1.doubleValue(), var3.doubleValue());
             
                 __methodResult__.success(__obj__);
             });

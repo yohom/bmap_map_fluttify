@@ -296,12 +296,6 @@ public class SubHandler26 {
             
                 __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.MarkerOptions);
             });
-            put("RefClass::isKindOfcom_baidu_mapapi_map_TextureSupportMapFragment", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.map.TextureSupportMapFragment);
-            });
             put("RefClass::isKindOfcom_baidu_mapapi_map_MapCustomStyleOptions", (__args__, __methodResult__) -> {
                 // 引用对象
                 Object __this__ = ((Map<String, Object>) __args__).get("__this__");
@@ -578,137 +572,17 @@ public class SubHandler26 {
             
                 __methodResult__.success(__this__ instanceof com.baidu.mapapi.UIMsg.NetDetectedType);
             });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudEvent", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudEvent);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudManager", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudManager);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_BaseCloudSearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BaseCloudSearchInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_LocalSearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.LocalSearchInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudPoiInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudPoiInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_BaseSearchResult", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BaseSearchResult);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_BaseSearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BaseSearchInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudEvent_ErrorNo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudEvent.ErrorNo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudSearchResult", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudSearchResult);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_PoiInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcResult.PoiInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult_AddressCompents", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcResult.AddressCompents);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcResult", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcResult);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_DetailSearchResult", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.DetailSearchResult);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_DetailSearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.DetailSearchInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_VersionInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.VersionInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_CloudRgcInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.CloudRgcInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_NearbySearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.NearbySearchInfo);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_cloud_BoundSearchInfo", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.cloud.BoundSearchInfo);
-            });
             put("RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds_Builder", (__args__, __methodResult__) -> {
                 // 引用对象
                 Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
                 __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.LatLngBounds.Builder);
             });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_Point", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.Point);
-            });
             put("RefClass::isKindOfcom_baidu_mapapi_model_inner_MapBound", (__args__, __methodResult__) -> {
                 // 引用对象
                 Object __this__ = ((Map<String, Object>) __args__).get("__this__");
             
                 __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.MapBound);
-            });
-            put("RefClass::isKindOfcom_baidu_mapapi_model_inner_GeoPoint", (__args__, __methodResult__) -> {
-                // 引用对象
-                Object __this__ = ((Map<String, Object>) __args__).get("__this__");
-            
-                __methodResult__.success(__this__ instanceof com.baidu.mapapi.model.inner.GeoPoint);
             });
             put("RefClass::isKindOfcom_baidu_mapapi_model_LatLngBounds", (__args__, __methodResult__) -> {
                 // 引用对象
