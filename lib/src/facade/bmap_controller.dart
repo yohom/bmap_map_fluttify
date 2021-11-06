@@ -268,18 +268,18 @@ class BmapController with WidgetsBindingObserver {
         if (option.opacity != null) await markerOption.alpha(option.opacity);
 
         final overlay = await map.addOverlay(markerOption);
-        final markers =
+        final marker =
             BmapMapFluttifyAndroidAs<com_baidu_mapapi_map_Marker>(overlay);
         // 是否允许弹窗
         if (option.infoWindowEnabled != null) {
-          await markers.setClickable(option.infoWindowEnabled);
+          await marker.setClickable(option.infoWindowEnabled);
         }
 
         // 自定义数据
         if (option.object != null) {
           final bundle = await android_os_Bundle.create();
           bundle.putString('extraInfo', option.object);
-          await markers.setExtraInfo(bundle);
+          await marker.setExtraInfo(bundle);
         }
 
         // marker不释放, 还有用
@@ -287,7 +287,7 @@ class BmapController with WidgetsBindingObserver {
           ..add(latLng)
           ..add(markerOption);
 
-        return Marker.android(overlay);
+        return Marker.android(marker);
       },
       ios: (pool) async {
         await iosController
