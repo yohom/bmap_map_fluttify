@@ -110,10 +110,7 @@ class BmapController with WidgetsBindingObserver {
 
   /// 设置我的位置数据
   Future<void> showMyLocation(MyLocationOption option) async {
-    final locationStream = BmapLocation.instance.listenLocation();
-
-    final iconData = await option.iconProvider
-        ?.toImageData(createLocalImageConfiguration(_state.context));
+    final iconData = await option.iconProvider?.toImageData(imageConfiguration);
 
     await platform(
       android: (pool) async {
@@ -134,15 +131,18 @@ class BmapController with WidgetsBindingObserver {
         // 我的位置信息
         final builder =
             await com_baidu_mapapi_map_MyLocationData_Builder.create__();
-        // 监听定位流, 刷新位置
-        locationStream.listen((location) async {
-          await builder.latitude(location.latLng.latitude);
-          await builder.longitude(location.latLng.longitude);
-          await builder.accuracy(location.accuracy);
-          await builder.direction(location.direction);
 
-          await map.setMyLocationData(await builder.build());
-        });
+        await BmapLocation.instance.setupOptions(
+          onLocation: (location) async {
+            await builder.latitude(location.latLng.latitude);
+            await builder.longitude(location.latLng.longitude);
+            await builder.accuracy(location.accuracy);
+            await builder.direction(location.direction);
+
+            await map.setMyLocationData(await builder.build());
+          },
+        );
+        await BmapLocation.instance.start();
 
         pool
           ..add(config)
@@ -159,11 +159,14 @@ class BmapController with WidgetsBindingObserver {
 
         final data = await BMKUserLocation.create__();
 
-        locationStream.listen((location) async {
-          await data.set_location(await location.iosModel.get_location());
-          await iosController.updateLocationViewWithParam(displayParam);
-          await iosController.updateLocationData(data);
-        });
+        await BmapLocation.instance.setupOptions(
+          onLocation: (location) async {
+            await data.set_location(await location.iosModel.get_location());
+            await iosController.updateLocationViewWithParam(displayParam);
+            await iosController.updateLocationData(data);
+          },
+        );
+        await BmapLocation.instance.start();
       },
     );
   }
