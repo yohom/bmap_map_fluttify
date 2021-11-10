@@ -96,6 +96,30 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                     });
                   },
                 ),
+                ListTile(
+                  title: Center(child: Text('添加自定义Info Window')),
+                  onTap: () async {
+                    await _controller?.setMarkerClickedListener((marker) async {
+                      print('setMarkerClickedListener');
+                      await _controller.showCustomInfoWindow(
+                        marker,
+                        Card(
+                          elevation: 10,
+                          child: Container(
+                            padding: EdgeInsets.all(16),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.location_on),
+                                Text(await marker.title),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    });
+                  },
+                ),
               ],
             ),
           ),

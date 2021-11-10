@@ -1647,4 +1647,75 @@ class BmapController with WidgetsBindingObserver {
       },
     );
   }
+
+  /// 自定义弹窗
+  Future<void> showCustomInfoWindow(Marker marker, Widget widget) async {
+    final imageData = (await _state.widgetToImageData([widget]))?.first;
+    if (imageData == null) return;
+
+    // 准备弹窗需要的数据
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final bitmap = await android_graphics_Bitmap.create(imageData);
+        final imageView =
+            await android_widget_ImageView.createWithBitmap(bitmap);
+        final coordinate = await marker.coordinate;
+        final latLng =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          coordinate.latitude,
+          coordinate.longitude,
+        );
+        final infoWindow = await com_baidu_mapapi_map_InfoWindow
+            .create__android_view_View__com_baidu_mapapi_model_LatLng__int(
+          imageView,
+          latLng,
+          0,
+        );
+        await map.showInfoWindow__com_baidu_mapapi_map_InfoWindow(infoWindow);
+
+        pool
+          ..add(map)
+          ..add(bitmap)
+          ..add(latLng)
+          ..add(imageView)
+          ..add(infoWindow);
+      },
+      ios: (pool) async {
+        // // 创建弹窗view
+        // final bitmap = await UIImage.create(imageData);
+        // final imageView = await UIImageView.create(bitmap);
+        //
+        // final frame = await imageView.frame;
+        // final width = await frame.width;
+        // final height = await frame.height;
+        //
+        // // 去掉默认的弹窗
+        // final annotationView =
+        //     await iosController.viewForAnnotation(marker.iosModel);
+        // await annotationView?.set_canShowCallout(false, viewChannel: false);
+        // // 由于默认偏移量是0, 这里根据弹窗view设置一下偏移量
+        // await annotationView?.set_calloutOffset(
+        //   await CGPoint.create(-width / 2, -height),
+        //   viewChannel: false,
+        // );
+        //
+        // // 创建自定义弹窗
+        // final calloutView = await BMKCustomCalloutView.create__();
+        // await calloutView.initWithCustomView(imageView, viewChannel: false);
+        //
+        // // 设置自定义弹窗
+        // await annotationView?.set_customCalloutView(calloutView,
+        //     viewChannel: false);
+        //
+        // pool
+        //   ..add(bitmap)
+        //   ..add(imageView)
+        //   ..add(calloutView);
+      },
+    );
+
+    // 显示弹窗
+    await marker.showInfoWindow();
+  }
 }
