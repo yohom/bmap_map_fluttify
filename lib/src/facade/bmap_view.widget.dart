@@ -17,7 +17,6 @@ import 'package:path_provider/path_provider.dart';
 import 'package:uni_map_platform_interface/uni_map_platform_interface.dart';
 
 import 'bmap_location.dart';
-import 'enums.dart';
 import 'extensions.dart';
 import 'models.dart';
 
@@ -102,12 +101,19 @@ class _BmapViewState extends State<BmapView> {
     }
   }
 
-  Future<List<Uint8List>> widgetToImageData(List<Widget> markerList) async {
+  Future<List<Uint8List>> widgetToImageData(
+    List<Widget> markerList, [
+    Duration delay,
+  ]) {
+    if (!mounted) return null;
+
     final completer = Completer<List<Uint8List>>();
     final ratio = MediaQuery.of(context).devicePixelRatio;
 
     final globalKeyList = <GlobalKey>[];
-    for (int i = 0; i < markerList.length; i++) globalKeyList.add(GlobalKey());
+    for (int i = 0; i < markerList.length; i++) {
+      globalKeyList.add(GlobalKey());
+    }
 
     setState(() {
       _widgetLayer = Stack(
@@ -118,26 +124,38 @@ class _BmapViewState extends State<BmapView> {
       );
     });
 
-    // 等待一帧结束再获取图片数据
-    WidgetsBinding.instance.addPostFrameCallback((duration) async {
+    Future<void> _capture() async {
       final result = <Uint8List>[];
 
-      await Future.wait([
-        for (final key in globalKeyList)
-          (key.currentContext.findRenderObject() as RenderRepaintBoundary)
-              .toImage(pixelRatio: ratio)
-              .then((image) => image.toByteData(format: ImageByteFormat.png))
-              .then((byteData) => byteData.buffer.asUint8List())
-              .then((data) => result.add(data))
-      ]);
+      try {
+        await Future.wait([
+          for (final key in globalKeyList)
+            (key.currentContext?.findRenderObject() as RenderRepaintBoundary)
+                ?.toImage(pixelRatio: ratio)
+                ?.then((image) => image.toByteData(format: ImageByteFormat.png))
+                ?.then((byteData) => byteData.buffer.asUint8List())
+                ?.then((data) => result.add(data))
+        ]);
+        completer.complete(result);
+      } catch (e) {
+        completer.completeError('绘制(截图)过程出错, 中断渲染, $e');
+        return;
+      } finally {
+        // 清空
+        if (mounted) {
+          setState(() {
+            _widgetLayer = null;
+          });
+        }
+      }
+    }
 
-      completer.complete(result);
-
-      // 清空
-      setState(() {
-        _widgetLayer = null;
-      });
-    });
+    if (delay != null) {
+      Future.delayed(delay, () => _capture());
+    } else {
+      // 等待一帧结束再获取图片数据
+      WidgetsBinding.instance.addPostFrameCallback((_) => _capture());
+    }
 
     return completer.future;
   }

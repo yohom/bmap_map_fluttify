@@ -4036,6 +4036,7 @@ extern BOOL enableLog;
   NSNumber* anchorV = objc_getAssociatedObject(annotation, (const void *) 6);
   // 7上绑的是自定义数据, 这里不需要
   NSNumber* visible = objc_getAssociatedObject(annotation, (const void *) 10);
+  UIImage* infoWindow = (UIImage *) objc_getAssociatedObject(annotation, (const void *) 13);
 
   //用户当前位置大头针
   if ([annotation isKindOfClass:[BMKUserLocation class]]) {
@@ -4071,6 +4072,11 @@ extern BOOL enableLog;
       // 是否可见
       if (visible != nil && (NSNull*) visible != [NSNull null]) {
           annotationView.hidden = ![visible boolValue];
+      }
+      if (infoWindow != nil && (NSNull*) infoWindow != [NSNull null]) {
+          UIImageView* imageView = [[UIImageView alloc] initWithImage: infoWindow];
+          BMKActionPaopaoView* paoView = [[BMKActionPaopaoView alloc] initWithCustomView: imageView];
+          annotationView.paopaoView = paoView;
       }
       return annotationView;
   }

@@ -425,6 +425,10 @@ class BmapController with WidgetsBindingObserver {
           .map((e) => e.widget)
           .toList()),
     ];
+    final infoWindowBatch = await _state.widgetToImageData(options
+        .where((element) => element.infoWindow != null)
+        .map((e) => e.infoWindow)
+        .toList());
 
     return platform(
       android: (pool) async {
@@ -459,16 +463,6 @@ class BmapController with WidgetsBindingObserver {
         }
         // 设置自定义数据
         await markerOptionBatch.title_batch(titleBatch);
-        await map.setOnMarkerClickListener(
-          _androidMapDelegate
-            .._onMarkerClicked = (marker) async {
-              final map = await androidController.getMap();
-              await map.hideInfoWindow();
-              await marker.showInfoWindow();
-
-              await map.release__();
-            },
-        );
         await map.setOnMapClickListener(
           _androidMapDelegate
             .._onMapClicked = (coordinate) async {
@@ -513,7 +507,9 @@ class BmapController with WidgetsBindingObserver {
           await annotationBatch.set_title_batch(titleBatch);
         }
         // 设置副标题
-        await annotationBatch.set_subtitle_batch(snippetBatch);
+        if (snippetBatch.any((element) => element.isNotEmpty)) {
+          await annotationBatch.set_subtitle_batch(snippetBatch);
+        }
         // 设置图片
         if (iconDataBatch.isNotEmpty) {
           final iconBatch = await UIImage.create_batch(iconDataBatch);
@@ -532,6 +528,12 @@ class BmapController with WidgetsBindingObserver {
         await annotationBatch.setObject(objectBatch);
         // 是否可见
         await annotationBatch.setVisible(visibleBatch);
+        // 信息窗体
+        if (infoWindowBatch.isNotEmpty) {
+          final windowBatch = await UIImage.create_batch(infoWindowBatch);
+          await annotationBatch.setInfoWindow(windowBatch);
+          pool.addAll(windowBatch);
+        }
 
         // 添加marker
         await iosController.addAnnotations(annotationBatch);
@@ -1649,7 +1651,7 @@ class BmapController with WidgetsBindingObserver {
   }
 
   /// 自定义弹窗
-  Future<void> showCustomInfoWindow(Marker marker, Widget widget) async {
+  Future<void> showCustomInfoWindow(IMarker marker, Widget widget) async {
     final imageData = (await _state.widgetToImageData([widget]))?.first;
     if (imageData == null) return;
 
@@ -1682,39 +1684,29 @@ class BmapController with WidgetsBindingObserver {
           ..add(infoWindow);
       },
       ios: (pool) async {
-        // // 创建弹窗view
-        // final bitmap = await UIImage.create(imageData);
-        // final imageView = await UIImageView.create(bitmap);
-        //
-        // final frame = await imageView.frame;
-        // final width = await frame.width;
-        // final height = await frame.height;
-        //
-        // // 去掉默认的弹窗
-        // final annotationView =
-        //     await iosController.viewForAnnotation(marker.iosModel);
-        // await annotationView?.set_canShowCallout(false, viewChannel: false);
-        // // 由于默认偏移量是0, 这里根据弹窗view设置一下偏移量
-        // await annotationView?.set_calloutOffset(
-        //   await CGPoint.create(-width / 2, -height),
-        //   viewChannel: false,
-        // );
-        //
-        // // 创建自定义弹窗
-        // final calloutView = await BMKCustomCalloutView.create__();
-        // await calloutView.initWithCustomView(imageView, viewChannel: false);
-        //
-        // // 设置自定义弹窗
-        // await annotationView?.set_customCalloutView(calloutView,
-        //     viewChannel: false);
-        //
-        // pool
-        //   ..add(bitmap)
-        //   ..add(imageView)
-        //   ..add(calloutView);
+        // 创建弹窗view
+        final bitmap = await UIImage.create(imageData);
+        final imageView = await UIImageView.create(bitmap);
+        final bMarker = marker as Marker;
+
+        // 去掉默认的弹窗
+        final annotationView =
+            await iosController.viewForAnnotation(bMarker.iosModel);
+        // 创建自定义弹窗
+        final calloutView = await BMKActionPaopaoView.create__();
+        await calloutView.initWithCustomView(imageView, viewChannel: false);
+
+        // 设置自定义弹窗
+        await annotationView?.set_paopaoView(calloutView, viewChannel: false);
+
+        pool
+          ..add(bitmap)
+          ..add(imageView)
+          ..add(calloutView);
       },
     );
 
+    await Future.delayed(const Duration(milliseconds: 2000));
     // 显示弹窗
     await marker.showInfoWindow();
   }

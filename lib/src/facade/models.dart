@@ -86,8 +86,8 @@ class Marker implements IMarker {
   Future<void> showInfoWindow() async {
     return platform(
       android: (_) async {
-        final title = await androidModel.getTitle();
-        await androidModel.showInfoWindowX(title, null);
+        debugPrint('showInfoWindow::do nothing');
+        // await androidModel.showInfoWindow();
       },
       ios: (_) async {
         await iosController?.selectAnnotation_animated(iosModel, true);

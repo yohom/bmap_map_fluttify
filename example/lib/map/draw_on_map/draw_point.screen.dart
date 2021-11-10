@@ -58,6 +58,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                           MarkerOption(
                             coordinate: getNextLatLng(),
                             object: '自定义数据:$i',
+                            title: 'abc',
+                            snippet: 'ccc',
                             widget: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
@@ -100,7 +102,6 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                   title: Center(child: Text('添加自定义Info Window')),
                   onTap: () async {
                     await _controller?.setMarkerClickedListener((marker) async {
-                      print('setMarkerClickedListener');
                       await _controller.showCustomInfoWindow(
                         marker,
                         Card(
