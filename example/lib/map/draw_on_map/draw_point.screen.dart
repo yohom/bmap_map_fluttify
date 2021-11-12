@@ -58,6 +58,8 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                           MarkerOption(
                             coordinate: getNextLatLng(),
                             object: '自定义数据:$i',
+                            title: 'abc',
+                            snippet: 'ccc',
                             widget: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: <Widget>[
@@ -92,6 +94,29 @@ class DrawPointScreenState extends State<DrawPointScreen> with NextLatLng {
                       return _controller?.zoomToSpan(
                         boundary,
                         padding: EdgeInsets.only(top: 100),
+                      );
+                    });
+                  },
+                ),
+                ListTile(
+                  title: Center(child: Text('添加自定义Info Window')),
+                  onTap: () async {
+                    await _controller?.setMarkerClickedListener((marker) async {
+                      await _controller.showCustomInfoWindow(
+                        marker,
+                        Card(
+                          elevation: 10,
+                          child: Container(
+                            padding: EdgeInsets.all(16),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.location_on),
+                                Text(await marker.title),
+                              ],
+                            ),
+                          ),
+                        ),
                       );
                     });
                   },

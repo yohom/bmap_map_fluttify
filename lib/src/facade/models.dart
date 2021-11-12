@@ -86,8 +86,8 @@ class Marker implements IMarker {
   Future<void> showInfoWindow() async {
     return platform(
       android: (_) async {
-        final title = await androidModel.getTitle();
-        await androidModel.showInfoWindowX(title, null);
+        debugPrint('showInfoWindow::do nothing');
+        // await androidModel.showInfoWindow();
       },
       ios: (_) async {
         await iosController?.selectAnnotation_animated(iosModel, true);
@@ -194,8 +194,12 @@ class Marker implements IMarker {
   }
 
   @override
-  // TODO: implement snippet
-  Future<String> get snippet => throw UnimplementedError();
+  Future<String> get snippet {
+    return platform(
+      android: (_) => androidModel.getTitle(),
+      ios: (_) => iosModel.get_subtitle(),
+    );
+  }
 
   @override
   Future<void> startAnimation(MarkerAnimation animation) {
@@ -204,8 +208,12 @@ class Marker implements IMarker {
   }
 
   @override
-  // TODO: implement title
-  Future<String> get title => throw UnimplementedError();
+  Future<String> get title {
+    return platform(
+      android: (_) => androidModel.getTitle(),
+      ios: (_) => iosModel.get_title(),
+    );
+  }
 }
 
 /// 折线

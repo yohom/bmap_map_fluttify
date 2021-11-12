@@ -107,6 +107,10 @@ extension BMKPointAnnotationListX on List<BMKPointAnnotation> {
   Future<void> setFps(List<int> fps) async {
     await addJsonableProperty_batch(12, fps);
   }
+
+  Future<void> setInfoWindow(List<UIImage> infoWindow) async {
+    await addProperty_batch(13, infoWindow);
+  }
 }
 
 extension com_baidu_mapapi_map_MarkerX on com_baidu_mapapi_map_Marker {

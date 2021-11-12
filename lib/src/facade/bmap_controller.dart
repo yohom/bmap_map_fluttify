@@ -425,6 +425,14 @@ class BmapController with WidgetsBindingObserver {
           .map((e) => e.widget)
           .toList()),
     ];
+    // 暂时只支持ios
+    List<Uint8List> infoWindowBatch = [];
+    if (Platform.isIOS) {
+      infoWindowBatch = await _state.widgetToImageData(options
+          .where((element) => element.infoWindow != null)
+          .map((e) => e.infoWindow)
+          .toList());
+    }
 
     return platform(
       android: (pool) async {
@@ -459,16 +467,6 @@ class BmapController with WidgetsBindingObserver {
         }
         // 设置自定义数据
         await markerOptionBatch.title_batch(titleBatch);
-        await map.setOnMarkerClickListener(
-          _androidMapDelegate
-            .._onMarkerClicked = (marker) async {
-              final map = await androidController.getMap();
-              await map.hideInfoWindow();
-              await marker.showInfoWindow();
-
-              await map.release__();
-            },
-        );
         await map.setOnMapClickListener(
           _androidMapDelegate
             .._onMapClicked = (coordinate) async {
@@ -513,7 +511,9 @@ class BmapController with WidgetsBindingObserver {
           await annotationBatch.set_title_batch(titleBatch);
         }
         // 设置副标题
-        await annotationBatch.set_subtitle_batch(snippetBatch);
+        if (snippetBatch.any((element) => element.isNotEmpty)) {
+          await annotationBatch.set_subtitle_batch(snippetBatch);
+        }
         // 设置图片
         if (iconDataBatch.isNotEmpty) {
           final iconBatch = await UIImage.create_batch(iconDataBatch);
@@ -532,6 +532,12 @@ class BmapController with WidgetsBindingObserver {
         await annotationBatch.setObject(objectBatch);
         // 是否可见
         await annotationBatch.setVisible(visibleBatch);
+        // 信息窗体
+        if (infoWindowBatch.isNotEmpty) {
+          final windowBatch = await UIImage.create_batch(infoWindowBatch);
+          await annotationBatch.setInfoWindow(windowBatch);
+          pool.addAll(windowBatch);
+        }
 
         // 添加marker
         await iosController.addAnnotations(annotationBatch);
@@ -1646,5 +1652,49 @@ class BmapController with WidgetsBindingObserver {
         return Arc.ios(arc, iosController);
       },
     );
+  }
+
+  /// 自定义弹窗
+  ///
+  /// 仅支持android端, ios端请直接使用[MarkerOption]内的[infoWindow];
+  Future<void> showCustomInfoWindow(IMarker marker, Widget widget) async {
+    final imageData = (await _state.widgetToImageData([widget]))?.first;
+    if (imageData == null) return;
+
+    // 准备弹窗需要的数据
+    await platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final bitmap = await android_graphics_Bitmap.create(imageData);
+        final imageView =
+            await android_widget_ImageView.createWithBitmap(bitmap);
+        final coordinate = await marker.coordinate;
+        final latLng =
+            await com_baidu_mapapi_model_LatLng.create__double__double(
+          coordinate.latitude,
+          coordinate.longitude,
+        );
+        final infoWindow = await com_baidu_mapapi_map_InfoWindow
+            .create__android_view_View__com_baidu_mapapi_model_LatLng__int(
+          imageView,
+          latLng,
+          0,
+        );
+        await map.showInfoWindow__com_baidu_mapapi_map_InfoWindow(infoWindow);
+
+        pool
+          ..add(map)
+          ..add(bitmap)
+          ..add(latLng)
+          ..add(imageView)
+          ..add(infoWindow);
+      },
+      ios: (pool) async {
+        throw '请使用MarkerOption::infoWindow实现';
+      },
+    );
+
+    // 显示弹窗
+    await marker.showInfoWindow();
   }
 }
