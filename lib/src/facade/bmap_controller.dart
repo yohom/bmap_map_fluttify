@@ -425,10 +425,14 @@ class BmapController with WidgetsBindingObserver {
           .map((e) => e.widget)
           .toList()),
     ];
-    final infoWindowBatch = await _state.widgetToImageData(options
-        .where((element) => element.infoWindow != null)
-        .map((e) => e.infoWindow)
-        .toList());
+    // 暂时只支持ios
+    List<Uint8List> infoWindowBatch = [];
+    if (Platform.isIOS) {
+      infoWindowBatch = await _state.widgetToImageData(options
+          .where((element) => element.infoWindow != null)
+          .map((e) => e.infoWindow)
+          .toList());
+    }
 
     return platform(
       android: (pool) async {
@@ -1651,6 +1655,8 @@ class BmapController with WidgetsBindingObserver {
   }
 
   /// 自定义弹窗
+  ///
+  /// 仅支持android端, ios端请直接使用[MarkerOption]内的[infoWindow];
   Future<void> showCustomInfoWindow(IMarker marker, Widget widget) async {
     final imageData = (await _state.widgetToImageData([widget]))?.first;
     if (imageData == null) return;
@@ -1684,29 +1690,10 @@ class BmapController with WidgetsBindingObserver {
           ..add(infoWindow);
       },
       ios: (pool) async {
-        // 创建弹窗view
-        final bitmap = await UIImage.create(imageData);
-        final imageView = await UIImageView.create(bitmap);
-        final bMarker = marker as Marker;
-
-        // 去掉默认的弹窗
-        final annotationView =
-            await iosController.viewForAnnotation(bMarker.iosModel);
-        // 创建自定义弹窗
-        final calloutView = await BMKActionPaopaoView.create__();
-        await calloutView.initWithCustomView(imageView, viewChannel: false);
-
-        // 设置自定义弹窗
-        await annotationView?.set_paopaoView(calloutView, viewChannel: false);
-
-        pool
-          ..add(bitmap)
-          ..add(imageView)
-          ..add(calloutView);
+        throw '请使用MarkerOption::infoWindow实现';
       },
     );
 
-    await Future.delayed(const Duration(milliseconds: 2000));
     // 显示弹窗
     await marker.showInfoWindow();
   }
