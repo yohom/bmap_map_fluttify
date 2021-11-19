@@ -163,4 +163,54 @@ class BmapService {
       },
     );
   }
+
+  /// 计算两点间的直线距离
+  ///
+  /// 计算点1[point1]和点2[point2]的距离
+  Future<double> calculateDistance(LatLng point1, LatLng point2) async {
+    return platform(
+      android: (pool) async {
+        // 点1
+        final _location1 = await com_baidu_mapapi_model_LatLng
+            .create__double__double(point1.latitude, point1.longitude);
+        // 点2
+        final _location2 = await com_baidu_mapapi_model_LatLng
+            .create__double__double(point2.latitude, point2.longitude);
+
+        // 计算结果
+        final result = await com_baidu_mapapi_utils_DistanceUtil.getDistance(
+            _location1, _location2);
+
+        // 释放两个点
+        pool
+          ..add(_location1)
+          ..add(_location2);
+
+        return result;
+      },
+      ios: (pool) async {
+        // 点1
+        final _location1 = await CLLocationCoordinate2D.create(
+            point1.latitude, point1.longitude);
+        final mapPoint1 = await BMKMapPointForCoordinate(_location1);
+
+        // 点2
+        final _location2 = await CLLocationCoordinate2D.create(
+            point2.latitude, point2.longitude);
+        final mapPoint2 = await BMKMapPointForCoordinate(_location2);
+
+        // 计算结果
+        final result = await BMKMetersBetweenMapPoints(mapPoint1, mapPoint2);
+
+        // 释放两个点相关的数据
+        pool
+          ..add(_location1)
+          ..add(_location2)
+          ..add(mapPoint1)
+          ..add(mapPoint2);
+
+        return result;
+      },
+    );
+  }
 }
