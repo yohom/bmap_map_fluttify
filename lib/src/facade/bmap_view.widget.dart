@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:math';
 import 'dart:typed_data';
 import 'dart:ui';
 
@@ -58,6 +59,7 @@ class _BmapViewState extends State<BmapView> {
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
       return ScopedReleasePool(
+        tag: kBmapMapFluttifyProjectName,
         child: Stack(
           children: <Widget>[
             if (_widgetLayer != null) _widgetLayer,
@@ -79,6 +81,7 @@ class _BmapViewState extends State<BmapView> {
       );
     } else if (Platform.isIOS) {
       return ScopedReleasePool(
+        tag: kBmapMapFluttifyProjectName,
         child: Stack(
           children: <Widget>[
             if (_widgetLayer != null) _widgetLayer,
