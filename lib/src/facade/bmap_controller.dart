@@ -1191,7 +1191,8 @@ class BmapController with WidgetsBindingObserver {
         );
       },
       ios: (pool) async {
-        final cgPoint = await CGPoint.create(point.x, point.y);
+        final cgPoint =
+            await CGPoint.create(point.x.toDouble(), point.y.toDouble());
         final coord2d = await iosController.convertPoint_toCoordinateFromView(
             cgPoint, iosController);
 
