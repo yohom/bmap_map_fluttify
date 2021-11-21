@@ -75,7 +75,7 @@ extern BOOL enableLog;
 
   //region method call handler
   FlutterMethodChannel *channel = [FlutterMethodChannel
-        methodChannelWithName:@"me.yohom/bmap_map_fluttify/BMKMapView"
+        methodChannelWithName:[NSString stringWithFormat:@"me.yohom/bmap_map_fluttify/BMKMapView/BMKMapView:%@", @(_view.hash)]
               binaryMessenger:[_registrar messenger]
                         codec:[FlutterStandardMethodCodec codecWithReaderWriter:[[FluttifyReaderWriter alloc] init]]];
 
