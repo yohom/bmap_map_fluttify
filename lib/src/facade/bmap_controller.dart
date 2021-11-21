@@ -1174,7 +1174,9 @@ class BmapController with WidgetsBindingObserver {
         final projection = await map.getProjection();
 
         final androidPoint = await android_graphics_Point.create(
-            point.x.toInt(), point.y.toInt());
+          (point.x * window.devicePixelRatio).toInt(),
+          (point.y * window.devicePixelRatio).toInt(),
+        );
 
         final latLng = await projection.fromScreenLocation(androidPoint);
 
