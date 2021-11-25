@@ -1,13 +1,6 @@
 part of 'bmap_view.widget.dart';
 
-class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
-  OnMarkerClicked _onMarkerClicked;
-  OnMarkerDrag _onMarkerDragStart;
-  OnMarkerDrag _onMarkerDragging;
-  OnMarkerDrag _onMarkerDragEnd;
-  OnMapMove _onMapMoveEnd;
-  OnMapClicked _onMapClicked;
-
+class _IOSMapDelegate extends NSObject with _Callbacks, BMKMapViewDelegate {
   BMKMapView _iosController;
 
   @override
@@ -62,7 +55,11 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
   }
 
   @override
-  Future<void> mapStatusDidChanged(BMKMapView mapView) async {
+  Future<void> mapView_regionDidChangeAnimated_reason(
+    BMKMapView mapView,
+    bool animated,
+    BMKRegionChangeReason reason,
+  ) async {
     if (_onMapMoveEnd != null) {
       final location = await mapView.get_centerCoordinate();
       await _onMapMoveEnd(MapMove(
@@ -89,19 +86,12 @@ class _IOSMapDelegate extends NSObject with BMKMapViewDelegate {
 
 class _AndroidMapDelegate extends java_lang_Object
     with
+        _Callbacks,
         com_baidu_mapapi_map_BaiduMap_OnMarkerClickListener,
         com_baidu_mapapi_map_BaiduMap_OnMarkerDragListener,
         com_baidu_mapapi_map_BaiduMap_OnMapClickListener,
         com_baidu_mapapi_map_BaiduMap_OnMapStatusChangeListener,
         com_baidu_mapapi_map_BaiduMap_SnapshotReadyCallback {
-  OnMarkerClicked _onMarkerClicked;
-  OnMarkerDrag _onMarkerDragStart;
-  OnMarkerDrag _onMarkerDragging;
-  OnMarkerDrag _onMarkerDragEnd;
-  OnMapMove _onMapMoveEnd;
-  OnMapClicked _onMapClicked;
-  OnScreenShot _onScreenShot;
-
   @override
   Future<bool> onMarkerClick(com_baidu_mapapi_map_Marker var1) async {
     if (_onMarkerClicked != null) {
@@ -164,4 +154,14 @@ class _AndroidMapDelegate extends java_lang_Object
       ));
     }
   }
+}
+
+mixin _Callbacks {
+  OnMarkerClicked _onMarkerClicked;
+  OnMarkerDrag _onMarkerDragStart;
+  OnMarkerDrag _onMarkerDragging;
+  OnMarkerDrag _onMarkerDragEnd;
+  OnMapMove _onMapMoveEnd;
+  OnMapClicked _onMapClicked;
+  OnScreenShot _onScreenShot;
 }

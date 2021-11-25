@@ -1166,6 +1166,76 @@ class BmapController with WidgetsBindingObserver {
     );
   }
 
+  /// 屏幕坐标转经纬度坐标
+  Future<LatLng> fromScreenLocation(Point point) async {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final projection = await map.getProjection();
+
+        final androidPoint = await android_graphics_Point.create(
+          (point.x * window.devicePixelRatio).toInt(),
+          (point.y * window.devicePixelRatio).toInt(),
+        );
+
+        final latLng = await projection.fromScreenLocation(androidPoint);
+
+        pool
+          ..add(map)
+          ..add(projection)
+          ..add(androidPoint)
+          ..add(latLng);
+        return LatLng(
+          await latLng.get_latitude(),
+          await latLng.get_longitude(),
+        );
+      },
+      ios: (pool) async {
+        final cgPoint =
+            await CGPoint.create(point.x.toDouble(), point.y.toDouble());
+        final coord2d = await iosController.convertPoint_toCoordinateFromView(
+            cgPoint, iosController);
+
+        pool
+          ..add(cgPoint)
+          ..add(coord2d);
+        return LatLng(await coord2d.latitude, await coord2d.longitude);
+      },
+    );
+  }
+
+  /// 经纬度坐标转屏幕坐标
+  Future<Point> toScreenLocation(LatLng coordinate) async {
+    return platform(
+      android: (pool) async {
+        final map = await androidController.getMap();
+        final projection = await map.getProjection();
+
+        final latLng = await com_baidu_mapapi_model_LatLng
+            .create__double__double(coordinate.latitude, coordinate.longitude);
+
+        final point = await projection.toScreenLocation(latLng);
+
+        pool
+          ..add(projection)
+          ..add(latLng)
+          ..add(point);
+        return Point((await point.x).toDouble(), (await point.y).toDouble());
+      },
+      ios: (pool) async {
+        final latLng = await CLLocationCoordinate2D.create(
+            coordinate.latitude, coordinate.longitude);
+        final point = await iosController.convertCoordinate_toPointToView(
+            latLng, iosController);
+
+        pool
+          ..add(latLng)
+          ..add(point);
+        return Point((await point.x).toDouble(), (await point.y).toDouble());
+      },
+    );
+  }
+
   /// 设置marker拖动监听事件
   Future<void> setMarkerDragListener({
     OnMarkerDrag onMarkerDragStart,
