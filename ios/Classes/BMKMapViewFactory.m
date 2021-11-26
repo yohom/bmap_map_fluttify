@@ -4276,9 +4276,9 @@ extern BOOL enableLog;
           rgba >>= 8;
       }
       polylineRenderer.strokeColor  = [UIColor colorWithRed:components[1] green:components[2] blue:components[3] alpha:components[0]];
-//      if (texture != nil) polylineRenderer.strokeImage = texture;
-//      if (lineCapType != nil) polylineRenderer.lineCapType = (MALineCapType) [lineCapType integerValue];
-//      if (lineJoinType != nil) polylineRenderer.lineJoinType = (MALineJoinType) [lineJoinType integerValue];
+    if (texture != nil) [polylineRenderer loadStrokeTextureImage: texture];
+    if (lineCapType != nil) [polylineRenderer setLineCapType:(BMKLineCapType) [lineCapType integerValue]];
+      if (lineJoinType != nil) [polylineRenderer setLineJoinType: (BMKLineJoinType) [lineJoinType integerValue]];
       if (dashType != nil) polylineRenderer.lineDashType = (BMKLineDashType) [dashType integerValue];
 
       // 这次调用完成后 清空栈
