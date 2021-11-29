@@ -55,10 +55,9 @@ class _IOSMapDelegate extends NSObject with _Callbacks, BMKMapViewDelegate {
   }
 
   @override
-  Future<void> mapView_regionDidChangeAnimated_reason(
+  Future<void> mapView_regionDidChangeAnimated(
     BMKMapView mapView,
     bool animated,
-    BMKRegionChangeReason reason,
   ) async {
     if (_onMapMoveEnd != null) {
       final location = await mapView.get_centerCoordinate();
