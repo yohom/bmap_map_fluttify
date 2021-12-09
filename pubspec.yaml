@@ -1,6 +1,6 @@
 name: bmap_map_fluttify
 description: An `BaiduMap` Map Component, Powered By `Fluttify`, A Compiler Generating Dart Bindings For Native SDK.
-version: 0.6.0
+version: 0.6.1
 homepage: https://github.com/fluttify-project
 
 environment:
