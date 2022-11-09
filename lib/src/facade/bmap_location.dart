@@ -5,6 +5,7 @@ import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:bmap_map_fluttify/src/ios/BMKLocationAuth.g.dart';
 import 'package:bmap_map_fluttify/src/ios/BMKLocationManager.g.dart';
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
+import 'package:core_location_fluttify/core_location_fluttify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:foundation_fluttify/foundation_fluttify.dart';
 

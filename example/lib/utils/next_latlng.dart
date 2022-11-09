@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
+import 'package:uni_map_platform_interface/uni_map_platform_interface.dart';
 
 mixin NextLatLng {
   final random = Random();

@@ -21,13 +21,7 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
-        maven { url 'http://download.flutter.io' }
-        maven { url "https://oss.sonatype.org/content/groups/public" }
-        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
-        maven { url "https://dl.bintray.com/aweme-open-sdk-team/public" }
-        maven { url 'http://developer.huawei.com/repo/' }
-        maven { url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories/" }
+        mavenCentral()
     }
 }
 

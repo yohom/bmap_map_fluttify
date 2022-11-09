@@ -20,7 +20,7 @@ class _LocationScreenState extends State<LocationScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          RaisedButton(
+          ElevatedButton(
             child: Text('获取单次定位'),
             onPressed: () async {
               if (await requestPermission()) {
@@ -29,7 +29,7 @@ class _LocationScreenState extends State<LocationScreen> {
               }
             },
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('获取连续定位'),
             onPressed: () async {
               // if (await requestPermission()) {
@@ -41,7 +41,7 @@ class _LocationScreenState extends State<LocationScreen> {
               // }
             },
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('停止定位'),
             onPressed: () async {
               if (await requestPermission()) {

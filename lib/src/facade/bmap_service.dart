@@ -1,4 +1,3 @@
-import 'package:bmap_core_fluttify/bmap_core_fluttify.dart';
 import 'package:bmap_map_fluttify/src/android/android.export.g.dart';
 import 'package:bmap_map_fluttify/src/facade/bmap_location.dart';
 import 'package:bmap_map_fluttify/src/ios/ios.export.g.dart';
